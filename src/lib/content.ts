@@ -19,50 +19,58 @@ export type Article = {
   related: string[];
 };
 
-export const categories = [
+export type Category = {
+  slug: string;
+  name: string;
+  description: string;
+  icon: string;
+  accent: string;
+};
+
+export const categories: Category[] = [
   {
+    slug: "coffee-basics",
     name: "커피 기초",
     description: "커피의 구조와 한 잔이 만들어지는 전체 흐름",
     icon: "seed",
-    count: 18,
     accent: "olive",
   },
   {
+    slug: "origin-and-green",
     name: "산지와 생두",
     description: "품종, 재배 환경, 가공과 생두 품질",
     icon: "mountain",
-    count: 27,
     accent: "sage",
   },
   {
+    slug: "roasting",
     name: "로스팅",
     description: "열 전달부터 프로파일 설계와 품질 관리",
     icon: "flame",
-    count: 24,
     accent: "copper",
   },
   {
+    slug: "brewing",
     name: "추출",
     description: "물, 분쇄도, 비율로 맛을 설계하는 방법",
     icon: "drop",
-    count: 31,
     accent: "blue",
   },
   {
+    slug: "sensory",
     name: "센서리",
     description: "커핑, 향미 언어와 관능평가의 원리",
     icon: "nose",
-    count: 22,
     accent: "berry",
   },
   {
+    slug: "cafe-and-gear",
     name: "카페와 장비",
     description: "에스프레소 머신, 그라인더와 바 운영",
     icon: "cup",
-    count: 16,
     accent: "sand",
   },
-] as const;
+];
 
 export const articles: Article[] = [
   {
@@ -317,9 +325,153 @@ export const articles: Article[] = [
     ],
     related: ["extraction-basics", "cupping-basics", "coffee-cherry-to-bean"],
   },
+  {
+    slug: "grinder-basics",
+    title: "그라인더가 맛을 좌우하는 이유",
+    summary:
+      "분쇄의 균일성과 입자 분포가 추출과 향미에 어떤 영향을 주는지, 그라인더를 고르고 관리하는 기준을 정리합니다.",
+    category: "카페와 장비",
+    level: "중급",
+    readingTime: "8분",
+    updatedAt: "2026. 07. 20.",
+    accent: "sand",
+    fact: "같은 원두와 레시피라도 분쇄 입자의 분포가 달라지면 추출 결과가 크게 달라집니다.",
+    sections: [
+      {
+        id: "why",
+        title: "분쇄는 추출의 출발점입니다",
+        paragraphs: [
+          "물이 커피 성분을 녹여 내는 속도는 입자의 표면적에 크게 좌우됩니다. 분쇄가 고를수록 각 입자가 비슷한 속도로 추출되어, 과소·과다 추출이 한 잔 안에 섞이는 정도를 줄일 수 있습니다.",
+          "반대로 미분과 굵은 입자가 함께 많으면 같은 시간 동안 미분은 과다, 굵은 입자는 과소 추출되어 맛의 초점이 흐려집니다.",
+        ],
+      },
+      {
+        id: "burr",
+        title: "버(Burr)의 방식과 상태",
+        paragraphs: [
+          "버 그라인더는 두 개의 날 사이 간격으로 입자 크기를 조절해 블레이드 방식보다 균일한 분쇄를 얻습니다. 코니컬과 플랫 등 형상에 따라 입자 분포의 경향이 달라질 수 있습니다.",
+        ],
+        points: [
+          "코니컬 버: 내구성과 저발열에 유리한 경향",
+          "플랫 버: 좁은 입자 분포를 노리기 쉬운 경향",
+          "마모된 버는 미분을 늘려 균일성을 떨어뜨립니다.",
+        ],
+      },
+      {
+        id: "care",
+        title: "설정보다 관리가 먼저입니다",
+        paragraphs: [
+          "숫자 눈금은 기기마다 절대적인 기준이 아니므로, 목표 추출 시간과 맛을 기준으로 상대적으로 조정하는 편이 재현하기 쉽습니다. 정기적인 청소로 오래된 커피 기름과 미분 잔류를 줄이면 향미의 일관성이 좋아집니다.",
+        ],
+      },
+    ],
+    related: ["extraction-basics", "espresso-basics", "roast-development"],
+  },
+  {
+    slug: "espresso-basics",
+    title: "에스프레소의 기본 원리",
+    summary:
+      "압력으로 짧은 시간에 추출하는 에스프레소의 변수들을 이해하고, 안정적인 한 잔을 만드는 관점을 잡습니다.",
+    category: "카페와 장비",
+    level: "입문",
+    readingTime: "7분",
+    updatedAt: "2026. 07. 20.",
+    accent: "sand",
+    fact: "에스프레소는 짧은 시간에 압력으로 추출하기 때문에 작은 변수 변화도 결과에 크게 나타납니다.",
+    sections: [
+      {
+        id: "what",
+        title: "압력으로 만드는 진한 추출",
+        paragraphs: [
+          "에스프레소는 미세하게 분쇄한 커피 층에 가압한 물을 통과시켜 짧은 시간에 진하게 추출한 음료입니다. 농도가 높고 향이 집약되며, 그 위에 크레마라 부르는 거품층이 생깁니다.",
+        ],
+      },
+      {
+        id: "variables",
+        title: "함께 움직이는 변수들",
+        paragraphs: [
+          "투입량, 분쇄도, 추출량과 시간은 서로 연결되어 있습니다. 한 값을 바꾸면 다른 값도 함께 변하므로, 목표를 정해두고 한 번에 하나씩 조정하는 것이 재현에 유리합니다.",
+        ],
+        points: [
+          "도스: 바스켓에 담는 원두의 질량",
+          "분쇄도: 흐름의 저항과 추출 속도",
+          "수율·비율: 원두 대비 추출된 음료의 양",
+          "추출 시간과 물 온도",
+        ],
+      },
+      {
+        id: "consistency",
+        title: "일관성은 준비 과정에서 나옵니다",
+        paragraphs: [
+          "고른 분배와 수평 탬핑으로 물이 커피 층을 균일하게 통과하게 하면 채널링을 줄일 수 있습니다. 저울과 타이머로 도스와 추출량, 시간을 기록하면 좋은 한 잔을 다시 만들 수 있습니다.",
+        ],
+      },
+    ],
+    related: ["grinder-basics", "extraction-basics", "water-for-coffee"],
+  },
+  {
+    slug: "arabica-and-robusta",
+    title: "아라비카와 로부스타",
+    summary:
+      "가장 널리 재배되는 두 종의 차이를 재배 환경과 향미, 성분의 관점에서 편견 없이 비교합니다.",
+    category: "산지와 생두",
+    level: "입문",
+    readingTime: "6분",
+    updatedAt: "2026. 07. 20.",
+    accent: "sage",
+    fact: "아라비카와 로부스타(카네포라)는 서로 다른 종으로, 재배 조건과 향미 경향이 다릅니다.",
+    sections: [
+      {
+        id: "species",
+        title: "서로 다른 두 종",
+        paragraphs: [
+          "상업적으로 가장 많이 재배되는 커피는 아라비카와 카네포라(흔히 로부스타로 부름)입니다. 두 종은 유전적으로 다르며, 자라는 환경과 병해에 대한 강인함, 성분 구성에서 차이를 보입니다.",
+        ],
+      },
+      {
+        id: "growing",
+        title: "재배 환경의 차이",
+        paragraphs: [
+          "아라비카는 대체로 서늘한 고지대에서 잘 자라지만 병해에 상대적으로 민감합니다. 로부스타는 더 낮은 고도와 더운 기후에서도 잘 견디고 수확량이 많은 편입니다.",
+        ],
+        points: [
+          "아라비카: 고지대 선호, 섬세한 향미 경향",
+          "로부스타: 저지대·고온에 강함, 카페인 함량이 높은 경향",
+          "재배 고도만으로 품질을 단정할 수는 없습니다.",
+        ],
+      },
+      {
+        id: "flavor",
+        title: "향미는 종만으로 결정되지 않습니다",
+        paragraphs: [
+          "종의 특성은 향미의 큰 방향을 만들지만, 최종 컵은 품종, 재배 관리, 가공과 로스팅, 추출까지의 모든 단계가 함께 결정합니다. 종의 이름만으로 좋고 나쁨을 나누기보다 전체 과정을 함께 봐야 합니다.",
+        ],
+      },
+    ],
+    related: ["coffee-processing", "coffee-cherry-to-bean", "cupping-basics"],
+  },
 ];
+
+export const levels = ["입문", "중급", "전문"] as const;
+export type Level = (typeof levels)[number];
 
 export function getArticle(slug: string) {
   return articles.find((article) => article.slug === slug);
+}
+
+export function getCategory(slug: string) {
+  return categories.find((category) => category.slug === slug);
+}
+
+export function articlesByCategory(categoryName: string) {
+  return articles.filter((article) => article.category === categoryName);
+}
+
+export function categoryArticleCount(categoryName: string) {
+  return articlesByCategory(categoryName).length;
+}
+
+export function levelArticleCount(level: Level) {
+  return articles.filter((article) => article.level === level).length;
 }
 

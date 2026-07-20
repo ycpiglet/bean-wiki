@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type SearchItem = {
   slug: string;
@@ -12,6 +12,19 @@ type SearchItem = {
 
 export function Search({ articles }: { articles: SearchItem[] }) {
   const [query, setQuery] = useState("");
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Focus the search field with ⌘K (macOS) or Ctrl+K (others).
+  useEffect(() => {
+    function onKeyDown(event: KeyboardEvent) {
+      if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
+        event.preventDefault();
+        inputRef.current?.focus();
+      }
+    }
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
 
   const normalized = query.trim().toLocaleLowerCase("ko");
   const results = normalized
@@ -37,10 +50,11 @@ export function Search({ articles }: { articles: SearchItem[] }) {
         </label>
         <input
           id="wiki-search"
+          ref={inputRef}
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="추출, 게이샤, 로스팅 프로파일…"
+          placeholder="추출, 그라인더, 로스팅 프로파일…"
           autoComplete="off"
         />
         <span className="search-key">⌘ K</span>
