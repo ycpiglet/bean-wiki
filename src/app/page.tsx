@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { Search } from "@/components/search";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
+  articleBodyText,
   articles,
   categories,
   categoryArticleCount,
@@ -64,11 +66,22 @@ function TopicIcon({ name }: { name: string }) {
 }
 
 export default function Home() {
-  const searchItems = articles.map(({ slug, title, summary, category }) => ({
-    slug,
-    title,
-    summary,
-    category,
+  // Build the search index at render (SSG) so the client never re-lowercases
+  // the full corpus on every keystroke.
+  const searchItems = articles.map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    summary: article.summary,
+    category: article.category,
+    haystack: [
+      article.title,
+      article.summary,
+      article.category,
+      (article.tags ?? []).join(" "),
+      articleBodyText(article),
+    ]
+      .join(" ")
+      .toLocaleLowerCase("ko"),
   }));
 
   return (
@@ -81,16 +94,20 @@ export default function Home() {
         </Link>
         <nav aria-label="주 메뉴">
           <a href="#topics">둘러보기</a>
-          <a href="#path">지식 지도</a>
+          <Link href="/wiki">문서</Link>
+          <Link href="/glossary">용어집</Link>
           <a href="#contribute">기여하기</a>
         </nav>
-        <a className="header-search" href="#search">
-          <svg aria-hidden="true" viewBox="0 0 20 20">
-            <circle cx="9" cy="9" r="5.5" />
-            <path d="m13 13 4 4" />
-          </svg>
-          검색
-        </a>
+        <div className="header-tools">
+          <a className="header-search" href="#search">
+            <svg aria-hidden="true" viewBox="0 0 20 20">
+              <circle cx="9" cy="9" r="5.5" />
+              <path d="m13 13 4 4" />
+            </svg>
+            검색
+          </a>
+          <ThemeToggle />
+        </div>
       </header>
 
       <section className="hero shell">

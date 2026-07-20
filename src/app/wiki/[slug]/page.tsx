@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { articles, getArticle } from "@/lib/content";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
+}
+
+// "2026. 07. 20." → "2026-07-20" for a machine-readable <time datetime>.
+function toISODate(date: string) {
+  const parts = date.match(/\d+/g);
+  if (!parts || parts.length !== 3) return undefined;
+  return `${parts[0]}-${parts[1].padStart(2, "0")}-${parts[2].padStart(2, "0")}`;
 }
 
 export async function generateMetadata(
@@ -42,6 +50,8 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
     .map((relatedSlug) => getArticle(relatedSlug))
     .filter((item) => item !== undefined);
 
+  const history = article.history ?? [];
+
   return (
     <main className="article-page">
       <header className="article-header shell">
@@ -52,9 +62,12 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
-        <Link href="/" className="back-link">
-          ← 모든 지식 둘러보기
-        </Link>
+        <div className="header-tools">
+          <Link href="/" className="back-link">
+            ← 모든 지식 둘러보기
+          </Link>
+          <ThemeToggle />
+        </div>
       </header>
 
       <div className="article-shell shell">
@@ -91,6 +104,15 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
               <span>읽는 시간 {article.readingTime}</span>
               <span>최근 수정 {article.updatedAt}</span>
             </div>
+            {article.tags && article.tags.length > 0 && (
+              <div className="article-tags">
+                {article.tags.map((tag) => (
+                  <Link href={`/tags/${encodeURIComponent(tag)}`} key={tag}>
+                    #{tag}
+                  </Link>
+                ))}
+              </div>
+            )}
           </header>
 
           <div className={`knowledge-note accent-${article.accent}`}>
@@ -118,6 +140,20 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
               </section>
             ))}
           </div>
+
+          {history.length > 0 && (
+            <section className="revision-section">
+              <span>개정 이력</span>
+              <ol>
+                {history.map((entry) => (
+                  <li key={`${entry.date}-${entry.note}`}>
+                    <time dateTime={toISODate(entry.date)}>{entry.date}</time>
+                    <p>{entry.note}</p>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          )}
 
           <section className="related-section">
             <span>다음으로 읽기</span>

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { ArticleBrowser } from "@/components/article-browser";
+import { ThemeToggle } from "@/components/theme-toggle";
 import { articles, categories, levels } from "@/lib/content";
 
 export const metadata: Metadata = {
@@ -43,9 +44,12 @@ export default function WikiIndex() {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
-        <Link href="/" className="back-link">
-          ← 홈으로
-        </Link>
+        <div className="header-tools">
+          <Link href="/" className="back-link">
+            ← 홈으로
+          </Link>
+          <ThemeToggle />
+        </div>
       </header>
 
       <div className="browse-shell shell">

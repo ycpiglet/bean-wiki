@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { ThemeToggle } from "@/components/theme-toggle";
 import {
   articlesByCategory,
   categories,
@@ -54,9 +55,12 @@ export default async function TopicPage(props: PageProps<"/topics/[slug]">) {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
-        <Link href="/wiki" className="back-link">
-          모든 문서 →
-        </Link>
+        <div className="header-tools">
+          <Link href="/wiki" className="back-link">
+            모든 문서 →
+          </Link>
+          <ThemeToggle />
+        </div>
       </header>
 
       <div className="browse-shell shell">
