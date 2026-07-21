@@ -15,7 +15,7 @@ history: [{"date":"2026. 07. 21.","note":"Initial intermediate article on variet
 
 ## Species and Variety Are Different Levels of Classification {#species-vs-variety}
 
-Species (species) is a large category distinguished biologically, like Arabica or Canephora. Variety (variety) refers to cultivated lines within one species that have slightly different genetic characteristics.
+Species is a large category distinguished biologically, like Arabica or Canephora. A variety refers to cultivated lines within one species that have slightly different genetic characteristics.
 
 In other words, if 'Arabica' is the species, then 'Typica' or 'Bourbon' within it are varieties. Most names encountered in geographic information or on coffee bags are distinctions at this variety level.
 

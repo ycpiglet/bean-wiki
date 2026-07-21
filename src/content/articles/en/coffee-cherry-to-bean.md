@@ -19,7 +19,7 @@ The coffee tree is an evergreen plant belonging to the genus Coffea in the Rubia
 
 Inside the cherry are usually two seeds facing each other. After removing several layers such as the flesh, mucilage, and parchment, and drying the seeds, we get green coffee beans. When these are heated to develop flavor, they become roasted coffee beans.
 
-## Processing Preserves Seeds Stably {#process}
+## Processing Stabilizes and Preserves Seeds {#process}
 
 Harvested cherries deteriorate rapidly over time. Producers separate the seeds from the cherry, dry them to an appropriate moisture level, and create green coffee beans that can withstand long-distance transport and storage.
 

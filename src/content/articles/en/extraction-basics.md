@@ -29,7 +29,7 @@ As grind size becomes finer, the surface area in contact with water increases, a
 - Ratio of coffee to water
 - Water temperature and mineral composition
 - Contact time and agitation
-- Uniformity of water flowing through the coffee bed
+- Uniformity of water flow through the coffee bed
 
 ## Change One Variable at a Time {#dial-in}
 

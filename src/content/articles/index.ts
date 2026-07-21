@@ -707,7 +707,7 @@ export const articlesByLocale: Record<string, Article[]> = {
       },
       {
         "id": "process",
-        "title": "Processing Preserves Seeds Stably",
+        "title": "Processing Stabilizes and Preserves Seeds",
         "paragraphs": [
           "Harvested cherries deteriorate rapidly over time. Producers separate the seeds from the cherry, dry them to an appropriate moisture level, and create green coffee beans that can withstand long-distance transport and storage."
         ],
@@ -774,7 +774,7 @@ export const articlesByLocale: Record<string, Article[]> = {
           "Ratio of coffee to water",
           "Water temperature and mineral composition",
           "Contact time and agitation",
-          "Uniformity of water flowing through the coffee bed"
+          "Uniformity of water flow through the coffee bed"
         ]
       },
       {
@@ -1322,7 +1322,7 @@ export const articlesByLocale: Record<string, Article[]> = {
         "id": "species-vs-variety",
         "title": "Species and Variety Are Different Levels of Classification",
         "paragraphs": [
-          "Species (species) is a large category distinguished biologically, like Arabica or Canephora. Variety (variety) refers to cultivated lines within one species that have slightly different genetic characteristics.",
+          "Species is a large category distinguished biologically, like Arabica or Canephora. A variety refers to cultivated lines within one species that have slightly different genetic characteristics.",
           "In other words, if 'Arabica' is the species, then 'Typica' or 'Bourbon' within it are varieties. Most names encountered in geographic information or on coffee bags are distinctions at this variety level."
         ]
       },
