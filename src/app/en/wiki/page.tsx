@@ -6,17 +6,19 @@ import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { articles, categories, levels } from "@/lib/content";
+import { categories, getArticles, levels } from "@/lib/content";
 
 export const metadata: Metadata = {
-  title: "모든 문서",
-  description:
-    "Bean Wiki의 모든 커피 문서를 분야와 난이도로 탐색하세요.",
-  alternates: { canonical: "/wiki", languages: { ko: "/wiki", en: "/en/wiki" } },
+  title: "All articles",
+  description: "Browse every Bean Wiki coffee article by topic and level.",
+  alternates: {
+    canonical: "/en/wiki",
+    languages: { ko: "/wiki", en: "/en/wiki" },
+  },
 };
 
-export default function WikiIndex() {
-  const browseArticles = articles.map(
+export default function EnWikiIndex() {
+  const browseArticles = getArticles("en").map(
     ({ slug, title, summary, category, level, readingTime, accent }) => ({
       slug,
       title,
@@ -30,20 +32,20 @@ export default function WikiIndex() {
   const browseCategories = categories.map(({ slug, name }) => ({ slug, name }));
 
   return (
-    <main className="article-page">
+    <main className="article-page" lang="en">
       <header className="article-header shell">
-        <Link href="/" className="brand" aria-label="Bean Wiki 홈">
+        <Link href="/en" className="brand" aria-label="Bean Wiki home">
           <BeanMark compact />
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
         <div className="header-tools">
-          <Link href="/" className="back-link">
-            ← 홈으로
+          <Link href="/en" className="back-link">
+            ← Home
           </Link>
-          <LanguageSwitcher locale="ko" href="/en/wiki" />
+          <LanguageSwitcher locale="en" href="/wiki" />
           <ThemeToggle />
-          <MobileNav />
+          <MobileNav locale="en" />
         </div>
       </header>
 
@@ -51,28 +53,29 @@ export default function WikiIndex() {
         <div className="section-heading">
           <div>
             <span className="section-index">ALL DOCS</span>
-            <h2>모든 문서</h2>
+            <h2>All articles</h2>
           </div>
-          <p>분야와 난이도로 걸러 가며 필요한 커피 지식을 찾아보세요.</p>
+          <p>Filter by topic and level to find the coffee knowledge you need.</p>
         </div>
 
-        <Suspense fallback={<div className="browse-count">문서를 불러오는 중…</div>}>
+        <Suspense fallback={<div className="browse-count">Loading…</div>}>
           <ArticleBrowser
             articles={browseArticles}
             categories={browseCategories}
             levels={[...levels]}
+            locale="en"
           />
         </Suspense>
       </div>
 
       <footer className="article-footer shell">
-        <p>Bean Wiki · 함께 만드는 열린 커피 백과사전</p>
+        <p>Bean Wiki · an open, community-built coffee encyclopedia</p>
         <a
           href="https://github.com/ycpiglet/bean-wiki"
           target="_blank"
           rel="noreferrer"
         >
-          이 위키에 기여하기 ↗
+          Contribute to this wiki ↗
         </a>
       </footer>
     </main>

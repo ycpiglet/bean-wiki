@@ -52,5 +52,30 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.4,
   }));
 
-  return [...staticRoutes, ...topicRoutes, ...articleRoutes, ...tagRoutes];
+  // English (/en) routes. Tags/privacy are Korean-only, so omitted here.
+  const enRoutes: MetadataRoute.Sitemap = [
+    { url: `${SITE_URL}/en`, lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.9 },
+    { url: `${SITE_URL}/en/wiki`, lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.7 },
+    { url: `${SITE_URL}/en/glossary`, lastModified: siteLastModified, changeFrequency: "monthly", priority: 0.5 },
+    ...categories.map((category) => ({
+      url: `${SITE_URL}/en/topics/${category.slug}`,
+      lastModified: siteLastModified,
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
+    })),
+    ...articles.map((article) => ({
+      url: `${SITE_URL}/en/wiki/${article.slug}`,
+      lastModified: parseKoreanDate(article.updatedAt),
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    })),
+  ];
+
+  return [
+    ...staticRoutes,
+    ...topicRoutes,
+    ...articleRoutes,
+    ...tagRoutes,
+    ...enRoutes,
+  ];
 }

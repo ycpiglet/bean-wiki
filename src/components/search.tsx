@@ -4,8 +4,7 @@ import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 import { getDictionary } from "@/i18n";
-
-const t = getDictionary().search;
+import type { Locale } from "@/i18n/config";
 
 type SearchItem = {
   slug: string;
@@ -108,7 +107,15 @@ function loadRecent(): string[] {
   }
 }
 
-export function Search({ articles }: { articles: SearchItem[] }) {
+export function Search({
+  articles,
+  locale = "ko",
+}: {
+  articles: SearchItem[];
+  locale?: Locale;
+}) {
+  const t = getDictionary(locale).search;
+  const prefix = locale === "en" ? "/en" : "";
   const router = useRouter();
   const [query, setQuery] = useState("");
   // Seed recent searches from localStorage lazily. On the server this returns []
@@ -196,7 +203,7 @@ export function Search({ articles }: { articles: SearchItem[] }) {
 
   function goTo(item: SearchItem) {
     commitRecent(query);
-    router.push(`/wiki/${item.slug}`);
+    router.push(`${prefix}/wiki/${item.slug}`);
   }
 
   function onInputKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
@@ -269,7 +276,7 @@ export function Search({ articles }: { articles: SearchItem[] }) {
             <div id="search-listbox" role="listbox" aria-label={t.resultsLabel}>
               {results.map(({ article, fuzzy }, index) => (
                 <Link
-                  href={`/wiki/${article.slug}`}
+                  href={`${prefix}/wiki/${article.slug}`}
                   className="search-result"
                   id={`search-option-${index}`}
                   role="option"

@@ -7,15 +7,27 @@ import { Search } from "@/components/search";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   articleBodyText,
-  articles,
   categories,
   categoryArticleCount,
+  categoryDescription,
+  categoryLabel,
+  getArticles,
   levelArticleCount,
 } from "@/lib/content";
+import { getDictionary } from "@/i18n";
 import type { CategoryIcon } from "@/content/types";
 
 export const metadata: Metadata = {
-  alternates: { canonical: "/", languages: { ko: "/", en: "/en" } },
+  title: "Bean Wiki — Open Coffee Encyclopedia",
+  description:
+    "An open coffee encyclopedia built and learned together — from beginners to baristas, roasters, and Q graders.",
+  alternates: { canonical: "/en", languages: { ko: "/", en: "/en" } },
+  openGraph: {
+    title: "Bean Wiki — Open Coffee Encyclopedia",
+    description: "From seed to cup, all of coffee in one place.",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 function ArrowIcon() {
@@ -56,7 +68,6 @@ function TopicIcon({ name }: { name: CategoryIcon }) {
       </>
     ),
   };
-
   return (
     <svg aria-hidden="true" viewBox="0 0 24 24">
       {paths[name]}
@@ -64,38 +75,37 @@ function TopicIcon({ name }: { name: CategoryIcon }) {
   );
 }
 
-export default function Home() {
-  // Build the search index at render (SSG) so the client never re-lowercases
-  // the full corpus on every keystroke.
-  const searchItems = articles.map((article) => ({
+export default function EnHome() {
+  const enArticles = getArticles("en");
+  const searchItems = enArticles.map((article) => ({
     slug: article.slug,
     title: article.title,
     summary: article.summary,
-    category: article.category,
+    category: categoryLabel(article.category, "en"),
     haystack: [
       article.title,
       article.summary,
-      article.category,
+      categoryLabel(article.category, "en"),
       (article.tags ?? []).join(" "),
       articleBodyText(article),
     ]
       .join(" ")
       .toLocaleLowerCase("ko"),
   }));
+  const levels = getDictionary("en").levels;
 
   return (
-    <main>
+    <main lang="en">
       <header className="site-header shell">
-        <Link href="/" className="brand" aria-label="Bean Wiki 홈">
+        <Link href="/en" className="brand" aria-label="Bean Wiki home">
           <BeanMark compact />
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
-        <nav aria-label="주 메뉴">
-          <a href="#topics">둘러보기</a>
-          <Link href="/wiki">문서</Link>
-          <Link href="/glossary">용어집</Link>
-          <a href="#contribute">기여하기</a>
+        <nav aria-label="Primary">
+          <Link href="/en/wiki">Articles</Link>
+          <Link href="/en/glossary">Glossary</Link>
+          <a href="#contribute">Contribute</a>
         </nav>
         <div className="header-tools">
           <a className="header-search" href="#search">
@@ -103,11 +113,11 @@ export default function Home() {
               <circle cx="9" cy="9" r="5.5" />
               <path d="m13 13 4 4" />
             </svg>
-            검색
+            Search
           </a>
-          <LanguageSwitcher locale="ko" href="/en" />
+          <LanguageSwitcher locale="en" href="/" />
           <ThemeToggle />
-          <MobileNav />
+          <MobileNav locale="en" />
         </div>
       </header>
 
@@ -115,23 +125,23 @@ export default function Home() {
         <div className="hero-copy">
           <span className="eyebrow">OPEN COFFEE ENCYCLOPEDIA</span>
           <h1>
-            한 잔을 이해하는 데 필요한
+            All the coffee knowledge
             <br />
-            <span>모든 커피 지식</span>
+            <span>to understand a cup</span>
           </h1>
           <p>
-            처음 커피를 내리는 사람부터 바리스타, 로스터, Q 그레이더까지.
+            From your first pour-over to baristas, roasters, and Q graders.
             <br className="desktop-break" />
-            누구나 배우고, 검증하고, 함께 쌓아가는 열린 커피 백과사전입니다.
+            An open coffee encyclopedia anyone can learn from, verify, and build.
           </p>
           <div id="search">
-            <Search articles={searchItems} />
+            <Search articles={searchItems} locale="en" />
           </div>
           <div className="search-suggestions">
-            <span>추천 검색</span>
-            <Link href="/wiki/extraction-basics">추출 수율</Link>
-            <Link href="/wiki/coffee-processing">가공 방식</Link>
-            <Link href="/wiki/cupping-basics">커핑</Link>
+            <span>Popular</span>
+            <Link href="/en/wiki/extraction-basics">Extraction yield</Link>
+            <Link href="/en/wiki/coffee-processing">Processing</Link>
+            <Link href="/en/wiki/cupping-basics">Cupping</Link>
           </div>
         </div>
 
@@ -153,10 +163,10 @@ export default function Home() {
 
       <section className="intro-strip">
         <div className="shell intro-strip-inner">
-          <span>지식은 연결될수록 선명해집니다.</span>
+          <span>Knowledge gets clearer as it connects.</span>
           <p>
-            커피의 여섯 영역을 따라가며 한 가지 맛 뒤에 숨은 원인과 결과를
-            발견해보세요.
+            Follow coffee&rsquo;s six areas and discover the cause and effect
+            behind a single taste.
           </p>
           <span className="scroll-mark">SCROLL ↓</span>
         </div>
@@ -166,16 +176,16 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <span className="section-index">01</span>
-            <h2>주제별로 탐색하기</h2>
+            <h2>Explore by topic</h2>
           </div>
-          <p>커피가 씨앗에서 한 잔이 되기까지, 관심 있는 영역부터 시작하세요.</p>
+          <p>From seed to cup — start with the area you&rsquo;re curious about.</p>
         </div>
 
         <div className="topic-grid">
           {categories.map((category, index) => (
             <Link
               className={`topic-card accent-${category.accent}`}
-              href={`/topics/${category.slug}`}
+              href={`/en/topics/${category.slug}`}
               key={category.slug}
             >
               <span className="topic-number">
@@ -185,11 +195,11 @@ export default function Home() {
                 <TopicIcon name={category.icon} />
               </span>
               <div>
-                <h3>{category.name}</h3>
-                <p>{category.description}</p>
+                <h3>{categoryLabel(category.name, "en")}</h3>
+                <p>{categoryDescription(category.slug, "en")}</p>
               </div>
               <span className="topic-meta">
-                문서 {categoryArticleCount(category.name)}
+                {categoryArticleCount(category.name, "en")} articles
               </span>
               <span className="topic-arrow">
                 <ArrowIcon />
@@ -204,42 +214,45 @@ export default function Home() {
           <div className="section-heading section-heading-light">
             <div>
               <span className="section-index">02</span>
-              <h2>지금 많이 읽는 문서</h2>
+              <h2>Most read right now</h2>
             </div>
-            <Link href="/wiki" className="text-link">
-              모든 문서 보기 <ArrowIcon />
+            <Link href="/en/wiki" className="text-link">
+              See all articles <ArrowIcon />
             </Link>
           </div>
 
           <div className="featured-layout">
-            <Link
-              href={`/wiki/${articles[0].slug}`}
-              className="lead-article"
-            >
+            <Link href={`/en/wiki/${enArticles[0].slug}`} className="lead-article">
               <div className="article-visual accent-olive">
                 <span className="article-visual-index">01</span>
                 <BeanMark />
                 <span className="article-visual-caption">FROM SEED TO CUP</span>
               </div>
               <div className="lead-article-copy">
-                <span className="article-category">{articles[0].category}</span>
-                <h3>{articles[0].title}</h3>
-                <p>{articles[0].summary}</p>
+                <span className="article-category">
+                  {categoryLabel(enArticles[0].category, "en")}
+                </span>
+                <h3>{enArticles[0].title}</h3>
+                <p>{enArticles[0].summary}</p>
                 <span className="read-meta">
-                  {articles[0].level} · 읽는 시간 {articles[0].readingTime}
+                  {levels[enArticles[0].level] ?? enArticles[0].level} · Reading
+                  time {enArticles[0].readingTime}
                 </span>
               </div>
             </Link>
 
             <div className="article-list">
-              {articles.slice(1, 5).map((article, index) => (
-                <Link href={`/wiki/${article.slug}`} key={article.slug}>
+              {enArticles.slice(1, 5).map((article, index) => (
+                <Link href={`/en/wiki/${article.slug}`} key={article.slug}>
                   <span className="list-index">0{index + 2}</span>
                   <div>
-                    <span className="article-category">{article.category}</span>
+                    <span className="article-category">
+                      {categoryLabel(article.category, "en")}
+                    </span>
                     <h3>{article.title}</h3>
                     <span className="read-meta">
-                      {article.level} · {article.readingTime}
+                      {levels[article.level] ?? article.level} ·{" "}
+                      {article.readingTime}
                     </span>
                   </div>
                   <span className="list-arrow">
@@ -256,29 +269,35 @@ export default function Home() {
         <div className="section-heading">
           <div>
             <span className="section-index">03</span>
-            <h2>나에게 맞는 지식 경로</h2>
+            <h2>A path that fits you</h2>
           </div>
-          <p>현재의 경험에서 출발해 다음 단계로 자연스럽게 이어가세요.</p>
+          <p>Start from where you are and move naturally to the next step.</p>
         </div>
 
         <div className="path-grid">
-          <Link href="/wiki?level=입문" className="path-card">
+          <Link href="/en/wiki?level=입문" className="path-card">
             <span className="path-level">STARTER</span>
-            <strong>커피를 처음 알아간다면</strong>
-            <p>열매와 씨앗, 로스팅과 추출의 전체 흐름부터 시작합니다.</p>
-            <span>입문 문서 {levelArticleCount("입문")}개 <ArrowIcon /></span>
+            <strong>New to coffee</strong>
+            <p>Begin with the whole flow from fruit and seed to roasting and brewing.</p>
+            <span>
+              {levelArticleCount("입문", "en")} beginner articles <ArrowIcon />
+            </span>
           </Link>
-          <Link href="/wiki?level=중급" className="path-card path-card-dark">
+          <Link href="/en/wiki?level=중급" className="path-card path-card-dark">
             <span className="path-level">BARISTA</span>
-            <strong>맛을 안정적으로 만들고 싶다면</strong>
-            <p>추출 변수와 물, 장비 관리의 관계를 체계적으로 연결합니다.</p>
-            <span>중급 문서 {levelArticleCount("중급")}개 <ArrowIcon /></span>
+            <strong>Make taste reliable</strong>
+            <p>Connect extraction variables, water, and gear systematically.</p>
+            <span>
+              {levelArticleCount("중급", "en")} intermediate articles <ArrowIcon />
+            </span>
           </Link>
-          <Link href="/wiki?level=전문" className="path-card">
+          <Link href="/en/wiki?level=전문" className="path-card">
             <span className="path-level">PROFESSIONAL</span>
-            <strong>평가와 설계를 깊이 다룬다면</strong>
-            <p>생두 물성, 열 전달, 센서리와 품질 관리로 확장합니다.</p>
-            <span>전문 문서 {levelArticleCount("전문")}개 <ArrowIcon /></span>
+            <strong>Go deep on evaluation and design</strong>
+            <p>Extend into green properties, heat transfer, sensory, and QC.</p>
+            <span>
+              {levelArticleCount("전문", "en")} advanced articles <ArrowIcon />
+            </span>
           </Link>
         </div>
       </section>
@@ -287,12 +306,16 @@ export default function Home() {
         <div className="shell contribute-inner">
           <div>
             <span className="eyebrow">KNOWLEDGE GROWS TOGETHER</span>
-            <h2>당신이 아는 커피를<br />모두의 지식으로.</h2>
+            <h2>
+              Turn what you know
+              <br />
+              into shared knowledge.
+            </h2>
           </div>
           <div className="contribute-copy">
             <p>
-              현장의 경험, 새롭게 읽은 연구, 바로잡아야 할 오래된 정보까지.
-              Bean Wiki의 모든 문서는 근거와 토론을 통해 함께 성장합니다.
+              Field experience, freshly read research, old information that needs
+              fixing. Every Bean Wiki article grows through evidence and discussion.
             </p>
             <a
               className="primary-button"
@@ -300,21 +323,21 @@ export default function Home() {
               target="_blank"
               rel="noreferrer"
             >
-              첫 문서에 기여하기 <ArrowIcon />
+              Contribute your first article <ArrowIcon />
             </a>
           </div>
         </div>
       </section>
 
       <footer className="site-footer shell">
-        <Link href="/" className="brand footer-brand">
+        <Link href="/en" className="brand footer-brand">
           <BeanMark compact />
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
-        <p>함께 만들고, 누구나 배우는 열린 커피 백과사전.</p>
+        <p>An open coffee encyclopedia, built together and free to learn from.</p>
         <span>
-          © 2026 BEAN WIKI · <Link href="/privacy">개인정보</Link>
+          © 2026 BEAN WIKI · <Link href="/privacy">Privacy</Link>
         </span>
       </footer>
     </main>

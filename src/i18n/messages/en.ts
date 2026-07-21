@@ -26,4 +26,13 @@ export const en: Dictionary = {
     clearRecent: "Clear all",
     approx: "approx.",
   },
+  browse: {
+    category: "Topic",
+    level: "Level",
+    all: "All",
+    count: (n: number) => `${n} article${n === 1 ? "" : "s"}`,
+    readingTime: "Reading time",
+    empty: "No articles match yet. Try different filters, or write the first one.",
+  },
+  levels: { 입문: "Beginner", 중급: "Intermediate", 전문: "Advanced" },
 };
