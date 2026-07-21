@@ -1,0 +1,34 @@
+---
+slug: coffee-cherry-to-bean
+title: From Coffee Cherry to Cup
+summary: We explore the journey of how coffee fruit goes through harvesting, processing, roasting, and extraction to become the cup we drink.
+category: 커피 기초
+level: 입문
+readingTime: 6 min
+updatedAt: 2026. 07. 20.
+accent: olive
+fact: What we commonly call a coffee bean is actually a seed found inside the fruit of a coffee tree.
+related: ["coffee-processing","roast-development","extraction-basics"]
+tags: ["생두","가공","기초"]
+history: [{"date":"2026. 07. 20.","note":"문서 최초 작성 및 시드 콘텐츠 공개"}]
+---
+
+## Coffee Begins with Fruit {#fruit}
+
+The coffee tree is an evergreen plant belonging to the genus Coffea in the Rubiaceae family. The fruit that grows where flowers bloom changes color as it ripens, typically from green to red or yellow. This fruit is called the coffee cherry.
+
+Inside the cherry are usually two seeds facing each other. After removing several layers such as the flesh, mucilage, and parchment, and drying the seeds, we get green coffee beans. When these are heated to develop flavor, they become roasted coffee beans.
+
+## Processing Preserves Seeds Stably {#process}
+
+Harvested cherries deteriorate rapidly over time. Producers separate the seeds from the cherry, dry them to an appropriate moisture level, and create green coffee beans that can withstand long-distance transport and storage.
+
+- Washed: The flesh is removed, then the beans undergo fermentation and washing before drying.
+- Natural: The cherries are dried as-is before the dried flesh is removed.
+- Honey: Drying occurs with some mucilage retained, and the name varies depending on the degree of removal.
+
+## Roasting and Extraction Complete the Flavor {#roast-brew}
+
+When heat is applied to green coffee beans, moisture is released, color deepens, and numerous aromatic compounds are created. The roaster controls the intensity and duration of heat to determine how to express the characteristics of the raw material.
+
+Finally, when water touches the ground beans, soluble components dissolve and transfer into the water. The grind size, water temperature and composition, contact time, and the ratio of coffee to water ultimately determine the final strength, extraction yield, and flavor balance.

@@ -25,6 +25,6 @@ export const ko = {
     clearRecent: "전체 지우기",
     approx: "유사",
   },
-} as const;
+};
 
 export type Dictionary = typeof ko;
