@@ -38,6 +38,36 @@ function toChosung(text: string): string {
 // True when the query is only Hangul consonant jamo (a 초성 query).
 const CHOSUNG_ONLY = /^[ㄱ-ㅎ]+$/;
 
+// Bounded Levenshtein distance; returns early once it exceeds `max`.
+function levenshtein(a: string, b: string, max: number): number {
+  if (Math.abs(a.length - b.length) > max) return max + 1;
+  let prev = Array.from({ length: b.length + 1 }, (_, i) => i);
+  for (let i = 1; i <= a.length; i += 1) {
+    const curr = [i];
+    let rowMin = i;
+    for (let j = 1; j <= b.length; j += 1) {
+      const cost = a[i - 1] === b[j - 1] ? 0 : 1;
+      const v = Math.min(prev[j] + 1, curr[j - 1] + 1, prev[j - 1] + cost);
+      curr[j] = v;
+      if (v < rowMin) rowMin = v;
+    }
+    if (rowMin > max) return max + 1;
+    prev = curr;
+  }
+  return prev[b.length];
+}
+
+// Fuzzy fallback: does any whitespace token of `haystack` come within `max`
+// edits of the (typo'd) query? Used only when exact/초성 search finds nothing.
+function fuzzyHit(haystack: string, query: string, max: number): boolean {
+  for (const token of haystack.split(/\s+/)) {
+    if (!token) continue;
+    if (Math.abs(token.length - query.length) > max) continue;
+    if (levenshtein(token, query, max) <= max) return true;
+  }
+  return false;
+}
+
 // Highlight every occurrence of the query in the text (case-insensitive).
 function highlight(text: string, queryLower: string): ReactNode {
   if (!queryLower) return text;
@@ -136,14 +166,24 @@ export function Search({ articles }: { articles: SearchItem[] }) {
 
   const results = useMemo(() => {
     if (!normalized) return [];
-    const matched: SearchItem[] = [];
+    const matched: { article: SearchItem; fuzzy: boolean }[] = [];
     for (let i = 0; i < articles.length; i += 1) {
       const hit =
         articles[i].haystack.includes(normalized) ||
         (isChosungQuery && chosungHaystacks[i].includes(normalized));
       if (hit) {
-        matched.push(articles[i]);
-        if (matched.length === MAX_RESULTS) break;
+        matched.push({ article: articles[i], fuzzy: false });
+        if (matched.length >= MAX_RESULTS) break;
+      }
+    }
+    // Typo tolerance: only when nothing matched exactly, and not for 초성 queries.
+    if (matched.length === 0 && !isChosungQuery && normalized.length >= 2) {
+      const maxEdits = normalized.length <= 5 ? 1 : 2;
+      for (let i = 0; i < articles.length; i += 1) {
+        if (fuzzyHit(articles[i].haystack, normalized, maxEdits)) {
+          matched.push({ article: articles[i], fuzzy: true });
+          if (matched.length >= MAX_RESULTS) break;
+        }
       }
     }
     return matched;
@@ -170,10 +210,10 @@ export function Search({ articles }: { articles: SearchItem[] }) {
       event.preventDefault();
       setActiveIndex((i) => (i <= 0 ? results.length - 1 : i - 1));
     } else if (event.key === "Enter") {
-      const item = results[activeIndex] ?? results[0];
-      if (item) {
+      const entry = results[activeIndex] ?? results[0];
+      if (entry) {
         event.preventDefault();
-        goTo(item);
+        goTo(entry.article);
       }
     }
   }
@@ -219,12 +259,12 @@ export function Search({ articles }: { articles: SearchItem[] }) {
         <div className="search-results">
           <span className="sr-only" role="status" aria-live="polite">
             {results.length > 0
-              ? `${results.length}개의 검색 결과`
+              ? `${results.length}개의 ${results[0].fuzzy ? "유사 " : ""}검색 결과`
               : "검색 결과가 없습니다"}
           </span>
           {results.length > 0 ? (
             <div id="search-listbox" role="listbox" aria-label="검색 결과">
-              {results.map((article, index) => (
+              {results.map(({ article, fuzzy }, index) => (
                 <Link
                   href={`/wiki/${article.slug}`}
                   className="search-result"
@@ -235,8 +275,15 @@ export function Search({ articles }: { articles: SearchItem[] }) {
                   onClick={() => commitRecent(query)}
                 >
                   <span>{article.category}</span>
-                  <strong>{highlight(article.title, normalized)}</strong>
-                  <p>{highlight(article.summary, normalized)}</p>
+                  <strong>
+                    {fuzzy ? article.title : highlight(article.title, normalized)}
+                    {fuzzy && <em className="search-approx">유사</em>}
+                  </strong>
+                  <p>
+                    {fuzzy
+                      ? article.summary
+                      : highlight(article.summary, normalized)}
+                  </p>
                 </Link>
               ))}
             </div>

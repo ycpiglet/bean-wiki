@@ -68,19 +68,17 @@
 
 ## Sprint 6 — 심화 (P3) — 대부분 완료
 
-- 🔨 [L] 마크다운/MDX 전환 — 설계 완료([docs/MDX-MIGRATION.md](docs/MDX-MIGRATION.md)); 이행 대기
-- 🔨 [M] 검색 고도화 — ✅ 초성 검색·모든 매칭 하이라이트 / ⬜ 오타 허용(퍼지)
+- ✅ [L] 마크다운 전환 — `.md` 소스 + 빌드타임 코드젠(무손실 이행, [docs/MDX-MIGRATION.md](docs/MDX-MIGRATION.md))
+- ✅ [M] 검색 고도화 — 초성 검색·모든 매칭 하이라이트·오타 허용(퍼지 폴백)
 - ✅ [M] 문서 편집 워크플로 — 문서별 GitHub 편집 딥링크 + `npm run new-article` 스캐폴딩
 - ✅ [M] 품종 콘텐츠 — `coffee-varieties` 문서 + 용어집 '품종'
 - ✅ [S] 인쇄 스타일 — `@media print`
 - ✅ [M] 공유 버튼 — X·LinkedIn·링크 복사
-- 🔨 [M] PWA — ✅ manifest(설치 가능) / ⬜ 오프라인 서비스 워커
-- 🔨 [L] i18n — 설계 완료([docs/I18N.md](docs/I18N.md)); 이행 대기
+- ✅ [M] PWA — manifest(설치 가능) + 오프라인 서비스 워커([public/sw.js](public/sw.js))
+- 🔨 [L] i18n — 설계 완료([docs/I18N.md](docs/I18N.md)); 이행 보류(대상 로케일·번역 콘텐츠 부재 → 지금은 과투자)
 - ✅ [S] 접근성 마무리 — 브레드크럼 `aria-hidden`, 목차 터치 타겟, 앵커 오프셋
 
 ## 남은 항목 (다음 후보)
 
-- ⬜ 마크다운/MDX 이행 (설계 문서 기준 파일럿부터)
-- ⬜ 검색 오타 허용(퍼지 매칭)
-- ⬜ PWA 오프라인 서비스 워커
-- ⬜ i18n 이행 (UI 문자열 추출부터)
+- ⬜ i18n 이행 — 영어 등 실제 대상 로케일이 정해지면 착수(설계는 완료; UI 문자열 추출부터). 현재는 콘텐츠·UI가 한국어뿐이라 라우팅/사전 인프라만 넣으면 반쪽 기능이 되어 보류.
+- ⬜ CI 활성화 — [docs/ci-workflow.yml.example](docs/ci-workflow.yml.example)를 `workflow` 스코프 토큰으로 `.github/workflows/ci.yml`에 복사
