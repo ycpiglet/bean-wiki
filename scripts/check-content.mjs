@@ -5,7 +5,7 @@
 // matches slug, order.json agrees with the .md files, glossary refs are valid,
 // and no category is orphaned.
 
-import { readdirSync, readFileSync } from "node:fs";
+import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 import { markdownToArticle } from "./content-md.mjs";
@@ -100,6 +100,41 @@ for (const name of categoryNames)
   if (!articles.some((a) => a.category === name))
     err(`category "${name}" has no articles`);
 
+// English translations (articles/en/*.md): must mirror a Korean article's
+// slug, canonical category/accent/related, and section structure.
+const enDir = join(articlesDir, "en");
+let enCount = 0;
+if (existsSync(enDir)) {
+  const koBySlug = new Map(articles.map((a) => [a.slug, a]));
+  for (const file of readdirSync(enDir).filter((f) => f.endsWith(".md"))) {
+    let en;
+    try {
+      en = markdownToArticle(read(join(enDir, file)));
+    } catch (e) {
+      err(`en/${file}: failed to parse (${e.message})`);
+      continue;
+    }
+    enCount += 1;
+    if (file !== `${en.slug}.md`)
+      err(`en/${file}: slug "${en.slug}" != filename`);
+    const ko = koBySlug.get(en.slug);
+    if (!ko) {
+      err(`en/${file}: no Korean article with slug "${en.slug}"`);
+      continue;
+    }
+    if (en.category !== ko.category)
+      err(`en/${en.slug}: category must match Korean canonical "${ko.category}"`);
+    if (en.accent !== ko.accent)
+      err(`en/${en.slug}: accent must match Korean "${ko.accent}"`);
+    if (JSON.stringify(en.related) !== JSON.stringify(ko.related))
+      err(`en/${en.slug}: related must match the Korean article`);
+    const enIds = en.sections.map((s) => s.id).join(",");
+    const koIds = ko.sections.map((s) => s.id).join(",");
+    if (enIds !== koIds)
+      err(`en/${en.slug}: section anchors [${enIds}] != Korean [${koIds}]`);
+  }
+}
+
 // Glossary.
 const glossarySrc = read(join(contentDir, "glossary.ts"));
 for (const cat of quoted(/category:\s*"([^"]+)"/g, glossarySrc))
@@ -119,5 +154,5 @@ if (errors.length) {
 }
 
 console.log(
-  `✓ check-content: ${articles.length} articles, ${categoryNames.size} categories, all references valid`,
+  `✓ check-content: ${articles.length} articles (+${enCount} en), ${categoryNames.size} categories, all references valid`,
 );

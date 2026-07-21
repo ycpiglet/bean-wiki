@@ -10,7 +10,7 @@ accent: copper
 fact: The same development time ratio can produce completely different results depending on batch size, heat input, and the energy from preceding stages.
 related: ["cupping-basics","coffee-processing","extraction-basics"]
 tags: ["로스팅","프로파일","품질관리"]
-history: [{"date":"2026. 07. 20.","note":"발달 시간 관점 초안 작성"}]
+history: [{"date":"2026. 07. 20.","note":"First draft on the development-time perspective"}]
 ---
 
 ## Development is not just what happens after first crack {#definition}

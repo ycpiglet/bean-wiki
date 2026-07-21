@@ -10,7 +10,7 @@ accent: sand
 fact: Even with the same beans and recipe, extraction results vary significantly when the distribution of ground particles changes.
 related: ["extraction-basics","espresso-basics","roast-development"]
 tags: ["분쇄","장비","추출"]
-history: [{"date":"2026. 07. 20.","note":"그라인더 문서 최초 작성"}]
+history: [{"date":"2026. 07. 20.","note":"Initial grinder article"}]
 ---
 
 ## Grinding is the starting point for extraction {#why}

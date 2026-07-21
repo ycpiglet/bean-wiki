@@ -33,6 +33,12 @@ export async function generateMetadata(
       canonical: `/en/topics/${slug}`,
       languages: { ko: `/topics/${slug}`, en: `/en/topics/${slug}` },
     },
+    openGraph: {
+      title: categoryLabel(category.name, "en"),
+      description: categoryDescription(slug, "en"),
+      url: `/en/topics/${slug}`,
+      locale: "en_US",
+    },
   };
 }
 

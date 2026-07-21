@@ -10,7 +10,7 @@ accent: sage
 fact: Arabica and Robusta (Canephora) are different species with different cultivation conditions and flavor characteristics.
 related: ["coffee-processing","coffee-cherry-to-bean","cupping-basics"]
 tags: ["품종","생두","기초"]
-history: [{"date":"2026. 07. 20.","note":"품종 비교 문서 최초 작성"}]
+history: [{"date":"2026. 07. 20.","note":"Initial species comparison article"}]
 ---
 
 ## Two Different Species {#species}

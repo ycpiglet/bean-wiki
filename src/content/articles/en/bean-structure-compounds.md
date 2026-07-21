@@ -10,7 +10,7 @@ accent: olive
 fact: The flavors we taste come from both the soluble compounds already present in the bean and new substances created during roasting.
 related: ["coffee-cherry-to-bean","roast-development","extraction-basics"]
 tags: ["기초","향미","생두"]
-history: [{"date":"2026. 07. 21.","note":"원두 구조·성분 입문 문서 최초 작성"}]
+history: [{"date":"2026. 07. 21.","note":"Initial primer on bean structure and compounds"}]
 ---
 
 ## Green Beans Are Made of Tightly Packed Cells {#structure}

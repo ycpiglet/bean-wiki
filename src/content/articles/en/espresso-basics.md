@@ -10,7 +10,7 @@ accent: sand
 fact: Because espresso is extracted under pressure in a short time, even small changes in variables are reflected significantly in the result.
 related: ["grinder-basics","extraction-basics","water-for-coffee"]
 tags: ["에스프레소","추출","장비","기초"]
-history: [{"date":"2026. 07. 20.","note":"에스프레소 기본 원리 최초 작성"}]
+history: [{"date":"2026. 07. 20.","note":"Initial espresso fundamentals"}]
 ---
 
 ## Intense Extraction Made with Pressure {#what}

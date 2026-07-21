@@ -66,7 +66,7 @@ export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
                 {categoryLabel(category.name, locale)}
               </Link>
             ))}
-            <Link href="/privacy" onClick={close}>
+            <Link href={`${prefix}/privacy`} onClick={close}>
               {t.privacy}
             </Link>
             <a

@@ -10,7 +10,7 @@ accent: sage
 fact: Arabica is a single species, but within it there are multiple varieties with different flavors and cultivation characteristics.
 related: ["arabica-and-robusta","coffee-processing","cupping-basics"]
 tags: ["품종","생두","산지"]
-history: [{"date":"2026. 07. 21.","note":"품종 중급 문서 최초 작성"}]
+history: [{"date":"2026. 07. 21.","note":"Initial intermediate article on varieties"}]
 ---
 
 ## Species and Variety Are Different Levels of Classification {#species-vs-variety}

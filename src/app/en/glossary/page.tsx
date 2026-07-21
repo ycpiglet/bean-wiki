@@ -21,6 +21,12 @@ export const metadata: Metadata = {
     canonical: "/en/glossary",
     languages: { ko: "/glossary", en: "/en/glossary" },
   },
+  openGraph: {
+    title: "Glossary",
+    description: "Common coffee terms, defined in one line and grouped by topic.",
+    url: "/en/glossary",
+    locale: "en_US",
+  },
 };
 
 export default function EnGlossaryPage() {

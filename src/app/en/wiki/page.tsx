@@ -15,6 +15,12 @@ export const metadata: Metadata = {
     canonical: "/en/wiki",
     languages: { ko: "/wiki", en: "/en/wiki" },
   },
+  openGraph: {
+    title: "All articles",
+    description: "Browse every Bean Wiki coffee article by topic and level.",
+    url: "/en/wiki",
+    locale: "en_US",
+  },
 };
 
 export default function EnWikiIndex() {

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
+import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -8,7 +9,10 @@ export const metadata: Metadata = {
   title: "개인정보 처리방침",
   description:
     "Bean Wiki가 어떤 정보를 다루고 다루지 않는지에 대한 안내입니다.",
-  alternates: { canonical: "/privacy" },
+  alternates: {
+    canonical: "/privacy",
+    languages: { ko: "/privacy", en: "/en/privacy" },
+  },
 };
 
 export default function PrivacyPage() {
@@ -24,6 +28,7 @@ export default function PrivacyPage() {
           <Link href="/" className="back-link">
             ← 홈으로
           </Link>
+          <LanguageSwitcher locale="ko" href="/en/privacy" />
           <ThemeToggle />
           <MobileNav />
         </div>

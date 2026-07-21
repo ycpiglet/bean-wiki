@@ -10,7 +10,7 @@ accent: berry
 fact: The core of cupping is not implementing a specific extraction method well, but rather making conditions as consistent as possible between samples.
 related: ["coffee-processing","roast-development","water-for-coffee"]
 tags: ["커핑","관능평가","센서리"]
-history: [{"date":"2026. 07. 20.","note":"커핑 표준화 원칙 초안 작성"}]
+history: [{"date":"2026. 07. 20.","note":"First draft on cupping standardization"}]
 ---
 
 ## Create Common Conditions for Comparison {#purpose}

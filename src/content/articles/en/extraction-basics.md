@@ -10,7 +10,7 @@ accent: blue
 fact: Concentration represents how strong the liquid in the cup is, while extraction yield indicates how much material we extracted from the beans.
 related: ["water-for-coffee","coffee-cherry-to-bean","cupping-basics"]
 tags: ["추출","수율","레시피","기초"]
-history: [{"date":"2026. 07. 20.","note":"농도·수율 기본 개념 정리 초안 작성"}]
+history: [{"date":"2026. 07. 20.","note":"First draft on concentration and yield basics"}]
 ---
 
 ## Concentration and Extraction Yield Are Different Values {#two-measures}

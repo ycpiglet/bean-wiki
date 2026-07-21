@@ -57,6 +57,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/en`, lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.9 },
     { url: `${SITE_URL}/en/wiki`, lastModified: siteLastModified, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/en/glossary`, lastModified: siteLastModified, changeFrequency: "monthly", priority: 0.5 },
+    { url: `${SITE_URL}/en/privacy`, lastModified: siteLastModified, changeFrequency: "yearly", priority: 0.2 },
     ...categories.map((category) => ({
       url: `${SITE_URL}/en/topics/${category.slug}`,
       lastModified: siteLastModified,

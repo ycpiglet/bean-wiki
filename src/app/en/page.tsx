@@ -82,11 +82,12 @@ export default function EnHome() {
     title: article.title,
     summary: article.summary,
     category: categoryLabel(article.category, "en"),
+    // Tags are canonical Korean, so they are excluded from the English index —
+    // English readers search the English title/summary/body/category instead.
     haystack: [
       article.title,
       article.summary,
       categoryLabel(article.category, "en"),
-      (article.tags ?? []).join(" "),
       articleBodyText(article),
     ]
       .join(" ")
@@ -337,7 +338,7 @@ export default function EnHome() {
         </Link>
         <p>An open coffee encyclopedia, built together and free to learn from.</p>
         <span>
-          © 2026 BEAN WIKI · <Link href="/privacy">Privacy</Link>
+          © 2026 BEAN WIKI · <Link href="/en/privacy">Privacy</Link>
         </span>
       </footer>
     </main>

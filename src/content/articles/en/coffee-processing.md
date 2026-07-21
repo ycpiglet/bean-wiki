@@ -10,7 +10,7 @@ accent: sage
 fact: Processing methods influence flavor, but the name of a method alone cannot determine the flavor profile or quality of the cup.
 related: ["coffee-cherry-to-bean","cupping-basics","roast-development"]
 tags: ["가공","생두","품질관리"]
-history: [{"date":"2026. 07. 20.","note":"가공 방식 비교 초안 작성"}]
+history: [{"date":"2026. 07. 20.","note":"First draft comparing processing methods"}]
 ---
 
 ## Understanding the Layers of the Cherry Reveals Processing {#layers}

@@ -10,7 +10,7 @@ accent: olive
 fact: What we commonly call a coffee bean is actually a seed found inside the fruit of a coffee tree.
 related: ["coffee-processing","roast-development","extraction-basics"]
 tags: ["생두","가공","기초"]
-history: [{"date":"2026. 07. 20.","note":"문서 최초 작성 및 시드 콘텐츠 공개"}]
+history: [{"date":"2026. 07. 20.","note":"Initial article and seed content published"}]
 ---
 
 ## Coffee Begins with Fruit {#fruit}

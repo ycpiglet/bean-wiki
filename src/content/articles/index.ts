@@ -739,7 +739,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 20.",
-        "note": "문서 최초 작성 및 시드 콘텐츠 공개"
+        "note": "Initial article and seed content published"
       }
     ]
   },
@@ -800,7 +800,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 20.",
-        "note": "농도·수율 기본 개념 정리 초안 작성"
+        "note": "First draft on concentration and yield basics"
       }
     ]
   },
@@ -857,7 +857,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 21.",
-        "note": "로스팅 입문 문서 최초 작성"
+        "note": "Initial roasting primer"
       }
     ]
   },
@@ -913,7 +913,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 20.",
-        "note": "커핑 표준화 원칙 초안 작성"
+        "note": "First draft on cupping standardization"
       }
     ]
   },
@@ -971,7 +971,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 21.",
-        "note": "원두 구조·성분 입문 문서 최초 작성"
+        "note": "Initial primer on bean structure and compounds"
       }
     ]
   },
@@ -1026,7 +1026,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 20.",
-        "note": "가공 방식 비교 초안 작성"
+        "note": "First draft comparing processing methods"
       }
     ]
   },
@@ -1084,7 +1084,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 20.",
-        "note": "발달 시간 관점 초안 작성"
+        "note": "First draft on the development-time perspective"
       }
     ]
   },
@@ -1135,7 +1135,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 20.",
-        "note": "물 화학 기초 초안 작성"
+        "note": "First draft on water chemistry basics"
       }
     ]
   },
@@ -1191,7 +1191,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 20.",
-        "note": "그라인더 문서 최초 작성"
+        "note": "Initial grinder article"
       }
     ]
   },
@@ -1248,7 +1248,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 20.",
-        "note": "에스프레소 기본 원리 최초 작성"
+        "note": "Initial espresso fundamentals"
       }
     ]
   },
@@ -1303,7 +1303,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 20.",
-        "note": "품종 비교 문서 최초 작성"
+        "note": "Initial species comparison article"
       }
     ]
   },
@@ -1360,7 +1360,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "history": [
       {
         "date": "2026. 07. 21.",
-        "note": "품종 중급 문서 최초 작성"
+        "note": "Initial intermediate article on varieties"
       }
     ]
   }

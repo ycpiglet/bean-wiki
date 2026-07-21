@@ -10,7 +10,7 @@ accent: blue
 fact: Water comprises most of a coffee beverage, and mineral composition simultaneously changes extraction and taste impression.
 related: ["extraction-basics","cupping-basics","coffee-cherry-to-bean"]
 tags: ["추출","물","미네랄"]
-history: [{"date":"2026. 07. 20.","note":"물 화학 기초 초안 작성"}]
+history: [{"date":"2026. 07. 20.","note":"First draft on water chemistry basics"}]
 ---
 
 ## Composition Matters More Than a Single Hardness Number {#hardness}

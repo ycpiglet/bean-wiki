@@ -10,7 +10,7 @@ accent: copper
 fact: Light, medium, and dark may appear to be just color names, but they actually summarize how long and intensely heat has been applied.
 related: ["roast-development","coffee-cherry-to-bean","cupping-basics"]
 tags: ["로스팅","기초","배전도"]
-history: [{"date":"2026. 07. 21.","note":"로스팅 입문 문서 최초 작성"}]
+history: [{"date":"2026. 07. 21.","note":"Initial roasting primer"}]
 ---
 
 ## Roasting progresses through continuous stages {#stages}
