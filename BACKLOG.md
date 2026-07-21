@@ -75,7 +75,7 @@
 - ✅ [S] 인쇄 스타일 — `@media print`
 - ✅ [M] 공유 버튼 — X·LinkedIn·링크 복사
 - ✅ [M] PWA — manifest(설치 가능) + 오프라인 서비스 워커([public/sw.js](public/sw.js))
-- 🔨 [L] i18n — 설계 완료([docs/I18N.md](docs/I18N.md)); 이행 보류(대상 로케일·번역 콘텐츠 부재 → 지금은 과투자)
+- 🔨 [L] i18n — 기반 구현(`src/i18n/` 사전 + `getDictionary()`, 크롬 배선); `[lang]` 라우팅과 콘텐츠 번역은 대상 로케일 확정 시([docs/I18N.md](docs/I18N.md))
 - ✅ [S] 접근성 마무리 — 브레드크럼 `aria-hidden`, 목차 터치 타겟, 앵커 오프셋
 
 ## 남은 항목 (다음 후보)

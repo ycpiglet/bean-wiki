@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { categories } from "@/lib/content";
+import { getDictionary } from "@/i18n";
+
+const t = getDictionary().mobileNav;
 
 // Hamburger + slide-down drawer. Only shown at <=980px (CSS), where the desktop
 // header nav is hidden — without this, inner pages had no way to reach
@@ -28,7 +31,7 @@ export function MobileNav() {
         className="mobile-nav-toggle"
         aria-expanded={open}
         aria-controls="mobile-drawer"
-        aria-label={open ? "메뉴 닫기" : "메뉴 열기"}
+        aria-label={open ? t.close : t.open}
         onClick={() => setOpen((value) => !value)}
       >
         <svg aria-hidden="true" viewBox="0 0 24 24">
@@ -42,17 +45,17 @@ export function MobileNav() {
 
       {open && (
         <div id="mobile-drawer" className="mobile-drawer">
-          <nav aria-label="모바일 메뉴">
+          <nav aria-label={t.ariaLabel}>
             <Link href="/" onClick={close}>
-              홈
+              {t.home}
             </Link>
             <Link href="/wiki" onClick={close}>
-              전체 문서
+              {t.allDocs}
             </Link>
             <Link href="/glossary" onClick={close}>
-              용어집
+              {t.glossary}
             </Link>
-            <span className="mobile-drawer-label">분야</span>
+            <span className="mobile-drawer-label">{t.topics}</span>
             {categories.map((category) => (
               <Link
                 key={category.slug}
@@ -63,7 +66,7 @@ export function MobileNav() {
               </Link>
             ))}
             <Link href="/privacy" onClick={close}>
-              개인정보 처리방침
+              {t.privacy}
             </Link>
             <a
               href="https://github.com/ycpiglet/bean-wiki"
@@ -71,7 +74,7 @@ export function MobileNav() {
               rel="noreferrer"
               onClick={close}
             >
-              기여하기 ↗
+              {t.contribute}
             </a>
           </nav>
         </div>

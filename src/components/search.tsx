@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import { getDictionary } from "@/i18n";
+
+const t = getDictionary().search;
 
 type SearchItem = {
   slug: string;
@@ -228,7 +231,7 @@ export function Search({ articles }: { articles: SearchItem[] }) {
           <path d="m16 16 4 4" />
         </svg>
         <label className="sr-only" htmlFor="wiki-search">
-          커피 지식 검색
+          {t.label}
         </label>
         <input
           id="wiki-search"
@@ -249,7 +252,7 @@ export function Search({ articles }: { articles: SearchItem[] }) {
           onKeyDown={onInputKeyDown}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          placeholder="추출, 그라인더, ㄹㅅㅌ 프로파일…"
+          placeholder={t.placeholder}
           autoComplete="off"
         />
         <span className="search-key">⌘ K</span>
@@ -259,11 +262,11 @@ export function Search({ articles }: { articles: SearchItem[] }) {
         <div className="search-results">
           <span className="sr-only" role="status" aria-live="polite">
             {results.length > 0
-              ? `${results.length}개의 ${results[0].fuzzy ? "유사 " : ""}검색 결과`
-              : "검색 결과가 없습니다"}
+              ? t.resultsCount(results.length, results[0].fuzzy)
+              : t.noResults}
           </span>
           {results.length > 0 ? (
-            <div id="search-listbox" role="listbox" aria-label="검색 결과">
+            <div id="search-listbox" role="listbox" aria-label={t.resultsLabel}>
               {results.map(({ article, fuzzy }, index) => (
                 <Link
                   href={`/wiki/${article.slug}`}
@@ -277,7 +280,7 @@ export function Search({ articles }: { articles: SearchItem[] }) {
                   <span>{article.category}</span>
                   <strong>
                     {fuzzy ? article.title : highlight(article.title, normalized)}
-                    {fuzzy && <em className="search-approx">유사</em>}
+                    {fuzzy && <em className="search-approx">{t.approx}</em>}
                   </strong>
                   <p>
                     {fuzzy
@@ -288,9 +291,7 @@ export function Search({ articles }: { articles: SearchItem[] }) {
               ))}
             </div>
           ) : (
-            <div className="search-empty">
-              아직 해당 주제의 문서가 없습니다. 첫 문서의 작성자가 되어보세요.
-            </div>
+            <div className="search-empty">{t.empty}</div>
           )}
         </div>
       )}
@@ -302,13 +303,13 @@ export function Search({ articles }: { articles: SearchItem[] }) {
         >
           <div className="search-recent">
             <div className="search-recent-head">
-              <span>최근 검색</span>
+              <span>{t.recent}</span>
               <button
                 type="button"
                 className="search-recent-clear"
                 onClick={clearRecent}
               >
-                전체 지우기
+                {t.clearRecent}
               </button>
             </div>
             <div className="search-recent-chips">
