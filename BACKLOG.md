@@ -29,7 +29,7 @@
 - ✅ 문서 개정 이력 표시 및 기여 가이드 문서
 - ✅ 다크 모드 — 시스템 설정 존중, 선택 저장, 플래시 방지 인라인 스크립트
 - ✅ 검색 고도화 — 본문 검색, 일치 강조, 최근 검색 기록
-- 🔨 Vercel 배포 및 도메인 연결 — 준비 완료([DEPLOY.md](DEPLOY.md)); 대화형 인증 후 배포
+- ✅ Vercel 배포 — 프로덕션 배포 완료: https://bean-wiki.vercel.app ([DEPLOY.md](DEPLOY.md))
 
 ## Sprint 4 — 품질·신뢰 기반 (P1) — ✅ 완료
 
