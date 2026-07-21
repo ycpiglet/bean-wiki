@@ -1,5 +1,6 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -13,19 +14,28 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bean-wiki.vercel.app"),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Bean Wiki — 열린 커피 백과사전",
     template: "%s | Bean Wiki",
   },
-  description:
-    "초심자부터 바리스타, 로스터, Q 그레이더까지 함께 만들고 배우는 열린 커피 백과사전.",
+  description: SITE_DESCRIPTION,
   openGraph: {
     title: "Bean Wiki — 열린 커피 백과사전",
     description: "씨앗에서 한 잔까지, 모든 커피 지식을 한곳에서.",
     locale: "ko_KR",
     type: "website",
   },
+  alternates: {
+    types: { "application/rss+xml": "/feed.xml" },
+  },
+};
+
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: light)", color: "#f4f0e7" },
+    { media: "(prefers-color-scheme: dark)", color: "#14170f" },
+  ],
 };
 
 const themeScript = `(function(){try{var t=localStorage.getItem('theme');if(!t){t=window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches?'dark':'light';}document.documentElement.setAttribute('data-theme',t);}catch(e){}})();`;

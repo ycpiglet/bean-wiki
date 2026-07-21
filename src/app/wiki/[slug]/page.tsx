@@ -1,20 +1,19 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BeanMark } from "@/components/bean-logo";
+import { JsonLd } from "@/components/json-ld";
+import { MobileNav } from "@/components/mobile-nav";
+import { ShareButtons } from "@/components/share-buttons";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { articles, getArticle } from "@/lib/content";
+import { articles, getArticle, getCategoryByName } from "@/lib/content";
+import { toISODate } from "@/lib/dates";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
-}
-
-// "2026. 07. 20." → "2026-07-20" for a machine-readable <time datetime>.
-function toISODate(date: string) {
-  const parts = date.match(/\d+/g);
-  if (!parts || parts.length !== 3) return undefined;
-  return `${parts[0]}-${parts[1].padStart(2, "0")}-${parts[2].padStart(2, "0")}`;
 }
 
 export async function generateMetadata(
@@ -25,19 +24,26 @@ export async function generateMetadata(
 
   if (!article) return {};
 
+  const published = article.history?.length
+    ? toISODate(article.history[article.history.length - 1].date)
+    : toISODate(article.updatedAt);
+
   return {
     title: article.title,
     description: article.summary,
+    keywords: article.tags,
+    alternates: { canonical: `/wiki/${slug}` },
+    openGraph: {
+      type: "article",
+      title: article.title,
+      description: article.summary,
+      url: `/wiki/${slug}`,
+      publishedTime: published,
+      modifiedTime: toISODate(article.updatedAt),
+      section: article.category,
+      tags: article.tags,
+    },
   };
-}
-
-function BeanLogo() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 48 48">
-      <path d="M34.7 7.7C27.6 3.6 17 7.4 11.2 16.3 5.4 25.2 6.8 36 14 40.5c7.2 4.5 17.7.9 23.6-8 5.8-8.9 4.3-20.5-2.9-24.8Z" />
-      <path d="M34.5 8.4c-2.3 7.9-8.7 9.2-13 14.6-4.1 5.2-4.9 10.3-4.2 16.2" />
-    </svg>
-  );
 }
 
 export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
@@ -51,14 +57,57 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
     .filter((item) => item !== undefined);
 
   const history = article.history ?? [];
+  const categorySlug = getCategoryByName(article.category)?.slug;
+  const published = history.length
+    ? toISODate(history[history.length - 1].date)
+    : toISODate(article.updatedAt);
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.summary,
+    inLanguage: "ko",
+    articleSection: article.category,
+    keywords: article.tags?.join(", "),
+    datePublished: published,
+    dateModified: toISODate(article.updatedAt),
+    author: { "@type": "Organization", name: SITE_NAME },
+    publisher: { "@type": "Organization", name: SITE_NAME },
+    mainEntityOfPage: `${SITE_URL}/wiki/${slug}`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "홈", item: SITE_URL },
+      ...(categorySlug
+        ? [
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: article.category,
+              item: `${SITE_URL}/topics/${categorySlug}`,
+            },
+          ]
+        : []),
+      {
+        "@type": "ListItem",
+        position: categorySlug ? 3 : 2,
+        name: article.title,
+        item: `${SITE_URL}/wiki/${slug}`,
+      },
+    ],
+  };
 
   return (
     <main className="article-page">
+      <JsonLd data={articleSchema} />
+      <JsonLd data={breadcrumbSchema} />
       <header className="article-header shell">
         <Link href="/" className="brand" aria-label="Bean Wiki 홈">
-          <span className="bean-mark bean-mark-small">
-            <BeanLogo />
-          </span>
+          <BeanMark compact />
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
@@ -67,6 +116,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             ← 모든 지식 둘러보기
           </Link>
           <ThemeToggle />
+          <MobileNav />
         </div>
       </header>
 
@@ -90,7 +140,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
         <article className="wiki-article">
           <div className="breadcrumbs">
             <Link href="/">홈</Link>
-            <span>/</span>
+            <span aria-hidden="true">/</span>
             <span>{article.category}</span>
           </div>
 
@@ -167,17 +217,19 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
               ))}
             </div>
           </section>
+
+          <ShareButtons title={article.title} path={`/wiki/${slug}`} />
         </article>
       </div>
 
       <footer className="article-footer shell">
         <p>Bean Wiki · 함께 만드는 열린 커피 백과사전</p>
         <a
-          href="https://github.com/ycpiglet/bean-wiki"
+          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/${slug}.ts`}
           target="_blank"
           rel="noreferrer"
         >
-          이 문서 개선하기 ↗
+          GitHub에서 이 문서 편집하기 ↗
         </a>
       </footer>
     </main>

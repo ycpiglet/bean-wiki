@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { BeanMark } from "@/components/bean-logo";
+import { MobileNav } from "@/components/mobile-nav";
 import { Search } from "@/components/search";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
@@ -8,17 +10,8 @@ import {
   categoryArticleCount,
   levelArticleCount,
 } from "@/lib/content";
+import type { CategoryIcon } from "@/content/types";
 
-function BeanMark({ compact = false }: { compact?: boolean }) {
-  return (
-    <span className={compact ? "bean-mark bean-mark-small" : "bean-mark"}>
-      <svg aria-hidden="true" viewBox="0 0 48 48">
-        <path d="M34.7 7.7C27.6 3.6 17 7.4 11.2 16.3 5.4 25.2 6.8 36 14 40.5c7.2 4.5 17.7.9 23.6-8 5.8-8.9 4.3-20.5-2.9-24.8Z" />
-        <path d="M34.5 8.4c-2.3 7.9-8.7 9.2-13 14.6-4.1 5.2-4.9 10.3-4.2 16.2" />
-      </svg>
-    </span>
-  );
-}
 function ArrowIcon() {
   return (
     <svg aria-hidden="true" viewBox="0 0 20 20">
@@ -27,8 +20,8 @@ function ArrowIcon() {
   );
 }
 
-function TopicIcon({ name }: { name: string }) {
-  const paths: Record<string, React.ReactNode> = {
+function TopicIcon({ name }: { name: CategoryIcon }) {
+  const paths: Record<CategoryIcon, React.ReactNode> = {
     seed: (
       <>
         <path d="M12 20v-8" />
@@ -107,6 +100,7 @@ export default function Home() {
             검색
           </a>
           <ThemeToggle />
+          <MobileNav />
         </div>
       </header>
 
@@ -312,7 +306,9 @@ export default function Home() {
           <em>WIKI</em>
         </Link>
         <p>함께 만들고, 누구나 배우는 열린 커피 백과사전.</p>
-        <span>© 2026 BEAN WIKI · OPEN KNOWLEDGE</span>
+        <span>
+          © 2026 BEAN WIKI · <Link href="/privacy">개인정보</Link>
+        </span>
       </footer>
     </main>
   );

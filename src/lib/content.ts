@@ -27,6 +27,10 @@ export function getCategory(slug: string) {
   return categories.find((category) => category.slug === slug);
 }
 
+export function getCategoryByName(name: string) {
+  return categories.find((category) => category.name === name);
+}
+
 export function articlesByCategory(categoryName: string) {
   return articles.filter((article) => article.category === categoryName);
 }

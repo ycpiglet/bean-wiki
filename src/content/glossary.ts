@@ -106,4 +106,120 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: "로스팅",
     related: ["roast-development"],
   },
+  {
+    term: "원두",
+    reading: "Roasted Bean",
+    definition: "로스팅을 마쳐 향미가 발달한 커피 씨앗입니다.",
+    category: "커피 기초",
+    related: ["coffee-cherry-to-bean", "bean-structure-compounds"],
+  },
+  {
+    term: "생두",
+    reading: "Green Bean",
+    definition: "로스팅 전, 가공과 건조를 마친 상태의 커피 씨앗입니다.",
+    category: "커피 기초",
+    related: ["coffee-cherry-to-bean", "coffee-processing"],
+  },
+  {
+    term: "향미",
+    reading: "Flavor",
+    definition:
+      "맛(미각)과 향(후각)을 아우르는 커피의 감각적 인상 전체를 가리킵니다.",
+    category: "커피 기초",
+    related: ["bean-structure-compounds", "cupping-basics"],
+  },
+  {
+    term: "배전도",
+    reading: "Roast Level",
+    definition:
+      "로스팅으로 원두에 가한 열의 정도를 색과 시간으로 요약한 표현입니다(라이트~다크).",
+    category: "로스팅",
+    related: ["roasting-basics"],
+  },
+  {
+    term: "1차 크랙",
+    reading: "First Crack",
+    definition:
+      "로스팅 중 내부 압력으로 원두가 팽창·파열하며 나는 소리로, 발현 단계의 시작 신호입니다.",
+    category: "로스팅",
+    related: ["roasting-basics", "roast-development"],
+  },
+  {
+    term: "마이야르 반응",
+    reading: "Maillard Reaction",
+    definition:
+      "당과 아미노산이 열에서 반응해 갈변과 다양한 향 물질을 만드는 과정입니다.",
+    category: "로스팅",
+    related: ["roasting-basics", "bean-structure-compounds"],
+  },
+  {
+    term: "오버추출",
+    reading: "Over-extraction",
+    definition:
+      "성분이 지나치게 많이 녹아 쓴맛과 잡미가 두드러지는 상태입니다.",
+    category: "추출",
+    related: ["extraction-basics"],
+  },
+  {
+    term: "언더추출",
+    reading: "Under-extraction",
+    definition:
+      "성분이 충분히 녹지 않아 날카로운 신맛이나 밋밋함이 남는 상태입니다.",
+    category: "추출",
+    related: ["extraction-basics"],
+  },
+  {
+    term: "브루 비율",
+    reading: "Brew Ratio",
+    definition:
+      "커피 원두 대비 물의 비율로, 음료 농도의 기준이 되는 값입니다.",
+    category: "추출",
+    related: ["extraction-basics"],
+  },
+  {
+    term: "탬핑",
+    reading: "Tamping",
+    definition:
+      "에스프레소 추출 전 포터필터의 커피를 고르고 평평하게 다지는 동작입니다.",
+    category: "카페와 장비",
+    related: ["espresso-basics"],
+  },
+  {
+    term: "포터필터",
+    reading: "Portafilter",
+    definition:
+      "에스프레소 머신에 장착해 커피를 담는, 손잡이 달린 바스켓 홀더입니다.",
+    category: "카페와 장비",
+    related: ["espresso-basics"],
+  },
+  {
+    term: "미분",
+    reading: "Fines",
+    definition:
+      "분쇄 시 생기는 아주 미세한 입자로, 과다 추출과 흐름 저하의 원인이 될 수 있습니다.",
+    category: "카페와 장비",
+    related: ["grinder-basics"],
+  },
+  {
+    term: "바디",
+    reading: "Body",
+    definition: "입안에서 느끼는 커피의 질감과 무게감을 가리킵니다.",
+    category: "센서리",
+    related: ["cupping-basics"],
+  },
+  {
+    term: "산미",
+    reading: "Acidity",
+    definition: "밝고 상큼하게 느껴지는 긍정적인 신맛의 인상입니다.",
+    category: "센서리",
+    related: ["cupping-basics", "water-for-coffee"],
+  },
+  {
+    term: "품종",
+    reading: "Varietal",
+    definition:
+      "하나의 종(예: 아라비카) 안에서 향미와 재배 특성이 다른 재배 계통입니다.",
+    category: "산지와 생두",
+    related: ["coffee-varieties", "arabica-and-robusta"],
+  },
 ];

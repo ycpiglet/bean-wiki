@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import { useRouter } from "next/navigation";
+import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
 
 type SearchItem = {
   slug: string;
@@ -13,21 +14,51 @@ type SearchItem = {
 
 const STORAGE_KEY = "bean-wiki:recent-searches";
 const MAX_RECENT = 6;
+const MAX_RESULTS = 4;
 
+const CHOSUNG = [
+  "ㄱ", "ㄲ", "ㄴ", "ㄷ", "ㄸ", "ㄹ", "ㅁ", "ㅂ", "ㅃ", "ㅅ",
+  "ㅆ", "ㅇ", "ㅈ", "ㅉ", "ㅊ", "ㅋ", "ㅌ", "ㅍ", "ㅎ",
+];
+
+// Reduce Hangul syllables to their leading consonants so "ㅊㅊ" matches "추출".
+function toChosung(text: string): string {
+  let out = "";
+  for (const ch of text) {
+    const code = ch.charCodeAt(0);
+    if (code >= 0xac00 && code <= 0xd7a3) {
+      out += CHOSUNG[Math.floor((code - 0xac00) / 588)];
+    } else {
+      out += ch;
+    }
+  }
+  return out;
+}
+
+// True when the query is only Hangul consonant jamo (a 초성 query).
+const CHOSUNG_ONLY = /^[ㄱ-ㅎ]+$/;
+
+// Highlight every occurrence of the query in the text (case-insensitive).
 function highlight(text: string, queryLower: string): ReactNode {
   if (!queryLower) return text;
   const lower = text.toLocaleLowerCase("ko");
-  const index = lower.indexOf(queryLower);
+  const parts: ReactNode[] = [];
+  let from = 0;
+  let index = lower.indexOf(queryLower, from);
   if (index === -1) return text;
-  return (
-    <>
-      {text.slice(0, index)}
-      <mark className="search-mark">
+  let key = 0;
+  while (index !== -1) {
+    if (index > from) parts.push(text.slice(from, index));
+    parts.push(
+      <mark className="search-mark" key={key++}>
         {text.slice(index, index + queryLower.length)}
-      </mark>
-      {text.slice(index + queryLower.length)}
-    </>
-  );
+      </mark>,
+    );
+    from = index + queryLower.length;
+    index = lower.indexOf(queryLower, from);
+  }
+  if (from < text.length) parts.push(text.slice(from));
+  return <>{parts}</>;
 }
 
 function loadRecent(): string[] {
@@ -45,13 +76,21 @@ function loadRecent(): string[] {
 }
 
 export function Search({ articles }: { articles: SearchItem[] }) {
+  const router = useRouter();
   const [query, setQuery] = useState("");
   // Seed recent searches from localStorage lazily. On the server this returns []
   // (matching SSR); the recent panel is gated behind `focused`, which is false on
   // first render, so there is no hydration mismatch.
   const [recent, setRecent] = useState<string[]>(loadRecent);
   const [focused, setFocused] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(-1);
   const inputRef = useRef<HTMLInputElement>(null);
+
+  // Precompute 초성 forms once per corpus (cheap for this dataset).
+  const chosungHaystacks = useMemo(
+    () => articles.map((article) => toChosung(article.haystack)),
+    [articles],
+  );
 
   // Focus the search field with ⌘K (macOS) or Ctrl+K (others).
   useEffect(() => {
@@ -93,13 +132,53 @@ export function Search({ articles }: { articles: SearchItem[] }) {
   }
 
   const normalized = query.trim().toLocaleLowerCase("ko");
-  const results = normalized
-    ? articles
-        .filter((article) => article.haystack.includes(normalized))
-        .slice(0, 4)
-    : [];
+  const isChosungQuery = CHOSUNG_ONLY.test(query.trim());
+
+  const results = useMemo(() => {
+    if (!normalized) return [];
+    const matched: SearchItem[] = [];
+    for (let i = 0; i < articles.length; i += 1) {
+      const hit =
+        articles[i].haystack.includes(normalized) ||
+        (isChosungQuery && chosungHaystacks[i].includes(normalized));
+      if (hit) {
+        matched.push(articles[i]);
+        if (matched.length === MAX_RESULTS) break;
+      }
+    }
+    return matched;
+  }, [articles, chosungHaystacks, normalized, isChosungQuery]);
 
   const showRecent = focused && !query.trim() && recent.length > 0;
+
+  function goTo(item: SearchItem) {
+    commitRecent(query);
+    router.push(`/wiki/${item.slug}`);
+  }
+
+  function onInputKeyDown(event: React.KeyboardEvent<HTMLInputElement>) {
+    if (event.key === "Escape") {
+      setQuery("");
+      setActiveIndex(-1);
+      return;
+    }
+    if (!results.length) return;
+    if (event.key === "ArrowDown") {
+      event.preventDefault();
+      setActiveIndex((i) => (i + 1) % results.length);
+    } else if (event.key === "ArrowUp") {
+      event.preventDefault();
+      setActiveIndex((i) => (i <= 0 ? results.length - 1 : i - 1));
+    } else if (event.key === "Enter") {
+      const item = results[activeIndex] ?? results[0];
+      if (item) {
+        event.preventDefault();
+        goTo(item);
+      }
+    }
+  }
+
+  const listboxOpen = Boolean(query.trim() && results.length > 0);
 
   return (
     <div className="search-wrap">
@@ -115,31 +194,52 @@ export function Search({ articles }: { articles: SearchItem[] }) {
           id="wiki-search"
           ref={inputRef}
           type="search"
+          role="combobox"
+          aria-expanded={listboxOpen}
+          aria-controls="search-listbox"
+          aria-autocomplete="list"
+          aria-activedescendant={
+            activeIndex >= 0 ? `search-option-${activeIndex}` : undefined
+          }
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={(event) => {
+            setQuery(event.target.value);
+            setActiveIndex(-1);
+          }}
+          onKeyDown={onInputKeyDown}
           onFocus={() => setFocused(true)}
           onBlur={() => setFocused(false)}
-          placeholder="추출, 그라인더, 로스팅 프로파일…"
+          placeholder="추출, 그라인더, ㄹㅅㅌ 프로파일…"
           autoComplete="off"
         />
         <span className="search-key">⌘ K</span>
       </div>
 
       {query.trim() && (
-        <div className="search-results" aria-live="polite">
+        <div className="search-results">
+          <span className="sr-only" role="status" aria-live="polite">
+            {results.length > 0
+              ? `${results.length}개의 검색 결과`
+              : "검색 결과가 없습니다"}
+          </span>
           {results.length > 0 ? (
-            results.map((article) => (
-              <Link
-                href={`/wiki/${article.slug}`}
-                className="search-result"
-                key={article.slug}
-                onClick={() => commitRecent(query)}
-              >
-                <span>{article.category}</span>
-                <strong>{highlight(article.title, normalized)}</strong>
-                <p>{highlight(article.summary, normalized)}</p>
-              </Link>
-            ))
+            <div id="search-listbox" role="listbox" aria-label="검색 결과">
+              {results.map((article, index) => (
+                <Link
+                  href={`/wiki/${article.slug}`}
+                  className="search-result"
+                  id={`search-option-${index}`}
+                  role="option"
+                  aria-selected={index === activeIndex}
+                  key={article.slug}
+                  onClick={() => commitRecent(query)}
+                >
+                  <span>{article.category}</span>
+                  <strong>{highlight(article.title, normalized)}</strong>
+                  <p>{highlight(article.summary, normalized)}</p>
+                </Link>
+              ))}
+            </div>
           ) : (
             <div className="search-empty">
               아직 해당 주제의 문서가 없습니다. 첫 문서의 작성자가 되어보세요.

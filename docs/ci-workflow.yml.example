@@ -1,0 +1,24 @@
+# CI workflow template. To activate: copy this file to
+# `.github/workflows/ci.yml`. (Pushing anything under .github/workflows/
+# requires a git token with the `workflow` scope, which the automation token
+# used here lacked — hence it lives in docs/ for now.)
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run check-content
+      - run: npm run build

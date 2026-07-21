@@ -2,11 +2,23 @@
   "name": "bean-wiki",
   "version": "0.1.0",
   "private": true,
+  "description": "초심자부터 바리스타·로스터·Q 그레이더까지 함께 만들고 배우는 열린 커피 백과사전",
+  "license": "MIT AND CC-BY-4.0",
+  "author": "Bean Wiki contributors",
+  "homepage": "https://bean-wiki.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ycpiglet/bean-wiki.git"
+  },
+  "keywords": ["coffee", "wiki", "encyclopedia", "korean", "nextjs"],
   "scripts": {
     "dev": "next dev",
+    "prebuild": "node scripts/check-content.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "check-content": "node scripts/check-content.mjs",
+    "new-article": "node scripts/new-article.mjs"
   },
   "dependencies": {
     "next": "16.2.10",
