@@ -166,14 +166,14 @@ export function Search({ articles }: { articles: SearchItem[] }) {
 
   const results = useMemo(() => {
     if (!normalized) return [];
-    const matched: SearchItem[] = [];
+    const matched: { article: SearchItem; fuzzy: boolean }[] = [];
     for (let i = 0; i < articles.length; i += 1) {
       const hit =
         articles[i].haystack.includes(normalized) ||
         (isChosungQuery && chosungHaystacks[i].includes(normalized));
       if (hit) {
-        matched.push(articles[i]);
-        if (matched.length === MAX_RESULTS) break;
+        matched.push({ article: articles[i], fuzzy: false });
+        if (matched.length >= MAX_RESULTS) break;
       }
     }
     // Typo tolerance: only when nothing matched exactly, and not for 초성 queries.
@@ -181,7 +181,7 @@ export function Search({ articles }: { articles: SearchItem[] }) {
       const maxEdits = normalized.length <= 5 ? 1 : 2;
       for (let i = 0; i < articles.length; i += 1) {
         if (fuzzyHit(articles[i].haystack, normalized, maxEdits)) {
-          matched.push(articles[i]);
+          matched.push({ article: articles[i], fuzzy: true });
           if (matched.length >= MAX_RESULTS) break;
         }
       }
@@ -210,10 +210,10 @@ export function Search({ articles }: { articles: SearchItem[] }) {
       event.preventDefault();
       setActiveIndex((i) => (i <= 0 ? results.length - 1 : i - 1));
     } else if (event.key === "Enter") {
-      const item = results[activeIndex] ?? results[0];
-      if (item) {
+      const entry = results[activeIndex] ?? results[0];
+      if (entry) {
         event.preventDefault();
-        goTo(item);
+        goTo(entry.article);
       }
     }
   }
@@ -259,12 +259,12 @@ export function Search({ articles }: { articles: SearchItem[] }) {
         <div className="search-results">
           <span className="sr-only" role="status" aria-live="polite">
             {results.length > 0
-              ? `${results.length}개의 검색 결과`
+              ? `${results.length}개의 ${results[0].fuzzy ? "유사 " : ""}검색 결과`
               : "검색 결과가 없습니다"}
           </span>
           {results.length > 0 ? (
             <div id="search-listbox" role="listbox" aria-label="검색 결과">
-              {results.map((article, index) => (
+              {results.map(({ article, fuzzy }, index) => (
                 <Link
                   href={`/wiki/${article.slug}`}
                   className="search-result"
@@ -275,8 +275,15 @@ export function Search({ articles }: { articles: SearchItem[] }) {
                   onClick={() => commitRecent(query)}
                 >
                   <span>{article.category}</span>
-                  <strong>{highlight(article.title, normalized)}</strong>
-                  <p>{highlight(article.summary, normalized)}</p>
+                  <strong>
+                    {fuzzy ? article.title : highlight(article.title, normalized)}
+                    {fuzzy && <em className="search-approx">유사</em>}
+                  </strong>
+                  <p>
+                    {fuzzy
+                      ? article.summary
+                      : highlight(article.summary, normalized)}
+                  </p>
                 </Link>
               ))}
             </div>

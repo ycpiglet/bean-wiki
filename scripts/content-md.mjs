@@ -73,6 +73,13 @@ export function markdownToArticle(source) {
     let points;
     for (const b of blocks) {
       if (b.every((l) => l.startsWith("- "))) {
+        // The Article model has ONE points list per section. A silent overwrite
+        // would lose content, so fail loudly instead.
+        if (points) {
+          throw new Error(
+            `section "${cur.id}" has more than one bullet list; merge them into one`,
+          );
+        }
         points = b.map((l) => l.slice(2));
       } else {
         paragraphs.push(b.join("\n"));
@@ -86,6 +93,13 @@ export function markdownToArticle(source) {
   for (const line of bodyBlock.split("\n")) {
     const h = line.match(/^## (.+?) \{#([\w-]+)\}$/);
     if (h) {
+      // Reject ambiguous titles: "## A {#x} B {#y}" would silently parse the
+      // title as "A {#x} B" via regex backtracking.
+      if (h[1].includes("{#")) {
+        throw new Error(
+          `section title may not contain "{#" (line: ${line})`,
+        );
+      }
       flush();
       cur = { id: h[2], title: h[1], paragraphs: [] };
       buf = [];

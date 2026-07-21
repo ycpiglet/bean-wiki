@@ -2,7 +2,9 @@
 // while online: pages are network-first (fall back to cache when offline),
 // static assets are cache-first (Next content-hashes them, so this is safe).
 const CACHE = "bean-wiki-v1";
-const PRECACHE = ["/", "/manifest.webmanifest"];
+// Keep the precache minimal: cache.addAll is all-or-nothing, so every extra
+// URL is another way for the whole install to fail.
+const PRECACHE = ["/"];
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -41,8 +43,10 @@ self.addEventListener("fetch", (event) => {
         (cached) =>
           cached ||
           fetch(request).then((response) => {
-            const copy = response.clone();
-            caches.open(CACHE).then((cache) => cache.put(request, copy));
+            if (response.ok) {
+              const copy = response.clone();
+              caches.open(CACHE).then((cache) => cache.put(request, copy));
+            }
             return response;
           }),
       ),
@@ -58,8 +62,10 @@ self.addEventListener("fetch", (event) => {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE).then((cache) => cache.put(request, copy));
+          if (response.ok) {
+            const copy = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(request, copy));
+          }
           return response;
         })
         .catch(() =>
