@@ -75,10 +75,10 @@
 - ✅ [S] 인쇄 스타일 — `@media print`
 - ✅ [M] 공유 버튼 — X·LinkedIn·링크 복사
 - ✅ [M] PWA — manifest(설치 가능) + 오프라인 서비스 워커([public/sw.js](public/sw.js))
-- 🔨 [L] i18n — 기반 구현(`src/i18n/` 사전 + `getDictionary()`, 크롬 배선); `[lang]` 라우팅과 콘텐츠 번역은 대상 로케일 확정 시([docs/I18N.md](docs/I18N.md))
+- ✅ [L] i18n — 영어 로케일 완성: `/en` 라우트(홈·문서·용어집·분야·개인정보), 12편 번역, 로케일 파사드, 언어 전환기, hreflang·사이트맵([docs/I18N.md](docs/I18N.md))
 - ✅ [S] 접근성 마무리 — 브레드크럼 `aria-hidden`, 목차 터치 타겟, 앵커 오프셋
 
-## 남은 항목 (다음 후보)
+## 남은 항목
 
-- ⬜ i18n 이행 — 영어 등 실제 대상 로케일이 정해지면 착수(설계는 완료; UI 문자열 추출부터). 현재는 콘텐츠·UI가 한국어뿐이라 라우팅/사전 인프라만 넣으면 반쪽 기능이 되어 보류.
-- ⬜ CI 활성화 — [docs/ci-workflow.yml.example](docs/ci-workflow.yml.example)를 `workflow` 스코프 토큰으로 `.github/workflows/ci.yml`에 복사
+- ⬜ **CI 활성화** — 자격증명 제약으로만 막힘. 자동화 토큰에 GitHub `workflow` 스코프가 없어 `.github/workflows/`에 푸시·생성이 불가(git push와 REST API 모두 확인). [docs/ci-workflow.yml.example](docs/ci-workflow.yml.example)를 `workflow` 스코프 토큰으로 `.github/workflows/ci.yml`에 복사하거나 GitHub 웹 UI로 추가하면 즉시 동작.
+- ⬜ 영어 번역 사람 검수 — 현재 번역은 원문(한국어) 기반이며 문서에 출처를 명시. 정확도 검수는 상시 환영.
