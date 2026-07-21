@@ -1,6 +1,13 @@
 import Link from "next/link";
 import { Search } from "@/components/search";
-import { articles, categories } from "@/lib/content";
+import { ThemeToggle } from "@/components/theme-toggle";
+import {
+  articleBodyText,
+  articles,
+  categories,
+  categoryArticleCount,
+  levelArticleCount,
+} from "@/lib/content";
 
 function BeanMark({ compact = false }: { compact?: boolean }) {
   return (
@@ -59,11 +66,22 @@ function TopicIcon({ name }: { name: string }) {
 }
 
 export default function Home() {
-  const searchItems = articles.map(({ slug, title, summary, category }) => ({
-    slug,
-    title,
-    summary,
-    category,
+  // Build the search index at render (SSG) so the client never re-lowercases
+  // the full corpus on every keystroke.
+  const searchItems = articles.map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    summary: article.summary,
+    category: article.category,
+    haystack: [
+      article.title,
+      article.summary,
+      article.category,
+      (article.tags ?? []).join(" "),
+      articleBodyText(article),
+    ]
+      .join(" ")
+      .toLocaleLowerCase("ko"),
   }));
 
   return (
@@ -76,16 +94,20 @@ export default function Home() {
         </Link>
         <nav aria-label="주 메뉴">
           <a href="#topics">둘러보기</a>
-          <a href="#path">지식 지도</a>
+          <Link href="/wiki">문서</Link>
+          <Link href="/glossary">용어집</Link>
           <a href="#contribute">기여하기</a>
         </nav>
-        <a className="header-search" href="#search">
-          <svg aria-hidden="true" viewBox="0 0 20 20">
-            <circle cx="9" cy="9" r="5.5" />
-            <path d="m13 13 4 4" />
-          </svg>
-          검색
-        </a>
+        <div className="header-tools">
+          <a className="header-search" href="#search">
+            <svg aria-hidden="true" viewBox="0 0 20 20">
+              <circle cx="9" cy="9" r="5.5" />
+              <path d="m13 13 4 4" />
+            </svg>
+            검색
+          </a>
+          <ThemeToggle />
+        </div>
       </header>
 
       <section className="hero shell">
@@ -149,14 +171,14 @@ export default function Home() {
         </div>
 
         <div className="topic-grid">
-          {categories.map((category) => (
-            <a
+          {categories.map((category, index) => (
+            <Link
               className={`topic-card accent-${category.accent}`}
-              href="#featured"
-              key={category.name}
+              href={`/topics/${category.slug}`}
+              key={category.slug}
             >
               <span className="topic-number">
-                {String(categories.indexOf(category) + 1).padStart(2, "0")}
+                {String(index + 1).padStart(2, "0")}
               </span>
               <span className="topic-icon">
                 <TopicIcon name={category.icon} />
@@ -165,11 +187,13 @@ export default function Home() {
                 <h3>{category.name}</h3>
                 <p>{category.description}</p>
               </div>
-              <span className="topic-meta">문서 {category.count}</span>
+              <span className="topic-meta">
+                문서 {categoryArticleCount(category.name)}
+              </span>
               <span className="topic-arrow">
                 <ArrowIcon />
               </span>
-            </a>
+            </Link>
           ))}
         </div>
       </section>
@@ -181,7 +205,7 @@ export default function Home() {
               <span className="section-index">02</span>
               <h2>지금 많이 읽는 문서</h2>
             </div>
-            <Link href="/wiki/coffee-cherry-to-bean" className="text-link">
+            <Link href="/wiki" className="text-link">
               모든 문서 보기 <ArrowIcon />
             </Link>
           </div>
@@ -237,23 +261,23 @@ export default function Home() {
         </div>
 
         <div className="path-grid">
-          <Link href="/wiki/coffee-cherry-to-bean" className="path-card">
+          <Link href="/wiki?level=입문" className="path-card">
             <span className="path-level">STARTER</span>
             <strong>커피를 처음 알아간다면</strong>
             <p>열매와 씨앗, 로스팅과 추출의 전체 흐름부터 시작합니다.</p>
-            <span>입문 문서 18개 <ArrowIcon /></span>
+            <span>입문 문서 {levelArticleCount("입문")}개 <ArrowIcon /></span>
           </Link>
-          <Link href="/wiki/extraction-basics" className="path-card path-card-dark">
+          <Link href="/wiki?level=중급" className="path-card path-card-dark">
             <span className="path-level">BARISTA</span>
             <strong>맛을 안정적으로 만들고 싶다면</strong>
             <p>추출 변수와 물, 장비 관리의 관계를 체계적으로 연결합니다.</p>
-            <span>실무 문서 34개 <ArrowIcon /></span>
+            <span>중급 문서 {levelArticleCount("중급")}개 <ArrowIcon /></span>
           </Link>
-          <Link href="/wiki/roast-development" className="path-card">
+          <Link href="/wiki?level=전문" className="path-card">
             <span className="path-level">PROFESSIONAL</span>
             <strong>평가와 설계를 깊이 다룬다면</strong>
             <p>생두 물성, 열 전달, 센서리와 품질 관리로 확장합니다.</p>
-            <span>전문 문서 29개 <ArrowIcon /></span>
+            <span>전문 문서 {levelArticleCount("전문")}개 <ArrowIcon /></span>
           </Link>
         </div>
       </section>
