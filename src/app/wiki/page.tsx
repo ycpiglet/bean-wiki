@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { Suspense } from "react";
 import { ArticleBrowser } from "@/components/article-browser";
+import { BeanMark } from "@/components/bean-logo";
+import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { articles, categories, levels } from "@/lib/content";
 
@@ -9,16 +11,8 @@ export const metadata: Metadata = {
   title: "모든 문서",
   description:
     "Bean Wiki의 모든 커피 문서를 분야와 난이도로 탐색하세요.",
+  alternates: { canonical: "/wiki" },
 };
-
-function BeanLogo() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 48 48">
-      <path d="M34.7 7.7C27.6 3.6 17 7.4 11.2 16.3 5.4 25.2 6.8 36 14 40.5c7.2 4.5 17.7.9 23.6-8 5.8-8.9 4.3-20.5-2.9-24.8Z" />
-      <path d="M34.5 8.4c-2.3 7.9-8.7 9.2-13 14.6-4.1 5.2-4.9 10.3-4.2 16.2" />
-    </svg>
-  );
-}
 
 export default function WikiIndex() {
   const browseArticles = articles.map(
@@ -38,9 +32,7 @@ export default function WikiIndex() {
     <main className="article-page">
       <header className="article-header shell">
         <Link href="/" className="brand" aria-label="Bean Wiki 홈">
-          <span className="bean-mark bean-mark-small">
-            <BeanLogo />
-          </span>
+          <BeanMark compact />
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
@@ -49,6 +41,7 @@ export default function WikiIndex() {
             ← 홈으로
           </Link>
           <ThemeToggle />
+          <MobileNav />
         </div>
       </header>
 

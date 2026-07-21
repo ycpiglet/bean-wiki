@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { BeanMark } from "@/components/bean-logo";
+import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { allTags, articlesByTag } from "@/lib/content";
 
@@ -24,19 +26,17 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { tag: rawTag } = await props.params;
   const tag = decodeTag(rawTag);
+  const canonical = `/tags/${encodeURIComponent(tag)}`;
   return {
     title: `#${tag}`,
     description: `"${tag}" 태그가 붙은 커피 문서 모음`,
+    alternates: { canonical },
+    openGraph: {
+      title: `#${tag}`,
+      description: `"${tag}" 태그가 붙은 커피 문서 모음`,
+      url: canonical,
+    },
   };
-}
-
-function BeanLogo() {
-  return (
-    <svg aria-hidden="true" viewBox="0 0 48 48">
-      <path d="M34.7 7.7C27.6 3.6 17 7.4 11.2 16.3 5.4 25.2 6.8 36 14 40.5c7.2 4.5 17.7.9 23.6-8 5.8-8.9 4.3-20.5-2.9-24.8Z" />
-      <path d="M34.5 8.4c-2.3 7.9-8.7 9.2-13 14.6-4.1 5.2-4.9 10.3-4.2 16.2" />
-    </svg>
-  );
 }
 
 export default async function TagPage(props: PageProps<"/tags/[tag]">) {
@@ -50,9 +50,7 @@ export default async function TagPage(props: PageProps<"/tags/[tag]">) {
     <main className="article-page">
       <header className="article-header shell">
         <Link href="/" className="brand" aria-label="Bean Wiki 홈">
-          <span className="bean-mark bean-mark-small">
-            <BeanLogo />
-          </span>
+          <BeanMark compact />
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
@@ -61,15 +59,16 @@ export default async function TagPage(props: PageProps<"/tags/[tag]">) {
             모든 문서 →
           </Link>
           <ThemeToggle />
+          <MobileNav />
         </div>
       </header>
 
       <div className="browse-shell shell">
         <div className="breadcrumbs">
           <Link href="/">홈</Link>
-          <span>/</span>
+          <span aria-hidden="true">/</span>
           <Link href="/wiki">문서</Link>
-          <span>/</span>
+          <span aria-hidden="true">/</span>
           <span>#{tag}</span>
         </div>
 

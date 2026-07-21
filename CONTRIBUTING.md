@@ -39,19 +39,35 @@ src/content/
 | `tags` | 태그(선택) | 한국어, 다른 문서와 겹치도록 |
 | `history` | 개정 이력(선택) | `{ date, note }[]`, 최신순 |
 
-각 문서 파일은 `satisfies Article`로 검증되므로, 필드 이름이나 `level` 값에
-오타가 있으면 `npm run build` 단계에서 바로 잡힙니다.
+### 무엇이 자동으로 검증되나요
+
+- **`satisfies Article` (타입 체크)** — 필드 이름과 `level`·`accent`·`icon` 같은
+  리터럴 유니언 값의 오타를 잡습니다. `npm run build`에서 실패합니다.
+- **`npm run check-content`** — 타입 체크가 잡지 못하는 **참조 무결성**을 잡습니다:
+  `related` 슬러그가 실제로 존재하는지, `category`가 `categories.ts`의 이름과
+  정확히 일치하는지, `accent`가 분야 accent와 맞는지, 파일명이 slug와 같은지,
+  용어집 `category`·`related`가 유효한지, 분야마다 문서가 하나 이상 있는지.
+  `prebuild`로 연결되어 있어 `npm run build` 전에 자동 실행됩니다.
+
+즉, `related`에 오타를 내면 타입 체크는 통과하지만 `check-content`가 막습니다.
 
 ## 문서 추가
 
-1. `src/content/articles/<slug>.ts` 파일을 만들고 기존 문서를 본떠 `Article`
-   객체를 `satisfies Article`로 default export 합니다.
-2. `history`에 최초 항목을 넣습니다:
-   `history: [{ date: "2026. 07. 20.", note: "문서 최초 작성" }]`.
-3. `src/content/articles/index.ts`에 import 한 줄과 배열 항목 한 줄을 추가합니다.
-   (배열 순서가 목록·사이트맵 순서를 결정합니다.)
-4. `related`를 상호 연결하고, `accent`를 분야와 맞춥니다.
-5. `npm run dev`로 `/wiki/<slug>`를 확인합니다.
+가장 빠른 방법은 스캐폴딩입니다:
+
+```bash
+npm run new-article -- --slug my-article --category "추출" --accent blue
+```
+
+이 명령이 `src/content/articles/my-article.ts` 템플릿을 만들고
+`index.ts`에 자동 등록합니다. 이후:
+
+1. 생성된 파일의 필드(제목, 요약, 본문, `related`, `tags`, `history`)를 채웁니다.
+2. `related`를 상호 연결하고, `accent`를 분야와 맞춥니다.
+3. `npm run check-content`로 참조를 검증하고, `npm run dev`로 `/wiki/<slug>`를 확인합니다.
+
+수동으로 추가할 때는 파일을 만든 뒤 `index.ts`에 import 한 줄과 배열 항목 한 줄을
+직접 추가합니다(배열 순서가 목록·사이트맵 순서를 결정합니다).
 
 ## 문서 수정
 

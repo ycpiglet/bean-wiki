@@ -1,3 +1,12 @@
+export type Accent = "olive" | "sage" | "copper" | "blue" | "berry" | "sand";
+export type CategoryIcon =
+  | "seed"
+  | "mountain"
+  | "flame"
+  | "drop"
+  | "nose"
+  | "cup";
+
 export type ArticleSection = {
   id: string;
   title: string;
@@ -18,7 +27,7 @@ export type Article = {
   level: "입문" | "중급" | "전문";
   readingTime: string;
   updatedAt: string;
-  accent: string;
+  accent: Accent;
   fact: string;
   sections: ArticleSection[];
   related: string[];
@@ -30,8 +39,8 @@ export type Category = {
   slug: string;
   name: string;
   description: string;
-  icon: string;
-  accent: string;
+  icon: CategoryIcon;
+  accent: Accent;
 };
 
 export type GlossaryTerm = {

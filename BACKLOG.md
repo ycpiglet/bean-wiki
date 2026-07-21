@@ -31,54 +31,56 @@
 - ✅ 검색 고도화 — 본문 검색, 일치 강조, 최근 검색 기록
 - 🔨 Vercel 배포 및 도메인 연결 — 준비 완료([DEPLOY.md](DEPLOY.md)); 대화형 인증 후 배포
 
-## Sprint 4 — 품질·신뢰 기반 (P1)
+## Sprint 4 — 품질·신뢰 기반 (P1) — ✅ 완료
 
-> 2026-07-21 전체 리뷰(코드·UX/접근성·성능/SEO·콘텐츠·아키텍처·운영 6개 차원)에서 도출.
+> 2026-07-21 전체 리뷰(6개 차원)에서 도출 → 같은 날 구현.
 
-### 접근성·모바일 (실사용 차단급)
-- ⬜ [P1·M] **모바일 내비게이션** — 980px 이하에서 헤더 nav가 `display:none`이라 홈 외 페이지에서 `/wiki`·`/glossary`로 갈 수 없음. 햄버거/드로어 구현. _완료 기준: 680px·980px 뷰포트에서 모든 주 메뉴 접근 가능_
-- ⬜ [P1·M] **검색 결과 키보드 탐색** — ↑/↓로 결과 이동, Enter 선택, Esc 닫기, `aria-activedescendant` 반영. _완료 기준: 마우스 없이 검색→문서 이동 가능_
-- ⬜ [P1·S] **포커스 인디케이터** — 필터 칩·카드·버튼·링크에 `:focus-visible` 아웃라인 추가 (현재 hover만 존재). _완료 기준: Tab 순회 시 항상 포커스 위치가 보임_
-- ⬜ [P1·S] **컬러 대비 WCAG AA** — 하드코딩 회색(#8d9188, #858980, #898e86, #a4a8a1, #9a9f96 등)이 3–4:1로 미달. 토큰 기반으로 교체. _완료 기준: 라이트/다크 모두 본문·보조 텍스트 4.5:1 이상_
+### 접근성·모바일
+- ✅ [M] 모바일 내비게이션 — 햄버거 드로어(`MobileNav`)를 모든 헤더에, ≤980px에서 노출
+- ✅ [M] 검색 결과 키보드 탐색 — ↑/↓·Enter·Esc + combobox/listbox ARIA
+- ✅ [S] 포커스 인디케이터 — 링크·버튼·카드에 `:focus-visible` 아웃라인
+- ✅ [S] 컬러 대비 WCAG AA — 하드코딩 회색 12개를 `var(--muted)`로 토큰화
 
 ### SEO·배포 안전성
-- ⬜ [P1·S] **사이트맵 보완** — `/glossary`와 태그 페이지 전체(`allTags()`) 누락 → 추가. `lastModified: new Date()`가 매 빌드 갱신되어 거짓 업데이트 신호 → 문서 `updatedAt` 기반으로 고정. _완료 기준: sitemap.xml에 글로서리+태그 포함, 빌드 반복 시 lastmod 불변_
-- ⬜ [P1·M] **OG 이미지·파비콘 브랜딩** — og:image 부재로 소셜 공유 미리보기 없음, 파비콘은 create-next-app 기본값. 1200×630 OG 이미지와 빈(bean) 파비콘 제작. _완료 기준: 링크 공유 미리보기에 이미지 표시_
-- ⬜ [P1·S] **사이트 오리진 상수화** — `https://bean-wiki.vercel.app`이 layout/sitemap/robots 3곳에 하드코딩. `NEXT_PUBLIC_SITE_URL` 또는 공유 상수로 통합. _완료 기준: 도메인 변경이 한 곳 수정으로 완결_
-- ⬜ [P1·S] **LICENSE + package.json 메타** — "OPEN KNOWLEDGE" 표방하나 라이선스 없음. 콘텐츠 CC-BY-4.0 / 코드 MIT 등 선택해 LICENSE 추가, package.json에 description·license·repository 기입. _완료 기준: 저장소 루트에 LICENSE 존재_
+- ✅ [S] 사이트맵 보완 — `/glossary`·태그 전체 포함, `lastModified`를 콘텐츠 날짜 기반으로 고정
+- ✅ [M] OG 이미지·파비콘 — `opengraph-image.tsx`(site-wide), `icon.svg` 빈 파비콘
+- ✅ [S] 사이트 오리진 상수화 — `src/lib/site.ts` `SITE_URL`(`NEXT_PUBLIC_SITE_URL` 오버라이드)
+- ✅ [S] LICENSE + package.json 메타 — MIT(코드)/CC-BY-4.0(콘텐츠), 메타 필드 추가
 
-### 콘텐츠 (커버리지 공백)
-- ⬜ [P1·M] **로스팅 입문 문서** — 로스팅 분야에 입문 문서가 없음(중급 1편뿐). '원두 색상과 로스팅 정도'(라이트/미디엄/다크, 1차·2차 크랙) 신규 작성, roast-development와 상호 연결. _완료 기준: `/topics/roasting`에 입문 문서 노출_
-- ⬜ [P1·M] **용어집 확장 (+15 용어)** — 13개로는 초보 검색 수요 미충족. 미분·바디·라떼아트·오버/언더추출·배전도·품종 등 추가, 분야 균형 맞춤. _완료 기준: 총 28개 이상, 6개 분야 각 3개 이상_
-- ⬜ [P1·S] **accent/icon 리터럴 유니언 타입** — `accent: string` → `"olive"|"sage"|…` 유니언으로 오타를 컴파일 타임에 차단. _완료 기준: 잘못된 accent 입력 시 빌드 실패_
+### 콘텐츠
+- ✅ [M] 로스팅 입문 문서 — `roasting-basics`
+- ✅ [M] 용어집 확장 — 13 → 28개(6개 분야 각 3개 이상)
+- ✅ [S] accent/icon 리터럴 유니언 타입
 
-## Sprint 5 — 확장·자동화 (P2)
+## Sprint 5 — 확장·자동화 (P2) — ✅ 완료
 
-### 기여 워크플로
-- ⬜ [P2·M] **콘텐츠 무결성 검증 스크립트** (`npm run check-content`) — related 슬러그 실재 여부, 카테고리 이름 일치, accent-분야 일치, 고아 용어 검출. 현재는 오타가 조용히 링크 누락으로 이어짐. prebuild 연결. _완료 기준: 위반 시 exit 1과 원인 메시지_
-- ⬜ [P2·M] **GitHub Actions CI** — PR마다 lint+build 게이트. _완료 기준: 실패 PR 병합 차단_
-- ⬜ [P2·S] **CONTRIBUTING.md 검증 범위 명확화** — `satisfies` 검증이 참조 무결성(related 슬러그, 카테고리명)은 못 잡는다는 사실 명시. check-content 안내 추가.
+- ✅ [M] `npm run check-content` — 참조 무결성 검증, prebuild 게이트
+- 🔨 [M] GitHub Actions CI — 워크플로 작성 완료([docs/ci-workflow.yml.example](docs/ci-workflow.yml.example)); `workflow` 스코프 토큰으로 `.github/workflows/ci.yml`에 복사 시 활성화
+- ✅ [S] CONTRIBUTING.md 검증 범위 명확화 + 스캐폴딩 안내
+- ✅ [M] canonical URL — 동적 페이지 `alternates.canonical`
+- ✅ [L] JSON-LD — Article·BreadcrumbList(문서), DefinedTermSet(용어집)
+- ✅ [M] RSS 피드 — `/feed.xml`
+- ✅ [S] 개인정보 페이지 — `/privacy`
+- ✅ [S] 추출 문서 실전 수치 — 수율 18–22%, TDS 1.15–1.45%
+- ✅ [M] 커피 기초 신규 문서 — `bean-structure-compounds`
+- ✅ [S] 다크 모드 잔여 정리 — search-suggestions 토큰화, 앵커 scroll-margin
+- ✅ [S] BeanLogo 공유 컴포넌트 — `src/components/bean-logo.tsx`
 
-### SEO·구독
-- ⬜ [P2·M] **canonical URL** — 동적 페이지(generateMetadata)에 `alternates.canonical` 추가.
-- ⬜ [P2·L] **JSON-LD 구조화 데이터** — Article·BreadcrumbList(문서), DefinedTermSet(용어집). _완료 기준: Google Rich Results Test 통과_
-- ⬜ [P2·M] **RSS/Atom 피드** — 새 문서 구독 수단 제공 (`/feed.xml`).
-- ⬜ [P2·S] **개인정보/분석 정책 페이지** — localStorage(테마·최근 검색) 사용 명시, 분석 도구 도입 시 고지 기반 마련.
+## Sprint 6 — 심화 (P3) — 대부분 완료
 
-### 콘텐츠 개선
-- ⬜ [P2·S] **추출 기본 문서에 실전 수치** — 수율 18–22%, TDS 1.15–1.45% 등 업계 통용 범위를 조건부 서술로 추가.
-- ⬜ [P2·M] **커피 기초 신규 문서** — '원두의 구조와 향미 성분' (입문): 분야 깊이 보강, 로스팅·추출 문서의 기초 역할.
-- ⬜ [P2·S] **다크 모드 잔여 정리** — `.search-suggestions` 하드코딩 색상 토큰화, 용어집 앵커 `scroll-margin` 모바일 보정.
-- ⬜ [P2·S] **BeanLogo 공유 컴포넌트화** — 동일 SVG가 6개 파일에 중복. `src/components/bean-logo.tsx`로 추출.
+- 🔨 [L] 마크다운/MDX 전환 — 설계 완료([docs/MDX-MIGRATION.md](docs/MDX-MIGRATION.md)); 이행 대기
+- 🔨 [M] 검색 고도화 — ✅ 초성 검색·모든 매칭 하이라이트 / ⬜ 오타 허용(퍼지)
+- ✅ [M] 문서 편집 워크플로 — 문서별 GitHub 편집 딥링크 + `npm run new-article` 스캐폴딩
+- ✅ [M] 품종 콘텐츠 — `coffee-varieties` 문서 + 용어집 '품종'
+- ✅ [S] 인쇄 스타일 — `@media print`
+- ✅ [M] 공유 버튼 — X·LinkedIn·링크 복사
+- 🔨 [M] PWA — ✅ manifest(설치 가능) / ⬜ 오프라인 서비스 워커
+- 🔨 [L] i18n — 설계 완료([docs/I18N.md](docs/I18N.md)); 이행 대기
+- ✅ [S] 접근성 마무리 — 브레드크럼 `aria-hidden`, 목차 터치 타겟, 앵커 오프셋
 
-## Sprint 6 — 이후 (P3)
+## 남은 항목 (다음 후보)
 
-- ⬜ [P3·L] **마크다운/MDX 전환 설계·이행** — 필드↔frontmatter 매핑 설계 문서 먼저, 파사드 뒤에서 교체 (비개발자 기여 대비)
-- ⬜ [P3·M] **검색 인덱스 고도화** — 초성 검색, 오타 허용, 모든 매칭 하이라이트
-- ⬜ [P3·M] **문서 편집 제안 워크플로** — 문서별 "GitHub에서 편집" 딥링크, `npm run new-article` 스캐폴딩
-- ⬜ [P3·M] **품종(Varietal) 콘텐츠** — 종 vs 품종 구분 문서 또는 용어 추가 (Bourbon, Typica, Geisha)
-- ⬜ [P3·S] **인쇄 스타일** — `@media print`: 내비 숨김, 배경 제거
-- ⬜ [P3·M] **공유 버튼** — Twitter·LinkedIn·카카오톡
-- ⬜ [P3·M] **PWA 기본** — manifest + 오프라인 캐시 (정적 사이트라 적합)
-- ⬜ [P3·L] **i18n 경로 설계** — 영문 확장 대비 콘텐츠 구조 검토
-- ⬜ [P3·S] **접근성 마무리** — 브레드크럼 구분자 `aria-hidden`, 목차 터치 타겟 44px, 검색 제안 시맨틱 그룹화
+- ⬜ 마크다운/MDX 이행 (설계 문서 기준 파일럿부터)
+- ⬜ 검색 오타 허용(퍼지 매칭)
+- ⬜ PWA 오프라인 서비스 워커
+- ⬜ i18n 이행 (UI 문자열 추출부터)
