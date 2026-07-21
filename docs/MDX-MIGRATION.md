@@ -1,6 +1,12 @@
 # 콘텐츠 마크다운/MDX 전환 설계
 
-> 상태: 설계(제안). 착수 전 이 문서로 합의합니다. 관련 백로그: Sprint 6.
+> 상태: ✅ **구현 완료** (2026-07-21). 아래 설계 중 접근 (b)의 **빌드타임 코드젠**
+> 변형을 채택했습니다: `.md` → 생성된 `src/content/articles/index.ts`(순수 데이터).
+> 런타임 `fs` 없이 번들되므로 클라이언트 임포트(`mobile-nav`)와 온디맨드 `/tags`
+> 경로에서도 안전합니다. 이행은 `.ts`→`.md` 자동 변환 + 왕복 동등성 게이트로
+> 무손실 검증했습니다. 파서/직렬화기: `scripts/content-md.mjs`, 생성기:
+> `scripts/build-content.mjs`(predev/prebuild), 검증: `scripts/check-content.mjs`.
+> 아래는 당시 설계 기록입니다.
 
 ## 목표
 
