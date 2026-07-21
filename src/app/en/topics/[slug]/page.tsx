@@ -8,8 +8,11 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import {
   articlesByCategory,
   categories,
+  categoryDescription,
+  categoryLabel,
   getCategory,
 } from "@/lib/content";
+import { getDictionary } from "@/i18n";
 
 export const dynamicParams = false;
 
@@ -18,108 +21,108 @@ export function generateStaticParams() {
 }
 
 export async function generateMetadata(
-  props: PageProps<"/topics/[slug]">,
+  props: PageProps<"/en/topics/[slug]">,
 ): Promise<Metadata> {
   const { slug } = await props.params;
   const category = getCategory(slug);
-
   if (!category) return {};
-
   return {
-    title: category.name,
-    description: category.description,
+    title: categoryLabel(category.name, "en"),
+    description: categoryDescription(slug, "en"),
     alternates: {
-      canonical: `/topics/${slug}`,
+      canonical: `/en/topics/${slug}`,
       languages: { ko: `/topics/${slug}`, en: `/en/topics/${slug}` },
     },
     openGraph: {
-      title: category.name,
-      description: category.description,
-      url: `/topics/${slug}`,
+      title: categoryLabel(category.name, "en"),
+      description: categoryDescription(slug, "en"),
+      url: `/en/topics/${slug}`,
+      locale: "en_US",
     },
   };
 }
 
-export default async function TopicPage(props: PageProps<"/topics/[slug]">) {
+export default async function EnTopicPage(props: PageProps<"/en/topics/[slug]">) {
   const { slug } = await props.params;
   const category = getCategory(slug);
-
   if (!category) notFound();
 
-  const topicArticles = articlesByCategory(category.name);
+  const levels = getDictionary("en").levels;
+  const topicArticles = articlesByCategory(category.name, "en");
+  const label = categoryLabel(category.name, "en");
 
   return (
-    <main className="article-page">
+    <main className="article-page" lang="en">
       <header className="article-header shell">
-        <Link href="/" className="brand" aria-label="Bean Wiki 홈">
+        <Link href="/en" className="brand" aria-label="Bean Wiki home">
           <BeanMark compact />
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
         <div className="header-tools">
-          <Link href="/wiki" className="back-link">
-            모든 문서 →
+          <Link href="/en/wiki" className="back-link">
+            All articles →
           </Link>
-          <LanguageSwitcher locale="ko" href={`/en/topics/${slug}`} />
+          <LanguageSwitcher locale="en" href={`/topics/${slug}`} />
           <ThemeToggle />
-          <MobileNav />
+          <MobileNav locale="en" />
         </div>
       </header>
 
       <div className="browse-shell shell">
         <div className="breadcrumbs">
-          <Link href="/">홈</Link>
+          <Link href="/en">Home</Link>
           <span aria-hidden="true">/</span>
-          <Link href="/wiki">문서</Link>
+          <Link href="/en/wiki">Articles</Link>
           <span aria-hidden="true">/</span>
-          <span>{category.name}</span>
+          <span>{label}</span>
         </div>
 
         <div className={`section-heading accent-${category.accent}`}>
           <div>
             <span className="section-index">TOPIC</span>
-            <h2>{category.name}</h2>
+            <h2>{label}</h2>
           </div>
-          <p>{category.description}</p>
+          <p>{categoryDescription(slug, "en")}</p>
         </div>
 
         {topicArticles.length > 0 ? (
           <div className="browse-grid">
             {topicArticles.map((article) => (
               <Link
-                href={`/wiki/${article.slug}`}
+                href={`/en/wiki/${article.slug}`}
                 key={article.slug}
                 className="browse-card"
               >
                 <div className="browse-card-top">
-                  <span className="article-category">{article.category}</span>
+                  <span className="article-category">{label}</span>
                   <span className={`level-badge accent-${article.accent}`}>
-                    {article.level}
+                    {levels[article.level] ?? article.level}
                   </span>
                 </div>
                 <h3>{article.title}</h3>
                 <p>{article.summary}</p>
                 <span className="read-meta">
-                  읽는 시간 {article.readingTime}
+                  Reading time {article.readingTime}
                 </span>
               </Link>
             ))}
           </div>
         ) : (
           <div className="browse-empty">
-            이 분야의 첫 문서를 준비하고 있습니다. 함께 채워주세요.
+            The first article for this topic is on the way.
           </div>
         )}
       </div>
 
       <footer className="article-footer shell">
-        <p>Bean Wiki · 함께 만드는 열린 커피 백과사전</p>
+        <p>Bean Wiki · an open, community-built coffee encyclopedia</p>
         <a
           href="https://github.com/ycpiglet/bean-wiki"
           target="_blank"
           rel="noreferrer"
         >
-          이 위키에 기여하기 ↗
+          Contribute to this wiki ↗
         </a>
       </footer>
     </main>

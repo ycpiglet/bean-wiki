@@ -5,28 +5,39 @@ import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { getArticle, glossaryByCategory, glossaryTerms } from "@/lib/content";
+import {
+  categoryLabel,
+  getArticle,
+  getGlossaryTerms,
+  glossaryByCategory,
+} from "@/lib/content";
 import { SITE_NAME } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "용어집",
+  title: "Glossary",
   description:
-    "커피 현장에서 자주 쓰는 핵심 용어를 분야별로 한 줄 정의와 함께 정리했습니다.",
+    "Common coffee terms, defined in one line and grouped by topic.",
   alternates: {
-    canonical: "/glossary",
+    canonical: "/en/glossary",
     languages: { ko: "/glossary", en: "/en/glossary" },
+  },
+  openGraph: {
+    title: "Glossary",
+    description: "Common coffee terms, defined in one line and grouped by topic.",
+    url: "/en/glossary",
+    locale: "en_US",
   },
 };
 
-export default function GlossaryPage() {
-  const groups = glossaryByCategory();
+export default function EnGlossaryPage() {
+  const groups = glossaryByCategory("en");
 
   const termSetSchema = {
     "@context": "https://schema.org",
     "@type": "DefinedTermSet",
-    name: `${SITE_NAME} 용어집`,
-    inLanguage: "ko",
-    hasDefinedTerm: glossaryTerms.map((term) => ({
+    name: `${SITE_NAME} Glossary`,
+    inLanguage: "en",
+    hasDefinedTerm: getGlossaryTerms("en").map((term) => ({
       "@type": "DefinedTerm",
       name: term.term,
       description: term.definition,
@@ -34,50 +45,47 @@ export default function GlossaryPage() {
   };
 
   return (
-    <main className="article-page">
+    <main className="article-page" lang="en">
       <JsonLd data={termSetSchema} />
       <header className="article-header shell">
-        <Link href="/" className="brand" aria-label="Bean Wiki 홈">
+        <Link href="/en" className="brand" aria-label="Bean Wiki home">
           <BeanMark compact />
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
         <div className="header-tools">
-          <Link href="/" className="back-link">
-            ← 홈으로
+          <Link href="/en" className="back-link">
+            ← Home
           </Link>
-          <LanguageSwitcher locale="ko" href="/en/glossary" />
+          <LanguageSwitcher locale="en" href="/glossary" />
           <ThemeToggle />
-          <MobileNav />
+          <MobileNav locale="en" />
         </div>
       </header>
 
       <div className="browse-shell shell">
         <div className="breadcrumbs">
-          <Link href="/">홈</Link>
+          <Link href="/en">Home</Link>
           <span aria-hidden="true">/</span>
-          <span>용어집</span>
+          <span>Glossary</span>
         </div>
 
         <div className="section-heading">
           <div>
             <span className="section-index">GLOSSARY</span>
-            <h2>용어집</h2>
+            <h2>Glossary</h2>
           </div>
-          <p>
-            커피를 이야기할 때 자주 쓰는 용어를 분야별로 한 줄 정의와 함께
-            정리했습니다.
-          </p>
+          <p>Terms you&rsquo;ll hear around coffee, defined in one line, by topic.</p>
         </div>
 
-        <nav className="glossary-nav" aria-label="용어 분야 바로가기">
+        <nav className="glossary-nav" aria-label="Jump to topic">
           {groups.map((group) => (
             <a
               key={group.category.slug}
               href={`#${group.category.slug}`}
               className="filter-chip"
             >
-              {group.category.name}
+              {categoryLabel(group.category.name, "en")}
             </a>
           ))}
         </nav>
@@ -93,7 +101,7 @@ export default function GlossaryPage() {
                 <span className="section-index">
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h2>{group.category.name}</h2>
+                <h2>{categoryLabel(group.category.name, "en")}</h2>
               </div>
             </div>
 
@@ -108,13 +116,12 @@ export default function GlossaryPage() {
                   </dt>
                   <dd>
                     <p className="glossary-def">{term.definition}</p>
-                    {term.body && <p className="glossary-body">{term.body}</p>}
                     {term.related && term.related.length > 0 && (
                       <div className="glossary-related">
                         {term.related.map((slug) => {
-                          const linked = getArticle(slug);
+                          const linked = getArticle(slug, "en");
                           return linked ? (
-                            <Link key={slug} href={`/wiki/${slug}`}>
+                            <Link key={slug} href={`/en/wiki/${slug}`}>
                               {linked.title} →
                             </Link>
                           ) : null;
@@ -130,13 +137,13 @@ export default function GlossaryPage() {
       </div>
 
       <footer className="article-footer shell">
-        <p>Bean Wiki · 함께 만드는 열린 커피 백과사전</p>
+        <p>Bean Wiki · an open, community-built coffee encyclopedia</p>
         <a
           href="https://github.com/ycpiglet/bean-wiki"
           target="_blank"
           rel="noreferrer"
         >
-          이 위키에 기여하기 ↗
+          Contribute to this wiki ↗
         </a>
       </footer>
     </main>

@@ -25,6 +25,16 @@ export const ko = {
     clearRecent: "전체 지우기",
     approx: "유사",
   },
-} as const;
+  browse: {
+    category: "분야",
+    level: "난이도",
+    all: "전체",
+    count: (n: number) => `문서 ${n}편`,
+    readingTime: "읽는 시간",
+    empty:
+      "조건에 맞는 문서가 아직 없습니다. 필터를 바꾸거나 첫 문서를 작성해보세요.",
+  },
+  levels: { 입문: "입문", 중급: "중급", 전문: "전문" } as Record<string, string>,
+};
 
 export type Dictionary = typeof ko;

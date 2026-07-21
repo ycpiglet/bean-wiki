@@ -3,6 +3,9 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
+import { categoryLabel } from "@/lib/content";
+import { getDictionary } from "@/i18n";
+import type { Locale } from "@/i18n/config";
 
 type BrowseArticle = {
   slug: string;
@@ -23,15 +26,21 @@ export function ArticleBrowser({
   articles,
   categories,
   levels,
+  locale = "ko",
 }: {
   articles: BrowseArticle[];
   categories: BrowseCategory[];
   levels: string[];
+  locale?: Locale;
 }) {
+  const t = getDictionary(locale).browse;
+  const levelLabels = getDictionary(locale).levels;
+  const prefix = locale === "en" ? "/en" : "";
   const searchParams = useSearchParams();
 
   // Seed filters from the URL once (e.g. /wiki?cat=brewing&level=입문);
-  // afterwards the chips control the state locally.
+  // afterwards the chips control the state locally. Values stay canonical
+  // (Korean category name / level); only the labels are localized.
   const [category, setCategory] = useState(() => {
     const catSlug = searchParams.get("cat");
     const matched = categories.find((item) => item.slug === catSlug);
@@ -53,14 +62,14 @@ export function ArticleBrowser({
   return (
     <div className="browse">
       <div className="browse-filters">
-        <div className="filter-row" role="group" aria-label="분야 필터">
-          <span className="filter-label">분야</span>
+        <div className="filter-row" role="group" aria-label={t.category}>
+          <span className="filter-label">{t.category}</span>
           <button
             type="button"
             className={`filter-chip${category === "all" ? " is-active" : ""}`}
             onClick={() => setCategory("all")}
           >
-            전체
+            {t.all}
           </button>
           {categories.map((item) => (
             <button
@@ -69,19 +78,19 @@ export function ArticleBrowser({
               className={`filter-chip${category === item.name ? " is-active" : ""}`}
               onClick={() => setCategory(item.name)}
             >
-              {item.name}
+              {categoryLabel(item.name, locale)}
             </button>
           ))}
         </div>
 
-        <div className="filter-row" role="group" aria-label="난이도 필터">
-          <span className="filter-label">난이도</span>
+        <div className="filter-row" role="group" aria-label={t.level}>
+          <span className="filter-label">{t.level}</span>
           <button
             type="button"
             className={`filter-chip${level === "all" ? " is-active" : ""}`}
             onClick={() => setLevel("all")}
           >
-            전체
+            {t.all}
           </button>
           {levels.map((item) => (
             <button
@@ -90,40 +99,42 @@ export function ArticleBrowser({
               className={`filter-chip${level === item ? " is-active" : ""}`}
               onClick={() => setLevel(item)}
             >
-              {item}
+              {levelLabels[item] ?? item}
             </button>
           ))}
         </div>
       </div>
 
       <div className="browse-count" aria-live="polite">
-        문서 {results.length}편
+        {t.count(results.length)}
       </div>
 
       {results.length > 0 ? (
         <div className="browse-grid">
           {results.map((article) => (
             <Link
-              href={`/wiki/${article.slug}`}
+              href={`${prefix}/wiki/${article.slug}`}
               key={article.slug}
               className="browse-card"
             >
               <div className="browse-card-top">
-                <span className="article-category">{article.category}</span>
+                <span className="article-category">
+                  {categoryLabel(article.category, locale)}
+                </span>
                 <span className={`level-badge accent-${article.accent}`}>
-                  {article.level}
+                  {levelLabels[article.level] ?? article.level}
                 </span>
               </div>
               <h3>{article.title}</h3>
               <p>{article.summary}</p>
-              <span className="read-meta">읽는 시간 {article.readingTime}</span>
+              <span className="read-meta">
+                {t.readingTime} {article.readingTime}
+              </span>
             </Link>
           ))}
         </div>
       ) : (
-        <div className="browse-empty">
-          조건에 맞는 문서가 아직 없습니다. 필터를 바꾸거나 첫 문서를 작성해보세요.
-        </div>
+        <div className="browse-empty">{t.empty}</div>
       )}
     </div>
   );

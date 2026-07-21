@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { HtmlLangSync } from "@/components/html-lang-sync";
 import { ServiceWorkerRegister } from "@/components/sw-register";
 import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 import "./globals.css";
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
       </head>
       <body>
+        <HtmlLangSync />
         <ServiceWorkerRegister />
         {children}
       </body>

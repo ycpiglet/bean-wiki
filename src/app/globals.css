@@ -1384,6 +1384,20 @@ svg {
   align-items: center;
   gap: 16px;
 }
+.lang-switcher {
+  padding: 4px 9px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  transition: color 160ms ease, border-color 160ms ease;
+}
+.lang-switcher:hover {
+  color: var(--olive);
+  border-color: var(--olive);
+}
 .theme-toggle {
   display: inline-flex;
   align-items: center;

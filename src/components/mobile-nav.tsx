@@ -2,15 +2,16 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { categories } from "@/lib/content";
+import { categories, categoryLabel } from "@/lib/content";
 import { getDictionary } from "@/i18n";
-
-const t = getDictionary().mobileNav;
+import type { Locale } from "@/i18n/config";
 
 // Hamburger + slide-down drawer. Only shown at <=980px (CSS), where the desktop
 // header nav is hidden — without this, inner pages had no way to reach
 // /wiki or /glossary on mobile.
-export function MobileNav() {
+export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
+  const t = getDictionary(locale).mobileNav;
+  const prefix = locale === "en" ? "/en" : "";
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
 
@@ -46,26 +47,26 @@ export function MobileNav() {
       {open && (
         <div id="mobile-drawer" className="mobile-drawer">
           <nav aria-label={t.ariaLabel}>
-            <Link href="/" onClick={close}>
+            <Link href={locale === "en" ? "/en" : "/"} onClick={close}>
               {t.home}
             </Link>
-            <Link href="/wiki" onClick={close}>
+            <Link href={`${prefix}/wiki`} onClick={close}>
               {t.allDocs}
             </Link>
-            <Link href="/glossary" onClick={close}>
+            <Link href={`${prefix}/glossary`} onClick={close}>
               {t.glossary}
             </Link>
             <span className="mobile-drawer-label">{t.topics}</span>
             {categories.map((category) => (
               <Link
                 key={category.slug}
-                href={`/topics/${category.slug}`}
+                href={`${prefix}/topics/${category.slug}`}
                 onClick={close}
               >
-                {category.name}
+                {categoryLabel(category.name, locale)}
               </Link>
             ))}
-            <Link href="/privacy" onClick={close}>
+            <Link href={`${prefix}/privacy`} onClick={close}>
               {t.privacy}
             </Link>
             <a

@@ -7,128 +7,94 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileNav } from "@/components/mobile-nav";
 import { ShareButtons } from "@/components/share-buttons";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { articles, getArticle, getCategoryByName } from "@/lib/content";
+import { categoryLabel, getArticle, getArticles } from "@/lib/content";
 import { toISODate } from "@/lib/dates";
+import { getDictionary } from "@/i18n";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 
 export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return articles.map((article) => ({ slug: article.slug }));
+  return getArticles("en").map((article) => ({ slug: article.slug }));
 }
 
 export async function generateMetadata(
-  props: PageProps<"/wiki/[slug]">,
+  props: PageProps<"/en/wiki/[slug]">,
 ): Promise<Metadata> {
   const { slug } = await props.params;
-  const article = getArticle(slug);
-
+  const article = getArticle(slug, "en");
   if (!article) return {};
-
   const published = article.history?.length
     ? toISODate(article.history[article.history.length - 1].date)
     : toISODate(article.updatedAt);
-
   return {
     title: article.title,
     description: article.summary,
-    keywords: article.tags,
     alternates: {
-      canonical: `/wiki/${slug}`,
+      canonical: `/en/wiki/${slug}`,
       languages: { ko: `/wiki/${slug}`, en: `/en/wiki/${slug}` },
     },
     openGraph: {
       type: "article",
       title: article.title,
       description: article.summary,
-      url: `/wiki/${slug}`,
+      url: `/en/wiki/${slug}`,
+      locale: "en_US",
       publishedTime: published,
       modifiedTime: toISODate(article.updatedAt),
-      section: article.category,
-      tags: article.tags,
     },
   };
 }
 
-export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
+export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">) {
   const { slug } = await props.params;
-  const article = getArticle(slug);
-
+  const article = getArticle(slug, "en");
   if (!article) notFound();
 
+  const levels = getDictionary("en").levels;
   const related = article.related
-    .map((relatedSlug) => getArticle(relatedSlug))
+    .map((relatedSlug) => getArticle(relatedSlug, "en"))
     .filter((item) => item !== undefined);
-
   const history = article.history ?? [];
-  const categorySlug = getCategoryByName(article.category)?.slug;
-  const published = history.length
-    ? toISODate(history[history.length - 1].date)
-    : toISODate(article.updatedAt);
+  const catLabel = categoryLabel(article.category, "en");
 
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: article.title,
     description: article.summary,
-    inLanguage: "ko",
-    articleSection: article.category,
-    keywords: article.tags?.join(", "),
-    datePublished: published,
+    inLanguage: "en",
+    articleSection: catLabel,
+    datePublished: toISODate(article.updatedAt),
     dateModified: toISODate(article.updatedAt),
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME },
-    mainEntityOfPage: `${SITE_URL}/wiki/${slug}`,
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "홈", item: SITE_URL },
-      ...(categorySlug
-        ? [
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: article.category,
-              item: `${SITE_URL}/topics/${categorySlug}`,
-            },
-          ]
-        : []),
-      {
-        "@type": "ListItem",
-        position: categorySlug ? 3 : 2,
-        name: article.title,
-        item: `${SITE_URL}/wiki/${slug}`,
-      },
-    ],
+    mainEntityOfPage: `${SITE_URL}/en/wiki/${slug}`,
   };
 
   return (
-    <main className="article-page">
+    <main className="article-page" lang="en">
       <JsonLd data={articleSchema} />
-      <JsonLd data={breadcrumbSchema} />
       <header className="article-header shell">
-        <Link href="/" className="brand" aria-label="Bean Wiki 홈">
+        <Link href="/en" className="brand" aria-label="Bean Wiki home">
           <BeanMark compact />
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
         <div className="header-tools">
-          <Link href="/" className="back-link">
-            ← 모든 지식 둘러보기
+          <Link href="/en" className="back-link">
+            ← Browse all
           </Link>
-          <LanguageSwitcher locale="ko" href={`/en/wiki/${slug}`} />
+          <LanguageSwitcher locale="en" href={`/wiki/${slug}`} />
           <ThemeToggle />
-          <MobileNav />
+          <MobileNav locale="en" />
         </div>
       </header>
 
       <div className="article-shell shell">
         <aside className="article-aside">
-          <span>목차</span>
-          <nav aria-label="문서 목차">
+          <span>Contents</span>
+          <nav aria-label="Table of contents">
             {article.sections.map((section, index) => (
               <a href={`#${section.id}`} key={section.id}>
                 <small>{String(index + 1).padStart(2, "0")}</small>
@@ -138,40 +104,31 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
           </nav>
           <div className="article-license">
             <span>OPEN KNOWLEDGE</span>
-            <p>이 문서는 함께 검토하고 발전시키는 초안입니다.</p>
+            <p>English translation of the Korean original — help us refine it.</p>
           </div>
         </aside>
 
         <article className="wiki-article">
           <div className="breadcrumbs">
-            <Link href="/">홈</Link>
+            <Link href="/en">Home</Link>
             <span aria-hidden="true">/</span>
-            <span>{article.category}</span>
+            <span>{catLabel}</span>
           </div>
 
           <header className="wiki-title">
             <span className={`level-badge accent-${article.accent}`}>
-              {article.level}
+              {levels[article.level] ?? article.level}
             </span>
             <h1>{article.title}</h1>
             <p>{article.summary}</p>
             <div className="article-meta">
-              <span>읽는 시간 {article.readingTime}</span>
-              <span>최근 수정 {article.updatedAt}</span>
+              <span>Reading time {article.readingTime}</span>
+              <span>Updated {article.updatedAt}</span>
             </div>
-            {article.tags && article.tags.length > 0 && (
-              <div className="article-tags">
-                {article.tags.map((tag) => (
-                  <Link href={`/tags/${encodeURIComponent(tag)}`} key={tag}>
-                    #{tag}
-                  </Link>
-                ))}
-              </div>
-            )}
           </header>
 
           <div className={`knowledge-note accent-${article.accent}`}>
-            <span>핵심 한 줄</span>
+            <span>KEY POINT</span>
             <p>{article.fact}</p>
           </div>
 
@@ -198,7 +155,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
 
           {history.length > 0 && (
             <section className="revision-section">
-              <span>개정 이력</span>
+              <span>Revision history</span>
               <ol>
                 {history.map((entry) => (
                   <li key={`${entry.date}-${entry.note}`}>
@@ -211,11 +168,11 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
           )}
 
           <section className="related-section">
-            <span>다음으로 읽기</span>
+            <span>Read next</span>
             <div>
               {related.map((item) => (
-                <Link href={`/wiki/${item.slug}`} key={item.slug}>
-                  <small>{item.category}</small>
+                <Link href={`/en/wiki/${item.slug}`} key={item.slug}>
+                  <small>{categoryLabel(item.category, "en")}</small>
                   <strong>{item.title}</strong>
                   <span>→</span>
                 </Link>
@@ -223,21 +180,20 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             </div>
           </section>
 
-          <ShareButtons title={article.title} path={`/wiki/${slug}`} />
+          <ShareButtons title={article.title} path={`/en/wiki/${slug}`} />
         </article>
       </div>
 
       <footer className="article-footer shell">
-        <p>Bean Wiki · 함께 만드는 열린 커피 백과사전</p>
+        <p>Bean Wiki · an open, community-built coffee encyclopedia</p>
         <a
-          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/${slug}.ts`}
+          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/en/${slug}.md`}
           target="_blank"
           rel="noreferrer"
         >
-          GitHub에서 이 문서 편집하기 ↗
+          Edit this article on GitHub ↗
         </a>
       </footer>
     </main>
   );
 }
-
