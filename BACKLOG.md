@@ -78,7 +78,22 @@
 - ✅ [L] i18n — 영어 로케일 완성: `/en` 라우트(홈·문서·용어집·분야·개인정보), 12편 번역, 로케일 파사드, 언어 전환기, hreflang·사이트맵([docs/I18N.md](docs/I18N.md))
 - ✅ [S] 접근성 마무리 — 브레드크럼 `aria-hidden`, 목차 터치 타겟, 앵커 오프셋
 
-## 남은 항목
+## Sprint 7 — 편집 가능한 진짜 위키 (설계 완료, 착수 대기)
+
+> 설계: [docs/WIKI-EDITING.md](docs/WIKI-EDITING.md) (2026-07-22 딥리서치 기반).
+> 아키텍처: 인앱 TipTap 에디터 + Git-as-Database(GitHub API 커밋) + Vercel 자동 재배포.
+
+- ⬜ [M] 1a. 전역 헤더 통합 + 모든 페이지 상주 검색(빌드타임 인덱스)
+- ⬜ [L] 1b. 인증 + `/edit/[slug]` WYSIWYG(TipTap) + 직렬화 공유화 + localStorage 초안
+- ⬜ [M] 1c. 저장 API(검증→GitHub 커밋) + basetimestamp 충돌 감지 + 새 문서 작성
+- ⬜ [M] 2a. `[[위키링크]]` 문법·자동완성·붉은 링크 + 역링크(backlinks.json)
+- ⬜ [M] 2b. 이미지 업로드(Vercel Blob) + 검색 삽입(Unsplash/Commons, 라이선스 표기)
+- ⬜ [S] 2c. 문서 이름 변경 리다이렉트
+- ⬜ [M~L] 3. 문서 역사/diff/복원 UI, ko/en 동기화 보조, 초안 상태
+
+**착수 전 사용자 결정** (설계 문서 §7): ① 에디터(TipTap 권장 vs TinyMCE) ② 게시 지연 1~2분 허용 여부 ③ 이미지 검색 소스(Unsplash/Commons/업로드만)
+
+## 남은 항목 (사용자 액션)
 
 - ⬜ **CI 활성화** — 자격증명 제약으로만 막힘. 자동화 토큰에 GitHub `workflow` 스코프가 없어 `.github/workflows/`에 푸시·생성이 불가(git push와 REST API 모두 확인). [docs/ci-workflow.yml.example](docs/ci-workflow.yml.example)를 `workflow` 스코프 토큰으로 `.github/workflows/ci.yml`에 복사하거나 GitHub 웹 UI로 추가하면 즉시 동작.
 - ⬜ 영어 번역 사람 검수 — 현재 번역은 원문(한국어) 기반이며 문서에 출처를 명시. 정확도 검수는 상시 환영.
