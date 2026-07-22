@@ -78,23 +78,26 @@
 - ✅ [L] i18n — 영어 로케일 완성: `/en` 라우트(홈·문서·용어집·분야·개인정보), 12편 번역, 로케일 파사드, 언어 전환기, hreflang·사이트맵([docs/I18N.md](docs/I18N.md))
 - ✅ [S] 접근성 마무리 — 브레드크럼 `aria-hidden`, 목차 터치 타겟, 앵커 오프셋
 
-## Sprint 7 — 편집 가능한 진짜 위키 (설계 완료, 착수 대기)
+## Sprint 7 — 편집 가능한 진짜 위키 (✅ 코드 완료)
 
-> 설계: [docs/WIKI-EDITING.md](docs/WIKI-EDITING.md) (2026-07-22 딥리서치 기반).
+> 설계: [docs/WIKI-EDITING.md](docs/WIKI-EDITING.md) · 설정: [docs/EDITING.md](docs/EDITING.md).
 > 아키텍처: 인앱 TipTap 에디터 + Git-as-Database(GitHub API 커밋) + Vercel 자동 재배포.
 > **확정 결정(2026-07-22)**: 저장 포맷 = HTML 본문(마크다운 제거), 인증 = GitHub OAuth 로그인, 에디터 = TipTap, 게시 지연 1~2분 허용.
+> **상태**: 전 기능 구현·빌드 통과. 실제 게시 활성화만 사용자 자격증명(OAuth 앱, `AUTH_SECRET`)에 달림 — CI와 동일한 차단. 미설정 시 에디터는 미리보기 모드로 안전 동작.
 
 - ✅ [M] 1a. 전역 상주 검색 — 모든 페이지 헤더에 검색 버튼 + ⌘K/Ctrl+K로 여는 전역 오버레이(`SearchOverlay`), 빌드타임 인덱스(`getSearchIndex`), 로케일 자동 감지(ko/en)
 - ✅ [M] P1. HTML 콘텐츠 모델 기반 — `Article.bodyHtml`을 빌드타임에 `sections`에서 무손실 생성(`sectionsToHtml`), 문서 본문 렌더를 `dangerouslySetInnerHTML`로 전환(ko/en). 사이트 시각 동일(무중단), 에디터가 읽을 HTML 표현 확보. `sections`는 목차·검색·검증용으로 유지.
 - ✅ [L] P2. `/edit/[slug]` WYSIWYG(TipTap) — bodyHtml 시드, 툴바(제목2/3·굵게·기울임·취소선·목록·인용·실행취소), localStorage 초안 자동저장(900ms)/복원/버리기, 저장=미리보기(HTML 출력, OAuth 연결 전). 문서 페이지에 [편집] 버튼. 정적 생성·noindex. (남은 리치 블록: 슬래시 명령·콜아웃·토글·표·이미지 — 후속)
-- ⬜ [M] P3. 저장 API(정제→검증→GitHub 커밋) + HTML을 정본 소스로 전환(마크다운 파이프라인 제거) + basetimestamp 충돌 감지 + 새 문서
-- ⬜ [M] P4. **GitHub OAuth 로그인** — 자격증명(OAuth App ID/secret, Vercel 환경변수)은 사용자만 제공 가능(CI와 동일 차단)
-- ⬜ [M] 2a. 위키링크(UI 링크 피커)·붉은 링크 + 역링크(backlinks.json)
-- ⬜ [M] 2b. 이미지 업로드(Vercel Blob) + 검색 삽입(Unsplash/Commons, 라이선스 표기)
-- ⬜ [S] 2c. 문서 이름 변경 리다이렉트
-- ⬜ [M~L] 3. 문서 역사/diff/복원 UI, ko/en 동기화 보조, 초안 상태
+- ✅ [M] P3a. **HTML을 정본 소스로 전환** — 소스 24편을 `.html`(프론트매터+정제HTML)로 무손실 이행(생성 `index.ts` 바이트 동등성 검증), 마크다운 파이프라인 제거, 공유 직렬화 `src/lib/content-serialize.mjs` (`f99681c`)
+- ✅ [M] P3b. **저장 API** — 정제(새니타이즈)→검증→직렬화→GitHub Contents API 커밋, baseSha 충돌 감지, 새 문서 생성(+order.json), 에디터 게시 버튼·편집 요약·배너 (`7d011ce`)
+- ✅ [M] P4. **GitHub OAuth 로그인** — authorize/callback/logout, 암호화 세션 쿠키, 허용목록. 자격증명(OAuth App ID/secret, `AUTH_SECRET`)은 사용자만 제공 가능(CI와 동일 차단) ([docs/EDITING.md](docs/EDITING.md)) (`3956d31`)
+- ✅ [M] 2a. **위키링크·붉은 링크·역링크** — UI 링크 피커, 빌드타임 붉은 링크 주석 + 역링크(Article.backlinks) + "이 문서를 참조하는 문서", check-content 경고 (`5f069a0`)
+- ✅ [M] 2b. **이미지** — Wikimedia Commons(무자격증명)+Unsplash(게이트) 검색 삽입 + `public/uploads` 업로드(GitHub 커밋) + figure 출처·라이선스 표기 (`8a72530`)
+- ✅ [S] 2c. **문서 이름 변경 리다이렉트** — `redirects.json`+`next.config` 301, 참조 갱신 포함 Git Data API 원자 커밋 (`cf94473`)
+- ✅ [M~L] 3. **역사/복원 UI**(`/wiki/[slug]/history`, GitHub API) + **초안 상태**(목록·검색·사이트맵·RSS 제외, noindex 배지) + **ko/en 구조 동기화 알림** (`e7416c0`)
 
 ## 남은 항목 (사용자 액션)
 
+- ⬜ **편집 게시 활성화** — 코드는 완료. GitHub OAuth 앱 생성 + Vercel 환경변수(`AUTH_SECRET`, `GITHUB_OAUTH_CLIENT_ID/SECRET`, 권장 `GITHUB_ALLOWED_LOGINS`, 선택 `UNSPLASH_ACCESS_KEY`) 설정만 남음. 절차는 [docs/EDITING.md](docs/EDITING.md). 미설정 시 에디터는 미리보기 모드.
 - ⬜ **CI 활성화** — 자격증명 제약으로만 막힘. 자동화 토큰에 GitHub `workflow` 스코프가 없어 `.github/workflows/`에 푸시·생성이 불가(git push와 REST API 모두 확인). [docs/ci-workflow.yml.example](docs/ci-workflow.yml.example)를 `workflow` 스코프 토큰으로 `.github/workflows/ci.yml`에 복사하거나 GitHub 웹 UI로 추가하면 즉시 동작.
 - ⬜ 영어 번역 사람 검수 — 현재 번역은 원문(한국어) 기반이며 문서에 출처를 명시. 정확도 검수는 상시 환영.

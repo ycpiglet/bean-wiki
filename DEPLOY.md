@@ -1,8 +1,9 @@
 # Bean Wiki 배포 가이드
 
-> 정적 Next.js 16 앱을 Vercel에 배포합니다. 모든 페이지가 정적으로 프리렌더되며
-> (서버리스/엣지 함수 없음), 별도 빌드·플랫폼 설정 파일은 필요하지 않습니다.
-> Vercel이 `nextjs` 프리셋을 자동 감지합니다.
+> Next.js 16 앱을 Vercel에 배포합니다. 모든 콘텐츠 페이지는 정적으로
+> 프리렌더되고, 브라우저 편집 기능(Sprint 7)만 소수의 동적 API 라우트
+> (`/api/*`)를 서버(Node 런타임)에서 실행합니다. 별도 빌드·플랫폼 설정 파일은
+> 필요하지 않으며 Vercel이 `nextjs` 프리셋을 자동 감지합니다.
 
 ## 사전 준비
 
@@ -47,6 +48,13 @@ vercel alias set <배포-URL> <도메인>
 - `src/app/layout.tsx` — `metadataBase`
 - `src/app/sitemap.ts` — `baseUrl`
 - `src/app/robots.ts` — `baseUrl` + `sitemap`
+
+## 브라우저 편집 환경변수 (선택)
+
+읽기 전용 사이트만 배포한다면 환경변수는 필요 없습니다. 브라우저 편집·게시를
+켜려면 GitHub OAuth 앱과 몇 개의 환경변수를 설정합니다 — 전체 절차와 변수 목록은
+[docs/EDITING.md](docs/EDITING.md)를 보세요. 미설정 시 에디터는 미리보기 모드로
+안전하게 동작합니다.
 
 ## 커스텀 도메인 체크리스트
 

@@ -3,27 +3,39 @@
 Bean Wiki는 함께 검토하고 발전시키는 열린 커피 백과사전입니다. 모든 서술은
 근거를 갖추고, 이름이나 수치 하나로 단정하지 않는 태도를 지향합니다.
 
+## 두 가지 편집 방법
+
+1. **브라우저에서 바로 편집** — 모든 문서 페이지의 **[편집]** 버튼(또는
+   `/edit/<slug>`)으로 WYSIWYG 에디터를 열어 고치고 게시하면 GitHub에 커밋되어
+   1~2분 뒤 반영됩니다. 게시에는 GitHub 로그인이 필요합니다 —
+   설정은 [docs/EDITING.md](docs/EDITING.md)를 보세요.
+2. **소스 파일 직접 편집** — 아래처럼 저장소의 HTML 소스를 고쳐 PR을 올립니다.
+
 ## 콘텐츠는 어디에 있나요
 
-문서는 코드와 분리되어 **마크다운 파일**로 관리됩니다(문서 하나당 `.md` 하나).
+문서는 코드와 분리되어 **HTML 파일**로 관리됩니다(문서 하나당 `.html` 하나).
 
 ```
 src/content/
 ├─ types.ts               # Article · Category · GlossaryTerm 등 타입 정의
 ├─ categories.ts          # 6개 분야
 ├─ glossary.ts            # 용어집 항목
+├─ redirects.json         # 이름 변경 리다이렉트(구슬러그→신슬러그)
 └─ articles/
    ├─ order.json          # 문서 노출 순서(슬러그 목록)
-   ├─ index.ts            # ⚙️ .md에서 생성됨 — 직접 편집 금지
-   ├─ coffee-cherry-to-bean.md
-   ├─ extraction-basics.md
-   └─ …                    # 문서마다 .md 하나
+   ├─ index.ts            # ⚙️ .html에서 생성됨 — 직접 편집 금지
+   ├─ coffee-cherry-to-bean.html
+   ├─ extraction-basics.html
+   └─ …                    # 문서마다 .html 하나
 ```
 
-각 `.md`는 프론트매터(제목·분야·태그 등)와 본문(`## 제목 {#id}` 섹션)으로
-이루어집니다. `npm run build:content`(개발·빌드 시 자동 실행)가 `.md`를 읽어
-타입이 붙은 `index.ts`를 생성하고, `src/lib/content.ts` 파사드가 이를 페이지에
-공급합니다. 즉 **`.md`와 `order.json`만 편집**하면 됩니다(`index.ts`는 생성물).
+각 `.html`은 프론트매터(제목·분야·태그 등)와 본문(정제 HTML: `<h2 id="...">`
+섹션 헤딩과 `<p>`·`<ul>` 등)으로 이루어집니다. `npm run build:content`(개발·빌드 시
+자동 실행)가 `.html`을 읽어 타입이 붙은 `index.ts`를 생성하고,
+`src/lib/content.ts` 파사드가 이를 페이지에 공급합니다. 목차·검색 인덱스는
+`<h2 id>` 구조에서 자동으로 도출됩니다. 즉 **`.html`과 `order.json`만 편집**하면
+됩니다(`index.ts`는 생성물). 직렬화 로직은 `src/lib/content-serialize.mjs`가
+빌드·검증·저장 API에서 공유합니다.
 
 ## Article 필드
 
@@ -36,10 +48,11 @@ src/content/
 | `readingTime` | 읽는 시간 | 예: `"8분"` |
 | `updatedAt` | 최근 수정 | `YYYY. MM. DD.` |
 | `accent` | 색 토큰 | 해당 분야 `accent`와 일치 |
-| `sections` | 본문 | `{ id, title, paragraphs[], points? }` |
+| 본문 | `<h2 id>` 섹션 + `<p>`·`<ul>` 등 | 정제 HTML |
 | `related` | 연관 문서 | 유효한 slug만 |
 | `tags` | 태그(선택) | 한국어, 다른 문서와 겹치도록 |
 | `history` | 개정 이력(선택) | `{ date, note }[]`, 최신순 |
+| `draft` | 초안 여부(선택) | `draft: true`면 목록·검색·사이트맵에서 숨김(문서 페이지는 noindex로 렌더) |
 
 ### 무엇이 자동으로 검증되나요
 
@@ -48,9 +61,10 @@ src/content/
 - **`npm run check-content`** — 타입 체크가 잡지 못하는 **참조 무결성**을 잡습니다:
   `related` 슬러그가 실제로 존재하는지, `category`가 `categories.ts`의 이름과
   정확히 일치하는지, `accent`가 분야 accent와 맞는지, 파일명이 slug와 같은지,
-  `order.json`이 `.md`와 일치하는지, 용어집 `category`·`related`가 유효한지,
-  분야마다 문서가 하나 이상 있는지. `prebuild`에 연결되어 `npm run build` 전에
-  자동 실행됩니다.
+  `order.json`이 `.html`과 일치하는지, 용어집 `category`·`related`가 유효한지,
+  분야마다 문서가 하나 이상 있는지. 본문 위키링크(`data-wikilink`)가 없는 문서를
+  가리키면 **경고**만 합니다(붉은 링크는 기능). `prebuild`에 연결되어
+  `npm run build` 전에 자동 실행됩니다.
 
 즉, `related`에 오타를 내면 타입 체크는 통과하지만 `check-content`가 막습니다.
 
@@ -62,16 +76,17 @@ src/content/
 npm run new-article -- --slug my-article --category "추출" --accent blue
 ```
 
-이 명령이 `src/content/articles/my-article.md` 템플릿을 만들고
+이 명령이 `src/content/articles/my-article.html` 템플릿을 만들고
 `order.json`에 등록합니다. 이후:
 
-1. `.md`의 프론트매터와 본문(`## 제목 {#id}` 섹션)을 채웁니다.
+1. `.html`의 프론트매터와 본문(`<h2 id="...">` 섹션)을 채웁니다.
 2. `related`를 상호 연결하고, `accent`를 분야와 맞춥니다.
 3. `npm run dev`(또는 `npm run build:content`)로 `index.ts`를 재생성하고,
    `npm run check-content`로 참조를 검증한 뒤 `/wiki/<slug>`를 확인합니다.
 
-수동으로 추가할 때는 `.md` 파일을 만들고 `order.json`에 슬러그를 추가하면 됩니다
-(`order.json` 순서가 목록·사이트맵 순서를 결정합니다).
+수동으로 추가할 때는 `.html` 파일을 만들고 `order.json`에 슬러그를 추가하면 됩니다
+(`order.json` 순서가 목록·사이트맵 순서를 결정합니다). 또는 위 브라우저 에디터의
+"새 문서" 흐름을 쓰면 이 과정이 자동화됩니다.
 
 ## 문서 수정
 
