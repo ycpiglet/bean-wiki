@@ -1215,6 +1215,38 @@ a.figure-credit {
   margin-top: 22px;
 }
 
+.editor-rename {
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.editor-rename > span {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.editor-rename-row {
+  display: flex;
+  gap: 8px;
+}
+
+.editor-rename-row input {
+  flex: 1;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--cream);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+}
+
 .editor-field select {
   width: 100%;
   padding: 11px 14px;

@@ -156,6 +156,11 @@ type EditorCopy = {
   loginWithGithub: string;
   loggedInAs: (login: string) => string;
   logout: string;
+  renameTitle: string;
+  renamePlaceholder: string;
+  renameButton: string;
+  renameConfirm: (from: string, to: string) => string;
+  renamed: string;
   needsEditSummary: string;
   savedHtmlHeading: string;
   copy: string;
@@ -229,6 +234,12 @@ const COPY: Record<Locale, EditorCopy> = {
     loginWithGithub: "GitHub로 로그인",
     loggedInAs: (login) => `${login} 님으로 로그인됨`,
     logout: "로그아웃",
+    renameTitle: "슬러그(URL) 변경",
+    renamePlaceholder: "새 슬러그 (예: cold-brew)",
+    renameButton: "이름 변경",
+    renameConfirm: (from, to) =>
+      `"${from}"을(를) "${to}"(으)로 바꿉니다. 이전 URL은 자동으로 리다이렉트되고 참조 링크도 갱신됩니다. 계속할까요?`,
+    renamed: "이름을 변경했습니다. 새 편집 페이지로 이동합니다…",
     needsEditSummary: "편집 요약을 입력해주세요.",
     savedHtmlHeading: "저장될 본문 HTML",
     copy: "HTML 복사",
@@ -300,6 +311,12 @@ const COPY: Record<Locale, EditorCopy> = {
     loginWithGithub: "Sign in with GitHub",
     loggedInAs: (login) => `Signed in as ${login}`,
     logout: "Sign out",
+    renameTitle: "Change slug (URL)",
+    renamePlaceholder: "new slug (e.g. cold-brew)",
+    renameButton: "Rename",
+    renameConfirm: (from, to) =>
+      `Rename "${from}" to "${to}"? The old URL will 301-redirect and references will be updated. Continue?`,
+    renamed: "Renamed. Taking you to the new edit page…",
     needsEditSummary: "Please enter an edit summary.",
     savedHtmlHeading: "Body HTML to be saved",
     copy: "Copy HTML",
@@ -407,6 +424,8 @@ export function ArticleEditor({
   const [urlSrc, setUrlSrc] = useState("");
   const [urlAlt, setUrlAlt] = useState("");
   const [urlCaption, setUrlCaption] = useState("");
+  const [renameSlug, setRenameSlug] = useState("");
+  const [renaming, setRenaming] = useState(false);
   const [draftState, setDraftState] = useState<"idle" | "saved" | "restored">("idle");
   const [savedHtml, setSavedHtml] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -629,6 +648,34 @@ export function ArticleEditor({
       });
     } finally {
       setImgBusy(false);
+    }
+  }
+
+  async function doRename() {
+    const next = renameSlug.trim().toLowerCase();
+    if (!/^[a-z0-9-]+$/.test(next) || next === slug) return;
+    if (!window.confirm(t.renameConfirm(slug, next))) return;
+    setRenaming(true);
+    try {
+      const res = await fetch(`/api/articles/${slug}/rename`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ newSlug: next }),
+      });
+      const data = await res.json();
+      if (res.ok && data.renamed) {
+        setSaveState({ kind: "published", url: "" });
+        window.location.href = `${prefix}/edit/${data.newSlug}`;
+      } else {
+        setSaveState({ kind: "error", message: data.message ?? `HTTP ${res.status}` });
+      }
+    } catch (error) {
+      setSaveState({
+        kind: "error",
+        message: error instanceof Error ? error.message : "rename error",
+      });
+    } finally {
+      setRenaming(false);
     }
   }
 
@@ -1116,6 +1163,28 @@ export function ArticleEditor({
               onChange={(event) => setEditSummary(event.target.value)}
             />
           </label>
+        )}
+
+        {commitEnabled && !creating && (
+          <div className="editor-rename">
+            <span>{t.renameTitle}</span>
+            <div className="editor-rename-row">
+              <input
+                type="text"
+                value={renameSlug}
+                placeholder={t.renamePlaceholder}
+                onChange={(event) => setRenameSlug(event.target.value.trim().toLowerCase())}
+              />
+              <button
+                type="button"
+                className="editor-mini"
+                disabled={renaming || !renameSlug.trim() || renameSlug.trim() === slug}
+                onClick={doRename}
+              >
+                {t.renameButton}
+              </button>
+            </div>
+          </div>
         )}
 
         {savedHtml !== null && (

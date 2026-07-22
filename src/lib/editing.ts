@@ -104,6 +104,28 @@ export function buildUpdatedSource(existingSource: string, input: SaveInput): st
   return serializeArticleSource(meta, editorHtmlToSourceBody(input.bodyHtml));
 }
 
+// Rewrite references to a renamed slug inside another article's source: its
+// related[] entries and any in-body wikilinks / hrefs.
+export function rewriteReferences(sourceText: string, oldSlug: string, newSlug: string): string {
+  const { fm, body } = parseFrontmatter(sourceText) as { fm: Frontmatter; body: string };
+  const related = (fm.related ?? []).map((r) => (r === oldSlug ? newSlug : r));
+  const newBody = body
+    .split(`data-wikilink="${oldSlug}"`)
+    .join(`data-wikilink="${newSlug}"`)
+    .split(`href="/wiki/${oldSlug}"`)
+    .join(`href="/wiki/${newSlug}"`)
+    .split(`href="/en/wiki/${oldSlug}"`)
+    .join(`href="/en/wiki/${newSlug}"`);
+  return serializeArticleSource({ ...fm, related }, newBody);
+}
+
+// The renamed article itself: rewrite self-references, then set the new slug.
+export function renameSelf(sourceText: string, oldSlug: string, newSlug: string): string {
+  const rewritten = rewriteReferences(sourceText, oldSlug, newSlug);
+  const { fm, body } = parseFrontmatter(rewritten) as { fm: Frontmatter; body: string };
+  return serializeArticleSource({ ...fm, slug: newSlug }, body);
+}
+
 // Build a brand-new article source from scratch.
 export function buildNewSource(input: SaveInput): string {
   const category = categories.find((c) => c.name === input.category);

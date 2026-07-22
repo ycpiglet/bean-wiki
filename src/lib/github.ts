@@ -90,6 +90,64 @@ export async function ghPutFile(opts: {
   );
 }
 
+// Commit several file changes atomically via the Git Data API (create blobs ->
+// tree -> commit -> move ref). `content: null` deletes a path. Used by rename,
+// which must touch multiple files in one commit to keep references consistent.
+export type FileChange = { path: string; content: string | null };
+
+export async function ghCommitFiles(opts: {
+  changes: FileChange[];
+  message: string;
+  token: string;
+}): Promise<{ commitSha: string }> {
+  const { owner, repo, branch } = getRepoConfig();
+  const base = `${API}/repos/${owner}/${repo}`;
+  const h = { ...headers(opts.token), "Content-Type": "application/json" };
+
+  const api = async (path: string, init?: RequestInit) => {
+    const res = await fetch(`${base}${path}`, { ...init, headers: h, cache: "no-store" });
+    if (!res.ok) {
+      const detail = await res.text().catch(() => "");
+      throw new Error(`GitHub ${init?.method ?? "GET"} ${path} failed: ${res.status} ${detail}`);
+    }
+    return res.json();
+  };
+
+  const ref = (await api(`/git/ref/heads/${branch}`)) as { object: { sha: string } };
+  const baseSha = ref.object.sha;
+  const baseCommit = (await api(`/git/commits/${baseSha}`)) as { tree: { sha: string } };
+
+  const tree = await Promise.all(
+    opts.changes.map(async (c) => {
+      if (c.content === null) {
+        return { path: c.path, mode: "100644", type: "blob", sha: null };
+      }
+      const blob = (await api(`/git/blobs`, {
+        method: "POST",
+        body: JSON.stringify({ content: c.content, encoding: "utf-8" }),
+      })) as { sha: string };
+      return { path: c.path, mode: "100644", type: "blob", sha: blob.sha };
+    }),
+  );
+
+  const newTree = (await api(`/git/trees`, {
+    method: "POST",
+    body: JSON.stringify({ base_tree: baseCommit.tree.sha, tree }),
+  })) as { sha: string };
+
+  const commit = (await api(`/git/commits`, {
+    method: "POST",
+    body: JSON.stringify({ message: opts.message, tree: newTree.sha, parents: [baseSha] }),
+  })) as { sha: string };
+
+  await api(`/git/refs/heads/${branch}`, {
+    method: "PATCH",
+    body: JSON.stringify({ sha: commit.sha }),
+  });
+
+  return { commitSha: commit.sha };
+}
+
 async function putRaw(
   path: string,
   contentBase64: string,
