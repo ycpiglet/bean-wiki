@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
 import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
@@ -57,6 +58,7 @@ export default function EnGlossaryPage() {
           <Link href="/en" className="back-link">
             ← Home
           </Link>
+          <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href="/glossary" />
           <ThemeToggle />
           <MobileNav locale="en" />

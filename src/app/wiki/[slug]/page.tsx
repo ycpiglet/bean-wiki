@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
 import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ShareButtons } from "@/components/share-buttons";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -119,6 +120,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
           <Link href="/" className="back-link">
             ← 모든 지식 둘러보기
           </Link>
+          <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href={`/en/wiki/${slug}`} />
           <ThemeToggle />
           <MobileNav />

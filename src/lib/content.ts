@@ -93,6 +93,35 @@ export function articleBodyText(article: Article) {
   ].join(" ");
 }
 
+export type SearchIndexItem = {
+  slug: string;
+  title: string;
+  summary: string;
+  category: string;
+  haystack: string;
+};
+
+// Precomputed, lowercased search index for a locale. Built once at SSG time so
+// the client never re-lowercases the whole corpus on every keystroke. Shared by
+// the home hero <Search> and the global <SearchOverlay>.
+export function getSearchIndex(locale: Locale = "ko"): SearchIndexItem[] {
+  return getArticles(locale).map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    summary: article.summary,
+    category: categoryLabel(article.category, locale),
+    haystack: [
+      article.title,
+      article.summary,
+      categoryLabel(article.category, locale),
+      (article.tags ?? []).join(" "),
+      articleBodyText(article),
+    ]
+      .join(" ")
+      .toLocaleLowerCase("ko"),
+  }));
+}
+
 export function getGlossaryTerms(locale: Locale = "ko"): GlossaryTerm[] {
   return locale === "en" ? glossaryTermsEn : glossaryTerms;
 }

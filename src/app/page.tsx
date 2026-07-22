@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileNav } from "@/components/mobile-nav";
 import { Search } from "@/components/search";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
-  articleBodyText,
   articles,
   categories,
   categoryArticleCount,
+  getSearchIndex,
   levelArticleCount,
 } from "@/lib/content";
 import type { CategoryIcon } from "@/content/types";
@@ -67,21 +68,7 @@ function TopicIcon({ name }: { name: CategoryIcon }) {
 export default function Home() {
   // Build the search index at render (SSG) so the client never re-lowercases
   // the full corpus on every keystroke.
-  const searchItems = articles.map((article) => ({
-    slug: article.slug,
-    title: article.title,
-    summary: article.summary,
-    category: article.category,
-    haystack: [
-      article.title,
-      article.summary,
-      article.category,
-      (article.tags ?? []).join(" "),
-      articleBodyText(article),
-    ]
-      .join(" ")
-      .toLocaleLowerCase("ko"),
-  }));
+  const searchItems = getSearchIndex("ko");
 
   return (
     <main>
@@ -98,13 +85,7 @@ export default function Home() {
           <a href="#contribute">기여하기</a>
         </nav>
         <div className="header-tools">
-          <a className="header-search" href="#search">
-            <svg aria-hidden="true" viewBox="0 0 20 20">
-              <circle cx="9" cy="9" r="5.5" />
-              <path d="m13 13 4 4" />
-            </svg>
-            검색
-          </a>
+          <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href="/en" />
           <ThemeToggle />
           <MobileNav />
@@ -125,7 +106,7 @@ export default function Home() {
             누구나 배우고, 검증하고, 함께 쌓아가는 열린 커피 백과사전입니다.
           </p>
           <div id="search">
-            <Search articles={searchItems} />
+            <Search articles={searchItems} manageShortcut={false} />
           </div>
           <div className="search-suggestions">
             <span>추천 검색</span>

@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
 import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ShareButtons } from "@/components/share-buttons";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -85,6 +86,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
           <Link href="/en" className="back-link">
             ← Browse all
           </Link>
+          <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href={`/wiki/${slug}`} />
           <ThemeToggle />
           <MobileNav locale="en" />

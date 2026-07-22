@@ -168,6 +168,12 @@ svg {
   gap: 7px;
   font-size: 13px;
   font-weight: 650;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  cursor: pointer;
 }
 
 .header-search svg {
@@ -175,6 +181,16 @@ svg {
   fill: none;
   stroke: currentColor;
   stroke-width: 1.5;
+}
+
+.header-search-key {
+  padding: 2px 6px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 500;
 }
 
 .hero {
@@ -292,6 +308,49 @@ svg {
   color: var(--muted);
   font-family: var(--font-mono);
   font-size: 10px;
+}
+
+/* Global search palette (mounted once in the root layout). */
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: clamp(64px, 14vh, 160px) 20px 20px;
+  background: rgba(24, 32, 25, 0.44);
+  backdrop-filter: blur(2px);
+  animation: search-overlay-in 140ms ease;
+}
+
+.search-overlay-panel {
+  position: relative;
+  width: 100%;
+  max-width: 640px;
+}
+
+.search-overlay-panel .search-wrap {
+  max-width: none;
+}
+
+.search-overlay-close {
+  position: absolute;
+  top: -34px;
+  right: 0;
+  padding: 4px 9px;
+  border: 1px solid rgba(244, 240, 231, 0.4);
+  border-radius: 3px;
+  background: none;
+  color: var(--cream);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  cursor: pointer;
+}
+
+@keyframes search-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 .search-results {
@@ -1670,6 +1729,7 @@ input:focus-visible,
   .shell { width: min(100% - 30px, 1180px); }
   .site-header, .article-header { height: 72px; }
   .header-search { font-size: 0; }
+  .header-search-key { display: none; }
   .hero { gap: 24px; padding-block: 48px 60px; }
   .hero h1 { font-size: 42px; }
   .hero-copy > p { font-size: 14px; }

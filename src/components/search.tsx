@@ -2,7 +2,14 @@
 
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useEffect, useMemo, useRef, useState, type ReactNode } from "react";
+import {
+  useEffect,
+  useId,
+  useMemo,
+  useRef,
+  useState,
+  type ReactNode,
+} from "react";
 import { getDictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 
@@ -110,12 +117,22 @@ function loadRecent(): string[] {
 export function Search({
   articles,
   locale = "ko",
+  manageShortcut = true,
+  autoFocus = false,
 }: {
   articles: SearchItem[];
   locale?: Locale;
+  manageShortcut?: boolean;
+  autoFocus?: boolean;
 }) {
   const t = getDictionary(locale).search;
   const prefix = locale === "en" ? "/en" : "";
+  // Unique per instance so the hero <Search> and the overlay <Search> can
+  // coexist on one page without duplicate DOM ids breaking label / ARIA links.
+  const uid = useId();
+  const inputId = `${uid}-input`;
+  const listboxId = `${uid}-listbox`;
+  const optionId = (index: number) => `${uid}-option-${index}`;
   const router = useRouter();
   const [query, setQuery] = useState("");
   // Seed recent searches from localStorage lazily. On the server this returns []
@@ -132,8 +149,10 @@ export function Search({
     [articles],
   );
 
-  // Focus the search field with ⌘K (macOS) or Ctrl+K (others).
+  // Focus the search field with ⌘K (macOS) or Ctrl+K (others). Skipped when the
+  // global SearchOverlay owns the shortcut (manageShortcut=false).
   useEffect(() => {
+    if (!manageShortcut) return;
     function onKeyDown(event: KeyboardEvent) {
       if ((event.metaKey || event.ctrlKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
@@ -142,7 +161,12 @@ export function Search({
     }
     window.addEventListener("keydown", onKeyDown);
     return () => window.removeEventListener("keydown", onKeyDown);
-  }, []);
+  }, [manageShortcut]);
+
+  // Autofocus when embedded in an overlay that just opened.
+  useEffect(() => {
+    if (autoFocus) inputRef.current?.focus();
+  }, [autoFocus]);
 
   function commitRecent(term: string) {
     const trimmed = term.trim();
@@ -237,19 +261,19 @@ export function Search({
           <circle cx="11" cy="11" r="6.5" />
           <path d="m16 16 4 4" />
         </svg>
-        <label className="sr-only" htmlFor="wiki-search">
+        <label className="sr-only" htmlFor={inputId}>
           {t.label}
         </label>
         <input
-          id="wiki-search"
+          id={inputId}
           ref={inputRef}
           type="search"
           role="combobox"
           aria-expanded={listboxOpen}
-          aria-controls="search-listbox"
+          aria-controls={listboxId}
           aria-autocomplete="list"
           aria-activedescendant={
-            activeIndex >= 0 ? `search-option-${activeIndex}` : undefined
+            activeIndex >= 0 ? optionId(activeIndex) : undefined
           }
           value={query}
           onChange={(event) => {
@@ -273,12 +297,12 @@ export function Search({
               : t.noResults}
           </span>
           {results.length > 0 ? (
-            <div id="search-listbox" role="listbox" aria-label={t.resultsLabel}>
+            <div id={listboxId} role="listbox" aria-label={t.resultsLabel}>
               {results.map(({ article, fuzzy }, index) => (
                 <Link
                   href={`${prefix}/wiki/${article.slug}`}
                   className="search-result"
-                  id={`search-option-${index}`}
+                  id={optionId(index)}
                   role="option"
                   aria-selected={index === activeIndex}
                   key={article.slug}

@@ -83,7 +83,7 @@
 > 설계: [docs/WIKI-EDITING.md](docs/WIKI-EDITING.md) (2026-07-22 딥리서치 기반).
 > 아키텍처: 인앱 TipTap 에디터 + Git-as-Database(GitHub API 커밋) + Vercel 자동 재배포.
 
-- ⬜ [M] 1a. 전역 헤더 통합 + 모든 페이지 상주 검색(빌드타임 인덱스)
+- ✅ [M] 1a. 전역 상주 검색 — 모든 페이지 헤더에 검색 버튼 + ⌘K/Ctrl+K로 여는 전역 오버레이(`SearchOverlay`), 빌드타임 인덱스(`getSearchIndex`), 로케일 자동 감지(ko/en)
 - ⬜ [L] 1b. 인증 + `/edit/[slug]` WYSIWYG(TipTap) + 직렬화 공유화 + localStorage 초안
 - ⬜ [M] 1c. 저장 API(검증→GitHub 커밋) + basetimestamp 충돌 감지 + 새 문서 작성
 - ⬜ [M] 2a. `[[위키링크]]` 문법·자동완성·붉은 링크 + 역링크(backlinks.json)

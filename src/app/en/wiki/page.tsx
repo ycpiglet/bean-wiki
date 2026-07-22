@@ -4,6 +4,7 @@ import { Suspense } from "react";
 import { ArticleBrowser } from "@/components/article-browser";
 import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { categories, getArticles, levels } from "@/lib/content";
@@ -49,6 +50,7 @@ export default function EnWikiIndex() {
           <Link href="/en" className="back-link">
             ← Home
           </Link>
+          <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href="/wiki" />
           <ThemeToggle />
           <MobileNav locale="en" />
