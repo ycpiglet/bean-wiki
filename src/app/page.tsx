@@ -7,9 +7,9 @@ import { MobileNav } from "@/components/mobile-nav";
 import { Search } from "@/components/search";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
-  articles,
   categories,
   categoryArticleCount,
+  getPublishedArticles,
   getSearchIndex,
   levelArticleCount,
 } from "@/lib/content";
@@ -69,6 +69,7 @@ export default function Home() {
   // Build the search index at render (SSG) so the client never re-lowercases
   // the full corpus on every keystroke.
   const searchItems = getSearchIndex("ko");
+  const articles = getPublishedArticles("ko");
 
   return (
     <main>

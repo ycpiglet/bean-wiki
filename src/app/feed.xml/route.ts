@@ -1,8 +1,8 @@
-import { articles } from "@/lib/content";
+import { getPublishedArticles } from "@/lib/content";
 import { parseKoreanDate } from "@/lib/dates";
 import { SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/site";
 
-// Static RSS feed of all articles, newest first.
+// Static RSS feed of all published articles, newest first (drafts excluded).
 export const dynamic = "force-static";
 
 function escapeXml(value: string): string {
@@ -15,7 +15,7 @@ function escapeXml(value: string): string {
 }
 
 export function GET() {
-  const items = [...articles]
+  const items = [...getPublishedArticles("ko")]
     .sort(
       (a, b) =>
         parseKoreanDate(b.updatedAt).getTime() -

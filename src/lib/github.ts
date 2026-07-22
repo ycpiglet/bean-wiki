@@ -46,9 +46,10 @@ export type FileContent = { sha: string; text: string };
 export async function ghGetFile(
   path: string,
   token?: string | null,
+  ref?: string,
 ): Promise<FileContent | null> {
   const { branch } = getRepoConfig();
-  const res = await fetch(`${contentsUrl(path)}?ref=${encodeURIComponent(branch)}`, {
+  const res = await fetch(`${contentsUrl(path)}?ref=${encodeURIComponent(ref || branch)}`, {
     headers: headers(token),
     cache: "no-store",
   });
@@ -57,6 +58,40 @@ export async function ghGetFile(
   const json = (await res.json()) as { sha: string; content: string; encoding: string };
   const text = Buffer.from(json.content, "base64").toString("utf8");
   return { sha: json.sha, text };
+}
+
+export type CommitInfo = {
+  sha: string;
+  message: string;
+  date: string;
+  author: string;
+  htmlUrl: string;
+};
+
+// List the commit history for a single path (newest first). Works
+// unauthenticated for public repos.
+export async function ghListCommits(
+  path: string,
+  token?: string | null,
+  limit = 30,
+): Promise<CommitInfo[]> {
+  const { owner, repo, branch } = getRepoConfig();
+  const url = `${API}/repos/${owner}/${repo}/commits?path=${encodeURIComponent(path)}&sha=${encodeURIComponent(branch)}&per_page=${limit}`;
+  const res = await fetch(url, { headers: headers(token), cache: "no-store" });
+  if (!res.ok) throw new Error(`GitHub commits failed: ${res.status}`);
+  const json = (await res.json()) as {
+    sha: string;
+    html_url: string;
+    commit: { message: string; author?: { name?: string; date?: string } };
+    author?: { login?: string } | null;
+  }[];
+  return json.map((c) => ({
+    sha: c.sha,
+    message: c.commit.message,
+    date: c.commit.author?.date ?? "",
+    author: c.author?.login || c.commit.author?.name || "unknown",
+    htmlUrl: c.html_url,
+  }));
 }
 
 export type PutResult = { commitSha: string; htmlUrl: string; contentSha: string };

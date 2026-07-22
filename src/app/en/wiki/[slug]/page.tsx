@@ -31,6 +31,7 @@ export async function generateMetadata(
   return {
     title: article.title,
     description: article.summary,
+    robots: article.draft ? { index: false, follow: false } : undefined,
     alternates: {
       canonical: `/en/wiki/${slug}`,
       languages: { ko: `/wiki/${slug}`, en: `/en/wiki/${slug}` },
@@ -121,6 +122,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
           </div>
 
           <header className="wiki-title">
+            {article.draft && <span className="draft-badge">Draft</span>}
             <span className={`level-badge accent-${article.accent}`}>
               {levels[article.level] ?? article.level}
             </span>

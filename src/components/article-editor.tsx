@@ -161,6 +161,8 @@ type EditorCopy = {
   renameButton: string;
   renameConfirm: (from: string, to: string) => string;
   renamed: string;
+  draftLabel: string;
+  enOutOfSync: string;
   needsEditSummary: string;
   savedHtmlHeading: string;
   copy: string;
@@ -240,6 +242,8 @@ const COPY: Record<Locale, EditorCopy> = {
     renameConfirm: (from, to) =>
       `"${from}"을(를) "${to}"(으)로 바꿉니다. 이전 URL은 자동으로 리다이렉트되고 참조 링크도 갱신됩니다. 계속할까요?`,
     renamed: "이름을 변경했습니다. 새 편집 페이지로 이동합니다…",
+    draftLabel: "초안으로 저장 (목록·검색·사이트맵에서 숨김)",
+    enOutOfSync: "영어 문서의 섹션 구조가 한국어와 다릅니다. 저장 시 두 언어의 섹션 구성을 맞춰주세요.",
     needsEditSummary: "편집 요약을 입력해주세요.",
     savedHtmlHeading: "저장될 본문 HTML",
     copy: "HTML 복사",
@@ -317,6 +321,8 @@ const COPY: Record<Locale, EditorCopy> = {
     renameConfirm: (from, to) =>
       `Rename "${from}" to "${to}"? The old URL will 301-redirect and references will be updated. Continue?`,
     renamed: "Renamed. Taking you to the new edit page…",
+    draftLabel: "Save as draft (hidden from listings, search, sitemap)",
+    enOutOfSync: "The English article's section structure differs from Korean. Keep both languages' sections aligned when saving.",
     needsEditSummary: "Please enter an edit summary.",
     savedHtmlHeading: "Body HTML to be saved",
     copy: "Copy HTML",
@@ -426,6 +432,7 @@ export function ArticleEditor({
   const [urlCaption, setUrlCaption] = useState("");
   const [renameSlug, setRenameSlug] = useState("");
   const [renaming, setRenaming] = useState(false);
+  const [publishAsDraft, setPublishAsDraft] = useState(false);
   const [draftState, setDraftState] = useState<"idle" | "saved" | "restored">("idle");
   const [savedHtml, setSavedHtml] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -434,6 +441,7 @@ export function ArticleEditor({
   const [commitEnabled, setCommitEnabled] = useState(false);
   const [oauthEnabled, setOauthEnabled] = useState(false);
   const [login, setLogin] = useState<string | null>(null);
+  const [enOutOfSync, setEnOutOfSync] = useState(false);
   const [baseSha, setBaseSha] = useState<string | null>(null);
   const [saveState, setSaveState] = useState<SaveState>({ kind: "idle" });
 
@@ -457,6 +465,7 @@ export function ArticleEditor({
         setCommitEnabled(Boolean(d.commitEnabled));
         setOauthEnabled(Boolean(d.oauthEnabled));
         setLogin(d.login ?? null);
+        setEnOutOfSync(Boolean(d.enOutOfSync));
         // baseSha only matters for updates; a new article has no base file.
         if (!creating) setBaseSha(d.sha ?? null);
       })
@@ -697,6 +706,7 @@ export function ArticleEditor({
           editSummary,
           baseSha: creating ? undefined : baseSha,
           locale,
+          draft: publishAsDraft,
           ...(creating ? { category, level } : {}),
         }),
       });
@@ -786,6 +796,12 @@ export function ArticleEditor({
               </a>
             </p>
           )
+        )}
+
+        {enOutOfSync && !creating && (
+          <p className="editor-banner is-warn" role="status">
+            {t.enOutOfSync}
+          </p>
         )}
 
         {saveState.kind === "published" && (
@@ -1162,6 +1178,17 @@ export function ArticleEditor({
               placeholder={t.editSummaryPlaceholder}
               onChange={(event) => setEditSummary(event.target.value)}
             />
+          </label>
+        )}
+
+        {commitEnabled && (
+          <label className="editor-draft-toggle">
+            <input
+              type="checkbox"
+              checked={publishAsDraft}
+              onChange={(event) => setPublishAsDraft(event.target.checked)}
+            />
+            <span>{t.draftLabel}</span>
           </label>
         )}
 

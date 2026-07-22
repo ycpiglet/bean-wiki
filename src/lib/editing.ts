@@ -19,6 +19,7 @@ export type SaveInput = {
   bodyHtml: string;
   editSummary: string;
   baseSha?: string;
+  draft?: boolean;
   // Only required when creating a new article:
   category?: string;
   level?: Level;
@@ -41,6 +42,7 @@ type Frontmatter = {
   related: string[];
   tags?: string[];
   history?: HistoryEntry[];
+  draft?: boolean | string;
 };
 
 export function sourcePath(slug: string, locale: "ko" | "en"): string {
@@ -100,6 +102,7 @@ export function buildUpdatedSource(existingSource: string, input: SaveInput): st
     related: input.related ?? fm.related,
     tags: input.tags ?? fm.tags,
     history,
+    draft: input.draft !== undefined ? input.draft : fm.draft,
   };
   return serializeArticleSource(meta, editorHtmlToSourceBody(input.bodyHtml));
 }
@@ -143,6 +146,7 @@ export function buildNewSource(input: SaveInput): string {
     related: input.related ?? [],
     tags: input.tags ?? [],
     history: [{ date: today, note: input.editSummary.trim() || "문서 최초 작성" }],
+    draft: input.draft || undefined,
   };
   return serializeArticleSource(meta, editorHtmlToSourceBody(input.bodyHtml));
 }

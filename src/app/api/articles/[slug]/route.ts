@@ -6,6 +6,7 @@
 import type { NextRequest } from "next/server";
 import { readSession } from "@/lib/session";
 import { ghGetFile, ghPutFile, resolveCommitToken, commitEnabled } from "@/lib/github";
+import { getArticle } from "@/lib/content";
 import {
   sourcePath,
   validateSave,
@@ -37,11 +38,22 @@ export async function GET(req: NextRequest, ctx: RouteContext<"/api/articles/[sl
     // Network / rate-limit failures leave sha null: conflict detection simply
     // won't fire; the save still validates server-side.
   }
+  // ko/en sync hint: section-id parity is the structural contract check-content
+  // enforces. Ids only diverge when a real, diverging en translation exists
+  // (a missing en file falls back to ko, so ids match).
+  const koArt = getArticle(slug, "ko");
+  const enArt = getArticle(slug, "en");
+  const enOutOfSync =
+    !!koArt &&
+    !!enArt &&
+    koArt.sections.map((s) => s.id).join(",") !== enArt.sections.map((s) => s.id).join(",");
+
   return Response.json({
     loggedIn: Boolean(session),
     login: session?.login ?? null,
     commitEnabled: commitEnabled(session),
     oauthEnabled: Boolean(process.env.GITHUB_OAUTH_CLIENT_ID && process.env.AUTH_SECRET),
+    enOutOfSync,
     sha,
   });
 }

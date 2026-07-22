@@ -71,6 +71,7 @@ function serializeFrontmatter(a) {
   fm.push(`related: ${JSON.stringify(a.related)}`);
   if (a.tags) fm.push(`tags: ${JSON.stringify(a.tags)}`);
   if (a.history) fm.push(`history: ${JSON.stringify(a.history)}`);
+  if (a.draft === true || a.draft === "true") fm.push(`draft: true`);
   return fm.join("\n");
 }
 
@@ -187,6 +188,7 @@ export function articleFromSource(source) {
   };
   if (fm.tags) article.tags = fm.tags;
   if (fm.history) article.history = fm.history;
+  if (fm.draft === "true" || fm.draft === true) article.draft = true;
   article.bodyHtml = renderSectionedHtml(body);
   return article;
 }

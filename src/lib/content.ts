@@ -30,6 +30,13 @@ export function getArticles(locale: Locale = "ko") {
   return articlesByLocale[locale] ?? articlesByLocale.ko;
 }
 
+// Published (non-draft) articles. Use this for every listing, count, search
+// index, sitemap, and feed; `getArticles` keeps drafts for static params and
+// direct lookups so a draft's own page still renders.
+export function getPublishedArticles(locale: Locale = "ko") {
+  return getArticles(locale).filter((article) => !article.draft);
+}
+
 export function getArticle(slug: string, locale: Locale = "ko") {
   return getArticles(locale).find((article) => article.slug === slug);
 }
@@ -60,7 +67,7 @@ export function categoryDescription(slug: string, locale: Locale = "ko") {
 }
 
 export function articlesByCategory(categoryName: string, locale: Locale = "ko") {
-  return getArticles(locale).filter((article) => article.category === categoryName);
+  return getPublishedArticles(locale).filter((article) => article.category === categoryName);
 }
 
 export function categoryArticleCount(categoryName: string, locale: Locale = "ko") {
@@ -68,19 +75,19 @@ export function categoryArticleCount(categoryName: string, locale: Locale = "ko"
 }
 
 export function levelArticleCount(level: Level, locale: Locale = "ko") {
-  return getArticles(locale).filter((article) => article.level === level).length;
+  return getPublishedArticles(locale).filter((article) => article.level === level).length;
 }
 
 export function allTags(locale: Locale = "ko") {
   const set = new Set<string>();
-  for (const article of getArticles(locale)) {
+  for (const article of getPublishedArticles(locale)) {
     for (const tag of article.tags ?? []) set.add(tag);
   }
   return [...set].sort((a, b) => a.localeCompare(b, "ko"));
 }
 
 export function articlesByTag(tag: string, locale: Locale = "ko") {
-  return getArticles(locale).filter((article) => article.tags?.includes(tag));
+  return getPublishedArticles(locale).filter((article) => article.tags?.includes(tag));
 }
 
 export function articleBodyText(article: Article) {
@@ -105,7 +112,7 @@ export type SearchIndexItem = {
 // the client never re-lowercases the whole corpus on every keystroke. Shared by
 // the home hero <Search> and the global <SearchOverlay>.
 export function getSearchIndex(locale: Locale = "ko"): SearchIndexItem[] {
-  return getArticles(locale).map((article) => ({
+  return getPublishedArticles(locale).map((article) => ({
     slug: article.slug,
     title: article.title,
     summary: article.summary,

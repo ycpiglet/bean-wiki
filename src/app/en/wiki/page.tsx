@@ -7,7 +7,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { categories, getArticles, levels } from "@/lib/content";
+import { categories, getPublishedArticles, levels } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "All articles",
@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 };
 
 export default function EnWikiIndex() {
-  const browseArticles = getArticles("en").map(
+  const browseArticles = getPublishedArticles("en").map(
     ({ slug, title, summary, category, level, readingTime, accent }) => ({
       slug,
       title,

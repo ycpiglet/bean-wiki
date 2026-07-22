@@ -42,6 +42,9 @@ export type Article = {
   // build time (see scripts/build-content.mjs). Powers the "referenced by"
   // section; empty when nothing links here.
   backlinks?: string[];
+  // Draft articles still build (and their page renders with a badge + noindex)
+  // but are excluded from listings, search, the sitemap, and the feed.
+  draft?: boolean;
 };
 
 export type Category = {

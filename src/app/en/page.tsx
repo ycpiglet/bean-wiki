@@ -11,7 +11,7 @@ import {
   categoryArticleCount,
   categoryDescription,
   categoryLabel,
-  getArticles,
+  getPublishedArticles,
   getSearchIndex,
   levelArticleCount,
 } from "@/lib/content";
@@ -77,7 +77,7 @@ function TopicIcon({ name }: { name: CategoryIcon }) {
 }
 
 export default function EnHome() {
-  const enArticles = getArticles("en");
+  const enArticles = getPublishedArticles("en");
   const searchItems = getSearchIndex("en");
   const levels = getDictionary("en").levels;
 

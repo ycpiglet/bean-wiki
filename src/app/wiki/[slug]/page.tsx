@@ -34,6 +34,7 @@ export async function generateMetadata(
     title: article.title,
     description: article.summary,
     keywords: article.tags,
+    robots: article.draft ? { index: false, follow: false } : undefined,
     alternates: {
       canonical: `/wiki/${slug}`,
       languages: { ko: `/wiki/${slug}`, en: `/en/wiki/${slug}` },
@@ -159,6 +160,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             <span className={`level-badge accent-${article.accent}`}>
               {article.level}
             </span>
+            {article.draft && <span className="draft-badge">초안</span>}
             <h1>{article.title}</h1>
             <p>{article.summary}</p>
             <div className="article-meta">
@@ -166,6 +168,9 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
               <span>최근 수정 {article.updatedAt}</span>
               <Link href={`/edit/${slug}`} className="edit-article-link">
                 편집
+              </Link>
+              <Link href={`/wiki/${slug}/history`} className="edit-article-link">
+                역사
               </Link>
             </div>
             {article.tags && article.tags.length > 0 && (

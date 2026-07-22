@@ -1108,6 +1108,114 @@ a.figure-credit {
   text-underline-offset: 2px;
 }
 
+.draft-badge {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 3px 10px;
+  border-radius: 999px;
+  background: var(--copper);
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 650;
+  vertical-align: middle;
+}
+
+/* ---- Article history (/wiki/[slug]/history) ---- */
+.history-page {
+  min-height: 100vh;
+  max-width: 760px;
+  padding-top: 40px;
+  padding-bottom: 80px;
+}
+
+.history-heading {
+  margin: 20px 0 28px;
+  font-size: 30px;
+  font-weight: 640;
+  letter-spacing: -0.03em;
+}
+
+.history-heading small {
+  display: block;
+  margin-top: 6px;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.history-empty {
+  color: var(--muted);
+}
+
+.history-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.history-list li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+
+.history-message {
+  margin: 0 0 6px;
+  font-weight: 560;
+  color: var(--ink);
+}
+
+.history-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.history-meta code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.history-current {
+  color: var(--olive);
+  font-weight: 650;
+}
+
+.history-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  font-size: 13px;
+}
+
+.history-actions a {
+  color: var(--olive);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.history-actions button {
+  padding: 7px 12px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.history-actions button:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
 .related-section { padding-top: 38px; border-top: 1px solid var(--ink); }
 .related-section > span { color: var(--olive); }
 .related-section > div { margin-top: 20px; }
@@ -1213,6 +1321,21 @@ a.figure-credit {
 
 .editor-summary-field {
   margin-top: 22px;
+}
+
+.editor-draft-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  color: var(--muted);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.editor-draft-toggle input {
+  width: 16px;
+  height: 16px;
 }
 
 .editor-rename {
