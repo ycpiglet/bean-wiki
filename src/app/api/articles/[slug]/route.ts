@@ -39,6 +39,7 @@ export async function GET(req: NextRequest, ctx: RouteContext<"/api/articles/[sl
   }
   return Response.json({
     loggedIn: Boolean(session),
+    login: session?.login ?? null,
     commitEnabled: commitEnabled(session),
     oauthEnabled: Boolean(process.env.GITHUB_OAUTH_CLIENT_ID && process.env.AUTH_SECRET),
     sha,

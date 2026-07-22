@@ -48,6 +48,8 @@ type EditorCopy = {
   conflict: string;
   authRequired: string;
   loginWithGithub: string;
+  loggedInAs: (login: string) => string;
+  logout: string;
   needsEditSummary: string;
   savedHtmlHeading: string;
   copy: string;
@@ -90,6 +92,8 @@ const COPY: Record<Locale, EditorCopy> = {
       "편집을 시작한 뒤 이 문서가 변경되었습니다. 새로고침해 최신 내용을 받은 뒤 다시 반영해주세요.",
     authRequired: "게시하려면 GitHub 로그인이 필요합니다.",
     loginWithGithub: "GitHub로 로그인",
+    loggedInAs: (login) => `${login} 님으로 로그인됨`,
+    logout: "로그아웃",
     needsEditSummary: "편집 요약을 입력해주세요.",
     savedHtmlHeading: "저장될 본문 HTML",
     copy: "HTML 복사",
@@ -130,6 +134,8 @@ const COPY: Record<Locale, EditorCopy> = {
       "This article changed since you started editing. Reload to get the latest version, then re-apply your changes.",
     authRequired: "Sign in with GitHub to publish.",
     loginWithGithub: "Sign in with GitHub",
+    loggedInAs: (login) => `Signed in as ${login}`,
+    logout: "Sign out",
     needsEditSummary: "Please enter an edit summary.",
     savedHtmlHeading: "Body HTML to be saved",
     copy: "Copy HTML",
@@ -185,6 +191,7 @@ export function ArticleEditor({
   // Publish wiring, hydrated from GET /api/articles/[slug].
   const [commitEnabled, setCommitEnabled] = useState(false);
   const [oauthEnabled, setOauthEnabled] = useState(false);
+  const [login, setLogin] = useState<string | null>(null);
   const [baseSha, setBaseSha] = useState<string | null>(null);
   const [saveState, setSaveState] = useState<SaveState>({ kind: "idle" });
 
@@ -207,6 +214,7 @@ export function ArticleEditor({
         if (!live) return;
         setCommitEnabled(Boolean(d.commitEnabled));
         setOauthEnabled(Boolean(d.oauthEnabled));
+        setLogin(d.login ?? null);
         setBaseSha(d.sha ?? null);
       })
       .catch(() => {});
@@ -379,12 +387,21 @@ export function ArticleEditor({
       <div className="editor-shell shell">
         <p className="editor-notice">{commitEnabled ? t.publishNotice : t.previewNotice}</p>
 
-        {!commitEnabled && oauthEnabled && (
+        {login ? (
           <p className="editor-notice">
-            <a className="editor-login" href={`/api/auth/github?returnTo=${prefix}/edit/${slug}`}>
-              {t.loginWithGithub}
+            {t.loggedInAs(login)} ·{" "}
+            <a className="editor-login" href={`/api/auth/logout?returnTo=${prefix}/edit/${slug}`}>
+              {t.logout}
             </a>
           </p>
+        ) : (
+          oauthEnabled && (
+            <p className="editor-notice">
+              <a className="editor-login" href={`/api/auth/github?returnTo=${prefix}/edit/${slug}`}>
+                {t.loginWithGithub}
+              </a>
+            </p>
+          )
         )}
 
         {saveState.kind === "published" && (
