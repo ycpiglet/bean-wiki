@@ -82,16 +82,17 @@
 
 > 설계: [docs/WIKI-EDITING.md](docs/WIKI-EDITING.md) (2026-07-22 딥리서치 기반).
 > 아키텍처: 인앱 TipTap 에디터 + Git-as-Database(GitHub API 커밋) + Vercel 자동 재배포.
+> **확정 결정(2026-07-22)**: 저장 포맷 = HTML 본문(마크다운 제거), 인증 = GitHub OAuth 로그인, 에디터 = TipTap, 게시 지연 1~2분 허용.
 
 - ✅ [M] 1a. 전역 상주 검색 — 모든 페이지 헤더에 검색 버튼 + ⌘K/Ctrl+K로 여는 전역 오버레이(`SearchOverlay`), 빌드타임 인덱스(`getSearchIndex`), 로케일 자동 감지(ko/en)
-- ⬜ [L] 1b. 인증 + `/edit/[slug]` WYSIWYG(TipTap) + 직렬화 공유화 + localStorage 초안
-- ⬜ [M] 1c. 저장 API(검증→GitHub 커밋) + basetimestamp 충돌 감지 + 새 문서 작성
-- ⬜ [M] 2a. `[[위키링크]]` 문법·자동완성·붉은 링크 + 역링크(backlinks.json)
+- ✅ [M] P1. HTML 콘텐츠 모델 기반 — `Article.bodyHtml`을 빌드타임에 `sections`에서 무손실 생성(`sectionsToHtml`), 문서 본문 렌더를 `dangerouslySetInnerHTML`로 전환(ko/en). 사이트 시각 동일(무중단), 에디터가 읽을 HTML 표현 확보. `sections`는 목차·검색·검증용으로 유지.
+- ⬜ [L] P2. `/edit/[slug]` WYSIWYG(TipTap) — bodyHtml 시드, 툴바/슬래시 명령, 리치 블록, HTML 정제. 저장은 OAuth 연결 전까지 로컬/미리보기.
+- ⬜ [M] P3. 저장 API(정제→검증→GitHub 커밋) + HTML을 정본 소스로 전환(마크다운 파이프라인 제거) + basetimestamp 충돌 감지 + 새 문서
+- ⬜ [M] P4. **GitHub OAuth 로그인** — 자격증명(OAuth App ID/secret, Vercel 환경변수)은 사용자만 제공 가능(CI와 동일 차단)
+- ⬜ [M] 2a. 위키링크(UI 링크 피커)·붉은 링크 + 역링크(backlinks.json)
 - ⬜ [M] 2b. 이미지 업로드(Vercel Blob) + 검색 삽입(Unsplash/Commons, 라이선스 표기)
 - ⬜ [S] 2c. 문서 이름 변경 리다이렉트
 - ⬜ [M~L] 3. 문서 역사/diff/복원 UI, ko/en 동기화 보조, 초안 상태
-
-**착수 전 사용자 결정** (설계 문서 §7): ① 에디터(TipTap 권장 vs TinyMCE) ② 게시 지연 1~2분 허용 여부 ③ 이미지 검색 소스(Unsplash/Commons/업로드만)
 
 ## 남은 항목 (사용자 액션)
 

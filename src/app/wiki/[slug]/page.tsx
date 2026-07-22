@@ -177,26 +177,10 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             <p>{article.fact}</p>
           </div>
 
-          <div className="article-content">
-            {article.sections.map((section, index) => (
-              <section id={section.id} key={section.id}>
-                <span className="content-index">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h2>{section.title}</h2>
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-                {section.points && (
-                  <ul>
-                    {section.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                )}
-              </section>
-            ))}
-          </div>
+          <div
+            className="article-content"
+            dangerouslySetInnerHTML={{ __html: article.bodyHtml }}
+          />
 
           {history.length > 0 && (
             <section className="revision-section">

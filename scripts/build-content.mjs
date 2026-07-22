@@ -7,14 +7,18 @@
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { markdownToArticle } from "./content-md.mjs";
+import { markdownToArticle, sectionsToHtml } from "./content-md.mjs";
 
 const dir = join(process.cwd(), "src", "content", "articles");
 const enDir = join(dir, "en");
 
 const order = JSON.parse(readFileSync(join(dir, "order.json"), "utf8"));
 
-const load = (path) => markdownToArticle(readFileSync(path, "utf8"));
+const load = (path) => {
+  const article = markdownToArticle(readFileSync(path, "utf8"));
+  article.bodyHtml = sectionsToHtml(article.sections);
+  return article;
+};
 
 const ko = order.map((slug) => load(join(dir, `${slug}.md`)));
 // English: use the translated file when present, otherwise fall back to Korean.

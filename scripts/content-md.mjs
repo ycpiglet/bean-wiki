@@ -127,6 +127,37 @@ export function markdownToArticle(source) {
   return article;
 }
 
+// Escape text for safe interpolation into generated HTML bodies.
+function escapeHtml(text) {
+  return text
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+// Render an Article's sections to a semantic HTML body. Markup mirrors the
+// former React render (section > .content-index + h2 + p… + ul>li) exactly, so
+// switching the article page to dangerouslySetInnerHTML is a visual no-op. This
+// HTML is the representation the in-browser editor reads and (later) writes.
+export function sectionsToHtml(sections) {
+  return sections
+    .map((s, i) => {
+      const index = String(i + 1).padStart(2, "0");
+      let html = `<section id="${escapeHtml(s.id)}">`;
+      html += `<span class="content-index">${index}</span>`;
+      html += `<h2>${escapeHtml(s.title)}</h2>`;
+      for (const paragraph of s.paragraphs) {
+        html += `<p>${escapeHtml(paragraph)}</p>`;
+      }
+      if (s.points && s.points.length) {
+        html += `<ul>${s.points.map((p) => `<li>${escapeHtml(p)}</li>`).join("")}</ul>`;
+      }
+      html += `</section>`;
+      return html;
+    })
+    .join("");
+}
+
 // Order-independent structural stringify for equivalence checks.
 export function stableStringify(value) {
   if (Array.isArray(value)) {
