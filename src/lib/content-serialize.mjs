@@ -220,8 +220,8 @@ const ALLOWED = {
   s: [],
   code: [],
   br: [],
-  a: ["href", "data-wikilink", "data-slug"],
-  figure: ["class"],
+  a: ["href", "data-wikilink", "data-slug", "target", "rel", "class"],
+  figure: ["class", "data-author", "data-license", "data-source"],
   figcaption: [],
   img: ["src", "alt", "width"],
 };

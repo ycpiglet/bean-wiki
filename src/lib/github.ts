@@ -61,7 +61,19 @@ export async function ghGetFile(
 
 export type PutResult = { commitSha: string; htmlUrl: string; contentSha: string };
 
-// Create or update a file. Pass `sha` to update (omit to create).
+// Create or update a file from already-base64-encoded content (e.g. an image
+// upload). Pass `sha` to update.
+export async function ghPutFileBase64(opts: {
+  path: string;
+  base64: string;
+  message: string;
+  token: string;
+  sha?: string;
+}): Promise<PutResult> {
+  return putRaw(opts.path, opts.base64, opts.message, opts.token, opts.sha);
+}
+
+// Create or update a text file. Pass `sha` to update (omit to create).
 export async function ghPutFile(opts: {
   path: string;
   text: string;
@@ -69,22 +81,34 @@ export async function ghPutFile(opts: {
   token: string;
   sha?: string;
 }): Promise<PutResult> {
-  const { branch } = getRepoConfig();
-  const body: Record<string, unknown> = {
-    message: opts.message,
-    content: Buffer.from(opts.text, "utf8").toString("base64"),
-    branch,
-  };
-  if (opts.sha) body.sha = opts.sha;
+  return putRaw(
+    opts.path,
+    Buffer.from(opts.text, "utf8").toString("base64"),
+    opts.message,
+    opts.token,
+    opts.sha,
+  );
+}
 
-  const res = await fetch(contentsUrl(opts.path), {
+async function putRaw(
+  path: string,
+  contentBase64: string,
+  message: string,
+  token: string,
+  sha?: string,
+): Promise<PutResult> {
+  const { branch } = getRepoConfig();
+  const body: Record<string, unknown> = { message, content: contentBase64, branch };
+  if (sha) body.sha = sha;
+
+  const res = await fetch(contentsUrl(path), {
     method: "PUT",
-    headers: { ...headers(opts.token), "Content-Type": "application/json" },
+    headers: { ...headers(token), "Content-Type": "application/json" },
     body: JSON.stringify(body),
   });
   if (!res.ok) {
     const detail = await res.text().catch(() => "");
-    throw new Error(`GitHub PUT ${opts.path} failed: ${res.status} ${detail}`);
+    throw new Error(`GitHub PUT ${path} failed: ${res.status} ${detail}`);
   }
   const json = (await res.json()) as {
     commit: { sha: string; html_url: string };

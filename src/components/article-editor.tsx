@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCallback, useEffect, useRef, useState } from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
-import { Extension } from "@tiptap/core";
+import { Extension, Node, mergeAttributes } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
 import type { Locale } from "@/i18n/config";
 
@@ -54,6 +54,86 @@ function escapeText(text: string): string {
   return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
 }
 
+// A figure block (image + caption + attribution). Atom: not inline-editable, so
+// it round-trips deterministically through save/build. Source/author/license
+// ride on data-* so they survive the server sanitizer and re-parse cleanly.
+type FigureAttrs = {
+  src: string;
+  alt: string;
+  caption: string;
+  author: string;
+  license: string;
+  source: string;
+};
+
+const Figure = Node.create({
+  name: "figure",
+  group: "block",
+  atom: true,
+  draggable: true,
+  addAttributes() {
+    return {
+      src: { default: "" },
+      alt: { default: "" },
+      caption: { default: "" },
+      author: { default: "" },
+      license: { default: "" },
+      source: { default: "" },
+    };
+  },
+  parseHTML() {
+    return [
+      {
+        tag: "figure",
+        getAttrs: (el) => {
+          const figure = el as HTMLElement;
+          const img = figure.querySelector("img");
+          const cap = figure.querySelector("figcaption");
+          const captionText = cap
+            ? Array.from(cap.childNodes)
+                .filter((n) => n.nodeType === 3)
+                .map((n) => n.textContent ?? "")
+                .join("")
+                .trim()
+            : "";
+          return {
+            src: img?.getAttribute("src") ?? "",
+            alt: img?.getAttribute("alt") ?? "",
+            caption: captionText,
+            author: figure.getAttribute("data-author") ?? "",
+            license: figure.getAttribute("data-license") ?? "",
+            source: figure.getAttribute("data-source") ?? "",
+          };
+        },
+      },
+    ];
+  },
+  renderHTML({ node }) {
+    const { src, alt, caption, author, license, source } = node.attrs as FigureAttrs;
+    const creditText = [author, license].filter(Boolean).join(" · ");
+    const capChildren: (string | [string, Record<string, string>, string])[] = [];
+    if (caption) capChildren.push(caption);
+    if (creditText) {
+      capChildren.push(
+        source
+          ? ["a", { href: source, target: "_blank", rel: "noreferrer", class: "figure-credit" }, creditText]
+          : ["span", { class: "figure-credit" }, creditText],
+      );
+    }
+    return [
+      "figure",
+      mergeAttributes({
+        class: "article-figure",
+        "data-author": author,
+        "data-license": license,
+        "data-source": source,
+      }),
+      ["img", { src, alt }],
+      ["figcaption", {}, ...capChildren],
+    ];
+  },
+});
+
 type EditorCopy = {
   backToArticle: string;
   editing: string;
@@ -88,6 +168,24 @@ type EditorCopy = {
   categoryLabel: string;
   levelLabel: string;
   creatingBadge: string;
+  img: {
+    panelTitle: string;
+    tabCommons: string;
+    tabUnsplash: string;
+    tabUpload: string;
+    tabUrl: string;
+    searchPlaceholder: string;
+    search: string;
+    searching: string;
+    noResults: string;
+    unsplashOff: string;
+    urlPlaceholder: string;
+    altPlaceholder: string;
+    captionPlaceholder: string;
+    insert: string;
+    uploading: string;
+    choose: string;
+  };
   toolbar: {
     h2: string;
     h3: string;
@@ -99,6 +197,7 @@ type EditorCopy = {
     quote: string;
     link: string;
     unlink: string;
+    image: string;
     undo: string;
     redo: string;
   };
@@ -142,6 +241,24 @@ const COPY: Record<Locale, EditorCopy> = {
     categoryLabel: "분야",
     levelLabel: "난이도",
     creatingBadge: "새 문서",
+    img: {
+      panelTitle: "이미지 삽입",
+      tabCommons: "위키미디어",
+      tabUnsplash: "Unsplash",
+      tabUpload: "업로드",
+      tabUrl: "URL",
+      searchPlaceholder: "이미지 검색어…",
+      search: "검색",
+      searching: "검색 중…",
+      noResults: "결과가 없습니다.",
+      unsplashOff: "Unsplash 검색은 UNSPLASH_ACCESS_KEY 설정 후 사용할 수 있습니다.",
+      urlPlaceholder: "이미지 URL (https://…)",
+      altPlaceholder: "대체 텍스트 (접근성)",
+      captionPlaceholder: "캡션 (선택)",
+      insert: "삽입",
+      uploading: "업로드 중…",
+      choose: "파일 선택",
+    },
     toolbar: {
       h2: "제목2",
       h3: "제목3",
@@ -153,6 +270,7 @@ const COPY: Record<Locale, EditorCopy> = {
       quote: "인용",
       link: "링크",
       unlink: "링크 해제",
+      image: "이미지",
       undo: "실행 취소",
       redo: "다시 실행",
     },
@@ -194,6 +312,24 @@ const COPY: Record<Locale, EditorCopy> = {
     categoryLabel: "Category",
     levelLabel: "Level",
     creatingBadge: "New article",
+    img: {
+      panelTitle: "Insert image",
+      tabCommons: "Wikimedia",
+      tabUnsplash: "Unsplash",
+      tabUpload: "Upload",
+      tabUrl: "URL",
+      searchPlaceholder: "Search images…",
+      search: "Search",
+      searching: "Searching…",
+      noResults: "No results.",
+      unsplashOff: "Unsplash search needs UNSPLASH_ACCESS_KEY to be set.",
+      urlPlaceholder: "Image URL (https://…)",
+      altPlaceholder: "Alt text (accessibility)",
+      captionPlaceholder: "Caption (optional)",
+      insert: "Insert",
+      uploading: "Uploading…",
+      choose: "Choose file",
+    },
     toolbar: {
       h2: "H2",
       h3: "H3",
@@ -205,6 +341,7 @@ const COPY: Record<Locale, EditorCopy> = {
       quote: "Quote",
       link: "Link",
       unlink: "Unlink",
+      image: "Image",
       undo: "Undo",
       redo: "Redo",
     },
@@ -212,6 +349,15 @@ const COPY: Record<Locale, EditorCopy> = {
 };
 
 type Draft = { title: string; summary: string; bodyHtml: string };
+type ImageResult = {
+  thumb: string;
+  full: string;
+  author: string;
+  license: string;
+  sourceUrl: string;
+  title: string;
+  downloadLocation?: string;
+};
 type SaveState =
   | { kind: "idle" }
   | { kind: "saving" }
@@ -251,6 +397,16 @@ export function ArticleEditor({
   const [level, setLevel] = useState<"입문" | "중급" | "전문">("입문");
   const [linkPickerOpen, setLinkPickerOpen] = useState(false);
   const [linkFilter, setLinkFilter] = useState("");
+  const [imagePanelOpen, setImagePanelOpen] = useState(false);
+  const [imgTab, setImgTab] = useState<"commons" | "unsplash" | "upload" | "url">("commons");
+  const [imgQuery, setImgQuery] = useState("");
+  const [imgResults, setImgResults] = useState<ImageResult[]>([]);
+  const [imgBusy, setImgBusy] = useState(false);
+  const [imgSearched, setImgSearched] = useState(false);
+  const [unsplashOff, setUnsplashOff] = useState(false);
+  const [urlSrc, setUrlSrc] = useState("");
+  const [urlAlt, setUrlAlt] = useState("");
+  const [urlCaption, setUrlCaption] = useState("");
   const [draftState, setDraftState] = useState<"idle" | "saved" | "restored">("idle");
   const [savedHtml, setSavedHtml] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -296,6 +452,7 @@ export function ArticleEditor({
       StarterKit.configure({ link: { openOnClick: false, autolink: false } }),
       HeadingId,
       WikiLinkAttr,
+      Figure,
     ],
     content: bodyHtml,
     immediatelyRender: false,
@@ -386,6 +543,93 @@ export function ArticleEditor({
     setLinkPickerOpen(false);
     setLinkFilter("");
     scheduleSave();
+  }
+
+  function insertFigure(attrs: {
+    src: string;
+    alt: string;
+    caption: string;
+    author: string;
+    license: string;
+    source: string;
+  }) {
+    if (!editor || !attrs.src) return;
+    editor.chain().focus().insertContent({ type: "figure", attrs }).run();
+    setImagePanelOpen(false);
+    scheduleSave();
+  }
+
+  async function searchImages() {
+    if (!imgQuery.trim()) return;
+    setImgBusy(true);
+    setImgSearched(true);
+    try {
+      const res = await fetch(
+        `/api/images/search?source=${imgTab}&q=${encodeURIComponent(imgQuery)}`,
+      );
+      const data = await res.json();
+      setImgResults(Array.isArray(data.results) ? data.results : []);
+      setUnsplashOff(imgTab === "unsplash" && data.unsplashConfigured === false);
+    } catch {
+      setImgResults([]);
+    } finally {
+      setImgBusy(false);
+    }
+  }
+
+  function pickResult(r: ImageResult) {
+    if (imgTab === "unsplash" && r.downloadLocation) {
+      fetch("/api/images/track", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ downloadLocation: r.downloadLocation }),
+      }).catch(() => {});
+    }
+    insertFigure({
+      src: r.full,
+      alt: r.title,
+      caption: "",
+      author: r.author,
+      license: r.license,
+      source: r.sourceUrl,
+    });
+  }
+
+  async function uploadFile(file: File) {
+    setImgBusy(true);
+    try {
+      const dataBase64 = await new Promise<string>((resolve, reject) => {
+        const reader = new FileReader();
+        reader.onload = () => resolve(String(reader.result));
+        reader.onerror = () => reject(reader.error);
+        reader.readAsDataURL(file);
+      });
+      const res = await fetch("/api/images/upload", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ filename: file.name, dataBase64, slug: slugValue }),
+      });
+      const data = await res.json();
+      if (res.ok && data.url) {
+        insertFigure({
+          src: data.url,
+          alt: file.name.replace(/\.[^.]+$/, ""),
+          caption: "",
+          author: login ?? "",
+          license: "",
+          source: "",
+        });
+      } else {
+        setSaveState({ kind: "error", message: data.message ?? `HTTP ${res.status}` });
+      }
+    } catch (error) {
+      setSaveState({
+        kind: "error",
+        message: error instanceof Error ? error.message : "upload error",
+      });
+    } finally {
+      setImgBusy(false);
+    }
   }
 
   async function publish() {
@@ -672,6 +916,14 @@ export function ArticleEditor({
             >
               {tb.unlink}
             </button>
+            <button
+              type="button"
+              aria-pressed={imagePanelOpen}
+              className={imagePanelOpen ? "is-active" : ""}
+              onClick={() => setImagePanelOpen((open) => !open)}
+            >
+              {tb.image}
+            </button>
             <span className="editor-sep" aria-hidden="true" />
             <button
               type="button"
@@ -719,6 +971,135 @@ export function ArticleEditor({
             </ul>
             {linkFilter.trim() && (
               <p className="editor-linkpicker-hint">{t.linkEmpty}</p>
+            )}
+          </div>
+        )}
+
+        {imagePanelOpen && editor && (
+          <div className="editor-imagepanel" role="dialog" aria-label={t.img.panelTitle}>
+            <span className="editor-linkpicker-title">{t.img.panelTitle}</span>
+            <div className="editor-imagetabs" role="tablist">
+              {(["commons", "unsplash", "upload", "url"] as const).map((tab) => (
+                <button
+                  key={tab}
+                  type="button"
+                  role="tab"
+                  aria-selected={imgTab === tab}
+                  className={imgTab === tab ? "is-active" : ""}
+                  onClick={() => {
+                    setImgTab(tab);
+                    setImgResults([]);
+                    setImgSearched(false);
+                  }}
+                >
+                  {tab === "commons"
+                    ? t.img.tabCommons
+                    : tab === "unsplash"
+                      ? t.img.tabUnsplash
+                      : tab === "upload"
+                        ? t.img.tabUpload
+                        : t.img.tabUrl}
+                </button>
+              ))}
+            </div>
+
+            {(imgTab === "commons" || imgTab === "unsplash") && (
+              <>
+                <div className="editor-imagesearch">
+                  <input
+                    type="text"
+                    value={imgQuery}
+                    placeholder={t.img.searchPlaceholder}
+                    onChange={(event) => setImgQuery(event.target.value)}
+                    onKeyDown={(event) => {
+                      if (event.key === "Enter") {
+                        event.preventDefault();
+                        searchImages();
+                      }
+                    }}
+                  />
+                  <button type="button" onClick={searchImages} disabled={imgBusy}>
+                    {imgBusy ? t.img.searching : t.img.search}
+                  </button>
+                </div>
+                {unsplashOff && <p className="editor-linkpicker-hint">{t.img.unsplashOff}</p>}
+                {imgResults.length > 0 && (
+                  <div className="editor-imagegrid">
+                    {imgResults.map((r, i) => (
+                      <button
+                        key={`${r.full}-${i}`}
+                        type="button"
+                        title={`${r.author} · ${r.license}`}
+                        onClick={() => pickResult(r)}
+                      >
+                        {/* eslint-disable-next-line @next/next/no-img-element */}
+                        <img src={r.thumb} alt={r.title} loading="lazy" />
+                        <small>{r.license}</small>
+                      </button>
+                    ))}
+                  </div>
+                )}
+                {imgSearched && !imgBusy && imgResults.length === 0 && !unsplashOff && (
+                  <p className="editor-linkpicker-hint">{t.img.noResults}</p>
+                )}
+              </>
+            )}
+
+            {imgTab === "upload" && (
+              <div className="editor-imageupload">
+                <input
+                  type="file"
+                  accept="image/png,image/jpeg,image/webp,image/gif"
+                  disabled={imgBusy || !commitEnabled}
+                  onChange={(event) => {
+                    const file = event.target.files?.[0];
+                    if (file) uploadFile(file);
+                  }}
+                />
+                {imgBusy && <span>{t.img.uploading}</span>}
+                {!commitEnabled && (
+                  <p className="editor-linkpicker-hint">{t.authRequired}</p>
+                )}
+              </div>
+            )}
+
+            {imgTab === "url" && (
+              <div className="editor-imageurl">
+                <input
+                  type="text"
+                  value={urlSrc}
+                  placeholder={t.img.urlPlaceholder}
+                  onChange={(event) => setUrlSrc(event.target.value)}
+                />
+                <input
+                  type="text"
+                  value={urlAlt}
+                  placeholder={t.img.altPlaceholder}
+                  onChange={(event) => setUrlAlt(event.target.value)}
+                />
+                <input
+                  type="text"
+                  value={urlCaption}
+                  placeholder={t.img.captionPlaceholder}
+                  onChange={(event) => setUrlCaption(event.target.value)}
+                />
+                <button
+                  type="button"
+                  disabled={!urlSrc.trim()}
+                  onClick={() =>
+                    insertFigure({
+                      src: urlSrc.trim(),
+                      alt: urlAlt.trim(),
+                      caption: urlCaption.trim(),
+                      author: "",
+                      license: "",
+                      source: "",
+                    })
+                  }
+                >
+                  {t.img.insert}
+                </button>
+              </div>
             )}
           </div>
         )}
