@@ -56,6 +56,9 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
   const related = article.related
     .map((relatedSlug) => getArticle(relatedSlug, "en"))
     .filter((item) => item !== undefined);
+  const backlinks = (article.backlinks ?? [])
+    .map((linkSlug) => getArticle(linkSlug, "en"))
+    .filter((item) => item !== undefined);
   const history = article.history ?? [];
   const catLabel = categoryLabel(article.category, "en");
 
@@ -165,6 +168,21 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
               ))}
             </div>
           </section>
+
+          {backlinks.length > 0 && (
+            <section className="related-section backlinks-section">
+              <span>Referenced by</span>
+              <div>
+                {backlinks.map((item) => (
+                  <Link href={`/en/wiki/${item.slug}`} key={item.slug}>
+                    <small>{categoryLabel(item.category, "en")}</small>
+                    <strong>{item.title}</strong>
+                    <span>→</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <ShareButtons title={article.title} path={`/en/wiki/${slug}`} />
         </article>

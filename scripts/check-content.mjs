@@ -8,7 +8,7 @@
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { articleFromSource } from "../src/lib/content-serialize.mjs";
+import { articleFromSource, extractWikilinks } from "../src/lib/content-serialize.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const contentDir = join(root, "src", "content");
@@ -17,6 +17,8 @@ const articlesDir = join(contentDir, "articles");
 const read = (p) => readFileSync(p, "utf8");
 const errors = [];
 const err = (msg) => errors.push(msg);
+const warnings = [];
+const warn = (msg) => warnings.push(msg);
 
 function quoted(re, text) {
   const out = [];
@@ -100,6 +102,13 @@ for (const name of categoryNames)
   if (!articles.some((a) => a.category === name))
     err(`category "${name}" has no articles`);
 
+// Wikilinks: a link to a missing slug is a "red link" (invites creation), so
+// warn rather than fail — mirroring MediaWiki.
+for (const a of articles)
+  for (const target of extractWikilinks(a.bodyHtml))
+    if (!slugs.has(target))
+      warn(`article "${a.slug}" wikilinks a missing slug "${target}" (red link)`);
+
 // English translations (articles/en/*.html): must mirror a Korean article's
 // slug, canonical category/accent/related, and section structure.
 const enDir = join(articlesDir, "en");
@@ -144,6 +153,12 @@ for (const block of glossarySrc.split(/\{/).slice(1)) {
   if (!relatedRaw) continue;
   for (const rel of quoted(/"([^"]+)"/g, relatedRaw))
     if (!slugs.has(rel)) err(`glossary term related-links a missing slug "${rel}"`);
+}
+
+if (warnings.length) {
+  console.warn(`\n⚠ check-content: ${warnings.length} warning(s)`);
+  for (const w of warnings) console.warn(`  - ${w}`);
+  console.warn("");
 }
 
 if (errors.length) {

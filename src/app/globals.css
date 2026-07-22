@@ -1064,6 +1064,21 @@ svg {
   line-height: 1.7;
 }
 
+.article-content a {
+  color: var(--olive);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  font-weight: 560;
+}
+
+.article-content a.is-redlink {
+  color: #c0392b;
+}
+
+.backlinks-section > span {
+  color: var(--sage);
+}
+
 .related-section { padding-top: 38px; border-top: 1px solid var(--ink); }
 .related-section > span { color: var(--olive); }
 .related-section > div { margin-top: 20px; }
@@ -1169,6 +1184,105 @@ svg {
 
 .editor-summary-field {
   margin-top: 22px;
+}
+
+.editor-field select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 16px;
+}
+
+.editor-field-row {
+  display: flex;
+  gap: 16px;
+}
+
+.editor-field-row .editor-field {
+  flex: 1;
+}
+
+.editor-creating-badge {
+  display: inline-block;
+  margin: 0 0 16px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  background: var(--olive);
+  color: var(--cream);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+.editor-linkpicker {
+  margin: 0 0 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--olive);
+  border-radius: 4px;
+  background: var(--paper);
+}
+
+.editor-linkpicker-title {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 650;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.editor-linkpicker input {
+  width: 100%;
+  padding: 9px 12px;
+  margin-bottom: 8px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  background: var(--cream);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+}
+
+.editor-linkpicker ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.editor-linkpicker li button {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  width: 100%;
+  padding: 8px 10px;
+  border: 0;
+  border-radius: 3px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+  cursor: pointer;
+}
+
+.editor-linkpicker li button:hover {
+  background: var(--cream);
+}
+
+.editor-linkpicker li button small {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.editor-linkpicker-hint {
+  margin: 8px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.6;
 }
 
 .editor-field {
@@ -1935,6 +2049,12 @@ input:focus-visible,
 }
 [data-theme="dark"] .article-content li {
   color: #c4c0b3;
+}
+[data-theme="dark"] .article-content a {
+  color: var(--sage);
+}
+[data-theme="dark"] .article-content a.is-redlink {
+  color: #e57373;
 }
 [data-theme="dark"] .topic-card:hover,
 [data-theme="dark"] .browse-card:hover {

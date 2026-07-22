@@ -125,16 +125,20 @@ export function renderSectionedHtml(body) {
 export function deriveSections(body) {
   const sections = [];
   let cur = null;
+  // Strip inline tags (links, bold, …) so the outline holds clean text for the
+  // TOC and search haystack. The current corpus has no inline markup, so this
+  // is a no-op there.
+  const plain = (html) => unescapeHtml(html.replace(/<[^>]+>/g, "").trim());
   const pushText = (raw) => {
     if (!cur) return;
-    cur.paragraphs.push(unescapeHtml(raw.trim()));
+    cur.paragraphs.push(plain(raw));
   };
   const pushPoints = (listInner) => {
     if (!cur) return;
     const items = [];
     const re = /<li>([\s\S]*?)<\/li>/g;
     let m;
-    while ((m = re.exec(listInner)) !== null) items.push(unescapeHtml(m[1].trim()));
+    while ((m = re.exec(listInner)) !== null) items.push(plain(m[1]));
     if (!items.length) return;
     if (cur.points) cur.points.push(...items);
     else cur.points = items;
@@ -343,6 +347,31 @@ export function bodyHtmlToEditorHtml(bodyHtml) {
     .replace(/<span class="content-index">\d+<\/span>/g, "")
     .replace(/<section id="([^"]*)"><h2>/g, '<h2 id="$1">')
     .replace(/<\/section>/g, "");
+}
+
+// --- Wikilinks (internal links) --------------------------------------------
+
+// Internal links are stored as <a data-wikilink="<slug>" href="/wiki/<slug>">.
+// Collect the distinct target slugs referenced in a body.
+export function extractWikilinks(bodyHtml) {
+  const slugs = new Set();
+  const re = /data-wikilink="([^"]*)"/g;
+  let m;
+  while ((m = re.exec(bodyHtml)) !== null) if (m[1]) slugs.add(m[1]);
+  return [...slugs];
+}
+
+// Rewrite internal links whose target does not exist into "red links": a
+// distinct style pointing at the create-article route, mirroring MediaWiki. A
+// broken link is a feature (it invites creation), not an error. `exists` is a
+// predicate over slugs.
+export function annotateRedLinks(bodyHtml, exists) {
+  return bodyHtml.replace(/<a\b([^>]*)>/g, (full, attrs) => {
+    const m = attrs.match(/data-wikilink="([^"]*)"/);
+    if (!m || !m[1]) return full;
+    if (exists(m[1])) return full;
+    return `<a class="is-redlink" href="/edit/${m[1]}" data-wikilink="${m[1]}">`;
+  });
 }
 
 // --- Heading ids -----------------------------------------------------------

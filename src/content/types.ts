@@ -38,6 +38,10 @@ export type Article = {
   related: string[];
   tags?: string[];
   history?: RevisionEntry[];
+  // Slugs of articles that link here via an in-body wikilink. Computed at
+  // build time (see scripts/build-content.mjs). Powers the "referenced by"
+  // section; empty when nothing links here.
+  backlinks?: string[];
 };
 
 export type Category = {

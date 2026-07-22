@@ -7,7 +7,11 @@
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
-import { articleFromSource } from "../src/lib/content-serialize.mjs";
+import {
+  articleFromSource,
+  extractWikilinks,
+  annotateRedLinks,
+} from "../src/lib/content-serialize.mjs";
 
 const dir = join(process.cwd(), "src", "content", "articles");
 const enDir = join(dir, "en");
@@ -22,6 +26,22 @@ const en = order.map((slug) => {
   const enPath = join(enDir, `${slug}.html`);
   return existsSync(enPath) ? load(enPath) : load(join(dir, `${slug}.html`));
 });
+
+// Wikilinks: compute backlinks (who links here) and mark red links (targets
+// that don't exist) per locale. Slugs are shared across locales.
+const slugSet = new Set(order);
+const exists = (slug) => slugSet.has(slug);
+for (const set of [ko, en]) {
+  const backlinks = {};
+  for (const a of set)
+    for (const target of extractWikilinks(a.bodyHtml)) {
+      (backlinks[target] ??= []).push(a.slug);
+    }
+  for (const a of set) {
+    a.bodyHtml = annotateRedLinks(a.bodyHtml, exists);
+    a.backlinks = backlinks[a.slug] ?? [];
+  }
+}
 
 const header = `import type { Article } from "@/content/types";
 

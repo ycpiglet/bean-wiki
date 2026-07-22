@@ -61,6 +61,10 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
     .map((relatedSlug) => getArticle(relatedSlug))
     .filter((item) => item !== undefined);
 
+  const backlinks = (article.backlinks ?? [])
+    .map((linkSlug) => getArticle(linkSlug))
+    .filter((item) => item !== undefined);
+
   const history = article.history ?? [];
   const categorySlug = getCategoryByName(article.category)?.slug;
   const published = history.length
@@ -211,6 +215,21 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
               ))}
             </div>
           </section>
+
+          {backlinks.length > 0 && (
+            <section className="related-section backlinks-section">
+              <span>이 문서를 참조하는 문서</span>
+              <div>
+                {backlinks.map((item) => (
+                  <Link href={`/wiki/${item.slug}`} key={item.slug}>
+                    <small>{item.category}</small>
+                    <strong>{item.title}</strong>
+                    <span>→</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
 
           <ShareButtons title={article.title} path={`/wiki/${slug}`} />
         </article>

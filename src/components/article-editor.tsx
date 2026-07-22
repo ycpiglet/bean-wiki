@@ -28,6 +28,32 @@ const HeadingId = Extension.create({
   },
 });
 
+// Add a data-wikilink slug to StarterKit's built-in link mark so the build can
+// resolve red links and backlinks. Links are inserted via the picker, never by
+// typing markup.
+const WikiLinkAttr = Extension.create({
+  name: "wikiLinkAttr",
+  addGlobalAttributes() {
+    return [
+      {
+        types: ["link"],
+        attributes: {
+          "data-wikilink": {
+            default: null,
+            parseHTML: (el) => el.getAttribute("data-wikilink"),
+            renderHTML: (attrs) =>
+              attrs["data-wikilink"] ? { "data-wikilink": attrs["data-wikilink"] } : {},
+          },
+        },
+      },
+    ];
+  },
+});
+
+function escapeText(text: string): string {
+  return text.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
 type EditorCopy = {
   backToArticle: string;
   editing: string;
@@ -54,6 +80,14 @@ type EditorCopy = {
   savedHtmlHeading: string;
   copy: string;
   copied: string;
+  linkPickerTitle: string;
+  linkSearchPlaceholder: string;
+  linkEmpty: string;
+  slugLabel: string;
+  slugPlaceholder: string;
+  categoryLabel: string;
+  levelLabel: string;
+  creatingBadge: string;
   toolbar: {
     h2: string;
     h3: string;
@@ -63,6 +97,8 @@ type EditorCopy = {
     bullet: string;
     ordered: string;
     quote: string;
+    link: string;
+    unlink: string;
     undo: string;
     redo: string;
   };
@@ -98,6 +134,14 @@ const COPY: Record<Locale, EditorCopy> = {
     savedHtmlHeading: "저장될 본문 HTML",
     copy: "HTML 복사",
     copied: "복사됨",
+    linkPickerTitle: "연결할 문서 선택",
+    linkSearchPlaceholder: "문서 제목 검색…",
+    linkEmpty: "일치하는 문서가 없습니다. 없는 문서로 링크하면 붉은 링크가 됩니다.",
+    slugLabel: "슬러그 (URL)",
+    slugPlaceholder: "영문 소문자·숫자·하이픈 (예: cold-brew)",
+    categoryLabel: "분야",
+    levelLabel: "난이도",
+    creatingBadge: "새 문서",
     toolbar: {
       h2: "제목2",
       h3: "제목3",
@@ -107,6 +151,8 @@ const COPY: Record<Locale, EditorCopy> = {
       bullet: "글머리 목록",
       ordered: "번호 목록",
       quote: "인용",
+      link: "링크",
+      unlink: "링크 해제",
       undo: "실행 취소",
       redo: "다시 실행",
     },
@@ -140,6 +186,14 @@ const COPY: Record<Locale, EditorCopy> = {
     savedHtmlHeading: "Body HTML to be saved",
     copy: "Copy HTML",
     copied: "Copied",
+    linkPickerTitle: "Link to an article",
+    linkSearchPlaceholder: "Search article titles…",
+    linkEmpty: "No match. Linking to a missing article creates a red link.",
+    slugLabel: "Slug (URL)",
+    slugPlaceholder: "lowercase letters, numbers, hyphens (e.g. cold-brew)",
+    categoryLabel: "Category",
+    levelLabel: "Level",
+    creatingBadge: "New article",
     toolbar: {
       h2: "H2",
       h3: "H3",
@@ -149,6 +203,8 @@ const COPY: Record<Locale, EditorCopy> = {
       bullet: "Bullet list",
       ordered: "Numbered list",
       quote: "Quote",
+      link: "Link",
+      unlink: "Unlink",
       undo: "Undo",
       redo: "Redo",
     },
@@ -170,20 +226,31 @@ export function ArticleEditor({
   summary,
   bodyHtml,
   locale = "ko",
+  creating = false,
+  articles = [],
+  categoryOptions = [],
 }: {
   slug: string;
   title: string;
   summary: string;
   bodyHtml: string;
   locale?: Locale;
+  creating?: boolean;
+  articles?: { slug: string; title: string }[];
+  categoryOptions?: string[];
 }) {
   const t = COPY[locale];
   const prefix = locale === "en" ? "/en" : "";
-  const draftKey = `bean-wiki:draft:${locale}:${slug}`;
+  const draftKey = `bean-wiki:draft:${locale}:${slug || "new"}`;
 
   const [titleValue, setTitleValue] = useState(title);
   const [summaryValue, setSummaryValue] = useState(summary);
   const [editSummary, setEditSummary] = useState("");
+  const [slugValue, setSlugValue] = useState(slug);
+  const [category, setCategory] = useState(categoryOptions[0] ?? "");
+  const [level, setLevel] = useState<"입문" | "중급" | "전문">("입문");
+  const [linkPickerOpen, setLinkPickerOpen] = useState(false);
+  const [linkFilter, setLinkFilter] = useState("");
   const [draftState, setDraftState] = useState<"idle" | "saved" | "restored">("idle");
   const [savedHtml, setSavedHtml] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -208,23 +275,28 @@ export function ArticleEditor({
   // sha for optimistic-concurrency conflict detection.
   useEffect(() => {
     let live = true;
-    fetch(`/api/articles/${slug}?locale=${locale}`)
+    fetch(`/api/articles/${slug || "new"}?locale=${locale}`)
       .then((r) => r.json())
       .then((d) => {
         if (!live) return;
         setCommitEnabled(Boolean(d.commitEnabled));
         setOauthEnabled(Boolean(d.oauthEnabled));
         setLogin(d.login ?? null);
-        setBaseSha(d.sha ?? null);
+        // baseSha only matters for updates; a new article has no base file.
+        if (!creating) setBaseSha(d.sha ?? null);
       })
       .catch(() => {});
     return () => {
       live = false;
     };
-  }, [slug, locale]);
+  }, [slug, locale, creating]);
 
   const editor = useEditor({
-    extensions: [StarterKit, HeadingId],
+    extensions: [
+      StarterKit.configure({ link: { openOnClick: false, autolink: false } }),
+      HeadingId,
+      WikiLinkAttr,
+    ],
     content: bodyHtml,
     immediatelyRender: false,
     editorProps: {
@@ -296,6 +368,26 @@ export function ArticleEditor({
     setCopied(false);
   }
 
+  // Insert an internal link to the picked article. Wraps the selection, or
+  // inserts the article title when there is no selection.
+  function insertWikiLink(target: { slug: string; title: string }) {
+    if (!editor) return;
+    const href = `${prefix}/wiki/${target.slug}`;
+    const { from, to } = editor.state.selection;
+    const selected = editor.state.doc.textBetween(from, to, " ");
+    const text = selected || target.title;
+    editor
+      .chain()
+      .focus()
+      .insertContent(
+        `<a data-wikilink="${target.slug}" href="${href}">${escapeText(text)}</a>`,
+      )
+      .run();
+    setLinkPickerOpen(false);
+    setLinkFilter("");
+    scheduleSave();
+  }
+
   async function publish() {
     if (!editor) return;
     if (!editSummary.trim()) {
@@ -304,7 +396,7 @@ export function ArticleEditor({
     }
     setSaveState({ kind: "saving" });
     try {
-      const res = await fetch(`/api/articles/${slug}?locale=${locale}`, {
+      const res = await fetch(`/api/articles/${slugValue}?locale=${locale}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -312,8 +404,9 @@ export function ArticleEditor({
           summary: summaryValue,
           bodyHtml: editor.getHTML(),
           editSummary,
-          baseSha,
+          baseSha: creating ? undefined : baseSha,
           locale,
+          ...(creating ? { category, level } : {}),
         }),
       });
       const data = await res.json().catch(() => ({}));
@@ -430,6 +523,48 @@ export function ArticleEditor({
           </p>
         )}
 
+        {creating && (
+          <>
+            <p className="editor-creating-badge">{t.creatingBadge}</p>
+            <label className="editor-field">
+              <span>{t.slugLabel}</span>
+              <input
+                type="text"
+                value={slugValue}
+                placeholder={t.slugPlaceholder}
+                onChange={(event) =>
+                  setSlugValue(event.target.value.trim().toLowerCase())
+                }
+              />
+            </label>
+            <div className="editor-field-row">
+              <label className="editor-field">
+                <span>{t.categoryLabel}</span>
+                <select value={category} onChange={(event) => setCategory(event.target.value)}>
+                  {categoryOptions.map((name) => (
+                    <option key={name} value={name}>
+                      {name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label className="editor-field">
+                <span>{t.levelLabel}</span>
+                <select
+                  value={level}
+                  onChange={(event) =>
+                    setLevel(event.target.value as "입문" | "중급" | "전문")
+                  }
+                >
+                  <option value="입문">입문</option>
+                  <option value="중급">중급</option>
+                  <option value="전문">전문</option>
+                </select>
+              </label>
+            </div>
+          </>
+        )}
+
         <label className="editor-field">
           <span>{t.titleLabel}</span>
           <input
@@ -524,6 +659,22 @@ export function ArticleEditor({
             <span className="editor-sep" aria-hidden="true" />
             <button
               type="button"
+              aria-pressed={linkPickerOpen}
+              className={editor.isActive("link") ? "is-active" : ""}
+              onClick={() => setLinkPickerOpen((open) => !open)}
+            >
+              {tb.link}
+            </button>
+            <button
+              type="button"
+              onClick={() => editor.chain().focus().unsetLink().run()}
+              disabled={!editor.isActive("link")}
+            >
+              {tb.unlink}
+            </button>
+            <span className="editor-sep" aria-hidden="true" />
+            <button
+              type="button"
               onClick={() => editor.chain().focus().undo().run()}
               disabled={!editor.can().undo()}
             >
@@ -536,6 +687,39 @@ export function ArticleEditor({
             >
               {tb.redo}
             </button>
+          </div>
+        )}
+
+        {linkPickerOpen && editor && (
+          <div className="editor-linkpicker" role="dialog" aria-label={t.linkPickerTitle}>
+            <span className="editor-linkpicker-title">{t.linkPickerTitle}</span>
+            <input
+              type="text"
+              autoFocus
+              value={linkFilter}
+              placeholder={t.linkSearchPlaceholder}
+              onChange={(event) => setLinkFilter(event.target.value)}
+            />
+            <ul>
+              {articles
+                .filter(
+                  (a) =>
+                    a.title.toLowerCase().includes(linkFilter.toLowerCase()) ||
+                    a.slug.includes(linkFilter.toLowerCase()),
+                )
+                .slice(0, 8)
+                .map((a) => (
+                  <li key={a.slug}>
+                    <button type="button" onClick={() => insertWikiLink(a)}>
+                      <strong>{a.title}</strong>
+                      <small>/{a.slug}</small>
+                    </button>
+                  </li>
+                ))}
+            </ul>
+            {linkFilter.trim() && (
+              <p className="editor-linkpicker-hint">{t.linkEmpty}</p>
+            )}
           </div>
         )}
 
