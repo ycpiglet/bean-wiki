@@ -86,7 +86,7 @@
 
 - ✅ [M] 1a. 전역 상주 검색 — 모든 페이지 헤더에 검색 버튼 + ⌘K/Ctrl+K로 여는 전역 오버레이(`SearchOverlay`), 빌드타임 인덱스(`getSearchIndex`), 로케일 자동 감지(ko/en)
 - ✅ [M] P1. HTML 콘텐츠 모델 기반 — `Article.bodyHtml`을 빌드타임에 `sections`에서 무손실 생성(`sectionsToHtml`), 문서 본문 렌더를 `dangerouslySetInnerHTML`로 전환(ko/en). 사이트 시각 동일(무중단), 에디터가 읽을 HTML 표현 확보. `sections`는 목차·검색·검증용으로 유지.
-- ⬜ [L] P2. `/edit/[slug]` WYSIWYG(TipTap) — bodyHtml 시드, 툴바/슬래시 명령, 리치 블록, HTML 정제. 저장은 OAuth 연결 전까지 로컬/미리보기.
+- ✅ [L] P2. `/edit/[slug]` WYSIWYG(TipTap) — bodyHtml 시드, 툴바(제목2/3·굵게·기울임·취소선·목록·인용·실행취소), localStorage 초안 자동저장(900ms)/복원/버리기, 저장=미리보기(HTML 출력, OAuth 연결 전). 문서 페이지에 [편집] 버튼. 정적 생성·noindex. (남은 리치 블록: 슬래시 명령·콜아웃·토글·표·이미지 — 후속)
 - ⬜ [M] P3. 저장 API(정제→검증→GitHub 커밋) + HTML을 정본 소스로 전환(마크다운 파이프라인 제거) + basetimestamp 충돌 감지 + 새 문서
 - ⬜ [M] P4. **GitHub OAuth 로그인** — 자격증명(OAuth App ID/secret, Vercel 환경변수)은 사용자만 제공 가능(CI와 동일 차단)
 - ⬜ [M] 2a. 위키링크(UI 링크 피커)·붉은 링크 + 역링크(backlinks.json)

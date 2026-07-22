@@ -160,6 +160,9 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             <div className="article-meta">
               <span>읽는 시간 {article.readingTime}</span>
               <span>최근 수정 {article.updatedAt}</span>
+              <Link href={`/edit/${slug}`} className="edit-article-link">
+                편집
+              </Link>
             </div>
             {article.tags && article.tags.length > 0 && (
               <div className="article-tags">
