@@ -198,18 +198,167 @@ export function normalizeBody(body) {
   return tokenizeBlocks(body).join("\n") + "\n";
 }
 
-// --- Heading ids (used by the save API) ------------------------------------
+// --- Editor <-> source (used by the save API and the /edit page) -----------
 
-// Slugify a heading title into an anchor id. ASCII-lossy for non-Latin scripts,
-// so callers fall back to a positional id when the result is empty.
+// Allowlisted tags and their permitted attributes. Anything else is unwrapped
+// (tag stripped, text kept). Editors are authenticated, but the body is
+// rendered with dangerouslySetInnerHTML, so this is defense-in-depth.
+const ALLOWED = {
+  h2: ["id"],
+  h3: [],
+  p: [],
+  ul: [],
+  ol: [],
+  li: [],
+  blockquote: [],
+  strong: [],
+  em: [],
+  s: [],
+  code: [],
+  br: [],
+  a: ["href", "data-wikilink", "data-slug"],
+  figure: ["class"],
+  figcaption: [],
+  img: ["src", "alt", "width"],
+};
+const SELF_CLOSING = new Set(["br", "img"]);
+const BLOCK_TAGS = new Set([
+  "h2",
+  "h3",
+  "p",
+  "ul",
+  "ol",
+  "blockquote",
+  "figure",
+]);
+
+function safeUrl(value) {
+  const v = String(value).trim();
+  // Allow relative URLs and a safe scheme allowlist; reject javascript:, etc.
+  if (/^(https?:\/\/|mailto:|\/|#|\.\/|\.\.\/)/i.test(v)) return v;
+  if (/^[^:]+$/.test(v)) return v; // bare relative path, no scheme
+  return null;
+}
+
+// Allowlist-sanitize an HTML fragment. Drops <script>/<style>, comments, and
+// event-handler / unsafe-URL attributes; unwraps disallowed tags.
+export function sanitizeArticleHtml(html) {
+  const out = String(html)
+    .replace(/<!--[\s\S]*?-->/g, "")
+    .replace(/<\/?(script|style)\b[\s\S]*?>/gi, "");
+
+  return out.replace(
+    /<(\/?)([a-zA-Z0-9]+)((?:\s+[^<>]*?)?)\s*\/?>/g,
+    (match, close, rawName, attrs) => {
+      const name = rawName.toLowerCase();
+      const allowedAttrs = ALLOWED[name];
+      if (!allowedAttrs) return ""; // unwrap disallowed tag, keep inner text
+      if (close) return `</${name}>`;
+
+      let kept = "";
+      const attrRe = /([a-zA-Z0-9-]+)(?:\s*=\s*("([^"]*)"|'([^']*)'|(\S+)))?/g;
+      let a;
+      while ((a = attrRe.exec(attrs)) !== null) {
+        const attr = a[1].toLowerCase();
+        if (!allowedAttrs.includes(attr)) continue;
+        const value = a[3] ?? a[4] ?? a[5] ?? "";
+        if (attr === "href" || attr === "src") {
+          const url = safeUrl(value);
+          if (url === null) continue;
+          kept += ` ${attr}="${url.replace(/"/g, "&quot;")}"`;
+        } else {
+          kept += ` ${attr}="${String(value).replace(/"/g, "&quot;")}"`;
+        }
+      }
+      const slash = SELF_CLOSING.has(name) ? " /" : "";
+      return `<${name}${kept}${slash}>`;
+    },
+  );
+}
+
+// Split an HTML fragment into its top-level block strings, tracking nesting so
+// a list (or figure) with nested children stays one block. Text outside any
+// block is dropped (the editor wraps prose in <p>).
+export function splitTopLevelBlocks(html) {
+  const blocks = [];
+  let depth = 0;
+  let start = -1;
+  const tagRe = /<(\/?)([a-zA-Z0-9]+)[^>]*?(\/?)>/g;
+  let m;
+  while ((m = tagRe.exec(html)) !== null) {
+    const [full, close, rawName, selfClose] = m;
+    const name = rawName.toLowerCase();
+    if (SELF_CLOSING.has(name) || selfClose) {
+      if (depth === 0 && BLOCK_TAGS.has(name)) blocks.push(full);
+      continue;
+    }
+    if (close) {
+      depth -= 1;
+      if (depth === 0 && start !== -1) {
+        blocks.push(html.slice(start, m.index + full.length));
+        start = -1;
+      }
+    } else {
+      if (depth === 0 && BLOCK_TAGS.has(name)) start = m.index;
+      depth += 1;
+    }
+  }
+  return blocks;
+}
+
+// Convert the editor's HTML output into a canonical source body: sanitize,
+// split into top-level blocks, assign stable ids to <h2> headings (preserving
+// any the editor kept, slugifying the rest), and normalize to one block/line.
+export function editorHtmlToSourceBody(html) {
+  const clean = sanitizeArticleHtml(html);
+  const blocks = splitTopLevelBlocks(clean);
+  const usedIds = new Set();
+  const lines = [];
+  let n = 0;
+  for (const block of blocks) {
+    const h2 = block.match(/^<h2([^>]*)>([\s\S]*)<\/h2>$/);
+    if (h2) {
+      n += 1;
+      const existing = h2[1].match(/\bid="([^"]*)"/);
+      const inner = h2[2];
+      let id = existing ? existing[1] : slugifyHeading(inner);
+      if (!id) id = `section-${n}`;
+      let unique = id;
+      let i = 2;
+      while (usedIds.has(unique)) unique = `${id}-${i++}`;
+      usedIds.add(unique);
+      lines.push(`<h2 id="${unique}">${inner}</h2>`);
+    } else {
+      lines.push(block);
+    }
+  }
+  return lines.join("\n");
+}
+
+// Seed the editor from a published bodyHtml: strip the section wrapper and
+// index badge, lifting each section id back onto its <h2> so ids survive an
+// edit round-trip.
+export function bodyHtmlToEditorHtml(bodyHtml) {
+  return bodyHtml
+    .replace(/<span class="content-index">\d+<\/span>/g, "")
+    .replace(/<section id="([^"]*)"><h2>/g, '<h2 id="$1">')
+    .replace(/<\/section>/g, "");
+}
+
+// --- Heading ids -----------------------------------------------------------
+
+// Slugify a heading title into an anchor id. Unicode-aware: keeps letters and
+// numbers of any script (Korean headings stay meaningful), lowercases Latin,
+// collapses whitespace to hyphens. Returns "" when nothing usable remains.
 export function slugifyHeading(title) {
-  return unescapeHtml(title)
-    .toLowerCase()
+  return unescapeHtml(String(title))
     .replace(/<[^>]+>/g, "")
-    .replace(/[^\w\s-]/g, "")
     .trim()
+    .toLowerCase()
+    .replace(/[^\p{L}\p{N}\s-]/gu, "")
     .replace(/\s+/g, "-")
-    .replace(/-+/g, "-");
+    .replace(/-+/g, "-")
+    .replace(/^-|-$/g, "");
 }
 
 // Order-independent structural stringify for round-trip equivalence checks.
