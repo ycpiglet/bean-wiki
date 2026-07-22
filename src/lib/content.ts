@@ -1,4 +1,4 @@
-// Public content API. Article data lives in src/content/articles/*.md and is
+// Public content API. Article data lives in src/content/articles/*.html and is
 // generated into src/content/articles/index.ts (locale-keyed). This module is
 // the stable facade every page imports from. Locale defaults to "ko", so the
 // existing Korean pages need no changes; the /en pages pass "en".

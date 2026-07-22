@@ -1,14 +1,14 @@
 #!/usr/bin/env node
-// Content integrity gate. Reads the markdown article sources and validates the
+// Content integrity gate. Reads the HTML article sources and validates the
 // referential integrity that type-checking cannot: related slugs exist,
 // category names match categories.ts, accent matches the category, filename
-// matches slug, order.json agrees with the .md files, glossary refs are valid,
-// and no category is orphaned.
+// matches slug, order.json agrees with the .html files, glossary refs are
+// valid, and no category is orphaned.
 
 import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
-import { markdownToArticle } from "./content-md.mjs";
+import { articleFromSource } from "../src/lib/content-serialize.mjs";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
 const contentDir = join(root, "src", "content");
@@ -54,31 +54,31 @@ for (const block of catSrc.split(/\{/).slice(1)) {
     err(`category "${name}" has unknown icon "${icon}"`);
 }
 
-// Articles from .md.
-const mdFiles = readdirSync(articlesDir).filter((f) => f.endsWith(".md"));
+// Articles from .html.
+const htmlFiles = readdirSync(articlesDir).filter((f) => f.endsWith(".html"));
 const slugs = new Set();
 const articles = [];
-for (const file of mdFiles) {
+for (const file of htmlFiles) {
   let article;
   try {
-    article = markdownToArticle(read(join(articlesDir, file)));
+    article = articleFromSource(read(join(articlesDir, file)));
   } catch (e) {
     err(`${file}: failed to parse (${e.message})`);
     continue;
   }
   if (slugs.has(article.slug)) err(`duplicate slug "${article.slug}" (${file})`);
   slugs.add(article.slug);
-  if (file !== `${article.slug}.md`)
-    err(`${file}: slug "${article.slug}" != filename (expected ${article.slug}.md)`);
+  if (file !== `${article.slug}.html`)
+    err(`${file}: slug "${article.slug}" != filename (expected ${article.slug}.html)`);
   articles.push(article);
 }
 
-// order.json must agree with the .md set.
+// order.json must agree with the .html set.
 const order = JSON.parse(read(join(articlesDir, "order.json")));
 for (const slug of order)
-  if (!slugs.has(slug)) err(`order.json lists "${slug}" with no matching .md`);
+  if (!slugs.has(slug)) err(`order.json lists "${slug}" with no matching .html`);
 for (const slug of slugs)
-  if (!order.includes(slug)) err(`${slug}.md is not listed in order.json`);
+  if (!order.includes(slug)) err(`${slug}.html is not listed in order.json`);
 
 // Article referential checks.
 for (const a of articles) {
@@ -100,22 +100,22 @@ for (const name of categoryNames)
   if (!articles.some((a) => a.category === name))
     err(`category "${name}" has no articles`);
 
-// English translations (articles/en/*.md): must mirror a Korean article's
+// English translations (articles/en/*.html): must mirror a Korean article's
 // slug, canonical category/accent/related, and section structure.
 const enDir = join(articlesDir, "en");
 let enCount = 0;
 if (existsSync(enDir)) {
   const koBySlug = new Map(articles.map((a) => [a.slug, a]));
-  for (const file of readdirSync(enDir).filter((f) => f.endsWith(".md"))) {
+  for (const file of readdirSync(enDir).filter((f) => f.endsWith(".html"))) {
     let en;
     try {
-      en = markdownToArticle(read(join(enDir, file)));
+      en = articleFromSource(read(join(enDir, file)));
     } catch (e) {
       err(`en/${file}: failed to parse (${e.message})`);
       continue;
     }
     enCount += 1;
-    if (file !== `${en.slug}.md`)
+    if (file !== `${en.slug}.html`)
       err(`en/${file}: slug "${en.slug}" != filename`);
     const ko = koBySlug.get(en.slug);
     if (!ko) {

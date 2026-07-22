@@ -219,7 +219,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
       <footer className="article-footer shell">
         <p>Bean Wiki · 함께 만드는 열린 커피 백과사전</p>
         <a
-          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/${slug}.ts`}
+          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/${slug}.html`}
           target="_blank"
           rel="noreferrer"
         >

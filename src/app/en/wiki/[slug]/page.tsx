@@ -173,7 +173,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
       <footer className="article-footer shell">
         <p>Bean Wiki · an open, community-built coffee encyclopedia</p>
         <a
-          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/en/${slug}.md`}
+          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/en/${slug}.html`}
           target="_blank"
           rel="noreferrer"
         >

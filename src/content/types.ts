@@ -30,10 +30,10 @@ export type Article = {
   accent: Accent;
   fact: string;
   sections: ArticleSection[];
-  // Semantic HTML body generated from `sections` at build time (see
-  // scripts/content-md.mjs `sectionsToHtml`). This is the representation the
-  // in-browser editor reads; `sections` is retained for the TOC, search index,
-  // and content validation.
+  // Published HTML body, rendered at build time from the article's canonical
+  // HTML source (see src/lib/content-serialize.mjs `renderSectionedHtml`): each
+  // `<h2>`-delimited run wrapped in a numbered `<section id>`. `sections` is a
+  // derived outline retained for the TOC, search index, and content validation.
   bodyHtml: string;
   related: string[];
   tags?: string[];
