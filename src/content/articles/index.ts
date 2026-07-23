@@ -72,7 +72,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "category": "추출",
     "level": "입문",
     "readingTime": "8분",
-    "updatedAt": "2026. 07. 20.",
+    "updatedAt": "2026. 07. 23.",
     "accent": "blue",
     "fact": "농도는 잔 안의 진하기를, 추출 수율은 원두에서 얼마나 많은 성분을 꺼냈는지를 나타냅니다.",
     "sections": [
@@ -82,7 +82,8 @@ export const articlesByLocale: Record<string, Article[]> = {
         "paragraphs": [
           "농도는 완성된 음료 중 커피에서 녹아 나온 고형분이 차지하는 비율입니다. 같은 원두를 사용해도 물을 적게 쓰면 더 진한 커피가 될 수 있습니다.",
           "추출 수율은 투입한 원두 질량 중 물에 녹아 음료로 이동한 성분의 비율입니다. 진하기만으로는 원두가 충분히 추출되었는지 판단할 수 없기 때문에 두 값을 함께 봅니다.",
-          "업계에서는 흔히 추출 수율 약 18~22%, 필터 커피 기준 농도(TDS) 약 1.15~1.45%를 균형 잡힌 출발점으로 이야기합니다. 다만 이 범위는 절대 기준이 아니라 원두, 로스팅, 취향에 따라 조정하는 참고선입니다."
+          "업계에서는 흔히 추출 수율 약 18~22%, 필터 커피 기준 농도(TDS) 약 1.15~1.45%를 균형 잡힌 출발점으로 이야기합니다. 다만 이 범위는 절대 기준이 아니라 원두, 로스팅, 취향에 따라 조정하는 참고선입니다.",
+          "상태대략적 지표자주 나타나는 인상과소 추출수율이 낮은 편날카로운 신맛, 짠맛, 빈 여운균형수율 약 18~22%, TDS 약 1.15~1.45%(필터 기준)단맛과 산미의 균형, 깔끔한 여운과다 추출수율이 높은 편쓴맛, 텁텁함, 마른 뒷맛"
         ]
       },
       {
@@ -104,6 +105,7 @@ export const articlesByLocale: Record<string, Article[]> = {
         "title": "한 번에 하나씩 바꿉니다",
         "paragraphs": [
           "레시피를 조정할 때는 먼저 목표 음료량과 비율을 정하고 분쇄도로 시간을 맞추는 방식이 재현하기 쉽습니다. 맛을 기록하고 한 번에 한 변수만 바꾸면 원인과 결과를 비교할 수 있습니다.",
+          "한 번에 한 변수만 바꾸고 맛을 기록하세요. 여러 변수를 동시에 바꾸면 무엇이 맛을 바꿨는지 되짚기 어렵습니다.",
           "신맛, 쓴맛 같은 단어 하나만으로 과소·과다 추출을 단정하지 마세요. 향의 선명도, 단맛, 질감, 후미와 전체 균형을 함께 평가하는 것이 중요합니다."
         ]
       }
@@ -121,11 +123,15 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "history": [
       {
+        "date": "2026. 07. 23.",
+        "note": "수율·농도 참고 범위 표와 다이얼인 콜아웃 추가"
+      },
+      {
         "date": "2026. 07. 20.",
         "note": "농도·수율 기본 개념 정리 초안 작성"
       }
     ],
-    "bodyHtml": "<section id=\"two-measures\"><span class=\"content-index\">01</span><h2>농도와 수율은 서로 다른 값입니다</h2><p>농도는 완성된 음료 중 커피에서 녹아 나온 고형분이 차지하는 비율입니다. 같은 원두를 사용해도 물을 적게 쓰면 더 진한 커피가 될 수 있습니다.</p><p>추출 수율은 투입한 원두 질량 중 물에 녹아 음료로 이동한 성분의 비율입니다. 진하기만으로는 원두가 충분히 추출되었는지 판단할 수 없기 때문에 두 값을 함께 봅니다.</p><p>업계에서는 흔히 추출 수율 약 18~22%, 필터 커피 기준 농도(TDS) 약 1.15~1.45%를 균형 잡힌 출발점으로 이야기합니다. 다만 이 범위는 절대 기준이 아니라 원두, 로스팅, 취향에 따라 조정하는 참고선입니다.</p></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>추출을 움직이는 주요 변수</h2><p>분쇄도가 가늘수록 물과 닿는 표면적이 늘어나고 흐름의 저항도 커집니다. 일반적으로 추출이 빨라지지만, 채널링이나 미분 이동처럼 균일성을 해치는 변수도 함께 커질 수 있습니다.</p><ul><li>분쇄도와 입자 분포</li><li>커피와 물의 비율</li><li>물의 온도와 미네랄 조성</li><li>접촉 시간과 교반</li><li>커피층을 통과하는 물의 균일성</li></ul></section><section id=\"dial-in\"><span class=\"content-index\">03</span><h2>한 번에 하나씩 바꿉니다</h2><p>레시피를 조정할 때는 먼저 목표 음료량과 비율을 정하고 분쇄도로 시간을 맞추는 방식이 재현하기 쉽습니다. 맛을 기록하고 한 번에 한 변수만 바꾸면 원인과 결과를 비교할 수 있습니다.</p><p>신맛, 쓴맛 같은 단어 하나만으로 과소·과다 추출을 단정하지 마세요. 향의 선명도, 단맛, 질감, 후미와 전체 균형을 함께 평가하는 것이 중요합니다.</p></section>",
+    "bodyHtml": "<section id=\"two-measures\"><span class=\"content-index\">01</span><h2>농도와 수율은 서로 다른 값입니다</h2><p>농도는 완성된 음료 중 커피에서 녹아 나온 고형분이 차지하는 비율입니다. 같은 원두를 사용해도 물을 적게 쓰면 더 진한 커피가 될 수 있습니다.</p><p>추출 수율은 투입한 원두 질량 중 물에 녹아 음료로 이동한 성분의 비율입니다. 진하기만으로는 원두가 충분히 추출되었는지 판단할 수 없기 때문에 두 값을 함께 봅니다.</p><p>업계에서는 흔히 추출 수율 약 18~22%, 필터 커피 기준 농도(TDS) 약 1.15~1.45%를 균형 잡힌 출발점으로 이야기합니다. 다만 이 범위는 절대 기준이 아니라 원두, 로스팅, 취향에 따라 조정하는 참고선입니다.</p><table><tbody><tr><th>상태</th><th>대략적 지표</th><th>자주 나타나는 인상</th></tr><tr><td>과소 추출</td><td>수율이 낮은 편</td><td>날카로운 신맛, 짠맛, 빈 여운</td></tr><tr><td>균형</td><td>수율 약 18~22%, TDS 약 1.15~1.45%(필터 기준)</td><td>단맛과 산미의 균형, 깔끔한 여운</td></tr><tr><td>과다 추출</td><td>수율이 높은 편</td><td>쓴맛, 텁텁함, 마른 뒷맛</td></tr></tbody></table></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>추출을 움직이는 주요 변수</h2><p>분쇄도가 가늘수록 물과 닿는 표면적이 늘어나고 흐름의 저항도 커집니다. 일반적으로 추출이 빨라지지만, 채널링이나 미분 이동처럼 균일성을 해치는 변수도 함께 커질 수 있습니다.</p><ul><li>분쇄도와 입자 분포</li><li>커피와 물의 비율</li><li>물의 온도와 미네랄 조성</li><li>접촉 시간과 교반</li><li>커피층을 통과하는 물의 균일성</li></ul></section><section id=\"dial-in\"><span class=\"content-index\">03</span><h2>한 번에 하나씩 바꿉니다</h2><p>레시피를 조정할 때는 먼저 목표 음료량과 비율을 정하고 분쇄도로 시간을 맞추는 방식이 재현하기 쉽습니다. 맛을 기록하고 한 번에 한 변수만 바꾸면 원인과 결과를 비교할 수 있습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>한 번에 한 변수만 바꾸고 맛을 기록하세요. 여러 변수를 동시에 바꾸면 무엇이 맛을 바꿨는지 되짚기 어렵습니다.</p></aside><p>신맛, 쓴맛 같은 단어 하나만으로 과소·과다 추출을 단정하지 마세요. 향의 선명도, 단맛, 질감, 후미와 전체 균형을 함께 평가하는 것이 중요합니다.</p></section>",
     "backlinks": []
   },
   {
@@ -706,6 +712,211 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"species-vs-variety\"><span class=\"content-index\">01</span><h2>종과 품종은 서로 다른 층위입니다</h2><p>종(species)은 아라비카나 카네포라처럼 생물학적으로 구분되는 큰 분류입니다. 품종(variety)은 한 종 안에서 유전적 특성이 조금씩 다른 재배 계통을 가리킵니다.</p><p>즉 '아라비카'가 종이라면, 그 안의 '티피카'나 '버번'은 품종입니다. 산지 정보나 커피 봉투에서 만나는 이름 대부분은 이 품종 수준의 구분입니다.</p></section><section id=\"examples\"><span class=\"content-index\">02</span><h2>자주 만나는 대표 품종</h2><p>품종은 향미의 잠재력뿐 아니라 수확량, 병해 저항성 같은 재배 특성에서도 차이를 보입니다.</p><ul><li>티피카: 오래된 고전 계통으로 섬세한 향미 경향이 있으나 수확량이 낮은 편</li><li>버번: 티피카에서 갈라진 계통으로 단맛과 균형이 좋다는 평이 많음</li><li>게이샤(게샤): 화려한 꽃향과 독특한 향미로 주목받는 품종</li><li>카투라·카투아이: 생산성과 재배 편의를 개량한 계통</li></ul></section><section id=\"caution\"><span class=\"content-index\">03</span><h2>품종 이름만으로 컵을 단정할 수 없습니다</h2><p>품종은 향미의 방향과 잠재력을 크게 좌우하지만, 실제 잔에 담기는 맛은 재배 환경과 가공, 로스팅, 추출까지의 모든 단계가 함께 결정합니다. 유명한 품종이라는 이유만으로 품질을 확정하기는 어렵습니다.</p></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "cold-brew",
+    "title": "콜드브루: 차갑게, 오래 우리기",
+    "summary": "찬물로 길게 우리는 콜드브루의 원리와 비율·분쇄도·시간을 조정하는 기준을 정리합니다.",
+    "category": "추출",
+    "level": "입문",
+    "readingTime": "6분",
+    "updatedAt": "2026. 07. 23.",
+    "accent": "blue",
+    "fact": "콜드브루는 낮은 온도에서 오래 접촉시켜 추출하는 방식으로, 뜨겁게 내린 커피와는 향미의 균형이 달라지는 경향이 있습니다.",
+    "sections": [
+      {
+        "id": "what",
+        "title": "콜드브루란 무엇인가",
+        "paragraphs": [
+          "콜드브루는 찬물이나 실온의 물에 커피를 오래 담가 우려내는 추출 방식입니다. 온도가 낮으면 성분이 녹아 나오는 속도가 느려지므로, 이를 긴 접촉 시간으로 보완합니다.",
+          "같은 원두라도 뜨거운 물로 빠르게 내릴 때와 향미의 균형이 달라질 수 있습니다. 흔히 신맛과 쓴맛이 덜 두드러진다고 이야기하지만, 이는 원두와 레시피에 따라 달라지는 경향일 뿐 절대적인 규칙은 아닙니다.",
+          "콜드브루(냉침)와 아이스 커피(뜨겁게 내려 얼음에 식힘)는 다릅니다. 아이스 커피는 뜨거운 추출의 향미를 차갑게 즐기는 방식입니다."
+        ]
+      },
+      {
+        "id": "variables",
+        "title": "비율·분쇄도·시간",
+        "paragraphs": [
+          "아래 값은 출발점으로 삼을 참고 범위입니다. 농축액을 만들어 희석할지, 바로 마실 농도로 낼지에 따라 비율이 크게 달라집니다.",
+          "변수일반적 참고 범위메모커피 : 물1:8 ~ 1:15낮을수록 진한 농축액분쇄도중간 ~ 굵게미분이 많으면 텁텁해지기 쉬움우림 시간냉장 12~18시간 / 실온 8~12시간길수록 강하고 무거워지는 경향"
+        ]
+      },
+      {
+        "id": "method",
+        "title": "만드는 순서",
+        "paragraphs": [
+          "가장 단순한 방법은 침지식입니다. 용기에 커피와 물을 넣고 저은 뒤, 정해진 시간 동안 우리고 걸러냅니다."
+        ],
+        "points": [
+          "커피를 계량해 굵게 분쇄하고 물과 함께 용기에 넣습니다.",
+          "가루가 물에 고루 젖도록 가볍게 저어 줍니다.",
+          "냉장 또는 실온에서 목표 시간만큼 우립니다.",
+          "고운 필터로 두 번 걸러 미분을 줄입니다."
+        ]
+      },
+      {
+        "id": "serving",
+        "title": "농도 맞추기와 보관",
+        "paragraphs": [
+          "농축액으로 만들었다면 물이나 우유로 취향에 맞게 희석합니다. 같은 레시피라도 얼음이 녹으며 연해지므로, 얼음 잔에는 조금 더 진하게 맞추면 균형이 유지됩니다.",
+          "콜드브루는 저온에서 우리지만 무균은 아닙니다. 밀폐해 냉장 보관하고 며칠 안에 마시는 편이 안전하며, 향미도 시간이 지나면 무뎌집니다."
+        ]
+      }
+    ],
+    "related": [
+      "extraction-basics",
+      "water-for-coffee",
+      "grinder-basics"
+    ],
+    "tags": [
+      "추출",
+      "콜드브루",
+      "레시피"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 23.",
+        "note": "콜드브루 기본 개념 초안 작성"
+      }
+    ],
+    "draft": true,
+    "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>콜드브루란 무엇인가</h2><p>콜드브루는 찬물이나 실온의 물에 커피를 오래 담가 우려내는 추출 방식입니다. 온도가 낮으면 성분이 녹아 나오는 속도가 느려지므로, 이를 긴 접촉 시간으로 보완합니다.</p><p>같은 원두라도 뜨거운 물로 빠르게 내릴 때와 향미의 균형이 달라질 수 있습니다. 흔히 신맛과 쓴맛이 덜 두드러진다고 이야기하지만, 이는 원두와 레시피에 따라 달라지는 경향일 뿐 절대적인 규칙은 아닙니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>콜드브루(냉침)와 아이스 커피(뜨겁게 내려 얼음에 식힘)는 다릅니다. 아이스 커피는 뜨거운 추출의 향미를 차갑게 즐기는 방식입니다.</p></aside></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>비율·분쇄도·시간</h2><p>아래 값은 출발점으로 삼을 참고 범위입니다. 농축액을 만들어 희석할지, 바로 마실 농도로 낼지에 따라 비율이 크게 달라집니다.</p><table><tbody><tr><th>변수</th><th>일반적 참고 범위</th><th>메모</th></tr><tr><td>커피 : 물</td><td>1:8 ~ 1:15</td><td>낮을수록 진한 농축액</td></tr><tr><td>분쇄도</td><td>중간 ~ 굵게</td><td>미분이 많으면 텁텁해지기 쉬움</td></tr><tr><td>우림 시간</td><td>냉장 12~18시간 / 실온 8~12시간</td><td>길수록 강하고 무거워지는 경향</td></tr></tbody></table></section><section id=\"method\"><span class=\"content-index\">03</span><h2>만드는 순서</h2><p>가장 단순한 방법은 침지식입니다. 용기에 커피와 물을 넣고 저은 뒤, 정해진 시간 동안 우리고 걸러냅니다.</p><ul><li>커피를 계량해 굵게 분쇄하고 물과 함께 용기에 넣습니다.</li><li>가루가 물에 고루 젖도록 가볍게 저어 줍니다.</li><li>냉장 또는 실온에서 목표 시간만큼 우립니다.</li><li>고운 필터로 두 번 걸러 미분을 줄입니다.</li></ul></section><section id=\"serving\"><span class=\"content-index\">04</span><h2>농도 맞추기와 보관</h2><p>농축액으로 만들었다면 물이나 우유로 취향에 맞게 희석합니다. 같은 레시피라도 얼음이 녹으며 연해지므로, 얼음 잔에는 조금 더 진하게 맞추면 균형이 유지됩니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>콜드브루는 저온에서 우리지만 무균은 아닙니다. 밀폐해 냉장 보관하고 며칠 안에 마시는 편이 안전하며, 향미도 시간이 지나면 무뎌집니다.</p></aside></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "coffee-storage",
+    "title": "원두 보관: 신선함을 지키는 법",
+    "summary": "산소·습기·빛·열이 원두를 어떻게 변하게 하는지 이해하고, 집에서 신선도를 오래 지키는 기준을 정리합니다.",
+    "category": "커피 기초",
+    "level": "입문",
+    "readingTime": "5분",
+    "updatedAt": "2026. 07. 23.",
+    "accent": "olive",
+    "fact": "원두의 향미는 로스팅 직후부터 서서히 변합니다. 보관의 목표는 변화를 멈추는 것이 아니라 늦추는 것입니다.",
+    "sections": [
+      {
+        "id": "enemies",
+        "title": "향미를 무디게 하는 네 가지",
+        "paragraphs": [
+          "로스팅된 원두는 시간이 지나며 향 성분이 날아가고 산소와 반응해 산패가 진행됩니다. 보관은 이 과정을 늦추는 일이며, 흔히 네 가지 요인을 줄이는 것이 핵심으로 꼽힙니다.",
+          "가장 큰 향미 손실은 분쇄 직후에 일어납니다. 가능하면 마시기 직전에 갈아 신선도를 지키세요."
+        ],
+        "points": [
+          "산소: 산화를 일으켜 향을 무디게 하고 산패를 앞당깁니다.",
+          "습기: 향을 흡착·희석하고 곰팡이 위험을 키웁니다.",
+          "빛: 특히 직사광선은 열과 함께 변화를 가속합니다.",
+          "열: 높은 온도는 화학 반응 속도를 전반적으로 높입니다."
+        ]
+      },
+      {
+        "id": "how",
+        "title": "어디에, 어떻게 둘까",
+        "paragraphs": [
+          "서늘하고 어두운 곳에서 공기와의 접촉을 최소화하는 것이 기본입니다. 불투명한 밀폐 용기가 유리하며, 원두 상태로 두는 편이 분쇄해 두는 것보다 오래갑니다.",
+          "방법적합한 상황주의점실온·밀폐·차광2~3주 안에 소비가스레인지·창가 등 열원 근처는 피하기냉동(밀폐, 소분)장기 보관꺼낼 때 결로 주의, 한 번 꺼낸 분량은 되넣지 않기"
+        ]
+      },
+      {
+        "id": "freezing",
+        "title": "냉동 보관은 언제",
+        "paragraphs": [
+          "많은 양을 오래 두어야 한다면 냉동이 선택지가 될 수 있습니다. 핵심은 결로 방지입니다. 한 번 마실 분량씩 소분해 밀폐하고, 필요한 만큼만 꺼내 상온으로 되돌린 뒤 개봉합니다.",
+          "차가운 원두를 바로 개봉하면 표면에 물방울이 맺혀 습기를 끌어들입니다. 소분하지 않고 통째로 넣었다 뺐다 반복하는 것이 가장 나쁜 습관입니다."
+        ]
+      },
+      {
+        "id": "dates",
+        "title": "날짜를 읽는 법",
+        "paragraphs": [
+          "로스팅 날짜가 표기돼 있다면 유통기한보다 그 날짜를 기준으로 삼는 편이 신선도 판단에 유용합니다. 로스팅 직후 며칠은 가스 배출로 추출이 불안정할 수 있어, 며칠 안정화한 뒤 마시는 경우도 많습니다."
+        ]
+      }
+    ],
+    "related": [
+      "bean-structure-compounds",
+      "roast-development",
+      "coffee-cherry-to-bean"
+    ],
+    "tags": [
+      "커피 기초",
+      "보관",
+      "신선도"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 23.",
+        "note": "원두 보관 기본 원칙 초안 작성"
+      }
+    ],
+    "draft": true,
+    "bodyHtml": "<section id=\"enemies\"><span class=\"content-index\">01</span><h2>향미를 무디게 하는 네 가지</h2><p>로스팅된 원두는 시간이 지나며 향 성분이 날아가고 산소와 반응해 산패가 진행됩니다. 보관은 이 과정을 늦추는 일이며, 흔히 네 가지 요인을 줄이는 것이 핵심으로 꼽힙니다.</p><ul><li>산소: 산화를 일으켜 향을 무디게 하고 산패를 앞당깁니다.</li><li>습기: 향을 흡착·희석하고 곰팡이 위험을 키웁니다.</li><li>빛: 특히 직사광선은 열과 함께 변화를 가속합니다.</li><li>열: 높은 온도는 화학 반응 속도를 전반적으로 높입니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>가장 큰 향미 손실은 분쇄 직후에 일어납니다. 가능하면 마시기 직전에 갈아 신선도를 지키세요.</p></aside></section><section id=\"how\"><span class=\"content-index\">02</span><h2>어디에, 어떻게 둘까</h2><p>서늘하고 어두운 곳에서 공기와의 접촉을 최소화하는 것이 기본입니다. 불투명한 밀폐 용기가 유리하며, 원두 상태로 두는 편이 분쇄해 두는 것보다 오래갑니다.</p><table><tbody><tr><th>방법</th><th>적합한 상황</th><th>주의점</th></tr><tr><td>실온·밀폐·차광</td><td>2~3주 안에 소비</td><td>가스레인지·창가 등 열원 근처는 피하기</td></tr><tr><td>냉동(밀폐, 소분)</td><td>장기 보관</td><td>꺼낼 때 결로 주의, 한 번 꺼낸 분량은 되넣지 않기</td></tr></tbody></table></section><section id=\"freezing\"><span class=\"content-index\">03</span><h2>냉동 보관은 언제</h2><p>많은 양을 오래 두어야 한다면 냉동이 선택지가 될 수 있습니다. 핵심은 결로 방지입니다. 한 번 마실 분량씩 소분해 밀폐하고, 필요한 만큼만 꺼내 상온으로 되돌린 뒤 개봉합니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>차가운 원두를 바로 개봉하면 표면에 물방울이 맺혀 습기를 끌어들입니다. 소분하지 않고 통째로 넣었다 뺐다 반복하는 것이 가장 나쁜 습관입니다.</p></aside></section><section id=\"dates\"><span class=\"content-index\">04</span><h2>날짜를 읽는 법</h2><p>로스팅 날짜가 표기돼 있다면 유통기한보다 그 날짜를 기준으로 삼는 편이 신선도 판단에 유용합니다. 로스팅 직후 며칠은 가스 배출로 추출이 불안정할 수 있어, 며칠 안정화한 뒤 마시는 경우도 많습니다.</p></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "milk-steaming",
+    "title": "우유 스티밍: 벨벳 같은 폼 만들기",
+    "summary": "스팀으로 우유를 데우며 미세한 거품을 만드는 원리와, 온도·공기 주입·회전을 다루는 기준을 정리합니다.",
+    "category": "카페와 장비",
+    "level": "중급",
+    "readingTime": "6분",
+    "updatedAt": "2026. 07. 23.",
+    "accent": "sand",
+    "fact": "좋은 우유 거품은 큰 거품이 아니라, 우유와 균질하게 섞인 미세한 거품(마이크로폼)에서 나옵니다.",
+    "sections": [
+      {
+        "id": "goal",
+        "title": "목표는 마이크로폼",
+        "paragraphs": [
+          "스티밍의 목표는 단순히 우유를 데우는 것이 아니라, 눈에 보이지 않을 만큼 고운 거품을 우유 전체에 균일하게 섞는 것입니다. 이렇게 만든 마이크로폼은 광택이 돌고 잔에 부었을 때 매끄럽게 흐릅니다.",
+          "거품은 크게 두 단계로 만들어집니다. 표면에서 공기를 끌어들이는 단계와, 그 공기를 회전으로 잘게 부수어 섞는 단계입니다."
+        ]
+      },
+      {
+        "id": "steps",
+        "title": "두 단계: 주입과 회전",
+        "paragraphs": [
+          "공기 주입은 초반, 차가울 때 끝내세요. 우유가 따뜻해진 뒤에 넣은 공기는 큰 거품으로 남아 거칠어지기 쉽습니다."
+        ],
+        "points": [
+          "주입(스트레칭): 팁을 표면 가까이 두어 \"치익\" 소리와 함께 공기를 넣어 부피를 키웁니다.",
+          "회전(롤링): 팁을 살짝 담가 우유가 소용돌이치게 하여 큰 거품을 잘게 부수고 데웁니다."
+        ]
+      },
+      {
+        "id": "temperature",
+        "title": "온도 기준",
+        "paragraphs": [
+          "온도는 단맛과 질감에 영향을 줍니다. 너무 낮으면 밋밋하고, 너무 높으면 단백질이 상해 비린 맛이 나며 거품이 무너집니다. 아래는 흔히 쓰이는 참고 범위입니다.",
+          "구간대략 온도메모목표대약 55~65℃단맛과 질감이 잘 살아나는 범위로 자주 언급됨과열70℃ 이상비린 맛·거친 거품, 라떼아트가 어려워짐",
+          "손으로 피처를 만졌을 때 계속 잡고 있기 어려울 만큼 뜨거우면 이미 과열입니다. 온도계나 감각으로 목표대에서 멈추는 연습이 중요합니다."
+        ]
+      },
+      {
+        "id": "finish",
+        "title": "마무리",
+        "paragraphs": [
+          "스티밍을 멈춘 뒤에는 피처를 가볍게 두드리고 돌려 큰 거품을 없애고 표면에 광택을 냅니다. 붓기 직전까지 우유와 거품이 분리되지 않도록 부드럽게 흔들어 유지합니다."
+        ]
+      }
+    ],
+    "related": [
+      "espresso-basics",
+      "grinder-basics"
+    ],
+    "tags": [
+      "카페와 장비",
+      "스티밍",
+      "라떼아트"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 23.",
+        "note": "우유 스티밍 기본 원리 초안 작성"
+      }
+    ],
+    "draft": true,
+    "bodyHtml": "<section id=\"goal\"><span class=\"content-index\">01</span><h2>목표는 마이크로폼</h2><p>스티밍의 목표는 단순히 우유를 데우는 것이 아니라, 눈에 보이지 않을 만큼 고운 거품을 우유 전체에 균일하게 섞는 것입니다. 이렇게 만든 마이크로폼은 광택이 돌고 잔에 부었을 때 매끄럽게 흐릅니다.</p><p>거품은 크게 두 단계로 만들어집니다. 표면에서 공기를 끌어들이는 단계와, 그 공기를 회전으로 잘게 부수어 섞는 단계입니다.</p></section><section id=\"steps\"><span class=\"content-index\">02</span><h2>두 단계: 주입과 회전</h2><ul><li>주입(스트레칭): 팁을 표면 가까이 두어 \"치익\" 소리와 함께 공기를 넣어 부피를 키웁니다.</li><li>회전(롤링): 팁을 살짝 담가 우유가 소용돌이치게 하여 큰 거품을 잘게 부수고 데웁니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>공기 주입은 초반, 차가울 때 끝내세요. 우유가 따뜻해진 뒤에 넣은 공기는 큰 거품으로 남아 거칠어지기 쉽습니다.</p></aside></section><section id=\"temperature\"><span class=\"content-index\">03</span><h2>온도 기준</h2><p>온도는 단맛과 질감에 영향을 줍니다. 너무 낮으면 밋밋하고, 너무 높으면 단백질이 상해 비린 맛이 나며 거품이 무너집니다. 아래는 흔히 쓰이는 참고 범위입니다.</p><table><tbody><tr><th>구간</th><th>대략 온도</th><th>메모</th></tr><tr><td>목표대</td><td>약 55~65℃</td><td>단맛과 질감이 잘 살아나는 범위로 자주 언급됨</td></tr><tr><td>과열</td><td>70℃ 이상</td><td>비린 맛·거친 거품, 라떼아트가 어려워짐</td></tr></tbody></table><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>손으로 피처를 만졌을 때 계속 잡고 있기 어려울 만큼 뜨거우면 이미 과열입니다. 온도계나 감각으로 목표대에서 멈추는 연습이 중요합니다.</p></aside></section><section id=\"finish\"><span class=\"content-index\">04</span><h2>마무리</h2><p>스티밍을 멈춘 뒤에는 피처를 가볍게 두드리고 돌려 큰 거품을 없애고 표면에 광택을 냅니다. 붓기 직전까지 우유와 거품이 분리되지 않도록 부드럽게 흔들어 유지합니다.</p></section>",
     "backlinks": []
   }
 ],
@@ -1410,6 +1621,211 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"species-vs-variety\"><span class=\"content-index\">01</span><h2>Species and Variety Are Different Levels of Classification</h2><p>Species is a large category distinguished biologically, like Arabica or Canephora. A variety refers to cultivated lines within one species that have slightly different genetic characteristics.</p><p>In other words, if 'Arabica' is the species, then 'Typica' or 'Bourbon' within it are varieties. Most names encountered in geographic information or on coffee bags are distinctions at this variety level.</p></section><section id=\"examples\"><span class=\"content-index\">02</span><h2>Representative Varieties You Commonly Meet</h2><p>Varieties show differences not only in flavor potential but also in cultivation characteristics such as yield and disease resistance.</p><ul><li>Typica: An old classic lineage with a tendency toward delicate flavors, but relatively low yield</li><li>Bourbon: A lineage descended from Typica; often praised for good sweetness and balance</li><li>Geisha (Gesha): A variety that stands out for its floral aromas and distinctive flavors</li><li>Caturra · Catuaí: Lineages improved for productivity and cultivation convenience</li></ul></section><section id=\"caution\"><span class=\"content-index\">03</span><h2>You Cannot Determine the Cup from Variety Name Alone</h2><p>While variety greatly influences the direction and potential of flavor, the actual taste in your cup is determined together by all stages from cultivation environment, processing, roasting, to extraction. It is difficult to confirm quality based solely on the fact that it is a famous variety.</p></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "cold-brew",
+    "title": "콜드브루: 차갑게, 오래 우리기",
+    "summary": "찬물로 길게 우리는 콜드브루의 원리와 비율·분쇄도·시간을 조정하는 기준을 정리합니다.",
+    "category": "추출",
+    "level": "입문",
+    "readingTime": "6분",
+    "updatedAt": "2026. 07. 23.",
+    "accent": "blue",
+    "fact": "콜드브루는 낮은 온도에서 오래 접촉시켜 추출하는 방식으로, 뜨겁게 내린 커피와는 향미의 균형이 달라지는 경향이 있습니다.",
+    "sections": [
+      {
+        "id": "what",
+        "title": "콜드브루란 무엇인가",
+        "paragraphs": [
+          "콜드브루는 찬물이나 실온의 물에 커피를 오래 담가 우려내는 추출 방식입니다. 온도가 낮으면 성분이 녹아 나오는 속도가 느려지므로, 이를 긴 접촉 시간으로 보완합니다.",
+          "같은 원두라도 뜨거운 물로 빠르게 내릴 때와 향미의 균형이 달라질 수 있습니다. 흔히 신맛과 쓴맛이 덜 두드러진다고 이야기하지만, 이는 원두와 레시피에 따라 달라지는 경향일 뿐 절대적인 규칙은 아닙니다.",
+          "콜드브루(냉침)와 아이스 커피(뜨겁게 내려 얼음에 식힘)는 다릅니다. 아이스 커피는 뜨거운 추출의 향미를 차갑게 즐기는 방식입니다."
+        ]
+      },
+      {
+        "id": "variables",
+        "title": "비율·분쇄도·시간",
+        "paragraphs": [
+          "아래 값은 출발점으로 삼을 참고 범위입니다. 농축액을 만들어 희석할지, 바로 마실 농도로 낼지에 따라 비율이 크게 달라집니다.",
+          "변수일반적 참고 범위메모커피 : 물1:8 ~ 1:15낮을수록 진한 농축액분쇄도중간 ~ 굵게미분이 많으면 텁텁해지기 쉬움우림 시간냉장 12~18시간 / 실온 8~12시간길수록 강하고 무거워지는 경향"
+        ]
+      },
+      {
+        "id": "method",
+        "title": "만드는 순서",
+        "paragraphs": [
+          "가장 단순한 방법은 침지식입니다. 용기에 커피와 물을 넣고 저은 뒤, 정해진 시간 동안 우리고 걸러냅니다."
+        ],
+        "points": [
+          "커피를 계량해 굵게 분쇄하고 물과 함께 용기에 넣습니다.",
+          "가루가 물에 고루 젖도록 가볍게 저어 줍니다.",
+          "냉장 또는 실온에서 목표 시간만큼 우립니다.",
+          "고운 필터로 두 번 걸러 미분을 줄입니다."
+        ]
+      },
+      {
+        "id": "serving",
+        "title": "농도 맞추기와 보관",
+        "paragraphs": [
+          "농축액으로 만들었다면 물이나 우유로 취향에 맞게 희석합니다. 같은 레시피라도 얼음이 녹으며 연해지므로, 얼음 잔에는 조금 더 진하게 맞추면 균형이 유지됩니다.",
+          "콜드브루는 저온에서 우리지만 무균은 아닙니다. 밀폐해 냉장 보관하고 며칠 안에 마시는 편이 안전하며, 향미도 시간이 지나면 무뎌집니다."
+        ]
+      }
+    ],
+    "related": [
+      "extraction-basics",
+      "water-for-coffee",
+      "grinder-basics"
+    ],
+    "tags": [
+      "추출",
+      "콜드브루",
+      "레시피"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 23.",
+        "note": "콜드브루 기본 개념 초안 작성"
+      }
+    ],
+    "draft": true,
+    "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>콜드브루란 무엇인가</h2><p>콜드브루는 찬물이나 실온의 물에 커피를 오래 담가 우려내는 추출 방식입니다. 온도가 낮으면 성분이 녹아 나오는 속도가 느려지므로, 이를 긴 접촉 시간으로 보완합니다.</p><p>같은 원두라도 뜨거운 물로 빠르게 내릴 때와 향미의 균형이 달라질 수 있습니다. 흔히 신맛과 쓴맛이 덜 두드러진다고 이야기하지만, 이는 원두와 레시피에 따라 달라지는 경향일 뿐 절대적인 규칙은 아닙니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>콜드브루(냉침)와 아이스 커피(뜨겁게 내려 얼음에 식힘)는 다릅니다. 아이스 커피는 뜨거운 추출의 향미를 차갑게 즐기는 방식입니다.</p></aside></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>비율·분쇄도·시간</h2><p>아래 값은 출발점으로 삼을 참고 범위입니다. 농축액을 만들어 희석할지, 바로 마실 농도로 낼지에 따라 비율이 크게 달라집니다.</p><table><tbody><tr><th>변수</th><th>일반적 참고 범위</th><th>메모</th></tr><tr><td>커피 : 물</td><td>1:8 ~ 1:15</td><td>낮을수록 진한 농축액</td></tr><tr><td>분쇄도</td><td>중간 ~ 굵게</td><td>미분이 많으면 텁텁해지기 쉬움</td></tr><tr><td>우림 시간</td><td>냉장 12~18시간 / 실온 8~12시간</td><td>길수록 강하고 무거워지는 경향</td></tr></tbody></table></section><section id=\"method\"><span class=\"content-index\">03</span><h2>만드는 순서</h2><p>가장 단순한 방법은 침지식입니다. 용기에 커피와 물을 넣고 저은 뒤, 정해진 시간 동안 우리고 걸러냅니다.</p><ul><li>커피를 계량해 굵게 분쇄하고 물과 함께 용기에 넣습니다.</li><li>가루가 물에 고루 젖도록 가볍게 저어 줍니다.</li><li>냉장 또는 실온에서 목표 시간만큼 우립니다.</li><li>고운 필터로 두 번 걸러 미분을 줄입니다.</li></ul></section><section id=\"serving\"><span class=\"content-index\">04</span><h2>농도 맞추기와 보관</h2><p>농축액으로 만들었다면 물이나 우유로 취향에 맞게 희석합니다. 같은 레시피라도 얼음이 녹으며 연해지므로, 얼음 잔에는 조금 더 진하게 맞추면 균형이 유지됩니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>콜드브루는 저온에서 우리지만 무균은 아닙니다. 밀폐해 냉장 보관하고 며칠 안에 마시는 편이 안전하며, 향미도 시간이 지나면 무뎌집니다.</p></aside></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "coffee-storage",
+    "title": "원두 보관: 신선함을 지키는 법",
+    "summary": "산소·습기·빛·열이 원두를 어떻게 변하게 하는지 이해하고, 집에서 신선도를 오래 지키는 기준을 정리합니다.",
+    "category": "커피 기초",
+    "level": "입문",
+    "readingTime": "5분",
+    "updatedAt": "2026. 07. 23.",
+    "accent": "olive",
+    "fact": "원두의 향미는 로스팅 직후부터 서서히 변합니다. 보관의 목표는 변화를 멈추는 것이 아니라 늦추는 것입니다.",
+    "sections": [
+      {
+        "id": "enemies",
+        "title": "향미를 무디게 하는 네 가지",
+        "paragraphs": [
+          "로스팅된 원두는 시간이 지나며 향 성분이 날아가고 산소와 반응해 산패가 진행됩니다. 보관은 이 과정을 늦추는 일이며, 흔히 네 가지 요인을 줄이는 것이 핵심으로 꼽힙니다.",
+          "가장 큰 향미 손실은 분쇄 직후에 일어납니다. 가능하면 마시기 직전에 갈아 신선도를 지키세요."
+        ],
+        "points": [
+          "산소: 산화를 일으켜 향을 무디게 하고 산패를 앞당깁니다.",
+          "습기: 향을 흡착·희석하고 곰팡이 위험을 키웁니다.",
+          "빛: 특히 직사광선은 열과 함께 변화를 가속합니다.",
+          "열: 높은 온도는 화학 반응 속도를 전반적으로 높입니다."
+        ]
+      },
+      {
+        "id": "how",
+        "title": "어디에, 어떻게 둘까",
+        "paragraphs": [
+          "서늘하고 어두운 곳에서 공기와의 접촉을 최소화하는 것이 기본입니다. 불투명한 밀폐 용기가 유리하며, 원두 상태로 두는 편이 분쇄해 두는 것보다 오래갑니다.",
+          "방법적합한 상황주의점실온·밀폐·차광2~3주 안에 소비가스레인지·창가 등 열원 근처는 피하기냉동(밀폐, 소분)장기 보관꺼낼 때 결로 주의, 한 번 꺼낸 분량은 되넣지 않기"
+        ]
+      },
+      {
+        "id": "freezing",
+        "title": "냉동 보관은 언제",
+        "paragraphs": [
+          "많은 양을 오래 두어야 한다면 냉동이 선택지가 될 수 있습니다. 핵심은 결로 방지입니다. 한 번 마실 분량씩 소분해 밀폐하고, 필요한 만큼만 꺼내 상온으로 되돌린 뒤 개봉합니다.",
+          "차가운 원두를 바로 개봉하면 표면에 물방울이 맺혀 습기를 끌어들입니다. 소분하지 않고 통째로 넣었다 뺐다 반복하는 것이 가장 나쁜 습관입니다."
+        ]
+      },
+      {
+        "id": "dates",
+        "title": "날짜를 읽는 법",
+        "paragraphs": [
+          "로스팅 날짜가 표기돼 있다면 유통기한보다 그 날짜를 기준으로 삼는 편이 신선도 판단에 유용합니다. 로스팅 직후 며칠은 가스 배출로 추출이 불안정할 수 있어, 며칠 안정화한 뒤 마시는 경우도 많습니다."
+        ]
+      }
+    ],
+    "related": [
+      "bean-structure-compounds",
+      "roast-development",
+      "coffee-cherry-to-bean"
+    ],
+    "tags": [
+      "커피 기초",
+      "보관",
+      "신선도"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 23.",
+        "note": "원두 보관 기본 원칙 초안 작성"
+      }
+    ],
+    "draft": true,
+    "bodyHtml": "<section id=\"enemies\"><span class=\"content-index\">01</span><h2>향미를 무디게 하는 네 가지</h2><p>로스팅된 원두는 시간이 지나며 향 성분이 날아가고 산소와 반응해 산패가 진행됩니다. 보관은 이 과정을 늦추는 일이며, 흔히 네 가지 요인을 줄이는 것이 핵심으로 꼽힙니다.</p><ul><li>산소: 산화를 일으켜 향을 무디게 하고 산패를 앞당깁니다.</li><li>습기: 향을 흡착·희석하고 곰팡이 위험을 키웁니다.</li><li>빛: 특히 직사광선은 열과 함께 변화를 가속합니다.</li><li>열: 높은 온도는 화학 반응 속도를 전반적으로 높입니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>가장 큰 향미 손실은 분쇄 직후에 일어납니다. 가능하면 마시기 직전에 갈아 신선도를 지키세요.</p></aside></section><section id=\"how\"><span class=\"content-index\">02</span><h2>어디에, 어떻게 둘까</h2><p>서늘하고 어두운 곳에서 공기와의 접촉을 최소화하는 것이 기본입니다. 불투명한 밀폐 용기가 유리하며, 원두 상태로 두는 편이 분쇄해 두는 것보다 오래갑니다.</p><table><tbody><tr><th>방법</th><th>적합한 상황</th><th>주의점</th></tr><tr><td>실온·밀폐·차광</td><td>2~3주 안에 소비</td><td>가스레인지·창가 등 열원 근처는 피하기</td></tr><tr><td>냉동(밀폐, 소분)</td><td>장기 보관</td><td>꺼낼 때 결로 주의, 한 번 꺼낸 분량은 되넣지 않기</td></tr></tbody></table></section><section id=\"freezing\"><span class=\"content-index\">03</span><h2>냉동 보관은 언제</h2><p>많은 양을 오래 두어야 한다면 냉동이 선택지가 될 수 있습니다. 핵심은 결로 방지입니다. 한 번 마실 분량씩 소분해 밀폐하고, 필요한 만큼만 꺼내 상온으로 되돌린 뒤 개봉합니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>차가운 원두를 바로 개봉하면 표면에 물방울이 맺혀 습기를 끌어들입니다. 소분하지 않고 통째로 넣었다 뺐다 반복하는 것이 가장 나쁜 습관입니다.</p></aside></section><section id=\"dates\"><span class=\"content-index\">04</span><h2>날짜를 읽는 법</h2><p>로스팅 날짜가 표기돼 있다면 유통기한보다 그 날짜를 기준으로 삼는 편이 신선도 판단에 유용합니다. 로스팅 직후 며칠은 가스 배출로 추출이 불안정할 수 있어, 며칠 안정화한 뒤 마시는 경우도 많습니다.</p></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "milk-steaming",
+    "title": "우유 스티밍: 벨벳 같은 폼 만들기",
+    "summary": "스팀으로 우유를 데우며 미세한 거품을 만드는 원리와, 온도·공기 주입·회전을 다루는 기준을 정리합니다.",
+    "category": "카페와 장비",
+    "level": "중급",
+    "readingTime": "6분",
+    "updatedAt": "2026. 07. 23.",
+    "accent": "sand",
+    "fact": "좋은 우유 거품은 큰 거품이 아니라, 우유와 균질하게 섞인 미세한 거품(마이크로폼)에서 나옵니다.",
+    "sections": [
+      {
+        "id": "goal",
+        "title": "목표는 마이크로폼",
+        "paragraphs": [
+          "스티밍의 목표는 단순히 우유를 데우는 것이 아니라, 눈에 보이지 않을 만큼 고운 거품을 우유 전체에 균일하게 섞는 것입니다. 이렇게 만든 마이크로폼은 광택이 돌고 잔에 부었을 때 매끄럽게 흐릅니다.",
+          "거품은 크게 두 단계로 만들어집니다. 표면에서 공기를 끌어들이는 단계와, 그 공기를 회전으로 잘게 부수어 섞는 단계입니다."
+        ]
+      },
+      {
+        "id": "steps",
+        "title": "두 단계: 주입과 회전",
+        "paragraphs": [
+          "공기 주입은 초반, 차가울 때 끝내세요. 우유가 따뜻해진 뒤에 넣은 공기는 큰 거품으로 남아 거칠어지기 쉽습니다."
+        ],
+        "points": [
+          "주입(스트레칭): 팁을 표면 가까이 두어 \"치익\" 소리와 함께 공기를 넣어 부피를 키웁니다.",
+          "회전(롤링): 팁을 살짝 담가 우유가 소용돌이치게 하여 큰 거품을 잘게 부수고 데웁니다."
+        ]
+      },
+      {
+        "id": "temperature",
+        "title": "온도 기준",
+        "paragraphs": [
+          "온도는 단맛과 질감에 영향을 줍니다. 너무 낮으면 밋밋하고, 너무 높으면 단백질이 상해 비린 맛이 나며 거품이 무너집니다. 아래는 흔히 쓰이는 참고 범위입니다.",
+          "구간대략 온도메모목표대약 55~65℃단맛과 질감이 잘 살아나는 범위로 자주 언급됨과열70℃ 이상비린 맛·거친 거품, 라떼아트가 어려워짐",
+          "손으로 피처를 만졌을 때 계속 잡고 있기 어려울 만큼 뜨거우면 이미 과열입니다. 온도계나 감각으로 목표대에서 멈추는 연습이 중요합니다."
+        ]
+      },
+      {
+        "id": "finish",
+        "title": "마무리",
+        "paragraphs": [
+          "스티밍을 멈춘 뒤에는 피처를 가볍게 두드리고 돌려 큰 거품을 없애고 표면에 광택을 냅니다. 붓기 직전까지 우유와 거품이 분리되지 않도록 부드럽게 흔들어 유지합니다."
+        ]
+      }
+    ],
+    "related": [
+      "espresso-basics",
+      "grinder-basics"
+    ],
+    "tags": [
+      "카페와 장비",
+      "스티밍",
+      "라떼아트"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 23.",
+        "note": "우유 스티밍 기본 원리 초안 작성"
+      }
+    ],
+    "draft": true,
+    "bodyHtml": "<section id=\"goal\"><span class=\"content-index\">01</span><h2>목표는 마이크로폼</h2><p>스티밍의 목표는 단순히 우유를 데우는 것이 아니라, 눈에 보이지 않을 만큼 고운 거품을 우유 전체에 균일하게 섞는 것입니다. 이렇게 만든 마이크로폼은 광택이 돌고 잔에 부었을 때 매끄럽게 흐릅니다.</p><p>거품은 크게 두 단계로 만들어집니다. 표면에서 공기를 끌어들이는 단계와, 그 공기를 회전으로 잘게 부수어 섞는 단계입니다.</p></section><section id=\"steps\"><span class=\"content-index\">02</span><h2>두 단계: 주입과 회전</h2><ul><li>주입(스트레칭): 팁을 표면 가까이 두어 \"치익\" 소리와 함께 공기를 넣어 부피를 키웁니다.</li><li>회전(롤링): 팁을 살짝 담가 우유가 소용돌이치게 하여 큰 거품을 잘게 부수고 데웁니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>공기 주입은 초반, 차가울 때 끝내세요. 우유가 따뜻해진 뒤에 넣은 공기는 큰 거품으로 남아 거칠어지기 쉽습니다.</p></aside></section><section id=\"temperature\"><span class=\"content-index\">03</span><h2>온도 기준</h2><p>온도는 단맛과 질감에 영향을 줍니다. 너무 낮으면 밋밋하고, 너무 높으면 단백질이 상해 비린 맛이 나며 거품이 무너집니다. 아래는 흔히 쓰이는 참고 범위입니다.</p><table><tbody><tr><th>구간</th><th>대략 온도</th><th>메모</th></tr><tr><td>목표대</td><td>약 55~65℃</td><td>단맛과 질감이 잘 살아나는 범위로 자주 언급됨</td></tr><tr><td>과열</td><td>70℃ 이상</td><td>비린 맛·거친 거품, 라떼아트가 어려워짐</td></tr></tbody></table><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>손으로 피처를 만졌을 때 계속 잡고 있기 어려울 만큼 뜨거우면 이미 과열입니다. 온도계나 감각으로 목표대에서 멈추는 연습이 중요합니다.</p></aside></section><section id=\"finish\"><span class=\"content-index\">04</span><h2>마무리</h2><p>스티밍을 멈춘 뒤에는 피처를 가볍게 두드리고 돌려 큰 거품을 없애고 표면에 광택을 냅니다. 붓기 직전까지 우유와 거품이 분리되지 않도록 부드럽게 흔들어 유지합니다.</p></section>",
     "backlinks": []
   }
 ],
