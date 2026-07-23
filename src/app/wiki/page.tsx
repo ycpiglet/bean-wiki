@@ -4,9 +4,10 @@ import { Suspense } from "react";
 import { ArticleBrowser } from "@/components/article-browser";
 import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { articles, categories, levels } from "@/lib/content";
+import { categories, getPublishedArticles, levels } from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "모든 문서",
@@ -16,7 +17,7 @@ export const metadata: Metadata = {
 };
 
 export default function WikiIndex() {
-  const browseArticles = articles.map(
+  const browseArticles = getPublishedArticles("ko").map(
     ({ slug, title, summary, category, level, readingTime, accent }) => ({
       slug,
       title,
@@ -41,6 +42,7 @@ export default function WikiIndex() {
           <Link href="/" className="back-link">
             ← 홈으로
           </Link>
+          <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href="/en/wiki" />
           <ThemeToggle />
           <MobileNav />

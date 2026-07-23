@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -33,6 +34,7 @@ export default function EnPrivacyPage() {
           <Link href="/en" className="back-link">
             ← Home
           </Link>
+          <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href="/privacy" />
           <ThemeToggle />
           <MobileNav locale="en" />

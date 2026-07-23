@@ -30,9 +30,21 @@ export type Article = {
   accent: Accent;
   fact: string;
   sections: ArticleSection[];
+  // Published HTML body, rendered at build time from the article's canonical
+  // HTML source (see src/lib/content-serialize.mjs `renderSectionedHtml`): each
+  // `<h2>`-delimited run wrapped in a numbered `<section id>`. `sections` is a
+  // derived outline retained for the TOC, search index, and content validation.
+  bodyHtml: string;
   related: string[];
   tags?: string[];
   history?: RevisionEntry[];
+  // Slugs of articles that link here via an in-body wikilink. Computed at
+  // build time (see scripts/build-content.mjs). Powers the "referenced by"
+  // section; empty when nothing links here.
+  backlinks?: string[];
+  // Draft articles still build (and their page renders with a badge + noindex)
+  // but are excluded from listings, search, the sitemap, and the feed.
+  draft?: boolean;
 };
 
 export type Category = {

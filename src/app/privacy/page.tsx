@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 
@@ -28,6 +29,7 @@ export default function PrivacyPage() {
           <Link href="/" className="back-link">
             ← 홈으로
           </Link>
+          <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href="/en/privacy" />
           <ThemeToggle />
           <MobileNav />

@@ -10,7 +10,13 @@
     "type": "git",
     "url": "https://github.com/ycpiglet/bean-wiki.git"
   },
-  "keywords": ["coffee", "wiki", "encyclopedia", "korean", "nextjs"],
+  "keywords": [
+    "coffee",
+    "wiki",
+    "encyclopedia",
+    "korean",
+    "nextjs"
+  ],
   "scripts": {
     "predev": "node scripts/build-content.mjs",
     "dev": "next dev",
@@ -23,6 +29,10 @@
     "new-article": "node scripts/new-article.mjs"
   },
   "dependencies": {
+    "@tiptap/extension-table": "^3.28.0",
+    "@tiptap/pm": "^3.28.0",
+    "@tiptap/react": "^3.28.0",
+    "@tiptap/starter-kit": "^3.28.0",
     "next": "16.2.10",
     "postcss": "8.5.20",
     "react": "19.2.4",

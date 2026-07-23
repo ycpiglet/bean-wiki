@@ -1,4 +1,4 @@
-// Public content API. Article data lives in src/content/articles/*.md and is
+// Public content API. Article data lives in src/content/articles/*.html and is
 // generated into src/content/articles/index.ts (locale-keyed). This module is
 // the stable facade every page imports from. Locale defaults to "ko", so the
 // existing Korean pages need no changes; the /en pages pass "en".
@@ -28,6 +28,13 @@ export const articles = articlesByLocale.ko;
 
 export function getArticles(locale: Locale = "ko") {
   return articlesByLocale[locale] ?? articlesByLocale.ko;
+}
+
+// Published (non-draft) articles. Use this for every listing, count, search
+// index, sitemap, and feed; `getArticles` keeps drafts for static params and
+// direct lookups so a draft's own page still renders.
+export function getPublishedArticles(locale: Locale = "ko") {
+  return getArticles(locale).filter((article) => !article.draft);
 }
 
 export function getArticle(slug: string, locale: Locale = "ko") {
@@ -60,7 +67,7 @@ export function categoryDescription(slug: string, locale: Locale = "ko") {
 }
 
 export function articlesByCategory(categoryName: string, locale: Locale = "ko") {
-  return getArticles(locale).filter((article) => article.category === categoryName);
+  return getPublishedArticles(locale).filter((article) => article.category === categoryName);
 }
 
 export function categoryArticleCount(categoryName: string, locale: Locale = "ko") {
@@ -68,19 +75,19 @@ export function categoryArticleCount(categoryName: string, locale: Locale = "ko"
 }
 
 export function levelArticleCount(level: Level, locale: Locale = "ko") {
-  return getArticles(locale).filter((article) => article.level === level).length;
+  return getPublishedArticles(locale).filter((article) => article.level === level).length;
 }
 
 export function allTags(locale: Locale = "ko") {
   const set = new Set<string>();
-  for (const article of getArticles(locale)) {
+  for (const article of getPublishedArticles(locale)) {
     for (const tag of article.tags ?? []) set.add(tag);
   }
   return [...set].sort((a, b) => a.localeCompare(b, "ko"));
 }
 
 export function articlesByTag(tag: string, locale: Locale = "ko") {
-  return getArticles(locale).filter((article) => article.tags?.includes(tag));
+  return getPublishedArticles(locale).filter((article) => article.tags?.includes(tag));
 }
 
 export function articleBodyText(article: Article) {
@@ -91,6 +98,35 @@ export function articleBodyText(article: Article) {
     ]),
     article.fact,
   ].join(" ");
+}
+
+export type SearchIndexItem = {
+  slug: string;
+  title: string;
+  summary: string;
+  category: string;
+  haystack: string;
+};
+
+// Precomputed, lowercased search index for a locale. Built once at SSG time so
+// the client never re-lowercases the whole corpus on every keystroke. Shared by
+// the home hero <Search> and the global <SearchOverlay>.
+export function getSearchIndex(locale: Locale = "ko"): SearchIndexItem[] {
+  return getPublishedArticles(locale).map((article) => ({
+    slug: article.slug,
+    title: article.title,
+    summary: article.summary,
+    category: categoryLabel(article.category, locale),
+    haystack: [
+      article.title,
+      article.summary,
+      categoryLabel(article.category, locale),
+      (article.tags ?? []).join(" "),
+      articleBodyText(article),
+    ]
+      .join(" ")
+      .toLocaleLowerCase("ko"),
+  }));
 }
 
 export function getGlossaryTerms(locale: Locale = "ko"): GlossaryTerm[] {

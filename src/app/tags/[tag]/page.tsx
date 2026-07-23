@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { allTags, articlesByTag } from "@/lib/content";
@@ -58,6 +59,7 @@ export default async function TagPage(props: PageProps<"/tags/[tag]">) {
           <Link href="/wiki" className="back-link">
             모든 문서 →
           </Link>
+          <HeaderSearchButton locale="ko" />
           <ThemeToggle />
           <MobileNav />
         </div>

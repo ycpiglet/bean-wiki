@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
@@ -60,6 +61,7 @@ export default async function TopicPage(props: PageProps<"/topics/[slug]">) {
           <Link href="/wiki" className="back-link">
             모든 문서 →
           </Link>
+          <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href={`/en/topics/${slug}`} />
           <ThemeToggle />
           <MobileNav />

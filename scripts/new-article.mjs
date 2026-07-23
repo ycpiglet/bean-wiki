@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-// Scaffold a new article as markdown and register it in order.json. Usage:
+// Scaffold a new article as HTML and register it in order.json. Usage:
 //   npm run new-article -- --slug my-article --category "추출" --accent blue
 
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
@@ -24,9 +24,9 @@ if (!slug || !/^[a-z0-9-]+$/.test(slug)) {
   process.exit(1);
 }
 
-const file = join(dir, `${slug}.md`);
+const file = join(dir, `${slug}.html`);
 if (existsSync(file)) {
-  console.error(`✗ ${slug}.md already exists.`);
+  console.error(`✗ ${slug}.html already exists.`);
   process.exit(1);
 }
 
@@ -44,10 +44,8 @@ related: []
 tags: []
 history: [{"date":"YYYY. MM. DD.","note":"문서 최초 작성"}]
 ---
-
-## 첫 번째 섹션 제목 {#section-1}
-
-본문을 입력하세요.
+<h2 id="section-1">첫 번째 섹션 제목</h2>
+<p>본문을 입력하세요.</p>
 `;
 
 writeFileSync(file, template, "utf8");
@@ -59,5 +57,5 @@ if (!order.includes(slug)) {
   writeFileSync(orderPath, JSON.stringify(order, null, 2) + "\n", "utf8");
 }
 
-console.log(`✓ Created src/content/articles/${slug}.md and added it to order.json.`);
+console.log(`✓ Created src/content/articles/${slug}.html and added it to order.json.`);
 console.log("  Next: fill in the fields, then run `npm run check-content`.");

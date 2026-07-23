@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileNav } from "@/components/mobile-nav";
 import { Search } from "@/components/search";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
-  articleBodyText,
   categories,
   categoryArticleCount,
   categoryDescription,
   categoryLabel,
-  getArticles,
+  getPublishedArticles,
+  getSearchIndex,
   levelArticleCount,
 } from "@/lib/content";
 import { getDictionary } from "@/i18n";
@@ -76,23 +77,8 @@ function TopicIcon({ name }: { name: CategoryIcon }) {
 }
 
 export default function EnHome() {
-  const enArticles = getArticles("en");
-  const searchItems = enArticles.map((article) => ({
-    slug: article.slug,
-    title: article.title,
-    summary: article.summary,
-    category: categoryLabel(article.category, "en"),
-    // Tags are canonical Korean, so they are excluded from the English index —
-    // English readers search the English title/summary/body/category instead.
-    haystack: [
-      article.title,
-      article.summary,
-      categoryLabel(article.category, "en"),
-      articleBodyText(article),
-    ]
-      .join(" ")
-      .toLocaleLowerCase("ko"),
-  }));
+  const enArticles = getPublishedArticles("en");
+  const searchItems = getSearchIndex("en");
   const levels = getDictionary("en").levels;
 
   return (
@@ -109,13 +95,7 @@ export default function EnHome() {
           <a href="#contribute">Contribute</a>
         </nav>
         <div className="header-tools">
-          <a className="header-search" href="#search">
-            <svg aria-hidden="true" viewBox="0 0 20 20">
-              <circle cx="9" cy="9" r="5.5" />
-              <path d="m13 13 4 4" />
-            </svg>
-            Search
-          </a>
+          <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href="/" />
           <ThemeToggle />
           <MobileNav locale="en" />
@@ -136,7 +116,7 @@ export default function EnHome() {
             An open coffee encyclopedia anyone can learn from, verify, and build.
           </p>
           <div id="search">
-            <Search articles={searchItems} locale="en" />
+            <Search articles={searchItems} locale="en" manageShortcut={false} />
           </div>
           <div className="search-suggestions">
             <span>Popular</span>

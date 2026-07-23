@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
 import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ShareButtons } from "@/components/share-buttons";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -33,6 +34,7 @@ export async function generateMetadata(
     title: article.title,
     description: article.summary,
     keywords: article.tags,
+    robots: article.draft ? { index: false, follow: false } : undefined,
     alternates: {
       canonical: `/wiki/${slug}`,
       languages: { ko: `/wiki/${slug}`, en: `/en/wiki/${slug}` },
@@ -58,6 +60,10 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
 
   const related = article.related
     .map((relatedSlug) => getArticle(relatedSlug))
+    .filter((item) => item !== undefined);
+
+  const backlinks = (article.backlinks ?? [])
+    .map((linkSlug) => getArticle(linkSlug))
     .filter((item) => item !== undefined);
 
   const history = article.history ?? [];
@@ -119,6 +125,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
           <Link href="/" className="back-link">
             ← 모든 지식 둘러보기
           </Link>
+          <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href={`/en/wiki/${slug}`} />
           <ThemeToggle />
           <MobileNav />
@@ -153,11 +160,18 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             <span className={`level-badge accent-${article.accent}`}>
               {article.level}
             </span>
+            {article.draft && <span className="draft-badge">초안</span>}
             <h1>{article.title}</h1>
             <p>{article.summary}</p>
             <div className="article-meta">
               <span>읽는 시간 {article.readingTime}</span>
               <span>최근 수정 {article.updatedAt}</span>
+              <Link href={`/edit/${slug}`} className="edit-article-link">
+                편집
+              </Link>
+              <Link href={`/wiki/${slug}/history`} className="edit-article-link">
+                역사
+              </Link>
             </div>
             {article.tags && article.tags.length > 0 && (
               <div className="article-tags">
@@ -175,26 +189,10 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             <p>{article.fact}</p>
           </div>
 
-          <div className="article-content">
-            {article.sections.map((section, index) => (
-              <section id={section.id} key={section.id}>
-                <span className="content-index">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h2>{section.title}</h2>
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-                {section.points && (
-                  <ul>
-                    {section.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                )}
-              </section>
-            ))}
-          </div>
+          <div
+            className="article-content"
+            dangerouslySetInnerHTML={{ __html: article.bodyHtml }}
+          />
 
           {history.length > 0 && (
             <section className="revision-section">
@@ -223,6 +221,21 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             </div>
           </section>
 
+          {backlinks.length > 0 && (
+            <section className="related-section backlinks-section">
+              <span>이 문서를 참조하는 문서</span>
+              <div>
+                {backlinks.map((item) => (
+                  <Link href={`/wiki/${item.slug}`} key={item.slug}>
+                    <small>{item.category}</small>
+                    <strong>{item.title}</strong>
+                    <span>→</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
           <ShareButtons title={article.title} path={`/wiki/${slug}`} />
         </article>
       </div>
@@ -230,7 +243,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
       <footer className="article-footer shell">
         <p>Bean Wiki · 함께 만드는 열린 커피 백과사전</p>
         <a
-          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/${slug}.ts`}
+          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/${slug}.html`}
           target="_blank"
           rel="noreferrer"
         >

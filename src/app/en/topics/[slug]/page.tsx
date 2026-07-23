@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
@@ -63,6 +64,7 @@ export default async function EnTopicPage(props: PageProps<"/en/topics/[slug]">)
           <Link href="/en/wiki" className="back-link">
             All articles →
           </Link>
+          <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href={`/topics/${slug}`} />
           <ThemeToggle />
           <MobileNav locale="en" />

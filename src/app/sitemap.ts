@@ -1,9 +1,13 @@
 import type { MetadataRoute } from "next";
-import { allTags, articles, articlesByCategory, categories } from "@/lib/content";
+import { allTags, articlesByCategory, categories, getPublishedArticles } from "@/lib/content";
 import { parseKoreanDate } from "@/lib/dates";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
+  // Published articles only — drafts are excluded from the sitemap.
+  const articles = getPublishedArticles("ko");
+  const enArticleList = getPublishedArticles("en");
+
   // Deterministic: derived from content dates, so lastmod only moves when
   // content actually changes — not on every build.
   const siteLastModified = articles.reduce(
@@ -64,7 +68,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.5,
     })),
-    ...articles.map((article) => ({
+    ...enArticleList.map((article) => ({
       url: `${SITE_URL}/en/wiki/${article.slug}`,
       lastModified: parseKoreanDate(article.updatedAt),
       changeFrequency: "monthly" as const,

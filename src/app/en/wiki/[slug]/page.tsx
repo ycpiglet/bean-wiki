@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
 import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
+import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ShareButtons } from "@/components/share-buttons";
 import { ThemeToggle } from "@/components/theme-toggle";
@@ -30,6 +31,7 @@ export async function generateMetadata(
   return {
     title: article.title,
     description: article.summary,
+    robots: article.draft ? { index: false, follow: false } : undefined,
     alternates: {
       canonical: `/en/wiki/${slug}`,
       languages: { ko: `/wiki/${slug}`, en: `/en/wiki/${slug}` },
@@ -54,6 +56,9 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
   const levels = getDictionary("en").levels;
   const related = article.related
     .map((relatedSlug) => getArticle(relatedSlug, "en"))
+    .filter((item) => item !== undefined);
+  const backlinks = (article.backlinks ?? [])
+    .map((linkSlug) => getArticle(linkSlug, "en"))
     .filter((item) => item !== undefined);
   const history = article.history ?? [];
   const catLabel = categoryLabel(article.category, "en");
@@ -85,6 +90,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
           <Link href="/en" className="back-link">
             ← Browse all
           </Link>
+          <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href={`/wiki/${slug}`} />
           <ThemeToggle />
           <MobileNav locale="en" />
@@ -116,6 +122,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
           </div>
 
           <header className="wiki-title">
+            {article.draft && <span className="draft-badge">Draft</span>}
             <span className={`level-badge accent-${article.accent}`}>
               {levels[article.level] ?? article.level}
             </span>
@@ -132,26 +139,10 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
             <p>{article.fact}</p>
           </div>
 
-          <div className="article-content">
-            {article.sections.map((section, index) => (
-              <section id={section.id} key={section.id}>
-                <span className="content-index">
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h2>{section.title}</h2>
-                {section.paragraphs.map((paragraph) => (
-                  <p key={paragraph}>{paragraph}</p>
-                ))}
-                {section.points && (
-                  <ul>
-                    {section.points.map((point) => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                )}
-              </section>
-            ))}
-          </div>
+          <div
+            className="article-content"
+            dangerouslySetInnerHTML={{ __html: article.bodyHtml }}
+          />
 
           {history.length > 0 && (
             <section className="revision-section">
@@ -180,6 +171,21 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
             </div>
           </section>
 
+          {backlinks.length > 0 && (
+            <section className="related-section backlinks-section">
+              <span>Referenced by</span>
+              <div>
+                {backlinks.map((item) => (
+                  <Link href={`/en/wiki/${item.slug}`} key={item.slug}>
+                    <small>{categoryLabel(item.category, "en")}</small>
+                    <strong>{item.title}</strong>
+                    <span>→</span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          )}
+
           <ShareButtons title={article.title} path={`/en/wiki/${slug}`} />
         </article>
       </div>
@@ -187,7 +193,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
       <footer className="article-footer shell">
         <p>Bean Wiki · an open, community-built coffee encyclopedia</p>
         <a
-          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/en/${slug}.md`}
+          href={`https://github.com/ycpiglet/bean-wiki/blob/main/src/content/articles/en/${slug}.html`}
           target="_blank"
           rel="noreferrer"
         >
