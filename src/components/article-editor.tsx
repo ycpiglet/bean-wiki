@@ -5,7 +5,69 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { EditorContent, useEditor } from "@tiptap/react";
 import { Extension, Node, mergeAttributes } from "@tiptap/core";
 import StarterKit from "@tiptap/starter-kit";
+import { TableKit } from "@tiptap/extension-table";
 import type { Locale } from "@/i18n/config";
+
+const CALLOUT_TONES = ["note", "tip", "warn", "important"] as const;
+type CalloutTone = (typeof CALLOUT_TONES)[number];
+
+// Callout: a tinted block with editable content and a tone (note/tip/warn/
+// important), stored as <aside class="callout callout-<tone>" data-tone>.
+const Callout = Node.create({
+  name: "callout",
+  group: "block",
+  content: "block+",
+  defining: true,
+  addAttributes() {
+    return {
+      tone: {
+        default: "note",
+        parseHTML: (el) => el.getAttribute("data-tone") || "note",
+        renderHTML: (attrs) => ({ "data-tone": attrs.tone }),
+      },
+    };
+  },
+  parseHTML() {
+    return [{ tag: "aside.callout" }, { tag: "aside[data-tone]" }];
+  },
+  renderHTML({ node, HTMLAttributes }) {
+    const tone = (node.attrs.tone as string) || "note";
+    return [
+      "aside",
+      mergeAttributes(HTMLAttributes, { class: `callout callout-${tone}`, "data-tone": tone }),
+      0,
+    ];
+  },
+});
+
+// Toggle: a native <details> disclosure. The summary is an attribute; the body
+// is editable block content in a <div class="toggle-body">.
+const Toggle = Node.create({
+  name: "toggle",
+  group: "block",
+  content: "block+",
+  defining: true,
+  addAttributes() {
+    return {
+      summary: {
+        default: "",
+        parseHTML: (el) => el.querySelector("summary")?.textContent || "",
+        renderHTML: () => ({}),
+      },
+    };
+  },
+  parseHTML() {
+    return [{ tag: "details", contentElement: "div.toggle-body" }];
+  },
+  renderHTML({ node }) {
+    return [
+      "details",
+      { class: "toggle" },
+      ["summary", {}, (node.attrs.summary as string) || "토글"],
+      ["div", { class: "toggle-body" }, 0],
+    ];
+  },
+});
 
 // Preserve heading ids across an edit round-trip so anchors, the TOC, and
 // ko/en structural parity survive. StarterKit's Heading drops unknown
@@ -205,9 +267,14 @@ type EditorCopy = {
     link: string;
     unlink: string;
     image: string;
+    callout: string;
+    toggle: string;
+    table: string;
     undo: string;
     redo: string;
   };
+  tones: Record<CalloutTone, string>;
+  togglePrompt: string;
 };
 
 const COPY: Record<Locale, EditorCopy> = {
@@ -286,9 +353,14 @@ const COPY: Record<Locale, EditorCopy> = {
       link: "링크",
       unlink: "링크 해제",
       image: "이미지",
+      callout: "콜아웃",
+      toggle: "토글",
+      table: "표",
       undo: "실행 취소",
       redo: "다시 실행",
     },
+    tones: { note: "정보", tip: "팁", warn: "주의", important: "중요" },
+    togglePrompt: "토글 제목을 입력하세요",
   },
   en: {
     backToArticle: "← Back to article",
@@ -365,9 +437,14 @@ const COPY: Record<Locale, EditorCopy> = {
       link: "Link",
       unlink: "Unlink",
       image: "Image",
+      callout: "Callout",
+      toggle: "Toggle",
+      table: "Table",
       undo: "Undo",
       redo: "Redo",
     },
+    tones: { note: "Note", tip: "Tip", warn: "Warning", important: "Important" },
+    togglePrompt: "Enter a toggle title",
   },
 };
 
@@ -433,6 +510,7 @@ export function ArticleEditor({
   const [renameSlug, setRenameSlug] = useState("");
   const [renaming, setRenaming] = useState(false);
   const [publishAsDraft, setPublishAsDraft] = useState(false);
+  const [calloutMenuOpen, setCalloutMenuOpen] = useState(false);
   const [draftState, setDraftState] = useState<"idle" | "saved" | "restored">("idle");
   const [savedHtml, setSavedHtml] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
@@ -481,6 +559,9 @@ export function ArticleEditor({
       HeadingId,
       WikiLinkAttr,
       Figure,
+      Callout,
+      Toggle,
+      TableKit.configure({ table: { resizable: false } }),
     ],
     content: bodyHtml,
     immediatelyRender: false,
@@ -570,6 +651,31 @@ export function ArticleEditor({
       .run();
     setLinkPickerOpen(false);
     setLinkFilter("");
+    scheduleSave();
+  }
+
+  function applyCallout(tone: CalloutTone) {
+    if (!editor) return;
+    if (editor.isActive("callout")) {
+      editor.chain().focus().updateAttributes("callout", { tone }).run();
+    } else {
+      editor.chain().focus().wrapIn("callout", { tone }).run();
+    }
+    setCalloutMenuOpen(false);
+    scheduleSave();
+  }
+
+  function insertToggle() {
+    if (!editor) return;
+    const summary = window.prompt(t.togglePrompt, "")?.trim();
+    if (summary === undefined) return;
+    editor.chain().focus().wrapIn("toggle", { summary: summary || "토글" }).run();
+    scheduleSave();
+  }
+
+  function insertTable() {
+    if (!editor) return;
+    editor.chain().focus().insertTable({ rows: 3, cols: 3, withHeaderRow: true }).run();
     scheduleSave();
   }
 
@@ -986,6 +1092,38 @@ export function ArticleEditor({
               onClick={() => setImagePanelOpen((open) => !open)}
             >
               {tb.image}
+            </button>
+            <span className="editor-sep" aria-hidden="true" />
+            <span className="editor-callout-wrap">
+              <button
+                type="button"
+                aria-pressed={editor.isActive("callout") || calloutMenuOpen}
+                className={editor.isActive("callout") ? "is-active" : ""}
+                onClick={() => setCalloutMenuOpen((open) => !open)}
+              >
+                {tb.callout}
+              </button>
+              {calloutMenuOpen && (
+                <span className="editor-callout-menu" role="menu">
+                  {CALLOUT_TONES.map((tone) => (
+                    <button
+                      key={tone}
+                      type="button"
+                      role="menuitem"
+                      className={`callout-swatch callout-${tone}`}
+                      onClick={() => applyCallout(tone)}
+                    >
+                      {t.tones[tone]}
+                    </button>
+                  ))}
+                </span>
+              )}
+            </span>
+            <button type="button" onClick={insertToggle}>
+              {tb.toggle}
+            </button>
+            <button type="button" onClick={insertTable}>
+              {tb.table}
             </button>
             <span className="editor-sep" aria-hidden="true" />
             <button

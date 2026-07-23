@@ -157,6 +157,12 @@ export function deriveSections(body) {
     else if ((m = block.match(/^<h3>([\s\S]*)<\/h3>$/))) pushText(m[1]);
     else if ((m = block.match(/^<blockquote>([\s\S]*)<\/blockquote>$/))) pushText(m[1]);
     else if ((m = block.match(/^<[uo]l>([\s\S]*)<\/[uo]l>$/))) pushPoints(m[1]);
+    // Rich blocks: index their visible text into the search haystack (whole
+    // block flattened to one entry). Figures stay excluded (visual only).
+    else if (/^<(aside|details|table)\b/.test(block)) {
+      const text = plain(block);
+      if (text && cur) cur.paragraphs.push(text);
+    }
   }
 
   // Match the historical object shape: omit `points` when a section has none.
@@ -226,8 +232,21 @@ const ALLOWED = {
   figure: ["class", "data-author", "data-license", "data-source"],
   figcaption: [],
   img: ["src", "alt", "width"],
+  // Rich blocks: callout, toggle, table.
+  aside: ["class", "data-tone"],
+  details: ["class"],
+  summary: [],
+  div: ["class"],
+  table: ["class"],
+  thead: [],
+  tbody: [],
+  colgroup: [],
+  col: [],
+  tr: [],
+  th: ["colspan", "rowspan"],
+  td: ["colspan", "rowspan"],
 };
-const SELF_CLOSING = new Set(["br", "img"]);
+const SELF_CLOSING = new Set(["br", "img", "col"]);
 const BLOCK_TAGS = new Set([
   "h2",
   "h3",
@@ -236,6 +255,9 @@ const BLOCK_TAGS = new Set([
   "ol",
   "blockquote",
   "figure",
+  "aside",
+  "details",
+  "table",
 ]);
 
 function safeUrl(value) {

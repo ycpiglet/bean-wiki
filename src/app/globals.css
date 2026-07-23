@@ -1120,6 +1120,129 @@ a.figure-credit {
   vertical-align: middle;
 }
 
+/* ---- Rich blocks (callout / toggle / table) — shared by article + editor ---- */
+.article-content .callout {
+  margin: 24px 0;
+  padding: 14px 18px;
+  border-left: 3px solid var(--olive);
+  border-radius: 4px;
+  background: var(--paper);
+}
+
+.article-content .callout > :last-child {
+  margin-bottom: 0;
+}
+
+.article-content .callout-note {
+  border-left-color: var(--blue);
+}
+.article-content .callout-tip {
+  border-left-color: var(--olive);
+}
+.article-content .callout-warn {
+  border-left-color: var(--copper);
+}
+.article-content .callout-important {
+  border-left-color: var(--berry);
+}
+
+.article-content .toggle {
+  margin: 24px 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+}
+
+.article-content .toggle > summary {
+  padding: 12px 16px;
+  color: var(--ink);
+  font-weight: 620;
+  cursor: pointer;
+}
+
+.article-content .toggle > summary::marker {
+  color: var(--olive);
+}
+
+.article-content .toggle-body {
+  padding: 0 16px;
+}
+
+.article-content .toggle-body > :last-child {
+  margin-bottom: 14px;
+}
+
+.article-content table {
+  width: 100%;
+  max-width: 100%;
+  margin: 24px 0;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+.article-content th,
+.article-content td {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  text-align: left;
+  vertical-align: top;
+}
+
+.article-content th {
+  background: var(--paper);
+  font-weight: 650;
+}
+
+.article-content td p,
+.article-content th p {
+  margin: 0;
+}
+
+/* Toolbar callout tone menu */
+.editor-callout-wrap {
+  position: relative;
+  display: inline-flex;
+}
+
+.editor-callout-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 5;
+  display: flex;
+  gap: 4px;
+  margin-top: 4px;
+  padding: 6px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--cream);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+.callout-swatch {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-left-width: 3px;
+  border-radius: 3px;
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.callout-swatch.callout-note {
+  border-left-color: var(--blue);
+}
+.callout-swatch.callout-tip {
+  border-left-color: var(--olive);
+}
+.callout-swatch.callout-warn {
+  border-left-color: var(--copper);
+}
+.callout-swatch.callout-important {
+  border-left-color: var(--berry);
+}
+
 /* ---- Article history (/wiki/[slug]/history) ---- */
 .history-page {
   min-height: 100vh;
