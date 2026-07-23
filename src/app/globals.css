@@ -1064,6 +1064,15 @@ svg {
   line-height: 1.7;
 }
 
+/* TipTap wraps list-item content in <p>; keep those tight so editor-saved
+   lists match hand-authored ones. */
+.article-content li > p {
+  margin: 0;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
 .article-content a {
   color: var(--olive);
   text-decoration: underline;
