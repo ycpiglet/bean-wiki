@@ -5,6 +5,8 @@
   --paper-deep: #e8e1d4;
   --ink: #182019;
   --muted: #62675f;
+  --prose: #3f463f;
+  --prose-soft: #454b45;
   --line: rgba(24, 32, 25, 0.16);
   --olive: #6f7d48;
   --forest: #1d2b22;
@@ -21,6 +23,8 @@
   --paper-deep: #1b1f16;
   --ink: #ece7da;
   --muted: #a0a394;
+  --prose: #cfcabc;
+  --prose-soft: #c4c0b3;
   --line: rgba(236, 231, 218, 0.16);
   --olive: #a6b673;
   --forest: #10160f;
@@ -35,8 +39,13 @@
 @theme inline {
   --color-background: var(--paper);
   --color-foreground: var(--ink);
-  --font-sans: "Geist", "Geist Fallback", "Pretendard", "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback", ui-monospace, monospace;
+  /* Reference the next/font-generated variables (set on <html> in layout.tsx).
+     Latin resolves to Geist; Hangul falls through to Noto Sans KR; then system
+     Korean fonts as a last resort. The old literal "Geist" names never matched
+     the hashed next/font family, so nothing custom was applied before. */
+  --font-sans: var(--font-geist-sans), var(--font-noto-kr), "Pretendard",
+    "Apple SD Gothic Neo", "Malgun Gothic", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
 }
 
 * {
@@ -45,13 +54,19 @@
 
 html {
   scroll-behavior: smooth;
+  /* Stop mobile browsers from auto-inflating text on orientation change. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
   margin: 0;
   background: var(--paper);
   color: var(--ink);
-  font-family: "Geist", "Geist Fallback", "Pretendard", "Noto Sans KR", Arial, sans-serif;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -1021,6 +1036,12 @@ svg {
 
 .knowledge-note p { margin: 8px 0 0; font-size: 16px; font-weight: 560; line-height: 1.6; }
 
+.article-content {
+  /* Break only unbreakable strings (long URLs, IDs) so they can't overflow the
+     column; Korean prose still wraps at word boundaries via keep-all on <p>. */
+  overflow-wrap: break-word;
+}
+
 .article-content section {
   position: relative;
   scroll-margin-top: 30px;
@@ -1045,7 +1066,7 @@ svg {
 
 .article-content p {
   margin: 0 0 20px;
-  color: #3f463f;
+  color: var(--prose);
   font-size: 16px;
   line-height: 1.95;
   word-break: keep-all;
@@ -1059,7 +1080,7 @@ svg {
 
 .article-content li {
   padding: 5px 0;
-  color: #454b45;
+  color: var(--prose-soft);
   font-size: 14px;
   line-height: 1.7;
 }
@@ -2485,12 +2506,8 @@ input:focus-visible,
 [data-theme="dark"] .knowledge-note.accent-sage {
   background: #23281a;
 }
-[data-theme="dark"] .article-content p {
-  color: #cfcabc;
-}
-[data-theme="dark"] .article-content li {
-  color: #c4c0b3;
-}
+/* prose colors are tokenized (--prose / --prose-soft); dark values live in the
+   [data-theme="dark"] token block, so no per-selector override is needed. */
 [data-theme="dark"] .article-content a {
   color: var(--sage);
 }
@@ -2596,8 +2613,13 @@ input:focus-visible,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media print {

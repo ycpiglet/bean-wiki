@@ -1,5 +1,5 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist, Geist_Mono, Noto_Sans_KR } from "next/font/google";
 import { HtmlLangSync } from "@/components/html-lang-sync";
 import { ServiceWorkerRegister } from "@/components/sw-register";
 import { SearchOverlay } from "@/components/search-overlay";
@@ -7,6 +7,11 @@ import { getSearchIndex } from "@/lib/content";
 import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
+// Geist covers Latin (logo, numbers, English). It has NO Korean glyphs, so a
+// Korean webfont must be loaded too — otherwise Hangul falls back to whatever
+// each OS happens to have. The font stack (globals.css --font-sans) puts Geist
+// first and Noto Sans KR second, so browsers pick per-glyph: Latin → Geist,
+// Hangul → Noto. `preload: false` keeps the large CJK font non-blocking.
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -15,6 +20,13 @@ const geistSans = Geist({
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+});
+
+const notoSansKR = Noto_Sans_KR({
+  variable: "--font-noto-kr",
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  preload: false,
 });
 
 export const metadata: Metadata = {
@@ -51,7 +63,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       data-theme="light"
       data-scroll-behavior="smooth"
       suppressHydrationWarning
-      className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${notoSansKR.variable} antialiased`}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: themeScript }} />
