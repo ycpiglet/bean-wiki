@@ -54,6 +54,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* Stop mobile browsers from auto-inflating text on orientation change. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -1032,6 +1035,12 @@ svg {
 }
 
 .knowledge-note p { margin: 8px 0 0; font-size: 16px; font-weight: 560; line-height: 1.6; }
+
+.article-content {
+  /* Break only unbreakable strings (long URLs, IDs) so they can't overflow the
+     column; Korean prose still wraps at word boundaries via keep-all on <p>. */
+  overflow-wrap: break-word;
+}
 
 .article-content section {
   position: relative;
@@ -2604,8 +2613,13 @@ input:focus-visible,
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto !important; }
+  *, *::before, *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 @media print {
