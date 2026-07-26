@@ -96,8 +96,18 @@
 - ✅ [S] 2c. **문서 이름 변경 리다이렉트** — `redirects.json`+`next.config` 301, 참조 갱신 포함 Git Data API 원자 커밋 (`cf94473`)
 - ✅ [M~L] 3. **역사/복원 UI**(`/wiki/[slug]/history`, GitHub API) + **초안 상태**(목록·검색·사이트맵·RSS 제외, noindex 배지) + **ko/en 구조 동기화 알림** (`e7416c0`)
 
+## Sprint 8 — 브랜드·편집 하네스·콘텐츠 심화 (✅ 완료)
+
+> 2026-07-24 디자인 리뷰 + 사용자 지시 6건에서 도출.
+
+- ✅ [M] 폰트 로딩 수정 — next/font 변수 미참조 버그(리터럴 "Geist") 교정 + Noto Sans KR 로드, 프로즈 색 토큰화 (`#9`)
+- ✅ [L] **브랜드 = 커피 라이프사이클 팔레트** — 체리→생두→로스팅(Agtron 근사)→크레마 토큰, 프라이머리 액센트 올리브→**미디엄 로스트 브라운**(`--brand`), 로고·아이콘·OG 갈색화, **색상 가이드 페이지 `/design/colors`** (`#10`)
+- ✅ [M] 타입 스케일 재조정 — 제목 축소(히어로 72→56, 문서 64→44), 메타·태그 9~10→12px, mono 라벨 최소 10px, 한글 자간 완화 (`#10`)
+- ✅ [S] **한글 줄맞춤 규칙 강화** — 전역 h1–h4 `keep-all + text-wrap: balance`(어절 중간 끊김·한 글자 고아 줄 방지) (`#10`)
+- ✅ [S] 검색 단축키 힌트 플랫폼 인식 — Windows/Linux `Ctrl K`, Apple `⌘ K` (`#10`)
+- ✅ [L] **편집 하네스** — [docs/EDITORIAL.md](docs/EDITORIAL.md)(6축 루브릭+게시 게이트 SSOT), 페르소나 에이전트 8종(`.claude/agents/`: 로스터·바리스타·Q그레이더·농장주·작가·인터뷰어·리서치 사서·미디어 큐레이터), 스킬 3종(`/write-article` `/review-article` `/enrich-article`) (`#11`)
+- ✅ [M] 로스팅·센서리·SCA·Q 그레이더 콘텐츠 — 신규 4편(향미 휠·SCA 커핑 프로토콜·Q 그레이더·로스트 프로파일 설계) + 용어집 4항목(향미 휠·Q 그레이더·CVA·DTR), 페르소나 패널 교차 검증 통과 후 게시
+
 ## 남은 항목 (사용자 액션)
 
-- ⬜ **편집 게시 활성화** — 코드는 완료. GitHub OAuth 앱 생성 + Vercel 환경변수(`AUTH_SECRET`, `GITHUB_OAUTH_CLIENT_ID/SECRET`, 권장 `GITHUB_ALLOWED_LOGINS`, 선택 `UNSPLASH_ACCESS_KEY`) 설정만 남음. 절차는 [docs/EDITING.md](docs/EDITING.md). 미설정 시 에디터는 미리보기 모드.
-- ⬜ **CI 활성화** — 자격증명 제약으로만 막힘. 자동화 토큰에 GitHub `workflow` 스코프가 없어 `.github/workflows/`에 푸시·생성이 불가(git push와 REST API 모두 확인). [docs/ci-workflow.yml.example](docs/ci-workflow.yml.example)를 `workflow` 스코프 토큰으로 `.github/workflows/ci.yml`에 복사하거나 GitHub 웹 UI로 추가하면 즉시 동작.
-- ⬜ 영어 번역 사람 검수 — 현재 번역은 원문(한국어) 기반이며 문서에 출처를 명시. 정확도 검수는 상시 환영.
+- ⬜ 영어 번역 사람 검수 — 현재 번역은 원문(한국어) 기반이며 문서에 출처를 명시. 정확도 검수는 상시 환영. (편집 게시·CI·Unsplash는 2026-07-23 사용자 설정으로 활성화 완료)

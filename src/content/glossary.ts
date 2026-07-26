@@ -222,4 +222,36 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: "산지와 생두",
     related: ["coffee-varieties", "arabica-and-robusta"],
   },
+  {
+    term: "향미 휠",
+    reading: "Flavor Wheel",
+    definition:
+      "커피의 향과 맛 어휘를 큰 범주에서 구체 표현으로 위계화해 원형으로 배열한 도구입니다.",
+    category: "센서리",
+    related: ["coffee-flavor-wheel", "cupping-basics"],
+  },
+  {
+    term: "Q 그레이더",
+    reading: "Q Grader",
+    definition:
+      "국제 기준으로 커피를 평가·등급화할 수 있도록 교정된 감각을 검증받은 관능평가 자격입니다.",
+    category: "센서리",
+    related: ["q-grader-certification", "sca-cupping-protocol"],
+  },
+  {
+    term: "CVA",
+    reading: "커피 가치 평가",
+    definition:
+      "SCA가 기존 커핑 폼을 대체하며 도입한 평가 체계로, 기술적 평가와 선호 평가를 분리한 것이 특징입니다.",
+    category: "센서리",
+    related: ["sca-cupping-protocol"],
+  },
+  {
+    term: "DTR",
+    reading: "발달 시간 비율",
+    definition:
+      "전체 로스팅 시간 중 1차 크랙 이후 구간이 차지하는 비율로, 스타일에 따른 참고 지표입니다.",
+    category: "로스팅",
+    related: ["roast-profile-design", "roast-development"],
+  },
 ];

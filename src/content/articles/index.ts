@@ -235,7 +235,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "related": [
       "coffee-processing",
       "roast-development",
-      "water-for-coffee"
+      "sca-cupping-protocol"
     ],
     "tags": [
       "커핑",
@@ -249,7 +249,11 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"purpose\"><span class=\"content-index\">01</span><h2>비교할 수 있는 공통 조건을 만듭니다</h2><p>커핑은 생산, 구매, 로스팅과 품질 관리 과정에서 커피를 비교하기 위한 관능평가 방식입니다. 용기, 비율, 분쇄, 물, 시간과 온도를 통제하면 샘플 자체의 차이에 집중할 수 있습니다.</p></section><section id=\"observe\"><span class=\"content-index\">02</span><h2>뜨거울 때부터 식을 때까지 관찰합니다</h2><p>온도가 내려가면 향의 휘발 정도와 맛의 지각이 달라집니다. 한 시점의 강한 인상보다 여러 온도 구간에서 향미, 후미, 산미, 단맛, 질감과 균형이 어떻게 변하는지 살핍니다.</p><ul><li>향의 종류보다 먼저 강도와 선명도를 확인합니다.</li><li>좋고 싫다는 판단과 관찰한 특성을 구분해 기록합니다.</li><li>반복 컵을 통해 샘플 내부의 균일성과 결점을 확인합니다.</li></ul></section><section id=\"calibration\"><span class=\"content-index\">03</span><h2>점수보다 캘리브레이션이 먼저입니다</h2><p>관능평가는 사람의 감각을 사용하는 측정입니다. 평가자들이 용어와 강도의 기준을 맞추고, 서로 다른 판단의 근거를 대화하는 캘리브레이션이 중요합니다.</p><p>초심자는 구체적인 향미 이름을 맞히려 하기보다 산미의 강도, 단맛의 지속성, 질감의 무게처럼 비교하기 쉬운 축부터 연습하는 것이 좋습니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-flavor-wheel",
+      "sca-cupping-protocol",
+      "q-grader-certification"
+    ]
   },
   {
     "slug": "bean-structure-compounds",
@@ -411,8 +415,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "related": [
       "cupping-basics",
-      "coffee-processing",
-      "extraction-basics"
+      "roast-profile-design",
+      "coffee-processing"
     ],
     "tags": [
       "로스팅",
@@ -426,7 +430,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>발달은 1차 크랙 이후만의 일이 아닙니다</h2><p>현장에서는 1차 크랙 시작부터 배출까지를 발달 구간으로 부르는 경우가 많습니다. 기록과 소통에는 유용하지만, 향미를 만드는 반응은 로스팅 전 과정에서 연속적으로 일어납니다.</p><p>따라서 발달 시간이나 비율 하나를 품질의 목표값처럼 사용하기보다 투입 온도, 에너지 적용, 변화율과 배출 상태를 함께 읽어야 합니다.</p></section><section id=\"signals\"><span class=\"content-index\">02</span><h2>함께 기록할 신호</h2><p>기계가 보여주는 온도는 센서 위치와 반응 속도에 영향을 받습니다. 곡선만 보지 말고 색, 향, 소리, 배기 상태와 물리적 변화를 함께 기록하면 배치 간 비교가 더 정확해집니다.</p><ul><li>투입량과 생두의 밀도·수분</li><li>가스 또는 전력 입력의 변경 시점</li><li>배기와 드럼 속도</li><li>옐로 포인트, 1차 크랙과 배출 시점</li><li>감량률, 색도와 컵 결과</li></ul></section><section id=\"evaluation\"><span class=\"content-index\">03</span><h2>프로파일의 답은 컵에서 확인합니다</h2><p>좋은 프로파일은 보기 좋은 곡선이 아니라 의도한 향미를 반복해서 만들어내는 프로파일입니다. 같은 조건으로 커핑하고 로스팅 기록과 결과를 연결해야 의미 있는 기준이 생깁니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "roast-profile-design"
+    ]
   },
   {
     "slug": "water-for-coffee",
@@ -915,6 +921,307 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"goal\"><span class=\"content-index\">01</span><h2>목표는 마이크로폼</h2><p>스티밍의 목표는 단순히 우유를 데우는 것이 아니라, 눈에 보이지 않을 만큼 고운 거품을 우유 전체에 균일하게 섞는 것입니다. 이렇게 만든 마이크로폼은 광택이 돌고 잔에 부었을 때 매끄럽게 흐릅니다.</p><p>거품은 크게 두 단계로 만들어집니다. 표면에서 공기를 끌어들이는 단계와, 그 공기를 회전으로 잘게 부수어 섞는 단계입니다.</p></section><section id=\"steps\"><span class=\"content-index\">02</span><h2>두 단계: 주입과 회전</h2><ul><li>주입(스트레칭): 팁을 표면 가까이 두어 \"치익\" 소리와 함께 공기를 넣어 부피를 키웁니다.</li><li>회전(롤링): 팁을 살짝 담가 우유가 소용돌이치게 하여 큰 거품을 잘게 부수고 데웁니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>공기 주입은 초반, 차가울 때 끝내세요. 우유가 따뜻해진 뒤에 넣은 공기는 큰 거품으로 남아 거칠어지기 쉽습니다.</p></aside></section><section id=\"temperature\"><span class=\"content-index\">03</span><h2>온도 기준</h2><p>온도는 단맛과 질감에 영향을 줍니다. 너무 낮으면 밋밋하고, 너무 높으면 단백질이 상해 비린 맛이 나며 거품이 무너집니다. 아래는 흔히 쓰이는 참고 범위입니다.</p><table><tbody><tr><th>구간</th><th>대략 온도</th><th>메모</th></tr><tr><td>목표대</td><td>약 55~65℃</td><td>단맛과 질감이 잘 살아나는 범위로 자주 언급됨</td></tr><tr><td>과열</td><td>70℃ 이상</td><td>비린 맛·거친 거품, 라떼아트가 어려워짐</td></tr></tbody></table><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>손으로 피처를 만졌을 때 계속 잡고 있기 어려울 만큼 뜨거우면 이미 과열입니다. 온도계나 감각으로 목표대에서 멈추는 연습이 중요합니다.</p></aside></section><section id=\"finish\"><span class=\"content-index\">04</span><h2>마무리</h2><p>스티밍을 멈춘 뒤에는 피처를 가볍게 두드리고 돌려 큰 거품을 없애고 표면에 광택을 냅니다. 붓기 직전까지 우유와 거품이 분리되지 않도록 부드럽게 흔들어 유지합니다.</p></section>",
     "backlinks": []
+  },
+  {
+    "slug": "coffee-flavor-wheel",
+    "title": "커피 향미 휠: 맛을 말로 옮기는 지도",
+    "summary": "커피 테이스터스 향미 휠의 구조와 읽는 법, 그리고 감각을 공용어로 바꾸는 연습법을 정리합니다.",
+    "category": "센서리",
+    "level": "입문",
+    "readingTime": "6분",
+    "updatedAt": "2026. 07. 24.",
+    "accent": "berry",
+    "fact": "향미 휠은 정답지가 아니라 어휘 지도입니다. 안쪽의 큰 범주에서 시작해 바깥쪽의 구체적 표현으로 좁혀 갑니다.",
+    "sections": [
+      {
+        "id": "what",
+        "title": "향미 휠이란 무엇인가",
+        "paragraphs": [
+          "향미 휠은 커피에서 느껴지는 향과 맛을 표현하는 어휘를 원형으로 배열한 도구입니다. 사실상 표준으로 자리 잡은 것은 SCA(스페셜티 커피 협회, 2016년 당시 명칭 SCAA)와 WCR(월드 커피 리서치)이 협력해 개정한 커피 테이스터스 향미 휠(Coffee Taster's Flavor Wheel)입니다.",
+          "2016년 개정판은 WCR의 센서리 렉시콘(Sensory Lexicon)을 기반으로 만들어졌습니다. 렉시콘은 커피에서 감지되는 속성들을 정의하고 각 속성에 기준 물질(레퍼런스)을 연결한 사전으로, 향미 휠은 그 어휘를 시각적으로 배열한 지도라고 할 수 있습니다.",
+          "향미 휠은 \"이 커피에서 무엇이 느껴져야 한다\"는 정답지가 아니라, 느낀 것을 남과 공유 가능한 말로 옮기도록 돕는 어휘 지도입니다."
+        ]
+      },
+      {
+        "id": "structure",
+        "title": "안에서 밖으로 읽습니다",
+        "paragraphs": [
+          "휠은 중심에서 바깥으로 갈수록 표현이 구체적으로 좁아지는 위계 구조입니다. 안쪽 고리에는 과일, 플로럴, 단맛, 견과/코코아, 향신료, 로스티드, 발효·신맛 계열 등 9개 안팎의 큰 범주가 있고, 바깥쪽으로 갈수록 베리류 → 블루베리처럼 세분됩니다.",
+          "사용할 때도 같은 방향으로 읽는 것이 편합니다. 먼저 \"과일 쪽인가, 견과 쪽인가\"처럼 큰 인상을 정하고, 확신이 생기는 만큼만 바깥 고리로 이동합니다. 애매하면 안쪽 범주에서 멈추는 것이 과장된 표현보다 낫습니다."
+        ],
+        "points": [
+          "1단계: 큰 범주를 고릅니다 (예: 과일).",
+          "2단계: 그 안에서 갈래를 좁힙니다 (예: 감귤류).",
+          "3단계: 확신이 있을 때만 구체 표현까지 갑니다 (예: 자몽)."
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "어휘를 감각에 연결하는 연습",
+        "paragraphs": [
+          "휠의 단어를 실제 감각과 연결하려면 기준이 되는 향과 맛을 직접 경험하는 훈련이 필요합니다. 렉시콘이 각 속성에 기준 물질을 정의해 두는 이유이기도 합니다. 집에서는 과일, 견과, 향신료 같은 실물의 향을 의식적으로 맡아 보는 것부터 시작할 수 있습니다.",
+          "커핑처럼 같은 조건에서 여러 커피를 나란히 비교하면 차이가 훨씬 잘 드러납니다. 혼자 절대 평가를 하기보다, 두 잔의 차이를 말로 옮기는 연습이 초심자에게 효과적인 경향이 있습니다.",
+          "표현이 떠오르지 않을 때는 \"산미가 있다/없다\"보다 \"어제 마신 커피보다 산미가 밝다\"처럼 비교로 말해 보세요. 비교는 어휘보다 먼저 감각을 깨웁니다."
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "휠이 담지 않는 것",
+        "paragraphs": [
+          "향미 휠은 향과 맛의 어휘를 다루지만, 품질 판정 그 자체는 아닙니다. 커피가 얼마나 좋은지는 커핑 프로토콜 같은 별도의 평가 체계가 다루고, 휠은 그 과정에서 묘사를 돕는 도구로 쓰입니다.",
+          "또한 향미 인식은 문화와 식경험의 영향을 받습니다. 같은 커피를 두고 다른 문화권의 평가자가 다른 과일을 떠올리는 일은 자연스럽고, 이 때문에 지역 식문화에 맞춘 보조 어휘를 연구하는 시도들도 이어지고 있습니다."
+        ]
+      }
+    ],
+    "related": [
+      "cupping-basics",
+      "sca-cupping-protocol",
+      "coffee-varieties"
+    ],
+    "tags": [
+      "관능평가",
+      "향미",
+      "기초"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 24.",
+        "note": "향미 휠 구조와 사용법 초안 작성 (페르소나 패널 검수)"
+      }
+    ],
+    "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>향미 휠이란 무엇인가</h2><p>향미 휠은 커피에서 느껴지는 향과 맛을 표현하는 어휘를 원형으로 배열한 도구입니다. 사실상 표준으로 자리 잡은 것은 SCA(스페셜티 커피 협회, 2016년 당시 명칭 SCAA)와 WCR(월드 커피 리서치)이 협력해 개정한 커피 테이스터스 향미 휠(Coffee Taster's Flavor Wheel)입니다.</p><p>2016년 개정판은 WCR의 센서리 렉시콘(Sensory Lexicon)을 기반으로 만들어졌습니다. 렉시콘은 커피에서 감지되는 속성들을 정의하고 각 속성에 기준 물질(레퍼런스)을 연결한 사전으로, 향미 휠은 그 어휘를 시각적으로 배열한 지도라고 할 수 있습니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>향미 휠은 \"이 커피에서 무엇이 느껴져야 한다\"는 정답지가 아니라, 느낀 것을 남과 공유 가능한 말로 옮기도록 돕는 어휘 지도입니다.</p></aside></section><section id=\"structure\"><span class=\"content-index\">02</span><h2>안에서 밖으로 읽습니다</h2><p>휠은 중심에서 바깥으로 갈수록 표현이 구체적으로 좁아지는 위계 구조입니다. 안쪽 고리에는 과일, 플로럴, 단맛, 견과/코코아, 향신료, 로스티드, 발효·신맛 계열 등 9개 안팎의 큰 범주가 있고, 바깥쪽으로 갈수록 베리류 → 블루베리처럼 세분됩니다.</p><p>사용할 때도 같은 방향으로 읽는 것이 편합니다. 먼저 \"과일 쪽인가, 견과 쪽인가\"처럼 큰 인상을 정하고, 확신이 생기는 만큼만 바깥 고리로 이동합니다. 애매하면 안쪽 범주에서 멈추는 것이 과장된 표현보다 낫습니다.</p><ul><li>1단계: 큰 범주를 고릅니다 (예: 과일).</li><li>2단계: 그 안에서 갈래를 좁힙니다 (예: 감귤류).</li><li>3단계: 확신이 있을 때만 구체 표현까지 갑니다 (예: 자몽).</li></ul></section><section id=\"practice\"><span class=\"content-index\">03</span><h2>어휘를 감각에 연결하는 연습</h2><p>휠의 단어를 실제 감각과 연결하려면 기준이 되는 향과 맛을 직접 경험하는 훈련이 필요합니다. 렉시콘이 각 속성에 기준 물질을 정의해 두는 이유이기도 합니다. 집에서는 과일, 견과, 향신료 같은 실물의 향을 의식적으로 맡아 보는 것부터 시작할 수 있습니다.</p><p><a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑</a>처럼 같은 조건에서 여러 커피를 나란히 비교하면 차이가 훨씬 잘 드러납니다. 혼자 절대 평가를 하기보다, 두 잔의 차이를 말로 옮기는 연습이 초심자에게 효과적인 경향이 있습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>표현이 떠오르지 않을 때는 \"산미가 있다/없다\"보다 \"어제 마신 커피보다 산미가 밝다\"처럼 비교로 말해 보세요. 비교는 어휘보다 먼저 감각을 깨웁니다.</p></aside></section><section id=\"limits\"><span class=\"content-index\">04</span><h2>휠이 담지 않는 것</h2><p>향미 휠은 향과 맛의 어휘를 다루지만, 품질 판정 그 자체는 아닙니다. 커피가 얼마나 좋은지는 <a data-wikilink=\"sca-cupping-protocol\" href=\"/wiki/sca-cupping-protocol\">커핑 프로토콜</a> 같은 별도의 평가 체계가 다루고, 휠은 그 과정에서 묘사를 돕는 도구로 쓰입니다.</p><p>또한 향미 인식은 문화와 식경험의 영향을 받습니다. 같은 커피를 두고 다른 문화권의 평가자가 다른 과일을 떠올리는 일은 자연스럽고, 이 때문에 지역 식문화에 맞춘 보조 어휘를 연구하는 시도들도 이어지고 있습니다.</p></section>",
+    "backlinks": [
+      "sca-cupping-protocol"
+    ]
+  },
+  {
+    "slug": "sca-cupping-protocol",
+    "title": "SCA 커핑 프로토콜: 표준화된 평가의 틀",
+    "summary": "SCA 커핑의 표준 조건(비율·온도·시간)과 100점 평가 체계, 그리고 CVA로의 전환 흐름을 정리합니다.",
+    "category": "센서리",
+    "level": "중급",
+    "readingTime": "8분",
+    "updatedAt": "2026. 07. 24.",
+    "accent": "berry",
+    "fact": "커핑 프로토콜의 핵심은 점수가 아니라 조건의 통제입니다. 같은 조건이어야 차이가 커피에서 온 것이라고 말할 수 있습니다.",
+    "sections": [
+      {
+        "id": "why-standard",
+        "title": "왜 조건을 통제하는가",
+        "paragraphs": [
+          "커핑은 커피를 비교 평가하는 가장 기본적인 방법이고, SCA 커핑 프로토콜은 그 조건을 표준화한 절차입니다. 로스팅, 분쇄, 물, 시간 같은 변수를 고정해야 잔 사이의 차이를 커피 자체의 차이로 해석할 수 있기 때문입니다.",
+          "표준 조건은 생두 거래, 품질 관리, 대회 심사처럼 서로 다른 장소의 평가자가 결과를 비교해야 하는 상황에서 특히 중요합니다. 프로토콜은 정답의 맛을 정하는 것이 아니라, 비교가 성립할 조건을 정합니다."
+        ]
+      },
+      {
+        "id": "conditions",
+        "title": "표준 조건 훑어보기",
+        "paragraphs": [
+          "세부 수치는 SCA가 발행하는 최신 프로토콜 문서가 기준이며, 개정될 수 있습니다. 널리 통용되어 온 대표 조건은 다음과 같습니다.",
+          "항목통용 기준비고비율물 150ml당 커피 8.25g(±0.25g)약 1:18.2, 용기 용량에 비례해 조정물 온도약 93℃붓고 4분간 침지샘플 로스팅비교적 밝게, 커핑 8~24시간 전 로스팅색도 기준은 프로토콜 문서 참조잔 수샘플당 5잔균일성·클린컵 평가를 위해 복수 잔절차분쇄향 → 4분 침지 → 브레이크 → 스키밍 → 식으며 평가온도가 내려가며 인상이 달라지는 것을 기록",
+          "위 수치는 관행적으로 통용되어 온 참고 기준입니다. 실제 심사·거래 목적이라면 반드시 해당 시점의 SCA 공식 문서를 확인하세요."
+        ]
+      },
+      {
+        "id": "scoring",
+        "title": "100점 체계와 스페셜티 기준",
+        "paragraphs": [
+          "전통적인 SCA 커핑 폼은 프래그런스/아로마, 플레이버, 애프터테이스트, 산미, 바디, 균형, 균일성, 클린컵, 단맛, 종합의 10개 항목을 각각 6~10점 척도로 채점해 100점 만점으로 합산하고, 결점이 발견되면 유형에 따라 감점합니다. 즉 점수가 0점에서 출발하는 체계가 아닙니다.",
+          "이 체계에서 80점 이상을 받은 커피를 흔히 스페셜티 등급으로 부릅니다. 다만 점수는 평가단의 교정 상태와 샘플 준비에 크게 의존하므로, 숫자 하나만 떼어 절대 품질처럼 읽는 것은 위험합니다."
+        ]
+      },
+      {
+        "id": "cva",
+        "title": "CVA로의 전환",
+        "paragraphs": [
+          "SCA는 2020년대 들어 기존 커핑 폼을 대체하는 CVA(Coffee Value Assessment, 커피 가치 평가)를 도입해 왔습니다. CVA는 \"무엇이 느껴지는가\"를 기록하는 기술적(descriptive) 평가와 \"얼마나 좋게 느끼는가\"를 묻는 선호(affective) 평가를 분리한 것이 큰 변화입니다.",
+          "전환은 단계적으로 진행되어 왔고 교육·인증 체계도 이에 맞춰 재편되는 흐름입니다. 선호 평가의 점수 산식 역시 전통 폼과 달라, 두 체계의 점수는 직접 비교할 수 없습니다. 현장에서는 두 양식이 병존하는 시기가 있으므로, 점수를 인용할 때는 어떤 양식으로 평가했는지를 함께 밝히는 것이 좋습니다.",
+          "같은 커피라도 평가 양식(전통 폼 vs CVA)에 따라 기록되는 정보가 다릅니다. 점수 비교는 같은 양식·같은 조건 안에서만 의미가 있습니다."
+        ]
+      },
+      {
+        "id": "at-home",
+        "title": "실무 밖에서의 활용",
+        "paragraphs": [
+          "정식 프로토콜을 다 갖추지 않아도, 조건을 통제한다는 원칙은 그대로 빌려 쓸 수 있습니다. 같은 비율과 물, 같은 시간으로 두세 가지 커피를 나란히 우려 비교하는 것만으로도 향미 어휘 훈련과 원두 선택에 충분히 유용합니다."
+        ]
+      }
+    ],
+    "related": [
+      "cupping-basics",
+      "coffee-flavor-wheel",
+      "q-grader-certification"
+    ],
+    "tags": [
+      "관능평가",
+      "커핑",
+      "SCA"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 24.",
+        "note": "SCA 프로토콜과 CVA 전환 정리 초안 작성 (페르소나 패널 검수)"
+      }
+    ],
+    "bodyHtml": "<section id=\"why-standard\"><span class=\"content-index\">01</span><h2>왜 조건을 통제하는가</h2><p><a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑</a>은 커피를 비교 평가하는 가장 기본적인 방법이고, SCA 커핑 프로토콜은 그 조건을 표준화한 절차입니다. 로스팅, 분쇄, 물, 시간 같은 변수를 고정해야 잔 사이의 차이를 커피 자체의 차이로 해석할 수 있기 때문입니다.</p><p>표준 조건은 생두 거래, 품질 관리, 대회 심사처럼 서로 다른 장소의 평가자가 결과를 비교해야 하는 상황에서 특히 중요합니다. 프로토콜은 정답의 맛을 정하는 것이 아니라, 비교가 성립할 조건을 정합니다.</p></section><section id=\"conditions\"><span class=\"content-index\">02</span><h2>표준 조건 훑어보기</h2><p>세부 수치는 SCA가 발행하는 최신 프로토콜 문서가 기준이며, 개정될 수 있습니다. 널리 통용되어 온 대표 조건은 다음과 같습니다.</p><table><tbody><tr><th>항목</th><th>통용 기준</th><th>비고</th></tr><tr><td>비율</td><td>물 150ml당 커피 8.25g(±0.25g)</td><td>약 1:18.2, 용기 용량에 비례해 조정</td></tr><tr><td>물 온도</td><td>약 93℃</td><td>붓고 4분간 침지</td></tr><tr><td>샘플 로스팅</td><td>비교적 밝게, 커핑 8~24시간 전 로스팅</td><td>색도 기준은 프로토콜 문서 참조</td></tr><tr><td>잔 수</td><td>샘플당 5잔</td><td>균일성·클린컵 평가를 위해 복수 잔</td></tr><tr><td>절차</td><td>분쇄향 → 4분 침지 → 브레이크 → 스키밍 → 식으며 평가</td><td>온도가 내려가며 인상이 달라지는 것을 기록</td></tr></tbody></table><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>위 수치는 관행적으로 통용되어 온 참고 기준입니다. 실제 심사·거래 목적이라면 반드시 해당 시점의 SCA 공식 문서를 확인하세요.</p></aside></section><section id=\"scoring\"><span class=\"content-index\">03</span><h2>100점 체계와 스페셜티 기준</h2><p>전통적인 SCA 커핑 폼은 프래그런스/아로마, 플레이버, 애프터테이스트, 산미, 바디, 균형, 균일성, 클린컵, 단맛, 종합의 10개 항목을 각각 6~10점 척도로 채점해 100점 만점으로 합산하고, 결점이 발견되면 유형에 따라 감점합니다. 즉 점수가 0점에서 출발하는 체계가 아닙니다.</p><p>이 체계에서 80점 이상을 받은 커피를 흔히 스페셜티 등급으로 부릅니다. 다만 점수는 평가단의 교정 상태와 샘플 준비에 크게 의존하므로, 숫자 하나만 떼어 절대 품질처럼 읽는 것은 위험합니다.</p></section><section id=\"cva\"><span class=\"content-index\">04</span><h2>CVA로의 전환</h2><p>SCA는 2020년대 들어 기존 커핑 폼을 대체하는 CVA(Coffee Value Assessment, 커피 가치 평가)를 도입해 왔습니다. CVA는 \"무엇이 느껴지는가\"를 기록하는 기술적(descriptive) 평가와 \"얼마나 좋게 느끼는가\"를 묻는 선호(affective) 평가를 분리한 것이 큰 변화입니다.</p><p>전환은 단계적으로 진행되어 왔고 교육·인증 체계도 이에 맞춰 재편되는 흐름입니다. 선호 평가의 점수 산식 역시 전통 폼과 달라, 두 체계의 점수는 직접 비교할 수 없습니다. 현장에서는 두 양식이 병존하는 시기가 있으므로, 점수를 인용할 때는 어떤 양식으로 평가했는지를 함께 밝히는 것이 좋습니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>같은 커피라도 평가 양식(전통 폼 vs CVA)에 따라 기록되는 정보가 다릅니다. 점수 비교는 같은 양식·같은 조건 안에서만 의미가 있습니다.</p></aside></section><section id=\"at-home\"><span class=\"content-index\">05</span><h2>실무 밖에서의 활용</h2><p>정식 프로토콜을 다 갖추지 않아도, 조건을 통제한다는 원칙은 그대로 빌려 쓸 수 있습니다. 같은 비율과 물, 같은 시간으로 두세 가지 커피를 나란히 우려 비교하는 것만으로도 <a data-wikilink=\"coffee-flavor-wheel\" href=\"/wiki/coffee-flavor-wheel\">향미 어휘</a> 훈련과 원두 선택에 충분히 유용합니다.</p></section>",
+    "backlinks": [
+      "coffee-flavor-wheel",
+      "q-grader-certification",
+      "roast-profile-design"
+    ]
+  },
+  {
+    "slug": "q-grader-certification",
+    "title": "Q 그레이더: 교정된 감각의 자격",
+    "summary": "Q 그레이더 자격의 구조와 시험 구성, 캘리브레이션의 의미, 그리고 운영 체계의 전환 흐름을 정리합니다.",
+    "category": "센서리",
+    "level": "중급",
+    "readingTime": "7분",
+    "updatedAt": "2026. 07. 24.",
+    "accent": "berry",
+    "fact": "Q 그레이더 자격의 핵심은 뛰어난 미각이 아니라 교정된 미각입니다. 다른 평가자와 같은 기준으로 같은 결론에 도달하는 능력을 검증합니다.",
+    "sections": [
+      {
+        "id": "what",
+        "title": "Q 그레이더란",
+        "paragraphs": [
+          "Q 그레이더는 CQI(Coffee Quality Institute)가 운영해 온 커피 관능평가 자격입니다. 아라비카와 로부스타(파인 로부스타) 트랙이 있으며, 국제적으로 통용되는 기준에 따라 커피를 평가하고 등급을 매길 수 있음을 검증합니다.",
+          "이 자격이 특별한 이유는 개인의 절대적 미각이 아니라 교정(캘리브레이션)을 평가하기 때문입니다. 숙련된 평가자들과 같은 샘플을 두고 유의미하게 같은 결론에 도달하는지가 합격의 기준입니다."
+        ]
+      },
+      {
+        "id": "exams",
+        "title": "시험은 무엇을 검증하는가",
+        "paragraphs": [
+          "과정은 통상 며칠에 걸쳐 20개 안팎의 시험 모듈로 구성되어 왔습니다. 세부 구성과 통과 기준은 운영 기관의 개정에 따라 달라질 수 있으므로 대표 영역만 정리합니다.",
+          "영역대표 시험검증 내용기본 감각센서리 스킬, 기본 맛 식별단맛·신맛·짠맛의 농도 구분후각향 식별(아로마 키트)커피 관련 기준 향의 기억과 식별변별트라이앵귤레이션세 잔 중 다른 한 잔 찾기산 식별유기산 매칭커피 산미의 성분 구분커핑산지별 커핑 시험표준 폼으로 교정된 채점등급생두·원두 그레이딩결점 식별과 등급 판정",
+          "합격은 한 번의 종합 점수가 아니라 모듈 단위입니다. 정해진 유효 기간 안에 모든 모듈을 통과해야 하며, 통과하지 못한 모듈은 규정에 따라 재응시할 수 있습니다.",
+          "준비는 화려한 표현력보다 반복 훈련이 중심입니다. 특히 트라이앵귤레이션과 향 식별은 단기간 벼락치기보다 꾸준한 노출이 효과적이라고 알려져 있습니다."
+        ]
+      },
+      {
+        "id": "calibration",
+        "title": "자격 유지와 캘리브레이션",
+        "paragraphs": [
+          "Q 그레이더 자격은 한 번 따면 끝나는 것이 아니라 주기적으로(통상 3년) 캘리브레이션을 통과해 갱신해 왔습니다. 감각과 채점 습관은 시간이 지나며 표류하기 때문에, 정기적으로 기준에 다시 맞추는 절차가 자격의 신뢰를 지탱합니다.",
+          "이 갱신 구조는 \"자격 소지\"보다 \"현재 교정 상태\"가 중요하다는 철학을 보여줍니다. 실제 현장에서도 커핑 테이블을 함께 쓰는 팀은 수시로 서로의 채점을 비교하며 내부 교정을 유지하는 경우가 많습니다."
+        ]
+      },
+      {
+        "id": "transition",
+        "title": "운영 체계의 전환",
+        "paragraphs": [
+          "2025년 SCA와 CQI는 Q 프로그램 운영을 SCA로 이관한다고 발표했고, 같은 해부터 SCA가 CVA 기반으로 재편된 Q 그레이더 과정을 운영하고 있습니다. 기존 자격의 인정 범위, 갱신 절차, 신규 과정의 세부 구성은 전환 공지에 따라 달라질 수 있습니다.",
+          "수험이나 갱신을 계획하고 있다면 이 문서가 아니라 운영 기관(SCA·CQI)의 최신 공지를 기준으로 삼으세요. 전환기의 세부 정책은 수시로 갱신됩니다."
+        ]
+      },
+      {
+        "id": "worth",
+        "title": "누구에게 필요한가",
+        "paragraphs": [
+          "생두를 사고파는 실무자, 품질 관리를 맡는 로스터리 QC, 평가 언어로 소통해야 하는 교육자에게 실질적 효용이 큽니다. 반대로 취미로 커피를 즐기는 단계라면, 자격 자체보다 커핑 기초와 비교 시음 훈련이 먼저입니다."
+        ]
+      }
+    ],
+    "related": [
+      "sca-cupping-protocol",
+      "cupping-basics",
+      "coffee-flavor-wheel"
+    ],
+    "tags": [
+      "관능평가",
+      "커핑",
+      "자격"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 24.",
+        "note": "Q 그레이더 자격 구조 초안 작성 (페르소나 패널 검수)"
+      }
+    ],
+    "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>Q 그레이더란</h2><p>Q 그레이더는 CQI(Coffee Quality Institute)가 운영해 온 커피 관능평가 자격입니다. 아라비카와 로부스타(파인 로부스타) 트랙이 있으며, 국제적으로 통용되는 기준에 따라 커피를 평가하고 등급을 매길 수 있음을 검증합니다.</p><p>이 자격이 특별한 이유는 개인의 절대적 미각이 아니라 <strong>교정(캘리브레이션)</strong>을 평가하기 때문입니다. 숙련된 평가자들과 같은 샘플을 두고 유의미하게 같은 결론에 도달하는지가 합격의 기준입니다.</p></section><section id=\"exams\"><span class=\"content-index\">02</span><h2>시험은 무엇을 검증하는가</h2><p>과정은 통상 며칠에 걸쳐 20개 안팎의 시험 모듈로 구성되어 왔습니다. 세부 구성과 통과 기준은 운영 기관의 개정에 따라 달라질 수 있으므로 대표 영역만 정리합니다.</p><table><tbody><tr><th>영역</th><th>대표 시험</th><th>검증 내용</th></tr><tr><td>기본 감각</td><td>센서리 스킬, 기본 맛 식별</td><td>단맛·신맛·짠맛의 농도 구분</td></tr><tr><td>후각</td><td>향 식별(아로마 키트)</td><td>커피 관련 기준 향의 기억과 식별</td></tr><tr><td>변별</td><td>트라이앵귤레이션</td><td>세 잔 중 다른 한 잔 찾기</td></tr><tr><td>산 식별</td><td>유기산 매칭</td><td>커피 산미의 성분 구분</td></tr><tr><td>커핑</td><td>산지별 커핑 시험</td><td>표준 폼으로 교정된 채점</td></tr><tr><td>등급</td><td>생두·원두 그레이딩</td><td>결점 식별과 등급 판정</td></tr></tbody></table><p>합격은 한 번의 종합 점수가 아니라 모듈 단위입니다. 정해진 유효 기간 안에 모든 모듈을 통과해야 하며, 통과하지 못한 모듈은 규정에 따라 재응시할 수 있습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>준비는 화려한 표현력보다 반복 훈련이 중심입니다. 특히 트라이앵귤레이션과 향 식별은 단기간 벼락치기보다 꾸준한 노출이 효과적이라고 알려져 있습니다.</p></aside></section><section id=\"calibration\"><span class=\"content-index\">03</span><h2>자격 유지와 캘리브레이션</h2><p>Q 그레이더 자격은 한 번 따면 끝나는 것이 아니라 주기적으로(통상 3년) 캘리브레이션을 통과해 갱신해 왔습니다. 감각과 채점 습관은 시간이 지나며 표류하기 때문에, 정기적으로 기준에 다시 맞추는 절차가 자격의 신뢰를 지탱합니다.</p><p>이 갱신 구조는 \"자격 소지\"보다 \"현재 교정 상태\"가 중요하다는 철학을 보여줍니다. 실제 현장에서도 커핑 테이블을 함께 쓰는 팀은 수시로 서로의 채점을 비교하며 내부 교정을 유지하는 경우가 많습니다.</p></section><section id=\"transition\"><span class=\"content-index\">04</span><h2>운영 체계의 전환</h2><p>2025년 SCA와 CQI는 Q 프로그램 운영을 SCA로 이관한다고 발표했고, 같은 해부터 SCA가 <a data-wikilink=\"sca-cupping-protocol\" href=\"/wiki/sca-cupping-protocol\">CVA</a> 기반으로 재편된 Q 그레이더 과정을 운영하고 있습니다. 기존 자격의 인정 범위, 갱신 절차, 신규 과정의 세부 구성은 전환 공지에 따라 달라질 수 있습니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>수험이나 갱신을 계획하고 있다면 이 문서가 아니라 운영 기관(SCA·CQI)의 최신 공지를 기준으로 삼으세요. 전환기의 세부 정책은 수시로 갱신됩니다.</p></aside></section><section id=\"worth\"><span class=\"content-index\">05</span><h2>누구에게 필요한가</h2><p>생두를 사고파는 실무자, 품질 관리를 맡는 로스터리 QC, 평가 언어로 소통해야 하는 교육자에게 실질적 효용이 큽니다. 반대로 취미로 커피를 즐기는 단계라면, 자격 자체보다 <a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑 기초</a>와 비교 시음 훈련이 먼저입니다.</p></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "roast-profile-design",
+    "title": "로스트 프로파일 설계: 곡선을 의도로 바꾸기",
+    "summary": "투입 온도부터 배출까지, 프로파일의 구간별 변수와 ROR·DTR 같은 지표를 설계 관점에서 다룹니다.",
+    "category": "로스팅",
+    "level": "전문",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 24.",
+    "accent": "copper",
+    "fact": "프로파일 설계는 목표 곡선 그리기가 아니라, 기록과 커핑으로 가설을 검증하는 반복 루프입니다. 지표는 설계의 언어이지 목표값이 아닙니다.",
+    "sections": [
+      {
+        "id": "frame",
+        "title": "프로파일을 구간으로 읽기",
+        "paragraphs": [
+          "로스트 발달에서 다뤘듯 향미를 만드는 반응은 로스팅 전 과정에서 연속적으로 일어납니다. 다만 설계와 소통을 위해 실무에서는 곡선을 몇 개의 구간으로 나눠 읽는 관행이 자리 잡았습니다.",
+          "구간경계 신호설계에서 주로 보는 것건조투입 → 옐로 포인트투입 온도·초기 화력, 수분 제거의 균일성갈변(마이야르·카라멜화)옐로 → 1차 크랙화력 조절 타이밍, 향 전구체 형성 시간발달1차 크랙 → 배출발달 시간과 배출 시점, 최종 색도",
+          "구간 경계는 콩의 색·향·소리로 판단하며, 온도계 수치는 기계마다 다르게 읽힙니다. 프로브 위치와 배치량이 다르면 같은 숫자가 같은 상태를 뜻하지 않는다는 점이 프로파일 소통의 첫 함정입니다."
+        ]
+      },
+      {
+        "id": "charge",
+        "title": "투입 온도와 터닝 포인트",
+        "paragraphs": [
+          "투입 온도는 첫 구간의 에너지 예산을 정합니다. 배치량이 크거나 밀도가 높은 생두일수록 더 많은 초기 에너지가 필요한 경향이 있습니다. 투입 직후 온도 표시값은 차가운 생두와 열평형을 이루며 내려갔다 반등하는데, 이 반등점을 터닝 포인트(turning point)라고 부릅니다.",
+          "터닝 포인트의 온도와 시각은 프로브가 읽는 값일 뿐이지만, 같은 기계·같은 배치량에서는 재현성의 좋은 조기 지표가 됩니다. 배치마다 터닝 포인트가 흔들린다면 투입 온도나 배치량 관리부터 점검하는 편이 순서입니다.",
+          "초기 에너지가 부족하다고 화력만 급히 올리면 드럼 표면 온도가 함께 올라, 콩 표면을 태우는 스코칭(scorching)이나 티핑(tipping)으로 이어질 수 있습니다. 투입 온도·배치량·화력을 한 묶음으로, 단계적으로 조정하세요."
+        ]
+      },
+      {
+        "id": "ror",
+        "title": "ROR: 곡선의 기울기를 읽는 언어",
+        "paragraphs": [
+          "ROR(Rate of Rise, 분당 온도 상승률)은 콩 온도 곡선의 기울기입니다. 많은 로스터가 ROR이 로스팅 내내 완만하게 감소하는 형태를 기본 참조형으로 삼고, 급락(크래시, crash)이나 1차 크랙 후 반등(플릭, flick) 같은 급격한 변동을 향미 결함(베이크드(baked), 거친 쓴맛)과 연관 지어 관리합니다.",
+          "ROR 곡선의 이상형은 기계·프로브·배치량에 종속된 경험칙이며, 인과관계가 모두 규명된 법칙이 아닙니다. 곡선과 향미의 상관관계를 어떻게 해석할지 자체도 논의가 진행 중입니다. 곡선은 가설을 세우는 도구로 쓰고, 판정은 컵에서 하세요.",
+          "1차 크랙 부근에서는 수분 증발과 콩 내부의 흡열·발열 전환이 겹치며 곡선이 흔들리기 쉽습니다. 크래시·플릭이 자주 관찰되는 것도 이 구간이어서, 크랙 전후의 화력과 배기 운용이 설계의 초점이 되는 경우가 많습니다.",
+          "화력 조작이 곡선에 반영되기까지는 지연이 있으므로, 변동을 본 뒤 쫓아가며 조작하면 늦는 경우가 많습니다. 설계 단계에서 조작 시점을 미리 정해 두고, 결과를 다음 배치의 계획에 반영하는 방식이 재현성에 유리합니다."
+        ]
+      },
+      {
+        "id": "dtr",
+        "title": "발달 구간과 DTR",
+        "paragraphs": [
+          "DTR(Development Time Ratio, 발달 시간 비율)은 전체 로스팅 시간 중 1차 크랙 이후가 차지하는 비율입니다. 필터 로스팅 실무에서 15~25% 부근을 참고 범위로 삼는 경우가 흔하지만, 이는 특정 스타일의 경험칙이지 품질의 보증이 아닙니다.",
+          "같은 DTR이라도 크랙 이후의 화력 운용과 최종 색도에 따라 컵은 크게 달라집니다. DTR 하나를 목표값으로 고정하기보다, 배출 색도·감량률과 함께 세 변수를 한 묶음으로 기록하고 조정하는 편이 안전합니다."
+        ]
+      },
+      {
+        "id": "loop",
+        "title": "설계 루프: 기록 → 커핑 → 수정",
+        "paragraphs": [
+          "프로파일 설계는 한 번의 정답 찾기가 아니라 반복 루프입니다. 배치의 조건(생두 수분·밀도, 배치량, 날씨)과 조작 기록을 남기고, 통제된 커핑으로 결과를 평가한 뒤, 다음 배치에서 한 변수만 바꿔 검증합니다.",
+          "재현성이 흔들릴 때는 곡선보다 물리량을 먼저 봅니다. 배치 간 투입량 오차, 생두 수분 차이, 드럼 예열 상태가 곡선 차이의 흔한 원인입니다."
+        ],
+        "points": [
+          "생두 정보와 투입 조건(온도·배치량)을 기록합니다.",
+          "구간 경계(옐로·1차 크랙)와 배출 시점·색도를 기록합니다.",
+          "커핑 결과를 프로파일과 연결해 가설을 세웁니다.",
+          "다음 배치에서 한 변수만 바꿔 가설을 검증합니다."
+        ]
+      }
+    ],
+    "related": [
+      "roast-development",
+      "roasting-basics",
+      "sca-cupping-protocol"
+    ],
+    "tags": [
+      "로스팅",
+      "프로파일",
+      "전문"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 24.",
+        "note": "프로파일 설계 변수와 지표 초안 작성 (페르소나 패널 검수)"
+      }
+    ],
+    "bodyHtml": "<section id=\"frame\"><span class=\"content-index\">01</span><h2>프로파일을 구간으로 읽기</h2><p><a data-wikilink=\"roast-development\" href=\"/wiki/roast-development\">로스트 발달</a>에서 다뤘듯 향미를 만드는 반응은 로스팅 전 과정에서 연속적으로 일어납니다. 다만 설계와 소통을 위해 실무에서는 곡선을 몇 개의 구간으로 나눠 읽는 관행이 자리 잡았습니다.</p><table><tbody><tr><th>구간</th><th>경계 신호</th><th>설계에서 주로 보는 것</th></tr><tr><td>건조</td><td>투입 → 옐로 포인트</td><td>투입 온도·초기 화력, 수분 제거의 균일성</td></tr><tr><td>갈변(마이야르·카라멜화)</td><td>옐로 → 1차 크랙</td><td>화력 조절 타이밍, 향 전구체 형성 시간</td></tr><tr><td>발달</td><td>1차 크랙 → 배출</td><td>발달 시간과 배출 시점, 최종 색도</td></tr></tbody></table><p>구간 경계는 콩의 색·향·소리로 판단하며, 온도계 수치는 기계마다 다르게 읽힙니다. 프로브 위치와 배치량이 다르면 같은 숫자가 같은 상태를 뜻하지 않는다는 점이 프로파일 소통의 첫 함정입니다.</p></section><section id=\"charge\"><span class=\"content-index\">02</span><h2>투입 온도와 터닝 포인트</h2><p>투입 온도는 첫 구간의 에너지 예산을 정합니다. 배치량이 크거나 밀도가 높은 생두일수록 더 많은 초기 에너지가 필요한 경향이 있습니다. 투입 직후 온도 표시값은 차가운 생두와 열평형을 이루며 내려갔다 반등하는데, 이 반등점을 터닝 포인트(turning point)라고 부릅니다.</p><p>터닝 포인트의 온도와 시각은 프로브가 읽는 값일 뿐이지만, 같은 기계·같은 배치량에서는 재현성의 좋은 조기 지표가 됩니다. 배치마다 터닝 포인트가 흔들린다면 투입 온도나 배치량 관리부터 점검하는 편이 순서입니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>초기 에너지가 부족하다고 화력만 급히 올리면 드럼 표면 온도가 함께 올라, 콩 표면을 태우는 스코칭(scorching)이나 티핑(tipping)으로 이어질 수 있습니다. 투입 온도·배치량·화력을 한 묶음으로, 단계적으로 조정하세요.</p></aside></section><section id=\"ror\"><span class=\"content-index\">03</span><h2>ROR: 곡선의 기울기를 읽는 언어</h2><p>ROR(Rate of Rise, 분당 온도 상승률)은 콩 온도 곡선의 기울기입니다. 많은 로스터가 ROR이 로스팅 내내 완만하게 감소하는 형태를 기본 참조형으로 삼고, 급락(크래시, crash)이나 1차 크랙 후 반등(플릭, flick) 같은 급격한 변동을 향미 결함(베이크드(baked), 거친 쓴맛)과 연관 지어 관리합니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>ROR 곡선의 이상형은 기계·프로브·배치량에 종속된 경험칙이며, 인과관계가 모두 규명된 법칙이 아닙니다. 곡선과 향미의 상관관계를 어떻게 해석할지 자체도 논의가 진행 중입니다. 곡선은 가설을 세우는 도구로 쓰고, 판정은 컵에서 하세요.</p></aside><p>1차 크랙 부근에서는 수분 증발과 콩 내부의 흡열·발열 전환이 겹치며 곡선이 흔들리기 쉽습니다. 크래시·플릭이 자주 관찰되는 것도 이 구간이어서, 크랙 전후의 화력과 배기 운용이 설계의 초점이 되는 경우가 많습니다.</p><p>화력 조작이 곡선에 반영되기까지는 지연이 있으므로, 변동을 본 뒤 쫓아가며 조작하면 늦는 경우가 많습니다. 설계 단계에서 조작 시점을 미리 정해 두고, 결과를 다음 배치의 계획에 반영하는 방식이 재현성에 유리합니다.</p></section><section id=\"dtr\"><span class=\"content-index\">04</span><h2>발달 구간과 DTR</h2><p>DTR(Development Time Ratio, 발달 시간 비율)은 전체 로스팅 시간 중 1차 크랙 이후가 차지하는 비율입니다. 필터 로스팅 실무에서 15~25% 부근을 참고 범위로 삼는 경우가 흔하지만, 이는 특정 스타일의 경험칙이지 품질의 보증이 아닙니다.</p><p>같은 DTR이라도 크랙 이후의 화력 운용과 최종 색도에 따라 컵은 크게 달라집니다. DTR 하나를 목표값으로 고정하기보다, 배출 색도·감량률과 함께 세 변수를 한 묶음으로 기록하고 조정하는 편이 안전합니다.</p></section><section id=\"loop\"><span class=\"content-index\">05</span><h2>설계 루프: 기록 → 커핑 → 수정</h2><p>프로파일 설계는 한 번의 정답 찾기가 아니라 반복 루프입니다. 배치의 조건(생두 수분·밀도, 배치량, 날씨)과 조작 기록을 남기고, <a data-wikilink=\"sca-cupping-protocol\" href=\"/wiki/sca-cupping-protocol\">통제된 커핑</a>으로 결과를 평가한 뒤, 다음 배치에서 한 변수만 바꿔 검증합니다.</p><ul><li>생두 정보와 투입 조건(온도·배치량)을 기록합니다.</li><li>구간 경계(옐로·1차 크랙)와 배출 시점·색도를 기록합니다.</li><li>커핑 결과를 프로파일과 연결해 가설을 세웁니다.</li><li>다음 배치에서 한 변수만 바꿔 가설을 검증합니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>재현성이 흔들릴 때는 곡선보다 물리량을 먼저 봅니다. 배치 간 투입량 오차, 생두 수분 차이, 드럼 예열 상태가 곡선 차이의 흔한 원인입니다.</p></aside></section>",
+    "backlinks": []
   }
 ],
   en: [
@@ -1141,7 +1448,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     "related": [
       "coffee-processing",
       "roast-development",
-      "water-for-coffee"
+      "sca-cupping-protocol"
     ],
     "tags": [
       "커핑",
@@ -1155,7 +1462,11 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"purpose\"><span class=\"content-index\">01</span><h2>Create Common Conditions for Comparison</h2><p>Cupping is a sensory evaluation method used to compare coffee during production, purchasing, roasting, and quality control processes. By controlling the vessel, ratio, grind, water, time, and temperature, you can focus on the differences in the samples themselves.</p></section><section id=\"observe\"><span class=\"content-index\">02</span><h2>Observe from Hot to Cool</h2><p>As temperature decreases, the volatility of aromas and the perception of taste change. Rather than one strong impression at a single point in time, examine how aroma, aftertaste, acidity, sweetness, texture, and balance change across different temperature ranges.</p><ul><li>Confirm intensity and clarity before identifying specific aroma types.</li><li>Distinguish between subjective judgment (good or bad) and observed characteristics when recording.</li><li>Through repeat cups, verify uniformity within the sample and identify defects.</li></ul></section><section id=\"calibration\"><span class=\"content-index\">03</span><h2>Calibration Comes Before Scores</h2><p>Sensory evaluation is measurement using human senses. It is important for evaluators to align their terminology and intensity standards, and to discuss the basis for different judgments through calibration.</p><p>Beginners should practice starting with easy-to-compare axes like acidity intensity, sweetness persistence, and texture weight, rather than trying to pinpoint specific aroma names.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-flavor-wheel",
+      "sca-cupping-protocol",
+      "q-grader-certification"
+    ]
   },
   {
     "slug": "bean-structure-compounds",
@@ -1317,8 +1628,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "related": [
       "cupping-basics",
-      "coffee-processing",
-      "extraction-basics"
+      "roast-profile-design",
+      "coffee-processing"
     ],
     "tags": [
       "로스팅",
@@ -1332,7 +1643,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>Development is not just what happens after first crack</h2><p>In practice, many refer to the period from the start of first crack to discharge as the development stage. While useful for recording and communication, the reactions that create flavor occur continuously throughout the entire roasting process.</p><p>Therefore, rather than using development time or ratio as a single quality target value, you need to read the charge temperature, energy application, rate of change, and discharge state together.</p></section><section id=\"signals\"><span class=\"content-index\">02</span><h2>Signals to record together</h2><p>The temperature displayed by the machine is influenced by sensor position and response speed. Don't just look at the curve—recording color, aroma, sound, exhaust condition, and physical changes together makes batch-to-batch comparison more accurate.</p><ul><li>Batch weight and green bean density and moisture content</li><li>Timing of gas or electrical input changes</li><li>Exhaust and drum speed</li><li>Yellow point, first crack, and discharge timing</li><li>Weight loss ratio, color, and cupping results</li></ul></section><section id=\"evaluation\"><span class=\"content-index\">03</span><h2>The answer to your profile is confirmed in the cup</h2><p>A good profile is not a beautiful-looking curve but a profile that consistently produces the intended flavor. Cupping under the same conditions and connecting roasting records to results creates meaningful benchmarks.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "roast-profile-design"
+    ]
   },
   {
     "slug": "water-for-coffee",
@@ -1820,6 +2133,307 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"goal\"><span class=\"content-index\">01</span><h2>목표는 마이크로폼</h2><p>스티밍의 목표는 단순히 우유를 데우는 것이 아니라, 눈에 보이지 않을 만큼 고운 거품을 우유 전체에 균일하게 섞는 것입니다. 이렇게 만든 마이크로폼은 광택이 돌고 잔에 부었을 때 매끄럽게 흐릅니다.</p><p>거품은 크게 두 단계로 만들어집니다. 표면에서 공기를 끌어들이는 단계와, 그 공기를 회전으로 잘게 부수어 섞는 단계입니다.</p></section><section id=\"steps\"><span class=\"content-index\">02</span><h2>두 단계: 주입과 회전</h2><ul><li>주입(스트레칭): 팁을 표면 가까이 두어 \"치익\" 소리와 함께 공기를 넣어 부피를 키웁니다.</li><li>회전(롤링): 팁을 살짝 담가 우유가 소용돌이치게 하여 큰 거품을 잘게 부수고 데웁니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>공기 주입은 초반, 차가울 때 끝내세요. 우유가 따뜻해진 뒤에 넣은 공기는 큰 거품으로 남아 거칠어지기 쉽습니다.</p></aside></section><section id=\"temperature\"><span class=\"content-index\">03</span><h2>온도 기준</h2><p>온도는 단맛과 질감에 영향을 줍니다. 너무 낮으면 밋밋하고, 너무 높으면 단백질이 상해 비린 맛이 나며 거품이 무너집니다. 아래는 흔히 쓰이는 참고 범위입니다.</p><table><tbody><tr><th>구간</th><th>대략 온도</th><th>메모</th></tr><tr><td>목표대</td><td>약 55~65℃</td><td>단맛과 질감이 잘 살아나는 범위로 자주 언급됨</td></tr><tr><td>과열</td><td>70℃ 이상</td><td>비린 맛·거친 거품, 라떼아트가 어려워짐</td></tr></tbody></table><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>손으로 피처를 만졌을 때 계속 잡고 있기 어려울 만큼 뜨거우면 이미 과열입니다. 온도계나 감각으로 목표대에서 멈추는 연습이 중요합니다.</p></aside></section><section id=\"finish\"><span class=\"content-index\">04</span><h2>마무리</h2><p>스티밍을 멈춘 뒤에는 피처를 가볍게 두드리고 돌려 큰 거품을 없애고 표면에 광택을 냅니다. 붓기 직전까지 우유와 거품이 분리되지 않도록 부드럽게 흔들어 유지합니다.</p></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "coffee-flavor-wheel",
+    "title": "커피 향미 휠: 맛을 말로 옮기는 지도",
+    "summary": "커피 테이스터스 향미 휠의 구조와 읽는 법, 그리고 감각을 공용어로 바꾸는 연습법을 정리합니다.",
+    "category": "센서리",
+    "level": "입문",
+    "readingTime": "6분",
+    "updatedAt": "2026. 07. 24.",
+    "accent": "berry",
+    "fact": "향미 휠은 정답지가 아니라 어휘 지도입니다. 안쪽의 큰 범주에서 시작해 바깥쪽의 구체적 표현으로 좁혀 갑니다.",
+    "sections": [
+      {
+        "id": "what",
+        "title": "향미 휠이란 무엇인가",
+        "paragraphs": [
+          "향미 휠은 커피에서 느껴지는 향과 맛을 표현하는 어휘를 원형으로 배열한 도구입니다. 사실상 표준으로 자리 잡은 것은 SCA(스페셜티 커피 협회, 2016년 당시 명칭 SCAA)와 WCR(월드 커피 리서치)이 협력해 개정한 커피 테이스터스 향미 휠(Coffee Taster's Flavor Wheel)입니다.",
+          "2016년 개정판은 WCR의 센서리 렉시콘(Sensory Lexicon)을 기반으로 만들어졌습니다. 렉시콘은 커피에서 감지되는 속성들을 정의하고 각 속성에 기준 물질(레퍼런스)을 연결한 사전으로, 향미 휠은 그 어휘를 시각적으로 배열한 지도라고 할 수 있습니다.",
+          "향미 휠은 \"이 커피에서 무엇이 느껴져야 한다\"는 정답지가 아니라, 느낀 것을 남과 공유 가능한 말로 옮기도록 돕는 어휘 지도입니다."
+        ]
+      },
+      {
+        "id": "structure",
+        "title": "안에서 밖으로 읽습니다",
+        "paragraphs": [
+          "휠은 중심에서 바깥으로 갈수록 표현이 구체적으로 좁아지는 위계 구조입니다. 안쪽 고리에는 과일, 플로럴, 단맛, 견과/코코아, 향신료, 로스티드, 발효·신맛 계열 등 9개 안팎의 큰 범주가 있고, 바깥쪽으로 갈수록 베리류 → 블루베리처럼 세분됩니다.",
+          "사용할 때도 같은 방향으로 읽는 것이 편합니다. 먼저 \"과일 쪽인가, 견과 쪽인가\"처럼 큰 인상을 정하고, 확신이 생기는 만큼만 바깥 고리로 이동합니다. 애매하면 안쪽 범주에서 멈추는 것이 과장된 표현보다 낫습니다."
+        ],
+        "points": [
+          "1단계: 큰 범주를 고릅니다 (예: 과일).",
+          "2단계: 그 안에서 갈래를 좁힙니다 (예: 감귤류).",
+          "3단계: 확신이 있을 때만 구체 표현까지 갑니다 (예: 자몽)."
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "어휘를 감각에 연결하는 연습",
+        "paragraphs": [
+          "휠의 단어를 실제 감각과 연결하려면 기준이 되는 향과 맛을 직접 경험하는 훈련이 필요합니다. 렉시콘이 각 속성에 기준 물질을 정의해 두는 이유이기도 합니다. 집에서는 과일, 견과, 향신료 같은 실물의 향을 의식적으로 맡아 보는 것부터 시작할 수 있습니다.",
+          "커핑처럼 같은 조건에서 여러 커피를 나란히 비교하면 차이가 훨씬 잘 드러납니다. 혼자 절대 평가를 하기보다, 두 잔의 차이를 말로 옮기는 연습이 초심자에게 효과적인 경향이 있습니다.",
+          "표현이 떠오르지 않을 때는 \"산미가 있다/없다\"보다 \"어제 마신 커피보다 산미가 밝다\"처럼 비교로 말해 보세요. 비교는 어휘보다 먼저 감각을 깨웁니다."
+        ]
+      },
+      {
+        "id": "limits",
+        "title": "휠이 담지 않는 것",
+        "paragraphs": [
+          "향미 휠은 향과 맛의 어휘를 다루지만, 품질 판정 그 자체는 아닙니다. 커피가 얼마나 좋은지는 커핑 프로토콜 같은 별도의 평가 체계가 다루고, 휠은 그 과정에서 묘사를 돕는 도구로 쓰입니다.",
+          "또한 향미 인식은 문화와 식경험의 영향을 받습니다. 같은 커피를 두고 다른 문화권의 평가자가 다른 과일을 떠올리는 일은 자연스럽고, 이 때문에 지역 식문화에 맞춘 보조 어휘를 연구하는 시도들도 이어지고 있습니다."
+        ]
+      }
+    ],
+    "related": [
+      "cupping-basics",
+      "sca-cupping-protocol",
+      "coffee-varieties"
+    ],
+    "tags": [
+      "관능평가",
+      "향미",
+      "기초"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 24.",
+        "note": "향미 휠 구조와 사용법 초안 작성 (페르소나 패널 검수)"
+      }
+    ],
+    "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>향미 휠이란 무엇인가</h2><p>향미 휠은 커피에서 느껴지는 향과 맛을 표현하는 어휘를 원형으로 배열한 도구입니다. 사실상 표준으로 자리 잡은 것은 SCA(스페셜티 커피 협회, 2016년 당시 명칭 SCAA)와 WCR(월드 커피 리서치)이 협력해 개정한 커피 테이스터스 향미 휠(Coffee Taster's Flavor Wheel)입니다.</p><p>2016년 개정판은 WCR의 센서리 렉시콘(Sensory Lexicon)을 기반으로 만들어졌습니다. 렉시콘은 커피에서 감지되는 속성들을 정의하고 각 속성에 기준 물질(레퍼런스)을 연결한 사전으로, 향미 휠은 그 어휘를 시각적으로 배열한 지도라고 할 수 있습니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>향미 휠은 \"이 커피에서 무엇이 느껴져야 한다\"는 정답지가 아니라, 느낀 것을 남과 공유 가능한 말로 옮기도록 돕는 어휘 지도입니다.</p></aside></section><section id=\"structure\"><span class=\"content-index\">02</span><h2>안에서 밖으로 읽습니다</h2><p>휠은 중심에서 바깥으로 갈수록 표현이 구체적으로 좁아지는 위계 구조입니다. 안쪽 고리에는 과일, 플로럴, 단맛, 견과/코코아, 향신료, 로스티드, 발효·신맛 계열 등 9개 안팎의 큰 범주가 있고, 바깥쪽으로 갈수록 베리류 → 블루베리처럼 세분됩니다.</p><p>사용할 때도 같은 방향으로 읽는 것이 편합니다. 먼저 \"과일 쪽인가, 견과 쪽인가\"처럼 큰 인상을 정하고, 확신이 생기는 만큼만 바깥 고리로 이동합니다. 애매하면 안쪽 범주에서 멈추는 것이 과장된 표현보다 낫습니다.</p><ul><li>1단계: 큰 범주를 고릅니다 (예: 과일).</li><li>2단계: 그 안에서 갈래를 좁힙니다 (예: 감귤류).</li><li>3단계: 확신이 있을 때만 구체 표현까지 갑니다 (예: 자몽).</li></ul></section><section id=\"practice\"><span class=\"content-index\">03</span><h2>어휘를 감각에 연결하는 연습</h2><p>휠의 단어를 실제 감각과 연결하려면 기준이 되는 향과 맛을 직접 경험하는 훈련이 필요합니다. 렉시콘이 각 속성에 기준 물질을 정의해 두는 이유이기도 합니다. 집에서는 과일, 견과, 향신료 같은 실물의 향을 의식적으로 맡아 보는 것부터 시작할 수 있습니다.</p><p><a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑</a>처럼 같은 조건에서 여러 커피를 나란히 비교하면 차이가 훨씬 잘 드러납니다. 혼자 절대 평가를 하기보다, 두 잔의 차이를 말로 옮기는 연습이 초심자에게 효과적인 경향이 있습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>표현이 떠오르지 않을 때는 \"산미가 있다/없다\"보다 \"어제 마신 커피보다 산미가 밝다\"처럼 비교로 말해 보세요. 비교는 어휘보다 먼저 감각을 깨웁니다.</p></aside></section><section id=\"limits\"><span class=\"content-index\">04</span><h2>휠이 담지 않는 것</h2><p>향미 휠은 향과 맛의 어휘를 다루지만, 품질 판정 그 자체는 아닙니다. 커피가 얼마나 좋은지는 <a data-wikilink=\"sca-cupping-protocol\" href=\"/wiki/sca-cupping-protocol\">커핑 프로토콜</a> 같은 별도의 평가 체계가 다루고, 휠은 그 과정에서 묘사를 돕는 도구로 쓰입니다.</p><p>또한 향미 인식은 문화와 식경험의 영향을 받습니다. 같은 커피를 두고 다른 문화권의 평가자가 다른 과일을 떠올리는 일은 자연스럽고, 이 때문에 지역 식문화에 맞춘 보조 어휘를 연구하는 시도들도 이어지고 있습니다.</p></section>",
+    "backlinks": [
+      "sca-cupping-protocol"
+    ]
+  },
+  {
+    "slug": "sca-cupping-protocol",
+    "title": "SCA 커핑 프로토콜: 표준화된 평가의 틀",
+    "summary": "SCA 커핑의 표준 조건(비율·온도·시간)과 100점 평가 체계, 그리고 CVA로의 전환 흐름을 정리합니다.",
+    "category": "센서리",
+    "level": "중급",
+    "readingTime": "8분",
+    "updatedAt": "2026. 07. 24.",
+    "accent": "berry",
+    "fact": "커핑 프로토콜의 핵심은 점수가 아니라 조건의 통제입니다. 같은 조건이어야 차이가 커피에서 온 것이라고 말할 수 있습니다.",
+    "sections": [
+      {
+        "id": "why-standard",
+        "title": "왜 조건을 통제하는가",
+        "paragraphs": [
+          "커핑은 커피를 비교 평가하는 가장 기본적인 방법이고, SCA 커핑 프로토콜은 그 조건을 표준화한 절차입니다. 로스팅, 분쇄, 물, 시간 같은 변수를 고정해야 잔 사이의 차이를 커피 자체의 차이로 해석할 수 있기 때문입니다.",
+          "표준 조건은 생두 거래, 품질 관리, 대회 심사처럼 서로 다른 장소의 평가자가 결과를 비교해야 하는 상황에서 특히 중요합니다. 프로토콜은 정답의 맛을 정하는 것이 아니라, 비교가 성립할 조건을 정합니다."
+        ]
+      },
+      {
+        "id": "conditions",
+        "title": "표준 조건 훑어보기",
+        "paragraphs": [
+          "세부 수치는 SCA가 발행하는 최신 프로토콜 문서가 기준이며, 개정될 수 있습니다. 널리 통용되어 온 대표 조건은 다음과 같습니다.",
+          "항목통용 기준비고비율물 150ml당 커피 8.25g(±0.25g)약 1:18.2, 용기 용량에 비례해 조정물 온도약 93℃붓고 4분간 침지샘플 로스팅비교적 밝게, 커핑 8~24시간 전 로스팅색도 기준은 프로토콜 문서 참조잔 수샘플당 5잔균일성·클린컵 평가를 위해 복수 잔절차분쇄향 → 4분 침지 → 브레이크 → 스키밍 → 식으며 평가온도가 내려가며 인상이 달라지는 것을 기록",
+          "위 수치는 관행적으로 통용되어 온 참고 기준입니다. 실제 심사·거래 목적이라면 반드시 해당 시점의 SCA 공식 문서를 확인하세요."
+        ]
+      },
+      {
+        "id": "scoring",
+        "title": "100점 체계와 스페셜티 기준",
+        "paragraphs": [
+          "전통적인 SCA 커핑 폼은 프래그런스/아로마, 플레이버, 애프터테이스트, 산미, 바디, 균형, 균일성, 클린컵, 단맛, 종합의 10개 항목을 각각 6~10점 척도로 채점해 100점 만점으로 합산하고, 결점이 발견되면 유형에 따라 감점합니다. 즉 점수가 0점에서 출발하는 체계가 아닙니다.",
+          "이 체계에서 80점 이상을 받은 커피를 흔히 스페셜티 등급으로 부릅니다. 다만 점수는 평가단의 교정 상태와 샘플 준비에 크게 의존하므로, 숫자 하나만 떼어 절대 품질처럼 읽는 것은 위험합니다."
+        ]
+      },
+      {
+        "id": "cva",
+        "title": "CVA로의 전환",
+        "paragraphs": [
+          "SCA는 2020년대 들어 기존 커핑 폼을 대체하는 CVA(Coffee Value Assessment, 커피 가치 평가)를 도입해 왔습니다. CVA는 \"무엇이 느껴지는가\"를 기록하는 기술적(descriptive) 평가와 \"얼마나 좋게 느끼는가\"를 묻는 선호(affective) 평가를 분리한 것이 큰 변화입니다.",
+          "전환은 단계적으로 진행되어 왔고 교육·인증 체계도 이에 맞춰 재편되는 흐름입니다. 선호 평가의 점수 산식 역시 전통 폼과 달라, 두 체계의 점수는 직접 비교할 수 없습니다. 현장에서는 두 양식이 병존하는 시기가 있으므로, 점수를 인용할 때는 어떤 양식으로 평가했는지를 함께 밝히는 것이 좋습니다.",
+          "같은 커피라도 평가 양식(전통 폼 vs CVA)에 따라 기록되는 정보가 다릅니다. 점수 비교는 같은 양식·같은 조건 안에서만 의미가 있습니다."
+        ]
+      },
+      {
+        "id": "at-home",
+        "title": "실무 밖에서의 활용",
+        "paragraphs": [
+          "정식 프로토콜을 다 갖추지 않아도, 조건을 통제한다는 원칙은 그대로 빌려 쓸 수 있습니다. 같은 비율과 물, 같은 시간으로 두세 가지 커피를 나란히 우려 비교하는 것만으로도 향미 어휘 훈련과 원두 선택에 충분히 유용합니다."
+        ]
+      }
+    ],
+    "related": [
+      "cupping-basics",
+      "coffee-flavor-wheel",
+      "q-grader-certification"
+    ],
+    "tags": [
+      "관능평가",
+      "커핑",
+      "SCA"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 24.",
+        "note": "SCA 프로토콜과 CVA 전환 정리 초안 작성 (페르소나 패널 검수)"
+      }
+    ],
+    "bodyHtml": "<section id=\"why-standard\"><span class=\"content-index\">01</span><h2>왜 조건을 통제하는가</h2><p><a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑</a>은 커피를 비교 평가하는 가장 기본적인 방법이고, SCA 커핑 프로토콜은 그 조건을 표준화한 절차입니다. 로스팅, 분쇄, 물, 시간 같은 변수를 고정해야 잔 사이의 차이를 커피 자체의 차이로 해석할 수 있기 때문입니다.</p><p>표준 조건은 생두 거래, 품질 관리, 대회 심사처럼 서로 다른 장소의 평가자가 결과를 비교해야 하는 상황에서 특히 중요합니다. 프로토콜은 정답의 맛을 정하는 것이 아니라, 비교가 성립할 조건을 정합니다.</p></section><section id=\"conditions\"><span class=\"content-index\">02</span><h2>표준 조건 훑어보기</h2><p>세부 수치는 SCA가 발행하는 최신 프로토콜 문서가 기준이며, 개정될 수 있습니다. 널리 통용되어 온 대표 조건은 다음과 같습니다.</p><table><tbody><tr><th>항목</th><th>통용 기준</th><th>비고</th></tr><tr><td>비율</td><td>물 150ml당 커피 8.25g(±0.25g)</td><td>약 1:18.2, 용기 용량에 비례해 조정</td></tr><tr><td>물 온도</td><td>약 93℃</td><td>붓고 4분간 침지</td></tr><tr><td>샘플 로스팅</td><td>비교적 밝게, 커핑 8~24시간 전 로스팅</td><td>색도 기준은 프로토콜 문서 참조</td></tr><tr><td>잔 수</td><td>샘플당 5잔</td><td>균일성·클린컵 평가를 위해 복수 잔</td></tr><tr><td>절차</td><td>분쇄향 → 4분 침지 → 브레이크 → 스키밍 → 식으며 평가</td><td>온도가 내려가며 인상이 달라지는 것을 기록</td></tr></tbody></table><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>위 수치는 관행적으로 통용되어 온 참고 기준입니다. 실제 심사·거래 목적이라면 반드시 해당 시점의 SCA 공식 문서를 확인하세요.</p></aside></section><section id=\"scoring\"><span class=\"content-index\">03</span><h2>100점 체계와 스페셜티 기준</h2><p>전통적인 SCA 커핑 폼은 프래그런스/아로마, 플레이버, 애프터테이스트, 산미, 바디, 균형, 균일성, 클린컵, 단맛, 종합의 10개 항목을 각각 6~10점 척도로 채점해 100점 만점으로 합산하고, 결점이 발견되면 유형에 따라 감점합니다. 즉 점수가 0점에서 출발하는 체계가 아닙니다.</p><p>이 체계에서 80점 이상을 받은 커피를 흔히 스페셜티 등급으로 부릅니다. 다만 점수는 평가단의 교정 상태와 샘플 준비에 크게 의존하므로, 숫자 하나만 떼어 절대 품질처럼 읽는 것은 위험합니다.</p></section><section id=\"cva\"><span class=\"content-index\">04</span><h2>CVA로의 전환</h2><p>SCA는 2020년대 들어 기존 커핑 폼을 대체하는 CVA(Coffee Value Assessment, 커피 가치 평가)를 도입해 왔습니다. CVA는 \"무엇이 느껴지는가\"를 기록하는 기술적(descriptive) 평가와 \"얼마나 좋게 느끼는가\"를 묻는 선호(affective) 평가를 분리한 것이 큰 변화입니다.</p><p>전환은 단계적으로 진행되어 왔고 교육·인증 체계도 이에 맞춰 재편되는 흐름입니다. 선호 평가의 점수 산식 역시 전통 폼과 달라, 두 체계의 점수는 직접 비교할 수 없습니다. 현장에서는 두 양식이 병존하는 시기가 있으므로, 점수를 인용할 때는 어떤 양식으로 평가했는지를 함께 밝히는 것이 좋습니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>같은 커피라도 평가 양식(전통 폼 vs CVA)에 따라 기록되는 정보가 다릅니다. 점수 비교는 같은 양식·같은 조건 안에서만 의미가 있습니다.</p></aside></section><section id=\"at-home\"><span class=\"content-index\">05</span><h2>실무 밖에서의 활용</h2><p>정식 프로토콜을 다 갖추지 않아도, 조건을 통제한다는 원칙은 그대로 빌려 쓸 수 있습니다. 같은 비율과 물, 같은 시간으로 두세 가지 커피를 나란히 우려 비교하는 것만으로도 <a data-wikilink=\"coffee-flavor-wheel\" href=\"/wiki/coffee-flavor-wheel\">향미 어휘</a> 훈련과 원두 선택에 충분히 유용합니다.</p></section>",
+    "backlinks": [
+      "coffee-flavor-wheel",
+      "q-grader-certification",
+      "roast-profile-design"
+    ]
+  },
+  {
+    "slug": "q-grader-certification",
+    "title": "Q 그레이더: 교정된 감각의 자격",
+    "summary": "Q 그레이더 자격의 구조와 시험 구성, 캘리브레이션의 의미, 그리고 운영 체계의 전환 흐름을 정리합니다.",
+    "category": "센서리",
+    "level": "중급",
+    "readingTime": "7분",
+    "updatedAt": "2026. 07. 24.",
+    "accent": "berry",
+    "fact": "Q 그레이더 자격의 핵심은 뛰어난 미각이 아니라 교정된 미각입니다. 다른 평가자와 같은 기준으로 같은 결론에 도달하는 능력을 검증합니다.",
+    "sections": [
+      {
+        "id": "what",
+        "title": "Q 그레이더란",
+        "paragraphs": [
+          "Q 그레이더는 CQI(Coffee Quality Institute)가 운영해 온 커피 관능평가 자격입니다. 아라비카와 로부스타(파인 로부스타) 트랙이 있으며, 국제적으로 통용되는 기준에 따라 커피를 평가하고 등급을 매길 수 있음을 검증합니다.",
+          "이 자격이 특별한 이유는 개인의 절대적 미각이 아니라 교정(캘리브레이션)을 평가하기 때문입니다. 숙련된 평가자들과 같은 샘플을 두고 유의미하게 같은 결론에 도달하는지가 합격의 기준입니다."
+        ]
+      },
+      {
+        "id": "exams",
+        "title": "시험은 무엇을 검증하는가",
+        "paragraphs": [
+          "과정은 통상 며칠에 걸쳐 20개 안팎의 시험 모듈로 구성되어 왔습니다. 세부 구성과 통과 기준은 운영 기관의 개정에 따라 달라질 수 있으므로 대표 영역만 정리합니다.",
+          "영역대표 시험검증 내용기본 감각센서리 스킬, 기본 맛 식별단맛·신맛·짠맛의 농도 구분후각향 식별(아로마 키트)커피 관련 기준 향의 기억과 식별변별트라이앵귤레이션세 잔 중 다른 한 잔 찾기산 식별유기산 매칭커피 산미의 성분 구분커핑산지별 커핑 시험표준 폼으로 교정된 채점등급생두·원두 그레이딩결점 식별과 등급 판정",
+          "합격은 한 번의 종합 점수가 아니라 모듈 단위입니다. 정해진 유효 기간 안에 모든 모듈을 통과해야 하며, 통과하지 못한 모듈은 규정에 따라 재응시할 수 있습니다.",
+          "준비는 화려한 표현력보다 반복 훈련이 중심입니다. 특히 트라이앵귤레이션과 향 식별은 단기간 벼락치기보다 꾸준한 노출이 효과적이라고 알려져 있습니다."
+        ]
+      },
+      {
+        "id": "calibration",
+        "title": "자격 유지와 캘리브레이션",
+        "paragraphs": [
+          "Q 그레이더 자격은 한 번 따면 끝나는 것이 아니라 주기적으로(통상 3년) 캘리브레이션을 통과해 갱신해 왔습니다. 감각과 채점 습관은 시간이 지나며 표류하기 때문에, 정기적으로 기준에 다시 맞추는 절차가 자격의 신뢰를 지탱합니다.",
+          "이 갱신 구조는 \"자격 소지\"보다 \"현재 교정 상태\"가 중요하다는 철학을 보여줍니다. 실제 현장에서도 커핑 테이블을 함께 쓰는 팀은 수시로 서로의 채점을 비교하며 내부 교정을 유지하는 경우가 많습니다."
+        ]
+      },
+      {
+        "id": "transition",
+        "title": "운영 체계의 전환",
+        "paragraphs": [
+          "2025년 SCA와 CQI는 Q 프로그램 운영을 SCA로 이관한다고 발표했고, 같은 해부터 SCA가 CVA 기반으로 재편된 Q 그레이더 과정을 운영하고 있습니다. 기존 자격의 인정 범위, 갱신 절차, 신규 과정의 세부 구성은 전환 공지에 따라 달라질 수 있습니다.",
+          "수험이나 갱신을 계획하고 있다면 이 문서가 아니라 운영 기관(SCA·CQI)의 최신 공지를 기준으로 삼으세요. 전환기의 세부 정책은 수시로 갱신됩니다."
+        ]
+      },
+      {
+        "id": "worth",
+        "title": "누구에게 필요한가",
+        "paragraphs": [
+          "생두를 사고파는 실무자, 품질 관리를 맡는 로스터리 QC, 평가 언어로 소통해야 하는 교육자에게 실질적 효용이 큽니다. 반대로 취미로 커피를 즐기는 단계라면, 자격 자체보다 커핑 기초와 비교 시음 훈련이 먼저입니다."
+        ]
+      }
+    ],
+    "related": [
+      "sca-cupping-protocol",
+      "cupping-basics",
+      "coffee-flavor-wheel"
+    ],
+    "tags": [
+      "관능평가",
+      "커핑",
+      "자격"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 24.",
+        "note": "Q 그레이더 자격 구조 초안 작성 (페르소나 패널 검수)"
+      }
+    ],
+    "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>Q 그레이더란</h2><p>Q 그레이더는 CQI(Coffee Quality Institute)가 운영해 온 커피 관능평가 자격입니다. 아라비카와 로부스타(파인 로부스타) 트랙이 있으며, 국제적으로 통용되는 기준에 따라 커피를 평가하고 등급을 매길 수 있음을 검증합니다.</p><p>이 자격이 특별한 이유는 개인의 절대적 미각이 아니라 <strong>교정(캘리브레이션)</strong>을 평가하기 때문입니다. 숙련된 평가자들과 같은 샘플을 두고 유의미하게 같은 결론에 도달하는지가 합격의 기준입니다.</p></section><section id=\"exams\"><span class=\"content-index\">02</span><h2>시험은 무엇을 검증하는가</h2><p>과정은 통상 며칠에 걸쳐 20개 안팎의 시험 모듈로 구성되어 왔습니다. 세부 구성과 통과 기준은 운영 기관의 개정에 따라 달라질 수 있으므로 대표 영역만 정리합니다.</p><table><tbody><tr><th>영역</th><th>대표 시험</th><th>검증 내용</th></tr><tr><td>기본 감각</td><td>센서리 스킬, 기본 맛 식별</td><td>단맛·신맛·짠맛의 농도 구분</td></tr><tr><td>후각</td><td>향 식별(아로마 키트)</td><td>커피 관련 기준 향의 기억과 식별</td></tr><tr><td>변별</td><td>트라이앵귤레이션</td><td>세 잔 중 다른 한 잔 찾기</td></tr><tr><td>산 식별</td><td>유기산 매칭</td><td>커피 산미의 성분 구분</td></tr><tr><td>커핑</td><td>산지별 커핑 시험</td><td>표준 폼으로 교정된 채점</td></tr><tr><td>등급</td><td>생두·원두 그레이딩</td><td>결점 식별과 등급 판정</td></tr></tbody></table><p>합격은 한 번의 종합 점수가 아니라 모듈 단위입니다. 정해진 유효 기간 안에 모든 모듈을 통과해야 하며, 통과하지 못한 모듈은 규정에 따라 재응시할 수 있습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>준비는 화려한 표현력보다 반복 훈련이 중심입니다. 특히 트라이앵귤레이션과 향 식별은 단기간 벼락치기보다 꾸준한 노출이 효과적이라고 알려져 있습니다.</p></aside></section><section id=\"calibration\"><span class=\"content-index\">03</span><h2>자격 유지와 캘리브레이션</h2><p>Q 그레이더 자격은 한 번 따면 끝나는 것이 아니라 주기적으로(통상 3년) 캘리브레이션을 통과해 갱신해 왔습니다. 감각과 채점 습관은 시간이 지나며 표류하기 때문에, 정기적으로 기준에 다시 맞추는 절차가 자격의 신뢰를 지탱합니다.</p><p>이 갱신 구조는 \"자격 소지\"보다 \"현재 교정 상태\"가 중요하다는 철학을 보여줍니다. 실제 현장에서도 커핑 테이블을 함께 쓰는 팀은 수시로 서로의 채점을 비교하며 내부 교정을 유지하는 경우가 많습니다.</p></section><section id=\"transition\"><span class=\"content-index\">04</span><h2>운영 체계의 전환</h2><p>2025년 SCA와 CQI는 Q 프로그램 운영을 SCA로 이관한다고 발표했고, 같은 해부터 SCA가 <a data-wikilink=\"sca-cupping-protocol\" href=\"/wiki/sca-cupping-protocol\">CVA</a> 기반으로 재편된 Q 그레이더 과정을 운영하고 있습니다. 기존 자격의 인정 범위, 갱신 절차, 신규 과정의 세부 구성은 전환 공지에 따라 달라질 수 있습니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>수험이나 갱신을 계획하고 있다면 이 문서가 아니라 운영 기관(SCA·CQI)의 최신 공지를 기준으로 삼으세요. 전환기의 세부 정책은 수시로 갱신됩니다.</p></aside></section><section id=\"worth\"><span class=\"content-index\">05</span><h2>누구에게 필요한가</h2><p>생두를 사고파는 실무자, 품질 관리를 맡는 로스터리 QC, 평가 언어로 소통해야 하는 교육자에게 실질적 효용이 큽니다. 반대로 취미로 커피를 즐기는 단계라면, 자격 자체보다 <a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑 기초</a>와 비교 시음 훈련이 먼저입니다.</p></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "roast-profile-design",
+    "title": "로스트 프로파일 설계: 곡선을 의도로 바꾸기",
+    "summary": "투입 온도부터 배출까지, 프로파일의 구간별 변수와 ROR·DTR 같은 지표를 설계 관점에서 다룹니다.",
+    "category": "로스팅",
+    "level": "전문",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 24.",
+    "accent": "copper",
+    "fact": "프로파일 설계는 목표 곡선 그리기가 아니라, 기록과 커핑으로 가설을 검증하는 반복 루프입니다. 지표는 설계의 언어이지 목표값이 아닙니다.",
+    "sections": [
+      {
+        "id": "frame",
+        "title": "프로파일을 구간으로 읽기",
+        "paragraphs": [
+          "로스트 발달에서 다뤘듯 향미를 만드는 반응은 로스팅 전 과정에서 연속적으로 일어납니다. 다만 설계와 소통을 위해 실무에서는 곡선을 몇 개의 구간으로 나눠 읽는 관행이 자리 잡았습니다.",
+          "구간경계 신호설계에서 주로 보는 것건조투입 → 옐로 포인트투입 온도·초기 화력, 수분 제거의 균일성갈변(마이야르·카라멜화)옐로 → 1차 크랙화력 조절 타이밍, 향 전구체 형성 시간발달1차 크랙 → 배출발달 시간과 배출 시점, 최종 색도",
+          "구간 경계는 콩의 색·향·소리로 판단하며, 온도계 수치는 기계마다 다르게 읽힙니다. 프로브 위치와 배치량이 다르면 같은 숫자가 같은 상태를 뜻하지 않는다는 점이 프로파일 소통의 첫 함정입니다."
+        ]
+      },
+      {
+        "id": "charge",
+        "title": "투입 온도와 터닝 포인트",
+        "paragraphs": [
+          "투입 온도는 첫 구간의 에너지 예산을 정합니다. 배치량이 크거나 밀도가 높은 생두일수록 더 많은 초기 에너지가 필요한 경향이 있습니다. 투입 직후 온도 표시값은 차가운 생두와 열평형을 이루며 내려갔다 반등하는데, 이 반등점을 터닝 포인트(turning point)라고 부릅니다.",
+          "터닝 포인트의 온도와 시각은 프로브가 읽는 값일 뿐이지만, 같은 기계·같은 배치량에서는 재현성의 좋은 조기 지표가 됩니다. 배치마다 터닝 포인트가 흔들린다면 투입 온도나 배치량 관리부터 점검하는 편이 순서입니다.",
+          "초기 에너지가 부족하다고 화력만 급히 올리면 드럼 표면 온도가 함께 올라, 콩 표면을 태우는 스코칭(scorching)이나 티핑(tipping)으로 이어질 수 있습니다. 투입 온도·배치량·화력을 한 묶음으로, 단계적으로 조정하세요."
+        ]
+      },
+      {
+        "id": "ror",
+        "title": "ROR: 곡선의 기울기를 읽는 언어",
+        "paragraphs": [
+          "ROR(Rate of Rise, 분당 온도 상승률)은 콩 온도 곡선의 기울기입니다. 많은 로스터가 ROR이 로스팅 내내 완만하게 감소하는 형태를 기본 참조형으로 삼고, 급락(크래시, crash)이나 1차 크랙 후 반등(플릭, flick) 같은 급격한 변동을 향미 결함(베이크드(baked), 거친 쓴맛)과 연관 지어 관리합니다.",
+          "ROR 곡선의 이상형은 기계·프로브·배치량에 종속된 경험칙이며, 인과관계가 모두 규명된 법칙이 아닙니다. 곡선과 향미의 상관관계를 어떻게 해석할지 자체도 논의가 진행 중입니다. 곡선은 가설을 세우는 도구로 쓰고, 판정은 컵에서 하세요.",
+          "1차 크랙 부근에서는 수분 증발과 콩 내부의 흡열·발열 전환이 겹치며 곡선이 흔들리기 쉽습니다. 크래시·플릭이 자주 관찰되는 것도 이 구간이어서, 크랙 전후의 화력과 배기 운용이 설계의 초점이 되는 경우가 많습니다.",
+          "화력 조작이 곡선에 반영되기까지는 지연이 있으므로, 변동을 본 뒤 쫓아가며 조작하면 늦는 경우가 많습니다. 설계 단계에서 조작 시점을 미리 정해 두고, 결과를 다음 배치의 계획에 반영하는 방식이 재현성에 유리합니다."
+        ]
+      },
+      {
+        "id": "dtr",
+        "title": "발달 구간과 DTR",
+        "paragraphs": [
+          "DTR(Development Time Ratio, 발달 시간 비율)은 전체 로스팅 시간 중 1차 크랙 이후가 차지하는 비율입니다. 필터 로스팅 실무에서 15~25% 부근을 참고 범위로 삼는 경우가 흔하지만, 이는 특정 스타일의 경험칙이지 품질의 보증이 아닙니다.",
+          "같은 DTR이라도 크랙 이후의 화력 운용과 최종 색도에 따라 컵은 크게 달라집니다. DTR 하나를 목표값으로 고정하기보다, 배출 색도·감량률과 함께 세 변수를 한 묶음으로 기록하고 조정하는 편이 안전합니다."
+        ]
+      },
+      {
+        "id": "loop",
+        "title": "설계 루프: 기록 → 커핑 → 수정",
+        "paragraphs": [
+          "프로파일 설계는 한 번의 정답 찾기가 아니라 반복 루프입니다. 배치의 조건(생두 수분·밀도, 배치량, 날씨)과 조작 기록을 남기고, 통제된 커핑으로 결과를 평가한 뒤, 다음 배치에서 한 변수만 바꿔 검증합니다.",
+          "재현성이 흔들릴 때는 곡선보다 물리량을 먼저 봅니다. 배치 간 투입량 오차, 생두 수분 차이, 드럼 예열 상태가 곡선 차이의 흔한 원인입니다."
+        ],
+        "points": [
+          "생두 정보와 투입 조건(온도·배치량)을 기록합니다.",
+          "구간 경계(옐로·1차 크랙)와 배출 시점·색도를 기록합니다.",
+          "커핑 결과를 프로파일과 연결해 가설을 세웁니다.",
+          "다음 배치에서 한 변수만 바꿔 가설을 검증합니다."
+        ]
+      }
+    ],
+    "related": [
+      "roast-development",
+      "roasting-basics",
+      "sca-cupping-protocol"
+    ],
+    "tags": [
+      "로스팅",
+      "프로파일",
+      "전문"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 24.",
+        "note": "프로파일 설계 변수와 지표 초안 작성 (페르소나 패널 검수)"
+      }
+    ],
+    "bodyHtml": "<section id=\"frame\"><span class=\"content-index\">01</span><h2>프로파일을 구간으로 읽기</h2><p><a data-wikilink=\"roast-development\" href=\"/wiki/roast-development\">로스트 발달</a>에서 다뤘듯 향미를 만드는 반응은 로스팅 전 과정에서 연속적으로 일어납니다. 다만 설계와 소통을 위해 실무에서는 곡선을 몇 개의 구간으로 나눠 읽는 관행이 자리 잡았습니다.</p><table><tbody><tr><th>구간</th><th>경계 신호</th><th>설계에서 주로 보는 것</th></tr><tr><td>건조</td><td>투입 → 옐로 포인트</td><td>투입 온도·초기 화력, 수분 제거의 균일성</td></tr><tr><td>갈변(마이야르·카라멜화)</td><td>옐로 → 1차 크랙</td><td>화력 조절 타이밍, 향 전구체 형성 시간</td></tr><tr><td>발달</td><td>1차 크랙 → 배출</td><td>발달 시간과 배출 시점, 최종 색도</td></tr></tbody></table><p>구간 경계는 콩의 색·향·소리로 판단하며, 온도계 수치는 기계마다 다르게 읽힙니다. 프로브 위치와 배치량이 다르면 같은 숫자가 같은 상태를 뜻하지 않는다는 점이 프로파일 소통의 첫 함정입니다.</p></section><section id=\"charge\"><span class=\"content-index\">02</span><h2>투입 온도와 터닝 포인트</h2><p>투입 온도는 첫 구간의 에너지 예산을 정합니다. 배치량이 크거나 밀도가 높은 생두일수록 더 많은 초기 에너지가 필요한 경향이 있습니다. 투입 직후 온도 표시값은 차가운 생두와 열평형을 이루며 내려갔다 반등하는데, 이 반등점을 터닝 포인트(turning point)라고 부릅니다.</p><p>터닝 포인트의 온도와 시각은 프로브가 읽는 값일 뿐이지만, 같은 기계·같은 배치량에서는 재현성의 좋은 조기 지표가 됩니다. 배치마다 터닝 포인트가 흔들린다면 투입 온도나 배치량 관리부터 점검하는 편이 순서입니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>초기 에너지가 부족하다고 화력만 급히 올리면 드럼 표면 온도가 함께 올라, 콩 표면을 태우는 스코칭(scorching)이나 티핑(tipping)으로 이어질 수 있습니다. 투입 온도·배치량·화력을 한 묶음으로, 단계적으로 조정하세요.</p></aside></section><section id=\"ror\"><span class=\"content-index\">03</span><h2>ROR: 곡선의 기울기를 읽는 언어</h2><p>ROR(Rate of Rise, 분당 온도 상승률)은 콩 온도 곡선의 기울기입니다. 많은 로스터가 ROR이 로스팅 내내 완만하게 감소하는 형태를 기본 참조형으로 삼고, 급락(크래시, crash)이나 1차 크랙 후 반등(플릭, flick) 같은 급격한 변동을 향미 결함(베이크드(baked), 거친 쓴맛)과 연관 지어 관리합니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>ROR 곡선의 이상형은 기계·프로브·배치량에 종속된 경험칙이며, 인과관계가 모두 규명된 법칙이 아닙니다. 곡선과 향미의 상관관계를 어떻게 해석할지 자체도 논의가 진행 중입니다. 곡선은 가설을 세우는 도구로 쓰고, 판정은 컵에서 하세요.</p></aside><p>1차 크랙 부근에서는 수분 증발과 콩 내부의 흡열·발열 전환이 겹치며 곡선이 흔들리기 쉽습니다. 크래시·플릭이 자주 관찰되는 것도 이 구간이어서, 크랙 전후의 화력과 배기 운용이 설계의 초점이 되는 경우가 많습니다.</p><p>화력 조작이 곡선에 반영되기까지는 지연이 있으므로, 변동을 본 뒤 쫓아가며 조작하면 늦는 경우가 많습니다. 설계 단계에서 조작 시점을 미리 정해 두고, 결과를 다음 배치의 계획에 반영하는 방식이 재현성에 유리합니다.</p></section><section id=\"dtr\"><span class=\"content-index\">04</span><h2>발달 구간과 DTR</h2><p>DTR(Development Time Ratio, 발달 시간 비율)은 전체 로스팅 시간 중 1차 크랙 이후가 차지하는 비율입니다. 필터 로스팅 실무에서 15~25% 부근을 참고 범위로 삼는 경우가 흔하지만, 이는 특정 스타일의 경험칙이지 품질의 보증이 아닙니다.</p><p>같은 DTR이라도 크랙 이후의 화력 운용과 최종 색도에 따라 컵은 크게 달라집니다. DTR 하나를 목표값으로 고정하기보다, 배출 색도·감량률과 함께 세 변수를 한 묶음으로 기록하고 조정하는 편이 안전합니다.</p></section><section id=\"loop\"><span class=\"content-index\">05</span><h2>설계 루프: 기록 → 커핑 → 수정</h2><p>프로파일 설계는 한 번의 정답 찾기가 아니라 반복 루프입니다. 배치의 조건(생두 수분·밀도, 배치량, 날씨)과 조작 기록을 남기고, <a data-wikilink=\"sca-cupping-protocol\" href=\"/wiki/sca-cupping-protocol\">통제된 커핑</a>으로 결과를 평가한 뒤, 다음 배치에서 한 변수만 바꿔 검증합니다.</p><ul><li>생두 정보와 투입 조건(온도·배치량)을 기록합니다.</li><li>구간 경계(옐로·1차 크랙)와 배출 시점·색도를 기록합니다.</li><li>커핑 결과를 프로파일과 연결해 가설을 세웁니다.</li><li>다음 배치에서 한 변수만 바꿔 가설을 검증합니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>재현성이 흔들릴 때는 곡선보다 물리량을 먼저 봅니다. 배치 간 투입량 오차, 생두 수분 차이, 드럼 예열 상태가 곡선 차이의 흔한 원인입니다.</p></aside></section>",
     "backlinks": []
   }
 ],
