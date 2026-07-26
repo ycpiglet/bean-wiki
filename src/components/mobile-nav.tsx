@@ -56,6 +56,15 @@ export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
             <Link href={`${prefix}/glossary`} onClick={close}>
               {t.glossary}
             </Link>
+            {locale === "ko" && (
+              <>
+                <Link href="/quiz" onClick={close}>{t.quiz}</Link>
+                <Link href="/resources" onClick={close}>{t.resources}</Link>
+                <Link href="/roadmap" onClick={close}>{t.roadmap}</Link>
+                <Link href="/community" onClick={close}>{t.community}</Link>
+                <Link href="/contact" onClick={close}>{t.contact}</Link>
+              </>
+            )}
             <span className="mobile-drawer-label">{t.topics}</span>
             {categories.map((category) => (
               <Link

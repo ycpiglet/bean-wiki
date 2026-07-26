@@ -108,8 +108,9 @@ background: color-mix(in oklab, var(--copper) 9%, var(--paper));
 - 문서 타이틀 `.wiki-title h1`: `clamp(30px, 3.8vw, 44px)` / lh 1.22 / ls `-.03em`
 - 섹션 헤딩 `.section-heading h2`: `clamp(26px, 2.6vw, 36px)` / ls `-.03em`
 - 본문 섹션 제목 `.article-content h2`: 27px / ls `-.025em`
-- 본문 `p`: 16px / lh 1.95 / `word-break: keep-all`
-- 목록 `li`: 14px / 1.7 · 문서 메타/태그: 12px · mono 라벨: **최소 10px**
+- 본문 `p`: 18px / lh 1.9 / `word-break: keep-all`
+- 목록 `li`: 17px / 1.75 · 일반 UI: 16px · 문서 메타/태그: 14px
+- 장식용 mono 라벨: **최소 12px** · 정보를 담은 라벨: **최소 13px**
 
 ### 한글 줄맞춤 규칙 (강제)
 
@@ -126,7 +127,7 @@ h1, h2, h3, h4 {
 - "…들어 있을\n까" 같은 **한 글자 고아 줄**과 어절 중간 끊김을 막는 조합입니다.
 - 큰 제목의 음수 자간은 라틴 기준 `-.05em`대에서 한글 가독 기준 `-.02~-.035em`로
   완화되어 있습니다. 새 제목 스타일도 이 범위를 지키세요.
-- 라벨성 텍스트의 **최소 크기는 10px**(mono 캡션), 본문성 메타는 12px 이상.
+- 라벨성 텍스트의 **최소 크기는 12px**(mono 캡션), 본문성 메타는 14px 이상.
 
 ## 4. 간격·레이아웃
 

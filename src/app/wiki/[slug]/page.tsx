@@ -2,6 +2,11 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
+import {
+  ArticleQuiz,
+  ArticleViewReward,
+} from "@/components/article-learning";
+import { ArticleResources } from "@/components/article-resources";
 import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
@@ -11,6 +16,7 @@ import { ThemeToggle } from "@/components/theme-toggle";
 import { articles, getArticle, getCategoryByName } from "@/lib/content";
 import { toISODate } from "@/lib/dates";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { quiz } from "@/content/quiz";
 
 export const dynamicParams = false;
 
@@ -71,6 +77,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
   const published = history.length
     ? toISODate(history[history.length - 1].date)
     : toISODate(article.updatedAt);
+  const curatedQuestion = quiz.find((question) => question.source === slug);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -183,6 +190,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
               </div>
             )}
           </header>
+          <ArticleViewReward slug={slug} />
 
           <div className={`knowledge-note accent-${article.accent}`}>
             <span>핵심 한 줄</span>
@@ -192,6 +200,26 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
           <div
             className="article-content"
             dangerouslySetInnerHTML={{ __html: article.bodyHtml }}
+          />
+
+          <ArticleResources category={article.category} />
+
+          <ArticleQuiz
+            slug={slug}
+            title={article.title}
+            fact={article.fact}
+            decoys={related.map((item) => item.fact)}
+            curated={
+              curatedQuestion
+                ? {
+                    id: curatedQuestion.id,
+                    question: curatedQuestion.question,
+                    choices: curatedQuestion.choices,
+                    answer: curatedQuestion.answer,
+                    explanation: curatedQuestion.explanation,
+                  }
+                : undefined
+            }
           />
 
           {history.length > 0 && (
@@ -253,4 +281,3 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
     </main>
   );
 }
-

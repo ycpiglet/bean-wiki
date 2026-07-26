@@ -38,9 +38,23 @@ export const metadata: Metadata = {
   description: SITE_DESCRIPTION,
   openGraph: {
     title: "Bean Wiki — 열린 커피 백과사전",
-    description: "씨앗에서 한 잔까지, 모든 커피 지식을 한곳에서.",
+    description: "32개 심화 문서와 120개 주제 로드맵으로 배우는 열린 커피 백과사전.",
     locale: "ko_KR",
     type: "website",
+    images: [
+      {
+        url: "/og.png",
+        width: 1734,
+        height: 907,
+        alt: "Bean Wiki — 32 deep articles, 120 topic roadmap, learn and level up",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Bean Wiki — 열린 커피 백과사전",
+    description: "읽고, 풀고, 나누며 레벨업하는 커피 지식 플랫폼",
+    images: ["/og.png"],
   },
   alternates: {
     types: { "application/rss+xml": "/feed.xml" },

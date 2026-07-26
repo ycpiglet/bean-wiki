@@ -3,22 +3,38 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { QuizQuestion } from "@/content/quiz";
+import {
+  recordQuizAnswer,
+  recordQuizCompletion,
+} from "@/lib/learning-progress";
 
 // Client-side quiz. Questions arrive prebuilt from the server (SSG) so the
 // answer key ships with the page — this is a learning aid, not an exam, so
 // that trade-off is intentional and keeps the site fully static.
-type Filter = "전체" | "입문" | "중급" | "전문";
-const FILTERS: Filter[] = ["전체", "입문", "중급", "전문"];
+type Filter = "오늘의 5문항" | "전체" | "입문" | "중급" | "전문";
+const FILTERS: Filter[] = ["오늘의 5문항", "전체", "입문", "중급", "전문"];
 
 export function QuizRunner({ questions }: { questions: QuizQuestion[] }) {
-  const [filter, setFilter] = useState<Filter>("전체");
+  const [filter, setFilter] = useState<Filter>("오늘의 5문항");
   const [index, setIndex] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);
   const [score, setScore] = useState({ correct: 0, answered: 0 });
   const [done, setDone] = useState(false);
+  const [earnedXp, setEarnedXp] = useState(0);
 
   const pool = useMemo(
-    () => (filter === "전체" ? questions : questions.filter((q) => q.level === filter)),
+    () => {
+      if (filter === "전체") return questions;
+      if (filter === "오늘의 5문항") {
+        const today = new Date().toLocaleDateString("sv-SE");
+        const seed = [...today].reduce((sum, char) => sum + char.charCodeAt(0), 0);
+        return Array.from(
+          { length: Math.min(5, questions.length) },
+          (_, offset) => questions[(seed + offset * 7) % questions.length],
+        );
+      }
+      return questions.filter((q) => q.level === filter);
+    },
     [questions, filter],
   );
 
@@ -31,19 +47,26 @@ export function QuizRunner({ questions }: { questions: QuizQuestion[] }) {
     setPicked(null);
     setScore({ correct: 0, answered: 0 });
     setDone(false);
+    setEarnedXp(0);
   }
 
   function choose(choiceIndex: number) {
     if (picked !== null) return;
     setPicked(choiceIndex);
+    const correct = choiceIndex === current.answer;
+    const { awarded } = recordQuizAnswer(current.id, correct);
+    setEarnedXp((value) => value + awarded);
     setScore((s) => ({
-      correct: s.correct + (choiceIndex === current.answer ? 1 : 0),
+      correct: s.correct + (correct ? 1 : 0),
       answered: s.answered + 1,
     }));
   }
 
   function next() {
     if (isLast) {
+      const today = new Date().toLocaleDateString("sv-SE");
+      const { awarded } = recordQuizCompletion(`${today}:${filter}`);
+      setEarnedXp((value) => value + awarded);
       setDone(true);
       return;
     }
@@ -82,6 +105,9 @@ export function QuizRunner({ questions }: { questions: QuizQuestion[] }) {
                 ? "좋은 출발입니다. 틀린 문항의 해설 문서를 읽어 보세요."
                 : "해설의 관련 문서를 먼저 읽고 다시 도전해 보세요."}
           </p>
+          <div className="quiz-xp-earned">
+            이번 학습에서 <strong>+{earnedXp} XP</strong>
+          </div>
           <button type="button" className="quiz-restart" onClick={() => reset()}>
             다시 풀기
           </button>
@@ -130,9 +156,12 @@ export function QuizRunner({ questions }: { questions: QuizQuestion[] }) {
           )}
 
           <div className="quiz-actions">
-            <span className="quiz-score">
-              맞힘 {score.correct} / 푼 문항 {score.answered}
-            </span>
+            <div>
+              <span className="quiz-score">
+                맞힘 {score.correct} / 푼 문항 {score.answered}
+              </span>
+              <span className="quiz-live-xp">+{earnedXp} XP</span>
+            </div>
             <button
               type="button"
               className="quiz-next"

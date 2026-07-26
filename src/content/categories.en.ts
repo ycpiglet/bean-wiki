@@ -26,4 +26,28 @@ export const categoriesEn: Record<string, { name: string; description: string }>
     name: "Café & Gear",
     description: "Espresso machines, grinders, and bar operations",
   },
+  "coffee-science": {
+    name: "Coffee Science",
+    description: "The chemistry, physics, and microbiology behind flavor",
+  },
+  "history-and-culture": {
+    name: "History & Culture",
+    description: "Coffee's journeys, coffeehouses, and regional drinking cultures",
+  },
+  "sustainability-and-trade": {
+    name: "Sustainability & Trade",
+    description: "Climate, farmer livelihoods, prices, and responsible supply chains",
+  },
+  "cafe-operations": {
+    name: "Café Operations & Quality",
+    description: "Workflow, hygiene, costs, and consistent quality systems",
+  },
+  "drinks-and-recipes": {
+    name: "Drinks & Recipes",
+    description: "Coffee drinks, milk, ingredients, and recipe design",
+  },
+  "coffee-and-health": {
+    name: "Coffee & Health",
+    description: "Evidence-based information about caffeine, sleep, and consumption",
+  },
 };

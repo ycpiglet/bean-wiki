@@ -16,6 +16,7 @@ import {
 import { trivia } from "@/content/trivia";
 import { quiz } from "@/content/quiz";
 import type { CategoryIcon } from "@/content/types";
+import { LearningDashboard } from "@/components/learning-dashboard";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/", languages: { ko: "/", en: "/en" } },
@@ -82,11 +83,12 @@ export default function Home() {
           <em>WIKI</em>
         </Link>
         <nav aria-label="주 메뉴">
-          <a href="#topics">둘러보기</a>
           <Link href="/wiki">문서</Link>
-          <Link href="/glossary">용어집</Link>
+          <Link href="/roadmap">주제 기획</Link>
+          <Link href="/resources">자료실</Link>
           <Link href="/quiz">퀴즈</Link>
-          <a href="#contribute">기여하기</a>
+          <Link href="/community">커뮤니티</Link>
+          <Link href="/contact">문의</Link>
         </nav>
         <div className="header-tools">
           <HeaderSearchButton locale="ko" />
@@ -131,7 +133,7 @@ export default function Home() {
           <span className="visual-label label-brew">BREW</span>
           <div className="visual-note">
             <span>SEED TO CUP</span>
-            <strong>01 — 06</strong>
+          <strong>01 — 12</strong>
           </div>
         </div>
       </section>
@@ -140,11 +142,22 @@ export default function Home() {
         <div className="shell intro-strip-inner">
           <span>지식은 연결될수록 선명해집니다.</span>
           <p>
-            커피의 여섯 영역을 따라가며 한 가지 맛 뒤에 숨은 원인과 결과를
+            커피의 열두 영역을 따라가며 한 가지 맛 뒤에 숨은 원인과 결과를
             발견해보세요.
           </p>
           <span className="scroll-mark">SCROLL ↓</span>
         </div>
+      </section>
+
+      <section className="progress-section shell">
+        <div className="section-heading">
+          <div>
+            <span className="section-index">LEARNING JOURNEY</span>
+            <h2>읽은 만큼 쌓이는 커피 지식</h2>
+          </div>
+          <p>방문, 문서 읽기, 퀴즈와 커뮤니티 기록으로 나만의 레벨을 키우세요.</p>
+        </div>
+        <LearningDashboard />
       </section>
 
       <section className="section shell" id="topics">
@@ -338,7 +351,9 @@ export default function Home() {
         </Link>
         <p>함께 만들고, 누구나 배우는 열린 커피 백과사전.</p>
         <span>
-          © 2026 BEAN WIKI · <Link href="/privacy">개인정보</Link>
+          © 2026 BEAN WIKI · <Link href="/resources">자료실</Link> ·{" "}
+          <Link href="/community">커뮤니티</Link> · <Link href="/contact">문의</Link> ·{" "}
+          <Link href="/privacy">개인정보</Link>
         </span>
       </footer>
     </main>
