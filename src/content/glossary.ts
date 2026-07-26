@@ -254,4 +254,28 @@ export const glossaryTerms: GlossaryTerm[] = [
     category: "로스팅",
     related: ["roast-profile-design", "roast-development"],
   },
+  {
+    term: "트라이앵귤레이션",
+    reading: "Triangulation",
+    definition:
+      "세 잔 중 다른 한 잔을 찾아내는 변별 검사로, 두 커피가 감각적으로 구분되는지를 확인합니다.",
+    category: "센서리",
+    related: ["sensory-data-analysis", "q-grader-certification"],
+  },
+  {
+    term: "디스크립터",
+    reading: "Descriptor",
+    definition:
+      "향미를 묘사하는 표준화된 용어로, 렉시콘과 향미 휠이 디스크립터의 사전 역할을 합니다.",
+    category: "센서리",
+    related: ["coffee-flavor-wheel", "sensory-data-analysis"],
+  },
+  {
+    term: "캘리브레이션",
+    reading: "Calibration",
+    definition:
+      "기준 샘플에 맞춰 평가자 간 척도 사용의 편차를 줄이는 교정 과정입니다.",
+    category: "센서리",
+    related: ["q-grader-certification", "sensory-data-analysis"],
+  },
 ];

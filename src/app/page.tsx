@@ -13,6 +13,8 @@ import {
   getSearchIndex,
   levelArticleCount,
 } from "@/lib/content";
+import { trivia } from "@/content/trivia";
+import { quiz } from "@/content/quiz";
 import type { CategoryIcon } from "@/content/types";
 
 export const metadata: Metadata = {
@@ -83,6 +85,7 @@ export default function Home() {
           <a href="#topics">둘러보기</a>
           <Link href="/wiki">문서</Link>
           <Link href="/glossary">용어집</Link>
+          <Link href="/quiz">퀴즈</Link>
           <a href="#contribute">기여하기</a>
         </nav>
         <div className="header-tools">
@@ -261,6 +264,45 @@ export default function Home() {
             <strong>평가와 설계를 깊이 다룬다면</strong>
             <p>생두 물성, 열 전달, 센서리와 품질 관리로 확장합니다.</p>
             <span>전문 문서 {levelArticleCount("전문")}개 <ArrowIcon /></span>
+          </Link>
+        </div>
+      </section>
+
+      <section className="trivia-section shell" id="trivia">
+        <div className="section-heading">
+          <div>
+            <span className="section-index">04</span>
+            <h2>알고 계셨나요?</h2>
+          </div>
+          <p>
+            문서 본문에는 담기 어렵지만 기억에 남는 이야기들. 카드를 누르면 관련
+            문서로 이어집니다.
+          </p>
+        </div>
+
+        <div className="trivia-grid">
+          {trivia.map((item) => (
+            <article key={item.id} className={`trivia-card accent-${item.accent}`}>
+              <span className="trivia-label">{item.label}</span>
+              <strong>{item.title}</strong>
+              <p>{item.body}</p>
+              {item.related && (
+                <Link href={`/wiki/${item.related}`}>
+                  {item.relatedLabel} <ArrowIcon />
+                </Link>
+              )}
+            </article>
+          ))}
+        </div>
+
+        <div className="trivia-cta">
+          <div>
+            <span className="trivia-label">QUIZ</span>
+            <strong>얼마나 알고 있는지 확인해 보세요</strong>
+            <p>추출·로스팅·센서리 {quiz.length}문항. 해설마다 근거 문서로 이어집니다.</p>
+          </div>
+          <Link href="/quiz" className="primary-button">
+            커피 퀴즈 풀기 <ArrowIcon />
           </Link>
         </div>
       </section>
