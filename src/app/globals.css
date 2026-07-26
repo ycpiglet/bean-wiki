@@ -176,14 +176,14 @@ svg {
   width: 240px;
   height: 240px;
   display: inline-flex;
-  color: var(--foam);
+  color: var(--espresso);
 }
 
 .bean-mark svg {
   width: 100%;
   height: 100%;
   fill: currentColor;
-  stroke: var(--espresso);
+  stroke: var(--crema);
   stroke-width: 1.4;
   stroke-linecap: round;
 }
@@ -2804,4 +2804,292 @@ input:focus-visible,
 
 ::selection {
   background: color-mix(in oklab, var(--crema) 45%, transparent);
+}
+
+/* ---- "알고 계셨나요?" 트리비아 (홈) ---- */
+.trivia-section {
+  padding-block: 96px 40px;
+}
+
+.trivia-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.trivia-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 22px 24px;
+  border: 1px solid var(--line);
+  border-top: 3px solid var(--brand);
+  border-radius: 5px;
+  background: color-mix(in oklab, var(--brand) 5%, var(--cream));
+}
+
+.trivia-card.accent-olive { border-top-color: var(--olive); background: color-mix(in oklab, var(--olive) 6%, var(--cream)); }
+.trivia-card.accent-sage { border-top-color: var(--sage); background: color-mix(in oklab, var(--sage) 6%, var(--cream)); }
+.trivia-card.accent-copper { border-top-color: var(--copper); background: color-mix(in oklab, var(--copper) 6%, var(--cream)); }
+.trivia-card.accent-blue { border-top-color: var(--blue); background: color-mix(in oklab, var(--blue) 6%, var(--cream)); }
+.trivia-card.accent-berry { border-top-color: var(--berry); background: color-mix(in oklab, var(--berry) 6%, var(--cream)); }
+.trivia-card.accent-sand { border-top-color: var(--sand); background: color-mix(in oklab, var(--sand) 6%, var(--cream)); }
+
+.trivia-label {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 650;
+  letter-spacing: 0.12em;
+}
+
+.trivia-card strong {
+  font-size: 17px;
+  font-weight: 640;
+  line-height: 1.45;
+  word-break: keep-all;
+}
+
+.trivia-card p {
+  margin: 0;
+  color: var(--prose);
+  font-size: 14px;
+  line-height: 1.75;
+  word-break: keep-all;
+}
+
+.trivia-card a {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 6px;
+  color: var(--brand);
+  font-size: 13px;
+  font-weight: 620;
+}
+
+.trivia-card a svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+}
+
+.trivia-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 22px;
+  padding: 28px 32px;
+  border-radius: 6px;
+  background: linear-gradient(145deg, #4e3524, #2b1d13);
+  color: #f6efe3;
+}
+
+.trivia-cta .trivia-label { color: #d3ac79; }
+.trivia-cta strong { display: block; margin-top: 6px; font-size: 21px; font-weight: 640; }
+.trivia-cta p { margin: 6px 0 0; color: #e3d2b8; font-size: 14px; }
+
+/* ---- 커피 퀴즈 (/quiz) ---- */
+.quiz-page {
+  max-width: 780px;
+  padding-top: 40px;
+  padding-bottom: 90px;
+}
+
+.quiz-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 18px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.quiz {
+  margin-top: 34px;
+}
+
+.quiz-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.quiz-filters button {
+  padding: 8px 16px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--cream);
+  color: var(--ink);
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 160ms ease, color 160ms ease;
+}
+
+.quiz-filters button:hover { border-color: var(--brand); color: var(--brand); }
+.quiz-filters button.is-active {
+  background: var(--brand);
+  border-color: var(--brand);
+  color: var(--foam);
+}
+
+.quiz-card,
+.quiz-result {
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--cream);
+}
+
+.quiz-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+}
+
+.quiz-level {
+  padding: 4px 9px;
+  border-radius: 3px;
+  background: color-mix(in oklab, var(--brand) 14%, transparent);
+  color: var(--brand);
+  font-weight: 650;
+}
+
+.quiz-level.accent-berry { background: color-mix(in oklab, var(--berry) 14%, transparent); color: var(--berry); }
+.quiz-level.accent-copper { background: color-mix(in oklab, var(--copper) 14%, transparent); color: var(--copper); }
+.quiz-level.accent-blue { background: color-mix(in oklab, var(--blue) 14%, transparent); color: var(--blue); }
+.quiz-level.accent-olive { background: color-mix(in oklab, var(--olive) 14%, transparent); color: var(--olive); }
+.quiz-level.accent-sage { background: color-mix(in oklab, var(--sage) 14%, transparent); color: var(--sage); }
+.quiz-level.accent-sand { background: color-mix(in oklab, var(--sand) 14%, transparent); color: var(--sand); }
+
+.quiz-category { color: var(--muted); }
+.quiz-progress { margin-left: auto; color: var(--muted); }
+
+.quiz-question {
+  margin: 0 0 20px;
+  font-size: 21px;
+  font-weight: 640;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+}
+
+.quiz-choices {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.quiz-choice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: left;
+  word-break: keep-all;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.quiz-choice:hover:not(:disabled) {
+  border-color: var(--brand);
+  background: color-mix(in oklab, var(--brand) 6%, var(--paper));
+}
+
+.quiz-choice:disabled { cursor: default; }
+
+.quiz-choice-mark {
+  flex: 0 0 auto;
+  width: 22px;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.quiz-choice.is-correct {
+  border-color: var(--olive);
+  background: color-mix(in oklab, var(--olive) 12%, var(--paper));
+}
+.quiz-choice.is-correct .quiz-choice-mark { color: var(--olive); }
+
+.quiz-choice.is-wrong {
+  border-color: var(--cherry);
+  background: color-mix(in oklab, var(--cherry) 10%, var(--paper));
+}
+.quiz-choice.is-wrong .quiz-choice-mark { color: var(--cherry); }
+
+.quiz-explain {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 3px solid var(--brand);
+  border-radius: 4px;
+  background: color-mix(in oklab, var(--brand) 7%, var(--paper));
+}
+
+.quiz-explain strong { display: block; margin-bottom: 6px; font-size: 14px; }
+.quiz-explain p { margin: 0 0 10px; color: var(--prose); font-size: 14px; line-height: 1.75; }
+.quiz-explain a { color: var(--brand); font-size: 13px; font-weight: 620; text-decoration: underline; text-underline-offset: 3px; }
+
+.quiz-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.quiz-score { color: var(--muted); font-family: var(--font-mono); font-size: 12px; }
+
+.quiz-next,
+.quiz-restart {
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 4px;
+  background: var(--brand);
+  color: var(--foam);
+  font: inherit;
+  font-size: 14px;
+  font-weight: 650;
+  cursor: pointer;
+}
+
+.quiz-next:disabled { opacity: 0.5; cursor: default; }
+.quiz-next:hover:not(:disabled),
+.quiz-restart:hover { background: var(--brand-strong); }
+
+.quiz-result { text-align: center; }
+.quiz-result-label { color: var(--muted); font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.12em; }
+.quiz-result strong { display: block; margin: 10px 0; font-size: 40px; font-weight: 660; letter-spacing: -0.02em; }
+.quiz-result p { margin: 0 0 22px; color: var(--prose); font-size: 15px; }
+
+@media (max-width: 680px) {
+  .trivia-section { padding-block: 64px 32px; }
+  .trivia-cta { padding: 22px 20px; }
+  .quiz-card, .quiz-result { padding: 20px 18px; }
+  .quiz-question { font-size: 19px; }
 }

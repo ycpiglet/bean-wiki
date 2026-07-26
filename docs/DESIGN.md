@@ -146,6 +146,9 @@ h1, h2, h3, h4 {
 ## 6. 에셋
 
 - 로고/마크: `src/components/bean-logo.tsx`(`BeanMark`) — 인라인 SVG, `currentColor`.
+  원두 몸통은 `--espresso`(진한 갈색) 채움 + `--crema` 센터 크리즈(가운데 갈라진
+  선)입니다. 과거 폼(크림)색 채움은 원두가 아니라 빈 자리처럼 읽혀 교체했습니다.
+  헤더의 작은 마크는 `--brand` 윤곽선만 사용합니다(`.bean-mark-small`).
 - 파비콘/아이콘: `src/app/icon.svg`, `src/app/favicon.ico`.
 - OG 이미지: `src/app/opengraph-image.tsx`(`next/og`로 동적 생성).
 - 외부 폰트 파일은 저장소에 두지 않습니다(next/font가 빌드 시 자체 호스팅).
