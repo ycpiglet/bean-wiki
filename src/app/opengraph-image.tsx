@@ -17,7 +17,7 @@ export default function OpenGraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "84px 90px",
-          background: "#14170f",
+          background: "#2b1d13",
           color: "#f4f0e7",
           fontFamily: "sans-serif",
         }}
@@ -26,7 +26,7 @@ export default function OpenGraphImage() {
           <svg width="120" height="120" viewBox="0 0 48 48">
             <path
               d="M34.7 7.7C27.6 3.6 17 7.4 11.2 16.3 5.4 25.2 6.8 36 14 40.5c7.2 4.5 17.7.9 23.6-8 5.8-8.9 4.3-20.5-2.9-24.8Z"
-              fill="#a6b673"
+              fill="#d3ac79"
             />
             <path
               d="M34.5 8.4c-2.3 7.9-8.7 9.2-13 14.6-4.1 5.2-4.9 10.3-4.2 16.2"
@@ -40,7 +40,7 @@ export default function OpenGraphImage() {
             <span style={{ fontSize: 40, fontWeight: 700, letterSpacing: -1 }}>
               BEAN WIKI
             </span>
-            <span style={{ fontSize: 20, color: "#a6b673", letterSpacing: 4 }}>
+            <span style={{ fontSize: 20, color: "#d3ac79", letterSpacing: 4 }}>
               OPEN COFFEE ENCYCLOPEDIA
             </span>
           </div>
@@ -50,7 +50,7 @@ export default function OpenGraphImage() {
           <span style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.05 }}>
             Seed to cup,
           </span>
-          <span style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.05, color: "#a6b673" }}>
+          <span style={{ fontSize: 68, fontWeight: 700, lineHeight: 1.05, color: "#d3ac79" }}>
             every bit of coffee.
           </span>
         </div>
