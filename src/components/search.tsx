@@ -12,6 +12,7 @@ import {
 } from "react";
 import { getDictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
+import { useShortcutLabel } from "@/lib/use-shortcut-label";
 
 type SearchItem = {
   slug: string;
@@ -127,6 +128,7 @@ export function Search({
 }) {
   const t = getDictionary(locale).search;
   const prefix = locale === "en" ? "/en" : "";
+  const shortcutLabel = useShortcutLabel();
   // Unique per instance so the hero <Search> and the overlay <Search> can
   // coexist on one page without duplicate DOM ids breaking label / ARIA links.
   const uid = useId();
@@ -286,7 +288,7 @@ export function Search({
           placeholder={t.placeholder}
           autoComplete="off"
         />
-        <span className="search-key">⌘ K</span>
+        <span className="search-key">{shortcutLabel}</span>
       </div>
 
       {query.trim() && (

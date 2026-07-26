@@ -2,12 +2,14 @@
 
 import type { Locale } from "@/i18n/config";
 import { OPEN_SEARCH_EVENT } from "@/components/search-overlay";
+import { useShortcutLabel } from "@/lib/use-shortcut-label";
 
 // Compact search launcher for page headers. Dispatches a window event that the
 // globally-mounted <SearchOverlay> listens for, so search is reachable from
 // every page without each header owning its own search state.
 export function HeaderSearchButton({ locale = "ko" }: { locale?: Locale }) {
   const label = locale === "en" ? "Search" : "검색";
+  const shortcut = useShortcutLabel();
   return (
     <button
       type="button"
@@ -22,7 +24,7 @@ export function HeaderSearchButton({ locale = "ko" }: { locale?: Locale }) {
       </svg>
       <span className="header-search-label">{label}</span>
       <span className="header-search-key" aria-hidden="true">
-        ⌘K
+        {shortcut}
       </span>
     </button>
   );
