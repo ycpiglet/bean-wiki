@@ -103,6 +103,10 @@ npm run new-article -- --slug my-article --category "추출" --accent blue
 
 - 사실 주장에는 근거를, 논쟁적 서술에는 조건을 답니다.
 - 과대일반화와 단정 표현을 피합니다.
+- 문체·구조·근거 규칙과 측정 지표(루브릭)의 정본은
+  [docs/EDITORIAL.md](docs/EDITORIAL.md)입니다. AI 페르소나 패널
+  (`.claude/agents/`)과 작성/검토/보강 스킬(`/write-article`,
+  `/review-article`, `/enrich-article`)도 같은 기준으로 동작합니다.
 
 ## PR 절차
 
