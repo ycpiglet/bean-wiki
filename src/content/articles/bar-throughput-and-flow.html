@@ -1,0 +1,33 @@
+---
+slug: bar-throughput-and-flow
+title: 바 처리량과 동선: 주문량이 폭증할 때 흐름을 지키는 설계
+summary: 주문량 변화가 커피 품질을 흔들리지 않게 하려면 처리량, 대기시간, 병목 구간을 같은 축으로 보고 동선과 작업 배치를 조정해야 합니다.
+category: 카페 운영과 품질
+level: 중급
+readingTime: 10분
+updatedAt: 2026. 07. 27.
+accent: sand
+fact: 품질 흔들림의 상당수는 추출 실패보다 동선 병목과 큐 붕괴에서 먼저 발생합니다.
+related: ["daily-cafe-routine","espresso-machines-grinders","espresso-basics","sensory-brewing-grammar"]
+tags: ["처리량","동선","바 운영","대기시간","병목"]
+history: [{"date":"2026. 07. 27.","note":"바 처리량/흐름 운영 가이드 작성"}]
+---
+<h2 id="throughput-definition">처리량은 양보다 안정성의 문제</h2>
+<p>바에서 처리량은 “분당 몇 잔 만들었는가”보다 “잦은 주문에서도 동일한 맛을 유지할 수 있었는가”가 핵심입니다. 동선이 깨지면 샷 품질이 먼저 흔들리고, 그다음 주문 대기시간이 증가합니다.</p>
+<p>따라서 운영 개선은 장비 추가보다 먼저 주문 흐름 지도화에서 시작합니다.</p>
+<h2 id="bottleneck-map">병목 지점 찾기</h2>
+<ol><li>에스프레소 구간: 도즈/그라인딩/샷 생성</li><li>우유 음료 구간: 스티밍·붓기</li><li>서빙 구간: 컵 전달·결제·교차 확인</li></ol>
+<p>3개 구간 중 하나의 타임이 튈 때 전체 체감 대기시간은 비선형으로 늘어납니다. 특히 스티밍 구간 지연이 에스프레소 구간에도 되돌려 전파되는 형태가 자주 보입니다.</p>
+<h2 id="flow-metrics">기본 지표 3개</h2>
+<table><thead><tr><th>지표</th><th>기본 정의</th><th>의미</th></tr><tr><td>입구 유입률</td><td>시간당 주문 수</td><td>처리량 요구치를 결정</td></tr><tr><td>평균 처리시간</td><td>단일 주문 완료까지 시간</td><td>작업 분량이 누적되는 구간 탐지</td></tr><tr><td>대기시간 분산</td><td>주문별 대기 편차</td><td>서비스 안정성의 직접 지표</td></tr></tbody></table>
+<h2 id="zoning">동선 설계: 구간 분리</h2>
+<p>동일 작업대에 모든 동작을 몰아넣으면 실수 확률이 커집니다. 주문 유형을 분리해 선반·작업대의 역할을 고정하면 동시 작업 오차가 줄어듭니다.</p>
+<ul><li>에스프레소 전용 구간: 추출·바스켓 세팅·샷 감시</li><li>우유 음료 전용 구간: 스티밍·붓기·위생 점검</li><li>서빙 전환 구간: 주문 라벨 확인 후 즉시 전달</li></ul>
+<p>구간 분리는 단순 배치 변경보다, 각자 자신이 다음 동작을 기다리는 시간을 줄이는 전략입니다.</p>
+<h2 id="flow-tuning">작업자 조율 루틴</h2>
+<ol><li>피크 시작 20분 전에 대기 큐 상태와 샷 큐를 점검</li><li>복잡 음료 비율이 높을수록 한 번에 1~2개 주문씩 락킹</li><li>동일 바리에이션(예: 우유 기반)은 한 번에 묶어 처리</li><li>회전율 하락 시 스티밍 대기열만 1개로 제한</li></ol>
+<h2 id="training">실습: 피크 시뮬레이션</h2>
+<p>한 번의 실전만으로는 병목을 보기가 어렵습니다. 30분 모의 피크를 운영해 보세요.</p>
+<ol><li>10분 단위로 주문 시나리오를 고정(에스프레소/우유/디카페인 비율 유지)</li><li>각 주문의 완료 시간과 누적 대기시간을 기록</li><li>대기분산이 가장 큰 구간에서 동선 규칙을 하나 추가</li><li>재측정을 통해 처리량이 개선되는지 비교</li></ol>
+<h2 id="references">참고 자료</h2>
+<ul><li><a data-wikilink="daily-cafe-routine" href="/wiki/daily-cafe-routine">바 일일 루틴</a></li><li><a data-wikilink="cafe-quality-system" href="/wiki/cafe-quality-system">카페 품질 시스템</a></li><li><a data-wikilink="espresso-machines-grinders" href="/wiki/espresso-machines-grinders">장비 기반 작업 효율</a></li></ul>

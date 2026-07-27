@@ -1,0 +1,30 @@
+---
+slug: brew-profile-observables
+title: 브루 프로파일에서 관측값을 읽는 법
+summary: 추출 중 눈으로 잡히는 지표를 기록 항목으로 바꿔 실험 재현성과 대화의 공유성을 확보하는 방법을 정리합니다.
+category: 추출
+level: 중급
+readingTime: 8분
+updatedAt: 2026. 07. 27.
+accent: blue
+fact: 브루 프로파일은 정답값이 아니라, 반복 가능한지 판단하기 위한 관측값의 집합입니다.
+related: ["extraction-basics","thermal-time-agitation-control","pour-over-rhythm-control"]
+tags: ["브루데이터","관측값","추출로그","품질관리","실험"]
+history: [{"date":"2026. 07. 27.","note":"브루 관측값 프레임 작성"}]
+---
+<h2 id="why-observables">관측값이 중요한 이유</h2>
+<p>같은 수치만으로는 같은 결과가 보장되지 않습니다. 관측값은 그 시간에 있었던 변수를 함께 설명해주므로, 기록의 공유 비용을 낮춰줍니다.</p>
+<p>팀 단위에서는 “개인 감각”보다 “관측 템플릿”이 빠른 학습을 만듭니다.</p>
+<h2 id="minimum-metrics">최소 측정 항목</h2>
+<ul><li>도즈, 물량, 추출시간</li><li>붓기 분할 횟수와 간격(필터 추출)</li><li>기온/수온, 원두 상태(표기)</li><li>맛 메모 4항목: 산미, 단맛, 바디, 쓴맛</li></ul>
+<h2 id="template">운영 템플릿</h2>
+<table><thead><tr><th>항목</th><th>기록 형식</th><th>목적</th></tr><tr><td>추출 유량</td><td>초당 g 또는 구간별 누적 g</td><td>초기 과다 유입 탐지</td></tr><tr><td>온도</td><td>최초/중반/마감</td><td>열 편차 관리</td></tr><tr><td>관능</td><td>산미/단맛/바디/잔향</td><td>재현성 판단</td></tr></tbody></table>
+<h2 id="process">기록 루프</h2>
+<p>관측값을 남긴 뒤의 판단은 아래 루프로 고정합니다.</p>
+<ol><li>차이의 크기 확인: 편차가 통계적으로 반복되는지</li><li>차이의 방향 확인: 값이 늘거나 줄 때 맛 방향이 일치하는지</li><li>차이의 원인 연결: 분쇄·물·교반·온도 중 어떤 축인지</li></ol>
+<h2 id="common-errors">흔한 오해</h2>
+<p>관측값만 많다고 분석이 쉬워지는 것은 아닙니다. 핵심은 최소 5개를 꾸준히 정확히 기록해 추세를 보는 것입니다.</p>
+<h2 id="self-check">자기 점검 퀴즈</h2>
+<ul><li>같은 레시피로 3회 재현해도 관측값 분산이 일정하게 줄었는가?</li><li>변경한 변수가 문서화되어 있는가?</li><li>관측값이 2개 항목에서 함께 바뀌었는지 설명할 수 있는가?</li></ul>
+<h2 id="reference">참고 자료</h2>
+<ul><li><a data-wikilink="water-for-coffee" href="/wiki/water-for-coffee">물과 온도 기초</a></li><li><a data-wikilink="brew-ratio-practice" href="/wiki/brew-ratio-practice">비율 실험</a></li><li><a data-wikilink="home-brew-recipes" href="/wiki/home-brew-recipes">레시피 운영 예시</a></li></ul>
