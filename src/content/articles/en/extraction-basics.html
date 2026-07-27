@@ -1,24 +1,44 @@
 ---
 slug: extraction-basics
-title: Extraction Basics: Concentration and Extraction Yield
-summary: Understand the difference between strong coffee and fully extracted coffee, and learn systematic criteria for adjusting recipes.
+title: 추출의 기본: 농도와 수율
+summary: 농도와 수율의 개념을 분리한 뒤, 레시피 변경 시 한 번에 하나의 변수를 바꾸는 운영 루틴을 설계합니다.
 category: 추출
 level: 입문
-readingTime: 8 min
-updatedAt: 2026. 07. 20.
+readingTime: 12분
+updatedAt: 2026. 07. 27.
 accent: blue
-fact: Concentration represents how strong the liquid in the cup is, while extraction yield indicates how much material we extracted from the beans.
-related: ["water-for-coffee","coffee-cherry-to-bean","cupping-basics"]
-tags: ["추출","수율","레시피","기초"]
-history: [{"date":"2026. 07. 20.","note":"First draft on concentration and yield basics"}]
+fact: 농도(TDS)와 추출 수율(EY)은 다른 값이며, 둘을 같이 보아야 진한 맛과 추출 깊이의 차이를 구분할 수 있습니다.
+related: ["water-for-coffee","coffee-cherry-to-bean","brew-ratio-practice","espresso-basics"]
+tags: ["추출","농도","수율","레시피","초보자"]
+history: [{"date":"2026. 07. 27.","note":"단순 초안에서 농도/수율 구분·실험 루틴·퀴즈·오해 보강으로 보강"}]
 ---
-<h2 id="two-measures">Concentration and Extraction Yield Are Different Values</h2>
-<p>Concentration is the percentage of dissolved solids from coffee in the finished beverage. Using the same beans, you can make stronger coffee by using less water.</p>
-<p>Extraction yield is the percentage of coffee bean mass that dissolved in water and transferred into the beverage. Because strength alone cannot tell us whether the beans have been sufficiently extracted, we must examine both values together.</p>
-<p>The industry commonly references an extraction yield of approximately 18–22% and a concentration (TDS) of about 1.15–1.45% for filter coffee as a balanced starting point. However, this range is not an absolute standard—it is a reference line to be adjusted according to the beans, roast level, and personal preference.</p>
-<h2 id="variables">Key Variables That Drive Extraction</h2>
-<p>As grind size becomes finer, the surface area in contact with water increases, and flow resistance also increases. Generally, extraction accelerates, but variables that harm uniformity—such as channeling and fines migration—can also increase.</p>
-<ul><li>Grind size and particle distribution</li><li>Ratio of coffee to water</li><li>Water temperature and mineral composition</li><li>Contact time and agitation</li><li>Uniformity of water flow through the coffee bed</li></ul>
-<h2 id="dial-in">Change One Variable at a Time</h2>
-<p>When adjusting a recipe, it is easiest to reproduce results by first setting your target beverage amount and ratio, then matching the time using grind size. Recording the flavor and changing only one variable at a time allows you to compare cause and effect.</p>
-<p>Do not conclude over- or under-extraction based on a single word like sourness or bitterness. It is important to evaluate clarity of aroma, sweetness, mouthfeel, aftertaste, and overall balance together.</p>
+<h2 id="define-core">농도와 수율을 같은 물음으로 보지 않습니다</h2>
+<p>농도는 마시는 잔에서 물에 녹은 고형분 비율을 말합니다. 수율은 투입한 원두 중 얼만큼이 물로 이동했는지의 비율입니다. 두 값은 관련이 있지만 교집합이 아닙니다.</p>
+<p>따라서 “진하다”는 말이 곧 “많이 추출됐다”를 뜻하지는 않습니다. 같은 농도라도 수율이 낮을 수 있고, 수율이 높아도 잔의 인상이 과할 수 있습니다.</p>
+
+<h2 id="variables">추출을 움직이는 5개 변수</h2>
+<ul><li>분쇄: 표면적과 유동 저항 조절</li><li>비율: 음료에서 물의 희석 단계</li><li>온도: 용해 반응 속도·감각 체감</li><li>시간: 접촉 구간 크기</li><li>교반/분포: 유로 균일성과 채널링 민감도</li></ul>
+<p>변수가 하나라도 바뀌면 결과의 방향이 바뀌므로, 변경 시점과 범위를 기록으로 고정해야 다시 해석이 가능합니다.</p>
+
+<h2 id="dial-in-cycle">한 번에 하나씩 바꾸는 다이얼인 루프</h2>
+<p>초보자 실수의 대부분은 다섯 변수를 동시에 건드리는 데서 시작합니다. 실제 운영은 더 단순한 루프로 가야 합니다.</p>
+<ol><li>목표 컵 특성을 한 문장으로 기록</li><li>분쇄·비율·시간·온도 중 하나만 변경</li><li>동일 조건에서 2~3회 반복</li><li>변경 전후 편차를 비교 후 다음 값 결정</li></ol>
+
+<h2 id="interpretation">지표 해석의 함정</h2>
+<table><thead><tr><th>관측</th><th>가능한 원인</th><th>우선 확인 항목</th></tr><tr><td>산미가 예민</td><td>분쇄 미세/시간 과다 또는 로스트·추출 온도</td><td>한 변수만 고정해 재실험</td></tr><tr><td>쓴맛이 지속</td><td>추출 깊이 과다 가능성</td><td>시간·비율 동시 비교</td></tr><tr><td>바디가 얇음</td><td>저온·짧은 접촉·수율 저하</td><td>물 비율·시간의 균형 확인</td></tr></tbody></table>
+<p>표기 쉬운 숫자보다 “누가 바뀌었는가”를 먼저 정리해야 해석 오류를 줄일 수 있습니다.</p>
+
+<h2 id="common-errors">흔한 오해</h2>
+<ul><li>과소 추출/과다 추출은 단어만 보고 구분한다.<br/>
+  <p>분류 라벨보다 산미·단맛·바디의 조합과 시간·분쇄를 함께 확인해야 합니다.</p></li><li>좋은 레시피는 딱 하나의 숫자로 고정한다.<br/>
+  <p>재료가 바뀌면 숫자도 이동하므로, 재현성 기준점을 먼저 잡아야 합니다.</p></li></ul>
+
+<h2 id="practice">실습: 한 주간 추출 기록 템플릿</h2>
+<p>동일 원두 기준으로 5일 실습 루틴을 실행합니다.</p>
+<ol><li>일일 1회 동일 레시피로 3잔 추출</li><li>농도 메모(강도), 체감 단어(산미/단맛/쓴맛), 추출 시간 기록</li><li>주말에 변수별 변경 효과를 한 장으로 정리</li><li>최대 편차가 적은 설정을 다음 주 시작 기준으로 둡니다</li></ol>
+
+<h2 id="quiz">자기 점검</h2>
+<ul><li>농도와 수율의 차이를 실제 용어로 구분하면?</li><li>한 번에 두 변수를 바꿨을 때 어떤 문제가 생기나요?</li><li>과소/과다 추출 판단 전에 먼저 확인할 관측값은?</li><li>다음 실험에서 목표값을 잡기 전에 고정해야 하는 항목은?</li></ul>
+
+<h2 id="references">참고 자료</h2>
+<ul><li><a data-wikilink="brew-ratio-practice" href="/wiki/brew-ratio-practice">원두와 물 비율 실험</a></li><li><a data-wikilink="thermal-time-agitation-control" href="/wiki/thermal-time-agitation-control">온도·시간·교반 분리 실험</a></li><li><a href="https://www.sca.coffee/research/coffee-standards">SCA, 추출 가이드</a></li><li><a href="https://worldcoffeeresearch.org/resources">World Coffee Research, 추출 지표 자료</a></li><li><a href="https://www.ico.org/coffee-quality">ICO, 품질 관리 가이드</a></li></ul>
