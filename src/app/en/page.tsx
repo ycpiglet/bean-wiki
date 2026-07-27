@@ -91,9 +91,19 @@ export default function EnHome() {
           <em>WIKI</em>
         </Link>
         <nav aria-label="Primary">
-          <Link href="/en/wiki">Articles</Link>
-          <Link href="/en/glossary">Glossary</Link>
-          <a href="#contribute">Contribute</a>
+          <Link href="/en/wiki" className="nav-accent-olive">Articles</Link>
+          <Link href="/en/glossary" className="nav-accent-berry">Glossary</Link>
+          <a href="#contribute" className="nav-accent-copper">Contribute</a>
+          <Link href="/design/colors" className="brand-palette-tab">
+            <span className="brand-palette-dots" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+            </span>
+            PALETTE · BEAN WIKI CITY
+          </Link>
         </nav>
         <div className="header-tools">
           <HeaderSearchButton locale="en" />

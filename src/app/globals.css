@@ -197,7 +197,7 @@ svg {
   stroke-width: 2;
 }
 
-.site-header nav {
+.site-header > nav {
   display: flex;
   align-items: center;
   gap: 34px;
@@ -207,13 +207,13 @@ svg {
   font-size: 14px;
 }
 
-.site-header nav a,
+.site-header > nav a,
 .header-search,
 .back-link {
   transition: color 160ms ease;
 }
 
-.site-header nav a:hover,
+.site-header > nav a:hover,
 .header-search:hover,
 .back-link:hover {
   color: var(--brand);
@@ -3000,7 +3000,7 @@ input:focus-visible,
 
 @media (max-width: 980px) {
   .browse-grid { grid-template-columns: repeat(2, 1fr); }
-  .site-header nav { display: none; }
+  .site-header > nav { display: none; }
   .mobile-nav { display: block; }
   .hero { grid-template-columns: minmax(0, 1fr); min-height: auto; padding-top: 62px; }
   .hero-visual { width: 420px; max-width: 100%; margin: 0 auto; }
@@ -3130,36 +3130,6 @@ input:focus-visible,
   background: color-mix(in oklab, var(--crema) 45%, transparent);
 }
 
-/* ---- "알고 계셨나요?" 트리비아 (홈) ---- */
-.trivia-section {
-  padding-block: 96px 40px;
-}
-
-.trivia-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 16px;
-  margin-top: 28px;
-}
-
-.trivia-card {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  padding: 22px 24px;
-  border: 1px solid var(--line);
-  border-top: 3px solid var(--brand);
-  border-radius: 5px;
-  background: color-mix(in oklab, var(--brand) 5%, var(--cream));
-}
-
-.trivia-card.accent-olive { border-top-color: var(--olive); background: color-mix(in oklab, var(--olive) 6%, var(--cream)); }
-.trivia-card.accent-sage { border-top-color: var(--sage); background: color-mix(in oklab, var(--sage) 6%, var(--cream)); }
-.trivia-card.accent-copper { border-top-color: var(--copper); background: color-mix(in oklab, var(--copper) 6%, var(--cream)); }
-.trivia-card.accent-blue { border-top-color: var(--blue); background: color-mix(in oklab, var(--blue) 6%, var(--cream)); }
-.trivia-card.accent-berry { border-top-color: var(--berry); background: color-mix(in oklab, var(--berry) 6%, var(--cream)); }
-.trivia-card.accent-sand { border-top-color: var(--sand); background: color-mix(in oklab, var(--sand) 6%, var(--cream)); }
-
 .trivia-label {
   color: var(--muted);
   font-family: var(--font-mono);
@@ -3167,57 +3137,6 @@ input:focus-visible,
   font-weight: 650;
   letter-spacing: 0.12em;
 }
-
-.trivia-card strong {
-  font-size: 17px;
-  font-weight: 640;
-  line-height: 1.45;
-  word-break: keep-all;
-}
-
-.trivia-card p {
-  margin: 0;
-  color: var(--prose);
-  font-size: 14px;
-  line-height: 1.75;
-  word-break: keep-all;
-}
-
-.trivia-card a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: auto;
-  padding-top: 6px;
-  color: var(--brand);
-  font-size: 13px;
-  font-weight: 620;
-}
-
-.trivia-card a svg {
-  width: 15px;
-  height: 15px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.7;
-}
-
-.trivia-cta {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-  margin-top: 22px;
-  padding: 28px 32px;
-  border-radius: 6px;
-  background: linear-gradient(145deg, #4e3524, #2b1d13);
-  color: #f6efe3;
-}
-
-.trivia-cta .trivia-label { color: #d3ac79; }
-.trivia-cta strong { display: block; margin-top: 6px; font-size: 21px; font-weight: 640; }
-.trivia-cta p { margin: 6px 0 0; color: #e3d2b8; font-size: 14px; }
 
 /* ---- 커피 퀴즈 (/quiz) ---- */
 .quiz-page {
@@ -3412,8 +3331,6 @@ input:focus-visible,
 .quiz-result p { margin: 0 0 22px; color: var(--prose); font-size: 15px; }
 
 @media (max-width: 680px) {
-  .trivia-section { padding-block: 64px 32px; }
-  .trivia-cta { padding: 22px 20px; }
   .quiz-card, .quiz-result { padding: 20px 18px; }
   .quiz-question { font-size: 19px; }
 }
@@ -3426,7 +3343,7 @@ body {
   font-size: 16px;
 }
 
-.site-header nav {
+.site-header > nav {
   gap: 22px;
   margin-right: 28px;
   font-size: 15px;
@@ -3478,8 +3395,6 @@ body {
 .topic-card p,
 .lead-article-copy p,
 .path-card p,
-.trivia-card p,
-.trivia-cta p,
 .browse-card p,
 .glossary-def,
 .glossary-body {
@@ -5261,5 +5176,856 @@ body {
 
   .curriculum-list > li > span {
     font-size: 23px;
+  }
+}
+
+/* ==========================================================================
+   Bean Wiki signature colors + interactive home discovery (2026-07-27)
+   ========================================================================== */
+
+/* A persistent seed-to-cup spectrum makes the lifecycle palette visible on
+   every page without changing the stable header component contract. */
+.site-header,
+.article-header {
+  position: relative;
+}
+
+.site-header::after,
+.article-header::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  z-index: 1;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--cherry) 0 12%,
+    var(--cherry-deep) 12% 20%,
+    var(--green-bean) 20% 34%,
+    var(--parchment) 34% 45%,
+    var(--honey) 45% 57%,
+    var(--roast-light) 57% 69%,
+    var(--roast-medium) 69% 81%,
+    var(--roast-dark) 81% 91%,
+    var(--crema) 91% 100%
+  );
+}
+
+.site-header > nav {
+  gap: 15px;
+  margin-right: 20px;
+}
+
+.site-header > nav a[class*="nav-accent-"] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-height: 42px;
+}
+
+.site-header > nav a[class*="nav-accent-"]::before {
+  content: "";
+  width: 6px;
+  height: 6px;
+  flex: none;
+  border-radius: 999px;
+  background: var(--nav-accent, var(--brand));
+  box-shadow: 0 0 0 3px color-mix(in oklab, var(--nav-accent, var(--brand)) 12%, transparent);
+}
+
+.site-header > nav a[class*="nav-accent-"]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 2px;
+  background: var(--nav-accent, var(--brand));
+  transform: scaleX(0.24);
+  transform-origin: left;
+  transition: transform 180ms ease;
+}
+
+.site-header > nav a[class*="nav-accent-"]:hover::after,
+.site-header > nav a[class*="nav-accent-"]:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.site-header > nav .nav-accent-olive { --nav-accent: var(--olive); }
+.site-header > nav .nav-accent-sage { --nav-accent: var(--sage); }
+.site-header > nav .nav-accent-copper { --nav-accent: var(--copper); }
+.site-header > nav .nav-accent-blue { --nav-accent: var(--blue); }
+.site-header > nav .nav-accent-berry { --nav-accent: var(--berry); }
+.site-header > nav .nav-accent-sand { --nav-accent: var(--sand); }
+
+.site-header > nav .brand-palette-tab,
+.mobile-palette-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.site-header > nav .brand-palette-tab {
+  min-height: 36px;
+  padding: 7px 10px;
+  border: 1px solid color-mix(in oklab, var(--brand) 38%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--brand) 7%, var(--cream));
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.site-header > nav .brand-palette-tab:hover {
+  border-color: var(--brand);
+  color: var(--brand);
+}
+
+.brand-palette-dots {
+  display: inline-flex;
+  overflow: hidden;
+  width: 37px;
+  height: 9px;
+  flex: none;
+  border-radius: 999px;
+}
+
+.brand-palette-dots i {
+  display: block;
+  width: 20%;
+  height: 100%;
+}
+
+.brand-palette-dots i:nth-child(1) { background: var(--cherry); }
+.brand-palette-dots i:nth-child(2) { background: var(--green-bean); }
+.brand-palette-dots i:nth-child(3) { background: var(--honey); }
+.brand-palette-dots i:nth-child(4) { background: var(--roast-medium); }
+.brand-palette-dots i:nth-child(5) { background: var(--crema); }
+
+.mobile-drawer .mobile-palette-link {
+  background: color-mix(in oklab, var(--brand) 7%, var(--paper));
+  font-weight: 700;
+}
+
+/* Slow vertical dial: the window stays fixed while only its current message
+   enters, avoiding layout shift in the first viewport. */
+.intro-strip-inner {
+  min-height: 104px;
+  grid-template-columns: minmax(142px, auto) minmax(0, 1fr) auto;
+  gap: 32px;
+}
+
+.knowledge-dial-kicker {
+  color: #d9b586;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  white-space: nowrap;
+}
+
+.knowledge-dial-window {
+  min-width: 0;
+  min-height: 66px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.knowledge-dial-item {
+  width: 100%;
+  display: grid;
+  grid-template-columns: minmax(240px, 0.82fr) minmax(280px, 1.18fr);
+  gap: 28px;
+  align-items: center;
+  animation: knowledge-dial-in 520ms cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.knowledge-dial-item strong {
+  color: #f6efe3;
+  font-size: 19px;
+  font-weight: 720;
+  line-height: 1.45;
+}
+
+.knowledge-dial-item p {
+  color: #d7cbb8;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.knowledge-dial-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #bcae99;
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+.knowledge-dial-controls button,
+.home-fact-arrows button,
+.home-fact-footer button {
+  min-height: 36px;
+  padding: 7px 11px;
+  border: 1px solid rgba(246, 239, 227, 0.28);
+  border-radius: 999px;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.knowledge-dial-controls button:hover,
+.knowledge-dial-controls button:focus-visible {
+  border-color: #d9b586;
+  color: #f6efe3;
+}
+
+.knowledge-dial-controls button[aria-label] {
+  width: 36px;
+  padding-inline: 0;
+}
+
+.motion-status {
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+@keyframes knowledge-dial-in {
+  from {
+    opacity: 0;
+    transform: translateY(70%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* One memorable fact + one immediately answerable question, intentionally
+   placed before the account-specific learning journey. */
+.home-discovery {
+  padding-block: clamp(72px, 8vw, 108px);
+}
+
+.home-discovery-heading {
+  margin-bottom: 34px;
+}
+
+.home-discovery-heading > div {
+  align-items: center;
+}
+
+.home-discovery-heading .section-index {
+  padding: 6px 9px;
+  border: 1px solid color-mix(in oklab, var(--cherry) 38%, var(--line));
+  border-radius: 999px;
+  background: color-mix(in oklab, var(--cherry) 8%, transparent);
+  color: var(--cherry);
+}
+
+.home-discovery-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: 20px;
+  align-items: stretch;
+}
+
+.home-fact,
+.home-daily-quiz {
+  min-width: 0;
+  min-height: 530px;
+  border-radius: 12px;
+}
+
+.home-fact {
+  --fact-accent: var(--brand);
+  --fact-ink: color-mix(in oklab, var(--fact-accent) 62%, var(--ink));
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid color-mix(in oklab, var(--fact-accent) 38%, var(--line));
+  border-top: 5px solid var(--fact-accent);
+  background:
+    radial-gradient(circle at 92% 8%, color-mix(in oklab, var(--fact-accent) 17%, transparent), transparent 34%),
+    color-mix(in oklab, var(--fact-accent) 6%, var(--cream));
+}
+
+.home-fact.accent-olive { --fact-accent: var(--olive); }
+.home-fact.accent-sage { --fact-accent: var(--sage); }
+.home-fact.accent-copper { --fact-accent: var(--copper); }
+.home-fact.accent-blue { --fact-accent: var(--blue); }
+.home-fact.accent-berry { --fact-accent: var(--berry); }
+.home-fact.accent-sand { --fact-accent: var(--sand); }
+
+.home-fact-head,
+.home-fact-footer,
+.home-quiz-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+
+.home-fact-head .trivia-label {
+  color: var(--fact-ink);
+}
+
+.home-fact-arrows {
+  display: flex;
+  gap: 7px;
+}
+
+.home-fact-arrows button,
+.home-fact-footer button {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.home-fact-arrows button {
+  width: 38px;
+  padding-inline: 0;
+  font-size: 17px;
+}
+
+.home-fact-arrows button:hover:not(:disabled),
+.home-fact-footer button:hover {
+  border-color: var(--fact-accent);
+  color: var(--fact-ink);
+}
+
+.home-fact-arrows button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.home-fact-viewport {
+  position: relative;
+  flex: 1;
+  min-height: 350px;
+  overflow: hidden;
+}
+
+.home-fact-panel {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-block: clamp(42px, 5vw, 68px) 28px;
+}
+
+.home-fact-panel.is-current {
+  position: relative;
+}
+
+.home-fact-panel.is-exiting {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.home-fact-panel.is-entering.is-forward {
+  animation: fact-enter-forward 500ms cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.home-fact-panel.is-exiting.is-forward {
+  animation: fact-exit-forward 500ms cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.home-fact-panel.is-entering.is-backward {
+  animation: fact-enter-backward 500ms cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.home-fact-panel.is-exiting.is-backward {
+  animation: fact-exit-backward 500ms cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+.home-fact-panel strong {
+  max-width: 520px;
+  font-size: clamp(28px, 3.2vw, 44px);
+  font-weight: 730;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  word-break: keep-all;
+}
+
+.home-fact-panel p {
+  max-width: 590px;
+  margin: 24px 0 0;
+  color: var(--prose);
+  font-size: 17px;
+  line-height: 1.82;
+  word-break: keep-all;
+}
+
+.home-fact-panel a {
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 24px;
+  color: var(--fact-ink);
+  font-size: 15px;
+  font-weight: 720;
+}
+
+.home-fact-footer {
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 13px;
+}
+
+@keyframes fact-enter-forward {
+  from { opacity: 0; transform: translateX(58px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fact-exit-forward {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(-58px); }
+}
+
+@keyframes fact-enter-backward {
+  from { opacity: 0; transform: translateX(-58px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes fact-exit-backward {
+  from { opacity: 1; transform: translateX(0); }
+  to { opacity: 0; transform: translateX(58px); }
+}
+
+.home-daily-quiz {
+  display: flex;
+  flex-direction: column;
+  padding: clamp(24px, 3vw, 36px);
+  background:
+    radial-gradient(circle at 96% 4%, rgba(201, 155, 95, 0.2), transparent 30%),
+    linear-gradient(145deg, #4e3524, #2b1d13);
+  color: #f6efe3;
+  box-shadow: 0 22px 58px rgba(43, 29, 19, 0.18);
+}
+
+.home-quiz-head {
+  align-items: flex-start;
+}
+
+.home-quiz-head > div > strong {
+  display: block;
+  margin-top: 7px;
+  font-size: 20px;
+}
+
+.home-quiz-head .trivia-label {
+  color: #d9b586;
+}
+
+.home-quiz-head .quiz-level {
+  flex: none;
+  color: #f6efe3;
+}
+
+.home-daily-quiz h3 {
+  margin: 32px 0 24px;
+  font-size: clamp(23px, 2.5vw, 31px);
+  font-weight: 710;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+.home-quiz-choices {
+  display: grid;
+  gap: 9px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-quiz-choices button {
+  width: 100%;
+  min-height: 54px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 13px 15px;
+  border: 1px solid rgba(246, 239, 227, 0.2);
+  border-radius: 7px;
+  background: rgba(246, 239, 227, 0.055);
+  color: #f6efe3;
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.6;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 160ms ease, background 160ms ease;
+}
+
+.home-quiz-choices button:hover:not(:disabled),
+.home-quiz-choices button:focus-visible {
+  border-color: #d9b586;
+  background: rgba(246, 239, 227, 0.11);
+}
+
+.home-quiz-choices button:disabled {
+  cursor: default;
+}
+
+.home-quiz-choices button > span {
+  width: 24px;
+  flex: none;
+  color: #d9b586;
+  font-family: var(--font-mono);
+  font-weight: 740;
+}
+
+.home-quiz-choices button.is-correct {
+  border-color: #a6b673;
+  background: rgba(166, 182, 115, 0.18);
+}
+
+.home-quiz-choices button.is-correct > span {
+  color: #c2d48e;
+}
+
+.home-quiz-choices button.is-wrong {
+  border-color: #cd7a6e;
+  background: rgba(205, 122, 110, 0.16);
+}
+
+.home-quiz-choices button.is-wrong > span {
+  color: #e79a8f;
+}
+
+.home-quiz-feedback {
+  margin-top: 18px;
+  padding: 16px 18px;
+  border-left: 3px solid #d9b586;
+  border-radius: 6px;
+  background: rgba(246, 239, 227, 0.075);
+}
+
+.home-quiz-feedback strong {
+  display: block;
+  font-size: 16px;
+}
+
+.home-quiz-feedback p {
+  margin: 8px 0 10px;
+  color: #e3d8c7;
+  font-size: 15px;
+  line-height: 1.72;
+}
+
+.home-quiz-feedback a {
+  color: #d9b586;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.home-quiz-more {
+  width: fit-content;
+  margin-top: auto;
+  padding-top: 24px;
+  color: #d9b586;
+  font-size: 15px;
+  font-weight: 720;
+}
+
+/* The same dashboard stays reusable on quiz/account pages. Only callers that
+   opt into lockWhenSignedOut receive this account gate. */
+.learning-panel {
+  position: relative;
+  display: block;
+  overflow: hidden;
+}
+
+.learning-panel-content {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(320px, 0.75fr);
+  gap: 34px 54px;
+  transition: filter 220ms ease, opacity 220ms ease, transform 220ms ease;
+}
+
+.learning-panel.is-locked {
+  min-height: 430px;
+}
+
+.learning-panel.is-locked .learning-panel-content {
+  opacity: 0.3;
+  filter: blur(5px) saturate(0.68);
+  transform: scale(0.995);
+  pointer-events: none;
+  user-select: none;
+}
+
+.learning-login-gate {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 32px;
+  background: color-mix(in oklab, var(--cream) 66%, transparent);
+  text-align: center;
+  backdrop-filter: blur(2px);
+}
+
+.learning-lock-icon {
+  width: 50px;
+  height: 50px;
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  border: 1px solid color-mix(in oklab, var(--brand) 42%, var(--line));
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--brand) 9%, var(--cream));
+  color: var(--brand);
+}
+
+.learning-lock-icon svg {
+  width: 23px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.learning-login-gate .trivia-label {
+  color: var(--brand);
+}
+
+.learning-login-gate > strong {
+  margin-top: 11px;
+  font-size: clamp(25px, 3vw, 34px);
+  font-weight: 740;
+  letter-spacing: -0.03em;
+}
+
+.learning-login-gate > p {
+  max-width: 540px;
+  margin: 13px 0 22px;
+  color: var(--prose);
+  font-size: 16px;
+  line-height: 1.72;
+}
+
+.learning-login-gate > a {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  padding: 11px 18px;
+  border-radius: 5px;
+  background: var(--brand);
+  color: var(--paper);
+  font-size: 16px;
+  font-weight: 720;
+}
+
+.quiz-page .learning-panel-content {
+  grid-template-columns: 1fr;
+}
+
+/* Brand names are the visual headline; tokens and values stay as engineering
+   metadata below them. */
+.palette-note,
+.palette-desc {
+  font-size: 16px;
+}
+
+.palette-card {
+  padding: 16px;
+}
+
+.palette-chip {
+  height: 78px;
+}
+
+.palette-card strong {
+  font-size: 18px;
+  line-height: 1.45;
+}
+
+.palette-card p {
+  min-height: 48px;
+  margin-top: 8px;
+  color: var(--prose);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.palette-card code {
+  margin-top: 14px;
+  font-size: 13px;
+}
+
+.palette-card small {
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1120px) and (min-width: 981px) {
+  .site-header > nav {
+    gap: 10px;
+    margin-right: 14px;
+    font-size: 14px;
+  }
+
+  .site-header > nav .brand-palette-tab {
+    padding-inline: 8px;
+    font-size: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  .intro-strip-inner {
+    grid-template-columns: 126px minmax(0, 1fr) auto;
+    gap: 20px;
+  }
+
+  .knowledge-dial-item {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
+  .home-discovery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-fact,
+  .home-daily-quiz {
+    min-height: 0;
+  }
+
+  .home-fact-viewport {
+    min-height: 330px;
+  }
+
+  .learning-panel-content {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 680px) {
+  .intro-strip-inner {
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 12px 16px;
+    padding-block: 21px;
+  }
+
+  .knowledge-dial-kicker {
+    align-self: center;
+  }
+
+  .knowledge-dial-window {
+    min-height: 96px;
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .knowledge-dial-controls {
+    grid-column: 1;
+    grid-row: 3;
+    flex-wrap: wrap;
+  }
+
+  .knowledge-dial-item strong {
+    font-size: 18px;
+  }
+
+  .knowledge-dial-item p {
+    font-size: 14px;
+  }
+
+  .home-discovery {
+    padding-block: 64px;
+  }
+
+  .home-discovery-heading > div {
+    display: block;
+  }
+
+  .home-discovery-heading h2 {
+    margin-top: 12px;
+  }
+
+  .home-fact,
+  .home-daily-quiz {
+    padding: 22px 18px;
+    border-radius: 9px;
+  }
+
+  .home-fact-viewport {
+    min-height: 390px;
+  }
+
+  .home-fact-panel {
+    padding-block: 36px 24px;
+  }
+
+  .home-fact-panel strong {
+    font-size: 30px;
+  }
+
+  .home-fact-panel p {
+    font-size: 16px;
+  }
+
+  .home-quiz-head {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .home-daily-quiz h3 {
+    margin-top: 26px;
+    font-size: 24px;
+  }
+
+  .home-quiz-choices button {
+    font-size: 15px;
+  }
+
+  .learning-panel.is-locked {
+    min-height: 540px;
+  }
+
+  .learning-login-gate {
+    padding: 24px 18px;
+  }
+
+  .learning-login-gate > p {
+    font-size: 15px;
+  }
+
+  .palette-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .palette-card p {
+    min-height: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .knowledge-dial-item,
+  .home-fact-panel {
+    animation: none !important;
+  }
+
+  .home-fact-panel.is-exiting {
+    display: none;
+  }
+
+  .learning-panel-content {
+    transition: none;
   }
 }

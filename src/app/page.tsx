@@ -8,6 +8,8 @@ import { MobileNav } from "@/components/mobile-nav";
 import { Search } from "@/components/search";
 import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { HomeDiscovery } from "@/components/home-discovery";
+import { KnowledgeDial } from "@/components/knowledge-dial";
 import {
   categories,
   categoryArticleCount,
@@ -17,12 +19,17 @@ import {
 } from "@/lib/content";
 import { trivia } from "@/content/trivia";
 import { quiz } from "@/content/quiz";
+import { homeHighlights } from "@/content/home-highlights";
 import type { CategoryIcon } from "@/content/types";
 import { LearningDashboard } from "@/components/learning-dashboard";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/", languages: { ko: "/", en: "/en" } },
 };
+
+const homeQuizQuestions = quiz
+  .filter((question) => question.level === "입문")
+  .slice(0, 8);
 
 function ArrowIcon() {
   return (
@@ -85,12 +92,22 @@ export default function Home() {
           <em>WIKI</em>
         </Link>
         <nav aria-label="주 메뉴">
-          <Link href="/wiki">문서</Link>
-          <Link href="/discover">추천</Link>
-          <Link href="/learning-path">학습 경로</Link>
-          <Link href="/quiz">퀴즈</Link>
-          <Link href="/community">커뮤니티</Link>
-          <Link href="/suggestions">제안</Link>
+          <Link href="/wiki" className="nav-accent-olive">문서</Link>
+          <Link href="/discover" className="nav-accent-sage">추천</Link>
+          <Link href="/learning-path" className="nav-accent-copper">학습 경로</Link>
+          <Link href="/quiz" className="nav-accent-berry">퀴즈</Link>
+          <Link href="/community" className="nav-accent-blue">커뮤니티</Link>
+          <Link href="/suggestions" className="nav-accent-sand">제안</Link>
+          <Link href="/design/colors" className="brand-palette-tab">
+            <span className="brand-palette-dots" aria-hidden="true">
+              <i />
+              <i />
+              <i />
+              <i />
+              <i />
+            </span>
+            PALETTE · 빈위키 시티
+          </Link>
         </nav>
         <div className="header-tools">
           <HeaderSearchButton locale="ko" />
@@ -141,16 +158,12 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="intro-strip">
-        <div className="shell intro-strip-inner">
-          <span>지식은 연결될수록 선명해집니다.</span>
-          <p>
-            커피의 열두 영역을 따라가며 한 가지 맛 뒤에 숨은 원인과 결과를
-            발견해보세요.
-          </p>
-          <span className="scroll-mark">SCROLL ↓</span>
-        </div>
-      </section>
+      <KnowledgeDial items={homeHighlights} />
+
+      <HomeDiscovery
+        items={trivia}
+        questions={homeQuizQuestions}
+      />
 
       <section className="brand-story shell">
         <div className="brand-story-copy">
@@ -184,7 +197,7 @@ export default function Home() {
           </div>
           <p>방문, 문서 읽기, 퀴즈와 커뮤니티 기록으로 나만의 레벨을 키우세요.</p>
         </div>
-        <LearningDashboard />
+        <LearningDashboard lockWhenSignedOut />
       </section>
 
       <section className="section shell" id="topics">
@@ -304,45 +317,6 @@ export default function Home() {
             <strong>평가와 설계를 깊이 다룬다면</strong>
             <p>생두 물성, 열 전달, 센서리와 품질 관리로 확장합니다.</p>
             <span>전문 문서 {levelArticleCount("전문")}개 <ArrowIcon /></span>
-          </Link>
-        </div>
-      </section>
-
-      <section className="trivia-section shell" id="trivia">
-        <div className="section-heading">
-          <div>
-            <span className="section-index">04</span>
-            <h2>알고 계셨나요?</h2>
-          </div>
-          <p>
-            문서 본문에는 담기 어렵지만 기억에 남는 이야기들. 카드를 누르면 관련
-            문서로 이어집니다.
-          </p>
-        </div>
-
-        <div className="trivia-grid">
-          {trivia.map((item) => (
-            <article key={item.id} className={`trivia-card accent-${item.accent}`}>
-              <span className="trivia-label">{item.label}</span>
-              <strong>{item.title}</strong>
-              <p>{item.body}</p>
-              {item.related && (
-                <Link href={`/wiki/${item.related}`}>
-                  {item.relatedLabel} <ArrowIcon />
-                </Link>
-              )}
-            </article>
-          ))}
-        </div>
-
-        <div className="trivia-cta">
-          <div>
-            <span className="trivia-label">QUIZ</span>
-            <strong>얼마나 알고 있는지 확인해 보세요</strong>
-            <p>추출·로스팅·센서리 {quiz.length}문항. 해설마다 근거 문서로 이어집니다.</p>
-          </div>
-          <Link href="/quiz" className="primary-button">
-            커피 퀴즈 풀기 <ArrowIcon />
           </Link>
         </div>
       </section>

@@ -64,6 +64,16 @@ export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
                 <Link href="/quiz" onClick={close}>{t.quiz}</Link>
                 <Link href="/discover" onClick={close}>커피 추천</Link>
                 <Link href="/learning-path" onClick={close}>초보자 학습 경로</Link>
+                <Link href="/design/colors" className="mobile-palette-link" onClick={close}>
+                  <span className="brand-palette-dots" aria-hidden="true">
+                    <i />
+                    <i />
+                    <i />
+                    <i />
+                    <i />
+                  </span>
+                  브랜드 컬러 · 빈위키 시티
+                </Link>
                 <Link href="/resources" onClick={close}>{t.resources}</Link>
                 <Link href="/roadmap" onClick={close}>{t.roadmap}</Link>
                 <Link href="/community" onClick={close}>{t.community}</Link>
@@ -71,6 +81,18 @@ export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
                 <Link href="/account" onClick={close}>내 계정</Link>
                 <Link href="/contact" onClick={close}>{t.contact}</Link>
               </>
+            )}
+            {locale === "en" && (
+              <Link href="/design/colors" className="mobile-palette-link" onClick={close}>
+                <span className="brand-palette-dots" aria-hidden="true">
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                  <i />
+                </span>
+                Brand colors · Bean Wiki City
+              </Link>
             )}
             <span className="mobile-drawer-label">{t.topics}</span>
             {categories.map((category) => (
