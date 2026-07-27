@@ -12,3 +12,9 @@
   - `npm run check-content`
   - `npm run check:editorial`
 - 다음 조치: `npm run publish:content:live -- --message "docs(content): publish beginner operations and sensory batch"`로 웹 동기화 예정.
+
+- 신규 글 10편 작성 완료(카테고리 확장) 및 동기화 준비:
+  - `coffee-trade-history`, `coffeehouse-culture`, `coffee-ritual-map`, `supply-chain-transparency`,
+    `climate-risk-and-quality`, `farmer-income-basics`, `coffee-solvent-chemistry`,
+    `coffee-oxidation-pathway`, `caffeine-timing`, `cafe-shift-operations`
+  - 실행 작업: 각 기사 본문 확장(원인-개념-실습-오해-퀴즈-참고자료), `order.json` 신규 슬러그 반영, 상호 참조 정합성 점검
