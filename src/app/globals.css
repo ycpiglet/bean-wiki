@@ -1323,95 +1323,96 @@ a.figure-credit {
 
 /* ---- Color guide (/design/colors) ---- */
 .palette-page {
-  max-width: 980px;
-  padding-top: 42px;
-  padding-bottom: 90px;
+  max-width: 1080px;
+  padding-top: 52px;
+  padding-bottom: 110px;
 }
 
 .palette-page .wiki-title > p {
-  max-width: 640px;
+  max-width: 760px;
+  font-size: 18px;
+  line-height: 1.85;
 }
 
 .palette-note {
-  margin: 26px 0 8px;
-  padding: 14px 18px;
+  margin: 34px 0 8px;
+  padding: 20px 22px;
   border-left: 3px solid var(--brand);
-  border-radius: 3px;
+  border-radius: 7px;
   background: var(--cream);
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
+  color: var(--prose);
+  font-size: 16px;
+  line-height: 1.75;
 }
 
-.palette-note p { margin: 0; }
+.palette-note > span {
+  display: block;
+  color: var(--brand);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 720;
+  letter-spacing: 0.12em;
+}
+
+.palette-note p {
+  max-width: 720px;
+  margin: 8px 0 0;
+}
 
 .palette-group {
-  margin-top: 48px;
+  margin-top: 68px;
 }
 
 .palette-group h2 {
-  margin: 0 0 8px;
-  font-size: 24px;
-  font-weight: 640;
-  letter-spacing: -0.02em;
+  margin: 0 0 10px;
+  font-size: clamp(26px, 3vw, 34px);
+  font-weight: 680;
+  letter-spacing: -0.025em;
 }
 
 .palette-desc {
-  max-width: 640px;
-  margin: 0 0 20px;
+  max-width: 720px;
+  margin: 0 0 24px;
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 .palette-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
 }
 
 .palette-card {
-  padding: 14px;
+  min-height: 276px;
+  padding: 18px;
   border: 1px solid var(--line);
-  border-radius: 6px;
+  border-radius: 10px;
   background: var(--cream);
+  box-shadow: 0 12px 30px color-mix(in oklab, var(--ink) 5%, transparent);
 }
 
 .palette-chip {
   display: block;
-  height: 64px;
-  margin-bottom: 12px;
-  border-radius: 4px;
+  height: 92px;
+  margin-bottom: 18px;
+  border-radius: 7px;
   border: 1px solid var(--line);
 }
 
 .palette-card strong {
   display: block;
-  font-size: 14px;
-  font-weight: 650;
-}
-
-.palette-card code {
-  display: block;
-  margin-top: 3px;
-  color: var(--brand);
-  font-family: var(--font-mono);
-  font-size: 12px;
-}
-
-.palette-card small {
-  display: block;
-  margin-top: 3px;
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 19px;
+  font-weight: 700;
+  line-height: 1.45;
 }
 
 .palette-card p {
-  margin: 8px 0 0;
-  color: var(--muted);
-  font-size: 12.5px;
-  line-height: 1.6;
+  margin: 11px 0 0;
+  color: var(--prose);
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 /* ---- Article history (/wiki/[slug]/history) ---- */
@@ -6167,42 +6168,32 @@ body {
   grid-template-columns: 1fr;
 }
 
-/* Brand names are the visual headline; tokens and values stay as engineering
-   metadata below them. */
+/* Public palette cards tell a coffee story; implementation metadata stays in
+   docs/DESIGN.md and CSS tokens rather than the reader-facing catalog. */
 .palette-note,
 .palette-desc {
   font-size: 16px;
 }
 
 .palette-card {
-  padding: 16px;
+  padding: 18px;
 }
 
 .palette-chip {
-  height: 78px;
+  height: 92px;
 }
 
 .palette-card strong {
-  font-size: 18px;
+  font-size: 19px;
   line-height: 1.45;
 }
 
 .palette-card p {
-  min-height: 48px;
-  margin-top: 8px;
+  min-height: 104px;
+  margin-top: 11px;
   color: var(--prose);
-  font-size: 14px;
-  line-height: 1.65;
-}
-
-.palette-card code {
-  margin-top: 14px;
-  font-size: 13px;
-}
-
-.palette-card small {
-  font-size: 13px;
-  line-height: 1.55;
+  font-size: 15px;
+  line-height: 1.75;
 }
 
 @media (max-width: 1120px) and (min-width: 981px) {

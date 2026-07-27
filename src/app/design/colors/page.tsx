@@ -7,9 +7,9 @@ import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-// Brand color guide — the coffee lifecycle palette, from cherry to cup.
-// Values here are the light-theme canon; CSS tokens live in globals.css and
-// docs/DESIGN.md is the written SSOT. Update all three together.
+// Public-facing palette stories. Functional roles and color values remain in
+// globals.css and docs/DESIGN.md; this page intentionally speaks in scenes,
+// aromas, textures, and temperatures instead of implementation language.
 export const metadata: Metadata = {
   title: "브랜드 컬러",
   description:
@@ -19,9 +19,7 @@ export const metadata: Metadata = {
 type Swatch = {
   brandName: string;
   token: string;
-  hex: string;
-  darkHex?: string;
-  role: string;
+  story: string;
 };
 
 type PaletteGroup = {
@@ -32,58 +30,170 @@ type PaletteGroup = {
 
 const groups: PaletteGroup[] = [
   {
-    title: "열매와 생두",
+    title: "체리가 익는 아침",
     description:
-      "수확에서 가공까지. 익은 체리의 붉은색과 생두의 청록빛 녹색, 파치먼트와 허니 프로세스의 노란 계열.",
+      "농장에서 건조대까지, 커피가 아직 한 잔이 되기 전의 생생한 색입니다.",
     swatches: [
-      { brandName: "과테말라 루비 체리", token: "--cherry", hex: "#a03d36", darkHex: "#cd7a6e", role: "중요 상태와 오답을 또렷하게 구분하는 붉은 강조 톤" },
-      { brandName: "안티구아 나이트 체리", token: "--cherry-deep", hex: "#712a28", darkHex: "#a75950", role: "체리 계열에 깊이와 대비를 더하는 어두운 보조 톤" },
-      { brandName: "에티오피아 예가체프 그린빈", token: "--green-bean", hex: "#7d8f69", darkHex: "#9db184", role: "생두 단계와 긍정적인 진행 상태를 나타내는 톤" },
-      { brandName: "코스타리카 타라주 파치먼트", token: "--parchment", hex: "#e3d4b4", darkHex: "#d9c8a6", role: "라이프사이클 정보를 받치는 옅은 배경 톤" },
-      { brandName: "코스타리카 골든 허니", token: "--honey", hex: "#c08a3e", darkHex: "#d9a95e", role: "허니 프로세스와 성취 정보를 강조하는 금빛 보조 톤" },
+      {
+        brandName: "피커스 바스켓 체리",
+        token: "--cherry",
+        story:
+          "첫 수확이 시작되는 이른 아침, 바구니 가장 위에서 햇빛을 받는 잘 익은 체리의 붉은빛입니다. 한 모금 전의 설렘을 닮았습니다.",
+      },
+      {
+        brandName: "체리 잼 레드",
+        token: "--cherry-deep",
+        story:
+          "잘 익은 커피 체리를 천천히 졸였을 때 남을 것 같은 깊은 붉은색입니다. 달콤하지만 가볍지만은 않은 장면을 만듭니다.",
+      },
+      {
+        brandName: "프레시 그린빈",
+        token: "--green-bean",
+        story:
+          "황마 자루를 열었을 때 마주치는 생두의 부드러운 초록빛입니다. 아직 로스팅되지 않은 가능성과 갓 시작한 하루를 담았습니다.",
+      },
+      {
+        brandName: "선베드 파치먼트",
+        token: "--parchment",
+        story:
+          "햇볕 좋은 건조대 위에서 바삭하게 마르는 파치먼트의 담백한 베이지입니다. 한낮의 온도와 느긋한 시간을 떠올립니다.",
+      },
+      {
+        brandName: "허니 프로세스 골드",
+        token: "--honey",
+        story:
+          "점액질이 남은 체리가 햇빛 아래 천천히 마를 때 번지는 황금빛입니다. 이름처럼 달콤한 기분을 한 스푼 더합니다.",
+      },
     ],
   },
   {
-    title: "로스팅 단계",
+    title: "로스터가 듣는 색",
     description:
-      "브랜드의 중심축. 로스팅이 진행될수록 갈변이 깊어지는 단계를 따릅니다. 색도계(Agtron) 번호는 대략적 대응이며 절대 기준이 아닙니다.",
+      "크랙 소리와 설탕의 갈변, 초콜릿 향이 차례로 깊어지는 로스팅룸의 팔레트입니다.",
     swatches: [
-      { brandName: "퍼스트 크랙 시나몬", token: "--roast-light", hex: "#a26a42", darkHex: "#c08a5c", role: "로스팅 그라데이션의 밝은 지점 (Agtron ~85)" },
-      { brandName: "빈위키 시티 로스트", token: "--roast-medium", hex: "#7c5233", darkHex: "#c89e6f", role: "링크·버튼·포커스에 쓰는 프라이머리 브랜드 톤 (Agtron ~55)" },
-      { brandName: "애프터 크랙 프렌치", token: "--roast-dark", hex: "#4e3524", darkHex: "#8d6844", role: "호버와 다크 패널 그라데이션의 강한 톤 (Agtron ~35)" },
-      { brandName: "미드나이트 에스프레소", token: "--espresso", hex: "#2b1d13", darkHex: "#3a2a1c", role: "원두 마크와 상시 다크 패널에 쓰는 가장 짙은 톤" },
+      {
+        brandName: "퍼스트 크랙 캐러멜",
+        token: "--roast-light",
+        story:
+          "첫 번째 크랙이 톡 터지고, 로스팅룸에 캐러멜과 구운 설탕의 향이 번지는 순간의 색입니다. 밝고 경쾌한 갈색입니다.",
+      },
+      {
+        brandName: "브라운 슈거 로스트",
+        token: "--roast-medium",
+        story:
+          "갈색 설탕이 가장 맛있게 녹아드는 순간처럼 편안하고 균형 잡힌 브라운입니다. 매일 마셔도 질리지 않는 한 잔의 중심을 닮았습니다.",
+      },
+      {
+        brandName: "다크 초콜릿 크랙",
+        token: "--roast-dark",
+        story:
+          "열이 한 단계 깊어지며 다크 초콜릿과 토스트 향이 겹치는 순간의 브라운입니다. 작지만 선명한 긴장감을 더합니다.",
+      },
+      {
+        brandName: "바닐라빈 블랙",
+        token: "--espresso",
+        story:
+          "바닐라빈을 길게 갈랐을 때 보이는, 검정보다 조금 따뜻한 짙은 갈색입니다. 깊고 우아하지만 너무 무겁지 않습니다.",
+      },
     ],
   },
   {
-    title: "한 잔",
-    description: "추출된 커피의 표면. 크레마의 금갈색과 우유 거품의 밝은 크림색.",
-    swatches: [
-      { brandName: "나폴리 골든 크레마", token: "--crema", hex: "#c99b5f", darkHex: "#d9b586", role: "다크 패널 위 강조 텍스트와 원두 크리즈 톤" },
-      { brandName: "플랫화이트 밀크 폼", token: "--foam", hex: "#f6efe3", darkHex: "#efe6d6", role: "역상 텍스트와 가장 밝은 표면에 쓰는 톤" },
-    ],
-  },
-  {
-    title: "지면(중립)",
-    description: "종이 질감의 바탕과 잉크. 라이트/다크 테마에서 서로 반전됩니다.",
-    swatches: [
-      { brandName: "브루 노트 페이퍼", token: "--paper", hex: "#f4f0e7", darkHex: "#14170f", role: "페이지 전체를 이루는 기본 배경" },
-      { brandName: "웻 필터 베이지", token: "--paper-deep", hex: "#e8e1d4", darkHex: "#1b1f16", role: "카드처럼 한 단계 눌린 중첩 표면" },
-      { brandName: "오트 크림", token: "--cream", hex: "#fbf8f1", darkHex: "#1e2318", role: "입력창과 에디터를 포함한 밝은 표면" },
-      { brandName: "바리스타 로그 잉크", token: "--ink", hex: "#182019", darkHex: "#ece7da", role: "제목과 기본 텍스트에 쓰는 가장 강한 전경색" },
-      { brandName: "모카 포트 그레이", token: "--muted", hex: "#62675f", darkHex: "#a0a394", role: "보조 설명과 라벨의 위계를 낮추는 전경색" },
-    ],
-  },
-  {
-    title: "분야 액센트 패밀리",
+    title: "잔 위의 온도",
     description:
-      "12개 카테고리가 공유하는 6개 액센트 패밀리. 문서 배지·콜아웃·분야 카드가 사용하며, check-content가 문서와 분야의 액센트 일치를 강제합니다.",
+      "에스프레소 크레마와 벨벳 밀크처럼, 손끝과 입술에 가장 가까운 두 가지 색입니다.",
     swatches: [
-      { brandName: "커피 리프 올리브", token: "--olive", hex: "#6f7d48", darkHex: "#a6b673", role: "커피 기초·커피와 건강 분야, tip 콜아웃" },
-      { brandName: "안데스 미스트 세이지", token: "--sage", hex: "#78907e", darkHex: "#93aa98", role: "산지와 생두·지속가능성과 거래 분야" },
-      { brandName: "로스터 드럼 코퍼", token: "--copper", hex: "#ad6740", darkHex: "#cf8560", role: "로스팅·커피 역사와 문화 분야, warn 콜아웃" },
-      { brandName: "워시드 스테이션 블루", token: "--blue", hex: "#577d8d", darkHex: "#7ba7b8", role: "추출·커피 과학 분야, note 콜아웃" },
-      { brandName: "커핑 테이블 베리", token: "--berry", hex: "#8b5964", darkHex: "#bd8593", role: "센서리·음료와 레시피 분야, important 콜아웃" },
-      { brandName: "카페 카운터 샌드", token: "--sand", hex: "#a2875d", darkHex: "#c3a877", role: "카페와 장비·카페 운영과 품질 분야" },
+      {
+        brandName: "에스프레소 크레마 골드",
+        token: "--crema",
+        story:
+          "갓 내린 에스프레소 위, 호랑이 무늬 사이로 반짝이는 크레마의 금빛입니다. 짧은 한 잔에도 풍성한 첫인상을 남깁니다.",
+      },
+      {
+        brandName: "65° 벨벳 밀크",
+        token: "--foam",
+        story:
+          "65°C에 맞춰 스티밍한 우유가 벨벳처럼 흐를 때의 따뜻한 크림색입니다. 라떼 위 작은 하트를 기다리는 기분을 담았습니다.",
+      },
+    ],
+  },
+  {
+    title: "카페를 채우는 빛",
+    description:
+      "설탕, 비스킷, 크림과 피처처럼 조용히 공간을 채우며 다른 색을 편안하게 받아주는 톤입니다.",
+    swatches: [
+      {
+        brandName: "슈가 화이트",
+        token: "--paper",
+        story:
+          "각설탕을 막 꺼냈을 때 보이는, 완전한 흰색보다 한 톤 따뜻한 화이트입니다. 햇살 좋은 창가 자리처럼 편안합니다.",
+      },
+      {
+        brandName: "오트 비스킷 베이지",
+        token: "--paper-deep",
+        story:
+          "오븐에서 막 나온 오트 비스킷의 가장자리처럼 고소하고 차분한 베이지입니다. 조용한 오후의 테이블을 닮았습니다.",
+      },
+      {
+        brandName: "바닐라 크림",
+        token: "--cream",
+        story:
+          "차가운 크림 위에 바닐라 한 방울을 떨어뜨린 듯 부드러운 색입니다. 무엇을 올려도 한결 포근하게 받아줍니다.",
+      },
+      {
+        brandName: "에스프레소 마키아토 블랙",
+        token: "--ink",
+        story:
+          "진한 에스프레소 위에 하얀 점 하나를 올리기 직전의 깊은 색입니다. 작고 또렷한 문장처럼 공간의 중심을 잡아줍니다.",
+      },
+      {
+        brandName: "스테인리스 피처 그레이",
+        token: "--muted",
+        story:
+          "오픈 직전 깨끗이 닦아둔 스팀 피처에 아침빛이 얹힌 색입니다. 반짝임은 덜고 프로다운 여유만 남겼습니다.",
+      },
+    ],
+  },
+  {
+    title: "바 안의 작은 장면",
+    description:
+      "앞치마, 워시드 탱크, 로스터 드럼과 오트 라떼까지. 카페의 하루에서 슬쩍 데려온 포인트 컬러입니다.",
+    swatches: [
+      {
+        brandName: "로스터스 에이프런 그린",
+        token: "--olive",
+        story:
+          "오래 입은 로스터의 앞치마에 커피 잎과 생두 먼지가 자연스럽게 스민 듯한 그린입니다. 일 잘하는 사람의 편안함이 있습니다.",
+      },
+      {
+        brandName: "레인포레스트 미스트",
+        token: "--sage",
+        story:
+          "비가 그친 산지의 커피밭 위, 젖은 잎 사이로 옅은 안개가 머무는 순간의 색입니다. 숨을 한 번 고르게 합니다.",
+      },
+      {
+        brandName: "웜 드럼 코퍼",
+        token: "--copper",
+        story:
+          "로스터 드럼이 예열되고 구릿빛 표면에 온기가 번지는 순간을 닮았습니다. 공간에 활기와 손맛을 더합니다.",
+      },
+      {
+        brandName: "워시드 탱크 블루",
+        token: "--blue",
+        story:
+          "세척 가공 탱크에 맑은 물을 채운 이른 아침의 푸른빛입니다. 깨끗한 산미처럼 시원하고 또렷합니다.",
+      },
+      {
+        brandName: "커핑 베리",
+        token: "--berry",
+        story:
+          "커핑 스푼 끝에서 뜻밖의 베리 한 방울을 발견했을 때의 색입니다. 진지한 테이블에 작은 농담을 건넵니다.",
+      },
+      {
+        brandName: "오트 라떼 샌드",
+        token: "--sand",
+        story:
+          "오트 라떼의 고소한 베이지와 밝은 원목 카운터가 만나는 색입니다. 오래 머물고 싶은 카페의 온도를 닮았습니다.",
+      },
     ],
   },
 ];
@@ -113,20 +223,17 @@ export default function ColorGuide() {
         <header className="wiki-title">
           <h1>Bean Wiki 브랜드 컬러</h1>
           <p>
-            Bean Wiki의 색은 커피의 여정에서 옵니다 — 익은 체리의 붉은색에서
-            생두의 녹색, 로스팅의 갈색을 지나 크레마와 우유 거품까지. 프라이머리
-            액센트는 <strong>빈위키 시티 로스트</strong>(<code>--brand</code>)입니다.
+            Bean Wiki의 색은 팔레트보다 먼저 장면에서 시작됩니다. 수확
+            바구니의 체리, 첫 크랙 직후의 캐러멜 향, 65°C의 벨벳 밀크.
+            이름을 읽는 것만으로도 한 잔의 온도와 향이 떠오르도록 골랐습니다.
           </p>
         </header>
 
         <div className="palette-note">
+          <span>HOW TO FEEL THE PALETTE</span>
           <p>
-            브랜드명에 포함된 지역명은 커피의 여정을 떠올리게 하는 무드명이며,
-            해당 지역의 공식 색상 표준이나 원산지 인증을 뜻하지 않습니다. 개발
-            시에는 브랜드명을 코드에 쓰지 말고 기능 토큰(
-            <code>var(--roast-medium)</code> 등)을 참조하세요. 다크 테마 값은
-            <code>[data-theme=&quot;dark&quot;]</code> 토큰 블록에서 한 번만
-            바뀌며, 문서 기준은 <code>docs/DESIGN.md</code>입니다.
+            완벽하게 맞춰 쓰기보다 오늘의 기분에 가까운 장면을 골라보세요.
+            어떤 날은 프레시 그린빈, 어떤 밤은 바닐라빈 블랙이면 충분합니다.
           </p>
         </div>
 
@@ -143,12 +250,7 @@ export default function ColorGuide() {
                     aria-hidden="true"
                   />
                   <strong>{swatch.brandName}</strong>
-                  <p>{swatch.role}</p>
-                  <code>{swatch.token}</code>
-                  <small>
-                    {swatch.hex}
-                    {swatch.darkHex ? ` · 다크 ${swatch.darkHex}` : ""}
-                  </small>
+                  <p>{swatch.story}</p>
                 </div>
               ))}
             </div>
