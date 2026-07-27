@@ -1162,7 +1162,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     "backlinks": [
       "brewing-gear-guide",
       "home-brew-recipes",
-      "water-chemistry-basics"
+      "water-chemistry-basics",
+      "thermal-time-agitation-control",
+      "brew-profile-observables"
     ]
   },
   {
@@ -1223,7 +1225,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"why\"><span class=\"content-index\">01</span><h2>분쇄는 추출의 출발점입니다</h2><p>물이 커피 성분을 녹여 내는 속도는 입자의 표면적에 크게 좌우됩니다. 분쇄가 고를수록 각 입자가 비슷한 속도로 추출되어, 과소·과다 추출이 한 잔 안에 섞이는 정도를 줄일 수 있습니다.</p><p>반대로 미분과 굵은 입자가 함께 많으면 같은 시간 동안 미분은 과다, 굵은 입자는 과소 추출되어 맛의 초점이 흐려집니다.</p></section><section id=\"burr\"><span class=\"content-index\">02</span><h2>버(Burr)의 방식과 상태</h2><p>버 그라인더는 두 개의 날 사이 간격으로 입자 크기를 조절해 블레이드 방식보다 균일한 분쇄를 얻습니다. 코니컬과 플랫 등 형상에 따라 입자 분포의 경향이 달라질 수 있습니다.</p><ul><li>코니컬 버: 내구성과 저발열에 유리한 경향</li><li>플랫 버: 좁은 입자 분포를 노리기 쉬운 경향</li><li>마모된 버는 미분을 늘려 균일성을 떨어뜨립니다.</li></ul></section><section id=\"care\"><span class=\"content-index\">03</span><h2>설정보다 관리가 먼저입니다</h2><p>숫자 눈금은 기기마다 절대적인 기준이 아니므로, 목표 추출 시간과 맛을 기준으로 상대적으로 조정하는 편이 재현하기 쉽습니다. 정기적인 청소로 오래된 커피 기름과 미분 잔류를 줄이면 향미의 일관성이 좋아집니다.</p></section>",
     "backlinks": [
       "brewing-gear-guide",
-      "espresso-machines-grinders"
+      "espresso-machines-grinders",
+      "particle-size-distribution"
     ]
   },
   {
@@ -1285,7 +1288,11 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>압력으로 만드는 진한 추출</h2><p>에스프레소는 미세하게 분쇄한 커피 층에 가압한 물을 통과시켜 짧은 시간에 진하게 추출한 음료입니다. 농도가 높고 향이 집약되며, 그 위에 크레마라 부르는 거품층이 생깁니다.</p></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>함께 움직이는 변수들</h2><p>투입량, 분쇄도, 추출량과 시간은 서로 연결되어 있습니다. 한 값을 바꾸면 다른 값도 함께 변하므로, 목표를 정해두고 한 번에 하나씩 조정하는 것이 재현에 유리합니다.</p><ul><li>도스: 바스켓에 담는 원두의 질량</li><li>분쇄도: 흐름의 저항과 추출 속도</li><li>수율·비율: 원두 대비 추출된 음료의 양</li><li>추출 시간과 물 온도</li></ul></section><section id=\"consistency\"><span class=\"content-index\">03</span><h2>일관성은 준비 과정에서 나옵니다</h2><p>고른 분배와 수평 탬핑으로 물이 커피 층을 균일하게 통과하게 하면 채널링을 줄일 수 있습니다. 저울과 타이머로 도스와 추출량, 시간을 기록하면 좋은 한 잔을 다시 만들 수 있습니다.</p></section>",
     "backlinks": [
       "brew-methods",
-      "espresso-preinfusion-guide"
+      "espresso-preinfusion-guide",
+      "permeability-channeling-control",
+      "espresso-machine-hydraulics-thermal",
+      "espresso-puck-preparation",
+      "plant-based-milk-steaming"
     ]
   },
   {
@@ -1613,7 +1620,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"goal\"><span class=\"content-index\">01</span><h2>목표는 마이크로폼</h2><p>스티밍의 목표는 단순히 우유를 데우는 것이 아니라, 눈에 보이지 않을 만큼 고운 거품을 우유 전체에 균일하게 섞는 것입니다. 이렇게 만든 마이크로폼은 광택이 돌고 잔에 부었을 때 매끄럽게 흐릅니다.</p><p>거품은 크게 두 단계로 만들어집니다. 표면에서 공기를 끌어들이는 단계와, 그 공기를 회전으로 잘게 부수어 섞는 단계입니다.</p></section><section id=\"steps\"><span class=\"content-index\">02</span><h2>두 단계: 주입과 회전</h2><ul><li>주입(스트레칭): 팁을 표면 가까이 두어 \"치익\" 소리와 함께 공기를 넣어 부피를 키웁니다.</li><li>회전(롤링): 팁을 살짝 담가 우유가 소용돌이치게 하여 큰 거품을 잘게 부수고 데웁니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>공기 주입은 초반, 차가울 때 끝내세요. 우유가 따뜻해진 뒤에 넣은 공기는 큰 거품으로 남아 거칠어지기 쉽습니다.</p></aside></section><section id=\"temperature\"><span class=\"content-index\">03</span><h2>온도 기준</h2><p>온도는 단맛과 질감에 영향을 줍니다. 너무 낮으면 밋밋하고, 너무 높으면 단백질이 상해 비린 맛이 나며 거품이 무너집니다. 아래는 흔히 쓰이는 참고 범위입니다.</p><table><tbody><tr><th>구간</th><th>대략 온도</th><th>메모</th></tr><tr><td>목표대</td><td>약 55~65℃</td><td>단맛과 질감이 잘 살아나는 범위로 자주 언급됨</td></tr><tr><td>과열</td><td>70℃ 이상</td><td>비린 맛·거친 거품, 라떼아트가 어려워짐</td></tr></tbody></table><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>손으로 피처를 만졌을 때 계속 잡고 있기 어려울 만큼 뜨거우면 이미 과열입니다. 온도계나 감각으로 목표대에서 멈추는 연습이 중요합니다.</p></aside></section><section id=\"finish\"><span class=\"content-index\">04</span><h2>마무리</h2><p>스티밍을 멈춘 뒤에는 피처를 가볍게 두드리고 돌려 큰 거품을 없애고 표면에 광택을 냅니다. 붓기 직전까지 우유와 거품이 분리되지 않도록 부드럽게 흔들어 유지합니다.</p></section>",
     "backlinks": [
-      "espresso-machines-grinders"
+      "espresso-machines-grinders",
+      "milk-steaming-protein-chemistry",
+      "plant-based-milk-steaming"
     ]
   },
   {
@@ -1766,7 +1775,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "q-grader-certification",
       "roast-profile-design",
       "home-tasting",
-      "sensory-data-analysis"
+      "sensory-data-analysis",
+      "sensory-defect-diagnosis"
     ]
   },
   {
@@ -2002,7 +2012,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"why-attributes\"><span class=\"content-index\">01</span><h2>왜 속성으로 나눠 평가하는가</h2><p>\"맛있다\"는 한 단어에는 향, 신맛, 단맛, 질감, 여운이 뒤섞여 있습니다. <a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑</a> 폼이 커피를 여러 속성으로 나눠 묻는 이유는, 뭉쳐 있으면 비교도 소통도 어렵기 때문입니다.</p><p>속성 평가는 \"무엇이 얼마나 있는가\"(강도)와 \"그것이 얼마나 좋은가\"(품질)를 구분하는 훈련이기도 합니다. 산미가 강한 것과 산미가 좋은 것은 다른 판단입니다.</p><p>아래 표는 널리 쓰여 온 SCA 커핑 폼의 주요 속성을 정리한 것입니다. 폼의 버전에 따라 채점 방식이 달라, 예컨대 단맛은 클래식 폼에서 잔 단위로 확인하지만 CVA의 기술적 평가에서는 강도로 다룹니다.</p><table><tbody><tr><th>속성</th><th>무엇을 묻는가</th><th>흔한 표현</th></tr><tr><td>프래그런스/아로마</td><td>분쇄향과 추출향의 인상</td><td>플로럴, 견과, 캐러멜</td></tr><tr><td>향미(플레이버)</td><td>입안에서 향과 맛이 합쳐진 전체 인상</td><td>초콜릿 같다, 베리 같다</td></tr><tr><td>산미</td><td>밝기·생동감을 주는 신맛의 질</td><td>밝다, 즙이 많다, 시트러스 같다</td></tr><tr><td>단맛</td><td>당도가 아닌 단맛의 인상과 충만함</td><td>꿀 같다, 잘 익었다</td></tr><tr><td>바디</td><td>입안에서 느끼는 무게감과 질감</td><td>가볍다, 시럽 같다, 크리미하다</td></tr><tr><td>애프터테이스트</td><td>삼킨 뒤 남는 향미의 길이와 질</td><td>길다, 깔끔하다, 마른다</td></tr><tr><td>균형</td><td>속성들이 서로를 살리는 정도</td><td>조화롭다, 산미가 튄다</td></tr></tbody></table></section><section id=\"acidity\"><span class=\"content-index\">02</span><h2>산미: 신맛과 같지 않습니다</h2><p>산미는 커피 평가에서 긍정적으로 쓰이는 말로, 과일의 즙 같은 밝고 생동감 있는 인상을 가리키는 경우가 많습니다. 반면 날카롭거나 시큼해서 불쾌한 신맛은 흔히 결점 쪽으로 분류됩니다. 같은 \"신맛\"이라도 질이 다르면 평가가 갈립니다.</p><p>커피의 신맛에는 여러 유기산이 관여합니다. 어떤 산이 얼마나 있는지는 품종, 가공, 로스팅에 따라 달라지며, 산의 조성 차이가 산미의 인상 차이로 이어진다고 이해되고 있습니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>\"산미(acidity)\"는 평가 용어, \"신맛(sourness)\"은 기본 맛 용어로 구분해 쓰면 소통이 깔끔해집니다. 이 위키도 이 구분을 따릅니다.</p></aside></section><section id=\"sweetness-body\"><span class=\"content-index\">03</span><h2>단맛과 바디: 혀보다 넓은 감각</h2><p>커피의 단맛은 설탕물 같은 당도가 아니라, 잘 익은 과일이 주는 충만하고 둥근 인상에 가깝습니다. 향이 단맛 인상을 크게 거들기 때문에, 코를 막고 마시면 단맛이 줄어드는 것처럼 느껴지는 경험을 할 수 있습니다.</p><p>바디는 맛이 아니라 촉감입니다(CVA의 기술적 평가에서는 마우스필(mouthfeel)로 부릅니다). 입안을 채우는 무게감, 매끄러움, 점도의 인상으로, 추출 방식의 영향이 큽니다. 금속 필터나 프렌치 프레스처럼 오일과 미분이 많이 통과하는 방식은 바디가 무거워지는 경향이 있습니다.</p></section><section id=\"aftertaste-balance\"><span class=\"content-index\">04</span><h2>여운과 균형: 마지막 판단</h2><p>애프터테이스트는 삼킨 뒤에도 남는 향미입니다. 길이만이 아니라 질이 중요해서, 길게 남아도 떫거나 마른 느낌이면 좋은 평가를 받기 어렵습니다.</p><p>균형은 개별 속성이 아니라 관계를 봅니다. 산미가 훌륭해도 단맛이 받쳐 주지 않으면 날카롭게 느껴지고, 바디가 무거워도 향이 빈약하면 둔하게 느껴집니다. 그래서 균형은 개별 속성보다 판단이 갈리기 쉬운 항목으로 여겨지곤 합니다.</p></section><section id=\"confusions\"><span class=\"content-index\">05</span><h2>초심자가 자주 혼동하는 것</h2><ul><li>진한 것과 쓴 것: 농도가 높은 커피가 꼭 쓴 것은 아닙니다. 농도는 추출의 결과, 쓴맛은 맛의 종류입니다.</li><li>산미와 결점 신맛: 밝고 즙 같은 인상인지, 날카롭고 시큼한지 질을 물어보세요.</li><li>바디와 강도: 연한 커피도 실키한 바디를 가질 수 있습니다.</li><li>향과 맛: 코를 막으면 사라지는 부분은 향입니다. 혀가 느끼는 기본 맛은 훨씬 단순합니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>속성별 점수를 매기기 어렵다면, 잔마다 \"가장 인상적인 속성 하나\"만 골라 기록하는 것부터 시작하세요. <a data-wikilink=\"coffee-flavor-wheel\" href=\"/wiki/coffee-flavor-wheel\">향미 휠</a>이 어휘를 도와줍니다.</p></aside></section>",
     "backlinks": [
-      "home-tasting"
+      "home-tasting",
+      "sensory-defect-diagnosis"
     ]
   },
   {
@@ -2405,7 +2416,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"baseline\"><span class=\"content-index\">01</span><h2>모든 레시피의 공통 출발점</h2><p>아래 수치는 정답이 아니라 널리 쓰이는 <strong>출발점</strong>입니다. 원두, 물, 장비에 따라 최적점은 달라지므로, 한 번에 한 변수만 바꾸며 자신의 기준을 찾아가세요. 조정의 원리는 <a data-wikilink=\"extraction-basics\" href=\"/wiki/extraction-basics\">농도와 수율</a>에서 다룹니다.</p><table><tbody><tr><th>공통 변수</th><th>흔한 출발 범위</th><th>메모</th></tr><tr><td>비율(커피:물)</td><td>필터 1:15~1:17</td><td>다 내린 뒤 물로 희석하기보다 레시피 비율로 조정</td></tr><tr><td>물 온도</td><td>약 90~96℃</td><td>밝은 로스팅일수록 높은 쪽 경향</td></tr><tr><td>분쇄도</td><td>방식마다 다름</td><td>시간이 길수록 굵게, 짧을수록 곱게</td></tr><tr><td>물</td><td>연수~중경수</td><td><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">커피와 물</a> 참고</td></tr></tbody></table></section><section id=\"pourover-recipe\"><span class=\"content-index\">02</span><h2>푸어오버(V60류): 15g로 시작하기</h2><ul><li>커피 15g(중간~중간 조금 곱게), 물 240g(약 1:16), 온도 약 92~94℃.</li><li>뜸(블룸): 물 30~45g을 붓고 30~45초 기다립니다 — 가스가 빠져 이후 추출이 고르게 됩니다.</li><li>이후 2~3회에 나눠 240g까지 붓고, 총 시간 2분 30초~3분 30초를 참고선으로 삼습니다.</li><li>시간이 크게 빗나가면 붓는 속도보다 분쇄도를 먼저 조정합니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>맛이 날카롭고 여운이 비면(과소 추출 신호) 조금 곱게·조금 뜨겁게, 쓰고 텁텁하면(과다 추출 신호) 조금 굵게·조금 식혀서 — 한 번에 하나씩만 바꾸세요.</p></aside></section><section id=\"immersion-recipe\"><span class=\"content-index\">03</span><h2>프렌치 프레스: 가장 관대한 레시피</h2><ul><li>커피 30g(굵게), 물 450g(1:15), 온도 약 93℃.</li><li>붓고 저은 뒤 4분 대기 — 표면 가루층(크러스트)을 걷어내면 잡미가 줄어듭니다.</li><li>플런저는 끝까지 세게 누르지 말고 가루층 위에서 멈추면 미분이 덜 올라옵니다.</li><li>누른 뒤에는 바로 잔이나 서버에 옮기세요 — 가루 위에 두면 계속 추출되어 써집니다.</li><li>더 깔끔하게 마시고 싶다면 누르지 않고 그대로 따라내는 방법도 널리 쓰입니다.</li></ul></section><section id=\"aeropress-recipe\"><span class=\"content-index\">04</span><h2>에어로프레스: 자유도의 도구</h2><ul><li>기본형(정방향): 커피 15g(중간), 물 220g, 90℃, 1분 30초 침지 후 30초에 걸쳐 프레스. 침지 중 소량이 미리 새는 것을 막는 역방향(인버티드)법도 널리 쓰입니다.</li><li>농축형: 커피 18g, 물 100g으로 진하게 뽑아 뜨거운 물로 희석 — 아메리카노풍.</li><li>도구 특성상 레시피 편차가 매우 큽니다. 월드 에어로프레스 챔피언십(WAC) 대회 레시피들이 공개되어 있어 실험 재료로 좋습니다.</li></ul></section><section id=\"moka-recipe\"><span class=\"content-index\">05</span><h2>모카포트: 불 조절이 레시피</h2><ul><li>하단 보일러에 뜨거운 물을 밸브 아래까지, 바스켓에는 커피를 평평하게(누르지 않기).</li><li>약~중불로 가열하고, 커피가 꾸르륵 소리를 내며 색이 옅어지기 시작하면 불을 끕니다.</li><li>쓴맛이 강하면 더 약한 불, 미리 데운 물, 더 굵은 분쇄가 흔한 처방입니다.</li></ul><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>모카포트는 압력 용기입니다. 안전밸브를 막지 말고, 바스켓에 커피를 눌러 담지 마세요. 콜드브루 레시피는 <a data-wikilink=\"cold-brew\" href=\"/wiki/cold-brew\">별도 문서</a>에서 다룹니다.</p></aside><p>마지막으로, 기록이 레시피를 완성합니다. 날짜, 원두, 비율, 분쇄도, 온도, 시간, 그리고 한 줄 맛 평가 — 이 일곱 가지만 적어도 다음 잔이 달라집니다. 맛을 기록하는 어휘가 막히면 <a data-wikilink=\"home-tasting\" href=\"/wiki/home-tasting\">홈 테이스팅</a>과 <a data-wikilink=\"coffee-flavor-wheel\" href=\"/wiki/coffee-flavor-wheel\">향미 휠</a>이 도와줍니다.</p></section>",
     "backlinks": [
       "brew-methods",
-      "brew-ratio-practice"
+      "brew-ratio-practice",
+      "brew-profile-observables"
     ]
   },
   {
@@ -2492,7 +2504,11 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<p>아래 브랜드·모델은 각 구조를 설명할 때 업계에서 흔히 예로 드는 <strong>대표 사례</strong>이며, 망라나 추천 순위가 아닙니다. 라인업·사양·가격대는 계속 바뀌므로 구매 결정 전에는 반드시 현행 정보를 확인하세요. Bean Wiki는 어떤 브랜드와도 이해관계가 없습니다.</p><section id=\"machine-anatomy\"><span class=\"content-index\">01</span><h2>머신 분류의 핵심: 보일러 구조</h2><p>에스프레소 머신의 본질은 약 9기압의 압력과 90℃대 물 온도를 <strong>동시에, 안정적으로</strong> 공급하는 것입니다. 추출용 물과 스팀은 요구 온도가 달라, 이를 어떻게 해결하느냐가 구조를 가릅니다.</p><table><tbody><tr><th>구조</th><th>원리</th><th>특징</th><th>흔한 예시</th></tr><tr><td>싱글 보일러</td><td>보일러 하나로 추출·스팀 겸용</td><td>전환 대기 필요, 진입 가격대</td><td>가찌아 클래식, 란실리오 실비아</td></tr><tr><td>열교환(HX)</td><td>스팀 보일러 속 관으로 추출수 가열</td><td>동시 작업 가능, 온도는 플러시로 관리</td><td>로켓 아파르타멘토 등 E61 계열 다수</td></tr><tr><td>듀얼 보일러</td><td>추출·스팀 보일러 분리</td><td>온도 독립 제어 — 동시 작업과 안정성</td><td>브레빌(세이지) 듀얼 보일러, 레릿 비앙카, 라마르조코 리네아 미니</td></tr><tr><td>써모블록/써모젯</td><td>순간 가열 유닛</td><td>예열 빠름, 소형화 유리</td><td>브레빌 바리스타 시리즈 일부, 데디카류</td></tr><tr><td>수동 레버·비전동</td><td>사람 힘이나 스프링으로 가압</td><td>전원 불필요·휴대형도 존재</td><td>플레어·카페랏 로봇(전원 불필요), 라파보니 레버(전기 가열)</td></tr></tbody></table><p>1961년 파에마(Faema) E61이 상용화한 전동 펌프와 E61 그룹헤드는 이후 수십 년간 준상업·가정용 머신 설계의 표준처럼 이어지고 있습니다. 최근 가정용의 흐름은 PID(비례·적분·미분) 온도 제어, 프리인퓨전(pre-infusion, 저압 사전 적심), 유량(플로우) 제어의 대중화입니다.</p></section><section id=\"home-machines\"><span class=\"content-index\">02</span><h2>가정용 머신에서 자주 언급되는 이름들</h2><ul><li>입문 반자동의 고전: 가찌아 클래식, 란실리오 실비아 — 단순한 구조로 오래 회자되는 모델.</li><li>일체형(그라인더 내장): 브레빌(유럽·영국명 세이지) 바리스타 익스프레스/프로 계열.</li><li>준상업(프로슈머): 레릿, ECM, 프로피텍, 로켓, 베짜(레버) — E61 계열이 많음.</li><li>소형 프리미엄: 라마르조코 리네아 미니·미크라, 슬레이어 싱글그룹 등 상업 브랜드의 가정 라인.</li><li>수동·휴대: 플레어, 카페랏 로봇, 왁카코 나노프레소류.</li></ul></section><section id=\"commercial-machines\"><span class=\"content-index\">03</span><h2>상업용 머신에서 자주 언급되는 이름들</h2><ul><li>라마르조코(리네아, GB5, 스트라다) — 스페셜티 카페의 대명사처럼 불리는 이탈리아 브랜드.</li><li>빅토리아 아르두이노(블랙 이글)·누오바 시모넬리 — 월드 바리스타 챔피언십 공식 머신 이력(아우렐리아 2009~2014, 블랙 이글 2015~2021; 이후 시즌은 타 브랜드로 교체).</li><li>슬레이어(플로우 프로파일링), 시네소 — 미국계 커스텀 지향.</li><li>산레모(카페 레이서·유), 시모넬리 그룹 계열, 페마·란실리오 상업 라인 등.</li></ul><aside class=\"callout callout-note\" data-tone=\"note\"><p>대회 공식 머신·유명 카페 도입 이력은 품질의 참고 신호일 뿐, 매장 상황(전기·수도·물량·수리망)에 맞는 선택이 항상 우선입니다.</p></aside></section><section id=\"grinders\"><span class=\"content-index\">04</span><h2>그라인더: 버 방식과 대표 브랜드</h2><p>맛에 대한 기여로는 머신보다 그라인더가 먼저라는 말이 흔합니다. 원리는 <a data-wikilink=\"grinder-basics\" href=\"/wiki/grinder-basics\">그라인더 기초</a>에서 다루고, 여기서는 지형도만 그립니다.</p><table><tbody><tr><th>구분</th><th>흔한 예시</th><th>메모</th></tr><tr><td>핸드밀</td><td>코만단테 C40, 1Zpresso, 타임모어, 킨그라인더</td><td>가격 대비 분쇄 품질로 입문·여행용 인기</td></tr><tr><td>가정 전동(브루잉)</td><td>바라짜 엔코어, 펠로우 오드, 윌파 우니폼</td><td>필터 커피 지향 세팅</td></tr><tr><td>가정 전동(에스프레소)</td><td>유레카 미뇽 계열, 바라짜 세테, 니체 제로, DF64</td><td>싱글도징(single dosing, 잔당 계량 투입) 유행 — 니체·DF류</td></tr><tr><td>상업 에스프레소</td><td>말코닉 E65S, 빅토리아 아르두이노 미토스, 안핌, 마쩨르(Mazzer)</td><td>연속 사용 안정성과 도징 일관성</td></tr><tr><td>샵 필터·리테일</td><td>말코닉 EK43, 디팅, 벙(Bunn)류</td><td>EK43은 커핑·필터 분쇄의 사실상 기준으로 자주 언급</td></tr></tbody></table></section><section id=\"choosing\"><span class=\"content-index\">05</span><h2>고르는 기준: 구조 → 용도 → 브랜드 순</h2><ul><li>하루 몇 잔, 우유 음료 비중, 동시 작업 필요 여부부터 정합니다 — 이것이 보일러 구조를 정합니다.</li><li>그라인더 예산을 머신과 비슷한 수준으로 잡는 배분이 흔히 권장됩니다.</li><li>수리·부품·현지 서비스망은 사양표에 없는 가장 중요한 사양입니다.</li><li>정수(스케일 방지)와 주기적 세척(백플러시)이 머신 수명을 좌우합니다. 스팀 사용법과 화상 주의는 <a data-wikilink=\"milk-steaming\" href=\"/wiki/milk-steaming\">우유 스티밍</a>을 참고하세요.</li></ul><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>모델명·사양은 이 문서 작성 시점의 통용 정보입니다. 단종·개정이 잦은 영역이므로 구체적 구매 판단은 제조사·판매처의 현행 정보로 확인하세요.</p></aside></section>",
-    "backlinks": []
+    "backlinks": [
+      "espresso-machine-hydraulics-thermal",
+      "espresso-puck-preparation",
+      "bar-throughput-and-flow"
+    ]
   },
   {
     "slug": "coffee-aroma-chemistry",
@@ -2880,7 +2896,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"quality-definition\"><span class=\"content-index\">01</span><h2>먼저 ‘좋다’를 운영 언어로 바꿉니다</h2><p>품질 목표는 ‘맛있는 커피’보다 구체적이어야 합니다. 대표 음료의 향미 방향, 허용 가능한 추출 시간과 음료량, 제공 온도, 대기 시간, 위생과 환대 기준을 정하면 팀이 같은 결과를 판단할 수 있습니다. 숫자는 감각을 대체하지 않고, 이상을 빠르게 발견하는 경보선으로 사용합니다.</p><p>모든 메뉴를 같은 정밀도로 관리할 필요는 없습니다. 판매량과 고객 경험에 미치는 영향을 기준으로 핵심 공정을 정하고, 실패가 잦거나 안전과 관련된 항목에는 더 촘촘한 점검을 둡니다.</p></section><section id=\"opening\"><span class=\"content-index\">02</span><h2>오픈 체크는 하루의 기준선을 만듭니다</h2><ul><li>급수와 필터 상태, 누수, 보일러 압력과 예열을 확인합니다.</li><li>그라인더 호퍼와 슈트, 포터필터와 바스켓을 청결하게 준비합니다.</li><li>원두 로스팅 날짜, 개봉 시점과 보관 상태를 기록합니다.</li><li>목표 도징·음료량·시간을 재고 블라인드 또는 교차 시음으로 맛을 확인합니다.</li><li>우유 냉장 온도, 식재료 소비기한과 세척제 농도를 점검합니다.</li></ul><p>다이얼인은 첫 샷이 맞을 때까지 분쇄도를 움직이는 일이 아닙니다. 목표 레시피를 기준으로 도징과 수율을 계량하고, 한 변수씩 조정하며 맛의 방향을 기록합니다. 원두 온도와 습도, 잔류 커피와 버가 안정되는 시간도 결과에 영향을 줄 수 있습니다.</p></section><section id=\"service-loop\"><span class=\"content-index\">03</span><h2>서비스 중에는 짧고 자주 확인합니다</h2><p>혼잡할수록 긴 회의보다 관찰–확인–수정의 짧은 루프가 효과적입니다. 일정 시간이나 판매량마다 샷의 음료량과 시간을 샘플링하고, 맛이 벗어나면 도징·분배·탬핑·분쇄·물과 머신 상태 순서로 원인을 좁힙니다. 한꺼번에 여러 변수를 바꾸면 회복이 늦어집니다.</p><table><tbody><tr><th>신호</th><th>먼저 확인</th><th>다음 확인</th></tr><tr><td>샷이 갑자기 빨라짐</td><td>도징, 분쇄 설정, 퍼지</td><td>원두 상태, 버·클럼핑, 누수</td></tr><tr><td>맛이 비고 날카로움</td><td>음료량·시간과 균일성</td><td>물 온도, 레시피와 원두 변화</td></tr><tr><td>스팀이 약함</td><td>압력, 팁 막힘, 퍼지</td><td>보일러 회복, 정비 이력</td></tr><tr><td>음료 제공이 지연됨</td><td>주문 병목과 동선</td><td>작업 분담, 프리셋과 메뉴 복잡도</td></tr></tbody></table></section><section id=\"workflow\"><span class=\"content-index\">04</span><h2>워크플로는 속도보다 오류를 줄이는 설계입니다</h2><p>도구 위치는 사용 순서와 세척 흐름에 맞추고, 깨끗한 구역과 오염 가능한 구역을 분리합니다. 주문 확인, 샷 시작, 우유 스티밍과 마감의 책임을 혼잡도에 따라 명시하면 중복과 누락을 줄일 수 있습니다. 표준 문구와 컵 표기는 알레르기·디카페인 같은 고위험 주문을 보호합니다.</p><p>빠른 서비스는 사람을 몰아붙인 결과가 아니라 이동 거리, 대기와 재작업을 줄인 결과여야 합니다. 피크 시간의 주문 흐름을 관찰하고 가장 긴 대기, 교차 동선과 반복되는 질문을 기록해 한 번에 하나씩 고칩니다.</p></section><section id=\"cleaning\"><span class=\"content-index\">05</span><h2>청소는 미관이 아니라 맛과 안전의 공정입니다</h2><p>커피 오일은 그룹헤드, 샤워스크린과 바스켓에 쌓여 산패한 향을 만들 수 있습니다. 우유 잔류물은 스팀 완드와 피처에서 미생물 위험을 키웁니다. 사용 후, 교대별, 일별, 주별로 나눈 세척표에 도구, 방법, 세제, 담당과 확인을 명시합니다.</p><p>필터 교체와 역세척, 버와 가스켓 교체 같은 예방 정비는 고장 뒤 수리보다 서비스 중단을 줄입니다. 계량기와 온도계도 비교 기준이나 교정 주기를 정해 숫자에 대한 거짓 확신을 피합니다.</p></section><section id=\"training\"><span class=\"content-index\">06</span><h2>교육은 설명–시범–연습–검증의 순환입니다</h2><p>레시피를 외우게 하는 것만으로는 예외 상황을 해결할 수 없습니다. 왜 이 기준을 쓰는지 설명하고, 숙련자가 시범을 보인 뒤, 학습자가 반복하고 피드백을 받으며, 실제 서비스 조건에서 검증합니다. 체크리스트는 사람을 감시하기보다 학습할 항목을 투명하게 만드는 도구입니다.</p><p>감각 교정은 한 명의 ‘좋은 입’에 권력을 집중하지 않도록 블라인드 샘플과 공통 기준으로 진행합니다. 불일치가 생기면 누가 맞는지보다 시료 준비, 온도, 순서, 용어 정의와 강도 기준을 먼저 확인합니다.</p></section><section id=\"records\"><span class=\"content-index\">07</span><h2>기록은 문제를 사람 탓에서 시스템 질문으로 바꿉니다</h2><p>오픈 레시피, 시간대별 샘플, 클레임, 폐기량, 정비와 교육 기록을 같은 날짜 축에 놓으면 반복 패턴을 볼 수 있습니다. 기록 항목이 너무 많으면 쓰이지 않으므로 의사결정에 실제로 사용하는 최소 항목부터 시작합니다.</p><p>주간 리뷰에서는 평균만 보지 말고 변동 폭과 예외를 살핍니다. 특정 시간대, 장비, 메뉴와 작업 조합에서 문제가 반복되는지 확인하고 다음 주에 검증할 작은 변경을 정합니다. 좋은 품질 시스템은 실수를 숨기는 조직이 아니라 문제를 빨리 드러내고 안전하게 고치는 조직을 만듭니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "bar-throughput-and-flow"
+    ]
   },
   {
     "slug": "coffee-drink-taxonomy",
@@ -3142,7 +3160,11 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"two-values\"><span class=\"content-index\">01</span><h2>비율은 농도와 수율을 함께 설명합니다</h2><p>원두 대비 물의 양은 커피 한 잔의 농도와 추출 수율에 동시에 작용합니다. 같은 원두를 더 많이 내릴수록 농도가 낮아질 수는 있지만, 추출 효율이 올라가면 향미의 입자감이 달라질 수 있습니다. 그래서 비율은 “약하게/진하게”만의 문제가 아니라, 산미·단맛·바디의 균형을 바꾸는 문턱 점프입니다.</p><p>한 번에 여러 변수를 바꾸면 실수를 찾기 어렵기 때문에, 비율 실험은 기본값을 고정한 뒤 물의 양만 바꿔보는 방식이 안전합니다. 특히 <a data-wikilink=\"extraction-basics\" href=\"/wiki/extraction-basics\">농도와 수율의 관계</a>를 함께 보지 않으면 “진하다”와 “좋다”를 혼동하기 쉽습니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>비율은 목표를 기록하는 좌표입니다. 실험 전에는 현재 탬핑, 분쇄, 온도를 고정하고 물의 총량만 조정하세요.</p></aside></section><section id=\"starting-point\"><span class=\"content-index\">02</span><h2>출발점을 고정해서 비교하세요</h2><p>기준점은 대체로 방식별로 다릅니다. 필터 추출은 1:15~1:17, 에스프레소는 레시피의 도스·추출량 기준을 먼저 고정하고 다음 실험에서 물의 총량만 조절합니다. 목표 향미가 이미 정해져 있다면, 수분감이 너무 높은지 낮은지 먼저 관찰한 뒤 단계적으로 변경합니다.</p><ul><li>기록 항목: 원두, 분쇄도, 도즈, 수온, 물 온도, 시간, 비율, 맛 평가 메모</li><li>한 번에 바꾸는 항목: 총 물량 또는 추출량(둘 중 하나)</li><li>판단 기준: 산미의 선명도, 단맛 지속성, 잔여 쓴맛, 점도</li></ul></section><section id=\"how-to-tune\"><span class=\"content-index\">03</span><h2>비율 미세 조정 순서</h2><p>한쪽만 먼저 조정할지 결정할 때는, 추출이 느리면 물을 늘리고 분쇄를 먼저 고정합니다. 추출이 너무 빠르다면 물을 줄이기보다 분쇄를 조금 더 곱게 가거나 도즈를 늘리는 것이 먼저일 때가 많습니다. 반대로 쓴맛이 빠르게 올라오면 물량보다 시간을 늘려보거나 분쇄를 굵게 이동합니다.</p><h3>현장 체크리스트</h3><ol><li>기록된 기준 레시피로 3회 반복 추출해 변동 범위를 확인합니다.</li><li>총 물량을 5% 단위로 변화시키고, 맛 노트를 비교합니다.</li><li>좋은 쪽의 변화량을 중심으로 3회 재현성을 다시 확인합니다.</li></ol></section><section id=\"mistakes\"><span class=\"content-index\">04</span><h2>흔히 생기는 오해</h2><p>비율을 바꿔도 변화를 못 느낀다면 하드웨어 제한이나 물질 조건을 먼저 점검할 필요가 있습니다. 같은 변수를 반복해도 결과가 흔들리면 분쇄 분포가 넓거나 온도 플로우가 불안정할 가능성이 큽니다.</p><p>참고로 라벨의 풍미 문구보다 직접 기록한 재현 시험이 훨씬 정확합니다. 같은 원두를 오래 따라내려면 “기록 기반 비율”이 가장 빠르게 학습을 만듭니다. <a data-wikilink=\"home-brew-recipes\" href=\"/wiki/home-brew-recipes\">방법별 출발 레시피</a>와 함께 비율을 맞춰 두면 실전 속도가 빨라집니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "particle-size-distribution",
+      "thermal-time-agitation-control",
+      "brew-profile-observables"
+    ]
   },
   {
     "slug": "pour-over-rhythm-control",
@@ -3212,7 +3234,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"why-rhythm\"><span class=\"content-index\">01</span><h2>붓기 리듬이 왜 중요한가</h2><p>푸어오버에서 같은 비율을 써도 맛이 달라지는 가장 흔한 이유는 붓기 리듬의 편차입니다. 처음 30초의 뜸은 채널링을 줄이는 데 영향을 주고, 이후의 둔탁한 물살은 분쇄층 전체가 물을 만나도록 좌우합니다.</p><p>붓기 속도는 물의 총량보다 영향이 작지 않습니다. 한 번의 붓기에서 지나친 물길이 생기면 분쇄 표면의 일부만 과추출되고 나머지는 저추출될 수 있어, 맛의 분산이 커집니다.</p></section><section id=\"distribution-patterns\"><span class=\"content-index\">02</span><h2>기본 패턴을 네 가지로 나눠 봅니다</h2><p>실무에서는 크게 네 가지로 나눠 점검합니다. 첫째, 중앙 집중형(원형), 둘째, 스파이럴형(순환), 셋째, 구획형(분할), 넷째, 간헐형(여러 번 나눔)입니다. 방식은 달라도 공통은 모든 붓기에서 접촉면을 고르게 유지하는 것입니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>처음에는 화려한 패턴보다 균일성을 우선하세요. 패턴은 실험이 정착된 뒤 꾸준히 반복할 때 얻는 값입니다.</p></aside></section><section id=\"simple-template\"><span class=\"content-index\">03</span><h2>실험 시작 템플릿</h2><ol><li>커피 15g, 물 약 240g 기준: 30~40초 뜸.</li><li>4회 분할로 붓기(80g, 80g, 80g, 80g) 또는 60초 내외의 호흡 리듬.</li><li>각 분할 후 원형으로 가장자리 쪽까지 물이 퍼졌는지 관찰.</li><li>총 추출 시간을 2분 30초~3분 30초로 가늠해 10초 단위로 기록.</li></ol><table><thead><tr><th>구간</th><th>목표</th><th>점검 포인트</th></tr><tr><td>0~40초</td><td>균일한 적심</td><td>원두가 한쪽으로 밀리지 않는지</td></tr><tr><td>40~120초</td><td>꾸준한 유입</td><td>수면 파열이 없는지, 미분 상승 여부</td></tr><tr><td>120초 이후</td><td>균형 있는 마무리</td><td>유량이 급격히 떨어지는지</td></tr></table></section><section id=\"troubleshoot\"><span class=\"content-index\">04</span><h2>문제와 대응</h2><p>물이 너무 빨리 지나가면 분쇄를 약간 더 곱게 하거나 붓기 간격을 줄입니다. 유출이 끈적하게 길어지면 분쇄를 약간 굵게 하거나 마지막 분할에서 붓기량을 나눠 조절합니다.</p><p>최종 목적은 결과를 일치시킨다는 점입니다. 오늘은 같은 추출곡선을 만들고, 내일은 맛 선호도에 맞춰 미세하게 변형하는 방식이 가장 재현성이 높습니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "thermal-time-agitation-control"
+    ]
   },
   {
     "slug": "grinder-burr-profile",
@@ -3280,7 +3304,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"profile-basics\"><span class=\"content-index\">01</span><h2>버의 형상이 왜 다른가</h2><p>버형은 가로채기 형태와 공기 이동, 분쇄 곡선에 영향을 줍니다. 같은 분쇄도 숫자를 쓰더라도 저각 플랫버와 콘 벨트형은 입자 분포가 다르게 나와 맛의 결정을 다르게 만듭니다.</p><p>특히 미세입자 비율이 높아지면 농후감은 늘 수 있지만, 과다하게 생기면 신속한 과추출과 미분 증가로 탁해질 수 있습니다. 반대로 너무 굵은 분포는 산미가 날카롭게 보일 가능성도 생깁니다.</p></section><section id=\"micro-vs-uniform\"><span class=\"content-index\">02</span><h2>균일 분쇄와 미세입자의 균형</h2><p>완벽한 단일 분포는 없습니다. 다만 바스켓 타입과 방식에 따라 허용되는 분포 폭이 다릅니다. 에스프레소는 미세입자의 영향이 크므로 정밀 조절이 필요하고, 필터 추출은 지나친 미세입자 증가를 조금 더 민감하게 느낄 수 있습니다.</p><ul><li>균일도 체크는 컵에서만이 아니라 배수량, 분쇄량, 추출 시간의 재현성으로 함께 판단</li><li>분쇄 소음이 급격히 변하면 버 마모나 정렬 이탈을 의심</li><li>원두 배치마다 1~2회 미세 조절 후 기록</li></ul></section><section id=\"when-to-replace\"><span class=\"content-index\">03</span><h2>교체 시점의 실무 기준</h2><table><thead><tr><th>관찰 신호</th><th>기대 조치</th><th>메모</th></tr><tr><td>원두량 대비 통일성이 자주 붕괴</td><td>버 간격 1회 정렬 점검</td><td>교차 실험으로 분리</td></tr><tr><td>도징량 대비 수율 편차 증가</td><td>마모 보정 또는 유지 보수 의뢰</td><td>필요 시 제조사 서비스</td></tr><tr><td>미분 푸짐한 잔향 지속</td><td>버 교체 또는 분쇄도 보정</td><td>원두 로트마다 반복 기록</td></tr></table></section><section id=\"maintenance-loop\"><span class=\"content-index\">04</span><h2>점검 루프를 루틴화</h2><p>분쇄 프로파일은 하루에 한 번만 본다기보다, 출근 직후 10분 루틴이 더 유효합니다. 물기 있는 원두와 건조 원두를 번갈아 쓰거나, 로트가 바뀔 때마다 같은 조건으로 테스트 컵을 한 잔 찍으면 변화 탐지가 빨라집니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>버 교체를 미루는 비용은 단기적으로는 없지만, 배치 간 편차 손실로 커피 품질 관리 비용이 커질 수 있습니다.</p></aside></section>",
-    "backlinks": []
+    "backlinks": [
+      "particle-size-distribution"
+    ]
   },
   {
     "slug": "espresso-preinfusion-guide",
@@ -3347,7 +3373,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"what-it-does\"><span class=\"content-index\">01</span><h2>프리인퓨전의 목적은 압력 균일화입니다</h2><p>에스프레소는 짧은 시간 안에 많은 물이 지나가므로, 커피 층 내부로 물이 들어가는 방식이 중요합니다. 프리인퓨전은 압력이 올라가기 전, 먼저 커피 층을 축축하게 만들어 채널이 갑자기 열리는 현상을 완화합니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>일부 머신은 프리인퓨전 기능만 있고, 일부는 바리스타가 붓기처럼 수동으로 유사 동작을 구현합니다. 장비 특성을 먼저 확인하세요.</p></aside></section><section id=\"adjustment-order\"><span class=\"content-index\">02</span><h2>세팅 우선순위</h2><p>동일 원두에서 프리인퓨전을 실험할 때는 첫 단계에서 너무 많은 값을 바꾸지 않습니다. 시간만, 그다음 유량만, 그다음 압력 프로파일만 순차적으로 바꿔야 원인을 추적할 수 있습니다.</p><ul><li>첫 조절: 프리인퓨전 시간 0초→2초→4초</li><li>둘째 조절: 펌핑량(또는 스텝 압력)</li><li>셋째 조절: 추출량/도즈/분쇄도는 고정</li></ul></section><section id=\"practical-table\"><span class=\"content-index\">03</span><h2>현장 시작값 예시</h2><table><thead><tr><th>카테고리</th><th>예시 시작값</th><th>평가 포인트</th></tr></thead><tbody><tr><td>밝은 원두</td><td>짧은 프리인퓨전 + 약간 느린 추출</td><td>산미와 단맛의 선명도</td></tr><tr><td>어두운 원두</td><td>중간 프리인퓨전 + 안정된 추출</td><td>쓴맛 과다 유무</td></tr><tr><td>변동이 심한 원두</td><td>가볍게 시작해 점진 조정</td><td>첫 컵의 재현성</td></tr></tbody></table></section><section id=\"mistake-check\"><span class=\"content-index\">04</span><h2>흔한 오해 정리</h2><p>프리인퓨전은 장비가 더 오래 돌아가는 대체 용어가 아니라, 물의 침투 균형을 만드는 과정입니다. 시간이 길수록 무조건 좋다는 보장은 없고, 경우에 따라 산미가 약해지거나 추출이 무겁게 보일 수 있습니다.</p><p>기본적으로 <a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">압력 추출의 기본 원리</a>와 연결해 해석하고, 동일 조건에서 한 번에 하나만 바꾸는 방식이 유효합니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "espresso-machine-hydraulics-thermal"
+    ]
   },
   {
     "slug": "milk-microfoam-checklist",
@@ -3424,7 +3452,10 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"goal\"><span class=\"content-index\">01</span><h2>목표는 부피가 아니라 입자감</h2><p>라떼 표면의 부피감만 높아 보여도 커피 맛의 밸런스가 무너지면 실패입니다. 좋은 마이크로폼은 우유 전체에 고운 기포가 고르게 퍼져야 하고, 컵에서 따를 때 끊김이 적어야 합니다.</p><p>특히 냉동 우유, 상온 우유, 고단백 우유는 거품 반응이 다르므로, 온도만 고정하고 동일한 패턴으로 처리하면 실패율이 커집니다. 매장에서는 원재료별 기준표를 먼저 기록해 두는 편이 안정적입니다.</p></section><section id=\"checklist-prep\"><span class=\"content-index\">02</span><h2>출발 점검</h2><ul><li>피처 세척: 남은 거품·단백질 잔사가 있으면 미세한 입자 형성이 증가</li><li>온도 기준: 55~65℃ 전후에서 마이크로폼이 잘 잡히는 빈도가 높음</li><li>우유 비율: 지나치게 찬 우유는 공기 주입 효율을 낮춤</li><li>분배컵 예열: 과열되지 않도록 필요한 범위만</li></ul></section><section id=\"step-control\"><span class=\"content-index\">03</span><h2>주입·회전 제어</h2><p>스티밍 초반 2~3초는 미세한 기포를 위한 주입 구간, 중반은 회전 구간으로 나눠 관리하면 형태가 분명해집니다. 초반에 과도한 에어가 들어가면 버블이 커져 거친 폼이 되기 쉽습니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>기포 조절은 음량보다 감각의 반복이 중요합니다. 손바닥으로 만져 58~62℃ 사이에서 마무리되는 감각이 익숙해지면 기록이 빨라집니다.</p></aside></section><section id=\"shift-qa\"><span class=\"content-index\">04</span><h2>시프트용 간단 점검표</h2><ol><li>오늘의 우유 배치와 온도, 시작 시간을 기록</li><li>첫 잔에서 폼 표면의 반짝임과 붓기 시 저항성 확인</li><li>마지막 2잔은 같은 잔량·붓기 속도로 반복</li><li>하루 마지막에 이탈 케이스 3개 이하가 되도록 원인 분류</li></ol></section><section id=\"next-step\"><span class=\"content-index\">05</span><h2>연결 포인트</h2><p>마이크로폼은 라떼아트의 기술 이전 단계입니다. <a data-wikilink=\"latte-art-readability\" href=\"/wiki/latte-art-readability\">라떼아트 가독성 관리</a>와 함께 보면 붓기 성능을 더 쉽게 관리할 수 있습니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "milk-steaming-protein-chemistry",
+      "plant-based-milk-steaming"
+    ]
   },
   {
     "slug": "latte-art-readability",
@@ -3491,7 +3522,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"focus\"><span class=\"content-index\">01</span><h2>패턴은 시선을 안내해야 합니다</h2><p>라떼아트를 고치는 목적은 “예쁘다”보다 일관적인 음료 감각을 전달하는 것입니다. 패턴 경계가 너무 거칠면 잔 온도, 붓기 시점, 거품 입자감이 뒤섞여서 음용 전 경험이 불안정해집니다.</p><p>따라서 붓기 전 우선순위는 단선이 아닌, 음영의 경계와 흐름입니다. 처음부터 정교한 로고보다, 가장 단순한 하트와 로즈에서 모양 유지가 되는지 확인하는 편이 훈련 효율이 높습니다.</p></section><section id=\"pre-pattern\"><span class=\"content-index\">02</span><h2>시작 전 4가지 정렬</h2><ul><li>우유 표면에 광택이 있고, 큰 거품 기포가 덩어리지 않았는지</li><li>샷의 크레마가 일정한지</li><li>잔 온도와 음량이 같은 범위인지</li><li>붓기 속도 1회당 시간 간격이 고른지</li></ul></section><section id=\"basic-motions\"><span class=\"content-index\">03</span><h2>기본 동작별 가독성 포인트</h2><table><thead><tr><th>동작</th><th>목표</th><th>실패 신호</th></tr></thead><tbody><tr><td>직선 붓기</td><td>대칭 라인</td><td>선이 끊기거나 양쪽 모양이 다름</td></tr><tr><td>팔로우 동작</td><td>테두리 정렬</td><td>끝부분이 울퉁불퉁함</td></tr><tr><td>회전</td><td>입자 균일</td><td>큰 기포 집적</td></tr></tbody></table></section><section id=\"evaluation\"><span class=\"content-index\">04</span><h2>평가 기준</h2><p>평가는 “그림”이 아니라 “재현성”으로 끝내야 합니다. 같은 패턴을 같은 조건으로 다시 만들 수 있다면 그날은 성공률이 높고, 배치 전체 품질에도 도움이 됩니다. 관람객에게 보이는 요소도 결국 재현성에서 나옵니다.</p><p>실수한 경우에는 패턴 자체를 줄이고 우유 질감 보정으로 되돌리는 것이 빠르므로, 연습에서는 난도를 빠르게 낮추는 훈련이 유리합니다.</p></section>",
     "backlinks": [
-      "milk-microfoam-checklist"
+      "milk-microfoam-checklist",
+      "milk-steaming-protein-chemistry"
     ]
   },
   {
@@ -3698,7 +3730,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"why-language\"><span class=\"content-index\">01</span><h2>언어 정렬이 커피 판단의 기반입니다</h2><p>“좋다/나쁘다”만으로는 협업이 느려집니다. 초보자도 기록에서 산미, 단맛, 쓴맛, 바디, 향미를 분리해 쓰면 같은 문장을 반복해도 비교 정확도가 올라갑니다.</p><p>의사결정의 단위는 강한 용어보다 재현 가능한 기준입니다. 예를 들어 “사과향”만 쓰기보다 “신선한 사과, 경쾌한 산미 동반”처럼 문장으로 고정하면 나중에 재현이 쉬워집니다.</p></section><section id=\"terminology-frame\"><span class=\"content-index\">02</span><h2>표현 템플릿</h2><ol><li>향: 처음 10초, 가열 후 10초의 두 지점으로 분리해서 기록</li><li>미각: 산미, 단맛, 쓴맛의 상대 강도와 지속성</li><li>바디: 입안 감각의 무게감과 점도</li><li>후미: 지속 시간과 잔여 감각의 깔끔함</li></ol></section><section id=\"consistency-rules\"><span class=\"content-index\">03</span><h2>일관성 룰</h2><ul><li>강한 표현을 쓰기 전 최소 2회 이상 같은 샘플 비교</li><li>향미 명칭은 최소한의 집합으로 시작(예: 과일, 견과, 초콜릿)</li><li>한 문장에 3개 이상 감각을 섞지 않기</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>동료와 토론할 때 “언제, 어떤 지점에서, 어떤 변화가 보였는지”를 덧붙이면 오해가 크게 줄어듭니다.</p></aside></section><section id=\"next-actions\"><span class=\"content-index\">04</span><h2>연결 학습</h2><p>관능 언어는 기록을 반복해야 성장합니다. <a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑 기초</a>에서 쓰는 조건 통제 방식과 맞물리면 감각 해석이 더 빨리 정교해집니다. </p></section>",
-    "backlinks": []
+    "backlinks": [
+      "sensory-defect-diagnosis"
+    ]
   },
   {
     "slug": "daily-cafe-routine",
@@ -3770,6 +3804,1055 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"start-routine\"><span class=\"content-index\">01</span><h2>오픈 전 10분이 운영의 질을 정합니다</h2><p>오픈 전 루틴은 바빠 보이는 시간에 가장 큰 비용을 줄입니다. 물 온도, 추출 압력, 그라인더 분쇄 상태, 스팀 라인의 청결처럼 작은 항목이 잔 맛의 변동으로 누적되기 때문입니다.</p><p>핵심은 완전한 완성을 만들기보다, 편차가 커질 징후를 먼저 감지하는 것입니다. 같은 루틴을 2주 반복하면 어떤 날에 어떤 장비가 먼저 흔들리는지 패턴이 보입니다.</p></section><section id=\"open-check\"><span class=\"content-index\">02</span><h2>오픈 전 점검표</h2><ul><li>그라인더: 도즈량 1회 측정 3개값 오차 2% 이하</li><li>에스프레소 샷: 추출 시작 5회 내 동일성 확인</li><li>우유 보온/피처: 세척·예열 상태와 물 온도 확인</li><li>수질/급수: 온수 유량과 누수 여부</li></ul></section><section id=\"throughput-control\"><span class=\"content-index\">03</span><h2>운영 중 모니터링</h2><p>혼잡 시간대에는 판단이 느려지기 쉽습니다. 이때는 기록 항목을 3개로 줄이되 계속 유지하세요. 예를 들어 샷 타임, 우유 온도, 라떼 표면 균일도 3지표를 우선 감시하는 방식입니다.</p></section><section id=\"close-routine\"><span class=\"content-index\">04</span><h2>마감 전 정리</h2><table><tbody><tr><th>구간</th><th>조치</th><th>목적</th></tr><tr><td>영업 중반</td><td>품질 이슈 발생 잔 수집</td><td>야간 분석 데이터 확보</td></tr><tr><td>영업 종료</td><td>브루어/그라인더 세척</td><td>교차 오염·냄새 고정 예방</td></tr><tr><td>마감 기록</td><td>불일치 원인 1개 이상 기록</td><td>다음 영업일 재현성</td></tr></tbody></table></section><section id=\"culture\"><span class=\"content-index\">05</span><h2>운영 문화</h2><p>문서화가 부담스럽다면 단 3줄만 남겨도 효과가 있습니다. “무엇이 문제였는지, 언제 발생했는지, 다음 수정안”이 보이면 팀 내 전달 속도가 빨라지고, 품질 회복 시간이 줄어듭니다.</p></section>",
+    "backlinks": [
+      "bar-throughput-and-flow"
+    ]
+  },
+  {
+    "slug": "particle-size-distribution",
+    "title": "분쇄 입자 분포와 추출의 균일성",
+    "summary": "평균 분쇄도보다 분포 폭이 추출 균일성에 더 큰 영향을 주므로, 분포를 읽고 조절하는 점검 루틴을 정리합니다.",
+    "category": "추출",
+    "level": "중급",
+    "readingTime": "10분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "추출의 재현성은 분쇄도 숫자뿐 아니라 입자 분포 폭의 안정성으로 결정되는 부분이 큽니다.",
+    "sections": [
+      {
+        "id": "distribution-overview",
+        "title": "입자 분포는 왜 분쇄도보다 먼저 본다",
+        "paragraphs": [
+          "분쇄는 평균 입도 하나로 설명하기 어렵습니다. 같은 평균이라도 미세입자와 큰 입자의 비율이 달라지면 추출 속도와 향의 균형이 같이 이동합니다.",
+          "현장에서는 분포를 “넓다/좁다”로 먼저 점검한 뒤 분쇄 숫자를 조정하는 쪽이 덜 흔들리는 편입니다."
+        ]
+      },
+      {
+        "id": "what-to-collect",
+        "title": "점검 데이터부터 확보",
+        "paragraphs": [],
+        "points": [
+          "원두 로트와 저장 상태(건조/신선도)",
+          "도즈, 도징량 오차, 도징 반복성",
+          "분쇄 뒤 추출 시간, 총 수율, 맛 기록",
+          "필터 잔류 미분의 육안 관찰"
+        ]
+      },
+      {
+        "id": "practical-loop",
+        "title": "실무 루프",
+        "paragraphs": [
+          "분포 변동이 의심되면 아래 순서로 운영 비용을 낮춰 가며 확인합니다."
+        ],
+        "points": [
+          "그라인더 청결과 정렬 점검 → 분쇄 오염·잔류 제거",
+          "분쇄 단계 고정, 물량·시간만 고정 추출 반복(최소 2회)",
+          "미분 과다 또는 추출 변동이 크면 분쇄 단계 1단계 조정",
+          "세 번 연속 재현되면 해당 세팅을 기록으로 고정"
+        ]
+      },
+      {
+        "id": "table-compare",
+        "title": "분포 징후 비교표",
+        "paragraphs": [
+          "징후해석 가설핵심 대응바닥 미분 잔존 증가분포 하단 꼬리 과다그라인더 상태 점검 후 분쇄 단계를 미세 변경시작은 좋은데 후반이 날카롭다추출 중 균질성 붕괴 가능붓기/채널링 변수 고정 후 분포 확인시간 편차 확대분포 이동성 증가분쇄·습윤 상태와 환경 영향 기록"
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "흔한 오해 정리",
+        "paragraphs": [
+          "오해 하나는 “숫자만 고정하면 된다”입니다. 숫자와 분쇄 분포는 연동되더라도 실제로 흔들리는 건 분포가 이동한 순간입니다.",
+          "또 하나는 미분을 무조건 배제해야 한다는 전제입니다. 미분은 완전 부정적이기보다, 강한 영향이 나타날 수 있는 구성요소라는 전제로 관리해야 합니다."
+        ]
+      },
+      {
+        "id": "exercise",
+        "title": "실습: 1주일 분포 실험",
+        "paragraphs": [],
+        "points": [
+          "동일 원두 2주기 동안 동일 레시피로 3회 측정",
+          "변동이 크면 분쇄 분포 징후 로그를 남기고 도계값은 동일 유지",
+          "세팅 조정은 미분 비중이 지속되면 1회만 변경",
+          "변경 전/후 수율과 맛 메모를 비교표로 정리"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "그라인더 기초",
+          "버 프로파일 가이드",
+          "비율 실험 루틴"
+        ]
+      }
+    ],
+    "related": [
+      "grinder-burr-profile",
+      "grinder-basics",
+      "extraction-basics"
+    ],
+    "tags": [
+      "입자분포",
+      "분쇄",
+      "미분",
+      "균일추출",
+      "추출이론"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "분포 기반 추출 오해 정리 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"distribution-overview\"><span class=\"content-index\">01</span><h2>입자 분포는 왜 분쇄도보다 먼저 본다</h2><p>분쇄는 평균 입도 하나로 설명하기 어렵습니다. 같은 평균이라도 미세입자와 큰 입자의 비율이 달라지면 추출 속도와 향의 균형이 같이 이동합니다.</p><p>현장에서는 분포를 “넓다/좁다”로 먼저 점검한 뒤 분쇄 숫자를 조정하는 쪽이 덜 흔들리는 편입니다.</p></section><section id=\"what-to-collect\"><span class=\"content-index\">02</span><h2>점검 데이터부터 확보</h2><ul><li>원두 로트와 저장 상태(건조/신선도)</li><li>도즈, 도징량 오차, 도징 반복성</li><li>분쇄 뒤 추출 시간, 총 수율, 맛 기록</li><li>필터 잔류 미분의 육안 관찰</li></ul></section><section id=\"practical-loop\"><span class=\"content-index\">03</span><h2>실무 루프</h2><p>분포 변동이 의심되면 아래 순서로 운영 비용을 낮춰 가며 확인합니다.</p><ol><li>그라인더 청결과 정렬 점검 → 분쇄 오염·잔류 제거</li><li>분쇄 단계 고정, 물량·시간만 고정 추출 반복(최소 2회)</li><li>미분 과다 또는 추출 변동이 크면 분쇄 단계 1단계 조정</li><li>세 번 연속 재현되면 해당 세팅을 기록으로 고정</li></ol></section><section id=\"table-compare\"><span class=\"content-index\">04</span><h2>분포 징후 비교표</h2><table><thead><tr><th>징후</th><th>해석 가설</th><th>핵심 대응</th></tr><tr><td>바닥 미분 잔존 증가</td><td>분포 하단 꼬리 과다</td><td>그라인더 상태 점검 후 분쇄 단계를 미세 변경</td></tr><tr><td>시작은 좋은데 후반이 날카롭다</td><td>추출 중 균질성 붕괴 가능</td><td>붓기/채널링 변수 고정 후 분포 확인</td></tr><tr><td>시간 편차 확대</td><td>분포 이동성 증가</td><td>분쇄·습윤 상태와 환경 영향 기록</td></tr></tbody></table></section><section id=\"misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해 정리</h2><p>오해 하나는 “숫자만 고정하면 된다”입니다. 숫자와 분쇄 분포는 연동되더라도 실제로 흔들리는 건 분포가 이동한 순간입니다.</p><p>또 하나는 미분을 무조건 배제해야 한다는 전제입니다. 미분은 완전 부정적이기보다, 강한 영향이 나타날 수 있는 구성요소라는 전제로 관리해야 합니다.</p></section><section id=\"exercise\"><span class=\"content-index\">06</span><h2>실습: 1주일 분포 실험</h2><ol><li>동일 원두 2주기 동안 동일 레시피로 3회 측정</li><li>변동이 크면 분쇄 분포 징후 로그를 남기고 도계값은 동일 유지</li><li>세팅 조정은 미분 비중이 지속되면 1회만 변경</li><li>변경 전/후 수율과 맛 메모를 비교표로 정리</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"grinder-basics\" href=\"/wiki/grinder-basics\">그라인더 기초</a></li><li><a data-wikilink=\"grinder-burr-profile\" href=\"/wiki/grinder-burr-profile\">버 프로파일 가이드</a></li><li><a data-wikilink=\"brew-ratio-practice\" href=\"/wiki/brew-ratio-practice\">비율 실험 루틴</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "thermal-time-agitation-control",
+    "title": "온도·시간·교반을 함께 조절하는 추출 제어",
+    "summary": "온도, 추출시간, 교반은 서로의 결과를 바꾸므로, 변수 간 순서를 분리해 실험할 때 재현성이 커집니다.",
+    "category": "추출",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "온도는 속도, 시간은 깊이, 교반은 분포 균일성과 동시 효과가 있어 단일 변수로 최적화하면 오해가 생기기 쉽습니다.",
+    "sections": [
+      {
+        "id": "variable-roles",
+        "title": "세 변수를 역할로 나눠 본다",
+        "paragraphs": [
+          "온도는 일반적으로 추출 속도와 화학 반응에, 시간은 투입된 물질의 유입량에, 교반은 추출 층의 균일성에 영향을 줍니다. 세 가지를 동시에 바꾸면 어떤 신호가 어디서 왔는지 역추적하기 어렵습니다.",
+          "기록의 가장 효율적인 시작은 “고정-변경-고정” 순서입니다. 먼저 기준 레시피를 확보하고, 변화 변수는 한 번에 하나만 바꿉니다."
+        ]
+      },
+      {
+        "id": "order",
+        "title": "실험 순서 제안",
+        "paragraphs": [],
+        "points": [
+          "1단계: 시간/분량/도즈를 먼저 고정하고 교반만 조정",
+          "2단계: 온도 편차가 큰 구간에서 분포 관찰",
+          "3단계: 마지막으로 시간으로 미세 보정"
+        ]
+      },
+      {
+        "id": "profile",
+        "title": "필터 추출 기준 템플릿",
+        "paragraphs": [
+          "단계우선 제어값판단 기준시작 30~45초뜨거운 물보다 안정한 시작원두 적심과 미분 억제추출 중반교반 패턴 고정붓기 리듬 안정화마감 10~20초목표 시간 범위 유지입안 잔향의 편차 축소"
+        ]
+      },
+      {
+        "id": "counter",
+        "title": "흔히 보는 반응과 완화",
+        "paragraphs": [
+          "온도를 올렸더니 산미가 사라지고 쓴맛이 올라오면 보통 시간 단축이 아닌 교반/분배 불균형이 같이 작동한 경우가 있습니다. 이때 바로 시간을 더 줄이는 대신 교반 반복성부터 점검하는 편이 원인 추적이 빠릅니다.",
+          "반대로 교반이 과하면 미분이 표면으로 이동해 바디가 무겁게 느껴질 수 있습니다. 같은 원두에서 10~15초 교반 차이가 결과를 확 바꿀 수 있으므로 기록은 시간 단위로 남깁니다."
+        ]
+      },
+      {
+        "id": "self-check",
+        "title": "자기 점검",
+        "paragraphs": [],
+        "points": [
+          "동일 레시피로 각 변수별 2회 반복했는지 점검했는가?",
+          "시간을 바꾼 경우 온도 로그는 동일했는가?",
+          "교반 유무가 가장 큰 향 변화를 만들었다면 무엇을 분리해야 하나?"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "물 온도·수질 기초",
+          "비율과 농도",
+          "붓기 리듬 제어"
+        ]
+      }
+    ],
+    "related": [
+      "extraction-basics",
+      "brew-ratio-practice",
+      "water-for-coffee"
+    ],
+    "tags": [
+      "온도",
+      "시간",
+      "교반",
+      "변수분리",
+      "추출재현성"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "온도·시간·교반 제어 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"variable-roles\"><span class=\"content-index\">01</span><h2>세 변수를 역할로 나눠 본다</h2><p>온도는 일반적으로 추출 속도와 화학 반응에, 시간은 투입된 물질의 유입량에, 교반은 추출 층의 균일성에 영향을 줍니다. 세 가지를 동시에 바꾸면 어떤 신호가 어디서 왔는지 역추적하기 어렵습니다.</p><p>기록의 가장 효율적인 시작은 “고정-변경-고정” 순서입니다. 먼저 기준 레시피를 확보하고, 변화 변수는 한 번에 하나만 바꿉니다.</p></section><section id=\"order\"><span class=\"content-index\">02</span><h2>실험 순서 제안</h2><ul><li>1단계: 시간/분량/도즈를 먼저 고정하고 교반만 조정</li><li>2단계: 온도 편차가 큰 구간에서 분포 관찰</li><li>3단계: 마지막으로 시간으로 미세 보정</li></ul></section><section id=\"profile\"><span class=\"content-index\">03</span><h2>필터 추출 기준 템플릿</h2><table><thead><tr><th>단계</th><th>우선 제어값</th><th>판단 기준</th></tr><tr><td>시작 30~45초</td><td>뜨거운 물보다 안정한 시작</td><td>원두 적심과 미분 억제</td></tr><tr><td>추출 중반</td><td>교반 패턴 고정</td><td>붓기 리듬 안정화</td></tr><tr><td>마감 10~20초</td><td>목표 시간 범위 유지</td><td>입안 잔향의 편차 축소</td></tr></tbody></table></section><section id=\"counter\"><span class=\"content-index\">04</span><h2>흔히 보는 반응과 완화</h2><p>온도를 올렸더니 산미가 사라지고 쓴맛이 올라오면 보통 시간 단축이 아닌 교반/분배 불균형이 같이 작동한 경우가 있습니다. 이때 바로 시간을 더 줄이는 대신 교반 반복성부터 점검하는 편이 원인 추적이 빠릅니다.</p><p>반대로 교반이 과하면 미분이 표면으로 이동해 바디가 무겁게 느껴질 수 있습니다. 같은 원두에서 10~15초 교반 차이가 결과를 확 바꿀 수 있으므로 기록은 시간 단위로 남깁니다.</p></section><section id=\"self-check\"><span class=\"content-index\">05</span><h2>자기 점검</h2><ol><li>동일 레시피로 각 변수별 2회 반복했는지 점검했는가?</li><li>시간을 바꾼 경우 온도 로그는 동일했는가?</li><li>교반 유무가 가장 큰 향 변화를 만들었다면 무엇을 분리해야 하나?</li></ol></section><section id=\"references\"><span class=\"content-index\">06</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">물 온도·수질 기초</a></li><li><a data-wikilink=\"brew-ratio-practice\" href=\"/wiki/brew-ratio-practice\">비율과 농도</a></li><li><a data-wikilink=\"pour-over-rhythm-control\" href=\"/wiki/pour-over-rhythm-control\">붓기 리듬 제어</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "permeability-channeling-control",
+    "title": "투과성·채널링의 원인과 진단",
+    "summary": "채널링을 하나의 결함이 아니라 유동과 분포가 함께 만드는 징후로 보고, 진단 순서를 고정합니다.",
+    "category": "추출",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "채널링은 분쇄나 물량 하나만의 문제보다, 수분 이동과 분배의 불균형에서 먼저 발생할 수 있습니다.",
+    "sections": [
+      {
+        "id": "why-channeling",
+        "title": "채널링은 왜 생기는가",
+        "paragraphs": [
+          "채널링은 물이 커피층을 골고루 통과하지 못하고 일부 통로를 선호할 때 발생합니다. 원인으로는 분쇄 분포, 분배 불균일, 압력/유량 과도, 베드 밀도 불균형이 함께 작동합니다.",
+          "한 번에 원인을 단정하기보다 채널링 의심 신호를 정리하고, 동시 변수 변경을 피합니다."
+        ]
+      },
+      {
+        "id": "diagnosis",
+        "title": "진단 체크리스트",
+        "paragraphs": [],
+        "points": [
+          "추출 시작 직후 소리가 갑작스레 일정해지는지",
+          "중반 이후 급속 유출이 생기는지",
+          "컵 표면의 거친 입자감·쪽입감이 반복되는지",
+          "동일 세팅에서 샷/컵 간 편차가 크게 벌어지는지"
+        ]
+      },
+      {
+        "id": "countermeasures",
+        "title": "우선순위 대책",
+        "paragraphs": [],
+        "points": [
+          "교반/붓기 패턴 고정(변경 전)",
+          "분쇄 분포가 넓은지 점검하고 버 상태 확인",
+          "도즈량·타포트 탬핑 일관성 통일",
+          "필요 시 예열·유량을 조절해 초기 침투 안정화"
+        ]
+      },
+      {
+        "id": "table",
+        "title": "채널링 원인별 징후",
+        "paragraphs": [
+          "원인군특징개입붓기/교반초반 특정 지점 집중붓기 폭과 방향 균일화분쇄미분 과다 또는 큰 편차버 정렬·교체·분쇄 단계 재검토베드 밀도샷 타임 불안정도즈/탬핑 압력 및 분배 동작 고정"
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "많은 분쇄가 다 소용량으로 바뀌어야 한다는 오해가 있습니다. 채널링은 단순히 더 곱게 갈아 해결되지 않습니다. 먼저 베드가 어떻게 물을 받는지부터 바꿔야 합니다."
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 채널링 경보 지도",
+        "paragraphs": [
+          "하루 3잔 기준으로 로그를 남겨보세요."
+        ],
+        "points": [
+          "추출 시작 음향·유량 변화를 수치로 기록",
+          "원두/분쇄/도즈 변경 없이 분배 동작만 2회 바꾸어 비교",
+          "같은 날 3회 비교에서 경향이 반복되면 다음 단계로 이동"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "에스프레소 기본 원리",
+          "퍽 준비 및 탬핑"
+        ]
+      }
+    ],
+    "related": [
+      "pour-over-rhythm-control",
+      "espresso-preinfusion-guide",
+      "espresso-puck-preparation"
+    ],
+    "tags": [
+      "채널링",
+      "투과성",
+      "퍼지",
+      "균일추출"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "채널링 진단 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"why-channeling\"><span class=\"content-index\">01</span><h2>채널링은 왜 생기는가</h2><p>채널링은 물이 커피층을 골고루 통과하지 못하고 일부 통로를 선호할 때 발생합니다. 원인으로는 분쇄 분포, 분배 불균일, 압력/유량 과도, 베드 밀도 불균형이 함께 작동합니다.</p><p>한 번에 원인을 단정하기보다 채널링 의심 신호를 정리하고, 동시 변수 변경을 피합니다.</p></section><section id=\"diagnosis\"><span class=\"content-index\">02</span><h2>진단 체크리스트</h2><ul><li>추출 시작 직후 소리가 갑작스레 일정해지는지</li><li>중반 이후 급속 유출이 생기는지</li><li>컵 표면의 거친 입자감·쪽입감이 반복되는지</li><li>동일 세팅에서 샷/컵 간 편차가 크게 벌어지는지</li></ul></section><section id=\"countermeasures\"><span class=\"content-index\">03</span><h2>우선순위 대책</h2><ol><li>교반/붓기 패턴 고정(변경 전)</li><li>분쇄 분포가 넓은지 점검하고 버 상태 확인</li><li>도즈량·타포트 탬핑 일관성 통일</li><li>필요 시 예열·유량을 조절해 초기 침투 안정화</li></ol></section><section id=\"table\"><span class=\"content-index\">04</span><h2>채널링 원인별 징후</h2><table><thead><tr><th>원인군</th><th>특징</th><th>개입</th></tr><tr><td>붓기/교반</td><td>초반 특정 지점 집중</td><td>붓기 폭과 방향 균일화</td></tr><tr><td>분쇄</td><td>미분 과다 또는 큰 편차</td><td>버 정렬·교체·분쇄 단계 재검토</td></tr><tr><td>베드 밀도</td><td>샷 타임 불안정</td><td>도즈/탬핑 압력 및 분배 동작 고정</td></tr></tbody></table></section><section id=\"misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><p>많은 분쇄가 다 소용량으로 바뀌어야 한다는 오해가 있습니다. 채널링은 단순히 더 곱게 갈아 해결되지 않습니다. 먼저 베드가 어떻게 물을 받는지부터 바꿔야 합니다.</p></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 채널링 경보 지도</h2><p>하루 3잔 기준으로 로그를 남겨보세요.</p><ol><li>추출 시작 음향·유량 변화를 수치로 기록</li><li>원두/분쇄/도즈 변경 없이 분배 동작만 2회 바꾸어 비교</li><li>같은 날 3회 비교에서 경향이 반복되면 다음 단계로 이동</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 기본 원리</a></li><li><a data-wikilink=\"espresso-puck-preparation\" href=\"/wiki/espresso-puck-preparation\">퍽 준비 및 탬핑</a></li></ul></section>",
+    "backlinks": [
+      "espresso-puck-preparation"
+    ]
+  },
+  {
+    "slug": "brew-profile-observables",
+    "title": "브루 프로파일에서 관측값을 읽는 법",
+    "summary": "추출 중 눈으로 잡히는 지표를 기록 항목으로 바꿔 실험 재현성과 대화의 공유성을 확보하는 방법을 정리합니다.",
+    "category": "추출",
+    "level": "중급",
+    "readingTime": "8분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "브루 프로파일은 정답값이 아니라, 반복 가능한지 판단하기 위한 관측값의 집합입니다.",
+    "sections": [
+      {
+        "id": "why-observables",
+        "title": "관측값이 중요한 이유",
+        "paragraphs": [
+          "같은 수치만으로는 같은 결과가 보장되지 않습니다. 관측값은 그 시간에 있었던 변수를 함께 설명해주므로, 기록의 공유 비용을 낮춰줍니다.",
+          "팀 단위에서는 “개인 감각”보다 “관측 템플릿”이 빠른 학습을 만듭니다."
+        ]
+      },
+      {
+        "id": "minimum-metrics",
+        "title": "최소 측정 항목",
+        "paragraphs": [],
+        "points": [
+          "도즈, 물량, 추출시간",
+          "붓기 분할 횟수와 간격(필터 추출)",
+          "기온/수온, 원두 상태(표기)",
+          "맛 메모 4항목: 산미, 단맛, 바디, 쓴맛"
+        ]
+      },
+      {
+        "id": "template",
+        "title": "운영 템플릿",
+        "paragraphs": [
+          "항목기록 형식목적추출 유량초당 g 또는 구간별 누적 g초기 과다 유입 탐지온도최초/중반/마감열 편차 관리관능산미/단맛/바디/잔향재현성 판단"
+        ]
+      },
+      {
+        "id": "process",
+        "title": "기록 루프",
+        "paragraphs": [
+          "관측값을 남긴 뒤의 판단은 아래 루프로 고정합니다."
+        ],
+        "points": [
+          "차이의 크기 확인: 편차가 통계적으로 반복되는지",
+          "차이의 방향 확인: 값이 늘거나 줄 때 맛 방향이 일치하는지",
+          "차이의 원인 연결: 분쇄·물·교반·온도 중 어떤 축인지"
+        ]
+      },
+      {
+        "id": "common-errors",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "관측값만 많다고 분석이 쉬워지는 것은 아닙니다. 핵심은 최소 5개를 꾸준히 정확히 기록해 추세를 보는 것입니다."
+        ]
+      },
+      {
+        "id": "self-check",
+        "title": "자기 점검 퀴즈",
+        "paragraphs": [],
+        "points": [
+          "같은 레시피로 3회 재현해도 관측값 분산이 일정하게 줄었는가?",
+          "변경한 변수가 문서화되어 있는가?",
+          "관측값이 2개 항목에서 함께 바뀌었는지 설명할 수 있는가?"
+        ]
+      },
+      {
+        "id": "reference",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "물과 온도 기초",
+          "비율 실험",
+          "레시피 운영 예시"
+        ]
+      }
+    ],
+    "related": [
+      "extraction-basics",
+      "thermal-time-agitation-control",
+      "pour-over-rhythm-control"
+    ],
+    "tags": [
+      "브루데이터",
+      "관측값",
+      "추출로그",
+      "품질관리",
+      "실험"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "브루 관측값 프레임 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"why-observables\"><span class=\"content-index\">01</span><h2>관측값이 중요한 이유</h2><p>같은 수치만으로는 같은 결과가 보장되지 않습니다. 관측값은 그 시간에 있었던 변수를 함께 설명해주므로, 기록의 공유 비용을 낮춰줍니다.</p><p>팀 단위에서는 “개인 감각”보다 “관측 템플릿”이 빠른 학습을 만듭니다.</p></section><section id=\"minimum-metrics\"><span class=\"content-index\">02</span><h2>최소 측정 항목</h2><ul><li>도즈, 물량, 추출시간</li><li>붓기 분할 횟수와 간격(필터 추출)</li><li>기온/수온, 원두 상태(표기)</li><li>맛 메모 4항목: 산미, 단맛, 바디, 쓴맛</li></ul></section><section id=\"template\"><span class=\"content-index\">03</span><h2>운영 템플릿</h2><table><thead><tr><th>항목</th><th>기록 형식</th><th>목적</th></tr><tr><td>추출 유량</td><td>초당 g 또는 구간별 누적 g</td><td>초기 과다 유입 탐지</td></tr><tr><td>온도</td><td>최초/중반/마감</td><td>열 편차 관리</td></tr><tr><td>관능</td><td>산미/단맛/바디/잔향</td><td>재현성 판단</td></tr></tbody></table></section><section id=\"process\"><span class=\"content-index\">04</span><h2>기록 루프</h2><p>관측값을 남긴 뒤의 판단은 아래 루프로 고정합니다.</p><ol><li>차이의 크기 확인: 편차가 통계적으로 반복되는지</li><li>차이의 방향 확인: 값이 늘거나 줄 때 맛 방향이 일치하는지</li><li>차이의 원인 연결: 분쇄·물·교반·온도 중 어떤 축인지</li></ol></section><section id=\"common-errors\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><p>관측값만 많다고 분석이 쉬워지는 것은 아닙니다. 핵심은 최소 5개를 꾸준히 정확히 기록해 추세를 보는 것입니다.</p></section><section id=\"self-check\"><span class=\"content-index\">06</span><h2>자기 점검 퀴즈</h2><ul><li>같은 레시피로 3회 재현해도 관측값 분산이 일정하게 줄었는가?</li><li>변경한 변수가 문서화되어 있는가?</li><li>관측값이 2개 항목에서 함께 바뀌었는지 설명할 수 있는가?</li></ul></section><section id=\"reference\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">물과 온도 기초</a></li><li><a data-wikilink=\"brew-ratio-practice\" href=\"/wiki/brew-ratio-practice\">비율 실험</a></li><li><a data-wikilink=\"home-brew-recipes\" href=\"/wiki/home-brew-recipes\">레시피 운영 예시</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "espresso-machine-hydraulics-thermal",
+    "title": "에스프레소 머신의 수력·열 시스템",
+    "summary": "펌프, 보일러, 밸브의 결합 특성을 정리해 압력과 온도 변동을 줄이고 일관된 샷을 만드는 방법을 정리합니다.",
+    "category": "카페와 장비",
+    "level": "중급",
+    "readingTime": "10분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sand",
+    "fact": "수력과 열 체계의 안정성은 머신 사양보다 유량/온도 편차를 줄이는 운영 습관에서 더 크게 좌우됩니다.",
+    "sections": [
+      {
+        "id": "system-definition",
+        "title": "수력·열 시스템이란 무엇인가",
+        "paragraphs": [
+          "에스프레소 머신은 두 축으로 동작합니다. 하나는 물을 원하는 속도로 밀어 넣는 수력 축이고, 다른 하나는 추출수의 열 상태를 일정 범위에 두는 열 축입니다. 두 축은 서로 독립되어 보이지만, 실제 추출에서는 거의 항상 결합되어 변동을 만듭니다.",
+          "동일한 분쇄, 동일한 도즈에서 컵 결과가 갈리는 경우가 많다면, 대부분은 장비 쪽 변동을 먼저 점검해야 합니다."
+        ]
+      },
+      {
+        "id": "hydraulic-subsystem",
+        "title": "펌프와 유량, 압력의 실제 의미",
+        "paragraphs": [
+          "결국 유량이 불안정하면 압력도 흔들리고, 흔들린 압력은 채널링과 과다 추출을 동시에 유발할 수 있어요. 그래서 펌프 성능은 “숫자”보다 “변동 추이”를 더 중요하게 봅니다."
+        ],
+        "points": [
+          "펌프는 설정된 목표 압력을 만들지만, 세팅이 유지되는지는 유량과 저항(커피층 상태)에 달려 있습니다.",
+          "압력은 순간값(예: 추출 중 peak, plateau)을 같이 봐야 하며, 평균값 하나만으로는 불충분합니다.",
+          "OPV(과압 방지 밸브)와 스프링 밸브 세팅은 고압 구간의 유출을 안정화하기 위한 안전/일관성 장치입니다."
+        ]
+      },
+      {
+        "id": "thermal-subsystem",
+        "title": "보일러·가열부를 이해하는 기준",
+        "paragraphs": [
+          "구성요소역할운영 포인트보일러열원 저장목표 온도 도달 시간과 복귀 안정성 확인히트 익스체인저/히트 싱크회로의 온도 전파샷 전후 온도 회복 속도 기록온도 제어기(PID)세팅값 유지센서 편차를 기준으로 튜닝 빈도 판단",
+          "많이 알려진 오해는 “PID가 켜져 있으니 온도는 완전 고정”이라는 가정입니다. PID는 편차를 줄여주지만, 추출 직전의 샤워 헤드 열손실, 그룹 헤드 열저류, 탬핑 직후의 베드 흡열 등을 보완할 수는 없습니다."
+        ]
+      },
+      {
+        "id": "interaction",
+        "title": "수력과 열의 상호작용",
+        "paragraphs": [
+          "예를 들어 온도를 0.5~1도 올렸을 때와 유량을 낮췄을 때의 효과를 쉽게 섞어서 해석하면 실험이 꼬입니다. 수력은 유입 속도와 체류 시간을 바꾸고, 열은 용질 용해 및 향기 성분의 반응 구간을 바꿉니다.",
+          "운영상 변화가 필요할 때는 먼저 분쇄/분배/도즈를 고정하고, 유량 또는 보일러 설정 중 하나만 바꾸는 방식이 해석 비용을 줄입니다."
+        ]
+      },
+      {
+        "id": "operating-checklist",
+        "title": "바리스타용 점검 체크리스트",
+        "paragraphs": [],
+        "points": [
+          "샷 직전 보일러 상태: 목표 온도 도달 여부와 과열-저하 경향 기록",
+          "예열 직후 첫 잔과 10분 운전 후 10분째 잔의 유량 차이 비교",
+          "동일 원두에서 프리인퓨전/메인 추출 각각의 시간 변화량을 기록",
+          "샷이 안정되는 데 필요한 워밍타임을 매일 로그로 관리"
+        ]
+      },
+      {
+        "id": "practical-experiment",
+        "title": "실습: 수력·열 분리 튜닝",
+        "paragraphs": [
+          "동일한 커피로 2일 테스트를 권장합니다."
+        ],
+        "points": [
+          "2일차 전까지 분쇄·도즈·분배·탬핑은 고정",
+          "1일차: 유량/펌프 프로파일만 조정",
+          "2일차: 보일러 온도/워밍 타임만 조정",
+          "둘 다 조정하지 않았을 때와 비교해 같은 방향의 맛 변화만 남기는 조합을 선택"
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "“압력이 높으면 산미가 줄고 쓴맛만 올라간다”는 단정은 일반화의 위험이 큽니다. 원두 밀도, 분쇄 분포, 채널링 상태가 같은데도 같은 압력 차이에서 반대로 바디가 달라질 수 있습니다.",
+          "또한 머신이 오래되었다고 판단될 때 즉시 고장으로 단정하기보다, 동일 부품 사용 시간과 스케일링 정도를 함께 기록해야 실제 원인을 찾을 수 있습니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "에스프레소 기본 작동 원리",
+          "추출 장비 구성 개요",
+          "프리인퓨전과 채널링 완화"
+        ]
+      }
+    ],
+    "related": [
+      "espresso-basics",
+      "espresso-machines-grinders",
+      "espresso-preinfusion-guide",
+      "water-for-coffee"
+    ],
+    "tags": [
+      "에스프레소 머신",
+      "수력",
+      "열교정",
+      "펌프",
+      "온도 안정성"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "에스프레소 머신 수력·열 시스템 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"system-definition\"><span class=\"content-index\">01</span><h2>수력·열 시스템이란 무엇인가</h2><p>에스프레소 머신은 두 축으로 동작합니다. 하나는 물을 원하는 속도로 밀어 넣는 <strong>수력</strong> 축이고, 다른 하나는 추출수의 열 상태를 일정 범위에 두는 <strong>열</strong> 축입니다. 두 축은 서로 독립되어 보이지만, 실제 추출에서는 거의 항상 결합되어 변동을 만듭니다.</p><p>동일한 분쇄, 동일한 도즈에서 컵 결과가 갈리는 경우가 많다면, 대부분은 장비 쪽 변동을 먼저 점검해야 합니다.</p></section><section id=\"hydraulic-subsystem\"><span class=\"content-index\">02</span><h2>펌프와 유량, 압력의 실제 의미</h2><ul><li>펌프는 설정된 목표 압력을 만들지만, 세팅이 유지되는지는 유량과 저항(커피층 상태)에 달려 있습니다.</li><li>압력은 순간값(예: 추출 중 peak, plateau)을 같이 봐야 하며, 평균값 하나만으로는 불충분합니다.</li><li>OPV(과압 방지 밸브)와 스프링 밸브 세팅은 고압 구간의 유출을 안정화하기 위한 안전/일관성 장치입니다.</li></ul><p>결국 유량이 불안정하면 압력도 흔들리고, 흔들린 압력은 채널링과 과다 추출을 동시에 유발할 수 있어요. 그래서 펌프 성능은 “숫자”보다 “변동 추이”를 더 중요하게 봅니다.</p></section><section id=\"thermal-subsystem\"><span class=\"content-index\">03</span><h2>보일러·가열부를 이해하는 기준</h2><table><thead><tr><th>구성요소</th><th>역할</th><th>운영 포인트</th></tr><tr><td>보일러</td><td>열원 저장</td><td>목표 온도 도달 시간과 복귀 안정성 확인</td></tr><tr><td>히트 익스체인저/히트 싱크</td><td>회로의 온도 전파</td><td>샷 전후 온도 회복 속도 기록</td></tr><tr><td>온도 제어기(PID)</td><td>세팅값 유지</td><td>센서 편차를 기준으로 튜닝 빈도 판단</td></tr></tbody></table><p>많이 알려진 오해는 “PID가 켜져 있으니 온도는 완전 고정”이라는 가정입니다. PID는 편차를 줄여주지만, 추출 직전의 샤워 헤드 열손실, 그룹 헤드 열저류, 탬핑 직후의 베드 흡열 등을 보완할 수는 없습니다.</p></section><section id=\"interaction\"><span class=\"content-index\">04</span><h2>수력과 열의 상호작용</h2><p>예를 들어 온도를 0.5~1도 올렸을 때와 유량을 낮췄을 때의 효과를 쉽게 섞어서 해석하면 실험이 꼬입니다. 수력은 유입 속도와 체류 시간을 바꾸고, 열은 용질 용해 및 향기 성분의 반응 구간을 바꿉니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>운영상 변화가 필요할 때는 먼저 분쇄/분배/도즈를 고정하고, 유량 또는 보일러 설정 중 하나만 바꾸는 방식이 해석 비용을 줄입니다.</p></aside></section><section id=\"operating-checklist\"><span class=\"content-index\">05</span><h2>바리스타용 점검 체크리스트</h2><ol><li>샷 직전 보일러 상태: 목표 온도 도달 여부와 과열-저하 경향 기록</li><li>예열 직후 첫 잔과 10분 운전 후 10분째 잔의 유량 차이 비교</li><li>동일 원두에서 프리인퓨전/메인 추출 각각의 시간 변화량을 기록</li><li>샷이 안정되는 데 필요한 워밍타임을 매일 로그로 관리</li></ol></section><section id=\"practical-experiment\"><span class=\"content-index\">06</span><h2>실습: 수력·열 분리 튜닝</h2><p>동일한 커피로 2일 테스트를 권장합니다.</p><ol><li>2일차 전까지 분쇄·도즈·분배·탬핑은 고정</li><li>1일차: 유량/펌프 프로파일만 조정</li><li>2일차: 보일러 온도/워밍 타임만 조정</li><li>둘 다 조정하지 않았을 때와 비교해 같은 방향의 맛 변화만 남기는 조합을 선택</li></ol></section><section id=\"common-misconceptions\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><p>“압력이 높으면 산미가 줄고 쓴맛만 올라간다”는 단정은 일반화의 위험이 큽니다. 원두 밀도, 분쇄 분포, 채널링 상태가 같은데도 같은 압력 차이에서 반대로 바디가 달라질 수 있습니다.</p><p>또한 머신이 오래되었다고 판단될 때 즉시 고장으로 단정하기보다, 동일 부품 사용 시간과 스케일링 정도를 함께 기록해야 실제 원인을 찾을 수 있습니다.</p></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 기본 작동 원리</a></li><li><a data-wikilink=\"espresso-machines-grinders\" href=\"/wiki/espresso-machines-grinders\">추출 장비 구성 개요</a></li><li><a data-wikilink=\"espresso-preinfusion-guide\" href=\"/wiki/espresso-preinfusion-guide\">프리인퓨전과 채널링 완화</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "espresso-puck-preparation",
+    "title": "에스프레소 퍽 준비와 채널링 억제",
+    "summary": "도징, 분배, 탬핑의 일관성을 함께 관리해 채널링 의심을 줄이고 샷 편차를 낮추는 실무 루틴을 정리합니다.",
+    "category": "카페와 장비",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sand",
+    "fact": "퍽 준비는 “한 번의 동작”이 아니라 도즈·분배·탬핑의 결합 일관성을 만들 때 채널링 편차가 줄어듭니다.",
+    "sections": [
+      {
+        "id": "puck-definition",
+        "title": "퍽 준비의 개념",
+        "paragraphs": [
+          "퍽은 분쇄 커피를 바스켓에 넣어 만든 추출층 전체를 뜻합니다. 결국 추출은 “수분이 퍽을 통해 얼마나 균일하게 통과하느냐”의 결과이므로, 분쇄 단계만 최적화해도 채널링이 사라지지 않습니다.",
+          "따라서 퍽 준비의 성패는 기기의 역할이 아니라 바리스타가 만든 재현 가능한 층의 품질입니다."
+        ]
+      },
+      {
+        "id": "dose-and-distribution",
+        "title": "도즈와 분배부터 고정한다",
+        "paragraphs": [],
+        "points": [
+          "도즈는 목표량 오차 1~2g 이내로 시작해도, 잔차가 누적되면 30분 내 편차로 확장됩니다.",
+          "분배는 한 번에 던지는 분배가 아니라, 표면 수평도 확보 동작을 기준으로 합니다.",
+          "바스켓 가장자리의 경사나 눌린 부분은 유로 차이를 만들 수 있어, 분배 후 레벨 확인이 중요합니다."
+        ]
+      },
+      {
+        "id": "tamping-role",
+        "title": "탬핑은 단축이 아닌 규격화",
+        "paragraphs": [
+          "탬핑은 과도한 압력을 만드는 동작이 아니라, 층의 높이와 표면 안정성을 맞추는 동작입니다. 매번 압력이 다르고 각도가 바뀌면, 추출은 수분 분배가 아닌 표면 기복의 함수가 됩니다.",
+          "가능하면 “압력의 절대값”보다 “동일 동작의 반복성”을 먼저 통제하고, 이후에 미세 압력 조절을 논의합니다."
+        ]
+      },
+      {
+        "id": "error-signals",
+        "title": "신호를 읽는 기준표",
+        "paragraphs": [
+          "관측 신호가능성 높은 원인우선 대응초반 유량 급증분배 불균일 또는 도즈 상단 공극분배 동작 통일 후 1회 재시험샷 타임 편차 확대탬핑 각도·표면 기복탬핑 패턴 고정, 동일 시간 준수일회성 바디 붕괴분쇄 분포와 결합한 채널링분배·탬핑 교차 점검 후 원인 분리"
+        ]
+      },
+      {
+        "id": "workflow",
+        "title": "현장 운영 루프",
+        "paragraphs": [],
+        "points": [
+          "원두 교체 뒤 10분간 도즈·분배만 반복해 기준 분포를 확보",
+          "탬핑은 손상 없는 템퍼/도구만 사용해 각도 고정",
+          "변동이 심한 시간대에는 분배 도구를 추가해 일관성 확보",
+          "한 배치에서 도즈/분배/탬핑 중 한 가지만 변경"
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 15회 샷 반복 루틴",
+        "paragraphs": [
+          "동일 로트 15잔 기준으로 다음 절차를 적용하면 편차 원인을 빠르게 추적할 수 있습니다."
+        ],
+        "points": [
+          "도즈와 분배 동작 고정, 탬핑만 동일 압력으로 반복",
+          "변동 컵이 생기면 분배/탬핑의 차이만 1단계로 바꿈",
+          "변경 후 5잔에서 수율·시간·관능 편차를 동시에 기록",
+          "일관성이 회복되면 변경 분량을 확정 기록"
+        ]
+      },
+      {
+        "id": "mistakes",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "“탬핑을 더 세게 눌러야 채널링이 줄어든다”는 말은 자주 과장됩니다. 압력만 강해지면 표면이 매끄러워질 수는 있지만, 하부 분포가 불균일하면 해결되지 않습니다.",
+          "반대로 퍽 전체의 규격성이 확보되면 탬핑을 미세하게 조정해도 장비 간 이동성이 좋아지므로, 작업자 간 편차가 줄어듭니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "에스프레소 기본 원리",
+          "바리스타 장비 이해",
+          "투과성·채널링 진단"
+        ]
+      }
+    ],
+    "related": [
+      "espresso-basics",
+      "espresso-machines-grinders",
+      "permeability-channeling-control",
+      "espresso-preinfusion-guide"
+    ],
+    "tags": [
+      "퍽",
+      "도징",
+      "분배",
+      "탬핑",
+      "채널링"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "에스프레소 퍽 준비 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"puck-definition\"><span class=\"content-index\">01</span><h2>퍽 준비의 개념</h2><p>퍽은 분쇄 커피를 바스켓에 넣어 만든 추출층 전체를 뜻합니다. 결국 추출은 “수분이 퍽을 통해 얼마나 균일하게 통과하느냐”의 결과이므로, 분쇄 단계만 최적화해도 채널링이 사라지지 않습니다.</p><p>따라서 퍽 준비의 성패는 기기의 역할이 아니라 바리스타가 만든 재현 가능한 층의 품질입니다.</p></section><section id=\"dose-and-distribution\"><span class=\"content-index\">02</span><h2>도즈와 분배부터 고정한다</h2><ul><li>도즈는 목표량 오차 1~2g 이내로 시작해도, 잔차가 누적되면 30분 내 편차로 확장됩니다.</li><li>분배는 한 번에 던지는 분배가 아니라, 표면 수평도 확보 동작을 기준으로 합니다.</li><li>바스켓 가장자리의 경사나 눌린 부분은 유로 차이를 만들 수 있어, 분배 후 레벨 확인이 중요합니다.</li></ul></section><section id=\"tamping-role\"><span class=\"content-index\">03</span><h2>탬핑은 단축이 아닌 규격화</h2><p>탬핑은 과도한 압력을 만드는 동작이 아니라, 층의 높이와 표면 안정성을 맞추는 동작입니다. 매번 압력이 다르고 각도가 바뀌면, 추출은 수분 분배가 아닌 표면 기복의 함수가 됩니다.</p><p>가능하면 “압력의 절대값”보다 “동일 동작의 반복성”을 먼저 통제하고, 이후에 미세 압력 조절을 논의합니다.</p></section><section id=\"error-signals\"><span class=\"content-index\">04</span><h2>신호를 읽는 기준표</h2><table><thead><tr><th>관측 신호</th><th>가능성 높은 원인</th><th>우선 대응</th></tr><tr><td>초반 유량 급증</td><td>분배 불균일 또는 도즈 상단 공극</td><td>분배 동작 통일 후 1회 재시험</td></tr><tr><td>샷 타임 편차 확대</td><td>탬핑 각도·표면 기복</td><td>탬핑 패턴 고정, 동일 시간 준수</td></tr><tr><td>일회성 바디 붕괴</td><td>분쇄 분포와 결합한 채널링</td><td>분배·탬핑 교차 점검 후 원인 분리</td></tr></tbody></table></section><section id=\"workflow\"><span class=\"content-index\">05</span><h2>현장 운영 루프</h2><ol><li>원두 교체 뒤 10분간 도즈·분배만 반복해 기준 분포를 확보</li><li>탬핑은 손상 없는 템퍼/도구만 사용해 각도 고정</li><li>변동이 심한 시간대에는 분배 도구를 추가해 일관성 확보</li><li>한 배치에서 도즈/분배/탬핑 중 한 가지만 변경</li></ol></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 15회 샷 반복 루틴</h2><p>동일 로트 15잔 기준으로 다음 절차를 적용하면 편차 원인을 빠르게 추적할 수 있습니다.</p><ol><li>도즈와 분배 동작 고정, 탬핑만 동일 압력으로 반복</li><li>변동 컵이 생기면 분배/탬핑의 차이만 1단계로 바꿈</li><li>변경 후 5잔에서 수율·시간·관능 편차를 동시에 기록</li><li>일관성이 회복되면 변경 분량을 확정 기록</li></ol></section><section id=\"mistakes\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><p>“탬핑을 더 세게 눌러야 채널링이 줄어든다”는 말은 자주 과장됩니다. 압력만 강해지면 표면이 매끄러워질 수는 있지만, 하부 분포가 불균일하면 해결되지 않습니다.</p><p>반대로 퍽 전체의 규격성이 확보되면 탬핑을 미세하게 조정해도 장비 간 이동성이 좋아지므로, 작업자 간 편차가 줄어듭니다.</p></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 기본 원리</a></li><li><a data-wikilink=\"espresso-machines-grinders\" href=\"/wiki/espresso-machines-grinders\">바리스타 장비 이해</a></li><li><a data-wikilink=\"permeability-channeling-control\" href=\"/wiki/permeability-channeling-control\">투과성·채널링 진단</a></li></ul></section>",
+    "backlinks": [
+      "permeability-channeling-control"
+    ]
+  },
+  {
+    "slug": "milk-steaming-protein-chemistry",
+    "title": "스팀 밀크의 단백질 화학: 거품이 유지되는 이유",
+    "summary": "단백질과 지방의 상호작용이 미세 거품을 어떻게 지지하는지 이해하고, 온도·시간 조절로 안정적인 텍스처를 만드는 방법을 정리합니다.",
+    "category": "음료와 레시피",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "berry",
+    "fact": "우유 거품 안정성은 가열과 공기 주입 자체보다도 단백질-지방-온도의 상호 균형을 얼마나 일정하게 유지하느냐에 달려 있습니다.",
+    "sections": [
+      {
+        "id": "protein-basis",
+        "title": "우유 거품은 어디서 생기는가",
+        "paragraphs": [
+          "우유에서 공기가 들어가면 단백질이 표면에 얇은 막을 형성하고, 이 막이 기포를 감싸며 미세거품을 만듭니다. 지방 입자는 기포 사이를 채워 감촉을 바꾸고, 유당·무기질은 가열 반응의 완충 역할을 돕습니다.",
+          "즉, 거품은 “공기만 많이 넣는” 기술보다, 단백질-지방-열의 구조가 균형을 유지할 때 오래 갑니다."
+        ]
+      },
+      {
+        "id": "protein-roles",
+        "title": "단백질의 역할 분해",
+        "paragraphs": [
+          "우유 종류별 원유 지질 함량이 다르므로 “한 가지 스팀 시간”이 모든 우유에 동일하게 맞지는 않습니다."
+        ],
+        "points": [
+          "카제인: 거품의 골격을 형성할 만큼 주된 기체막 재료 역할",
+          "유청 단백질: 열과 pH 변화에 따라 기포 안정성에 간접 영향",
+          "지방: 과하면 기포가 무너질 수 있고, 부족하면 거품이 건조해짐"
+        ]
+      },
+      {
+        "id": "thermal-window",
+        "title": "온도 구간의 근사 범위",
+        "paragraphs": [
+          "스티밍에서 다루는 핵심 온도는 목표 온도 범위와 텍스처를 함께 봅니다. 일반적으로 잔용 라테 기준으로는 목표 62~68℃ 근처에서 음료용 미세거품을 유지하는 경향이 있습니다.",
+          "60℃ 전후에서는 기포 형성이 잘 시작하고, 70℃ 이상에서는 단백질 막이 취약해져 입자가 거칠어지기 쉬워지므로 장비와 우유에 따라 미세 조정이 필요합니다."
+        ]
+      },
+      {
+        "id": "foam-structure",
+        "title": "거품 안정화와 붕괴 신호",
+        "paragraphs": [
+          "관측 신호해석개입표면이 거칠고 거품 입자 큼과공기화 또는 과열 전단스팀 시작 각도·시간 축소거품이 빠르게 무너짐단백질막 약화 또는 과한 지방 동원온도 하한으로 재조정표면 광택 약함균일 분산 부족회전/회복 동작을 짧게 반복"
+        ]
+      },
+      {
+        "id": "method",
+        "title": "실무 스티밍 루틴",
+        "paragraphs": [],
+        "points": [
+          "펜칭 가능한 동일 탱크·우유량에서만 시작",
+          "초반은 스팀 팁을 우유 표면 근처에 두고 기포 혼입 구간을 최소화",
+          "중반~후반은 스팀 팁을 깊게 내려 텍스처를 정돈",
+          "최종 온도 62~68℃에서 스팀을 멈추고 즉시 거품 크기를 가늠"
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 단백질 변성 관찰",
+        "paragraphs": [
+          "동일 배치에서 4회 실행해 패턴을 잡아보세요."
+        ],
+        "points": [
+          "동일 농도(유청 포함/탈지 여부 고정)로 스팀 시간을 ±5초씩 조절",
+          "거품 크기와 표면 광택, 컵 잔향(바디/단맛)을 기록",
+          "거품 붕괴 시점(재생성 시간)까지 시간으로 비교",
+          "가장 오래 유지되는 조합을 레시피에 반영"
+        ]
+      },
+      {
+        "id": "mistakes",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "거품이 많으면 반드시 텍스처가 좋은 것은 아닙니다. 기포가 크고 거칠면 맛을 지우고 향을 가리는 쪽으로 느껴질 수 있습니다.",
+          "또한 단백질이 충분해도 온도가 기준을 벗어나면 바로 무너지므로, 목표 온도보다 “목표 구간”을 관리해야 합니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "우유 스티밍 기본",
+          "미세거품 점검 항목",
+          "잔상 텍스처와 가독성"
+        ]
+      }
+    ],
+    "related": [
+      "milk-steaming",
+      "milk-microfoam-checklist",
+      "latte-art-readability"
+    ],
+    "tags": [
+      "우유 스티밍",
+      "카제인",
+      "단백질 변성",
+      "미세거품",
+      "온도 제어"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "우유 단백질 기반 스티밍 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"protein-basis\"><span class=\"content-index\">01</span><h2>우유 거품은 어디서 생기는가</h2><p>우유에서 공기가 들어가면 단백질이 표면에 얇은 막을 형성하고, 이 막이 기포를 감싸며 미세거품을 만듭니다. 지방 입자는 기포 사이를 채워 감촉을 바꾸고, 유당·무기질은 가열 반응의 완충 역할을 돕습니다.</p><p>즉, 거품은 “공기만 많이 넣는” 기술보다, 단백질-지방-열의 구조가 균형을 유지할 때 오래 갑니다.</p></section><section id=\"protein-roles\"><span class=\"content-index\">02</span><h2>단백질의 역할 분해</h2><ul><li>카제인: 거품의 골격을 형성할 만큼 주된 기체막 재료 역할</li><li>유청 단백질: 열과 pH 변화에 따라 기포 안정성에 간접 영향</li><li>지방: 과하면 기포가 무너질 수 있고, 부족하면 거품이 건조해짐</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>우유 종류별 원유 지질 함량이 다르므로 “한 가지 스팀 시간”이 모든 우유에 동일하게 맞지는 않습니다.</p></aside></section><section id=\"thermal-window\"><span class=\"content-index\">03</span><h2>온도 구간의 근사 범위</h2><p>스티밍에서 다루는 핵심 온도는 목표 온도 범위와 텍스처를 함께 봅니다. 일반적으로 잔용 라테 기준으로는 목표 62~68℃ 근처에서 음료용 미세거품을 유지하는 경향이 있습니다.</p><p>60℃ 전후에서는 기포 형성이 잘 시작하고, 70℃ 이상에서는 단백질 막이 취약해져 입자가 거칠어지기 쉬워지므로 장비와 우유에 따라 미세 조정이 필요합니다.</p></section><section id=\"foam-structure\"><span class=\"content-index\">04</span><h2>거품 안정화와 붕괴 신호</h2><table><thead><tr><th>관측 신호</th><th>해석</th><th>개입</th></tr><tr><td>표면이 거칠고 거품 입자 큼</td><td>과공기화 또는 과열 전단</td><td>스팀 시작 각도·시간 축소</td></tr><tr><td>거품이 빠르게 무너짐</td><td>단백질막 약화 또는 과한 지방 동원</td><td>온도 하한으로 재조정</td></tr><tr><td>표면 광택 약함</td><td>균일 분산 부족</td><td>회전/회복 동작을 짧게 반복</td></tr></tbody></table></section><section id=\"method\"><span class=\"content-index\">05</span><h2>실무 스티밍 루틴</h2><ol><li>펜칭 가능한 동일 탱크·우유량에서만 시작</li><li>초반은 스팀 팁을 우유 표면 근처에 두고 기포 혼입 구간을 최소화</li><li>중반~후반은 스팀 팁을 깊게 내려 텍스처를 정돈</li><li>최종 온도 62~68℃에서 스팀을 멈추고 즉시 거품 크기를 가늠</li></ol></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 단백질 변성 관찰</h2><p>동일 배치에서 4회 실행해 패턴을 잡아보세요.</p><ol><li>동일 농도(유청 포함/탈지 여부 고정)로 스팀 시간을 ±5초씩 조절</li><li>거품 크기와 표면 광택, 컵 잔향(바디/단맛)을 기록</li><li>거품 붕괴 시점(재생성 시간)까지 시간으로 비교</li><li>가장 오래 유지되는 조합을 레시피에 반영</li></ol></section><section id=\"mistakes\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><p>거품이 많으면 반드시 텍스처가 좋은 것은 아닙니다. 기포가 크고 거칠면 맛을 지우고 향을 가리는 쪽으로 느껴질 수 있습니다.</p><p>또한 단백질이 충분해도 온도가 기준을 벗어나면 바로 무너지므로, 목표 온도보다 “목표 구간”을 관리해야 합니다.</p></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"milk-steaming\" href=\"/wiki/milk-steaming\">우유 스티밍 기본</a></li><li><a data-wikilink=\"milk-microfoam-checklist\" href=\"/wiki/milk-microfoam-checklist\">미세거품 점검 항목</a></li><li><a data-wikilink=\"latte-art-readability\" href=\"/wiki/latte-art-readability\">잔상 텍스처와 가독성</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "plant-based-milk-steaming",
+    "title": "식물성 음료 스티밍의 실제: 고정 레시피보다 조정 레시피",
+    "summary": "귀리·두유·아몬드 등 재료 특성이 다르므로, 스팀 강도와 온도 범위를 기준별로 분리해 안정적인 미세거품을 만드는 방법을 다룹니다.",
+    "category": "음료와 레시피",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "berry",
+    "fact": "식물성 음료 스티밍은 원재료의 점도·단백질·지방 구조가 다르기 때문에, 동결 우유와 같은 동일 레시피를 그대로 적용하면 재현성이 떨어집니다.",
+    "sections": [
+      {
+        "id": "plant-milk-basics",
+        "title": "식물성 음료의 기본 가정",
+        "paragraphs": [
+          "식물성 음료는 모두 같은 특성을 갖지 않습니다. 귀리는 탄수화물이 상대적으로 많고, 두유는 단백질 비율이 높으며, 아몬드 음료는 지방-물 분산 구조가 다르게 느껴질 수 있습니다. 따라서 스티밍 목표는 “같은 크림감”보다 “각 재료에서 안정적인 질감”으로 설정하는 게 좋습니다.",
+          "현장 운영에서는 같은 장비와 시간으로 실패를 반복하기보다, 재료별 표준 템플릿을 먼저 만들고 그 안에서 미세 조정하는 방식이 안전합니다."
+        ]
+      },
+      {
+        "id": "composition-patterns",
+        "title": "재료별 거동 패턴",
+        "paragraphs": [
+          "재료군일반적 거동초기 스팀 포인트귀리음료점도와 당질 영향으로 거품이 빠르게 자주 붕괴짧고 완만한 스팀, 과공기화 방지두유단백질 결합으로 미세 거품 생성 반응이 빠름저온 구간에서 안정성 확인아몬드 음료지방 분산 상태에 따라 표면 균일성 편차중간 온도에서 단계적 가열"
+        ]
+      },
+      {
+        "id": "common-problems",
+        "title": "자주 나타나는 문제",
+        "paragraphs": [
+          "동일 시간에 같은 팁 각도로 스팀해도 재료 배치별로 거품량과 입자가 달라집니다. 문제의 원인은 장비보다 먼저 산소가 들어가는 방식과 첨가물 유무입니다.",
+          "특히 무가당/무지방 버전은 단백질과 지질 조건이 달라 동일 목표를 재현하기 어렵기 때문에 기록값의 기준을 다시 정해야 합니다."
+        ]
+      },
+      {
+        "id": "stabilization-rules",
+        "title": "안정화 규칙",
+        "paragraphs": [],
+        "points": [
+          "최초 30% 구간은 과도한 기포 형성보다 표면 정렬 우선",
+          "온도는 천천히 올리되 60~65℃ 전후에서 안정성 확인",
+          "거품이 과도하게 분리되면 즉시 스팀을 줄이고 회복 시간 확보",
+          "첨가제(오트 음료 보강제, 단백질 강화제)는 제조사 지침 반영"
+        ]
+      },
+      {
+        "id": "adjustment-loop",
+        "title": "재료별 조정 루프",
+        "paragraphs": [],
+        "points": [
+          "도입 배치에서 기본 2분 루틴으로 시작: 스팀 시작→중반→마무리",
+          "거품이 과하거나 적으면 한 번에 하나의 변수만 변경",
+          "변경 후 최소 3잔 반복해 표면 텍스처와 컵 바디 기록",
+          "실패가 반복되면 용기 온도, 교반 방식, 스팀 팁 위치 중 한 가지만 변경"
+        ]
+      },
+      {
+        "id": "allergy-safety",
+        "title": "안전과 라벨 확인",
+        "paragraphs": [
+          "식물성 음료는 알레르기 유발 성분이 명확하므로 원재료 라벨을 먼저 확인하고, 교차 오염 가능성이 큰 바에서 동일 장비 사용 시 세척 주기를 고정해야 합니다.",
+          "카페 운영에서 안전 표시는 “원료 라벨 확인”이 아니라 “원재료 변경 시 즉시 라벨 업데이트”가 더 중요합니다."
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 4단계 체크",
+        "paragraphs": [
+          "한 주간 배치에서 같은 장비로 적용해보세요."
+        ],
+        "points": [
+          "귀리·두유·아몬드 중 2종을 골라 레시피 기록",
+          "각각 목표 온도 구간(60~65℃)에서 텍스처를 3항목 점수화",
+          "점수 변화와 컵 잔향의 상관을 간단 표로 정리",
+          "변동이 적은 조합을 스탬프로 등록"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "우유 스티밍 기본 이해",
+          "거품 점검 리스트",
+          "에스프레소 추출 연동"
+        ]
+      }
+    ],
+    "related": [
+      "milk-steaming",
+      "milk-steaming-protein-chemistry",
+      "espresso-basics"
+    ],
+    "tags": [
+      "식물성 우유",
+      "스티밍",
+      "귀리음료",
+      "두유",
+      "대체음료"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "식물성 음료 스티밍 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"plant-milk-basics\"><span class=\"content-index\">01</span><h2>식물성 음료의 기본 가정</h2><p>식물성 음료는 모두 같은 특성을 갖지 않습니다. 귀리는 탄수화물이 상대적으로 많고, 두유는 단백질 비율이 높으며, 아몬드 음료는 지방-물 분산 구조가 다르게 느껴질 수 있습니다. 따라서 스티밍 목표는 “같은 크림감”보다 “각 재료에서 안정적인 질감”으로 설정하는 게 좋습니다.</p><p>현장 운영에서는 같은 장비와 시간으로 실패를 반복하기보다, 재료별 표준 템플릿을 먼저 만들고 그 안에서 미세 조정하는 방식이 안전합니다.</p></section><section id=\"composition-patterns\"><span class=\"content-index\">02</span><h2>재료별 거동 패턴</h2><table><thead><tr><th>재료군</th><th>일반적 거동</th><th>초기 스팀 포인트</th></tr><tr><td>귀리음료</td><td>점도와 당질 영향으로 거품이 빠르게 자주 붕괴</td><td>짧고 완만한 스팀, 과공기화 방지</td></tr><tr><td>두유</td><td>단백질 결합으로 미세 거품 생성 반응이 빠름</td><td>저온 구간에서 안정성 확인</td></tr><tr><td>아몬드 음료</td><td>지방 분산 상태에 따라 표면 균일성 편차</td><td>중간 온도에서 단계적 가열</td></tr></tbody></table></section><section id=\"common-problems\"><span class=\"content-index\">03</span><h2>자주 나타나는 문제</h2><p>동일 시간에 같은 팁 각도로 스팀해도 재료 배치별로 거품량과 입자가 달라집니다. 문제의 원인은 장비보다 먼저 산소가 들어가는 방식과 첨가물 유무입니다.</p><p>특히 무가당/무지방 버전은 단백질과 지질 조건이 달라 동일 목표를 재현하기 어렵기 때문에 기록값의 기준을 다시 정해야 합니다.</p></section><section id=\"stabilization-rules\"><span class=\"content-index\">04</span><h2>안정화 규칙</h2><ul><li>최초 30% 구간은 과도한 기포 형성보다 표면 정렬 우선</li><li>온도는 천천히 올리되 60~65℃ 전후에서 안정성 확인</li><li>거품이 과도하게 분리되면 즉시 스팀을 줄이고 회복 시간 확보</li><li>첨가제(오트 음료 보강제, 단백질 강화제)는 제조사 지침 반영</li></ul></section><section id=\"adjustment-loop\"><span class=\"content-index\">05</span><h2>재료별 조정 루프</h2><ol><li>도입 배치에서 기본 2분 루틴으로 시작: 스팀 시작→중반→마무리</li><li>거품이 과하거나 적으면 한 번에 하나의 변수만 변경</li><li>변경 후 최소 3잔 반복해 표면 텍스처와 컵 바디 기록</li><li>실패가 반복되면 용기 온도, 교반 방식, 스팀 팁 위치 중 한 가지만 변경</li></ol></section><section id=\"allergy-safety\"><span class=\"content-index\">06</span><h2>안전과 라벨 확인</h2><p>식물성 음료는 알레르기 유발 성분이 명확하므로 원재료 라벨을 먼저 확인하고, 교차 오염 가능성이 큰 바에서 동일 장비 사용 시 세척 주기를 고정해야 합니다.</p><p>카페 운영에서 안전 표시는 “원료 라벨 확인”이 아니라 “원재료 변경 시 즉시 라벨 업데이트”가 더 중요합니다.</p></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 4단계 체크</h2><p>한 주간 배치에서 같은 장비로 적용해보세요.</p><ol><li>귀리·두유·아몬드 중 2종을 골라 레시피 기록</li><li>각각 목표 온도 구간(60~65℃)에서 텍스처를 3항목 점수화</li><li>점수 변화와 컵 잔향의 상관을 간단 표로 정리</li><li>변동이 적은 조합을 스탬프로 등록</li></ol></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"milk-steaming\" href=\"/wiki/milk-steaming\">우유 스티밍 기본 이해</a></li><li><a data-wikilink=\"milk-microfoam-checklist\" href=\"/wiki/milk-microfoam-checklist\">거품 점검 리스트</a></li><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 추출 연동</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "bar-throughput-and-flow",
+    "title": "바 처리량과 동선: 주문량이 폭증할 때 흐름을 지키는 설계",
+    "summary": "주문량 변화가 커피 품질을 흔들리지 않게 하려면 처리량, 대기시간, 병목 구간을 같은 축으로 보고 동선과 작업 배치를 조정해야 합니다.",
+    "category": "카페 운영과 품질",
+    "level": "중급",
+    "readingTime": "10분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sand",
+    "fact": "품질 흔들림의 상당수는 추출 실패보다 동선 병목과 큐 붕괴에서 먼저 발생합니다.",
+    "sections": [
+      {
+        "id": "throughput-definition",
+        "title": "처리량은 양보다 안정성의 문제",
+        "paragraphs": [
+          "바에서 처리량은 “분당 몇 잔 만들었는가”보다 “잦은 주문에서도 동일한 맛을 유지할 수 있었는가”가 핵심입니다. 동선이 깨지면 샷 품질이 먼저 흔들리고, 그다음 주문 대기시간이 증가합니다.",
+          "따라서 운영 개선은 장비 추가보다 먼저 주문 흐름 지도화에서 시작합니다."
+        ]
+      },
+      {
+        "id": "bottleneck-map",
+        "title": "병목 지점 찾기",
+        "paragraphs": [
+          "3개 구간 중 하나의 타임이 튈 때 전체 체감 대기시간은 비선형으로 늘어납니다. 특히 스티밍 구간 지연이 에스프레소 구간에도 되돌려 전파되는 형태가 자주 보입니다."
+        ],
+        "points": [
+          "에스프레소 구간: 도즈/그라인딩/샷 생성",
+          "우유 음료 구간: 스티밍·붓기",
+          "서빙 구간: 컵 전달·결제·교차 확인"
+        ]
+      },
+      {
+        "id": "flow-metrics",
+        "title": "기본 지표 3개",
+        "paragraphs": [
+          "지표기본 정의의미입구 유입률시간당 주문 수처리량 요구치를 결정평균 처리시간단일 주문 완료까지 시간작업 분량이 누적되는 구간 탐지대기시간 분산주문별 대기 편차서비스 안정성의 직접 지표"
+        ]
+      },
+      {
+        "id": "zoning",
+        "title": "동선 설계: 구간 분리",
+        "paragraphs": [
+          "동일 작업대에 모든 동작을 몰아넣으면 실수 확률이 커집니다. 주문 유형을 분리해 선반·작업대의 역할을 고정하면 동시 작업 오차가 줄어듭니다.",
+          "구간 분리는 단순 배치 변경보다, 각자 자신이 다음 동작을 기다리는 시간을 줄이는 전략입니다."
+        ],
+        "points": [
+          "에스프레소 전용 구간: 추출·바스켓 세팅·샷 감시",
+          "우유 음료 전용 구간: 스티밍·붓기·위생 점검",
+          "서빙 전환 구간: 주문 라벨 확인 후 즉시 전달"
+        ]
+      },
+      {
+        "id": "flow-tuning",
+        "title": "작업자 조율 루틴",
+        "paragraphs": [],
+        "points": [
+          "피크 시작 20분 전에 대기 큐 상태와 샷 큐를 점검",
+          "복잡 음료 비율이 높을수록 한 번에 1~2개 주문씩 락킹",
+          "동일 바리에이션(예: 우유 기반)은 한 번에 묶어 처리",
+          "회전율 하락 시 스티밍 대기열만 1개로 제한"
+        ]
+      },
+      {
+        "id": "training",
+        "title": "실습: 피크 시뮬레이션",
+        "paragraphs": [
+          "한 번의 실전만으로는 병목을 보기가 어렵습니다. 30분 모의 피크를 운영해 보세요."
+        ],
+        "points": [
+          "10분 단위로 주문 시나리오를 고정(에스프레소/우유/디카페인 비율 유지)",
+          "각 주문의 완료 시간과 누적 대기시간을 기록",
+          "대기분산이 가장 큰 구간에서 동선 규칙을 하나 추가",
+          "재측정을 통해 처리량이 개선되는지 비교"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "바 일일 루틴",
+          "카페 품질 시스템",
+          "장비 기반 작업 효율"
+        ]
+      }
+    ],
+    "related": [
+      "daily-cafe-routine",
+      "espresso-machines-grinders",
+      "espresso-basics",
+      "sensory-brewing-grammar"
+    ],
+    "tags": [
+      "처리량",
+      "동선",
+      "바 운영",
+      "대기시간",
+      "병목"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "바 처리량/흐름 운영 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"throughput-definition\"><span class=\"content-index\">01</span><h2>처리량은 양보다 안정성의 문제</h2><p>바에서 처리량은 “분당 몇 잔 만들었는가”보다 “잦은 주문에서도 동일한 맛을 유지할 수 있었는가”가 핵심입니다. 동선이 깨지면 샷 품질이 먼저 흔들리고, 그다음 주문 대기시간이 증가합니다.</p><p>따라서 운영 개선은 장비 추가보다 먼저 주문 흐름 지도화에서 시작합니다.</p></section><section id=\"bottleneck-map\"><span class=\"content-index\">02</span><h2>병목 지점 찾기</h2><ol><li>에스프레소 구간: 도즈/그라인딩/샷 생성</li><li>우유 음료 구간: 스티밍·붓기</li><li>서빙 구간: 컵 전달·결제·교차 확인</li></ol><p>3개 구간 중 하나의 타임이 튈 때 전체 체감 대기시간은 비선형으로 늘어납니다. 특히 스티밍 구간 지연이 에스프레소 구간에도 되돌려 전파되는 형태가 자주 보입니다.</p></section><section id=\"flow-metrics\"><span class=\"content-index\">03</span><h2>기본 지표 3개</h2><table><thead><tr><th>지표</th><th>기본 정의</th><th>의미</th></tr><tr><td>입구 유입률</td><td>시간당 주문 수</td><td>처리량 요구치를 결정</td></tr><tr><td>평균 처리시간</td><td>단일 주문 완료까지 시간</td><td>작업 분량이 누적되는 구간 탐지</td></tr><tr><td>대기시간 분산</td><td>주문별 대기 편차</td><td>서비스 안정성의 직접 지표</td></tr></tbody></table></section><section id=\"zoning\"><span class=\"content-index\">04</span><h2>동선 설계: 구간 분리</h2><p>동일 작업대에 모든 동작을 몰아넣으면 실수 확률이 커집니다. 주문 유형을 분리해 선반·작업대의 역할을 고정하면 동시 작업 오차가 줄어듭니다.</p><ul><li>에스프레소 전용 구간: 추출·바스켓 세팅·샷 감시</li><li>우유 음료 전용 구간: 스티밍·붓기·위생 점검</li><li>서빙 전환 구간: 주문 라벨 확인 후 즉시 전달</li></ul><p>구간 분리는 단순 배치 변경보다, 각자 자신이 다음 동작을 기다리는 시간을 줄이는 전략입니다.</p></section><section id=\"flow-tuning\"><span class=\"content-index\">05</span><h2>작업자 조율 루틴</h2><ol><li>피크 시작 20분 전에 대기 큐 상태와 샷 큐를 점검</li><li>복잡 음료 비율이 높을수록 한 번에 1~2개 주문씩 락킹</li><li>동일 바리에이션(예: 우유 기반)은 한 번에 묶어 처리</li><li>회전율 하락 시 스티밍 대기열만 1개로 제한</li></ol></section><section id=\"training\"><span class=\"content-index\">06</span><h2>실습: 피크 시뮬레이션</h2><p>한 번의 실전만으로는 병목을 보기가 어렵습니다. 30분 모의 피크를 운영해 보세요.</p><ol><li>10분 단위로 주문 시나리오를 고정(에스프레소/우유/디카페인 비율 유지)</li><li>각 주문의 완료 시간과 누적 대기시간을 기록</li><li>대기분산이 가장 큰 구간에서 동선 규칙을 하나 추가</li><li>재측정을 통해 처리량이 개선되는지 비교</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"daily-cafe-routine\" href=\"/wiki/daily-cafe-routine\">바 일일 루틴</a></li><li><a data-wikilink=\"cafe-quality-system\" href=\"/wiki/cafe-quality-system\">카페 품질 시스템</a></li><li><a data-wikilink=\"espresso-machines-grinders\" href=\"/wiki/espresso-machines-grinders\">장비 기반 작업 효율</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "sensory-defect-diagnosis",
+    "title": "결점 향미를 관능적으로 진단하는 기본 절차",
+    "summary": "결점명은 정의만으로 끝나지 않습니다. 향미, 질감, 에스프레소/브루 맥락을 함께 추적해 과한 단정 없이 원인 후보를 좁혀가는 방식으로 정리합니다.",
+    "category": "센서리",
+    "level": "중급",
+    "readingTime": "10분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "berry",
+    "fact": "결점 진단은 단일 결함으로 환원하지 않고, 감각 변화와 생산·추출 맥락을 함께 결합해 의심 원인을 좁히는 과정입니다.",
+    "sections": [
+      {
+        "id": "what-is-defect",
+        "title": "결점 진단은 결론이 아니라 과정",
+        "paragraphs": [
+          "결점 표준은 용어를 통일해 커뮤니케이션을 돕지만, 한 컵에서 여러 결점이 겹칠 수 있습니다. 감각 신호를 “무조건 A 결점”으로 고정하면 원인 추적이 늦어지는 이유가 여기에 있습니다.",
+          "현실에서 흔히 필요한 것은 “원인 후보의 제거법”입니다. 즉, 가능한 설명을 줄여가며 근거 있는 진단에 다가가는 방식입니다."
+        ]
+      },
+      {
+        "id": "observation-first",
+        "title": "관측 3단계",
+        "paragraphs": [],
+        "points": [
+          "냄새·맛·입안감에서 먼저 주 증상을 분리",
+          "샷/브루 조건(원두, 분쇄, 시간, 온도, 물)을 동시에 나열",
+          "동일 조건 반복으로 신호 재현성 확인"
+        ]
+      },
+      {
+        "id": "common-defects",
+        "title": "대표 결점과 구분 포인트",
+        "paragraphs": [
+          "결점명자주 보이는 신호유력 후보과산화/타는 향구운 냄새, 탄맛 지속추출 시간 과다, 높은 열·시간 조합채널링초반 추출 편차, 질감 갈라짐분배·탬핑·분쇄 분포메탈릭/화학향금속성, 기름성 찔림세척·금속 마모·물질 이동 가능성무딘 향원래 향미 상쇄, 단조로움추출 저강도, 물/원두 처리 과다"
+        ]
+      },
+      {
+        "id": "linking-steps",
+        "title": "원인 후보를 줄이는 연결 규칙",
+        "paragraphs": [
+          "감각 변화는 항상 처리 단계 하나로만 설명되지 않습니다. 아래 규칙으로 후보를 줄이면 팀 내 의견 불일치가 빨리 정리됩니다."
+        ],
+        "points": [
+          "같은 원두에서 레시피 변경이 없고 결점만 반복되면 보관/보온 또는 산화 요인을 우선 점검",
+          "동일 원두·동일 조건에서 컵간 편차가 크면 수동 조작 편차와 채널링을 우선 점검",
+          "특정 시간대만 반복되면 작업자 교대, 원두 로트 교체 시점, 그라인더 상태를 함께 비교"
+        ]
+      },
+      {
+        "id": "standard-terms",
+        "title": "왜 결점 용어를 조심해야 하나",
+        "paragraphs": [
+          "결점 용어는 커뮤니케이션 도구이지 단정 명령이 아닙니다. “바디가 안 좋다”가 여러 원인으로 갈릴 수 있기 때문에, 감각 표현과 가능 조건을 같이 남기는 습관이 중요합니다.",
+          "특히 센서리 팀에서 동일 결점명이 나왔더라도, 샘플 수가 적거나 맥락이 부족하면 즉시 원인 보고가 아니라 확인 과제(재시험)로 넘기는 것이 정확도 측면에서 낫습니다."
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 결점 진단 기록지",
+        "paragraphs": [
+          "한 주차 기준 루틴으로 4단계를 운영해보세요."
+        ],
+        "points": [
+          "관측 대상 결점 1개를 정하고 컵별 신호를 3열(냄새/향/입안감)로 기록",
+          "동일 레시피 3회 반복으로 재현 여부 판별",
+          "조건 표를 만들어 각 신호와 레시피 값을 결합",
+          "원인 후보 상위 2개만 다음 실험으로 제시"
+        ]
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검 퀴즈",
+        "paragraphs": [],
+        "points": [
+          "같은 결점이라고 느낀 컵이 재현되지 않는다면 먼저 무엇부터 점검하나요?",
+          "채널링 신호와 과추출 신호를 구분하기 위한 최소한의 관측 항목은 무엇인가요?",
+          "감각 용어가 단정적일 때 발생하는 커뮤니케이션 손실은 어떤 것인가요?",
+          "결점 레이블 뒤에 추가해야 하는 맥락 정보 3가지는 무엇인가요?"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "관능 언어 해석",
+          "CVA 관능 프로토콜",
+          "향미 속성 기준"
+        ]
+      }
+    ],
+    "related": [
+      "sensory-brewing-grammar",
+      "sensory-attributes",
+      "sca-cupping-protocol",
+      "sensory-data-analysis"
+    ],
+    "tags": [
+      "결점진단",
+      "센서리",
+      "관능훈련",
+      "원인분석",
+      "컵분석"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "결점 향미 진단 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"what-is-defect\"><span class=\"content-index\">01</span><h2>결점 진단은 결론이 아니라 과정</h2><p>결점 표준은 용어를 통일해 커뮤니케이션을 돕지만, 한 컵에서 여러 결점이 겹칠 수 있습니다. 감각 신호를 “무조건 A 결점”으로 고정하면 원인 추적이 늦어지는 이유가 여기에 있습니다.</p><p>현실에서 흔히 필요한 것은 “원인 후보의 제거법”입니다. 즉, 가능한 설명을 줄여가며 근거 있는 진단에 다가가는 방식입니다.</p></section><section id=\"observation-first\"><span class=\"content-index\">02</span><h2>관측 3단계</h2><ol><li>냄새·맛·입안감에서 먼저 주 증상을 분리</li><li>샷/브루 조건(원두, 분쇄, 시간, 온도, 물)을 동시에 나열</li><li>동일 조건 반복으로 신호 재현성 확인</li></ol></section><section id=\"common-defects\"><span class=\"content-index\">03</span><h2>대표 결점과 구분 포인트</h2><table><thead><tr><th>결점명</th><th>자주 보이는 신호</th><th>유력 후보</th></tr><tr><td>과산화/타는 향</td><td>구운 냄새, 탄맛 지속</td><td>추출 시간 과다, 높은 열·시간 조합</td></tr><tr><td>채널링</td><td>초반 추출 편차, 질감 갈라짐</td><td>분배·탬핑·분쇄 분포</td></tr><tr><td>메탈릭/화학향</td><td>금속성, 기름성 찔림</td><td>세척·금속 마모·물질 이동 가능성</td></tr><tr><td>무딘 향</td><td>원래 향미 상쇄, 단조로움</td><td>추출 저강도, 물/원두 처리 과다</td></tr></tbody></table></section><section id=\"linking-steps\"><span class=\"content-index\">04</span><h2>원인 후보를 줄이는 연결 규칙</h2><p>감각 변화는 항상 처리 단계 하나로만 설명되지 않습니다. 아래 규칙으로 후보를 줄이면 팀 내 의견 불일치가 빨리 정리됩니다.</p><ul><li>같은 원두에서 레시피 변경이 없고 결점만 반복되면 보관/보온 또는 산화 요인을 우선 점검</li><li>동일 원두·동일 조건에서 컵간 편차가 크면 수동 조작 편차와 채널링을 우선 점검</li><li>특정 시간대만 반복되면 작업자 교대, 원두 로트 교체 시점, 그라인더 상태를 함께 비교</li></ul></section><section id=\"standard-terms\"><span class=\"content-index\">05</span><h2>왜 결점 용어를 조심해야 하나</h2><aside class=\"callout callout-important\" data-tone=\"important\"><p>결점 용어는 커뮤니케이션 도구이지 단정 명령이 아닙니다. “바디가 안 좋다”가 여러 원인으로 갈릴 수 있기 때문에, 감각 표현과 가능 조건을 같이 남기는 습관이 중요합니다.</p></aside><p>특히 센서리 팀에서 동일 결점명이 나왔더라도, 샘플 수가 적거나 맥락이 부족하면 즉시 원인 보고가 아니라 확인 과제(재시험)로 넘기는 것이 정확도 측면에서 낫습니다.</p></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 결점 진단 기록지</h2><p>한 주차 기준 루틴으로 4단계를 운영해보세요.</p><ol><li>관측 대상 결점 1개를 정하고 컵별 신호를 3열(냄새/향/입안감)로 기록</li><li>동일 레시피 3회 반복으로 재현 여부 판별</li><li>조건 표를 만들어 각 신호와 레시피 값을 결합</li><li>원인 후보 상위 2개만 다음 실험으로 제시</li></ol></section><section id=\"quiz\"><span class=\"content-index\">07</span><h2>자기 점검 퀴즈</h2><ul><li>같은 결점이라고 느낀 컵이 재현되지 않는다면 먼저 무엇부터 점검하나요?</li><li>채널링 신호와 과추출 신호를 구분하기 위한 최소한의 관측 항목은 무엇인가요?</li><li>감각 용어가 단정적일 때 발생하는 커뮤니케이션 손실은 어떤 것인가요?</li><li>결점 레이블 뒤에 추가해야 하는 맥락 정보 3가지는 무엇인가요?</li></ul></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"sensory-brewing-grammar\" href=\"/wiki/sensory-brewing-grammar\">관능 언어 해석</a></li><li><a data-wikilink=\"sca-cupping-protocol\" href=\"/wiki/sca-cupping-protocol\">CVA 관능 프로토콜</a></li><li><a data-wikilink=\"sensory-attributes\" href=\"/wiki/sensory-attributes\">향미 속성 기준</a></li></ul></section>",
     "backlinks": []
   }
 ],
@@ -4883,7 +5966,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     "backlinks": [
       "brewing-gear-guide",
       "home-brew-recipes",
-      "water-chemistry-basics"
+      "water-chemistry-basics",
+      "thermal-time-agitation-control",
+      "brew-profile-observables"
     ]
   },
   {
@@ -4944,7 +6029,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"why\"><span class=\"content-index\">01</span><h2>Grinding is the starting point for extraction</h2><p>The speed at which water dissolves coffee compounds is largely determined by the surface area of the particles. The more uniform the grind, the more evenly each particle extracts at similar rates, reducing the degree to which under-extraction and over-extraction mix within a single cup.</p><p>Conversely, when fine particles and coarse particles are present in large amounts together, during the same brewing time the fine particles over-extract while the coarse particles under-extract, blurring the taste profile.</p></section><section id=\"burr\"><span class=\"content-index\">02</span><h2>Burr type and condition</h2><p>Burr grinders achieve more uniform grinding than blade grinders by controlling particle size through the gap between two burrs. Particle distribution characteristics can vary depending on the shape, such as conical and flat burrs.</p><ul><li>Conical burrs: tend to have advantages in durability and low heat generation</li><li>Flat burrs: tend to make it easier to target a narrow particle distribution</li><li>Worn burrs increase fines and reduce uniformity.</li></ul></section><section id=\"care\"><span class=\"content-index\">03</span><h2>Maintenance comes before settings</h2><p>Since numeric settings are not an absolute standard for each device, it is easier to reproduce results by adjusting relative to the target extraction time and taste. Regular cleaning reduces old coffee oils and fine particle residue, improving flavor consistency.</p></section>",
     "backlinks": [
       "brewing-gear-guide",
-      "espresso-machines-grinders"
+      "espresso-machines-grinders",
+      "particle-size-distribution"
     ]
   },
   {
@@ -5006,7 +6092,11 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>Intense Extraction Made with Pressure</h2><p>Espresso is a beverage extracted intensely in a short time by passing pressurized water through a layer of finely ground coffee. It has a high concentration, concentrated flavor, and a layer of foam called crema on top.</p></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>Variables That Move Together</h2><p>Dose, grind size, yield, and extraction time are connected to one another. When you change one value, the others change as well, so it is advantageous for reproducibility to set a goal and adjust one variable at a time.</p><ul><li>Dose: The mass of coffee beans loaded in the basket</li><li>Grind size: Resistance to flow and extraction speed</li><li>Yield and ratio: The amount of beverage extracted relative to the coffee beans</li><li>Extraction time and water temperature</li></ul></section><section id=\"consistency\"><span class=\"content-index\">03</span><h2>Consistency Comes from Preparation</h2><p>By distributing the coffee evenly and tamping horizontally to allow water to pass uniformly through the coffee layer, you can reduce channeling. By recording the dose, extraction amount, and time with a scale and timer, you can recreate a good cup.</p></section>",
     "backlinks": [
       "brew-methods",
-      "espresso-preinfusion-guide"
+      "espresso-preinfusion-guide",
+      "permeability-channeling-control",
+      "espresso-machine-hydraulics-thermal",
+      "espresso-puck-preparation",
+      "plant-based-milk-steaming"
     ]
   },
   {
@@ -5333,7 +6423,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"goal\"><span class=\"content-index\">01</span><h2>목표는 마이크로폼</h2><p>스티밍의 목표는 단순히 우유를 데우는 것이 아니라, 눈에 보이지 않을 만큼 고운 거품을 우유 전체에 균일하게 섞는 것입니다. 이렇게 만든 마이크로폼은 광택이 돌고 잔에 부었을 때 매끄럽게 흐릅니다.</p><p>거품은 크게 두 단계로 만들어집니다. 표면에서 공기를 끌어들이는 단계와, 그 공기를 회전으로 잘게 부수어 섞는 단계입니다.</p></section><section id=\"steps\"><span class=\"content-index\">02</span><h2>두 단계: 주입과 회전</h2><ul><li>주입(스트레칭): 팁을 표면 가까이 두어 \"치익\" 소리와 함께 공기를 넣어 부피를 키웁니다.</li><li>회전(롤링): 팁을 살짝 담가 우유가 소용돌이치게 하여 큰 거품을 잘게 부수고 데웁니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>공기 주입은 초반, 차가울 때 끝내세요. 우유가 따뜻해진 뒤에 넣은 공기는 큰 거품으로 남아 거칠어지기 쉽습니다.</p></aside></section><section id=\"temperature\"><span class=\"content-index\">03</span><h2>온도 기준</h2><p>온도는 단맛과 질감에 영향을 줍니다. 너무 낮으면 밋밋하고, 너무 높으면 단백질이 상해 비린 맛이 나며 거품이 무너집니다. 아래는 흔히 쓰이는 참고 범위입니다.</p><table><tbody><tr><th>구간</th><th>대략 온도</th><th>메모</th></tr><tr><td>목표대</td><td>약 55~65℃</td><td>단맛과 질감이 잘 살아나는 범위로 자주 언급됨</td></tr><tr><td>과열</td><td>70℃ 이상</td><td>비린 맛·거친 거품, 라떼아트가 어려워짐</td></tr></tbody></table><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>손으로 피처를 만졌을 때 계속 잡고 있기 어려울 만큼 뜨거우면 이미 과열입니다. 온도계나 감각으로 목표대에서 멈추는 연습이 중요합니다.</p></aside></section><section id=\"finish\"><span class=\"content-index\">04</span><h2>마무리</h2><p>스티밍을 멈춘 뒤에는 피처를 가볍게 두드리고 돌려 큰 거품을 없애고 표면에 광택을 냅니다. 붓기 직전까지 우유와 거품이 분리되지 않도록 부드럽게 흔들어 유지합니다.</p></section>",
     "backlinks": [
-      "espresso-machines-grinders"
+      "espresso-machines-grinders",
+      "milk-steaming-protein-chemistry",
+      "plant-based-milk-steaming"
     ]
   },
   {
@@ -5486,7 +6578,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "q-grader-certification",
       "roast-profile-design",
       "home-tasting",
-      "sensory-data-analysis"
+      "sensory-data-analysis",
+      "sensory-defect-diagnosis"
     ]
   },
   {
@@ -5722,7 +6815,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"why-attributes\"><span class=\"content-index\">01</span><h2>왜 속성으로 나눠 평가하는가</h2><p>\"맛있다\"는 한 단어에는 향, 신맛, 단맛, 질감, 여운이 뒤섞여 있습니다. <a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑</a> 폼이 커피를 여러 속성으로 나눠 묻는 이유는, 뭉쳐 있으면 비교도 소통도 어렵기 때문입니다.</p><p>속성 평가는 \"무엇이 얼마나 있는가\"(강도)와 \"그것이 얼마나 좋은가\"(품질)를 구분하는 훈련이기도 합니다. 산미가 강한 것과 산미가 좋은 것은 다른 판단입니다.</p><p>아래 표는 널리 쓰여 온 SCA 커핑 폼의 주요 속성을 정리한 것입니다. 폼의 버전에 따라 채점 방식이 달라, 예컨대 단맛은 클래식 폼에서 잔 단위로 확인하지만 CVA의 기술적 평가에서는 강도로 다룹니다.</p><table><tbody><tr><th>속성</th><th>무엇을 묻는가</th><th>흔한 표현</th></tr><tr><td>프래그런스/아로마</td><td>분쇄향과 추출향의 인상</td><td>플로럴, 견과, 캐러멜</td></tr><tr><td>향미(플레이버)</td><td>입안에서 향과 맛이 합쳐진 전체 인상</td><td>초콜릿 같다, 베리 같다</td></tr><tr><td>산미</td><td>밝기·생동감을 주는 신맛의 질</td><td>밝다, 즙이 많다, 시트러스 같다</td></tr><tr><td>단맛</td><td>당도가 아닌 단맛의 인상과 충만함</td><td>꿀 같다, 잘 익었다</td></tr><tr><td>바디</td><td>입안에서 느끼는 무게감과 질감</td><td>가볍다, 시럽 같다, 크리미하다</td></tr><tr><td>애프터테이스트</td><td>삼킨 뒤 남는 향미의 길이와 질</td><td>길다, 깔끔하다, 마른다</td></tr><tr><td>균형</td><td>속성들이 서로를 살리는 정도</td><td>조화롭다, 산미가 튄다</td></tr></tbody></table></section><section id=\"acidity\"><span class=\"content-index\">02</span><h2>산미: 신맛과 같지 않습니다</h2><p>산미는 커피 평가에서 긍정적으로 쓰이는 말로, 과일의 즙 같은 밝고 생동감 있는 인상을 가리키는 경우가 많습니다. 반면 날카롭거나 시큼해서 불쾌한 신맛은 흔히 결점 쪽으로 분류됩니다. 같은 \"신맛\"이라도 질이 다르면 평가가 갈립니다.</p><p>커피의 신맛에는 여러 유기산이 관여합니다. 어떤 산이 얼마나 있는지는 품종, 가공, 로스팅에 따라 달라지며, 산의 조성 차이가 산미의 인상 차이로 이어진다고 이해되고 있습니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>\"산미(acidity)\"는 평가 용어, \"신맛(sourness)\"은 기본 맛 용어로 구분해 쓰면 소통이 깔끔해집니다. 이 위키도 이 구분을 따릅니다.</p></aside></section><section id=\"sweetness-body\"><span class=\"content-index\">03</span><h2>단맛과 바디: 혀보다 넓은 감각</h2><p>커피의 단맛은 설탕물 같은 당도가 아니라, 잘 익은 과일이 주는 충만하고 둥근 인상에 가깝습니다. 향이 단맛 인상을 크게 거들기 때문에, 코를 막고 마시면 단맛이 줄어드는 것처럼 느껴지는 경험을 할 수 있습니다.</p><p>바디는 맛이 아니라 촉감입니다(CVA의 기술적 평가에서는 마우스필(mouthfeel)로 부릅니다). 입안을 채우는 무게감, 매끄러움, 점도의 인상으로, 추출 방식의 영향이 큽니다. 금속 필터나 프렌치 프레스처럼 오일과 미분이 많이 통과하는 방식은 바디가 무거워지는 경향이 있습니다.</p></section><section id=\"aftertaste-balance\"><span class=\"content-index\">04</span><h2>여운과 균형: 마지막 판단</h2><p>애프터테이스트는 삼킨 뒤에도 남는 향미입니다. 길이만이 아니라 질이 중요해서, 길게 남아도 떫거나 마른 느낌이면 좋은 평가를 받기 어렵습니다.</p><p>균형은 개별 속성이 아니라 관계를 봅니다. 산미가 훌륭해도 단맛이 받쳐 주지 않으면 날카롭게 느껴지고, 바디가 무거워도 향이 빈약하면 둔하게 느껴집니다. 그래서 균형은 개별 속성보다 판단이 갈리기 쉬운 항목으로 여겨지곤 합니다.</p></section><section id=\"confusions\"><span class=\"content-index\">05</span><h2>초심자가 자주 혼동하는 것</h2><ul><li>진한 것과 쓴 것: 농도가 높은 커피가 꼭 쓴 것은 아닙니다. 농도는 추출의 결과, 쓴맛은 맛의 종류입니다.</li><li>산미와 결점 신맛: 밝고 즙 같은 인상인지, 날카롭고 시큼한지 질을 물어보세요.</li><li>바디와 강도: 연한 커피도 실키한 바디를 가질 수 있습니다.</li><li>향과 맛: 코를 막으면 사라지는 부분은 향입니다. 혀가 느끼는 기본 맛은 훨씬 단순합니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>속성별 점수를 매기기 어렵다면, 잔마다 \"가장 인상적인 속성 하나\"만 골라 기록하는 것부터 시작하세요. <a data-wikilink=\"coffee-flavor-wheel\" href=\"/wiki/coffee-flavor-wheel\">향미 휠</a>이 어휘를 도와줍니다.</p></aside></section>",
     "backlinks": [
-      "home-tasting"
+      "home-tasting",
+      "sensory-defect-diagnosis"
     ]
   },
   {
@@ -6125,7 +7219,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"baseline\"><span class=\"content-index\">01</span><h2>모든 레시피의 공통 출발점</h2><p>아래 수치는 정답이 아니라 널리 쓰이는 <strong>출발점</strong>입니다. 원두, 물, 장비에 따라 최적점은 달라지므로, 한 번에 한 변수만 바꾸며 자신의 기준을 찾아가세요. 조정의 원리는 <a data-wikilink=\"extraction-basics\" href=\"/wiki/extraction-basics\">농도와 수율</a>에서 다룹니다.</p><table><tbody><tr><th>공통 변수</th><th>흔한 출발 범위</th><th>메모</th></tr><tr><td>비율(커피:물)</td><td>필터 1:15~1:17</td><td>다 내린 뒤 물로 희석하기보다 레시피 비율로 조정</td></tr><tr><td>물 온도</td><td>약 90~96℃</td><td>밝은 로스팅일수록 높은 쪽 경향</td></tr><tr><td>분쇄도</td><td>방식마다 다름</td><td>시간이 길수록 굵게, 짧을수록 곱게</td></tr><tr><td>물</td><td>연수~중경수</td><td><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">커피와 물</a> 참고</td></tr></tbody></table></section><section id=\"pourover-recipe\"><span class=\"content-index\">02</span><h2>푸어오버(V60류): 15g로 시작하기</h2><ul><li>커피 15g(중간~중간 조금 곱게), 물 240g(약 1:16), 온도 약 92~94℃.</li><li>뜸(블룸): 물 30~45g을 붓고 30~45초 기다립니다 — 가스가 빠져 이후 추출이 고르게 됩니다.</li><li>이후 2~3회에 나눠 240g까지 붓고, 총 시간 2분 30초~3분 30초를 참고선으로 삼습니다.</li><li>시간이 크게 빗나가면 붓는 속도보다 분쇄도를 먼저 조정합니다.</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>맛이 날카롭고 여운이 비면(과소 추출 신호) 조금 곱게·조금 뜨겁게, 쓰고 텁텁하면(과다 추출 신호) 조금 굵게·조금 식혀서 — 한 번에 하나씩만 바꾸세요.</p></aside></section><section id=\"immersion-recipe\"><span class=\"content-index\">03</span><h2>프렌치 프레스: 가장 관대한 레시피</h2><ul><li>커피 30g(굵게), 물 450g(1:15), 온도 약 93℃.</li><li>붓고 저은 뒤 4분 대기 — 표면 가루층(크러스트)을 걷어내면 잡미가 줄어듭니다.</li><li>플런저는 끝까지 세게 누르지 말고 가루층 위에서 멈추면 미분이 덜 올라옵니다.</li><li>누른 뒤에는 바로 잔이나 서버에 옮기세요 — 가루 위에 두면 계속 추출되어 써집니다.</li><li>더 깔끔하게 마시고 싶다면 누르지 않고 그대로 따라내는 방법도 널리 쓰입니다.</li></ul></section><section id=\"aeropress-recipe\"><span class=\"content-index\">04</span><h2>에어로프레스: 자유도의 도구</h2><ul><li>기본형(정방향): 커피 15g(중간), 물 220g, 90℃, 1분 30초 침지 후 30초에 걸쳐 프레스. 침지 중 소량이 미리 새는 것을 막는 역방향(인버티드)법도 널리 쓰입니다.</li><li>농축형: 커피 18g, 물 100g으로 진하게 뽑아 뜨거운 물로 희석 — 아메리카노풍.</li><li>도구 특성상 레시피 편차가 매우 큽니다. 월드 에어로프레스 챔피언십(WAC) 대회 레시피들이 공개되어 있어 실험 재료로 좋습니다.</li></ul></section><section id=\"moka-recipe\"><span class=\"content-index\">05</span><h2>모카포트: 불 조절이 레시피</h2><ul><li>하단 보일러에 뜨거운 물을 밸브 아래까지, 바스켓에는 커피를 평평하게(누르지 않기).</li><li>약~중불로 가열하고, 커피가 꾸르륵 소리를 내며 색이 옅어지기 시작하면 불을 끕니다.</li><li>쓴맛이 강하면 더 약한 불, 미리 데운 물, 더 굵은 분쇄가 흔한 처방입니다.</li></ul><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>모카포트는 압력 용기입니다. 안전밸브를 막지 말고, 바스켓에 커피를 눌러 담지 마세요. 콜드브루 레시피는 <a data-wikilink=\"cold-brew\" href=\"/wiki/cold-brew\">별도 문서</a>에서 다룹니다.</p></aside><p>마지막으로, 기록이 레시피를 완성합니다. 날짜, 원두, 비율, 분쇄도, 온도, 시간, 그리고 한 줄 맛 평가 — 이 일곱 가지만 적어도 다음 잔이 달라집니다. 맛을 기록하는 어휘가 막히면 <a data-wikilink=\"home-tasting\" href=\"/wiki/home-tasting\">홈 테이스팅</a>과 <a data-wikilink=\"coffee-flavor-wheel\" href=\"/wiki/coffee-flavor-wheel\">향미 휠</a>이 도와줍니다.</p></section>",
     "backlinks": [
       "brew-methods",
-      "brew-ratio-practice"
+      "brew-ratio-practice",
+      "brew-profile-observables"
     ]
   },
   {
@@ -6212,7 +7307,11 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<p>아래 브랜드·모델은 각 구조를 설명할 때 업계에서 흔히 예로 드는 <strong>대표 사례</strong>이며, 망라나 추천 순위가 아닙니다. 라인업·사양·가격대는 계속 바뀌므로 구매 결정 전에는 반드시 현행 정보를 확인하세요. Bean Wiki는 어떤 브랜드와도 이해관계가 없습니다.</p><section id=\"machine-anatomy\"><span class=\"content-index\">01</span><h2>머신 분류의 핵심: 보일러 구조</h2><p>에스프레소 머신의 본질은 약 9기압의 압력과 90℃대 물 온도를 <strong>동시에, 안정적으로</strong> 공급하는 것입니다. 추출용 물과 스팀은 요구 온도가 달라, 이를 어떻게 해결하느냐가 구조를 가릅니다.</p><table><tbody><tr><th>구조</th><th>원리</th><th>특징</th><th>흔한 예시</th></tr><tr><td>싱글 보일러</td><td>보일러 하나로 추출·스팀 겸용</td><td>전환 대기 필요, 진입 가격대</td><td>가찌아 클래식, 란실리오 실비아</td></tr><tr><td>열교환(HX)</td><td>스팀 보일러 속 관으로 추출수 가열</td><td>동시 작업 가능, 온도는 플러시로 관리</td><td>로켓 아파르타멘토 등 E61 계열 다수</td></tr><tr><td>듀얼 보일러</td><td>추출·스팀 보일러 분리</td><td>온도 독립 제어 — 동시 작업과 안정성</td><td>브레빌(세이지) 듀얼 보일러, 레릿 비앙카, 라마르조코 리네아 미니</td></tr><tr><td>써모블록/써모젯</td><td>순간 가열 유닛</td><td>예열 빠름, 소형화 유리</td><td>브레빌 바리스타 시리즈 일부, 데디카류</td></tr><tr><td>수동 레버·비전동</td><td>사람 힘이나 스프링으로 가압</td><td>전원 불필요·휴대형도 존재</td><td>플레어·카페랏 로봇(전원 불필요), 라파보니 레버(전기 가열)</td></tr></tbody></table><p>1961년 파에마(Faema) E61이 상용화한 전동 펌프와 E61 그룹헤드는 이후 수십 년간 준상업·가정용 머신 설계의 표준처럼 이어지고 있습니다. 최근 가정용의 흐름은 PID(비례·적분·미분) 온도 제어, 프리인퓨전(pre-infusion, 저압 사전 적심), 유량(플로우) 제어의 대중화입니다.</p></section><section id=\"home-machines\"><span class=\"content-index\">02</span><h2>가정용 머신에서 자주 언급되는 이름들</h2><ul><li>입문 반자동의 고전: 가찌아 클래식, 란실리오 실비아 — 단순한 구조로 오래 회자되는 모델.</li><li>일체형(그라인더 내장): 브레빌(유럽·영국명 세이지) 바리스타 익스프레스/프로 계열.</li><li>준상업(프로슈머): 레릿, ECM, 프로피텍, 로켓, 베짜(레버) — E61 계열이 많음.</li><li>소형 프리미엄: 라마르조코 리네아 미니·미크라, 슬레이어 싱글그룹 등 상업 브랜드의 가정 라인.</li><li>수동·휴대: 플레어, 카페랏 로봇, 왁카코 나노프레소류.</li></ul></section><section id=\"commercial-machines\"><span class=\"content-index\">03</span><h2>상업용 머신에서 자주 언급되는 이름들</h2><ul><li>라마르조코(리네아, GB5, 스트라다) — 스페셜티 카페의 대명사처럼 불리는 이탈리아 브랜드.</li><li>빅토리아 아르두이노(블랙 이글)·누오바 시모넬리 — 월드 바리스타 챔피언십 공식 머신 이력(아우렐리아 2009~2014, 블랙 이글 2015~2021; 이후 시즌은 타 브랜드로 교체).</li><li>슬레이어(플로우 프로파일링), 시네소 — 미국계 커스텀 지향.</li><li>산레모(카페 레이서·유), 시모넬리 그룹 계열, 페마·란실리오 상업 라인 등.</li></ul><aside class=\"callout callout-note\" data-tone=\"note\"><p>대회 공식 머신·유명 카페 도입 이력은 품질의 참고 신호일 뿐, 매장 상황(전기·수도·물량·수리망)에 맞는 선택이 항상 우선입니다.</p></aside></section><section id=\"grinders\"><span class=\"content-index\">04</span><h2>그라인더: 버 방식과 대표 브랜드</h2><p>맛에 대한 기여로는 머신보다 그라인더가 먼저라는 말이 흔합니다. 원리는 <a data-wikilink=\"grinder-basics\" href=\"/wiki/grinder-basics\">그라인더 기초</a>에서 다루고, 여기서는 지형도만 그립니다.</p><table><tbody><tr><th>구분</th><th>흔한 예시</th><th>메모</th></tr><tr><td>핸드밀</td><td>코만단테 C40, 1Zpresso, 타임모어, 킨그라인더</td><td>가격 대비 분쇄 품질로 입문·여행용 인기</td></tr><tr><td>가정 전동(브루잉)</td><td>바라짜 엔코어, 펠로우 오드, 윌파 우니폼</td><td>필터 커피 지향 세팅</td></tr><tr><td>가정 전동(에스프레소)</td><td>유레카 미뇽 계열, 바라짜 세테, 니체 제로, DF64</td><td>싱글도징(single dosing, 잔당 계량 투입) 유행 — 니체·DF류</td></tr><tr><td>상업 에스프레소</td><td>말코닉 E65S, 빅토리아 아르두이노 미토스, 안핌, 마쩨르(Mazzer)</td><td>연속 사용 안정성과 도징 일관성</td></tr><tr><td>샵 필터·리테일</td><td>말코닉 EK43, 디팅, 벙(Bunn)류</td><td>EK43은 커핑·필터 분쇄의 사실상 기준으로 자주 언급</td></tr></tbody></table></section><section id=\"choosing\"><span class=\"content-index\">05</span><h2>고르는 기준: 구조 → 용도 → 브랜드 순</h2><ul><li>하루 몇 잔, 우유 음료 비중, 동시 작업 필요 여부부터 정합니다 — 이것이 보일러 구조를 정합니다.</li><li>그라인더 예산을 머신과 비슷한 수준으로 잡는 배분이 흔히 권장됩니다.</li><li>수리·부품·현지 서비스망은 사양표에 없는 가장 중요한 사양입니다.</li><li>정수(스케일 방지)와 주기적 세척(백플러시)이 머신 수명을 좌우합니다. 스팀 사용법과 화상 주의는 <a data-wikilink=\"milk-steaming\" href=\"/wiki/milk-steaming\">우유 스티밍</a>을 참고하세요.</li></ul><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>모델명·사양은 이 문서 작성 시점의 통용 정보입니다. 단종·개정이 잦은 영역이므로 구체적 구매 판단은 제조사·판매처의 현행 정보로 확인하세요.</p></aside></section>",
-    "backlinks": []
+    "backlinks": [
+      "espresso-machine-hydraulics-thermal",
+      "espresso-puck-preparation",
+      "bar-throughput-and-flow"
+    ]
   },
   {
     "slug": "coffee-aroma-chemistry",
@@ -6600,7 +7699,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"quality-definition\"><span class=\"content-index\">01</span><h2>먼저 ‘좋다’를 운영 언어로 바꿉니다</h2><p>품질 목표는 ‘맛있는 커피’보다 구체적이어야 합니다. 대표 음료의 향미 방향, 허용 가능한 추출 시간과 음료량, 제공 온도, 대기 시간, 위생과 환대 기준을 정하면 팀이 같은 결과를 판단할 수 있습니다. 숫자는 감각을 대체하지 않고, 이상을 빠르게 발견하는 경보선으로 사용합니다.</p><p>모든 메뉴를 같은 정밀도로 관리할 필요는 없습니다. 판매량과 고객 경험에 미치는 영향을 기준으로 핵심 공정을 정하고, 실패가 잦거나 안전과 관련된 항목에는 더 촘촘한 점검을 둡니다.</p></section><section id=\"opening\"><span class=\"content-index\">02</span><h2>오픈 체크는 하루의 기준선을 만듭니다</h2><ul><li>급수와 필터 상태, 누수, 보일러 압력과 예열을 확인합니다.</li><li>그라인더 호퍼와 슈트, 포터필터와 바스켓을 청결하게 준비합니다.</li><li>원두 로스팅 날짜, 개봉 시점과 보관 상태를 기록합니다.</li><li>목표 도징·음료량·시간을 재고 블라인드 또는 교차 시음으로 맛을 확인합니다.</li><li>우유 냉장 온도, 식재료 소비기한과 세척제 농도를 점검합니다.</li></ul><p>다이얼인은 첫 샷이 맞을 때까지 분쇄도를 움직이는 일이 아닙니다. 목표 레시피를 기준으로 도징과 수율을 계량하고, 한 변수씩 조정하며 맛의 방향을 기록합니다. 원두 온도와 습도, 잔류 커피와 버가 안정되는 시간도 결과에 영향을 줄 수 있습니다.</p></section><section id=\"service-loop\"><span class=\"content-index\">03</span><h2>서비스 중에는 짧고 자주 확인합니다</h2><p>혼잡할수록 긴 회의보다 관찰–확인–수정의 짧은 루프가 효과적입니다. 일정 시간이나 판매량마다 샷의 음료량과 시간을 샘플링하고, 맛이 벗어나면 도징·분배·탬핑·분쇄·물과 머신 상태 순서로 원인을 좁힙니다. 한꺼번에 여러 변수를 바꾸면 회복이 늦어집니다.</p><table><tbody><tr><th>신호</th><th>먼저 확인</th><th>다음 확인</th></tr><tr><td>샷이 갑자기 빨라짐</td><td>도징, 분쇄 설정, 퍼지</td><td>원두 상태, 버·클럼핑, 누수</td></tr><tr><td>맛이 비고 날카로움</td><td>음료량·시간과 균일성</td><td>물 온도, 레시피와 원두 변화</td></tr><tr><td>스팀이 약함</td><td>압력, 팁 막힘, 퍼지</td><td>보일러 회복, 정비 이력</td></tr><tr><td>음료 제공이 지연됨</td><td>주문 병목과 동선</td><td>작업 분담, 프리셋과 메뉴 복잡도</td></tr></tbody></table></section><section id=\"workflow\"><span class=\"content-index\">04</span><h2>워크플로는 속도보다 오류를 줄이는 설계입니다</h2><p>도구 위치는 사용 순서와 세척 흐름에 맞추고, 깨끗한 구역과 오염 가능한 구역을 분리합니다. 주문 확인, 샷 시작, 우유 스티밍과 마감의 책임을 혼잡도에 따라 명시하면 중복과 누락을 줄일 수 있습니다. 표준 문구와 컵 표기는 알레르기·디카페인 같은 고위험 주문을 보호합니다.</p><p>빠른 서비스는 사람을 몰아붙인 결과가 아니라 이동 거리, 대기와 재작업을 줄인 결과여야 합니다. 피크 시간의 주문 흐름을 관찰하고 가장 긴 대기, 교차 동선과 반복되는 질문을 기록해 한 번에 하나씩 고칩니다.</p></section><section id=\"cleaning\"><span class=\"content-index\">05</span><h2>청소는 미관이 아니라 맛과 안전의 공정입니다</h2><p>커피 오일은 그룹헤드, 샤워스크린과 바스켓에 쌓여 산패한 향을 만들 수 있습니다. 우유 잔류물은 스팀 완드와 피처에서 미생물 위험을 키웁니다. 사용 후, 교대별, 일별, 주별로 나눈 세척표에 도구, 방법, 세제, 담당과 확인을 명시합니다.</p><p>필터 교체와 역세척, 버와 가스켓 교체 같은 예방 정비는 고장 뒤 수리보다 서비스 중단을 줄입니다. 계량기와 온도계도 비교 기준이나 교정 주기를 정해 숫자에 대한 거짓 확신을 피합니다.</p></section><section id=\"training\"><span class=\"content-index\">06</span><h2>교육은 설명–시범–연습–검증의 순환입니다</h2><p>레시피를 외우게 하는 것만으로는 예외 상황을 해결할 수 없습니다. 왜 이 기준을 쓰는지 설명하고, 숙련자가 시범을 보인 뒤, 학습자가 반복하고 피드백을 받으며, 실제 서비스 조건에서 검증합니다. 체크리스트는 사람을 감시하기보다 학습할 항목을 투명하게 만드는 도구입니다.</p><p>감각 교정은 한 명의 ‘좋은 입’에 권력을 집중하지 않도록 블라인드 샘플과 공통 기준으로 진행합니다. 불일치가 생기면 누가 맞는지보다 시료 준비, 온도, 순서, 용어 정의와 강도 기준을 먼저 확인합니다.</p></section><section id=\"records\"><span class=\"content-index\">07</span><h2>기록은 문제를 사람 탓에서 시스템 질문으로 바꿉니다</h2><p>오픈 레시피, 시간대별 샘플, 클레임, 폐기량, 정비와 교육 기록을 같은 날짜 축에 놓으면 반복 패턴을 볼 수 있습니다. 기록 항목이 너무 많으면 쓰이지 않으므로 의사결정에 실제로 사용하는 최소 항목부터 시작합니다.</p><p>주간 리뷰에서는 평균만 보지 말고 변동 폭과 예외를 살핍니다. 특정 시간대, 장비, 메뉴와 작업 조합에서 문제가 반복되는지 확인하고 다음 주에 검증할 작은 변경을 정합니다. 좋은 품질 시스템은 실수를 숨기는 조직이 아니라 문제를 빨리 드러내고 안전하게 고치는 조직을 만듭니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "bar-throughput-and-flow"
+    ]
   },
   {
     "slug": "coffee-drink-taxonomy",
@@ -6862,7 +7963,11 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"two-values\"><span class=\"content-index\">01</span><h2>비율은 농도와 수율을 함께 설명합니다</h2><p>원두 대비 물의 양은 커피 한 잔의 농도와 추출 수율에 동시에 작용합니다. 같은 원두를 더 많이 내릴수록 농도가 낮아질 수는 있지만, 추출 효율이 올라가면 향미의 입자감이 달라질 수 있습니다. 그래서 비율은 “약하게/진하게”만의 문제가 아니라, 산미·단맛·바디의 균형을 바꾸는 문턱 점프입니다.</p><p>한 번에 여러 변수를 바꾸면 실수를 찾기 어렵기 때문에, 비율 실험은 기본값을 고정한 뒤 물의 양만 바꿔보는 방식이 안전합니다. 특히 <a data-wikilink=\"extraction-basics\" href=\"/wiki/extraction-basics\">농도와 수율의 관계</a>를 함께 보지 않으면 “진하다”와 “좋다”를 혼동하기 쉽습니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>비율은 목표를 기록하는 좌표입니다. 실험 전에는 현재 탬핑, 분쇄, 온도를 고정하고 물의 총량만 조정하세요.</p></aside></section><section id=\"starting-point\"><span class=\"content-index\">02</span><h2>출발점을 고정해서 비교하세요</h2><p>기준점은 대체로 방식별로 다릅니다. 필터 추출은 1:15~1:17, 에스프레소는 레시피의 도스·추출량 기준을 먼저 고정하고 다음 실험에서 물의 총량만 조절합니다. 목표 향미가 이미 정해져 있다면, 수분감이 너무 높은지 낮은지 먼저 관찰한 뒤 단계적으로 변경합니다.</p><ul><li>기록 항목: 원두, 분쇄도, 도즈, 수온, 물 온도, 시간, 비율, 맛 평가 메모</li><li>한 번에 바꾸는 항목: 총 물량 또는 추출량(둘 중 하나)</li><li>판단 기준: 산미의 선명도, 단맛 지속성, 잔여 쓴맛, 점도</li></ul></section><section id=\"how-to-tune\"><span class=\"content-index\">03</span><h2>비율 미세 조정 순서</h2><p>한쪽만 먼저 조정할지 결정할 때는, 추출이 느리면 물을 늘리고 분쇄를 먼저 고정합니다. 추출이 너무 빠르다면 물을 줄이기보다 분쇄를 조금 더 곱게 가거나 도즈를 늘리는 것이 먼저일 때가 많습니다. 반대로 쓴맛이 빠르게 올라오면 물량보다 시간을 늘려보거나 분쇄를 굵게 이동합니다.</p><h3>현장 체크리스트</h3><ol><li>기록된 기준 레시피로 3회 반복 추출해 변동 범위를 확인합니다.</li><li>총 물량을 5% 단위로 변화시키고, 맛 노트를 비교합니다.</li><li>좋은 쪽의 변화량을 중심으로 3회 재현성을 다시 확인합니다.</li></ol></section><section id=\"mistakes\"><span class=\"content-index\">04</span><h2>흔히 생기는 오해</h2><p>비율을 바꿔도 변화를 못 느낀다면 하드웨어 제한이나 물질 조건을 먼저 점검할 필요가 있습니다. 같은 변수를 반복해도 결과가 흔들리면 분쇄 분포가 넓거나 온도 플로우가 불안정할 가능성이 큽니다.</p><p>참고로 라벨의 풍미 문구보다 직접 기록한 재현 시험이 훨씬 정확합니다. 같은 원두를 오래 따라내려면 “기록 기반 비율”이 가장 빠르게 학습을 만듭니다. <a data-wikilink=\"home-brew-recipes\" href=\"/wiki/home-brew-recipes\">방법별 출발 레시피</a>와 함께 비율을 맞춰 두면 실전 속도가 빨라집니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "particle-size-distribution",
+      "thermal-time-agitation-control",
+      "brew-profile-observables"
+    ]
   },
   {
     "slug": "pour-over-rhythm-control",
@@ -6932,7 +8037,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"why-rhythm\"><span class=\"content-index\">01</span><h2>붓기 리듬이 왜 중요한가</h2><p>푸어오버에서 같은 비율을 써도 맛이 달라지는 가장 흔한 이유는 붓기 리듬의 편차입니다. 처음 30초의 뜸은 채널링을 줄이는 데 영향을 주고, 이후의 둔탁한 물살은 분쇄층 전체가 물을 만나도록 좌우합니다.</p><p>붓기 속도는 물의 총량보다 영향이 작지 않습니다. 한 번의 붓기에서 지나친 물길이 생기면 분쇄 표면의 일부만 과추출되고 나머지는 저추출될 수 있어, 맛의 분산이 커집니다.</p></section><section id=\"distribution-patterns\"><span class=\"content-index\">02</span><h2>기본 패턴을 네 가지로 나눠 봅니다</h2><p>실무에서는 크게 네 가지로 나눠 점검합니다. 첫째, 중앙 집중형(원형), 둘째, 스파이럴형(순환), 셋째, 구획형(분할), 넷째, 간헐형(여러 번 나눔)입니다. 방식은 달라도 공통은 모든 붓기에서 접촉면을 고르게 유지하는 것입니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>처음에는 화려한 패턴보다 균일성을 우선하세요. 패턴은 실험이 정착된 뒤 꾸준히 반복할 때 얻는 값입니다.</p></aside></section><section id=\"simple-template\"><span class=\"content-index\">03</span><h2>실험 시작 템플릿</h2><ol><li>커피 15g, 물 약 240g 기준: 30~40초 뜸.</li><li>4회 분할로 붓기(80g, 80g, 80g, 80g) 또는 60초 내외의 호흡 리듬.</li><li>각 분할 후 원형으로 가장자리 쪽까지 물이 퍼졌는지 관찰.</li><li>총 추출 시간을 2분 30초~3분 30초로 가늠해 10초 단위로 기록.</li></ol><table><thead><tr><th>구간</th><th>목표</th><th>점검 포인트</th></tr><tr><td>0~40초</td><td>균일한 적심</td><td>원두가 한쪽으로 밀리지 않는지</td></tr><tr><td>40~120초</td><td>꾸준한 유입</td><td>수면 파열이 없는지, 미분 상승 여부</td></tr><tr><td>120초 이후</td><td>균형 있는 마무리</td><td>유량이 급격히 떨어지는지</td></tr></table></section><section id=\"troubleshoot\"><span class=\"content-index\">04</span><h2>문제와 대응</h2><p>물이 너무 빨리 지나가면 분쇄를 약간 더 곱게 하거나 붓기 간격을 줄입니다. 유출이 끈적하게 길어지면 분쇄를 약간 굵게 하거나 마지막 분할에서 붓기량을 나눠 조절합니다.</p><p>최종 목적은 결과를 일치시킨다는 점입니다. 오늘은 같은 추출곡선을 만들고, 내일은 맛 선호도에 맞춰 미세하게 변형하는 방식이 가장 재현성이 높습니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "thermal-time-agitation-control"
+    ]
   },
   {
     "slug": "grinder-burr-profile",
@@ -7000,7 +8107,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"profile-basics\"><span class=\"content-index\">01</span><h2>버의 형상이 왜 다른가</h2><p>버형은 가로채기 형태와 공기 이동, 분쇄 곡선에 영향을 줍니다. 같은 분쇄도 숫자를 쓰더라도 저각 플랫버와 콘 벨트형은 입자 분포가 다르게 나와 맛의 결정을 다르게 만듭니다.</p><p>특히 미세입자 비율이 높아지면 농후감은 늘 수 있지만, 과다하게 생기면 신속한 과추출과 미분 증가로 탁해질 수 있습니다. 반대로 너무 굵은 분포는 산미가 날카롭게 보일 가능성도 생깁니다.</p></section><section id=\"micro-vs-uniform\"><span class=\"content-index\">02</span><h2>균일 분쇄와 미세입자의 균형</h2><p>완벽한 단일 분포는 없습니다. 다만 바스켓 타입과 방식에 따라 허용되는 분포 폭이 다릅니다. 에스프레소는 미세입자의 영향이 크므로 정밀 조절이 필요하고, 필터 추출은 지나친 미세입자 증가를 조금 더 민감하게 느낄 수 있습니다.</p><ul><li>균일도 체크는 컵에서만이 아니라 배수량, 분쇄량, 추출 시간의 재현성으로 함께 판단</li><li>분쇄 소음이 급격히 변하면 버 마모나 정렬 이탈을 의심</li><li>원두 배치마다 1~2회 미세 조절 후 기록</li></ul></section><section id=\"when-to-replace\"><span class=\"content-index\">03</span><h2>교체 시점의 실무 기준</h2><table><thead><tr><th>관찰 신호</th><th>기대 조치</th><th>메모</th></tr><tr><td>원두량 대비 통일성이 자주 붕괴</td><td>버 간격 1회 정렬 점검</td><td>교차 실험으로 분리</td></tr><tr><td>도징량 대비 수율 편차 증가</td><td>마모 보정 또는 유지 보수 의뢰</td><td>필요 시 제조사 서비스</td></tr><tr><td>미분 푸짐한 잔향 지속</td><td>버 교체 또는 분쇄도 보정</td><td>원두 로트마다 반복 기록</td></tr></table></section><section id=\"maintenance-loop\"><span class=\"content-index\">04</span><h2>점검 루프를 루틴화</h2><p>분쇄 프로파일은 하루에 한 번만 본다기보다, 출근 직후 10분 루틴이 더 유효합니다. 물기 있는 원두와 건조 원두를 번갈아 쓰거나, 로트가 바뀔 때마다 같은 조건으로 테스트 컵을 한 잔 찍으면 변화 탐지가 빨라집니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>버 교체를 미루는 비용은 단기적으로는 없지만, 배치 간 편차 손실로 커피 품질 관리 비용이 커질 수 있습니다.</p></aside></section>",
-    "backlinks": []
+    "backlinks": [
+      "particle-size-distribution"
+    ]
   },
   {
     "slug": "espresso-preinfusion-guide",
@@ -7067,7 +8176,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"what-it-does\"><span class=\"content-index\">01</span><h2>프리인퓨전의 목적은 압력 균일화입니다</h2><p>에스프레소는 짧은 시간 안에 많은 물이 지나가므로, 커피 층 내부로 물이 들어가는 방식이 중요합니다. 프리인퓨전은 압력이 올라가기 전, 먼저 커피 층을 축축하게 만들어 채널이 갑자기 열리는 현상을 완화합니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>일부 머신은 프리인퓨전 기능만 있고, 일부는 바리스타가 붓기처럼 수동으로 유사 동작을 구현합니다. 장비 특성을 먼저 확인하세요.</p></aside></section><section id=\"adjustment-order\"><span class=\"content-index\">02</span><h2>세팅 우선순위</h2><p>동일 원두에서 프리인퓨전을 실험할 때는 첫 단계에서 너무 많은 값을 바꾸지 않습니다. 시간만, 그다음 유량만, 그다음 압력 프로파일만 순차적으로 바꿔야 원인을 추적할 수 있습니다.</p><ul><li>첫 조절: 프리인퓨전 시간 0초→2초→4초</li><li>둘째 조절: 펌핑량(또는 스텝 압력)</li><li>셋째 조절: 추출량/도즈/분쇄도는 고정</li></ul></section><section id=\"practical-table\"><span class=\"content-index\">03</span><h2>현장 시작값 예시</h2><table><thead><tr><th>카테고리</th><th>예시 시작값</th><th>평가 포인트</th></tr></thead><tbody><tr><td>밝은 원두</td><td>짧은 프리인퓨전 + 약간 느린 추출</td><td>산미와 단맛의 선명도</td></tr><tr><td>어두운 원두</td><td>중간 프리인퓨전 + 안정된 추출</td><td>쓴맛 과다 유무</td></tr><tr><td>변동이 심한 원두</td><td>가볍게 시작해 점진 조정</td><td>첫 컵의 재현성</td></tr></tbody></table></section><section id=\"mistake-check\"><span class=\"content-index\">04</span><h2>흔한 오해 정리</h2><p>프리인퓨전은 장비가 더 오래 돌아가는 대체 용어가 아니라, 물의 침투 균형을 만드는 과정입니다. 시간이 길수록 무조건 좋다는 보장은 없고, 경우에 따라 산미가 약해지거나 추출이 무겁게 보일 수 있습니다.</p><p>기본적으로 <a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">압력 추출의 기본 원리</a>와 연결해 해석하고, 동일 조건에서 한 번에 하나만 바꾸는 방식이 유효합니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "espresso-machine-hydraulics-thermal"
+    ]
   },
   {
     "slug": "milk-microfoam-checklist",
@@ -7144,7 +8255,10 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"goal\"><span class=\"content-index\">01</span><h2>목표는 부피가 아니라 입자감</h2><p>라떼 표면의 부피감만 높아 보여도 커피 맛의 밸런스가 무너지면 실패입니다. 좋은 마이크로폼은 우유 전체에 고운 기포가 고르게 퍼져야 하고, 컵에서 따를 때 끊김이 적어야 합니다.</p><p>특히 냉동 우유, 상온 우유, 고단백 우유는 거품 반응이 다르므로, 온도만 고정하고 동일한 패턴으로 처리하면 실패율이 커집니다. 매장에서는 원재료별 기준표를 먼저 기록해 두는 편이 안정적입니다.</p></section><section id=\"checklist-prep\"><span class=\"content-index\">02</span><h2>출발 점검</h2><ul><li>피처 세척: 남은 거품·단백질 잔사가 있으면 미세한 입자 형성이 증가</li><li>온도 기준: 55~65℃ 전후에서 마이크로폼이 잘 잡히는 빈도가 높음</li><li>우유 비율: 지나치게 찬 우유는 공기 주입 효율을 낮춤</li><li>분배컵 예열: 과열되지 않도록 필요한 범위만</li></ul></section><section id=\"step-control\"><span class=\"content-index\">03</span><h2>주입·회전 제어</h2><p>스티밍 초반 2~3초는 미세한 기포를 위한 주입 구간, 중반은 회전 구간으로 나눠 관리하면 형태가 분명해집니다. 초반에 과도한 에어가 들어가면 버블이 커져 거친 폼이 되기 쉽습니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>기포 조절은 음량보다 감각의 반복이 중요합니다. 손바닥으로 만져 58~62℃ 사이에서 마무리되는 감각이 익숙해지면 기록이 빨라집니다.</p></aside></section><section id=\"shift-qa\"><span class=\"content-index\">04</span><h2>시프트용 간단 점검표</h2><ol><li>오늘의 우유 배치와 온도, 시작 시간을 기록</li><li>첫 잔에서 폼 표면의 반짝임과 붓기 시 저항성 확인</li><li>마지막 2잔은 같은 잔량·붓기 속도로 반복</li><li>하루 마지막에 이탈 케이스 3개 이하가 되도록 원인 분류</li></ol></section><section id=\"next-step\"><span class=\"content-index\">05</span><h2>연결 포인트</h2><p>마이크로폼은 라떼아트의 기술 이전 단계입니다. <a data-wikilink=\"latte-art-readability\" href=\"/wiki/latte-art-readability\">라떼아트 가독성 관리</a>와 함께 보면 붓기 성능을 더 쉽게 관리할 수 있습니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "milk-steaming-protein-chemistry",
+      "plant-based-milk-steaming"
+    ]
   },
   {
     "slug": "latte-art-readability",
@@ -7211,7 +8325,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"focus\"><span class=\"content-index\">01</span><h2>패턴은 시선을 안내해야 합니다</h2><p>라떼아트를 고치는 목적은 “예쁘다”보다 일관적인 음료 감각을 전달하는 것입니다. 패턴 경계가 너무 거칠면 잔 온도, 붓기 시점, 거품 입자감이 뒤섞여서 음용 전 경험이 불안정해집니다.</p><p>따라서 붓기 전 우선순위는 단선이 아닌, 음영의 경계와 흐름입니다. 처음부터 정교한 로고보다, 가장 단순한 하트와 로즈에서 모양 유지가 되는지 확인하는 편이 훈련 효율이 높습니다.</p></section><section id=\"pre-pattern\"><span class=\"content-index\">02</span><h2>시작 전 4가지 정렬</h2><ul><li>우유 표면에 광택이 있고, 큰 거품 기포가 덩어리지 않았는지</li><li>샷의 크레마가 일정한지</li><li>잔 온도와 음량이 같은 범위인지</li><li>붓기 속도 1회당 시간 간격이 고른지</li></ul></section><section id=\"basic-motions\"><span class=\"content-index\">03</span><h2>기본 동작별 가독성 포인트</h2><table><thead><tr><th>동작</th><th>목표</th><th>실패 신호</th></tr></thead><tbody><tr><td>직선 붓기</td><td>대칭 라인</td><td>선이 끊기거나 양쪽 모양이 다름</td></tr><tr><td>팔로우 동작</td><td>테두리 정렬</td><td>끝부분이 울퉁불퉁함</td></tr><tr><td>회전</td><td>입자 균일</td><td>큰 기포 집적</td></tr></tbody></table></section><section id=\"evaluation\"><span class=\"content-index\">04</span><h2>평가 기준</h2><p>평가는 “그림”이 아니라 “재현성”으로 끝내야 합니다. 같은 패턴을 같은 조건으로 다시 만들 수 있다면 그날은 성공률이 높고, 배치 전체 품질에도 도움이 됩니다. 관람객에게 보이는 요소도 결국 재현성에서 나옵니다.</p><p>실수한 경우에는 패턴 자체를 줄이고 우유 질감 보정으로 되돌리는 것이 빠르므로, 연습에서는 난도를 빠르게 낮추는 훈련이 유리합니다.</p></section>",
     "backlinks": [
-      "milk-microfoam-checklist"
+      "milk-microfoam-checklist",
+      "milk-steaming-protein-chemistry"
     ]
   },
   {
@@ -7418,7 +8533,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"why-language\"><span class=\"content-index\">01</span><h2>언어 정렬이 커피 판단의 기반입니다</h2><p>“좋다/나쁘다”만으로는 협업이 느려집니다. 초보자도 기록에서 산미, 단맛, 쓴맛, 바디, 향미를 분리해 쓰면 같은 문장을 반복해도 비교 정확도가 올라갑니다.</p><p>의사결정의 단위는 강한 용어보다 재현 가능한 기준입니다. 예를 들어 “사과향”만 쓰기보다 “신선한 사과, 경쾌한 산미 동반”처럼 문장으로 고정하면 나중에 재현이 쉬워집니다.</p></section><section id=\"terminology-frame\"><span class=\"content-index\">02</span><h2>표현 템플릿</h2><ol><li>향: 처음 10초, 가열 후 10초의 두 지점으로 분리해서 기록</li><li>미각: 산미, 단맛, 쓴맛의 상대 강도와 지속성</li><li>바디: 입안 감각의 무게감과 점도</li><li>후미: 지속 시간과 잔여 감각의 깔끔함</li></ol></section><section id=\"consistency-rules\"><span class=\"content-index\">03</span><h2>일관성 룰</h2><ul><li>강한 표현을 쓰기 전 최소 2회 이상 같은 샘플 비교</li><li>향미 명칭은 최소한의 집합으로 시작(예: 과일, 견과, 초콜릿)</li><li>한 문장에 3개 이상 감각을 섞지 않기</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>동료와 토론할 때 “언제, 어떤 지점에서, 어떤 변화가 보였는지”를 덧붙이면 오해가 크게 줄어듭니다.</p></aside></section><section id=\"next-actions\"><span class=\"content-index\">04</span><h2>연결 학습</h2><p>관능 언어는 기록을 반복해야 성장합니다. <a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑 기초</a>에서 쓰는 조건 통제 방식과 맞물리면 감각 해석이 더 빨리 정교해집니다. </p></section>",
-    "backlinks": []
+    "backlinks": [
+      "sensory-defect-diagnosis"
+    ]
   },
   {
     "slug": "daily-cafe-routine",
@@ -7490,6 +8607,1055 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"start-routine\"><span class=\"content-index\">01</span><h2>오픈 전 10분이 운영의 질을 정합니다</h2><p>오픈 전 루틴은 바빠 보이는 시간에 가장 큰 비용을 줄입니다. 물 온도, 추출 압력, 그라인더 분쇄 상태, 스팀 라인의 청결처럼 작은 항목이 잔 맛의 변동으로 누적되기 때문입니다.</p><p>핵심은 완전한 완성을 만들기보다, 편차가 커질 징후를 먼저 감지하는 것입니다. 같은 루틴을 2주 반복하면 어떤 날에 어떤 장비가 먼저 흔들리는지 패턴이 보입니다.</p></section><section id=\"open-check\"><span class=\"content-index\">02</span><h2>오픈 전 점검표</h2><ul><li>그라인더: 도즈량 1회 측정 3개값 오차 2% 이하</li><li>에스프레소 샷: 추출 시작 5회 내 동일성 확인</li><li>우유 보온/피처: 세척·예열 상태와 물 온도 확인</li><li>수질/급수: 온수 유량과 누수 여부</li></ul></section><section id=\"throughput-control\"><span class=\"content-index\">03</span><h2>운영 중 모니터링</h2><p>혼잡 시간대에는 판단이 느려지기 쉽습니다. 이때는 기록 항목을 3개로 줄이되 계속 유지하세요. 예를 들어 샷 타임, 우유 온도, 라떼 표면 균일도 3지표를 우선 감시하는 방식입니다.</p></section><section id=\"close-routine\"><span class=\"content-index\">04</span><h2>마감 전 정리</h2><table><tbody><tr><th>구간</th><th>조치</th><th>목적</th></tr><tr><td>영업 중반</td><td>품질 이슈 발생 잔 수집</td><td>야간 분석 데이터 확보</td></tr><tr><td>영업 종료</td><td>브루어/그라인더 세척</td><td>교차 오염·냄새 고정 예방</td></tr><tr><td>마감 기록</td><td>불일치 원인 1개 이상 기록</td><td>다음 영업일 재현성</td></tr></tbody></table></section><section id=\"culture\"><span class=\"content-index\">05</span><h2>운영 문화</h2><p>문서화가 부담스럽다면 단 3줄만 남겨도 효과가 있습니다. “무엇이 문제였는지, 언제 발생했는지, 다음 수정안”이 보이면 팀 내 전달 속도가 빨라지고, 품질 회복 시간이 줄어듭니다.</p></section>",
+    "backlinks": [
+      "bar-throughput-and-flow"
+    ]
+  },
+  {
+    "slug": "particle-size-distribution",
+    "title": "분쇄 입자 분포와 추출의 균일성",
+    "summary": "평균 분쇄도보다 분포 폭이 추출 균일성에 더 큰 영향을 주므로, 분포를 읽고 조절하는 점검 루틴을 정리합니다.",
+    "category": "추출",
+    "level": "중급",
+    "readingTime": "10분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "추출의 재현성은 분쇄도 숫자뿐 아니라 입자 분포 폭의 안정성으로 결정되는 부분이 큽니다.",
+    "sections": [
+      {
+        "id": "distribution-overview",
+        "title": "입자 분포는 왜 분쇄도보다 먼저 본다",
+        "paragraphs": [
+          "분쇄는 평균 입도 하나로 설명하기 어렵습니다. 같은 평균이라도 미세입자와 큰 입자의 비율이 달라지면 추출 속도와 향의 균형이 같이 이동합니다.",
+          "현장에서는 분포를 “넓다/좁다”로 먼저 점검한 뒤 분쇄 숫자를 조정하는 쪽이 덜 흔들리는 편입니다."
+        ]
+      },
+      {
+        "id": "what-to-collect",
+        "title": "점검 데이터부터 확보",
+        "paragraphs": [],
+        "points": [
+          "원두 로트와 저장 상태(건조/신선도)",
+          "도즈, 도징량 오차, 도징 반복성",
+          "분쇄 뒤 추출 시간, 총 수율, 맛 기록",
+          "필터 잔류 미분의 육안 관찰"
+        ]
+      },
+      {
+        "id": "practical-loop",
+        "title": "실무 루프",
+        "paragraphs": [
+          "분포 변동이 의심되면 아래 순서로 운영 비용을 낮춰 가며 확인합니다."
+        ],
+        "points": [
+          "그라인더 청결과 정렬 점검 → 분쇄 오염·잔류 제거",
+          "분쇄 단계 고정, 물량·시간만 고정 추출 반복(최소 2회)",
+          "미분 과다 또는 추출 변동이 크면 분쇄 단계 1단계 조정",
+          "세 번 연속 재현되면 해당 세팅을 기록으로 고정"
+        ]
+      },
+      {
+        "id": "table-compare",
+        "title": "분포 징후 비교표",
+        "paragraphs": [
+          "징후해석 가설핵심 대응바닥 미분 잔존 증가분포 하단 꼬리 과다그라인더 상태 점검 후 분쇄 단계를 미세 변경시작은 좋은데 후반이 날카롭다추출 중 균질성 붕괴 가능붓기/채널링 변수 고정 후 분포 확인시간 편차 확대분포 이동성 증가분쇄·습윤 상태와 환경 영향 기록"
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "흔한 오해 정리",
+        "paragraphs": [
+          "오해 하나는 “숫자만 고정하면 된다”입니다. 숫자와 분쇄 분포는 연동되더라도 실제로 흔들리는 건 분포가 이동한 순간입니다.",
+          "또 하나는 미분을 무조건 배제해야 한다는 전제입니다. 미분은 완전 부정적이기보다, 강한 영향이 나타날 수 있는 구성요소라는 전제로 관리해야 합니다."
+        ]
+      },
+      {
+        "id": "exercise",
+        "title": "실습: 1주일 분포 실험",
+        "paragraphs": [],
+        "points": [
+          "동일 원두 2주기 동안 동일 레시피로 3회 측정",
+          "변동이 크면 분쇄 분포 징후 로그를 남기고 도계값은 동일 유지",
+          "세팅 조정은 미분 비중이 지속되면 1회만 변경",
+          "변경 전/후 수율과 맛 메모를 비교표로 정리"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "그라인더 기초",
+          "버 프로파일 가이드",
+          "비율 실험 루틴"
+        ]
+      }
+    ],
+    "related": [
+      "grinder-burr-profile",
+      "grinder-basics",
+      "extraction-basics"
+    ],
+    "tags": [
+      "입자분포",
+      "분쇄",
+      "미분",
+      "균일추출",
+      "추출이론"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "분포 기반 추출 오해 정리 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"distribution-overview\"><span class=\"content-index\">01</span><h2>입자 분포는 왜 분쇄도보다 먼저 본다</h2><p>분쇄는 평균 입도 하나로 설명하기 어렵습니다. 같은 평균이라도 미세입자와 큰 입자의 비율이 달라지면 추출 속도와 향의 균형이 같이 이동합니다.</p><p>현장에서는 분포를 “넓다/좁다”로 먼저 점검한 뒤 분쇄 숫자를 조정하는 쪽이 덜 흔들리는 편입니다.</p></section><section id=\"what-to-collect\"><span class=\"content-index\">02</span><h2>점검 데이터부터 확보</h2><ul><li>원두 로트와 저장 상태(건조/신선도)</li><li>도즈, 도징량 오차, 도징 반복성</li><li>분쇄 뒤 추출 시간, 총 수율, 맛 기록</li><li>필터 잔류 미분의 육안 관찰</li></ul></section><section id=\"practical-loop\"><span class=\"content-index\">03</span><h2>실무 루프</h2><p>분포 변동이 의심되면 아래 순서로 운영 비용을 낮춰 가며 확인합니다.</p><ol><li>그라인더 청결과 정렬 점검 → 분쇄 오염·잔류 제거</li><li>분쇄 단계 고정, 물량·시간만 고정 추출 반복(최소 2회)</li><li>미분 과다 또는 추출 변동이 크면 분쇄 단계 1단계 조정</li><li>세 번 연속 재현되면 해당 세팅을 기록으로 고정</li></ol></section><section id=\"table-compare\"><span class=\"content-index\">04</span><h2>분포 징후 비교표</h2><table><thead><tr><th>징후</th><th>해석 가설</th><th>핵심 대응</th></tr><tr><td>바닥 미분 잔존 증가</td><td>분포 하단 꼬리 과다</td><td>그라인더 상태 점검 후 분쇄 단계를 미세 변경</td></tr><tr><td>시작은 좋은데 후반이 날카롭다</td><td>추출 중 균질성 붕괴 가능</td><td>붓기/채널링 변수 고정 후 분포 확인</td></tr><tr><td>시간 편차 확대</td><td>분포 이동성 증가</td><td>분쇄·습윤 상태와 환경 영향 기록</td></tr></tbody></table></section><section id=\"misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해 정리</h2><p>오해 하나는 “숫자만 고정하면 된다”입니다. 숫자와 분쇄 분포는 연동되더라도 실제로 흔들리는 건 분포가 이동한 순간입니다.</p><p>또 하나는 미분을 무조건 배제해야 한다는 전제입니다. 미분은 완전 부정적이기보다, 강한 영향이 나타날 수 있는 구성요소라는 전제로 관리해야 합니다.</p></section><section id=\"exercise\"><span class=\"content-index\">06</span><h2>실습: 1주일 분포 실험</h2><ol><li>동일 원두 2주기 동안 동일 레시피로 3회 측정</li><li>변동이 크면 분쇄 분포 징후 로그를 남기고 도계값은 동일 유지</li><li>세팅 조정은 미분 비중이 지속되면 1회만 변경</li><li>변경 전/후 수율과 맛 메모를 비교표로 정리</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"grinder-basics\" href=\"/wiki/grinder-basics\">그라인더 기초</a></li><li><a data-wikilink=\"grinder-burr-profile\" href=\"/wiki/grinder-burr-profile\">버 프로파일 가이드</a></li><li><a data-wikilink=\"brew-ratio-practice\" href=\"/wiki/brew-ratio-practice\">비율 실험 루틴</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "thermal-time-agitation-control",
+    "title": "온도·시간·교반을 함께 조절하는 추출 제어",
+    "summary": "온도, 추출시간, 교반은 서로의 결과를 바꾸므로, 변수 간 순서를 분리해 실험할 때 재현성이 커집니다.",
+    "category": "추출",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "온도는 속도, 시간은 깊이, 교반은 분포 균일성과 동시 효과가 있어 단일 변수로 최적화하면 오해가 생기기 쉽습니다.",
+    "sections": [
+      {
+        "id": "variable-roles",
+        "title": "세 변수를 역할로 나눠 본다",
+        "paragraphs": [
+          "온도는 일반적으로 추출 속도와 화학 반응에, 시간은 투입된 물질의 유입량에, 교반은 추출 층의 균일성에 영향을 줍니다. 세 가지를 동시에 바꾸면 어떤 신호가 어디서 왔는지 역추적하기 어렵습니다.",
+          "기록의 가장 효율적인 시작은 “고정-변경-고정” 순서입니다. 먼저 기준 레시피를 확보하고, 변화 변수는 한 번에 하나만 바꿉니다."
+        ]
+      },
+      {
+        "id": "order",
+        "title": "실험 순서 제안",
+        "paragraphs": [],
+        "points": [
+          "1단계: 시간/분량/도즈를 먼저 고정하고 교반만 조정",
+          "2단계: 온도 편차가 큰 구간에서 분포 관찰",
+          "3단계: 마지막으로 시간으로 미세 보정"
+        ]
+      },
+      {
+        "id": "profile",
+        "title": "필터 추출 기준 템플릿",
+        "paragraphs": [
+          "단계우선 제어값판단 기준시작 30~45초뜨거운 물보다 안정한 시작원두 적심과 미분 억제추출 중반교반 패턴 고정붓기 리듬 안정화마감 10~20초목표 시간 범위 유지입안 잔향의 편차 축소"
+        ]
+      },
+      {
+        "id": "counter",
+        "title": "흔히 보는 반응과 완화",
+        "paragraphs": [
+          "온도를 올렸더니 산미가 사라지고 쓴맛이 올라오면 보통 시간 단축이 아닌 교반/분배 불균형이 같이 작동한 경우가 있습니다. 이때 바로 시간을 더 줄이는 대신 교반 반복성부터 점검하는 편이 원인 추적이 빠릅니다.",
+          "반대로 교반이 과하면 미분이 표면으로 이동해 바디가 무겁게 느껴질 수 있습니다. 같은 원두에서 10~15초 교반 차이가 결과를 확 바꿀 수 있으므로 기록은 시간 단위로 남깁니다."
+        ]
+      },
+      {
+        "id": "self-check",
+        "title": "자기 점검",
+        "paragraphs": [],
+        "points": [
+          "동일 레시피로 각 변수별 2회 반복했는지 점검했는가?",
+          "시간을 바꾼 경우 온도 로그는 동일했는가?",
+          "교반 유무가 가장 큰 향 변화를 만들었다면 무엇을 분리해야 하나?"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "물 온도·수질 기초",
+          "비율과 농도",
+          "붓기 리듬 제어"
+        ]
+      }
+    ],
+    "related": [
+      "extraction-basics",
+      "brew-ratio-practice",
+      "water-for-coffee"
+    ],
+    "tags": [
+      "온도",
+      "시간",
+      "교반",
+      "변수분리",
+      "추출재현성"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "온도·시간·교반 제어 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"variable-roles\"><span class=\"content-index\">01</span><h2>세 변수를 역할로 나눠 본다</h2><p>온도는 일반적으로 추출 속도와 화학 반응에, 시간은 투입된 물질의 유입량에, 교반은 추출 층의 균일성에 영향을 줍니다. 세 가지를 동시에 바꾸면 어떤 신호가 어디서 왔는지 역추적하기 어렵습니다.</p><p>기록의 가장 효율적인 시작은 “고정-변경-고정” 순서입니다. 먼저 기준 레시피를 확보하고, 변화 변수는 한 번에 하나만 바꿉니다.</p></section><section id=\"order\"><span class=\"content-index\">02</span><h2>실험 순서 제안</h2><ul><li>1단계: 시간/분량/도즈를 먼저 고정하고 교반만 조정</li><li>2단계: 온도 편차가 큰 구간에서 분포 관찰</li><li>3단계: 마지막으로 시간으로 미세 보정</li></ul></section><section id=\"profile\"><span class=\"content-index\">03</span><h2>필터 추출 기준 템플릿</h2><table><thead><tr><th>단계</th><th>우선 제어값</th><th>판단 기준</th></tr><tr><td>시작 30~45초</td><td>뜨거운 물보다 안정한 시작</td><td>원두 적심과 미분 억제</td></tr><tr><td>추출 중반</td><td>교반 패턴 고정</td><td>붓기 리듬 안정화</td></tr><tr><td>마감 10~20초</td><td>목표 시간 범위 유지</td><td>입안 잔향의 편차 축소</td></tr></tbody></table></section><section id=\"counter\"><span class=\"content-index\">04</span><h2>흔히 보는 반응과 완화</h2><p>온도를 올렸더니 산미가 사라지고 쓴맛이 올라오면 보통 시간 단축이 아닌 교반/분배 불균형이 같이 작동한 경우가 있습니다. 이때 바로 시간을 더 줄이는 대신 교반 반복성부터 점검하는 편이 원인 추적이 빠릅니다.</p><p>반대로 교반이 과하면 미분이 표면으로 이동해 바디가 무겁게 느껴질 수 있습니다. 같은 원두에서 10~15초 교반 차이가 결과를 확 바꿀 수 있으므로 기록은 시간 단위로 남깁니다.</p></section><section id=\"self-check\"><span class=\"content-index\">05</span><h2>자기 점검</h2><ol><li>동일 레시피로 각 변수별 2회 반복했는지 점검했는가?</li><li>시간을 바꾼 경우 온도 로그는 동일했는가?</li><li>교반 유무가 가장 큰 향 변화를 만들었다면 무엇을 분리해야 하나?</li></ol></section><section id=\"references\"><span class=\"content-index\">06</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">물 온도·수질 기초</a></li><li><a data-wikilink=\"brew-ratio-practice\" href=\"/wiki/brew-ratio-practice\">비율과 농도</a></li><li><a data-wikilink=\"pour-over-rhythm-control\" href=\"/wiki/pour-over-rhythm-control\">붓기 리듬 제어</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "permeability-channeling-control",
+    "title": "투과성·채널링의 원인과 진단",
+    "summary": "채널링을 하나의 결함이 아니라 유동과 분포가 함께 만드는 징후로 보고, 진단 순서를 고정합니다.",
+    "category": "추출",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "채널링은 분쇄나 물량 하나만의 문제보다, 수분 이동과 분배의 불균형에서 먼저 발생할 수 있습니다.",
+    "sections": [
+      {
+        "id": "why-channeling",
+        "title": "채널링은 왜 생기는가",
+        "paragraphs": [
+          "채널링은 물이 커피층을 골고루 통과하지 못하고 일부 통로를 선호할 때 발생합니다. 원인으로는 분쇄 분포, 분배 불균일, 압력/유량 과도, 베드 밀도 불균형이 함께 작동합니다.",
+          "한 번에 원인을 단정하기보다 채널링 의심 신호를 정리하고, 동시 변수 변경을 피합니다."
+        ]
+      },
+      {
+        "id": "diagnosis",
+        "title": "진단 체크리스트",
+        "paragraphs": [],
+        "points": [
+          "추출 시작 직후 소리가 갑작스레 일정해지는지",
+          "중반 이후 급속 유출이 생기는지",
+          "컵 표면의 거친 입자감·쪽입감이 반복되는지",
+          "동일 세팅에서 샷/컵 간 편차가 크게 벌어지는지"
+        ]
+      },
+      {
+        "id": "countermeasures",
+        "title": "우선순위 대책",
+        "paragraphs": [],
+        "points": [
+          "교반/붓기 패턴 고정(변경 전)",
+          "분쇄 분포가 넓은지 점검하고 버 상태 확인",
+          "도즈량·타포트 탬핑 일관성 통일",
+          "필요 시 예열·유량을 조절해 초기 침투 안정화"
+        ]
+      },
+      {
+        "id": "table",
+        "title": "채널링 원인별 징후",
+        "paragraphs": [
+          "원인군특징개입붓기/교반초반 특정 지점 집중붓기 폭과 방향 균일화분쇄미분 과다 또는 큰 편차버 정렬·교체·분쇄 단계 재검토베드 밀도샷 타임 불안정도즈/탬핑 압력 및 분배 동작 고정"
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "많은 분쇄가 다 소용량으로 바뀌어야 한다는 오해가 있습니다. 채널링은 단순히 더 곱게 갈아 해결되지 않습니다. 먼저 베드가 어떻게 물을 받는지부터 바꿔야 합니다."
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 채널링 경보 지도",
+        "paragraphs": [
+          "하루 3잔 기준으로 로그를 남겨보세요."
+        ],
+        "points": [
+          "추출 시작 음향·유량 변화를 수치로 기록",
+          "원두/분쇄/도즈 변경 없이 분배 동작만 2회 바꾸어 비교",
+          "같은 날 3회 비교에서 경향이 반복되면 다음 단계로 이동"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "에스프레소 기본 원리",
+          "퍽 준비 및 탬핑"
+        ]
+      }
+    ],
+    "related": [
+      "pour-over-rhythm-control",
+      "espresso-preinfusion-guide",
+      "espresso-puck-preparation"
+    ],
+    "tags": [
+      "채널링",
+      "투과성",
+      "퍼지",
+      "균일추출"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "채널링 진단 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"why-channeling\"><span class=\"content-index\">01</span><h2>채널링은 왜 생기는가</h2><p>채널링은 물이 커피층을 골고루 통과하지 못하고 일부 통로를 선호할 때 발생합니다. 원인으로는 분쇄 분포, 분배 불균일, 압력/유량 과도, 베드 밀도 불균형이 함께 작동합니다.</p><p>한 번에 원인을 단정하기보다 채널링 의심 신호를 정리하고, 동시 변수 변경을 피합니다.</p></section><section id=\"diagnosis\"><span class=\"content-index\">02</span><h2>진단 체크리스트</h2><ul><li>추출 시작 직후 소리가 갑작스레 일정해지는지</li><li>중반 이후 급속 유출이 생기는지</li><li>컵 표면의 거친 입자감·쪽입감이 반복되는지</li><li>동일 세팅에서 샷/컵 간 편차가 크게 벌어지는지</li></ul></section><section id=\"countermeasures\"><span class=\"content-index\">03</span><h2>우선순위 대책</h2><ol><li>교반/붓기 패턴 고정(변경 전)</li><li>분쇄 분포가 넓은지 점검하고 버 상태 확인</li><li>도즈량·타포트 탬핑 일관성 통일</li><li>필요 시 예열·유량을 조절해 초기 침투 안정화</li></ol></section><section id=\"table\"><span class=\"content-index\">04</span><h2>채널링 원인별 징후</h2><table><thead><tr><th>원인군</th><th>특징</th><th>개입</th></tr><tr><td>붓기/교반</td><td>초반 특정 지점 집중</td><td>붓기 폭과 방향 균일화</td></tr><tr><td>분쇄</td><td>미분 과다 또는 큰 편차</td><td>버 정렬·교체·분쇄 단계 재검토</td></tr><tr><td>베드 밀도</td><td>샷 타임 불안정</td><td>도즈/탬핑 압력 및 분배 동작 고정</td></tr></tbody></table></section><section id=\"misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><p>많은 분쇄가 다 소용량으로 바뀌어야 한다는 오해가 있습니다. 채널링은 단순히 더 곱게 갈아 해결되지 않습니다. 먼저 베드가 어떻게 물을 받는지부터 바꿔야 합니다.</p></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 채널링 경보 지도</h2><p>하루 3잔 기준으로 로그를 남겨보세요.</p><ol><li>추출 시작 음향·유량 변화를 수치로 기록</li><li>원두/분쇄/도즈 변경 없이 분배 동작만 2회 바꾸어 비교</li><li>같은 날 3회 비교에서 경향이 반복되면 다음 단계로 이동</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 기본 원리</a></li><li><a data-wikilink=\"espresso-puck-preparation\" href=\"/wiki/espresso-puck-preparation\">퍽 준비 및 탬핑</a></li></ul></section>",
+    "backlinks": [
+      "espresso-puck-preparation"
+    ]
+  },
+  {
+    "slug": "brew-profile-observables",
+    "title": "브루 프로파일에서 관측값을 읽는 법",
+    "summary": "추출 중 눈으로 잡히는 지표를 기록 항목으로 바꿔 실험 재현성과 대화의 공유성을 확보하는 방법을 정리합니다.",
+    "category": "추출",
+    "level": "중급",
+    "readingTime": "8분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "브루 프로파일은 정답값이 아니라, 반복 가능한지 판단하기 위한 관측값의 집합입니다.",
+    "sections": [
+      {
+        "id": "why-observables",
+        "title": "관측값이 중요한 이유",
+        "paragraphs": [
+          "같은 수치만으로는 같은 결과가 보장되지 않습니다. 관측값은 그 시간에 있었던 변수를 함께 설명해주므로, 기록의 공유 비용을 낮춰줍니다.",
+          "팀 단위에서는 “개인 감각”보다 “관측 템플릿”이 빠른 학습을 만듭니다."
+        ]
+      },
+      {
+        "id": "minimum-metrics",
+        "title": "최소 측정 항목",
+        "paragraphs": [],
+        "points": [
+          "도즈, 물량, 추출시간",
+          "붓기 분할 횟수와 간격(필터 추출)",
+          "기온/수온, 원두 상태(표기)",
+          "맛 메모 4항목: 산미, 단맛, 바디, 쓴맛"
+        ]
+      },
+      {
+        "id": "template",
+        "title": "운영 템플릿",
+        "paragraphs": [
+          "항목기록 형식목적추출 유량초당 g 또는 구간별 누적 g초기 과다 유입 탐지온도최초/중반/마감열 편차 관리관능산미/단맛/바디/잔향재현성 판단"
+        ]
+      },
+      {
+        "id": "process",
+        "title": "기록 루프",
+        "paragraphs": [
+          "관측값을 남긴 뒤의 판단은 아래 루프로 고정합니다."
+        ],
+        "points": [
+          "차이의 크기 확인: 편차가 통계적으로 반복되는지",
+          "차이의 방향 확인: 값이 늘거나 줄 때 맛 방향이 일치하는지",
+          "차이의 원인 연결: 분쇄·물·교반·온도 중 어떤 축인지"
+        ]
+      },
+      {
+        "id": "common-errors",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "관측값만 많다고 분석이 쉬워지는 것은 아닙니다. 핵심은 최소 5개를 꾸준히 정확히 기록해 추세를 보는 것입니다."
+        ]
+      },
+      {
+        "id": "self-check",
+        "title": "자기 점검 퀴즈",
+        "paragraphs": [],
+        "points": [
+          "같은 레시피로 3회 재현해도 관측값 분산이 일정하게 줄었는가?",
+          "변경한 변수가 문서화되어 있는가?",
+          "관측값이 2개 항목에서 함께 바뀌었는지 설명할 수 있는가?"
+        ]
+      },
+      {
+        "id": "reference",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "물과 온도 기초",
+          "비율 실험",
+          "레시피 운영 예시"
+        ]
+      }
+    ],
+    "related": [
+      "extraction-basics",
+      "thermal-time-agitation-control",
+      "pour-over-rhythm-control"
+    ],
+    "tags": [
+      "브루데이터",
+      "관측값",
+      "추출로그",
+      "품질관리",
+      "실험"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "브루 관측값 프레임 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"why-observables\"><span class=\"content-index\">01</span><h2>관측값이 중요한 이유</h2><p>같은 수치만으로는 같은 결과가 보장되지 않습니다. 관측값은 그 시간에 있었던 변수를 함께 설명해주므로, 기록의 공유 비용을 낮춰줍니다.</p><p>팀 단위에서는 “개인 감각”보다 “관측 템플릿”이 빠른 학습을 만듭니다.</p></section><section id=\"minimum-metrics\"><span class=\"content-index\">02</span><h2>최소 측정 항목</h2><ul><li>도즈, 물량, 추출시간</li><li>붓기 분할 횟수와 간격(필터 추출)</li><li>기온/수온, 원두 상태(표기)</li><li>맛 메모 4항목: 산미, 단맛, 바디, 쓴맛</li></ul></section><section id=\"template\"><span class=\"content-index\">03</span><h2>운영 템플릿</h2><table><thead><tr><th>항목</th><th>기록 형식</th><th>목적</th></tr><tr><td>추출 유량</td><td>초당 g 또는 구간별 누적 g</td><td>초기 과다 유입 탐지</td></tr><tr><td>온도</td><td>최초/중반/마감</td><td>열 편차 관리</td></tr><tr><td>관능</td><td>산미/단맛/바디/잔향</td><td>재현성 판단</td></tr></tbody></table></section><section id=\"process\"><span class=\"content-index\">04</span><h2>기록 루프</h2><p>관측값을 남긴 뒤의 판단은 아래 루프로 고정합니다.</p><ol><li>차이의 크기 확인: 편차가 통계적으로 반복되는지</li><li>차이의 방향 확인: 값이 늘거나 줄 때 맛 방향이 일치하는지</li><li>차이의 원인 연결: 분쇄·물·교반·온도 중 어떤 축인지</li></ol></section><section id=\"common-errors\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><p>관측값만 많다고 분석이 쉬워지는 것은 아닙니다. 핵심은 최소 5개를 꾸준히 정확히 기록해 추세를 보는 것입니다.</p></section><section id=\"self-check\"><span class=\"content-index\">06</span><h2>자기 점검 퀴즈</h2><ul><li>같은 레시피로 3회 재현해도 관측값 분산이 일정하게 줄었는가?</li><li>변경한 변수가 문서화되어 있는가?</li><li>관측값이 2개 항목에서 함께 바뀌었는지 설명할 수 있는가?</li></ul></section><section id=\"reference\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">물과 온도 기초</a></li><li><a data-wikilink=\"brew-ratio-practice\" href=\"/wiki/brew-ratio-practice\">비율 실험</a></li><li><a data-wikilink=\"home-brew-recipes\" href=\"/wiki/home-brew-recipes\">레시피 운영 예시</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "espresso-machine-hydraulics-thermal",
+    "title": "에스프레소 머신의 수력·열 시스템",
+    "summary": "펌프, 보일러, 밸브의 결합 특성을 정리해 압력과 온도 변동을 줄이고 일관된 샷을 만드는 방법을 정리합니다.",
+    "category": "카페와 장비",
+    "level": "중급",
+    "readingTime": "10분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sand",
+    "fact": "수력과 열 체계의 안정성은 머신 사양보다 유량/온도 편차를 줄이는 운영 습관에서 더 크게 좌우됩니다.",
+    "sections": [
+      {
+        "id": "system-definition",
+        "title": "수력·열 시스템이란 무엇인가",
+        "paragraphs": [
+          "에스프레소 머신은 두 축으로 동작합니다. 하나는 물을 원하는 속도로 밀어 넣는 수력 축이고, 다른 하나는 추출수의 열 상태를 일정 범위에 두는 열 축입니다. 두 축은 서로 독립되어 보이지만, 실제 추출에서는 거의 항상 결합되어 변동을 만듭니다.",
+          "동일한 분쇄, 동일한 도즈에서 컵 결과가 갈리는 경우가 많다면, 대부분은 장비 쪽 변동을 먼저 점검해야 합니다."
+        ]
+      },
+      {
+        "id": "hydraulic-subsystem",
+        "title": "펌프와 유량, 압력의 실제 의미",
+        "paragraphs": [
+          "결국 유량이 불안정하면 압력도 흔들리고, 흔들린 압력은 채널링과 과다 추출을 동시에 유발할 수 있어요. 그래서 펌프 성능은 “숫자”보다 “변동 추이”를 더 중요하게 봅니다."
+        ],
+        "points": [
+          "펌프는 설정된 목표 압력을 만들지만, 세팅이 유지되는지는 유량과 저항(커피층 상태)에 달려 있습니다.",
+          "압력은 순간값(예: 추출 중 peak, plateau)을 같이 봐야 하며, 평균값 하나만으로는 불충분합니다.",
+          "OPV(과압 방지 밸브)와 스프링 밸브 세팅은 고압 구간의 유출을 안정화하기 위한 안전/일관성 장치입니다."
+        ]
+      },
+      {
+        "id": "thermal-subsystem",
+        "title": "보일러·가열부를 이해하는 기준",
+        "paragraphs": [
+          "구성요소역할운영 포인트보일러열원 저장목표 온도 도달 시간과 복귀 안정성 확인히트 익스체인저/히트 싱크회로의 온도 전파샷 전후 온도 회복 속도 기록온도 제어기(PID)세팅값 유지센서 편차를 기준으로 튜닝 빈도 판단",
+          "많이 알려진 오해는 “PID가 켜져 있으니 온도는 완전 고정”이라는 가정입니다. PID는 편차를 줄여주지만, 추출 직전의 샤워 헤드 열손실, 그룹 헤드 열저류, 탬핑 직후의 베드 흡열 등을 보완할 수는 없습니다."
+        ]
+      },
+      {
+        "id": "interaction",
+        "title": "수력과 열의 상호작용",
+        "paragraphs": [
+          "예를 들어 온도를 0.5~1도 올렸을 때와 유량을 낮췄을 때의 효과를 쉽게 섞어서 해석하면 실험이 꼬입니다. 수력은 유입 속도와 체류 시간을 바꾸고, 열은 용질 용해 및 향기 성분의 반응 구간을 바꿉니다.",
+          "운영상 변화가 필요할 때는 먼저 분쇄/분배/도즈를 고정하고, 유량 또는 보일러 설정 중 하나만 바꾸는 방식이 해석 비용을 줄입니다."
+        ]
+      },
+      {
+        "id": "operating-checklist",
+        "title": "바리스타용 점검 체크리스트",
+        "paragraphs": [],
+        "points": [
+          "샷 직전 보일러 상태: 목표 온도 도달 여부와 과열-저하 경향 기록",
+          "예열 직후 첫 잔과 10분 운전 후 10분째 잔의 유량 차이 비교",
+          "동일 원두에서 프리인퓨전/메인 추출 각각의 시간 변화량을 기록",
+          "샷이 안정되는 데 필요한 워밍타임을 매일 로그로 관리"
+        ]
+      },
+      {
+        "id": "practical-experiment",
+        "title": "실습: 수력·열 분리 튜닝",
+        "paragraphs": [
+          "동일한 커피로 2일 테스트를 권장합니다."
+        ],
+        "points": [
+          "2일차 전까지 분쇄·도즈·분배·탬핑은 고정",
+          "1일차: 유량/펌프 프로파일만 조정",
+          "2일차: 보일러 온도/워밍 타임만 조정",
+          "둘 다 조정하지 않았을 때와 비교해 같은 방향의 맛 변화만 남기는 조합을 선택"
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "“압력이 높으면 산미가 줄고 쓴맛만 올라간다”는 단정은 일반화의 위험이 큽니다. 원두 밀도, 분쇄 분포, 채널링 상태가 같은데도 같은 압력 차이에서 반대로 바디가 달라질 수 있습니다.",
+          "또한 머신이 오래되었다고 판단될 때 즉시 고장으로 단정하기보다, 동일 부품 사용 시간과 스케일링 정도를 함께 기록해야 실제 원인을 찾을 수 있습니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "에스프레소 기본 작동 원리",
+          "추출 장비 구성 개요",
+          "프리인퓨전과 채널링 완화"
+        ]
+      }
+    ],
+    "related": [
+      "espresso-basics",
+      "espresso-machines-grinders",
+      "espresso-preinfusion-guide",
+      "water-for-coffee"
+    ],
+    "tags": [
+      "에스프레소 머신",
+      "수력",
+      "열교정",
+      "펌프",
+      "온도 안정성"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "에스프레소 머신 수력·열 시스템 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"system-definition\"><span class=\"content-index\">01</span><h2>수력·열 시스템이란 무엇인가</h2><p>에스프레소 머신은 두 축으로 동작합니다. 하나는 물을 원하는 속도로 밀어 넣는 <strong>수력</strong> 축이고, 다른 하나는 추출수의 열 상태를 일정 범위에 두는 <strong>열</strong> 축입니다. 두 축은 서로 독립되어 보이지만, 실제 추출에서는 거의 항상 결합되어 변동을 만듭니다.</p><p>동일한 분쇄, 동일한 도즈에서 컵 결과가 갈리는 경우가 많다면, 대부분은 장비 쪽 변동을 먼저 점검해야 합니다.</p></section><section id=\"hydraulic-subsystem\"><span class=\"content-index\">02</span><h2>펌프와 유량, 압력의 실제 의미</h2><ul><li>펌프는 설정된 목표 압력을 만들지만, 세팅이 유지되는지는 유량과 저항(커피층 상태)에 달려 있습니다.</li><li>압력은 순간값(예: 추출 중 peak, plateau)을 같이 봐야 하며, 평균값 하나만으로는 불충분합니다.</li><li>OPV(과압 방지 밸브)와 스프링 밸브 세팅은 고압 구간의 유출을 안정화하기 위한 안전/일관성 장치입니다.</li></ul><p>결국 유량이 불안정하면 압력도 흔들리고, 흔들린 압력은 채널링과 과다 추출을 동시에 유발할 수 있어요. 그래서 펌프 성능은 “숫자”보다 “변동 추이”를 더 중요하게 봅니다.</p></section><section id=\"thermal-subsystem\"><span class=\"content-index\">03</span><h2>보일러·가열부를 이해하는 기준</h2><table><thead><tr><th>구성요소</th><th>역할</th><th>운영 포인트</th></tr><tr><td>보일러</td><td>열원 저장</td><td>목표 온도 도달 시간과 복귀 안정성 확인</td></tr><tr><td>히트 익스체인저/히트 싱크</td><td>회로의 온도 전파</td><td>샷 전후 온도 회복 속도 기록</td></tr><tr><td>온도 제어기(PID)</td><td>세팅값 유지</td><td>센서 편차를 기준으로 튜닝 빈도 판단</td></tr></tbody></table><p>많이 알려진 오해는 “PID가 켜져 있으니 온도는 완전 고정”이라는 가정입니다. PID는 편차를 줄여주지만, 추출 직전의 샤워 헤드 열손실, 그룹 헤드 열저류, 탬핑 직후의 베드 흡열 등을 보완할 수는 없습니다.</p></section><section id=\"interaction\"><span class=\"content-index\">04</span><h2>수력과 열의 상호작용</h2><p>예를 들어 온도를 0.5~1도 올렸을 때와 유량을 낮췄을 때의 효과를 쉽게 섞어서 해석하면 실험이 꼬입니다. 수력은 유입 속도와 체류 시간을 바꾸고, 열은 용질 용해 및 향기 성분의 반응 구간을 바꿉니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>운영상 변화가 필요할 때는 먼저 분쇄/분배/도즈를 고정하고, 유량 또는 보일러 설정 중 하나만 바꾸는 방식이 해석 비용을 줄입니다.</p></aside></section><section id=\"operating-checklist\"><span class=\"content-index\">05</span><h2>바리스타용 점검 체크리스트</h2><ol><li>샷 직전 보일러 상태: 목표 온도 도달 여부와 과열-저하 경향 기록</li><li>예열 직후 첫 잔과 10분 운전 후 10분째 잔의 유량 차이 비교</li><li>동일 원두에서 프리인퓨전/메인 추출 각각의 시간 변화량을 기록</li><li>샷이 안정되는 데 필요한 워밍타임을 매일 로그로 관리</li></ol></section><section id=\"practical-experiment\"><span class=\"content-index\">06</span><h2>실습: 수력·열 분리 튜닝</h2><p>동일한 커피로 2일 테스트를 권장합니다.</p><ol><li>2일차 전까지 분쇄·도즈·분배·탬핑은 고정</li><li>1일차: 유량/펌프 프로파일만 조정</li><li>2일차: 보일러 온도/워밍 타임만 조정</li><li>둘 다 조정하지 않았을 때와 비교해 같은 방향의 맛 변화만 남기는 조합을 선택</li></ol></section><section id=\"common-misconceptions\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><p>“압력이 높으면 산미가 줄고 쓴맛만 올라간다”는 단정은 일반화의 위험이 큽니다. 원두 밀도, 분쇄 분포, 채널링 상태가 같은데도 같은 압력 차이에서 반대로 바디가 달라질 수 있습니다.</p><p>또한 머신이 오래되었다고 판단될 때 즉시 고장으로 단정하기보다, 동일 부품 사용 시간과 스케일링 정도를 함께 기록해야 실제 원인을 찾을 수 있습니다.</p></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 기본 작동 원리</a></li><li><a data-wikilink=\"espresso-machines-grinders\" href=\"/wiki/espresso-machines-grinders\">추출 장비 구성 개요</a></li><li><a data-wikilink=\"espresso-preinfusion-guide\" href=\"/wiki/espresso-preinfusion-guide\">프리인퓨전과 채널링 완화</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "espresso-puck-preparation",
+    "title": "에스프레소 퍽 준비와 채널링 억제",
+    "summary": "도징, 분배, 탬핑의 일관성을 함께 관리해 채널링 의심을 줄이고 샷 편차를 낮추는 실무 루틴을 정리합니다.",
+    "category": "카페와 장비",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sand",
+    "fact": "퍽 준비는 “한 번의 동작”이 아니라 도즈·분배·탬핑의 결합 일관성을 만들 때 채널링 편차가 줄어듭니다.",
+    "sections": [
+      {
+        "id": "puck-definition",
+        "title": "퍽 준비의 개념",
+        "paragraphs": [
+          "퍽은 분쇄 커피를 바스켓에 넣어 만든 추출층 전체를 뜻합니다. 결국 추출은 “수분이 퍽을 통해 얼마나 균일하게 통과하느냐”의 결과이므로, 분쇄 단계만 최적화해도 채널링이 사라지지 않습니다.",
+          "따라서 퍽 준비의 성패는 기기의 역할이 아니라 바리스타가 만든 재현 가능한 층의 품질입니다."
+        ]
+      },
+      {
+        "id": "dose-and-distribution",
+        "title": "도즈와 분배부터 고정한다",
+        "paragraphs": [],
+        "points": [
+          "도즈는 목표량 오차 1~2g 이내로 시작해도, 잔차가 누적되면 30분 내 편차로 확장됩니다.",
+          "분배는 한 번에 던지는 분배가 아니라, 표면 수평도 확보 동작을 기준으로 합니다.",
+          "바스켓 가장자리의 경사나 눌린 부분은 유로 차이를 만들 수 있어, 분배 후 레벨 확인이 중요합니다."
+        ]
+      },
+      {
+        "id": "tamping-role",
+        "title": "탬핑은 단축이 아닌 규격화",
+        "paragraphs": [
+          "탬핑은 과도한 압력을 만드는 동작이 아니라, 층의 높이와 표면 안정성을 맞추는 동작입니다. 매번 압력이 다르고 각도가 바뀌면, 추출은 수분 분배가 아닌 표면 기복의 함수가 됩니다.",
+          "가능하면 “압력의 절대값”보다 “동일 동작의 반복성”을 먼저 통제하고, 이후에 미세 압력 조절을 논의합니다."
+        ]
+      },
+      {
+        "id": "error-signals",
+        "title": "신호를 읽는 기준표",
+        "paragraphs": [
+          "관측 신호가능성 높은 원인우선 대응초반 유량 급증분배 불균일 또는 도즈 상단 공극분배 동작 통일 후 1회 재시험샷 타임 편차 확대탬핑 각도·표면 기복탬핑 패턴 고정, 동일 시간 준수일회성 바디 붕괴분쇄 분포와 결합한 채널링분배·탬핑 교차 점검 후 원인 분리"
+        ]
+      },
+      {
+        "id": "workflow",
+        "title": "현장 운영 루프",
+        "paragraphs": [],
+        "points": [
+          "원두 교체 뒤 10분간 도즈·분배만 반복해 기준 분포를 확보",
+          "탬핑은 손상 없는 템퍼/도구만 사용해 각도 고정",
+          "변동이 심한 시간대에는 분배 도구를 추가해 일관성 확보",
+          "한 배치에서 도즈/분배/탬핑 중 한 가지만 변경"
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 15회 샷 반복 루틴",
+        "paragraphs": [
+          "동일 로트 15잔 기준으로 다음 절차를 적용하면 편차 원인을 빠르게 추적할 수 있습니다."
+        ],
+        "points": [
+          "도즈와 분배 동작 고정, 탬핑만 동일 압력으로 반복",
+          "변동 컵이 생기면 분배/탬핑의 차이만 1단계로 바꿈",
+          "변경 후 5잔에서 수율·시간·관능 편차를 동시에 기록",
+          "일관성이 회복되면 변경 분량을 확정 기록"
+        ]
+      },
+      {
+        "id": "mistakes",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "“탬핑을 더 세게 눌러야 채널링이 줄어든다”는 말은 자주 과장됩니다. 압력만 강해지면 표면이 매끄러워질 수는 있지만, 하부 분포가 불균일하면 해결되지 않습니다.",
+          "반대로 퍽 전체의 규격성이 확보되면 탬핑을 미세하게 조정해도 장비 간 이동성이 좋아지므로, 작업자 간 편차가 줄어듭니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "에스프레소 기본 원리",
+          "바리스타 장비 이해",
+          "투과성·채널링 진단"
+        ]
+      }
+    ],
+    "related": [
+      "espresso-basics",
+      "espresso-machines-grinders",
+      "permeability-channeling-control",
+      "espresso-preinfusion-guide"
+    ],
+    "tags": [
+      "퍽",
+      "도징",
+      "분배",
+      "탬핑",
+      "채널링"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "에스프레소 퍽 준비 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"puck-definition\"><span class=\"content-index\">01</span><h2>퍽 준비의 개념</h2><p>퍽은 분쇄 커피를 바스켓에 넣어 만든 추출층 전체를 뜻합니다. 결국 추출은 “수분이 퍽을 통해 얼마나 균일하게 통과하느냐”의 결과이므로, 분쇄 단계만 최적화해도 채널링이 사라지지 않습니다.</p><p>따라서 퍽 준비의 성패는 기기의 역할이 아니라 바리스타가 만든 재현 가능한 층의 품질입니다.</p></section><section id=\"dose-and-distribution\"><span class=\"content-index\">02</span><h2>도즈와 분배부터 고정한다</h2><ul><li>도즈는 목표량 오차 1~2g 이내로 시작해도, 잔차가 누적되면 30분 내 편차로 확장됩니다.</li><li>분배는 한 번에 던지는 분배가 아니라, 표면 수평도 확보 동작을 기준으로 합니다.</li><li>바스켓 가장자리의 경사나 눌린 부분은 유로 차이를 만들 수 있어, 분배 후 레벨 확인이 중요합니다.</li></ul></section><section id=\"tamping-role\"><span class=\"content-index\">03</span><h2>탬핑은 단축이 아닌 규격화</h2><p>탬핑은 과도한 압력을 만드는 동작이 아니라, 층의 높이와 표면 안정성을 맞추는 동작입니다. 매번 압력이 다르고 각도가 바뀌면, 추출은 수분 분배가 아닌 표면 기복의 함수가 됩니다.</p><p>가능하면 “압력의 절대값”보다 “동일 동작의 반복성”을 먼저 통제하고, 이후에 미세 압력 조절을 논의합니다.</p></section><section id=\"error-signals\"><span class=\"content-index\">04</span><h2>신호를 읽는 기준표</h2><table><thead><tr><th>관측 신호</th><th>가능성 높은 원인</th><th>우선 대응</th></tr><tr><td>초반 유량 급증</td><td>분배 불균일 또는 도즈 상단 공극</td><td>분배 동작 통일 후 1회 재시험</td></tr><tr><td>샷 타임 편차 확대</td><td>탬핑 각도·표면 기복</td><td>탬핑 패턴 고정, 동일 시간 준수</td></tr><tr><td>일회성 바디 붕괴</td><td>분쇄 분포와 결합한 채널링</td><td>분배·탬핑 교차 점검 후 원인 분리</td></tr></tbody></table></section><section id=\"workflow\"><span class=\"content-index\">05</span><h2>현장 운영 루프</h2><ol><li>원두 교체 뒤 10분간 도즈·분배만 반복해 기준 분포를 확보</li><li>탬핑은 손상 없는 템퍼/도구만 사용해 각도 고정</li><li>변동이 심한 시간대에는 분배 도구를 추가해 일관성 확보</li><li>한 배치에서 도즈/분배/탬핑 중 한 가지만 변경</li></ol></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 15회 샷 반복 루틴</h2><p>동일 로트 15잔 기준으로 다음 절차를 적용하면 편차 원인을 빠르게 추적할 수 있습니다.</p><ol><li>도즈와 분배 동작 고정, 탬핑만 동일 압력으로 반복</li><li>변동 컵이 생기면 분배/탬핑의 차이만 1단계로 바꿈</li><li>변경 후 5잔에서 수율·시간·관능 편차를 동시에 기록</li><li>일관성이 회복되면 변경 분량을 확정 기록</li></ol></section><section id=\"mistakes\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><p>“탬핑을 더 세게 눌러야 채널링이 줄어든다”는 말은 자주 과장됩니다. 압력만 강해지면 표면이 매끄러워질 수는 있지만, 하부 분포가 불균일하면 해결되지 않습니다.</p><p>반대로 퍽 전체의 규격성이 확보되면 탬핑을 미세하게 조정해도 장비 간 이동성이 좋아지므로, 작업자 간 편차가 줄어듭니다.</p></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 기본 원리</a></li><li><a data-wikilink=\"espresso-machines-grinders\" href=\"/wiki/espresso-machines-grinders\">바리스타 장비 이해</a></li><li><a data-wikilink=\"permeability-channeling-control\" href=\"/wiki/permeability-channeling-control\">투과성·채널링 진단</a></li></ul></section>",
+    "backlinks": [
+      "permeability-channeling-control"
+    ]
+  },
+  {
+    "slug": "milk-steaming-protein-chemistry",
+    "title": "스팀 밀크의 단백질 화학: 거품이 유지되는 이유",
+    "summary": "단백질과 지방의 상호작용이 미세 거품을 어떻게 지지하는지 이해하고, 온도·시간 조절로 안정적인 텍스처를 만드는 방법을 정리합니다.",
+    "category": "음료와 레시피",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "berry",
+    "fact": "우유 거품 안정성은 가열과 공기 주입 자체보다도 단백질-지방-온도의 상호 균형을 얼마나 일정하게 유지하느냐에 달려 있습니다.",
+    "sections": [
+      {
+        "id": "protein-basis",
+        "title": "우유 거품은 어디서 생기는가",
+        "paragraphs": [
+          "우유에서 공기가 들어가면 단백질이 표면에 얇은 막을 형성하고, 이 막이 기포를 감싸며 미세거품을 만듭니다. 지방 입자는 기포 사이를 채워 감촉을 바꾸고, 유당·무기질은 가열 반응의 완충 역할을 돕습니다.",
+          "즉, 거품은 “공기만 많이 넣는” 기술보다, 단백질-지방-열의 구조가 균형을 유지할 때 오래 갑니다."
+        ]
+      },
+      {
+        "id": "protein-roles",
+        "title": "단백질의 역할 분해",
+        "paragraphs": [
+          "우유 종류별 원유 지질 함량이 다르므로 “한 가지 스팀 시간”이 모든 우유에 동일하게 맞지는 않습니다."
+        ],
+        "points": [
+          "카제인: 거품의 골격을 형성할 만큼 주된 기체막 재료 역할",
+          "유청 단백질: 열과 pH 변화에 따라 기포 안정성에 간접 영향",
+          "지방: 과하면 기포가 무너질 수 있고, 부족하면 거품이 건조해짐"
+        ]
+      },
+      {
+        "id": "thermal-window",
+        "title": "온도 구간의 근사 범위",
+        "paragraphs": [
+          "스티밍에서 다루는 핵심 온도는 목표 온도 범위와 텍스처를 함께 봅니다. 일반적으로 잔용 라테 기준으로는 목표 62~68℃ 근처에서 음료용 미세거품을 유지하는 경향이 있습니다.",
+          "60℃ 전후에서는 기포 형성이 잘 시작하고, 70℃ 이상에서는 단백질 막이 취약해져 입자가 거칠어지기 쉬워지므로 장비와 우유에 따라 미세 조정이 필요합니다."
+        ]
+      },
+      {
+        "id": "foam-structure",
+        "title": "거품 안정화와 붕괴 신호",
+        "paragraphs": [
+          "관측 신호해석개입표면이 거칠고 거품 입자 큼과공기화 또는 과열 전단스팀 시작 각도·시간 축소거품이 빠르게 무너짐단백질막 약화 또는 과한 지방 동원온도 하한으로 재조정표면 광택 약함균일 분산 부족회전/회복 동작을 짧게 반복"
+        ]
+      },
+      {
+        "id": "method",
+        "title": "실무 스티밍 루틴",
+        "paragraphs": [],
+        "points": [
+          "펜칭 가능한 동일 탱크·우유량에서만 시작",
+          "초반은 스팀 팁을 우유 표면 근처에 두고 기포 혼입 구간을 최소화",
+          "중반~후반은 스팀 팁을 깊게 내려 텍스처를 정돈",
+          "최종 온도 62~68℃에서 스팀을 멈추고 즉시 거품 크기를 가늠"
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 단백질 변성 관찰",
+        "paragraphs": [
+          "동일 배치에서 4회 실행해 패턴을 잡아보세요."
+        ],
+        "points": [
+          "동일 농도(유청 포함/탈지 여부 고정)로 스팀 시간을 ±5초씩 조절",
+          "거품 크기와 표면 광택, 컵 잔향(바디/단맛)을 기록",
+          "거품 붕괴 시점(재생성 시간)까지 시간으로 비교",
+          "가장 오래 유지되는 조합을 레시피에 반영"
+        ]
+      },
+      {
+        "id": "mistakes",
+        "title": "흔한 오해",
+        "paragraphs": [
+          "거품이 많으면 반드시 텍스처가 좋은 것은 아닙니다. 기포가 크고 거칠면 맛을 지우고 향을 가리는 쪽으로 느껴질 수 있습니다.",
+          "또한 단백질이 충분해도 온도가 기준을 벗어나면 바로 무너지므로, 목표 온도보다 “목표 구간”을 관리해야 합니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "우유 스티밍 기본",
+          "미세거품 점검 항목",
+          "잔상 텍스처와 가독성"
+        ]
+      }
+    ],
+    "related": [
+      "milk-steaming",
+      "milk-microfoam-checklist",
+      "latte-art-readability"
+    ],
+    "tags": [
+      "우유 스티밍",
+      "카제인",
+      "단백질 변성",
+      "미세거품",
+      "온도 제어"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "우유 단백질 기반 스티밍 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"protein-basis\"><span class=\"content-index\">01</span><h2>우유 거품은 어디서 생기는가</h2><p>우유에서 공기가 들어가면 단백질이 표면에 얇은 막을 형성하고, 이 막이 기포를 감싸며 미세거품을 만듭니다. 지방 입자는 기포 사이를 채워 감촉을 바꾸고, 유당·무기질은 가열 반응의 완충 역할을 돕습니다.</p><p>즉, 거품은 “공기만 많이 넣는” 기술보다, 단백질-지방-열의 구조가 균형을 유지할 때 오래 갑니다.</p></section><section id=\"protein-roles\"><span class=\"content-index\">02</span><h2>단백질의 역할 분해</h2><ul><li>카제인: 거품의 골격을 형성할 만큼 주된 기체막 재료 역할</li><li>유청 단백질: 열과 pH 변화에 따라 기포 안정성에 간접 영향</li><li>지방: 과하면 기포가 무너질 수 있고, 부족하면 거품이 건조해짐</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>우유 종류별 원유 지질 함량이 다르므로 “한 가지 스팀 시간”이 모든 우유에 동일하게 맞지는 않습니다.</p></aside></section><section id=\"thermal-window\"><span class=\"content-index\">03</span><h2>온도 구간의 근사 범위</h2><p>스티밍에서 다루는 핵심 온도는 목표 온도 범위와 텍스처를 함께 봅니다. 일반적으로 잔용 라테 기준으로는 목표 62~68℃ 근처에서 음료용 미세거품을 유지하는 경향이 있습니다.</p><p>60℃ 전후에서는 기포 형성이 잘 시작하고, 70℃ 이상에서는 단백질 막이 취약해져 입자가 거칠어지기 쉬워지므로 장비와 우유에 따라 미세 조정이 필요합니다.</p></section><section id=\"foam-structure\"><span class=\"content-index\">04</span><h2>거품 안정화와 붕괴 신호</h2><table><thead><tr><th>관측 신호</th><th>해석</th><th>개입</th></tr><tr><td>표면이 거칠고 거품 입자 큼</td><td>과공기화 또는 과열 전단</td><td>스팀 시작 각도·시간 축소</td></tr><tr><td>거품이 빠르게 무너짐</td><td>단백질막 약화 또는 과한 지방 동원</td><td>온도 하한으로 재조정</td></tr><tr><td>표면 광택 약함</td><td>균일 분산 부족</td><td>회전/회복 동작을 짧게 반복</td></tr></tbody></table></section><section id=\"method\"><span class=\"content-index\">05</span><h2>실무 스티밍 루틴</h2><ol><li>펜칭 가능한 동일 탱크·우유량에서만 시작</li><li>초반은 스팀 팁을 우유 표면 근처에 두고 기포 혼입 구간을 최소화</li><li>중반~후반은 스팀 팁을 깊게 내려 텍스처를 정돈</li><li>최종 온도 62~68℃에서 스팀을 멈추고 즉시 거품 크기를 가늠</li></ol></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 단백질 변성 관찰</h2><p>동일 배치에서 4회 실행해 패턴을 잡아보세요.</p><ol><li>동일 농도(유청 포함/탈지 여부 고정)로 스팀 시간을 ±5초씩 조절</li><li>거품 크기와 표면 광택, 컵 잔향(바디/단맛)을 기록</li><li>거품 붕괴 시점(재생성 시간)까지 시간으로 비교</li><li>가장 오래 유지되는 조합을 레시피에 반영</li></ol></section><section id=\"mistakes\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><p>거품이 많으면 반드시 텍스처가 좋은 것은 아닙니다. 기포가 크고 거칠면 맛을 지우고 향을 가리는 쪽으로 느껴질 수 있습니다.</p><p>또한 단백질이 충분해도 온도가 기준을 벗어나면 바로 무너지므로, 목표 온도보다 “목표 구간”을 관리해야 합니다.</p></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"milk-steaming\" href=\"/wiki/milk-steaming\">우유 스티밍 기본</a></li><li><a data-wikilink=\"milk-microfoam-checklist\" href=\"/wiki/milk-microfoam-checklist\">미세거품 점검 항목</a></li><li><a data-wikilink=\"latte-art-readability\" href=\"/wiki/latte-art-readability\">잔상 텍스처와 가독성</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "plant-based-milk-steaming",
+    "title": "식물성 음료 스티밍의 실제: 고정 레시피보다 조정 레시피",
+    "summary": "귀리·두유·아몬드 등 재료 특성이 다르므로, 스팀 강도와 온도 범위를 기준별로 분리해 안정적인 미세거품을 만드는 방법을 다룹니다.",
+    "category": "음료와 레시피",
+    "level": "중급",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "berry",
+    "fact": "식물성 음료 스티밍은 원재료의 점도·단백질·지방 구조가 다르기 때문에, 동결 우유와 같은 동일 레시피를 그대로 적용하면 재현성이 떨어집니다.",
+    "sections": [
+      {
+        "id": "plant-milk-basics",
+        "title": "식물성 음료의 기본 가정",
+        "paragraphs": [
+          "식물성 음료는 모두 같은 특성을 갖지 않습니다. 귀리는 탄수화물이 상대적으로 많고, 두유는 단백질 비율이 높으며, 아몬드 음료는 지방-물 분산 구조가 다르게 느껴질 수 있습니다. 따라서 스티밍 목표는 “같은 크림감”보다 “각 재료에서 안정적인 질감”으로 설정하는 게 좋습니다.",
+          "현장 운영에서는 같은 장비와 시간으로 실패를 반복하기보다, 재료별 표준 템플릿을 먼저 만들고 그 안에서 미세 조정하는 방식이 안전합니다."
+        ]
+      },
+      {
+        "id": "composition-patterns",
+        "title": "재료별 거동 패턴",
+        "paragraphs": [
+          "재료군일반적 거동초기 스팀 포인트귀리음료점도와 당질 영향으로 거품이 빠르게 자주 붕괴짧고 완만한 스팀, 과공기화 방지두유단백질 결합으로 미세 거품 생성 반응이 빠름저온 구간에서 안정성 확인아몬드 음료지방 분산 상태에 따라 표면 균일성 편차중간 온도에서 단계적 가열"
+        ]
+      },
+      {
+        "id": "common-problems",
+        "title": "자주 나타나는 문제",
+        "paragraphs": [
+          "동일 시간에 같은 팁 각도로 스팀해도 재료 배치별로 거품량과 입자가 달라집니다. 문제의 원인은 장비보다 먼저 산소가 들어가는 방식과 첨가물 유무입니다.",
+          "특히 무가당/무지방 버전은 단백질과 지질 조건이 달라 동일 목표를 재현하기 어렵기 때문에 기록값의 기준을 다시 정해야 합니다."
+        ]
+      },
+      {
+        "id": "stabilization-rules",
+        "title": "안정화 규칙",
+        "paragraphs": [],
+        "points": [
+          "최초 30% 구간은 과도한 기포 형성보다 표면 정렬 우선",
+          "온도는 천천히 올리되 60~65℃ 전후에서 안정성 확인",
+          "거품이 과도하게 분리되면 즉시 스팀을 줄이고 회복 시간 확보",
+          "첨가제(오트 음료 보강제, 단백질 강화제)는 제조사 지침 반영"
+        ]
+      },
+      {
+        "id": "adjustment-loop",
+        "title": "재료별 조정 루프",
+        "paragraphs": [],
+        "points": [
+          "도입 배치에서 기본 2분 루틴으로 시작: 스팀 시작→중반→마무리",
+          "거품이 과하거나 적으면 한 번에 하나의 변수만 변경",
+          "변경 후 최소 3잔 반복해 표면 텍스처와 컵 바디 기록",
+          "실패가 반복되면 용기 온도, 교반 방식, 스팀 팁 위치 중 한 가지만 변경"
+        ]
+      },
+      {
+        "id": "allergy-safety",
+        "title": "안전과 라벨 확인",
+        "paragraphs": [
+          "식물성 음료는 알레르기 유발 성분이 명확하므로 원재료 라벨을 먼저 확인하고, 교차 오염 가능성이 큰 바에서 동일 장비 사용 시 세척 주기를 고정해야 합니다.",
+          "카페 운영에서 안전 표시는 “원료 라벨 확인”이 아니라 “원재료 변경 시 즉시 라벨 업데이트”가 더 중요합니다."
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 4단계 체크",
+        "paragraphs": [
+          "한 주간 배치에서 같은 장비로 적용해보세요."
+        ],
+        "points": [
+          "귀리·두유·아몬드 중 2종을 골라 레시피 기록",
+          "각각 목표 온도 구간(60~65℃)에서 텍스처를 3항목 점수화",
+          "점수 변화와 컵 잔향의 상관을 간단 표로 정리",
+          "변동이 적은 조합을 스탬프로 등록"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "우유 스티밍 기본 이해",
+          "거품 점검 리스트",
+          "에스프레소 추출 연동"
+        ]
+      }
+    ],
+    "related": [
+      "milk-steaming",
+      "milk-steaming-protein-chemistry",
+      "espresso-basics"
+    ],
+    "tags": [
+      "식물성 우유",
+      "스티밍",
+      "귀리음료",
+      "두유",
+      "대체음료"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "식물성 음료 스티밍 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"plant-milk-basics\"><span class=\"content-index\">01</span><h2>식물성 음료의 기본 가정</h2><p>식물성 음료는 모두 같은 특성을 갖지 않습니다. 귀리는 탄수화물이 상대적으로 많고, 두유는 단백질 비율이 높으며, 아몬드 음료는 지방-물 분산 구조가 다르게 느껴질 수 있습니다. 따라서 스티밍 목표는 “같은 크림감”보다 “각 재료에서 안정적인 질감”으로 설정하는 게 좋습니다.</p><p>현장 운영에서는 같은 장비와 시간으로 실패를 반복하기보다, 재료별 표준 템플릿을 먼저 만들고 그 안에서 미세 조정하는 방식이 안전합니다.</p></section><section id=\"composition-patterns\"><span class=\"content-index\">02</span><h2>재료별 거동 패턴</h2><table><thead><tr><th>재료군</th><th>일반적 거동</th><th>초기 스팀 포인트</th></tr><tr><td>귀리음료</td><td>점도와 당질 영향으로 거품이 빠르게 자주 붕괴</td><td>짧고 완만한 스팀, 과공기화 방지</td></tr><tr><td>두유</td><td>단백질 결합으로 미세 거품 생성 반응이 빠름</td><td>저온 구간에서 안정성 확인</td></tr><tr><td>아몬드 음료</td><td>지방 분산 상태에 따라 표면 균일성 편차</td><td>중간 온도에서 단계적 가열</td></tr></tbody></table></section><section id=\"common-problems\"><span class=\"content-index\">03</span><h2>자주 나타나는 문제</h2><p>동일 시간에 같은 팁 각도로 스팀해도 재료 배치별로 거품량과 입자가 달라집니다. 문제의 원인은 장비보다 먼저 산소가 들어가는 방식과 첨가물 유무입니다.</p><p>특히 무가당/무지방 버전은 단백질과 지질 조건이 달라 동일 목표를 재현하기 어렵기 때문에 기록값의 기준을 다시 정해야 합니다.</p></section><section id=\"stabilization-rules\"><span class=\"content-index\">04</span><h2>안정화 규칙</h2><ul><li>최초 30% 구간은 과도한 기포 형성보다 표면 정렬 우선</li><li>온도는 천천히 올리되 60~65℃ 전후에서 안정성 확인</li><li>거품이 과도하게 분리되면 즉시 스팀을 줄이고 회복 시간 확보</li><li>첨가제(오트 음료 보강제, 단백질 강화제)는 제조사 지침 반영</li></ul></section><section id=\"adjustment-loop\"><span class=\"content-index\">05</span><h2>재료별 조정 루프</h2><ol><li>도입 배치에서 기본 2분 루틴으로 시작: 스팀 시작→중반→마무리</li><li>거품이 과하거나 적으면 한 번에 하나의 변수만 변경</li><li>변경 후 최소 3잔 반복해 표면 텍스처와 컵 바디 기록</li><li>실패가 반복되면 용기 온도, 교반 방식, 스팀 팁 위치 중 한 가지만 변경</li></ol></section><section id=\"allergy-safety\"><span class=\"content-index\">06</span><h2>안전과 라벨 확인</h2><p>식물성 음료는 알레르기 유발 성분이 명확하므로 원재료 라벨을 먼저 확인하고, 교차 오염 가능성이 큰 바에서 동일 장비 사용 시 세척 주기를 고정해야 합니다.</p><p>카페 운영에서 안전 표시는 “원료 라벨 확인”이 아니라 “원재료 변경 시 즉시 라벨 업데이트”가 더 중요합니다.</p></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 4단계 체크</h2><p>한 주간 배치에서 같은 장비로 적용해보세요.</p><ol><li>귀리·두유·아몬드 중 2종을 골라 레시피 기록</li><li>각각 목표 온도 구간(60~65℃)에서 텍스처를 3항목 점수화</li><li>점수 변화와 컵 잔향의 상관을 간단 표로 정리</li><li>변동이 적은 조합을 스탬프로 등록</li></ol></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"milk-steaming\" href=\"/wiki/milk-steaming\">우유 스티밍 기본 이해</a></li><li><a data-wikilink=\"milk-microfoam-checklist\" href=\"/wiki/milk-microfoam-checklist\">거품 점검 리스트</a></li><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 추출 연동</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "bar-throughput-and-flow",
+    "title": "바 처리량과 동선: 주문량이 폭증할 때 흐름을 지키는 설계",
+    "summary": "주문량 변화가 커피 품질을 흔들리지 않게 하려면 처리량, 대기시간, 병목 구간을 같은 축으로 보고 동선과 작업 배치를 조정해야 합니다.",
+    "category": "카페 운영과 품질",
+    "level": "중급",
+    "readingTime": "10분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sand",
+    "fact": "품질 흔들림의 상당수는 추출 실패보다 동선 병목과 큐 붕괴에서 먼저 발생합니다.",
+    "sections": [
+      {
+        "id": "throughput-definition",
+        "title": "처리량은 양보다 안정성의 문제",
+        "paragraphs": [
+          "바에서 처리량은 “분당 몇 잔 만들었는가”보다 “잦은 주문에서도 동일한 맛을 유지할 수 있었는가”가 핵심입니다. 동선이 깨지면 샷 품질이 먼저 흔들리고, 그다음 주문 대기시간이 증가합니다.",
+          "따라서 운영 개선은 장비 추가보다 먼저 주문 흐름 지도화에서 시작합니다."
+        ]
+      },
+      {
+        "id": "bottleneck-map",
+        "title": "병목 지점 찾기",
+        "paragraphs": [
+          "3개 구간 중 하나의 타임이 튈 때 전체 체감 대기시간은 비선형으로 늘어납니다. 특히 스티밍 구간 지연이 에스프레소 구간에도 되돌려 전파되는 형태가 자주 보입니다."
+        ],
+        "points": [
+          "에스프레소 구간: 도즈/그라인딩/샷 생성",
+          "우유 음료 구간: 스티밍·붓기",
+          "서빙 구간: 컵 전달·결제·교차 확인"
+        ]
+      },
+      {
+        "id": "flow-metrics",
+        "title": "기본 지표 3개",
+        "paragraphs": [
+          "지표기본 정의의미입구 유입률시간당 주문 수처리량 요구치를 결정평균 처리시간단일 주문 완료까지 시간작업 분량이 누적되는 구간 탐지대기시간 분산주문별 대기 편차서비스 안정성의 직접 지표"
+        ]
+      },
+      {
+        "id": "zoning",
+        "title": "동선 설계: 구간 분리",
+        "paragraphs": [
+          "동일 작업대에 모든 동작을 몰아넣으면 실수 확률이 커집니다. 주문 유형을 분리해 선반·작업대의 역할을 고정하면 동시 작업 오차가 줄어듭니다.",
+          "구간 분리는 단순 배치 변경보다, 각자 자신이 다음 동작을 기다리는 시간을 줄이는 전략입니다."
+        ],
+        "points": [
+          "에스프레소 전용 구간: 추출·바스켓 세팅·샷 감시",
+          "우유 음료 전용 구간: 스티밍·붓기·위생 점검",
+          "서빙 전환 구간: 주문 라벨 확인 후 즉시 전달"
+        ]
+      },
+      {
+        "id": "flow-tuning",
+        "title": "작업자 조율 루틴",
+        "paragraphs": [],
+        "points": [
+          "피크 시작 20분 전에 대기 큐 상태와 샷 큐를 점검",
+          "복잡 음료 비율이 높을수록 한 번에 1~2개 주문씩 락킹",
+          "동일 바리에이션(예: 우유 기반)은 한 번에 묶어 처리",
+          "회전율 하락 시 스티밍 대기열만 1개로 제한"
+        ]
+      },
+      {
+        "id": "training",
+        "title": "실습: 피크 시뮬레이션",
+        "paragraphs": [
+          "한 번의 실전만으로는 병목을 보기가 어렵습니다. 30분 모의 피크를 운영해 보세요."
+        ],
+        "points": [
+          "10분 단위로 주문 시나리오를 고정(에스프레소/우유/디카페인 비율 유지)",
+          "각 주문의 완료 시간과 누적 대기시간을 기록",
+          "대기분산이 가장 큰 구간에서 동선 규칙을 하나 추가",
+          "재측정을 통해 처리량이 개선되는지 비교"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "바 일일 루틴",
+          "카페 품질 시스템",
+          "장비 기반 작업 효율"
+        ]
+      }
+    ],
+    "related": [
+      "daily-cafe-routine",
+      "espresso-machines-grinders",
+      "espresso-basics",
+      "sensory-brewing-grammar"
+    ],
+    "tags": [
+      "처리량",
+      "동선",
+      "바 운영",
+      "대기시간",
+      "병목"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "바 처리량/흐름 운영 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"throughput-definition\"><span class=\"content-index\">01</span><h2>처리량은 양보다 안정성의 문제</h2><p>바에서 처리량은 “분당 몇 잔 만들었는가”보다 “잦은 주문에서도 동일한 맛을 유지할 수 있었는가”가 핵심입니다. 동선이 깨지면 샷 품질이 먼저 흔들리고, 그다음 주문 대기시간이 증가합니다.</p><p>따라서 운영 개선은 장비 추가보다 먼저 주문 흐름 지도화에서 시작합니다.</p></section><section id=\"bottleneck-map\"><span class=\"content-index\">02</span><h2>병목 지점 찾기</h2><ol><li>에스프레소 구간: 도즈/그라인딩/샷 생성</li><li>우유 음료 구간: 스티밍·붓기</li><li>서빙 구간: 컵 전달·결제·교차 확인</li></ol><p>3개 구간 중 하나의 타임이 튈 때 전체 체감 대기시간은 비선형으로 늘어납니다. 특히 스티밍 구간 지연이 에스프레소 구간에도 되돌려 전파되는 형태가 자주 보입니다.</p></section><section id=\"flow-metrics\"><span class=\"content-index\">03</span><h2>기본 지표 3개</h2><table><thead><tr><th>지표</th><th>기본 정의</th><th>의미</th></tr><tr><td>입구 유입률</td><td>시간당 주문 수</td><td>처리량 요구치를 결정</td></tr><tr><td>평균 처리시간</td><td>단일 주문 완료까지 시간</td><td>작업 분량이 누적되는 구간 탐지</td></tr><tr><td>대기시간 분산</td><td>주문별 대기 편차</td><td>서비스 안정성의 직접 지표</td></tr></tbody></table></section><section id=\"zoning\"><span class=\"content-index\">04</span><h2>동선 설계: 구간 분리</h2><p>동일 작업대에 모든 동작을 몰아넣으면 실수 확률이 커집니다. 주문 유형을 분리해 선반·작업대의 역할을 고정하면 동시 작업 오차가 줄어듭니다.</p><ul><li>에스프레소 전용 구간: 추출·바스켓 세팅·샷 감시</li><li>우유 음료 전용 구간: 스티밍·붓기·위생 점검</li><li>서빙 전환 구간: 주문 라벨 확인 후 즉시 전달</li></ul><p>구간 분리는 단순 배치 변경보다, 각자 자신이 다음 동작을 기다리는 시간을 줄이는 전략입니다.</p></section><section id=\"flow-tuning\"><span class=\"content-index\">05</span><h2>작업자 조율 루틴</h2><ol><li>피크 시작 20분 전에 대기 큐 상태와 샷 큐를 점검</li><li>복잡 음료 비율이 높을수록 한 번에 1~2개 주문씩 락킹</li><li>동일 바리에이션(예: 우유 기반)은 한 번에 묶어 처리</li><li>회전율 하락 시 스티밍 대기열만 1개로 제한</li></ol></section><section id=\"training\"><span class=\"content-index\">06</span><h2>실습: 피크 시뮬레이션</h2><p>한 번의 실전만으로는 병목을 보기가 어렵습니다. 30분 모의 피크를 운영해 보세요.</p><ol><li>10분 단위로 주문 시나리오를 고정(에스프레소/우유/디카페인 비율 유지)</li><li>각 주문의 완료 시간과 누적 대기시간을 기록</li><li>대기분산이 가장 큰 구간에서 동선 규칙을 하나 추가</li><li>재측정을 통해 처리량이 개선되는지 비교</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"daily-cafe-routine\" href=\"/wiki/daily-cafe-routine\">바 일일 루틴</a></li><li><a data-wikilink=\"cafe-quality-system\" href=\"/wiki/cafe-quality-system\">카페 품질 시스템</a></li><li><a data-wikilink=\"espresso-machines-grinders\" href=\"/wiki/espresso-machines-grinders\">장비 기반 작업 효율</a></li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "sensory-defect-diagnosis",
+    "title": "결점 향미를 관능적으로 진단하는 기본 절차",
+    "summary": "결점명은 정의만으로 끝나지 않습니다. 향미, 질감, 에스프레소/브루 맥락을 함께 추적해 과한 단정 없이 원인 후보를 좁혀가는 방식으로 정리합니다.",
+    "category": "센서리",
+    "level": "중급",
+    "readingTime": "10분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "berry",
+    "fact": "결점 진단은 단일 결함으로 환원하지 않고, 감각 변화와 생산·추출 맥락을 함께 결합해 의심 원인을 좁히는 과정입니다.",
+    "sections": [
+      {
+        "id": "what-is-defect",
+        "title": "결점 진단은 결론이 아니라 과정",
+        "paragraphs": [
+          "결점 표준은 용어를 통일해 커뮤니케이션을 돕지만, 한 컵에서 여러 결점이 겹칠 수 있습니다. 감각 신호를 “무조건 A 결점”으로 고정하면 원인 추적이 늦어지는 이유가 여기에 있습니다.",
+          "현실에서 흔히 필요한 것은 “원인 후보의 제거법”입니다. 즉, 가능한 설명을 줄여가며 근거 있는 진단에 다가가는 방식입니다."
+        ]
+      },
+      {
+        "id": "observation-first",
+        "title": "관측 3단계",
+        "paragraphs": [],
+        "points": [
+          "냄새·맛·입안감에서 먼저 주 증상을 분리",
+          "샷/브루 조건(원두, 분쇄, 시간, 온도, 물)을 동시에 나열",
+          "동일 조건 반복으로 신호 재현성 확인"
+        ]
+      },
+      {
+        "id": "common-defects",
+        "title": "대표 결점과 구분 포인트",
+        "paragraphs": [
+          "결점명자주 보이는 신호유력 후보과산화/타는 향구운 냄새, 탄맛 지속추출 시간 과다, 높은 열·시간 조합채널링초반 추출 편차, 질감 갈라짐분배·탬핑·분쇄 분포메탈릭/화학향금속성, 기름성 찔림세척·금속 마모·물질 이동 가능성무딘 향원래 향미 상쇄, 단조로움추출 저강도, 물/원두 처리 과다"
+        ]
+      },
+      {
+        "id": "linking-steps",
+        "title": "원인 후보를 줄이는 연결 규칙",
+        "paragraphs": [
+          "감각 변화는 항상 처리 단계 하나로만 설명되지 않습니다. 아래 규칙으로 후보를 줄이면 팀 내 의견 불일치가 빨리 정리됩니다."
+        ],
+        "points": [
+          "같은 원두에서 레시피 변경이 없고 결점만 반복되면 보관/보온 또는 산화 요인을 우선 점검",
+          "동일 원두·동일 조건에서 컵간 편차가 크면 수동 조작 편차와 채널링을 우선 점검",
+          "특정 시간대만 반복되면 작업자 교대, 원두 로트 교체 시점, 그라인더 상태를 함께 비교"
+        ]
+      },
+      {
+        "id": "standard-terms",
+        "title": "왜 결점 용어를 조심해야 하나",
+        "paragraphs": [
+          "결점 용어는 커뮤니케이션 도구이지 단정 명령이 아닙니다. “바디가 안 좋다”가 여러 원인으로 갈릴 수 있기 때문에, 감각 표현과 가능 조건을 같이 남기는 습관이 중요합니다.",
+          "특히 센서리 팀에서 동일 결점명이 나왔더라도, 샘플 수가 적거나 맥락이 부족하면 즉시 원인 보고가 아니라 확인 과제(재시험)로 넘기는 것이 정확도 측면에서 낫습니다."
+        ]
+      },
+      {
+        "id": "practice",
+        "title": "실습: 결점 진단 기록지",
+        "paragraphs": [
+          "한 주차 기준 루틴으로 4단계를 운영해보세요."
+        ],
+        "points": [
+          "관측 대상 결점 1개를 정하고 컵별 신호를 3열(냄새/향/입안감)로 기록",
+          "동일 레시피 3회 반복으로 재현 여부 판별",
+          "조건 표를 만들어 각 신호와 레시피 값을 결합",
+          "원인 후보 상위 2개만 다음 실험으로 제시"
+        ]
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검 퀴즈",
+        "paragraphs": [],
+        "points": [
+          "같은 결점이라고 느낀 컵이 재현되지 않는다면 먼저 무엇부터 점검하나요?",
+          "채널링 신호와 과추출 신호를 구분하기 위한 최소한의 관측 항목은 무엇인가요?",
+          "감각 용어가 단정적일 때 발생하는 커뮤니케이션 손실은 어떤 것인가요?",
+          "결점 레이블 뒤에 추가해야 하는 맥락 정보 3가지는 무엇인가요?"
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": [],
+        "points": [
+          "관능 언어 해석",
+          "CVA 관능 프로토콜",
+          "향미 속성 기준"
+        ]
+      }
+    ],
+    "related": [
+      "sensory-brewing-grammar",
+      "sensory-attributes",
+      "sca-cupping-protocol",
+      "sensory-data-analysis"
+    ],
+    "tags": [
+      "결점진단",
+      "센서리",
+      "관능훈련",
+      "원인분석",
+      "컵분석"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "결점 향미 진단 가이드 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"what-is-defect\"><span class=\"content-index\">01</span><h2>결점 진단은 결론이 아니라 과정</h2><p>결점 표준은 용어를 통일해 커뮤니케이션을 돕지만, 한 컵에서 여러 결점이 겹칠 수 있습니다. 감각 신호를 “무조건 A 결점”으로 고정하면 원인 추적이 늦어지는 이유가 여기에 있습니다.</p><p>현실에서 흔히 필요한 것은 “원인 후보의 제거법”입니다. 즉, 가능한 설명을 줄여가며 근거 있는 진단에 다가가는 방식입니다.</p></section><section id=\"observation-first\"><span class=\"content-index\">02</span><h2>관측 3단계</h2><ol><li>냄새·맛·입안감에서 먼저 주 증상을 분리</li><li>샷/브루 조건(원두, 분쇄, 시간, 온도, 물)을 동시에 나열</li><li>동일 조건 반복으로 신호 재현성 확인</li></ol></section><section id=\"common-defects\"><span class=\"content-index\">03</span><h2>대표 결점과 구분 포인트</h2><table><thead><tr><th>결점명</th><th>자주 보이는 신호</th><th>유력 후보</th></tr><tr><td>과산화/타는 향</td><td>구운 냄새, 탄맛 지속</td><td>추출 시간 과다, 높은 열·시간 조합</td></tr><tr><td>채널링</td><td>초반 추출 편차, 질감 갈라짐</td><td>분배·탬핑·분쇄 분포</td></tr><tr><td>메탈릭/화학향</td><td>금속성, 기름성 찔림</td><td>세척·금속 마모·물질 이동 가능성</td></tr><tr><td>무딘 향</td><td>원래 향미 상쇄, 단조로움</td><td>추출 저강도, 물/원두 처리 과다</td></tr></tbody></table></section><section id=\"linking-steps\"><span class=\"content-index\">04</span><h2>원인 후보를 줄이는 연결 규칙</h2><p>감각 변화는 항상 처리 단계 하나로만 설명되지 않습니다. 아래 규칙으로 후보를 줄이면 팀 내 의견 불일치가 빨리 정리됩니다.</p><ul><li>같은 원두에서 레시피 변경이 없고 결점만 반복되면 보관/보온 또는 산화 요인을 우선 점검</li><li>동일 원두·동일 조건에서 컵간 편차가 크면 수동 조작 편차와 채널링을 우선 점검</li><li>특정 시간대만 반복되면 작업자 교대, 원두 로트 교체 시점, 그라인더 상태를 함께 비교</li></ul></section><section id=\"standard-terms\"><span class=\"content-index\">05</span><h2>왜 결점 용어를 조심해야 하나</h2><aside class=\"callout callout-important\" data-tone=\"important\"><p>결점 용어는 커뮤니케이션 도구이지 단정 명령이 아닙니다. “바디가 안 좋다”가 여러 원인으로 갈릴 수 있기 때문에, 감각 표현과 가능 조건을 같이 남기는 습관이 중요합니다.</p></aside><p>특히 센서리 팀에서 동일 결점명이 나왔더라도, 샘플 수가 적거나 맥락이 부족하면 즉시 원인 보고가 아니라 확인 과제(재시험)로 넘기는 것이 정확도 측면에서 낫습니다.</p></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 결점 진단 기록지</h2><p>한 주차 기준 루틴으로 4단계를 운영해보세요.</p><ol><li>관측 대상 결점 1개를 정하고 컵별 신호를 3열(냄새/향/입안감)로 기록</li><li>동일 레시피 3회 반복으로 재현 여부 판별</li><li>조건 표를 만들어 각 신호와 레시피 값을 결합</li><li>원인 후보 상위 2개만 다음 실험으로 제시</li></ol></section><section id=\"quiz\"><span class=\"content-index\">07</span><h2>자기 점검 퀴즈</h2><ul><li>같은 결점이라고 느낀 컵이 재현되지 않는다면 먼저 무엇부터 점검하나요?</li><li>채널링 신호와 과추출 신호를 구분하기 위한 최소한의 관측 항목은 무엇인가요?</li><li>감각 용어가 단정적일 때 발생하는 커뮤니케이션 손실은 어떤 것인가요?</li><li>결점 레이블 뒤에 추가해야 하는 맥락 정보 3가지는 무엇인가요?</li></ul></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"sensory-brewing-grammar\" href=\"/wiki/sensory-brewing-grammar\">관능 언어 해석</a></li><li><a data-wikilink=\"sca-cupping-protocol\" href=\"/wiki/sca-cupping-protocol\">CVA 관능 프로토콜</a></li><li><a data-wikilink=\"sensory-attributes\" href=\"/wiki/sensory-attributes\">향미 속성 기준</a></li></ul></section>",
     "backlinks": []
   }
 ],
