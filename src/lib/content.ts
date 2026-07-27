@@ -4,6 +4,7 @@
 // existing Korean pages need no changes; the /en pages pass "en".
 export type {
   ArticleSection,
+  ArticleContributor,
   RevisionEntry,
   Article,
   Category,

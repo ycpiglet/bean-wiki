@@ -19,6 +19,15 @@ export type RevisionEntry = {
   note: string;
 };
 
+export type ArticleContributor = {
+  id: string;
+  name: string;
+  handle: string;
+  avatar?: string;
+  kind: "human" | "ai";
+  role?: string;
+};
+
 export type Article = {
   slug: string;
   title: string;
@@ -38,6 +47,10 @@ export type Article = {
   related: string[];
   tags?: string[];
   history?: RevisionEntry[];
+  // Contributor snapshots are stored with the article so attribution survives
+  // account/profile changes. Older and agent-generated articles without this
+  // field receive a transparent AI editorial byline from contributors.ts.
+  contributors?: ArticleContributor[];
   // Slugs of articles that link here via an in-body wikilink. Computed at
   // build time (see scripts/build-content.mjs). Powers the "referenced by"
   // section; empty when nothing links here.

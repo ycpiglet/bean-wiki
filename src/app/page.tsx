@@ -92,22 +92,12 @@ export default function Home() {
           <em>WIKI</em>
         </Link>
         <nav aria-label="주 메뉴">
-          <Link href="/wiki" className="nav-accent-olive">문서</Link>
-          <Link href="/discover" className="nav-accent-sage">추천</Link>
-          <Link href="/learning-path" className="nav-accent-copper">학습 경로</Link>
-          <Link href="/quiz" className="nav-accent-berry">퀴즈</Link>
-          <Link href="/community" className="nav-accent-blue">커뮤니티</Link>
-          <Link href="/suggestions" className="nav-accent-sand">제안</Link>
-          <Link href="/design/colors" className="brand-palette-tab">
-            <span className="brand-palette-dots" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-              <i />
-              <i />
-            </span>
-            PALETTE · 빈위키 시티
-          </Link>
+          <Link href="/wiki">문서</Link>
+          <Link href="/discover">추천</Link>
+          <Link href="/learning-path">학습 경로</Link>
+          <Link href="/quiz">퀴즈</Link>
+          <Link href="/community">커뮤니티</Link>
+          <Link href="/suggestions">제안</Link>
         </nav>
         <div className="header-tools">
           <HeaderSearchButton locale="ko" />

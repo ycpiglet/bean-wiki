@@ -95,6 +95,22 @@ for (const a of articles) {
   for (const rel of a.related)
     if (!slugs.has(rel))
       err(`article "${a.slug}" related-links a missing slug "${rel}"`);
+  if (a.contributors) {
+    const contributorIds = new Set();
+    for (const contributor of a.contributors) {
+      if (!contributor?.id || !contributor?.name || !contributor?.handle)
+        err(`article "${a.slug}" has an incomplete contributor identity`);
+      if (!["human", "ai"].includes(contributor?.kind))
+        err(
+          `article "${a.slug}" contributor "${contributor?.id ?? "unknown"}" has invalid kind`,
+        );
+      if (contributorIds.has(contributor.id))
+        err(
+          `article "${a.slug}" repeats contributor "${contributor.id}"`,
+        );
+      contributorIds.add(contributor.id);
+    }
+  }
 }
 
 // Orphan categories.

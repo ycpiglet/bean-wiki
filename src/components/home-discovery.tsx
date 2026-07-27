@@ -12,6 +12,7 @@ import type { QuizQuestion } from "@/content/quiz";
 import type { TriviaItem } from "@/content/trivia";
 import { recordQuizAnswer } from "@/lib/learning-progress";
 import { useAutoplayState } from "@/lib/use-autoplay-state";
+import { AutoplayToggle } from "@/components/autoplay-toggle";
 
 type HomeDiscoveryProps = {
   items: TriviaItem[];
@@ -219,13 +220,10 @@ export function HomeDiscovery({ items, questions }: HomeDiscoveryProps) {
             {reducedMotion ? (
               <span className="motion-status">자동 전환 꺼짐</span>
             ) : (
-              <button
-                type="button"
-                aria-pressed={paused}
-                onClick={() => setPaused((value) => !value)}
-              >
-                {paused ? "자동 재생" : "일시정지"}
-              </button>
+              <AutoplayToggle
+                paused={paused}
+                onToggle={() => setPaused((value) => !value)}
+              />
             )}
           </footer>
           <span className="sr-only" aria-live="polite">

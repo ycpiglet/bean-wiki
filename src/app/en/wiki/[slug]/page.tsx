@@ -7,12 +7,14 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ShareButtons } from "@/components/share-buttons";
+import { ArticleContributors } from "@/components/article-contributors";
 import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { categoryLabel, getArticle, getArticles } from "@/lib/content";
 import { toISODate } from "@/lib/dates";
 import { getDictionary } from "@/i18n";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
+import { contributorProfilesForArticle } from "@/content/contributors";
 
 export const dynamicParams = false;
 
@@ -63,6 +65,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
     .filter((item) => item !== undefined);
   const history = article.history ?? [];
   const catLabel = categoryLabel(article.category, "en");
+  const contributors = contributorProfilesForArticle(article);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -73,7 +76,14 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
     articleSection: catLabel,
     datePublished: toISODate(article.updatedAt),
     dateModified: toISODate(article.updatedAt),
-    author: { "@type": "Organization", name: SITE_NAME },
+    author: contributors.map((contributor) => ({
+      "@type": contributor.kind === "human" ? "Person" : "Organization",
+      name:
+        contributor.kind === "human"
+          ? contributor.name
+          : `${contributor.name} · Bean Wiki AI Contributor`,
+      url: `${SITE_URL}/contributors/${contributor.id}`,
+    })),
     publisher: { "@type": "Organization", name: SITE_NAME },
     mainEntityOfPage: `${SITE_URL}/en/wiki/${slug}`,
   };
@@ -130,6 +140,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
             </span>
             <h1>{article.title}</h1>
             <p>{article.summary}</p>
+            <ArticleContributors article={article} locale="en" />
             <div className="article-meta">
               <span>Reading time {article.readingTime}</span>
               <span>Updated {article.updatedAt}</span>
