@@ -6,6 +6,7 @@ import {
   ArticleQuiz,
   ArticleViewReward,
 } from "@/components/article-learning";
+import { ArticleDiscussion } from "@/components/article-discussion";
 import { ArticleResources } from "@/components/article-resources";
 import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
@@ -223,6 +224,8 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
                 : undefined
             }
           />
+
+          <ArticleDiscussion slug={slug} />
 
           {history.length > 0 && (
             <section className="revision-section">

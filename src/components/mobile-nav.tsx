@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { categories, categoryLabel } from "@/lib/content";
+import { categories } from "@/content/categories";
+import { categoriesEn } from "@/content/categories.en";
 import { getDictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 
@@ -14,6 +15,8 @@ export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
   const prefix = locale === "en" ? "/en" : "";
   const [open, setOpen] = useState(false);
   const close = () => setOpen(false);
+  const categoryName = (slug: string, fallback: string) =>
+    locale === "en" ? categoriesEn[slug]?.name ?? fallback : fallback;
 
   // Close on Escape (keyboard users have no other way out of the open drawer).
   useEffect(() => {
@@ -59,9 +62,13 @@ export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
             {locale === "ko" && (
               <>
                 <Link href="/quiz" onClick={close}>{t.quiz}</Link>
+                <Link href="/discover" onClick={close}>커피 추천</Link>
+                <Link href="/learning-path" onClick={close}>초보자 학습 경로</Link>
                 <Link href="/resources" onClick={close}>{t.resources}</Link>
                 <Link href="/roadmap" onClick={close}>{t.roadmap}</Link>
                 <Link href="/community" onClick={close}>{t.community}</Link>
+                <Link href="/suggestions" onClick={close}>질문과 제안</Link>
+                <Link href="/account" onClick={close}>내 계정</Link>
                 <Link href="/contact" onClick={close}>{t.contact}</Link>
               </>
             )}
@@ -72,7 +79,7 @@ export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
                 href={`${prefix}/topics/${category.slug}`}
                 onClick={close}
               >
-                {categoryLabel(category.name, locale)}
+                {categoryName(category.slug, category.name)}
               </Link>
             ))}
             <Link href={`${prefix}/privacy`} onClick={close}>

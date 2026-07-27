@@ -9,8 +9,8 @@ interface Env {
   // Structural stand-in for Cloudflare's `Fetcher` binding type, so the repo
   // typechecks without pulling in @cloudflare/workers-types globally (which
   // would conflict with DOM lib types used by the Next.js app).
-  ASSETS: { fetch(request: Request): Promise<Response> };
-  IMAGES: {
+  ASSETS?: { fetch(request: Request): Promise<Response> };
+  IMAGES?: {
     input(stream: ReadableStream): {
       transform(options: Record<string, unknown>): {
         output(options: {
@@ -20,6 +20,7 @@ interface Env {
       };
     };
   };
+  DB: D1Database;
 }
 
 interface ExecutionContext {
@@ -37,17 +38,29 @@ const worker = {
 
     if (url.pathname === "/_vinext/image") {
       const allowedWidths = [...DEFAULT_DEVICE_SIZES, ...DEFAULT_IMAGE_SIZES];
-      return handleImageOptimization(
-        request,
-        {
-          fetchAsset: (path) =>
-            env.ASSETS.fetch(new Request(new URL(path, request.url))),
-          transformImage: async (body, { width, format, quality }) => {
-            const result = await env.IMAGES.input(body)
+      const transformImage = env.IMAGES
+        ? async (
+            body: ReadableStream,
+            { width, format, quality }: {
+              width: number;
+              format: string;
+              quality: number;
+            },
+          ) => {
+            const result = await env.IMAGES!.input(body)
               .transform(width > 0 ? { width } : {})
               .output({ format, quality });
             return result.response();
+          }
+        : undefined;
+      return handleImageOptimization(
+        request,
+        {
+          fetchAsset: (path) => {
+            const sourceRequest = new Request(new URL(path, request.url));
+            return env.ASSETS?.fetch(sourceRequest) ?? fetch(sourceRequest);
           },
+          transformImage,
         },
         allowedWidths,
       );

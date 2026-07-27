@@ -71,11 +71,9 @@
 @theme inline {
   --color-background: var(--paper);
   --color-foreground: var(--ink);
-  /* Reference the next/font-generated variables (set on <html> in layout.tsx).
-     Latin resolves to Geist; Hangul falls through to Noto Sans KR; then system
-     Korean fonts as a last resort. The old literal "Geist" names never matched
-     the hashed next/font family, so nothing custom was applied before. */
-  --font-sans: var(--font-geist-sans), var(--font-noto-kr), "Pretendard",
+  /* Latin resolves to the small Geist subset; Hangul uses the local system
+     stack so first paint does not wait for a multi-megabyte CJK webfont. */
+  --font-sans: var(--font-geist-sans), "Pretendard",
     "Apple SD Gothic Neo", "Malgun Gothic", ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
 }
@@ -4475,5 +4473,704 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .xp-track i {
     transition: none;
+  }
+}
+
+/* Account, recommendations, feedback, and brand-story expansion (2026-07-27) */
+
+.brand-story {
+  display: grid;
+  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+  gap: clamp(28px, 5vw, 72px);
+  align-items: center;
+  padding-block: clamp(64px, 9vw, 124px);
+}
+
+.brand-story-copy h2 {
+  margin: 14px 0 22px;
+  font-size: clamp(34px, 4vw, 60px);
+  line-height: 1.02;
+  letter-spacing: -0.055em;
+}
+
+.brand-story-copy p {
+  margin: 0 0 28px;
+  color: var(--prose);
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.brand-story-image {
+  overflow: hidden;
+  border: 1px solid rgba(194, 151, 97, 0.38);
+  border-radius: 3px;
+  background: #20140d;
+  box-shadow: 0 28px 70px rgba(43, 29, 19, 0.2);
+}
+
+.brand-story-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.search-loading {
+  margin: 0;
+  padding: 28px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.recommendation-explorer,
+.suggestion-layout,
+.account-page {
+  padding-bottom: 110px;
+}
+
+.recommendation-toolbar {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.recommendation-toolbar [role="tablist"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.recommendation-toolbar button,
+.recommendation-toolbar input {
+  min-height: 46px;
+  border: 1px solid var(--line);
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 15px;
+}
+
+.recommendation-toolbar button {
+  padding: 0 18px;
+  cursor: pointer;
+}
+
+.recommendation-toolbar button.is-active {
+  border-color: var(--brand);
+  background: var(--brand);
+  color: #fff;
+}
+
+.recommendation-toolbar input {
+  width: min(320px, 42vw);
+  padding: 0 16px;
+}
+
+.integration-note {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 24px;
+  margin-bottom: 24px;
+  padding: 22px 24px;
+  border-left: 4px solid var(--copper);
+  background: color-mix(in srgb, var(--copper) 9%, var(--cream));
+}
+
+.integration-note strong {
+  font-size: 17px;
+}
+
+.integration-note p {
+  margin: 0;
+  color: var(--prose);
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.recommendation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.recommendation-grid > article {
+  display: flex;
+  min-height: 320px;
+  flex-direction: column;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--cream);
+}
+
+.recommendation-card-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.recommendation-card-head > span,
+.suggestion-list article > div > span {
+  color: var(--copper);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.recommendation-card-head strong {
+  font-size: 18px;
+}
+
+.recommendation-card-head small,
+.recommendation-grid > article > small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.recommendation-grid h2 {
+  margin: 20px 0 12px;
+  font-size: 24px;
+  letter-spacing: -0.035em;
+}
+
+.recommendation-grid p {
+  margin: 0;
+  color: var(--prose);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.recommendation-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 20px;
+}
+
+.recommendation-tags span {
+  padding: 5px 9px;
+  background: var(--paper-deep);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.recommendation-grid footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: auto;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.recommendation-grid footer a,
+.suggestion-form a,
+.discussion-message a {
+  color: var(--brand);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.suggestion-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.8fr) minmax(0, 1.2fr);
+  gap: 40px;
+  align-items: start;
+}
+
+.suggestion-form,
+.article-discussion,
+.account-signin,
+.account-dashboard {
+  border: 1px solid var(--line);
+  background: var(--cream);
+}
+
+.suggestion-form {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+}
+
+.suggestion-form > span,
+.suggestion-list > div > span {
+  color: var(--copper);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.suggestion-form label {
+  display: grid;
+  gap: 8px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.suggestion-form input,
+.suggestion-form select,
+.suggestion-form textarea,
+.discussion-forms textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+}
+
+.suggestion-form input,
+.suggestion-form select {
+  min-height: 48px;
+  padding: 0 13px;
+}
+
+.suggestion-form textarea,
+.discussion-forms textarea {
+  min-height: 132px;
+  padding: 13px;
+  line-height: 1.65;
+  resize: vertical;
+}
+
+.suggestion-form > p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.suggestion-list > div {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.suggestion-list > div strong {
+  font-size: 20px;
+}
+
+.suggestion-list article {
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+}
+
+.suggestion-list article > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.suggestion-list article h2 {
+  margin: 12px 0 10px;
+  font-size: 23px;
+}
+
+.suggestion-list article p {
+  margin: 0 0 14px;
+  color: var(--prose);
+  font-size: 16px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.suggestion-list article small {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.empty-state {
+  padding: 28px;
+  color: var(--muted);
+  font-size: 16px;
+  text-align: center;
+}
+
+.article-discussion {
+  margin-top: 72px;
+  padding: clamp(24px, 5vw, 48px);
+}
+
+.discussion-heading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 24px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--line);
+}
+
+.discussion-heading span {
+  color: var(--copper);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+}
+
+.discussion-heading h2 {
+  margin: 10px 0 0;
+  font-size: clamp(26px, 3vw, 38px);
+}
+
+.discussion-heading > strong {
+  flex: none;
+  font-size: 32px;
+  text-align: right;
+}
+
+.discussion-heading > strong small {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.discussion-forms {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  padding-block: 28px;
+}
+
+.discussion-forms form {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.discussion-forms label {
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.rating-picker {
+  display: flex;
+  gap: 3px;
+}
+
+.rating-picker button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: color-mix(in srgb, var(--muted) 34%, transparent);
+  cursor: pointer;
+  font-size: 29px;
+}
+
+.rating-picker button.is-active {
+  color: var(--honey);
+}
+
+.secondary-button {
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid var(--brand);
+  background: transparent;
+  color: var(--brand);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+}
+
+.discussion-message {
+  margin: 0 0 24px;
+  padding: 12px 14px;
+  background: var(--paper-deep);
+  color: var(--prose);
+  font-size: 14px;
+}
+
+.reader-reviews,
+.reader-comments {
+  padding-top: 28px;
+  border-top: 1px solid var(--line);
+}
+
+.reader-comments {
+  margin-top: 24px;
+}
+
+.reader-reviews h3,
+.reader-comments h3 {
+  margin: 0 0 14px;
+  font-size: 19px;
+}
+
+.reader-reviews article,
+.reader-comments article {
+  padding: 16px 0;
+  border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+
+.reader-reviews article > div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.reader-reviews article span {
+  color: var(--honey);
+}
+
+.reader-reviews p,
+.reader-comments p {
+  margin: 7px 0 0;
+  color: var(--prose);
+  font-size: 16px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+}
+
+.account-page {
+  padding-top: clamp(54px, 8vw, 100px);
+}
+
+.account-signin {
+  max-width: 800px;
+  padding: clamp(32px, 7vw, 72px);
+}
+
+.account-signin h1,
+.account-intro h1 {
+  margin: 18px 0 24px;
+  font-size: clamp(42px, 7vw, 82px);
+  line-height: 0.98;
+  letter-spacing: -0.06em;
+}
+
+.account-signin p {
+  max-width: 620px;
+  margin: 0 0 30px;
+  color: var(--prose);
+  font-size: 18px;
+  line-height: 1.85;
+}
+
+.account-dashboard {
+  display: grid;
+  grid-template-columns: minmax(0, 1.25fr) minmax(260px, 0.75fr);
+  gap: 48px;
+  padding: clamp(32px, 6vw, 68px);
+}
+
+.account-intro > span {
+  color: var(--copper);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+
+.account-intro p {
+  color: var(--prose);
+  font-size: 18px;
+}
+
+.account-intro small {
+  display: block;
+  margin-top: 10px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.account-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-left: 1px solid var(--line);
+}
+
+.account-stats div {
+  display: grid;
+  align-content: center;
+  min-height: 140px;
+  padding: 24px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.account-stats strong {
+  font-family: var(--font-mono);
+  font-size: 34px;
+}
+
+.account-stats span {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.account-actions {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-top: 1px solid var(--line);
+}
+
+.account-actions a {
+  padding: 18px;
+  border-right: 1px solid var(--line);
+  font-size: 15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.header-account {
+  padding: 8px 11px;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.curriculum-list {
+  margin: 0;
+  padding: 0 0 110px;
+  list-style: none;
+}
+
+.curriculum-list > li {
+  display: grid;
+  grid-template-columns: 80px minmax(0, 1fr) auto;
+  gap: 30px;
+  align-items: start;
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
+}
+
+.curriculum-list > li > span {
+  color: var(--copper);
+  font-family: var(--font-mono);
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.curriculum-list small {
+  color: var(--olive);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.curriculum-list h2 {
+  margin: 8px 0 8px;
+  font-size: clamp(25px, 3vw, 36px);
+  letter-spacing: -0.04em;
+}
+
+.curriculum-list p {
+  margin: 0;
+  color: var(--prose);
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+.curriculum-list aside {
+  display: flex;
+  gap: 9px;
+  margin-top: 15px;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+.curriculum-list aside strong {
+  flex: none;
+  color: var(--ink);
+}
+
+.curriculum-list > li > a {
+  align-self: center;
+  min-width: 130px;
+  padding: 12px 16px;
+  border: 1px solid var(--brand);
+  color: var(--brand);
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .brand-story,
+  .suggestion-layout,
+  .account-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .brand-story-image {
+    grid-row: 1;
+  }
+
+  .recommendation-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .suggestion-form {
+    position: static;
+  }
+
+  .account-stats {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .curriculum-list > li {
+    grid-template-columns: 60px minmax(0, 1fr);
+  }
+
+  .curriculum-list > li > a {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .brand-story {
+    width: min(100% - 28px, 1180px);
+    padding-block: 54px;
+  }
+
+  .recommendation-toolbar,
+  .discussion-heading {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .recommendation-toolbar input {
+    width: 100%;
+  }
+
+  .recommendation-grid,
+  .discussion-forms {
+    grid-template-columns: 1fr;
+  }
+
+  .integration-note {
+    grid-template-columns: 1fr;
+  }
+
+  .discussion-heading > strong {
+    text-align: left;
+  }
+
+  .account-actions {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .header-account {
+    display: none;
+  }
+
+  .curriculum-list > li {
+    grid-template-columns: 42px minmax(0, 1fr);
+    gap: 14px;
+  }
+
+  .curriculum-list > li > span {
+    font-size: 23px;
   }
 }

@@ -59,23 +59,37 @@ export default function EnPrivacyPage() {
         </div>
 
         <div className="policy">
-          <h3>What we don&rsquo;t collect</h3>
+          <h3>Public reading and optional accounts</h3>
           <p>
-            Bean Wiki is a static website. There are no accounts or logins, and
-            no server feature that collects personal information such as your
-            name or email.
+            All articles are public and require no sign-in. A ChatGPT account is
+            required only to sync XP, rate or comment on articles, submit topic
+            ideas, and write community posts.
+          </p>
+
+          <h3>What is stored with an account</h3>
+          <p>
+            For signed-in features, Bean Wiki stores your email address,
+            display name, XP activity, ratings, comments, suggestions, and
+            community posts. Your email identifies the account and prevents
+            duplicate XP awards; public views show only your display name.
           </p>
 
           <h3>What&rsquo;s stored in your browser</h3>
           <p>
-            The following is stored only in your browser (localStorage) for
-            convenience and is never sent to a server. Clearing your browser
-            data removes it.
+            The following is stored in your browser (localStorage) for
+            convenience. Clearing browser data removes these local records.
           </p>
           <ul>
             <li>Theme preference (light/dark) — to remember your choice on return</li>
             <li>Recent searches — to help you find things again quickly</li>
+            <li>Anonymous learning progress — XP, quiz answers, and article views</li>
+            <li>Contact form drafts and local receipt numbers</li>
           </ul>
+          <p>
+            When signed in, eligible XP activity is also synced to your account.
+            The contact form remains a local preview and is not automatically
+            sent to the editors.
+          </p>
 
           <h3>Analytics</h3>
           <p>
@@ -85,14 +99,16 @@ export default function EnPrivacyPage() {
 
           <h3>Hosting and access logs</h3>
           <p>
-            The site is hosted on Vercel. The host may keep standard access logs
-            (e.g., IP address, request time) to provide the service; this is not
-            information Bean Wiki itself collects or retains.
+            The site is hosted with OpenAI Sites and Cloudflare-based services.
+            Hosting providers may process standard access logs (such as IP
+            address and request time) to operate and secure the service.
           </p>
 
           <h3>Contact</h3>
           <p>
-            For questions or correction requests, please open an issue on the{" "}
+            Topic and feature ideas can be submitted through the Korean{" "}
+            <Link href="/suggestions">suggestions page</Link>. For correction
+            requests that must reach the editors, please open an issue on the{" "}
             <a
               href="https://github.com/ycpiglet/bean-wiki/issues"
               target="_blank"
