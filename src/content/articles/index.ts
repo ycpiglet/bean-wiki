@@ -253,7 +253,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>커피를 이해하기 전에 “무엇인지”부터 정리합니다</h2><p>커피를 이야기할 때는 맛과 향으로 시작하는 경우가 많지만, 정확한 이해는 출발점이 식물 분류입니다. 커피라고 부르는 대상은 본질적으로 커피나무에서 얻는 씨앗이며, 이 나무가 어떤 계통에 속하는지에 따라 기본 생장 특성이 달라집니다.</p><p>분류학은 우열을 정하는 장치가 아닙니다. 같은 맛도 같은 이유로 형성되는 것이 아니라, 계통학적 친연성과 재배 환경, 가공, 로스팅이 결합하면서 맛의 방향성이 생깁니다. 그래서 먼저 분류계를 잡으면 다음 단계(재배, 가공, 추출)에 대한 질문이 더 선명해집니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>커피 품종만으로 향미를 단정하지 않기로 합니다. 분류는 시작점이며, 결과는 재배·가공·로스팅·추출의 연쇄로 정리해야 합니다.</p></aside></section><section id=\"taxonomy-frame\"><span class=\"content-index\">02</span><h2>식물 분류에서의 커피 나무 위치</h2><p>식물 분류는 보통 과, 속, 종처럼 큰 범주에서 작은 범주로 내려가며 이해하면 됩니다. 커피는 꼭두서니과(Rubiaceae)라는 큰 과의 일부이며, 그 안에서 <strong>Coffea</strong> 속이 상업적으로 가장 널리 알려져 있습니다.</p><p>과를 더 작게 나누는 방법으로 아과, 속, 종, 품종이 연결되며, 여기서 “속”은 공통된 유전·형태 특성을 공유하는 집단입니다. “종”은 더 구체적인 교배군으로 이해하고, “품종”은 재배나 선발을 통해 정해진 변이 집단이라고 정리하면 읽기 편합니다.</p><ul><li>학명은 유일성과 추적성을 높여주므로 라벨과 문헌에서 병기 이름을 같이 보는 편이 좋습니다.</li><li>일부 문헌은 같은 집단을 서로 다른 이름으로 부르는 경우가 있어, 출처와 분류 체계를 함께 확인해야 합니다.</li><li>계통 개념은 지역별 연구기관에서 업데이트될 수 있어 날짜 기반 비교가 필요합니다.</li></ul></section><section id=\"family-signature\"><span class=\"content-index\">03</span><h2>꼭두서니과의 공통 특징과 Coffea 속의 의미</h2><p>꼭두서니과는 목질성 또는 반목질성 식물을 포함하는 큰 그룹이고, 여러 속에서 꽃의 모양, 잎 배열, 과일 구조의 규칙이 반복적으로 나타납니다. 커피의 경우 이런 공통점 위에서 <strong>Coffea</strong> 속이 독자적으로 나타나는 점은 장기간의 과실 생산 전략과 연관됩니다.</p><p>식물학적으로는 잎의 배열, 꽃 구조, 씨앗 내부 구조를 통해 속 간 유사성과 차이가 추적됩니다. 특히 꽃의 형태는 수분·수정 시기를 연구할 때, 씨앗은 재배 품질 비교에서 장기적 지표로 쓰입니다.</p><p>이 분류 정보는 단순한 배경 지식이 아니라, 병해 대응 시점, 생육 환경 점검, 적정 수분 전략 같은 운영 판단의 좌표가 됩니다. 같은 재배 방식이라도 속과 종의 특성을 무시하면 기대 수확량과 향미 편차를 과소평가하기 쉽습니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>꼭두서니과라는 가족 안에서도 커피 전용의 생리 반응은 다양합니다. 커피를 커피처럼 이해하려면 속-종-품종의 차이를 함께 읽어야 합니다.</p></aside></section><section id=\"genus-structure\"><span class=\"content-index\">04</span><h2>Coffea 속의 형질을 기준으로 정리하기</h2><p>커피 속의 식물을 구분할 때 초보자는 ‘과일과 잎’만 먼저 보면 됩니다. 잎의 배열, 가지의 성장 습성, 꽃의 형성 시기, 생존을 위한 저장 전략을 함께 보면 속 내 유사군을 구분하기가 쉬워집니다.</p><p>물론 같은 속이라고 해서 모든 재배지가 같은 반응을 보이지는 않습니다. 고도, 강우, 토양, 그늘 처리, 영양 상태가 달라지면 같은 구조라도 생리 반응은 달라집니다. 이런 이유로 동일 종이라도 농가 간 성과가 편차를 보입니다.</p><p>분류학 교육에서 중요한 포인트는 “이름”을 외우는 것보다 “왜 같은 이름이 다른 결과를 보이는지”를 연결하는 것입니다. 이 연결은 이후 추출 실험에서 변수 분해에도 바로 이어집니다.</p></section><section id=\"main-cultivars\"><span class=\"content-index\">05</span><h2>주요 재배종은 어떻게 계통적으로 읽을까요</h2><p>상업 재배에서 가장 핵심적인 축은 아라비카(Coffea arabica)와 카네포라(Coffea canephora)입니다. 이 두 종은 유전적 기원, 향미 프로파일 경향, 병해 대응력, 재배지 요구 조건에서 반복적으로 구분됩니다.</p><table><thead><tr><th>분류 단위</th><th>핵심 성질</th><th>운용 맥락</th><th>주의할 점</th></tr></thead><tbody><tr><td>Coffea arabica</td><td>향미 분화가 도드라진다는 경향</td><td>고품질 원두 시장에서 선호되는 축</td><td>고온·저고도에서 환경 스트레스가 커질 수 있음</td></tr><tr><td>Coffea canephora</td><td>재배량과 강건성에서 유리한 경향</td><td>에스프레소 블렌드, 상업 생산에서 폭넓게 사용</td><td>용어 혼용으로 로부스타·카네포라 표기가 섞이는 사례 존재</td></tr><tr><td>Coffea liberica</td><td>지역 특성에 따라 독특한 향미·생육 패턴</td><td>특정 지역 브랜드성이나 향미 실험에서 활용</td><td>규모형 상업 재배 비중은 다른 두 종보다 제한적</td></tr></tbody></table><p>또한 엑셀사(또는 일부 분류에서 Liberica군 하위로 본 집단)는 상업성이나 명칭 해석이 기관·연도·데이터셋에 따라 조금씩 다를 수 있습니다. 그래서 라벨의 학명, 산지, 가공, 재배 연도까지 같이 확인해야 정보의 신뢰도를 높일 수 있습니다.</p><p><a data-wikilink=\"arabica-and-robusta\" href=\"/wiki/arabica-and-robusta\">아라비카와 로부스타 비교</a> 글은 이미 맛의 차이를 중심으로 다루고 있으므로, 여기서는 계통적 축과 재배 판단의 전제를 먼저 다루는 구조입니다.</p></section><section id=\"selection-implications\"><span class=\"content-index\">06</span><h2>재배 계획에서 종 선택이 바뀌는 지점</h2><p>실무적으로는 “무엇이 더 고급스러운가”보다 “어떤 목표에 맞는 종 조합인가”가 먼저입니다. 예를 들어 고지대의 온도 완화 구간에서 미세한 향의 차이를 추적하려면 아라비카 계열의 관리가 상대적으로 유리한 경향이 있습니다.</p><p>반대로 더 높은 수량 안정성과 내성까지 고려하는 경우 카네포라 계열이 유리한 경우가 많습니다. 이 판단은 토양·물·노동 구조와 함께 바뀌며, 같은 품종이어도 농가의 자본 효율성과 수확 주기 전략이 달라집니다.</p><p>분류학은 여기서도 역할을 합니다. 종의 기초 전제만 다르면 병해 감시, 수분 관리, 수확 주기 점검표가 달라지기 때문입니다. 따라서 “종을 바꾸지 않고 방법만 바꾼다”는 접근보다, 먼저 종-기후-노동의 조합을 점검하는 편이 실패 확률이 낮습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>정비 계획을 세울 때는 재배종명을 한 번 더 검증하세요. 아라비카, 로부스타, 리베리카가 동일 집단으로 통용되는 표기를 따라오지 않도록 주의하면 기록 품질이 좋아집니다.</p></aside></section><section id=\"common-misconceptions\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><ul><li>오해: “카네포라는 항상 질감이 거칠고 맛이 나쁘다.”</li><li>정리: 카네포라는 풍미의 “정답”이 아닐 뿐이며, 로스팅·추출 전략에 따라 컵에서의 유연성이 커질 수 있습니다.</li><li>오해: “리베리카는 고급 시장에서 거의 쓰이지 않는다.”</li><li>정리: 주류 비중은 낮아도 특정 지역 전략이나 블렌드에서는 기능성이 분명하고 실험적 가치가 존재합니다.</li><li>오해: “종 하나를 알면 재배 과정의 변수가 사라진다.”</li><li>정리: 종은 출발점일 뿐이며, 수분관리·가공법·로스팅 프로파일이 최종 품질에 필수적으로 작동합니다.</li></ul><p>오해를 줄이려면 라벨의 학명과 가공 방식, 수확 시기, 보관일을 함께 읽는 습관이 필요합니다. 단일 문장 요약을 피하고 “조건부 경향”으로 기록하면 판단의 오류를 줄일 수 있습니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>종을 단정할 수 없는 표기로 접하면 즉시 추측 대신 “확인 불가”로 처리하세요. 추측 기반 분류는 학습 속도를 빠르게 만들지 않고, 오해를 고정시킵니다.</p></aside></section><section id=\"practice\"><span class=\"content-index\">08</span><h2>실습: 한 잔에서 종/속 단서를 찾아보기</h2><p>다음 실습은 1주일 동안 한 번의 관찰 기록으로도 가능합니다. 목표는 한 잔의 맛을 맞추는 것이 아니라, 맛을 설명할 때 분류학 용어를 올바르게 쓰는 것입니다.</p><ol><li>자주 쓰는 원두 2~3가지의 봉투에서 학명, 산지, 가공, 로스팅 날짜를 확인합니다.</li><li>라벨 문구가 모호하면 원두상 이름이 아닌 “표시 없음”으로 별도 기입합니다.</li><li>같은 추출 방식에서 한 번만 변수를 바꿔(분쇄도, 추출 시간, 물 비율 중 하나) 맛을 비교하고 결과를 기록합니다.</li><li>관찰 항목을 “분류 단서(종 추정) / 공정 단서(가공·보관) / 체감 단서(향·산미·바디)”로 분리해 적습니다.</li></ol><p>기록을 한 달쯤 쌓으면 특정 종의 ‘고정된 맛’이 아니라 재배-가공-가열 조합의 분포를 보게 됩니다. 그때는 BOT-01의 다음 단계 주제인 생육 주기(BOT-02)로 넘어가도 연결성이 커집니다.</p><p>자기 점검 질문(4문항):</p><ol><li>커피 라벨에서 학명을 본인이 정확히 읽을 수 있습니까?</li><li>같은 향미 인상이라도 종·가공·로스팅 어떤 요소가 결합됐는지 구분했습니까?</li><li>정보가 빠진 라벨을 만났을 때 추측하지 않고 처리했습니까?</li><li>종 정보를 근거로 분류할 때 현재까지의 기록에 일관성이 있습니까?</li></ol></section><section id=\"references\"><span class=\"content-index\">09</span><h2>참고 자료</h2><ul><li><a href=\"https://www.ipni.org/\">International Plant Names Index (IPNI)</a></li><li><a href=\"https://powo.science.kew.org/\">Royal Botanic Gardens, Kew Plants of the World Online</a></li><li><a href=\"https://worldcoffeeresearch.org/resources/coffee-varieties-catalog\">World Coffee Research, Coffee Varieties Catalog</a></li><li><a href=\"https://www.ico.org\">International Coffee Organization, 기술·산지 개요</a></li><li><a href=\"https://www.sca.coffee/standards\">Specialty Coffee Association, 분류·품질 가이드</a></li><li><a data-wikilink=\"coffee-cherry-to-bean\" href=\"/wiki/coffee-cherry-to-bean\">커피 열매에서 생두로의 흐름 정리</a></li></ul></section>",
     "backlinks": [
-      "root-canopy-photosynthesis"
+      "root-canopy-photosynthesis",
+      "catimor-sarchimor-blight-resistance",
+      "kenya-coffee-system"
     ]
   },
   {
@@ -368,7 +370,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "coffee-flowering-pollination",
       "harvest-maturity-selection",
       "coffee-soil-nutrient-diagnosis",
-      "coffee-pest-symptom-map"
+      "coffee-pest-symptom-map",
+      "coffee-canopy-pruning-rejuvenation"
     ]
   },
   {
@@ -463,7 +466,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"flowering-why\"><span class=\"content-index\">01</span><h2>왜 개화 시점을 먼저 읽어야 할까</h2><p>커피 재배에서 개화는 단순한 시각적 현상이 아닙니다. 꽃이 언제, 얼마나 동시적으로 피는지에 따라 착과량의 기본선이 달라지기 때문입니다.</p><p>개화 관찰은 “꽃이 많았다”는 감각보다, 기후 반응·수분 상태·영양 상태와 결합해서 읽을 때 더 유효합니다. 개화가 집중되는 시기에는 현장 판단이 빠르게 바뀌므로 표준 점검이 중요합니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>개화는 품종 고유의 성질뿐 아니라 장기 강우·온도 신호와 직결됩니다. 현장에서는 꽃의 개화량보다 <strong>동시성</strong>을 같이 기록하는 편이 더 안정적입니다.</p></aside></section><section id=\"flower-synchrony\"><span class=\"content-index\">02</span><h2>강우가 개화 동기화에 관여하는 방식</h2><p>많은 지역에서 건기 종료 후 강우가 돌아오면 개화군이 비교적 동시적으로 전환되는 경향을 보입니다. 과도하게 건조하거나 급격한 가뭄이 길어지면 반응이 지연되는 경우도 있어, 연속 관측이 필요합니다.</p><p>따라서 “우기 첫 비 = 모든 나무가 반응”이 절대 공식은 아닙니다. 토양 수분 회복 속도, 그늘 정도, 나무 체력, 가지의 연령 구조가 함께 반응을 조절합니다.</p></section><section id=\"self-vs-cross\"><span class=\"content-index\">03</span><h2>자연 상태에서 자가수분과 타가수분의 차이</h2><p>자연어로는 종종 자가수분과 타가수분을 단순 비교하지만, 실무적으론 <strong>결실 확률의 차이</strong>와 꽃군의 유전적 편차 반응으로 봅니다. 자가수분은 꽃 자체의 완결성으로 일어나는 경향이 큰 반면, 타가수분은 주변 꽃군과 꽃가루의 이동성이 변수로 작동합니다.</p><p>따라서 같은 농장이라도 꽃밀도와 주변 나무의 건강, 풍향과 수분체 이동이 달라지면 동일한 자가수분률이라도 결과 편차가 큽니다. 수분 방식의 차이를 기록할 때는 “모두 동일하게” 처리하지 않고 경향으로 정리해야 합니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>‘자연수분’이든 ‘교차수분’이든, 한 번의 꽃폭발로 최종 착과률을 확정하지 않습니다. 추적은 개화군별 2~4주 단위로 봅니다.</p></aside></section><section id=\"ovule-ovary\"><span class=\"content-index\">04</span><h2>착과 초기의 병목: 수분 후 무엇이 결정될까</h2><p>수분 뒤에도 결실은 곧바로 보장되지 않습니다. 꽃수와 수분 자체뿐 아니라 영양 상태, 수분 스트레스, 병충해 압력, 영양분 이동이 동시에 작동합니다. 결과적으로 한 가지 요인을 고정 변수로 두면 현장 판단이 틀어집니다.</p><p>착과기에 과일 세포 분열과 비대가 빨라질수록 미세한 결함도 늘 수 있습니다. 그래서 영양·수분·가지 관리, 병해 점검이 같이 움직여야 합니다.</p><table><thead><tr><th>시점</th><th>우선 지표</th><th>주요 조치</th></tr></thead><tbody><tr><td>개화 초반</td><td>꽃군 동시성, 개화 밀도</td><td>수분 보강 구간 예측, 병해 관찰 강화</td></tr><tr><td>개화 중반</td><td>꽃받침 변형, 수분 실패 징후</td><td>관수 조절, 과도한 비료 투입 억제</td></tr><tr><td>착과 직후</td><td>유실율, 묶음 착과 상태</td><td>영양 균형 점검, 수분 과다 억제</td></tr></tbody></table></section><section id=\"management-checklist\"><span class=\"content-index\">05</span><h2>농사 관리에서의 실무 대응</h2><p>개화와 수분을 관리할 때 핵심은 개화 예측 후 과도한 단발 대응보다 단계별 대응입니다. 개화가 촉발되면 관수·시비·병해점검 주기를 일괄 단축해 변화를 놓치지 않습니다.</p><p>착과 실패가 반복될 때는 병해만 탓하기보다 개화 동기화 정도, 꽃군 구성, 이전 영양관리 기록을 함께 점검합니다. 수분 패턴이 안정되지 않은 지점에서 동일한 처방을 반복하면 반복 오류가 생기기 쉽습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>개화기에는 기록 항목을 늘리지 말고, 기존 항목(강우, 토양수분, 병징, 꽃군밀도)만 2배 주기로 정확히 넣는 편이 더 유효합니다.</p></aside></section><section id=\"practice-flowering\"><span class=\"content-index\">06</span><h2>실습: 개화·수분 모니터링 3주 루틴</h2><ol><li>매주 같은 요일에 3개 구획을 동일 규격으로 관찰합니다.</li><li>개화량은 절대수보다 동시성 점수(예: 낮음/보통/높음)로 표준화해 기록합니다.</li><li>강우일과 대조군 일자, 수분 상태를 함께 적어 연계표를 만듭니다.</li><li>3주 뒤 착과 실패나 유실이 높은 구획을 골라 대응이 달랐던 요소를 비교합니다.</li></ol></section><section id=\"misconceptions-flowering\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><ul><li>오해: “수분은 비가 오면 일어나기만 하면 된다.”</li><li>정리: 비와 함께 토양 상태, 나무 에너지, 꽃군 동시성이 맞아야 실제 착과로 연결되기 쉽습니다.</li><li>오해: “타가수분이 항상 더 좋다.”</li><li>정리: 조건이 바뀌면 자가수분 구간도 안정적으로 작동할 수 있으므로 절대 비교는 위험합니다.</li><li>오해: “개화가 실패하면 관리 탓이다.”</li><li>정리: 개화 신호 자체는 환경 요인 영향이 커서 실패의 원인을 한 층으로만 묶기 어렵습니다.</li></ul></section><section id=\"references-flowering\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a href=\"https://www.wcr.org\">World Coffee Research, Reproductive Biology notes</a></li><li><a href=\"https://www.ico.org\">ICO Coffee Research</a></li><li><a href=\"https://www.cabi.org\">CABI, Coffee flowering ecology</a></li><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">커피나무의 생애주기와 생육 달력</a></li><li><a data-wikilink=\"coffee-processing\" href=\"/wiki/coffee-processing\">커피 가공 방식 한눈에 보기</a></li></ul></section>",
     "backlinks": [
       "coffee-plant-life-cycle",
-      "root-canopy-photosynthesis"
+      "root-canopy-photosynthesis",
+      "coffee-canopy-pruning-rejuvenation"
     ]
   },
   {
@@ -550,7 +554,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"term-map\"><span class=\"content-index\">01</span><h2>용어를 섞으면 생기는 비용</h2><p>커피 문맥에서 “재래종”, “품종”, “컬티바”, “하이브리드”는 같은 층위가 아닙니다. 같은 단어가 문헌·거래처·브로셔에서 다르게 쓰이면 주문, 큐레이션, 가격 협의에서 오해가 발생합니다.</p><p>문제는 용어 자체가 아니라 용어가 걸린 층위가 다르다는 점입니다. 품질과 운영의 실패는 단어가 아니라 층위를 혼동할 때 먼저 생깁니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>라벨을 해석할 때는 최소한 “유전적 기원(종/계통)”, “상업적 등록 방식”, “번식·복제 형태”를 한 줄씩 분리해 확인하세요.</p></aside></section><section id=\"definitions\"><span class=\"content-index\">02</span><h2>4개 용어의 기본 구분</h2><p><strong>품종(variety)</strong>은 한 종 안에서 유전적·형태적 특성이 일정하게 반복되는 집단으로 이해할 수 있습니다. <strong>재래종(heirloom)</strong>은 특정 지역에서 오랫동안 재배되었거나 기원·혼재력이 유연하게 전달되는 재래 집단의 표현으로 쓰입니다.</p><p><strong>컬티바(cultivar)</strong>는 주로 원예·육종 맥락에서 인간이 선발·교차·선별해 정착시킨 계통을 지칭할 때 쓰이고, <strong>하이브리드</strong>는 서로 다른 유전 배경의 교배 결과 집단을 가리킵니다. 이 네 단어는 목적과 검증 체계가 달라 거래 문헌에서 자주 충돌합니다.</p></section><section id=\"commerce-confusion\"><span class=\"content-index\">03</span><h2>거래에서 생기는 혼선 3가지</h2><p>첫째, 컬티바와 품종 명칭이 같은 발음으로 쓰이지만, 등록과 추적 체계가 다를 수 있습니다. 둘째, 재래종은 브랜드 서사와 혼동되어 유전적 기원을 확정했다고 오인되는 경우가 있습니다. 셋째, 하이브리드는 F1 표시가 생략돼 단순 “개량 계통”처럼 보일 때가 있습니다.</p><p>그래서 문서를 읽을 때 명칭 뒤에 실제 데이터가 있는지(원산지, 유전자 계보, 번식 방식, 재생산성 지표)를 우선 확인해야 합니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>브로셔의 영문명은 번역 과정에서 동일한 뜻으로 보일 수 있으나, 실제로는 통제구간이 다를 수 있습니다. 동일 스펠링=동일 품질은 아닙니다.</p></aside></section><section id=\"selection-implications\"><span class=\"content-index\">04</span><h2>육종·구매에서의 판단 기준</h2><p>구매 계약에서는 “향기 특성”만으로 결정하기보다 생산 목적(고량·고가치 분리, 로스트 용도, 분쇄 안정성)에 맞는 분류층을 맞춰야 합니다. 품종은 관능 잠재성을 설명하는데 유용하고, 재래종은 유전적 다양성·브랜드 차별성 해석에 도움이 됩니다.</p><p>컬티바와 하이브리드는 재배 안정성, 균일성, 번식비 계산에서 특히 중요합니다. 하이브리드라고 표시된 원두가 항상 복합성으로 유리한 것은 아니고, F1인지 아닌지에 따라 차이가 커질 수 있습니다.</p><table><thead><tr><th>구분</th><th>정의 중심</th><th>운영에서의 사용 포인트</th><th>주의점</th></tr></thead><tbody><tr><td>품종</td><td>종 내부의 반복적 특성</td><td>향미·수확 패턴 추정</td><td>동일 명칭 내 변동 가능성 존재</td></tr><tr><td>재래종</td><td>지역 유래·전승 계통</td><td>브랜드 스토리 및 다양성 설명</td><td>유전자 기록이 불완전할 수 있음</td></tr><tr><td>컬티바</td><td>인위 선발/안정 계통</td><td>균일성 기반 운영</td><td>등록·표기 체계 확인 필요</td></tr><tr><td>하이브리드</td><td>교배 기반 계통</td><td>강건성·생산성 가설 설정</td><td>세대 구분(F1 등) 생략 가능성</td></tr></tbody></table></section><section id=\"practice-varieties\"><span class=\"content-index\">05</span><h2>실습: 문서 한 건을 층위별로 해석해 보기</h2><p>이번 실습은 하나의 카탈로그 항목을 네 칼럼으로 풀어보는 방식입니다.</p><ol><li>항목명에서 용어(예: 게이샤, 하이브리드, 컬티바)를 먼저 분리합니다.</li><li>원산지·유통사·연도 정보가 있으면 같은 줄에 붙여 보조 근거를 적습니다.</li><li>유전적 근거가 없는 표현은 “구분 필요”로 표시하고 결제 결정을 보류합니다.</li><li>실제 시음/센서리 결과와 용어가 일치하지 않으면 “라벨·현장 분기”로 기록합니다.</li></ol></section><section id=\"misconceptions-varieties\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: “재래종은 항상 희귀하고 고가치이다.”</li><li>정리: 희귀성과 품질은 별개 축입니다. 유통량·관리 상태가 더 크게 작동할 수 있습니다.</li><li>오해: “컬티바면 반드시 유통이 투명하다.”</li><li>정리: 표준 등록만으로 충분하지 않으며 추적체계와 검증 데이터가 함께 있어야 합니다.</li><li>오해: “하이브리드는 다 같이 동일하게 반응한다.”</li><li>정리: 세대, 교배 조합, 재배 환경이 다르면 편차가 생깁니다.</li></ul></section><section id=\"references-varieties\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.wcr.org/varieties\">World Coffee Research Varieties</a></li><li><a href=\"https://www.sca.coffee/\">Specialty Coffee Association</a></li><li><a href=\"https://www.fao.org\">FAO Crop Diversity 자료</a></li><li><a href=\"https://www.ipa.ac.uk\">IPGRI 계통 데이터 가이드</a></li><li><a data-wikilink=\"coffee-varieties\" href=\"/wiki/coffee-varieties\">품종은 종과 어떻게 다른가</a></li></ul></section>",
     "backlinks": [
-      "coffee-terroir-science"
+      "coffee-terroir-science",
+      "coffee-tipica-bourbon-lineage",
+      "f1-hybrid-coffee-breeding"
     ]
   },
   {
@@ -644,7 +650,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       "global-coffee-zones",
       "wet-hulling",
       "altitude-rain-temp-physiology",
-      "coffee-soil-nutrient-diagnosis"
+      "coffee-soil-nutrient-diagnosis",
+      "coffee-shade-intercropping",
+      "ethiopian-heirloom-diversity"
     ]
   },
   {
@@ -741,7 +749,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "honey-pulped-natural-processing",
       "anaerobic-coffee-processing",
       "harvest-maturity-selection",
-      "green-bean-moisture-management"
+      "green-bean-moisture-management",
+      "catimor-sarchimor-blight-resistance"
     ]
   },
   {
@@ -866,7 +875,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "brew-methods",
       "home-brew-recipes",
       "brew-ratio-practice",
-      "coffee-solvent-chemistry"
+      "coffee-solvent-chemistry",
+      "french-press-immersion-guide"
     ]
   },
   {
@@ -1283,7 +1293,10 @@ export const articlesByLocale: Record<string, Article[]> = {
       "coffee-fermentation-microbiology",
       "honey-pulped-natural-processing",
       "wet-hulling",
-      "anaerobic-coffee-processing"
+      "anaerobic-coffee-processing",
+      "f1-hybrid-coffee-breeding",
+      "kenya-coffee-system",
+      "columbia-harvest-cycle"
     ]
   },
   {
@@ -1467,7 +1480,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "thermal-time-agitation-control",
       "brew-profile-observables",
       "coffee-solvent-chemistry",
-      "brew-experiment-design"
+      "brew-experiment-design",
+      "moka-pot-pressure-control"
     ]
   },
   {
@@ -1705,7 +1719,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "permeability-channeling-control",
       "espresso-machine-hydraulics-thermal",
       "espresso-puck-preparation",
-      "plant-based-milk-steaming"
+      "plant-based-milk-steaming",
+      "moka-pot-pressure-control"
     ]
   },
   {
@@ -1935,7 +1950,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"species-layer\"><span class=\"content-index\">01</span><h2>종과 품종은 층처럼 봐야 합니다</h2><p>종은 생물학적 분류의 큰 단위이고, 품종은 그 안에서 형성된 유전적 라인입니다. 아라비카를 예로 들면 티피카·버번·게이샤 같은 품종명이 같은 생물권 안의 서로 다른 계열을 가리킵니다.</p><p>이 구분이 중요한 이유는 가격·마케팅과의 충돌을 피하기 위해서입니다. 이름이 같아도 분포하는 환경이 다르면 같은 품종이라도 결과는 다르게 보일 수 있습니다.</p></section><section id=\"why-variety-matters\"><span class=\"content-index\">02</span><h2>품종을 보는 이유</h2><p>품종은 로트 관리에서 유리한 단서를 제공합니다. 예를 들어 수확량, 건조 민감성, 병해 동향, 향미 프로파일의 재현성에 대한 예측이 쉬워지는 구간이 있습니다.</p><p>다만 유전적 특성은 시작점이지, 결과를 고정하지 않습니다. 같은 품종이라도 재배 밀도, 수확 적기, 발효·건조의 균일성에 따라 결과의 분산이 큽니다.</p></section><section id=\"read-label\"><span class=\"content-index\">03</span><h2>라벨의 품종명이 실제로 말하는 것</h2><table><thead><tr><th>라벨 항목</th><th>확인 포인트</th><th>활용 방법</th></tr><tr><td>품종명</td><td>용어의 유효 범위</td><td>지역 및 가공 정보를 함께 읽기</td></tr><tr><td>지역 코드</td><td>재배 고도·기후 신호</td><td>동일 품종 내 편차 비교 근거 확보</td></tr><tr><td>로트 날짜</td><td>저장 손상 추정</td><td>동일 장비에서 동일 추출 조건 반복</td></tr></tbody></table></section><section id=\"common-variety-confusion\"><span class=\"content-index\">04</span><h2>오해를 줄이는 기준</h2><ul><li><strong>오해:</strong> 품종명은 곧 가격의 객관 척도입니다.<br/><strong>정리:</strong> 가격은 계약, 유통, 희소성, 시즌 수급이 함께 작용합니다.</li><li><strong>오해:</strong> 유명 품종은 항상 좋은 품질을 보장합니다.<br/><strong>정리:</strong> 관리 실패된 동일 품종도 컵에서 불안정할 수 있습니다.</li><li><strong>오해:</strong> 품종을 몰라도 추출하면 다르지 않다.<br/><strong>정리:</strong> 품종은 추출 반응의 기본 폭을 바꾸므로 동등 조건 가정이 틀릴 수 있습니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">05</span><h2>실습: 라벨과 컵의 연결</h2><p>한 달간 기록 방식으로 품종 정보를 검증해보세요.</p><ol><li>품종명이 다른 2~3개 샘플 선정(동일 추출 장비)</li><li>각 샘플을 동일 분쇄·비율·온도로 2회 추출</li><li>각 감각 척도(산미/단맛/바디/후미)를 기록</li><li>품종명만으로 설명되지 않는 오차 원인을 로트/가공과 분리해 저장</li></ol></section><section id=\"workflow\"><span class=\"content-index\">06</span><h2>구매·관리 시 1회 루틴</h2><p>바쁜 상황에서는 품종을 다음 기준으로 압축해 봅니다. 첫째, 품종명, 둘째, 가공, 셋째, 로트/로스팅일, 넷째, 추출 메모입니다.</p><p>품종별 차이를 보기 전에 공정 정보를 함께 저장하면, 동료와 논의할 때 “느낌의 오해”를 수치와 증거로 바꿀 수 있습니다.</p></section><section id=\"quiz\"><span class=\"content-index\">07</span><h2>자기 점검 퀴즈</h2><ul><li>종과 품종의 차이를 한 문장으로 정리하면?</li><li>품종만 보고 과대 일반화되는 표현 한 가지를 고쳐 쓰면?</li><li>동일 품종 샘플의 컵 편차가 크면 어디부터 확인해야 할까요?</li><li>품종명 검증에서 라벨의 1순위 항목은 무엇인가요?</li></ul></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"arabica-and-robusta\" href=\"/wiki/arabica-and-robusta\">아라비카와 로부스타</a></li><li><a href=\"https://worldcoffeeresearch.org/areas-of-focus/genetic/\">World Coffee Research, 유전·재배 자원</a></li><li><a href=\"https://www.farmer.org/\">FAO, 커피 품종·재배 데이터</a></li><li><a href=\"https://varieties.worldcoffeeresearch.org/\">WCR Arabica Varieties Catalog</a></li><li><a href=\"https://www.scielo.org/scielo.php?script=sci_abstract&pid=S1980-56742021000100123\">품종 관련 학술 사례</a></li></ul></section>",
     "backlinks": [
       "coffee-variety-cultivar-hybrid",
-      "arabica-and-robusta"
+      "arabica-and-robusta",
+      "coffee-tipica-bourbon-lineage",
+      "f1-hybrid-coffee-breeding"
     ]
   },
   {
@@ -2007,7 +2024,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>콜드브루란 무엇인가</h2><p>콜드브루는 찬물이나 실온의 물에 커피를 오래 담가 우려내는 추출 방식입니다. 온도가 낮으면 성분이 녹아 나오는 속도가 느려지므로, 이를 긴 접촉 시간으로 보완합니다.</p><p>같은 원두라도 뜨거운 물로 빠르게 내릴 때와 향미의 균형이 달라질 수 있습니다. 흔히 신맛과 쓴맛이 덜 두드러진다고 이야기하지만, 이는 원두와 레시피에 따라 달라지는 경향일 뿐 절대적인 규칙은 아닙니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>콜드브루(냉침)와 아이스 커피(뜨겁게 내려 얼음에 식힘)는 다릅니다. 아이스 커피는 뜨거운 추출의 향미를 차갑게 즐기는 방식입니다.</p></aside></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>비율·분쇄도·시간</h2><p>아래 값은 출발점으로 삼을 참고 범위입니다. 농축액을 만들어 희석할지, 바로 마실 농도로 낼지에 따라 비율이 크게 달라집니다.</p><table><tbody><tr><th>변수</th><th>일반적 참고 범위</th><th>메모</th></tr><tr><td>커피 : 물</td><td>1:8 ~ 1:15</td><td>낮을수록 진한 농축액</td></tr><tr><td>분쇄도</td><td>중간 ~ 굵게</td><td>미분이 많으면 텁텁해지기 쉬움</td></tr><tr><td>우림 시간</td><td>냉장 12~18시간 / 실온 8~12시간</td><td>길수록 강하고 무거워지는 경향</td></tr></tbody></table></section><section id=\"method\"><span class=\"content-index\">03</span><h2>만드는 순서</h2><p>가장 단순한 방법은 침지식입니다. 용기에 커피와 물을 넣고 저은 뒤, 정해진 시간 동안 우리고 걸러냅니다.</p><ul><li>커피를 계량해 굵게 분쇄하고 물과 함께 용기에 넣습니다.</li><li>가루가 물에 고루 젖도록 가볍게 저어 줍니다.</li><li>냉장 또는 실온에서 목표 시간만큼 우립니다.</li><li>고운 필터로 두 번 걸러 미분을 줄입니다.</li></ul></section><section id=\"serving\"><span class=\"content-index\">04</span><h2>농도 맞추기와 보관</h2><p>농축액으로 만들었다면 물이나 우유로 취향에 맞게 희석합니다. 같은 레시피라도 얼음이 녹으며 연해지므로, 얼음 잔에는 조금 더 진하게 맞추면 균형이 유지됩니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>콜드브루는 저온에서 우리지만 무균은 아닙니다. 밀폐해 냉장 보관하고 며칠 안에 마시는 편이 안전하며, 향미도 시간이 지나면 무뎌집니다.</p></aside></section>",
     "backlinks": [
       "brew-methods",
-      "home-brew-recipes"
+      "home-brew-recipes",
+      "french-press-immersion-guide"
     ]
   },
   {
@@ -2784,7 +2802,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"three-principles\"><span class=\"content-index\">01</span><h2>모든 추출법은 세 가지 원리로 나뉩니다</h2><p>도구의 이름은 수십 가지지만 원리는 단순합니다. 커피와 물을 한 용기에 담가 두는 <strong>침지(immersion)</strong>, 커피층 위로 물을 통과시키는 <strong>투과(percolation)</strong>, 압력으로 물을 밀어내는 <strong>가압(pressure)</strong> — 대부분의 추출법은 이 셋 중 하나이거나 그 조합입니다.</p><table><tbody><tr><th>원리</th><th>대표 방식</th><th>추출을 정하는 핵심 변수</th><th>경향</th></tr><tr><td>침지</td><td>프렌치 프레스, 커핑, 콜드브루</td><td>시간, 비율, 온도</td><td>재현이 쉽고, 금속 필터 기준 바디가 묵직한 편</td></tr><tr><td>투과</td><td>푸어오버(핸드드립), 배치 브루어</td><td>분쇄도, 붓는 방식, 물길의 균일성</td><td>깔끔하고 향이 또렷한 편</td></tr><tr><td>가압</td><td>에스프레소, 모카포트</td><td>압력, 분쇄도, 도징, 탬핑(에스프레소 한정)</td><td>짧고 진하며 농축된 질감</td></tr></tbody></table><aside class=\"callout callout-note\" data-tone=\"note\"><p>\"경향\"은 참고일 뿐입니다. 같은 도구라도 레시피에 따라 인상은 크게 달라지며, 최종 판단 기준은 <a data-wikilink=\"extraction-basics\" href=\"/wiki/extraction-basics\">농도와 수율</a>, 그리고 잔의 맛입니다.</p></aside></section><section id=\"immersion\"><span class=\"content-index\">02</span><h2>침지: 시간이 다 해주는 방식</h2><p>커피와 물을 함께 담가 두면 시간과 비율이 추출의 대부분을 결정합니다. 물길의 균일성 문제가 없어 초심자도 재현하기 쉽고, 오일과 미분이 걸러지지 않는 도구(프렌치 프레스)에서는 바디가 무거워지는 경향이 있습니다.</p><ul><li>프렌치 프레스: 금속 메시로 눌러 거르는 대표적 침지식.</li><li>클레버·스위치류: 밸브로 침지 후 종이 필터로 내려보내는 하이브리드.</li><li><a data-wikilink=\"cold-brew\" href=\"/wiki/cold-brew\">콜드브루</a>: 낮은 온도를 긴 시간으로 보완하는 침지.</li><li><a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑</a>: 평가를 위한 표준화된 침지.</li></ul></section><section id=\"percolation\"><span class=\"content-index\">03</span><h2>투과: 물길을 설계하는 방식</h2><p>푸어오버(핸드드립)는 커피층 위로 새 물이 계속 지나가므로 같은 시간이라면 침지보다 추출 효율이 높은 편입니다. 대신 물을 붓는 속도·높이·회전, 커피층의 평탄함 같은 물길 변수가 맛에 직접 개입합니다.</p><p>종이 필터가 오일과 미분을 붙잡아 깔끔한 질감과 또렷한 향미를 얻기 쉽습니다. 드리퍼의 형태(원뿔·평바닥)와 리브 구조, 필터 두께에 따라 흐름 속도가 달라지는데, 이는 <a data-wikilink=\"brewing-gear-guide\" href=\"/wiki/brewing-gear-guide\">도구 가이드</a>에서 자세히 다룹니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>푸어오버가 자꾸 흔들린다면 변수를 줄인 침지(클레버류)로 기준 맛을 먼저 잡고, 그 맛을 목표로 푸어오버를 조정하는 순서가 배우기 쉽습니다.</p></aside></section><section id=\"pressure\"><span class=\"content-index\">04</span><h2>가압: 압력이 만드는 농축</h2><p><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소</a>는 약 9기압 안팎의 압력으로 짧은 시간에 농축된 음료를 뽑는 대표적 가압 추출입니다. 압력은 물이 곱게 간 커피층을 통과하게 해 줍니다. 크레마는 가압 상태에서 녹아 있던 이산화탄소가 기포로 풀려나며 만들어지고, 유화된 오일은 진한 질감에 기여합니다.</p><p>모카포트는 증기압(대체로 1~2기압 수준)으로 물을 밀어 올리는 저압 가압 방식입니다. 진하고 묵직한 커피가 나오지만, 압력과 온도 특성이 달라 에스프레소와 같은 음료로 보기는 어렵습니다.</p></section><section id=\"hybrid\"><span class=\"content-index\">05</span><h2>경계에 있는 방식들</h2><ul><li>에어로프레스: 침지 후 손 압력으로 밀어내는 침지+가압 하이브리드. 레시피 자유도가 매우 높습니다.</li><li>사이폰: 증기압으로 물을 올려 침지하고, 불을 끄면 감압으로 내려오는 극적인 방식. 향의 표현이 화려한 편입니다.</li><li>배치 브루어: 투과 원리를 자동화한 대량 추출. 스페셜티 카페의 필터 커피 기본기입니다.</li></ul><p>어떤 방식이든 \"무엇이 추출을 움직이는가\"는 같습니다 — 분쇄도, 비율, 온도, 시간, 균일성. 방식을 바꾸는 것은 이 변수들의 우선순위를 바꾸는 일에 가깝습니다. 구체적인 출발 레시피는 <a data-wikilink=\"home-brew-recipes\" href=\"/wiki/home-brew-recipes\">기본 레시피 모음</a>을 참고하세요.</p></section>",
     "backlinks": [
       "brewing-gear-guide",
-      "brew-experiment-design"
+      "brew-experiment-design",
+      "french-press-immersion-guide"
     ]
   },
   {
@@ -2860,7 +2879,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<p>아래 브랜드·제품은 각 카테고리에서 널리 알려진 <strong>대표 예시</strong>이며, 망라도 추천 순위도 아닙니다. 제품 사양과 라인업은 수시로 바뀌므로 구매 전에는 제조사의 현행 정보를 확인하세요.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>Bean Wiki는 어떤 브랜드와도 이해관계가 없습니다. 언급 기준은 \"그 카테고리를 설명할 때 업계에서 흔히 예로 드는가\"입니다.</p></aside><section id=\"pourover\"><span class=\"content-index\">01</span><h2>푸어오버 드리퍼</h2><p>형태와 배수 구조가 흐름 속도를 정하고, 그것이 레시피의 성격을 정합니다.</p><table><tbody><tr><th>형태</th><th>대표 예시</th><th>특징</th></tr><tr><td>원뿔(큰 구멍 1개)</td><td>하리오 V60, 고노</td><td>리브는 모델별 상이(V60 나선, 고노 하단 직선), 붓는 속도가 맛에 크게 개입 — 자유도 높음</td></tr><tr><td>평바닥(작은 구멍 여러 개)</td><td>칼리타 웨이브, 에이프릴, 오레아</td><td>물빠짐이 완만해 균일성 확보가 쉬움 — 관대한 편</td></tr><tr><td>부채꼴(사다리꼴)</td><td>멜리타, 칼리타 101/102</td><td>종이 필터 드립의 고전 형태</td></tr><tr><td>겸용·변형</td><td>오리가미(원뿔·웨이브 필터 겸용), 케멕스(일체형 유리)</td><td>케멕스는 두꺼운 전용 필터로 깔끔한 질감을 얻기 쉬운 편</td></tr></tbody></table><p>멜리타는 1908년 종이 필터 드립을 창안한 브랜드로 알려져 있고, V60의 이름은 원뿔 각도 60도에서 왔습니다. 같은 원뿔이라도 리브(내벽 돌기)의 형태가 필터 밀착과 배수를 바꿉니다.</p></section><section id=\"immersion-gear\"><span class=\"content-index\">02</span><h2>침지·하이브리드 도구</h2><table><tbody><tr><th>도구</th><th>대표 예시</th><th>방식</th></tr><tr><td>프렌치 프레스</td><td>보덤 샹보르, 에스프로 P3</td><td>금속 메시 침지 — 묵직한 바디, 미분 유의</td></tr><tr><td>밸브 침지 드리퍼</td><td>클레버 드리퍼, 하리오 스위치</td><td>침지 후 종이 필터로 배출 — 재현 쉬움</td></tr><tr><td>에어로프레스</td><td>에어로프레스(오리지널·고·클리어)</td><td>침지+가압, 2005년 앨런 애들러 발명</td></tr><tr><td>사이폰</td><td>하리오 테크니카, 야마</td><td>증기압 상승·감압 하강 — 시각적, 향 표현</td></tr><tr><td>모카포트</td><td>비알레티 모카 익스프레스</td><td>1933년 알폰소 비알레티 발명(대량 상용화는 1946년 아들 레나토 주도)</td></tr></tbody></table></section><section id=\"kettle-scale\"><span class=\"content-index\">03</span><h2>케틀과 저울: 정밀함의 도구</h2><p>푸어오버에서는 물줄기를 통제하는 구즈넥(백조목) 케틀이 사실상 표준입니다. 온도 설정이 되는 전기 모델이면 온도 변수까지 고정할 수 있습니다.</p><ul><li>케틀: 펠로우 스태그 EKG, 브뤼스타 아티산, 하리오 부오노(직화)</li><li>저울: 아카이아 펄, 타임모어 블랙 미러, 하리오 드립 스케일 — 0.1g 단위와 타이머 내장 여부가 실용 포인트</li><li>온도계·TDS 미터: 레시피를 숫자로 기록하고 싶을 때의 보조 도구</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>장비 투자 순서가 고민이라면 좋은 그라인더 → 저울 → 케틀 순이 흔히 권장됩니다. 분쇄 균일성이 맛에 미치는 영향이 가장 크기 때문입니다. <a data-wikilink=\"grinder-basics\" href=\"/wiki/grinder-basics\">그라인더 기초</a>를 참고하세요.</p></aside></section><section id=\"filters\"><span class=\"content-index\">04</span><h2>필터: 잊기 쉬운 변수</h2><p>같은 드리퍼라도 필터에 따라 흐름과 질감이 달라집니다. 종이는 표백(백색)·무표백(갈색), 두께, 조직 밀도가 다르고, 금속·천 필터는 오일을 통과시켜 바디를 무겁게 만듭니다. 종이 냄새가 걱정되면 추출 전 헹굼(린싱)이 일반적입니다.</p></section><section id=\"care\"><span class=\"content-index\">05</span><h2>도구보다 관리</h2><p>어떤 도구든 커피 기름때가 쌓이면 맛이 탁해집니다. 프렌치 프레스의 메시, 드리퍼의 리브, 서버의 바닥은 주기적으로 분해 세척하고, 천 필터는 삶아서 관리합니다. 도구 선택보다 물과 분쇄, 관리 상태가 맛을 더 크게 바꾸는 경우가 많습니다 — <a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">커피와 물</a>, <a data-wikilink=\"brew-methods\" href=\"/wiki/brew-methods\">추출법 총람</a>과 함께 읽어 보세요.</p></section>",
     "backlinks": [
-      "brew-methods"
+      "brew-methods",
+      "moka-pot-pressure-control"
     ]
   },
   {
@@ -4760,7 +4780,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"why-observables\"><span class=\"content-index\">01</span><h2>관측값이 중요한 이유</h2><p>같은 수치만으로는 같은 결과가 보장되지 않습니다. 관측값은 그 시간에 있었던 변수를 함께 설명해주므로, 기록의 공유 비용을 낮춰줍니다.</p><p>팀 단위에서는 “개인 감각”보다 “관측 템플릿”이 빠른 학습을 만듭니다.</p></section><section id=\"minimum-metrics\"><span class=\"content-index\">02</span><h2>최소 측정 항목</h2><ul><li>도즈, 물량, 추출시간</li><li>붓기 분할 횟수와 간격(필터 추출)</li><li>기온/수온, 원두 상태(표기)</li><li>맛 메모 4항목: 산미, 단맛, 바디, 쓴맛</li></ul></section><section id=\"template\"><span class=\"content-index\">03</span><h2>운영 템플릿</h2><table><thead><tr><th>항목</th><th>기록 형식</th><th>목적</th></tr><tr><td>추출 유량</td><td>초당 g 또는 구간별 누적 g</td><td>초기 과다 유입 탐지</td></tr><tr><td>온도</td><td>최초/중반/마감</td><td>열 편차 관리</td></tr><tr><td>관능</td><td>산미/단맛/바디/잔향</td><td>재현성 판단</td></tr></tbody></table></section><section id=\"process\"><span class=\"content-index\">04</span><h2>기록 루프</h2><p>관측값을 남긴 뒤의 판단은 아래 루프로 고정합니다.</p><ol><li>차이의 크기 확인: 편차가 통계적으로 반복되는지</li><li>차이의 방향 확인: 값이 늘거나 줄 때 맛 방향이 일치하는지</li><li>차이의 원인 연결: 분쇄·물·교반·온도 중 어떤 축인지</li></ol></section><section id=\"common-errors\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><p>관측값만 많다고 분석이 쉬워지는 것은 아닙니다. 핵심은 최소 5개를 꾸준히 정확히 기록해 추세를 보는 것입니다.</p></section><section id=\"self-check\"><span class=\"content-index\">06</span><h2>자기 점검 퀴즈</h2><ul><li>같은 레시피로 3회 재현해도 관측값 분산이 일정하게 줄었는가?</li><li>변경한 변수가 문서화되어 있는가?</li><li>관측값이 2개 항목에서 함께 바뀌었는지 설명할 수 있는가?</li></ul></section><section id=\"reference\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">물과 온도 기초</a></li><li><a data-wikilink=\"brew-ratio-practice\" href=\"/wiki/brew-ratio-practice\">비율 실험</a></li><li><a data-wikilink=\"home-brew-recipes\" href=\"/wiki/home-brew-recipes\">레시피 운영 예시</a></li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "french-press-immersion-guide"
+    ]
   },
   {
     "slug": "espresso-machine-hydraulics-thermal",
@@ -5546,7 +5568,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"what-change\"><span class=\"content-index\">01</span><h2>무역은 커피의 품질 언어를 만든다</h2><p>커피는 산지에서 수확된 씨앗으로 끝나지 않습니다. 누가 언제, 어떤 기록 기준으로 이 원물을 이동시켰는지가 다음 단계의 판단 비용을 바꿉니다. 무역은 맛을 직접 만들지는 않지만, 같은 맛으로 갈지 못하게 하는 조건차를 늘리거나 줄입니다.</p><p>그래서 같은 원두를 비교할 때는 품종·가공만이 아니라 출하 문서, 포장 상태, 보관 기간, 운송 조건을 같이 봐야 실제 추세를 읽기 쉬워집니다.</p></section><section id=\"historical-track\"><span class=\"content-index\">02</span><h2>역사 단계별 무역 구조</h2><table><thead><tr><th>시기</th><th>무역 방식</th><th>현대 품질 판단에 남은 흔적</th></tr><tr><td>식민지 확산기</td><td>항해·항만 중심 중앙화</td><td>품종/지역 표시가 생기기 시작</td></tr><tr><td>산업화</td><td>대량 생산·경매 시장</td><td>로트 단위 거래와 표준 규격의 형성</td></tr><tr><td>현대</td><td>브랜드·직거래·디지털 추적 확대</td><td>투명성 기대치가 서비스 품질 판단과 직접 연결</td></tr></tbody></table></section><section id=\"price-signals\"><span class=\"content-index\">03</span><h2>가격이 품질 판단을 오인식하게 만드는 지점</h2><p>가격은 분명 신호입니다. 다만 가격이 높은 원인과 품질 수준은 완전히 일치하지 않습니다. 농업 기상 이슈, 운송 지연, 선별 실패, 물류비 상승이 가격에 같이 반영될 수 있기 때문입니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>가격을 절대값으로 보지 말고, 가격 변동의 ‘왜’와 로트별 감각 기록을 같이 비교하세요.</p></aside></section><section id=\"chain-map\"><span class=\"content-index\">04</span><h2>현대 커피 가치사슬 4계층</h2><p>실무에서는 네 구간을 분리해 봅니다.</p><ol><li>생산·가공: 수분, 결점, 발효 편차</li><li>거래·운송: 규격 준수, 선적 조건, 보관</li><li>로스팅: 생두 상태 반응, 재고 회전</li><li>서비스: 추출·보관·제공</li></ol><p>각 구간이 독립된 값 같아 보여도 소비 경험에서는 누적 오차가 되므로, 문제가 생기면 마지막 구간부터가 아니라 첫 단계로 거꾸로 추적하는 게 빠릅니다.</p></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: “무역 이력은 단순 행정 기록이다.”<br/><strong>정정:</strong> 이력은 품질 의사결정 속도를 높이는 데이터입니다. 잘된 이력은 판단을 지연시킵니다.</li><li>오해: “유명 브랜드는 자동으로 추적성이 높다.”<br/><strong>정정:</strong> 브랜드 신뢰와 추적 체계는 별개입니다. 실제 공개 항목을 확인해야 합니다.</li><li>오해: “무역 이력은 감각 판단에 쓸모 없다.”<br/><strong>정정:</strong> 실패 로트의 반복 원인 탐색에서 매우 실용적인 축입니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 1주 기록 루프</h2><p>동일한 원두군에서 일주일 동안 다음 루프를 적용해 보세요.</p><ol><li>구매일, 출하 로트, 포장일, 운송 지연일을 기록</li><li>추출 전/후에 동일 루틴으로 맛 메모</li><li>가격 변동일과 품질 변동을 월말에 교차 비교</li><li>재구매 조건에 ‘가격 이유’와 ‘감각 이유’를 분리해 적기</li></ol></section><section id=\"quiz\"><span class=\"content-index\">07</span><h2>자기 점검</h2><ul><li>무역 구조가 품질 판단에 영향을 주는 이유를 2개 이상 적어보세요.</li><li>가격이 높아도 품질이 불안정할 수 있는 경로는 무엇인가요?</li><li>문제가 생긴 로트의 추적은 어느 구간부터 시작해야 할까요?</li><li>출처 정보 기록 시 가장 먼저 확인할 3개 항목은?</li></ul></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"global-coffee-history\" href=\"/wiki/global-coffee-history\">커피 글로벌 역사 개요</a></li><li><a href=\"https://www.ico.org/\">International Coffee Organization</a></li><li><a href=\"https://www.fao.org/faostat/\">FAOSTAT 커피 통계</a></li><li><a href=\"https://www.icaew.org/cocoa-and-coffee-chain\">국제시장 분석 보고서(예시)</a></li><li><a href=\"https://worldcoffeeresearch.org/\">World Coffee Research</a></li></ul></section>",
     "backlinks": [
       "supply-chain-transparency",
-      "farmer-income-basics"
+      "farmer-income-basics",
+      "ethiopian-heirloom-diversity"
     ]
   },
   {
@@ -6694,7 +6717,10 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"zone-frame\"><span class=\"content-index\">01</span><h2>지도 프레임을 먼저 고정해야 하는 이유</h2><p>커피 산지 정보를 “이 나라의 커피가 이런 맛”으로만 외우면 예측이 흐려집니다. 산지도는 위도, 고도, 강우, 생육 달력의 합으로 읽을 때 실무적인 의미가 커집니다.</p><p>특히 가공·수출·로스터 판단을 연결할 때 구조적 제약이 먼저 맞물립니다.</p></section><section id=\"major-belts\"><span class=\"content-index\">02</span><h2>주요 생산대 3축</h2><table><thead><tr><th>축</th><th>설명</th><th>운영 시사점</th></tr></thead><tbody><tr><td>열대 산지 벨트</td><td>강수·온도 변동 폭이 크고 생육 주기가 길다</td><td>수확기 예측 실패 시 품질 편차가 커집니다</td></tr><tr><td>열대 고원대</td><td>고도차에 따른 성숙도 편차가 시즌별로 큽니다</td><td>로트 선별과 배치 설계를 세분화</td></tr><tr><td>아열대 확장지대</td><td>기후 적응 기술 의존도가 높습니다</td><td>계절별 산화·저장 조건 감시를 강화</td></tr></tbody></table></section><section id=\"production-countries\"><span class=\"content-index\">03</span><h2>생산국별 판별 신호</h2><p>국가별 분류를 쓸 때는 대표 향미보다 거래 리듬을 먼저 봐야 합니다. 선적 주기, 가공률, 계약 조건과 라벨 용어 통일이 다르기 때문입니다.</p><ul><li>수확량 중심 시즌: 입고 간격이 짧아지는 시점</li><li>가공률 중심 시즌: 건조·발효 조건으로 결점 유형 이동</li><li>물류 중심 시즌: 선적 지연으로 보존 손실 리스크 확대</li></ul></section><section id=\"interpretation-rules\"><span class=\"content-index\">04</span><h2>산지 해석 4단계</h2><p>산지 정보를 의사결정에 쓸 때는 다음 순서가 안정적입니다.</p><ol><li>산지 기후 조건으로 수분 편차 방향 예측</li><li>수집 방식으로 점액 노출과 수확 시점 일치성 확인</li><li>가공 방식 분포로 저장 전략 기본 레벨 설정</li><li>운송 조건으로 입고 직후 점검 항목 고정</li></ol><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>같은 나라라도 고도가 다르면 결점 패턴이 달라집니다. 농장 단위보다 생산대 분해가 선행되어야 로트 추적이 쉬워집니다.</p></aside></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 생산국명만 알면 맛을 예측할 수 있다.<br/><strong>정정:</strong> 생산국은 시작점일 뿐, 고도·강우·가공·보관이 편차를 좌우합니다.</li><li>오해: 고도가 높으면 항상 더 좋은 향미다.<br/><strong>정정:</strong> 고도만으로 결정되지 않으며 수분, 품종, 가공·보관이 함께 작동합니다.</li><li>오해: 산지 라벨은 변하지 않는다.<br/><strong>정정:</strong> 계약 라인 변경, 공정 변경, 시즌별 농사 조건이 라벨 의미를 바꿉니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 4개 산지 신호로 분류하기</h2><p>로트 4개를 골라 같은 표로 기록해 보세요.</p><ol><li>산지명, 추정 고도대, 강수 특성, 주간 수분 변동을 한 줄로 기입</li><li>입고 후 24시간 내 보관 상태와 컵 점수를 함께 남김</li><li>결점 분포를 국가군별로 비교</li><li>다음 구매 판단에서 예측이 틀어진 항목을 추적</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"global-coffee-history\" href=\"/wiki/global-coffee-history\">커피 세계사 개요</a></li><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아 과학</a></li><li><a data-wikilink=\"coffee-climate-resilience\" href=\"/wiki/coffee-climate-resilience\">커피 기후 회복성</a></li><li><a href=\"https://www.ico.org/\">ICO 생산·유통 통계</a></li><li><a href=\"https://www.fao.org/fao-stats/en/\">FAO 농산물 통계</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>생산국 라벨만으로 판단하지 말아야 하는 이유는?</li><li>산지의 3축 중 하나만 바뀔 때 먼저 바뀌는 신호는?</li><li>고도와 강우를 분해해 기록할 때 우선 점검할 항목은?</li><li>입고 직후 실무 점검 항목을 한 문장으로 우선순위화할 수 있나요?</li></ul></section>",
     "backlinks": [
-      "altitude-rain-temp-physiology"
+      "altitude-rain-temp-physiology",
+      "ethiopian-heirloom-diversity",
+      "kenya-coffee-system",
+      "columbia-harvest-cycle"
     ]
   },
   {
@@ -7624,7 +7650,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"define-maturity\"><span class=\"content-index\">01</span><h2>성숙도 판별을 규칙화해야 하는 이유</h2><p>가공팀에서 가장 크게 느끼는 변동은 ‘어떤 원두를 같이 수확했는가’에서 시작합니다. 성숙도 혼입이 크면 탈수 속도, 발효 경로, 결점 발생이 동시에 흔들릴 수 있습니다.</p><p>따라서 성숙도 판단은 미관이 아니라 운영 규칙으로 둬야 합니다. 완숙, 반숙, 미숙을 구분해 배치 전략을 다르게 세팅하면 결과 추적이 쉬워집니다.</p></section><section id=\"maturity-signals\"><span class=\"content-index\">02</span><h2>성숙도 신호 5개</h2><ol><li>색: 완숙은 균일한 과색으로 이동하는 경향</li><li>질감: 과육과 과실 표면의 탄력 차이</li><li>Brix: 당도 축적의 상대 지표</li><li>밀도: 건조 후 수분 회수와 분산 안정성</li><li>향: 생과·과숙·과당취에 따른 편차</li></ol><p>이 신호를 하나만 쓰면 오판이 커집니다. 반드시 최소 3개를 함께 기록해야 합니다.</p></section><section id=\"selection-modes\"><span class=\"content-index\">03</span><h2>수확 방식의 운영 차이</h2><table><thead><tr><th>방식</th><th>장점</th><th>리스크</th><th>적합한 조건</th></tr><tr><td>선별 수확</td><td>성숙도 혼입을 낮출 수 있음</td><td>노동량 증가</td><td>가격 민감도가 높고 산지 신호 관리가 필요한 단계</td></tr><tr><td>스트립 수확</td><td>작업 속도 우수</td><td>미숙 과일 혼입 가능</td><td>기계 가용성이 높고 후가공 단계가 강한 경우</td></tr><tr><td>기계 수확</td><td>규모 대응 유리</td><td>균질성 제어가 어렵고 선별 비용 상승</td><td>규모가 크고 분할 관리 시간이 확보되는 경우</td></tr></thead></table></section><section id=\"mixing-risk\"><span class=\"content-index\">04</span><h2>혼입은 언제 문제로 바뀌나</h2><p>혼입 자체가 항상 실패가 되는 것은 아닙니다. 문제는 혼입 비율이 커피의 가공 안정성과 결점 신호를 교란할 때입니다. 특히 미숙 과일 비율이 높으면 과도 발효·불쾌한 향 경향이 먼저 나타나는 경우가 있습니다.</p></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 한 번에 많이 따는 것이 항상 비용을 줄인다.<br/><strong>정정:</strong> 장기적으로는 선별 비용·불량 배치 전가 비용이 커질 수 있습니다.</li><li>오해: 색만 같으면 성숙도가 일치한다.<br/><strong>정정:</strong> 밀도·수분·표면 신호를 함께 봐야 편차를 줄일 수 있습니다.</li><li>오해: 미숙을 많이 포함하면 항상 버리는 게 맞다.<br/><strong>정정:</strong> 목적 배치와 가공 루트를 다르면 활용 조건이 달라질 수 있습니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 수확 혼입 계량</h2><ol><li>당일 수확에서 3개 소포의 성숙도 비율을 추정해 기록</li><li>동일 배치에서 처리 후 건조 시간 및 결점 항목을 분리 기록</li><li>커핑 전 전처리 로그에서 미숙율과 향미 편차를 연동</li><li>다음 회차에 수확 기준을 1개만 수정하고 효과 비교</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"post-harvest-processing-map\" href=\"/wiki/post-harvest-processing-map\">수확 후 가공 지도</a></li><li><a href=\"https://www.ico.org/coffee-processing\">ICO 커피 가공 개요</a></li><li><a href=\"https://www.fao.org/food-safety\">FAO 커피 품질·저장 가이드</a></li><li><a href=\"https://www.scielo.org/scielo.php?script=sci_arttext&pid=S1413-80542023000100011\">수확 단계 연구 자료</a></li><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">커피 생애주기</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>성숙도 혼입을 줄이기 위해 반드시 병행해야 하는 신호는?</li><li>선별 수확과 스트립 수확의 실무 트레이드오프는?</li><li>혼입이 컵 편차로 연결되는 첫 지점은 어디인가?</li><li>실습에서 가장 먼저 수정할 변수는?</li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "columbia-harvest-cycle"
+    ]
   },
   {
     "slug": "root-canopy-photosynthesis",
@@ -7804,7 +7832,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"frame\"><span class=\"content-index\">01</span><h2>기후 신호를 ‘조건부 경향’으로 본다</h2><p>고도와 강우, 온도를 각각 단일 판단 기준으로 쓰면 과잉 단정이 생깁니다. 운영에서는 이 세 변수를 동시에 놓고, 언제, 어느 방식으로 결합되었는지를 먼저 기록해야 합니다.</p><p>특히 산지의 고도는 단순 수치보다 일교차, 구름량, 바람, 배수 특성과 함께 움직일 때 더 정확합니다.</p></section><section id=\"temperature-effect\"><span class=\"content-index\">02</span><h2>온도: 성숙 경로의 가속기</h2><p>온도는 광합성 속도, 탄소 배분, 당도 형성, 수분 스트레스 반응을 동시에 바꿉니다. 고온 구간은 성장 속도를 앞당길 수 있지만 결실의 균일성은 떨어질 가능성이 있습니다.</p></section><section id=\"rain-effect\"><span class=\"content-index\">03</span><h2>강우: 성숙 안정성과 결점의 경계</h2><p>강우는 수분 보완과 미생물 조건을 동시에 만듭니다. 강우 빈도가 높으면 건조 단계가 반복되기 쉬워 결점 관리가 어려워질 수 있고, 건조 불량이 이어지면 저장·가공 편차가 커집니다.</p></section><section id=\"altitude-effect\"><span class=\"content-index\">04</span><h2>고도: 동일 농장 내 변수의 축소도구</h2><p>고도는 평균 기후를 설명할 뿐, 같은 면적 안에서도 그늘·노출·토양이 다르면 미세한 성능 차이가 큽니다. 그래서 고도 자체보다 고도대별 운영 루틴 차이가 더 중요할 때가 많습니다.</p></section><section id=\"strategy-matrix\"><span class=\"content-index\">05</span><h2>운영 판단 매트릭스</h2><table><thead><tr><th>상황</th><th>우려 신호</th><th>우선 점검</th></tr><tr><td>고온·건조 교차기</td><td>발효 잔당 변동 확대</td><td>수확 분할, 건조 시간 재설계</td></tr><tr><td>고강우 장기 지속</td><td>수분 혼입·병해 우려</td><td>선별 강도, 저장 통풍 점검</td></tr><tr><td>고도대 이동 수확</td><td>맛 강도와 산미 편차</td><td>배치 라벨링 강화</td></tr></thead></table></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: 고도만 높으면 향이 더 좋아진다.<br/><strong>정정:</strong> 고도는 출발점이지, 운영 품질을 보장하지 않습니다.</li><li>오해: 강우가 많으면 항상 더 달다.<br/><strong>정정:</strong> 강우 패턴과 건조 조건이 맞물릴 때 결점이 늘 수 있습니다.</li><li>오해: 온도·강우·고도는 서로 독립이다.<br/><strong>정정:</strong> 세 변수의 조합이 수분·수확 시기를 함께 움직입니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 한 산지의 기후-배치 로그</h2><ol><li>주 1회로 고도대별 수분·온도·강우 기록(최근 7일 기준)</li><li>같은 수확 라인에서 성숙도와 결점 비율 비교</li><li>예상 산지 라벨과 실제 컵 감각 편차를 분리 기록</li><li>다음 주기에서 예측 모델의 한 변수만 변경해 효과 확인</li></ol></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아 과학 개요</a></li><li><a data-wikilink=\"global-coffee-zones\" href=\"/wiki/global-coffee-zones\">세계 커피 생산대 지도</a></li><li><a href=\"https://www.ico.org/climate\">ICO 기후·공급망 리포트</a></li><li><a href=\"https://www.wri.org\">World Resources Institute 커피·기후 분석</a></li><li><a href=\"https://www.cawater.com\">산지 수분·기상 가이드</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">09</span><h2>자기 점검</h2><ul><li>온도·강우·고도 중 먼저 분리해야 하는 신호는?</li><li>동일 고도에서도 편차가 나는 이유를 하나 설명하세요.</li><li>기후 로그를 추출 결과로 연결할 때 누락하기 쉬운 항목은?</li><li>실험에서 가장 먼저 조정해야 할 운영 변수는?</li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-shade-intercropping"
+    ]
   },
   {
     "slug": "roaster-machine-types-comparison",
@@ -7973,7 +8003,11 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"diagnosis-principle\"><span class=\"content-index\">01</span><h2>토양 진단의 목표를 먼저 고정한다</h2><p>토양 지표는 결과를 “좋다/나쁘다”로 분해하는 도구가 아닙니다. 수확 안정성, 미성숙 과실률, 결점 증가를 줄이기 위한 조치 우선순위를 정할 때 쓰는 판단 기반입니다.</p><aside class=\"callout\" data-tone=\"note\"><p>진단의 핵심은 성분 수치 하나가 아니라, 수분·양분·유기물의 조합을 통해 어떤 증상을 먼저 완화할지 결정하는 것입니다.</p></aside></section><section id=\"key-indicators\"><span class=\"content-index\">02</span><h2>핵심 지표 5개</h2><ol><li><strong>pH</strong>: 양분 가용성과 미생물 활성의 기본 축</li><li><strong>유기물 함량</strong>: 수분 완충과 구조 안정성</li><li><strong>질소/칼륨 균형</strong>: 생장과 결실 전환의 균형</li><li><strong>칼슘·마그네슘 지표</strong>: 세포벽 안정성과 스트레스 대응</li><li><strong>토양 수분 유지력</strong>: 건조기 대응 속도</li></ol></section><section id=\"sampling-logic\"><span class=\"content-index\">03</span><h2>샘플링은 한 번의 수치가 아니라 반복 루프</h2><p>샘플링은 계절 초기에 끝나는 행위가 아니라, 수확 전후로 다시 점검되는 반복 루프여야 합니다. 동일 구획이라도 고도와 노출 조건이 다르면 양분 반응도 달라집니다.</p><ul><li>구획별 기록: 경사, 노출, 배수 상태를 붙여 저장</li><li>분기별 기록: 비나마를 제외한 연속 시계열로 비교</li><li>표준 샘플 수: 구획의 면적·기울기 차이를 반영한 동수 분할</li></ul></section><section id=\"intervention-map\"><span class=\"content-index\">04</span><h2>개입 지도: “추가 투입”보다 “재배치·분할”부터</h2><table><thead><tr><th>진단 결과</th><th>해석</th><th>우선 액션</th></tr></thead><tbody><tr><td>pH 하락 + 유기물 부족</td><td>수분 손실과 미생물 활성이 약화될 가능성</td><td>유기물 보강·배수 점검</td></tr><tr><td>질소 과다 + 균열성 과성장</td><td>과다 생장 후 미성숙 과실 증가 가능성</td><td>질소 투입 완화·생육조절</td></tr><tr><td>칼륨/마그네슘 불균형</td><td>수분 조절 능력 저하 및 결점 편차</td><td>구획 분할 시비 설계</td></tr></tbody></table></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 양분 지표가 좋으면 결점이 사라진다.<br/><strong>정정:</strong> 수분·가공 단계까지 함께 보지 않으면 결점은 계속 반복될 수 있습니다.</li><li>오해: 비료를 늘리면 생존 스트레스가 줄어든다.<br/><strong>정정:</strong> 과투입은 성장 편차를 키울 수 있어 오히려 수확 동기 불균형이 생깁니다.</li><li>오해: 토양 검사는 1회로 충분하다.<br/><strong>정정:</strong> 구획 변화와 계절 변화를 반영해 주기적 재측정이 필요합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 구획별 진단 로그</h2><ol><li>동일 밭의 경사지, 평지, 그늘 구획을 구분해 샘플 채취</li><li>pH·유기물·질소 비율을 표준 스프레드시트에 기록</li><li>다음 수확에서 미성숙 과실률, 건조 편차와 대조</li><li>한 지표만 변경했을 때의 효과를 기록해 과잉 투입을 줄임</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.fao.org/agriculture/crops\">FAO 커피·토양 자료</a></li><li><a href=\"https://www.fao.org/3/a-i5461e.pdf\">토양·양분 관리 개요</a></li><li><a href=\"https://www.wcr.org\">WCR 재배·성장 안내</a></li><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">커피 생애주기</a></li><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아 과학</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>pH 변화와 결점 증가를 연결해 설명할 수 있나요?</li><li>샘플링을 1회로 끝내면 생기는 정보 빈틈은 무엇인가요?</li><li>토양 개입에서 과잉 투입이 야기하는 첫 신호는?</li><li>다음 액션을 정할 때 우선순위는 어떤 순서로 둘 수 있나요?</li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-shade-intercropping",
+      "coffee-canopy-pruning-rejuvenation",
+      "catimor-sarchimor-blight-resistance"
+    ]
   },
   {
     "slug": "coffee-pest-symptom-map",
@@ -8052,7 +8086,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"map-principle\"><span class=\"content-index\">01</span><h2>병해충을 먼저 분류하는 기준</h2><p>병해충 대응은 종류를 외우는 행위가 아니라 증상-시기-분포를 묶어 읽는 연습입니다. 잎, 새순, 체리, 과실에서 어떤 패턴으로 시작하는지 먼저 정하면 대응 우선순위가 보입니다.</p></section><section id=\"symptom-groups\"><span class=\"content-index\">02</span><h2>증상군 4가지</h2><ol><li><strong>잎 위축·반점군:</strong> 영양결핍과 병원의 동시 신호일 수 있음</li><li><strong>가지/줄기 이상군:</strong> 전염성 또는 생리 스트레스 연계 가능</li><li><strong>체리 상처군:</strong> 물리적 손상과 병원 침입의 경계가 겹침</li><li><strong>미숙·탈락군:</strong> 수확 적기와 결점 관리에 직결</li></ol></section><section id=\"risk-scaling\"><span class=\"content-index\">03</span><h2>위험도 스케일링</h2><table><thead><tr><th>위험 신호</th><th>해석</th><th>초기 조치</th></tr></thead><tbody><tr><td>동일 줄기 구역 집중</td><td>국지적 전파 가능성</td><td>해당 구역 분리 점검</td></tr><tr><td>다수 구획 동시 증가</td><td>기후 연동 전반 확산</td><td>전체 구획 순차 점검 및 기록 강화</td></tr><tr><td>과실 상처율 급증</td><td>수확 손실·품질 저하 우려</td><td>수확 계획 재편성·전처리 강화</td></tr></tbody></table></section><section id=\"monitoring-loop\"><span class=\"content-index\">04</span><h2>현장 모니터링 루프</h2><p>현장 모니터링은 하루의 일회 점검이 아니라 3단 루프로 운영됩니다.</p><ul><li>탐지: 증상 발생 지점의 좌표·면적을 기록</li><li>분류: 병해, 해충, 물리 손상의 구분 기준으로 태깅</li><li>행동: 제초·배수·방제·수확 분할 중 적절히 조합</li></ul></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 병해충은 한 번 찾으면 다 해결된다.<br/><strong>정정:</strong> 구획 단위 패턴이 바뀌면 관리 타이밍과 범위를 다시 잡아야 합니다.</li><li>오해: 증상은 병해와 일치하지 않는다.<br/><strong>정정:</strong> 증상은 원인 단서를 제공하지만 단정 단어로 바꾸면 조치가 어긋납니다.</li><li>오해: 병해 대응은 수확 직전에만 필요하다.<br/><strong>정정:</strong> 초기에 발견한 구획이 비용을 최소화합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 한 구획, 한 주, 한 판정</h2><ol><li>작업일 1회, 증상 지점을 5개 이상 찍고 기록</li><li>증상군을 4개 범주로 태깅 후 지도에 표시</li><li>다음 주 같은 구획을 같은 시간에 재점검</li><li>수확 이후 결점율과 연결해 판단 정확도 검토</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.fao.org/agriculture/crops\">FAO 병해충·재배 자문</a></li><li><a href=\"https://www.wcr.org\">WCR 산지 관리 가이드</a></li><li><a href=\"https://www.coffee-research.org\">커피 재배 연구 자료</a></li><li><a data-wikilink=\"coffee-climate-resilience\" href=\"/wiki/coffee-climate-resilience\">기후 리스크와 적응</a></li><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">커피 생애주기</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>병해충 조기 대응에서 가장 먼저 기록해야 하는 항목은?</li><li>동일 증상이 병해·물리 손상을 동시에 의심케 할 때의 점검 순서는?</li><li>위험도 스케일에서 “국지성”과 “확산성” 판단 기준은?</li><li>수확 분할로 이어지는 최후 판단은 어떤 조건에서 정합적인가요?</li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-shade-intercropping"
+    ]
   },
   {
     "slug": "green-bean-moisture-management",
@@ -8215,6 +8251,889 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"risk-context\"><span class=\"content-index\">01</span><h2>건강 이슈를 “위험 언어”에서 “노출 언어”로 바꿔 본다</h2><p>아크릴아마이드와 퓨란은 로스팅 반응에서 관측 가능한 부산물입니다. 하지만 실제 영향 평가는 존재 유무보다도 생성 경향, 추출/보관 방식, 음용량을 함께 봐야 정합적입니다.</p></section><section id=\"what-happens\"><span class=\"content-index\">02</span><h2>로스팅 경로에서 생기는 방식</h2><p>로스팅 중 열처리 강도와 시간, 수분 잔류는 해당 화합물의 경향을 다르게 만들 수 있습니다. 따라서 한 번의 배치 기준은 다음 배치의 일반 규범이 되기 어렵습니다.</p><aside class=\"callout\" data-tone=\"note\"><p>특정 성분의 “높은 수치”보다 반복되는 패턴을 보는 것이 운영에서 더 중요합니다.</p></aside></section><section id=\"measurement-principles\"><span class=\"content-index\">03</span><h2>측정·표현 원칙</h2><ul><li>절대 단정 대신 조건부 범위로 제시한다.</li><li>로스팅 강도 변화와 분량 안정성을 함께 기록한다.</li><li>소비량·빈도와 결합해 노출 가능성을 추정한다.</li></ul></section><section id=\"practical-reduction\"><span class=\"content-index\">04</span><h2>노출 관리의 실무 축</h2><p>감소의 방향은 “더 낮은 로스팅”만이 정답이 아닙니다. 맛·보존·안전의 균형을 조정해야 하므로, 가설-재현 방식으로 판단합니다.</p><ol><li>실험 A: 동일 원두에서 프로파일만 바꿔 컵 노출 민감도 비교</li><li>실험 B: 추출 농도와 서빙량 변화가 주는 체감 차이 기록</li><li>실험 C: 보관 기간을 늘려 향미 저하와 함께 관찰</li></ol></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 아크릴아마이드만 줄이면 안전하다.<br/><strong>정정:</strong> 퓨란과 다른 열생성물의 변화도 함께 보아야 맥락을 잃지 않습니다.</li><li>오해: 로스팅을 약하게만 하면 위험이 사라진다.<br/><strong>정정:</strong> 관능 손실이나 균일성 저하가 생기면 오히려 운영 변수가 커집니다.</li><li>오해: 건강 지표는 개인 카페에서 무시 가능하다.<br/><strong>정정:</strong> 소규모 가게도 반복 소비 패턴이 있으면 노출 해석의 근거가 필요합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 일주일 노출 점검표</h2><ol><li>동일 메뉴 3개를 같은 배치 내에서 맛·밀도·향미 편차로 기록</li><li>분량·농도·온도를 고정한 채 노출 민감도 비교</li><li>로스트 배치 라벨별로 반응 변화를 1페이지 로그로 정리</li><li>고민되는 항목은 건강 설명 문구가 아닌 운영 규칙으로 개선</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.efsa.europa.eu\">EFSA 보고 자료</a></li><li><a href=\"https://www.who.int\">WHO 발암성 물질 검토</a></li><li><a href=\"https://www.iarc.who.int\">IARC 독성 분류 개요</a></li><li><a href=\"https://www.fda.gov\">FDA 화학물질 노출 가이드</a></li><li><a data-wikilink=\"caffeine-and-health\" href=\"/wiki/caffeine-and-health\">카페인과 건강</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>아크릴아마이드 이야기가 과대 일반화되기 쉬운 지점은 어디인가요?</li><li>로스팅 조건 변경 시 왜 노출 패턴을 함께 보는가요?</li><li>건강 안내를 쓰기 전에 운영 데이터로 먼저 확인해야 할 값은?</li><li>편익과 리스크가 모두 있는 변경은 어떤 방식으로 비교하면 합리적인가요?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "coffee-shade-intercropping",
+    "title": "셰이드 커피와 혼농재배: 수량보다 안정성을 먼저 보는 운영 프레임",
+    "summary": "그늘율과 동반 작물 구조를 같이 읽으면 커피 생육, 병해 리스크, 수분 경로를 동시에 조절할 수 있습니다.",
+    "category": "산지와 생두",
+    "level": "입문",
+    "readingTime": "13분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "셰이드와 혼농의 효과는 일률적이지 않으며, 수확 목표(수량/생존성/품질)마다 우선순위를 분리해 설계해야 합니다.",
+    "sections": [
+      {
+        "id": "definition",
+        "title": "셰이드와 혼농의 기본 정의",
+        "paragraphs": [
+          "셰이드 커피와 혼농재배는 단순히 “그늘을 준다”는 개념보다 구조를 만드는 작업입니다. 나무의 활력, 토양 수분, 병해 환경을 동시에 놓고 설계할지 결정해야 운영 결과가 일관됩니다.",
+          "특히 장기적으로는 그늘률(Shade%), 동반 작물의 생물량, 그리고 토양 유기물 유지가 서로 맞물리므로 한 값만으로 판단하면 오해가 생깁니다."
+        ]
+      },
+      {
+        "id": "why-it-matters",
+        "title": "왜 기후변동기에는 셰이드가 반복 점검 항목이 되는가?",
+        "paragraphs": [
+          "고온기와 강우 편차가 커지는 해에서는 셰이드와 혼농이 번갈아 작용합니다. 짧은 기간의 생존은 높아지는 경향이 있으나, 장기적으로는 수량과 수확 적기 제어에 영향을 줍니다."
+        ]
+      },
+      {
+        "id": "system-types",
+        "title": "셰이드·혼농 시스템 유형",
+        "paragraphs": [
+          "현장에서는 보통 세 방식으로 시작합니다."
+        ]
+      },
+      {
+        "id": "tradeoffs",
+        "title": "수량, 품질, 생태의 트레이드오프",
+        "paragraphs": [
+          "한 번에 모두 최적화되기보다 우선순위를 정해야 합니다. 수량을 우선할 때는 과밀해진 셰이드가 오히려 발아·수확 균일도에 영향을 줄 수 있습니다.",
+          "반대로 품질 안정성을 우선할 때는 과도한 건조/온도 스트레스를 줄이는 쪽이 먼저 이익이 되므로 셰이드의 조정 여지가 커집니다.",
+          "동일 해도 동일 수확량이 나온다는 가정은 피하십시오. 관리 루틴(수확 시기, 건조 조건)이 먼저 고정된 뒤 셰이드율을 조정해야 편차 예측이 쉬워집니다."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "checklist",
+        "title": "운영 체크리스트",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 한 시즌의 셰이드 가설 검증",
+        "paragraphs": [
+          "한 필지에서 동일 농장 기준으로 두 구획을 잡고 그늘 처리 강도를 다르게 둡니다."
+        ]
+      },
+      {
+        "id": "glossary",
+        "title": "용어 정리",
+        "paragraphs": []
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-terroir-science",
+      "coffee-plant-taxonomy",
+      "altitude-rain-temp-physiology",
+      "coffee-soil-nutrient-diagnosis",
+      "coffee-processing"
+    ],
+    "tags": [
+      "셰이드",
+      "혼농재배",
+      "수분관리",
+      "병해관리",
+      "생태계"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "BOT-08 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>셰이드와 혼농의 기본 정의</h2><p>셰이드 커피와 혼농재배는 단순히 “그늘을 준다”는 개념보다 구조를 만드는 작업입니다. 나무의 활력, 토양 수분, 병해 환경을 동시에 놓고 설계할지 결정해야 운영 결과가 일관됩니다.</p><p>특히 장기적으로는 그늘률(Shade%), 동반 작물의 생물량, 그리고 토양 유기물 유지가 서로 맞물리므로 한 값만으로 판단하면 오해가 생깁니다.</p></section><section id=\"why-it-matters\"><span class=\"content-index\">02</span><h2>왜 기후변동기에는 셰이드가 반복 점검 항목이 되는가?</h2><p>고온기와 강우 편차가 커지는 해에서는 셰이드와 혼농이 번갈아 작용합니다. 짧은 기간의 생존은 높아지는 경향이 있으나, 장기적으로는 수량과 수확 적기 제어에 영향을 줍니다.</p><table><thead><tr><th>운영 목적</th><th>기대 효과</th><th>추가 점검 항목</th></tr></thead><tbody><tr><td>스트레스 완화</td><td>고온·건조 충격 완화</td><td>지온 변화와 일조량</td></tr><tr><td>병해 대응</td><td>습도 변화 완화로 병원압력 완화 가능</td><td>병아리 형태와 건조 후 처리</td></tr><tr><td>수질/토양 개선</td><td>동반 작물 잎·잔재물로 토양 구조 개선</td><td>토양 수분·유기물</td></tr></tbody></table></section><section id=\"system-types\"><span class=\"content-index\">03</span><h2>셰이드·혼농 시스템 유형</h2><p>현장에서는 보통 세 방식으로 시작합니다.</p><ul><li><strong>경량 셰이드:</strong> 태양광 제한은 낮고, 수량 편차 완화가 제한적</li><li><strong>중간 셰이드:</strong> 생육 균일성과 품질 방향성 관리가 상대적으로 쉬운 편</li><li><strong>고밀도 혼농:</strong> 토양 피복·생태 다양성은 커지지만 수확 동선이 복잡해질 수 있음</li></ul></section><section id=\"tradeoffs\"><span class=\"content-index\">04</span><h2>수량, 품질, 생태의 트레이드오프</h2><p>한 번에 모두 최적화되기보다 우선순위를 정해야 합니다. 수량을 우선할 때는 과밀해진 셰이드가 오히려 발아·수확 균일도에 영향을 줄 수 있습니다.</p><p>반대로 품질 안정성을 우선할 때는 과도한 건조/온도 스트레스를 줄이는 쪽이 먼저 이익이 되므로 셰이드의 조정 여지가 커집니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>동일 해도 동일 수확량이 나온다는 가정은 피하십시오. 관리 루틴(수확 시기, 건조 조건)이 먼저 고정된 뒤 셰이드율을 조정해야 편차 예측이 쉬워집니다.</p></aside></section><section id=\"misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 셰이드는 언제나 품질을 높인다.<br/><strong>정정:</strong> 과도한 그늘은 체리의 건조 속도 분산을 키울 수 있습니다.</li><li>오해: 혼농은 병해를 무조건 줄인다.<br/><strong>정정:</strong> 동반 작물 선택이 맞지 않으면 병원성 미생물의 숨을 곳이 늘어날 수 있습니다.</li><li>오해: 그늘은 수분 손실만 줄이면 끝이다.<br/><strong>정정:</strong> 산성도·수확성 같은 품질 지표도 함께 확인해야 합니다.</li></ul></section><section id=\"checklist\"><span class=\"content-index\">06</span><h2>운영 체크리스트</h2><ol><li>파종 전: 그늘 수종, 밀도, 동반 작물 조합을 3개 항목으로 기록한다.</li><li>중기: 지온·병징·토양 수분 변화를 주차 단위로 누적한다.</li><li>수확기: 체리 수확량 편차를 품종별, 구획별로 분리해 본다.</li><li>건조 후: 건조 편차와 저장 잔류수분 변화를 비교한다.</li></ol></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 한 시즌의 셰이드 가설 검증</h2><p>한 필지에서 동일 농장 기준으로 두 구획을 잡고 그늘 처리 강도를 다르게 둡니다.</p><ol><li>같은 수분 공급 조건에서 수확량, 병해 점수, 건조 편차를 기록</li><li>발현/산도 경향을 동일한 커핑 루틴으로 2회 확인</li><li>편차가 큰 원인을 수분/그늘/혼농 중 어디서 기인했는지 구분</li><li>다음 시즌 전환값을 정량 노트로 정리</li></ol></section><section id=\"glossary\"><span class=\"content-index\">08</span><h2>용어 정리</h2><ul><li>그늘율: 상부 차광 비율</li><li>혼농: 주작물 외 동반 작물 또는 수목을 함께 키우는 방식</li><li>미생물 병압: 병해를 유발하거나 억제할 수 있는 미생물 총체의 상대적 작용</li></ul></section><section id=\"references\"><span class=\"content-index\">09</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아와 생산 환경 이해</a></li><li><a data-wikilink=\"altitude-rain-temp-physiology\" href=\"/wiki/altitude-rain-temp-physiology\">고도·강우·온도 영향</a></li><li><a data-wikilink=\"coffee-soil-nutrient-diagnosis\" href=\"/wiki/coffee-soil-nutrient-diagnosis\">토양 영양 진단</a></li><li><a data-wikilink=\"coffee-pest-symptom-map\" href=\"/wiki/coffee-pest-symptom-map\">병해 지도</a></li><li><a href=\"https://www.wcr-bes.com/resources\">WCR: Shade and biodiversity resources</a></li><li><a href=\"https://www.fao.org/\">FAO 농업 경영 자원</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">10</span><h2>자기 점검</h2><ul><li>동일 수확량을 위해 같은 그늘율을 계속 쓰는 것이 항상 좋은가요?</li><li>혼농을 도입할 때 가장 먼저 확인해야 할 3개 환경 신호는?</li><li>병해 관리와 수분 편차가 충돌할 때 어떤 변수부터 분리하나요?</li><li>이번 실습에서 혼합군과 대조군이 분리되는 핵심 지표는?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "coffee-canopy-pruning-rejuvenation",
+    "title": "전정·갱신·수관 관리: 오래된 가지를 정리해 생산력을 회복하는 루틴",
+    "summary": "수관 관리의 핵심은 잘라내기 자체가 아니라, 수확 구조와 생육 회복이 일치하는 시점을 잡는 것입니다.",
+    "category": "산지와 생두",
+    "level": "중급",
+    "readingTime": "14분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "수관을 바꾸는 작업은 “조기 생산”이 아니라 “회복 속도와 품질 편차”를 동시에 설계하는 반복 작업입니다.",
+    "sections": [
+      {
+        "id": "definition",
+        "title": "수관 관리의 역할 정리",
+        "paragraphs": [
+          "전정과 갱신은 커피나무를 “어려운 시점에서 잘라내는 처방”이 아니라, 생산 리듬을 재정렬하는 조정입니다.",
+          "자란 가지의 분포, 그늘 획득, 관수·양분 전달이 함께 바뀌므로 가지 수를 줄이는 방식 하나로 판단하지 않아야 합니다."
+        ]
+      },
+      {
+        "id": "when-to-prune",
+        "title": "언제 개입해야 하는가",
+        "paragraphs": [
+          "한 번에 대규모 전정을 하기보다, 수분·개화 패턴이 겹치는 구간을 피해서 단계적으로 진행합니다."
+        ]
+      },
+      {
+        "id": "core-methods",
+        "title": "기본 기법 3개",
+        "paragraphs": []
+      },
+      {
+        "id": "rejuvenation-loop",
+        "title": "갱신 단계에서 놓치기 쉬운 실패",
+        "paragraphs": []
+      },
+      {
+        "id": "quality-effect",
+        "title": "수확성과 품질에 미치는 영향",
+        "paragraphs": [
+          "수관이 균일해지면 체리 크기와 성숙 균일성 신호가 단기적으로 안정되는 경향이 있습니다. 다만 회복 초기에는 변동이 커질 수 있어 이 시기의 수치 변화를 “실패”로 바로 보기보다 리셋 구간으로 간주해야 합니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 두 구획 비교 템플릿",
+        "paragraphs": [
+          "동일 품종에서 두 구획만 비교합니다."
+        ]
+      },
+      {
+        "id": "related-terms",
+        "title": "용어 정리",
+        "paragraphs": []
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-plant-life-cycle",
+      "coffee-shade-intercropping",
+      "coffee-soil-nutrient-diagnosis",
+      "coffee-flowering-pollination"
+    ],
+    "tags": [
+      "전정",
+      "갱신",
+      "수관관리",
+      "수확성",
+      "오래된 가지"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "BOT-09 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>수관 관리의 역할 정리</h2><p>전정과 갱신은 커피나무를 “어려운 시점에서 잘라내는 처방”이 아니라, 생산 리듬을 재정렬하는 조정입니다.</p><p>자란 가지의 분포, 그늘 획득, 관수·양분 전달이 함께 바뀌므로 가지 수를 줄이는 방식 하나로 판단하지 않아야 합니다.</p></section><section id=\"when-to-prune\"><span class=\"content-index\">02</span><h2>언제 개입해야 하는가</h2><p>한 번에 대규모 전정을 하기보다, 수분·개화 패턴이 겹치는 구간을 피해서 단계적으로 진행합니다.</p><ul><li>과밀과 분리 실패로 공극이 늘어난 구획</li><li>영양 흡수 저하와 결실 편차가 반복되는 구획</li><li>수분·병해가 한쪽 면으로만 집중되는 수관</li></ul></section><section id=\"core-methods\"><span class=\"content-index\">03</span><h2>기본 기법 3개</h2><ol><li>재생형 전정: 하부 가지를 조정해 통풍·채광 개선</li><li>부분 갱신(Stumping): 구간별로 줄기 기반을 낮춰 생장 중심을 재설정</li><li>선별 수세: 과밀이 큰 우세 가지를 먼저 완만하게 줄이고 균형점 유지</li></ol></section><section id=\"rejuvenation-loop\"><span class=\"content-index\">04</span><h2>갱신 단계에서 놓치기 쉬운 실패</h2><table><thead><tr><th>실수 유형</th><th>표준 반응</th><th>영향</th></tr></thead><tbody><tr><td>무리한 대규모 전정</td><td>회복기 자원 고갈</td><td>수확량 급락</td></tr><tr><td>시점 분산 실패</td><td>연속 공백 구간 발생</td><td>작업량 집중으로 품질 점검 지연</td></tr><tr><td>영양 보전 생략</td><td>새순 약화</td><td>후속 수확률 저하</td></tr></tbody></table></section><section id=\"quality-effect\"><span class=\"content-index\">05</span><h2>수확성과 품질에 미치는 영향</h2><p>수관이 균일해지면 체리 크기와 성숙 균일성 신호가 단기적으로 안정되는 경향이 있습니다. 다만 회복 초기에는 변동이 커질 수 있어 이 시기의 수치 변화를 “실패”로 바로 보기보다 리셋 구간으로 간주해야 합니다.</p></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: 가지를 많이 잘라낼수록 산지 생산력이 빨리 돌아온다.<br/><strong>정정:</strong> 절단량보다 회복자원 배분이 더 큰 변수입니다.</li><li>오해: 갱신은 단발성 작업이다.<br/><strong>정정:</strong> 수명 주기별 점진적 조정이 필요합니다.</li><li>오해: 수확기 전 전정이 정답이다.<br/><strong>정정:</strong> 수분·개화 시퀀스와 동기화하지 않으면 반감기가 증가할 수 있습니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 두 구획 비교 템플릿</h2><p>동일 품종에서 두 구획만 비교합니다.</p><ol><li>작업 전 2주: 수관 밀도와 병해 점수 기록</li><li>전정 강도 A/B군으로 시범 운영</li><li>4주, 8주, 12주 간격으로 생장 반응 측정</li><li>같은 등급 선별 규칙으로 수확 후 성적 비교</li></ol></section><section id=\"related-terms\"><span class=\"content-index\">08</span><h2>용어 정리</h2><ul><li>전정(Pruning): 성장 구조를 조절하기 위한 가지 제거</li><li>갱신(Rejuvenation): 노화 구간을 새순 중심으로 재배치</li><li>Stumping: 하부 기부에서 수관을 재설정하는 강한 갱신</li></ul></section><section id=\"references\"><span class=\"content-index\">09</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">생애주기와 구조 신호</a></li><li><a data-wikilink=\"coffee-flowering-pollination\" href=\"/wiki/coffee-flowering-pollination\">개화·수분 단계</a></li><li><a data-wikilink=\"coffee-soil-nutrient-diagnosis\" href=\"/wiki/coffee-soil-nutrient-diagnosis\">영양 회복 판단 기준</a></li><li><a href=\"https://www.fao.org/\">FAO 재배 기술 가이드</a></li><li><a href=\"https://www.wcr.org/\">WCR 재배 자원</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">10</span><h2>자기 점검</h2><ul><li>수관 관리의 1차 목표를 한 문장으로 정리해 보세요.</li><li>회복기 편차를 판단할 때 어떤 지표를 먼저 보아야 하나요?</li><li>무리한 대규모 전정의 위험 징후는 어떤 것인가요?</li><li>같은 구획에서 2주 후와 12주 후를 비교하는 이유는?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "coffee-tipica-bourbon-lineage",
+    "title": "티피카·버번 계통 지도: 품종명이 아니라 계통으로 읽기",
+    "category": "커피 기초",
+    "level": "중급",
+    "readingTime": "13분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "olive",
+    "fact": "버번 계통은 동일한 명칭 아래도 전파 경로와 선발 과정이 달라 품질 판단 기준을 분기해 쓰는 경향이 있습니다.",
+    "sections": [
+      {
+        "id": "lineage-frame",
+        "title": "왜 “버번 계통”이 혼동을 만드는가",
+        "paragraphs": [
+          "버번, 티피카, 라틴아메리카·아프리카에서 쓰이는 유사 이름은 출발점은 같아도 분포 경로와 선별 기록에 따라 분기됩니다.",
+          "그래서 같은 종명이라도 채종·증식 경로를 함께 보면 향미 해석이 훨씬 명확해집니다."
+        ]
+      },
+      {
+        "id": "history",
+        "title": "전파와 분기, 용어 경계",
+        "paragraphs": [
+          "버번 계통은 상업화된 확산 과정에서 이름이 표준화되지 않은 구간이 존재합니다. 문헌과 라벨은 버번 계통이 같다는 신호만 줄 뿐, 내부 유전 배경은 다른 경우가 있습니다.",
+          "티피카 쪽도 유사하게, 동일 계열의 확산이 여러 농장으로 전파되며 관리·환경과 결합해 표현이 달라집니다."
+        ]
+      },
+      {
+        "id": "comparison",
+        "title": "현장 분류 프레임",
+        "paragraphs": []
+      },
+      {
+        "id": "mixing-risks",
+        "title": "품종명 혼합으로 생기는 리스크",
+        "paragraphs": [
+          "혼합된 라벨이 들어오면 선입견이 먼저 작동해 비교가 어려워집니다. 따라서 원산지, 라벨 일관성, 수확 시즌을 먼저 확인하고 분기해야 합니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 계통 구분 기록 템플릿",
+        "paragraphs": [
+          "동일 지역에서 한 배치만 골라 아래 항목을 분리해 기록합니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "arabica-and-robusta",
+      "coffee-variety-cultivar-hybrid",
+      "coffee-varieties",
+      "coffee-terroir-science"
+    ],
+    "tags": [
+      "티피카",
+      "버번",
+      "계통",
+      "품종명",
+      "교배 역사"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "GEN-03 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"lineage-frame\"><span class=\"content-index\">01</span><h2>왜 “버번 계통”이 혼동을 만드는가</h2><p>버번, 티피카, 라틴아메리카·아프리카에서 쓰이는 유사 이름은 출발점은 같아도 분포 경로와 선별 기록에 따라 분기됩니다.</p><p>그래서 같은 종명이라도 채종·증식 경로를 함께 보면 향미 해석이 훨씬 명확해집니다.</p></section><section id=\"history\"><span class=\"content-index\">02</span><h2>전파와 분기, 용어 경계</h2><p>버번 계통은 상업화된 확산 과정에서 이름이 표준화되지 않은 구간이 존재합니다. 문헌과 라벨은 버번 계통이 같다는 신호만 줄 뿐, 내부 유전 배경은 다른 경우가 있습니다.</p><p>티피카 쪽도 유사하게, 동일 계열의 확산이 여러 농장으로 전파되며 관리·환경과 결합해 표현이 달라집니다.</p></section><section id=\"comparison\"><span class=\"content-index\">03</span><h2>현장 분류 프레임</h2><table><thead><tr><th>구분</th><th>우선 확인 항목</th><th>분석 포인트</th></tr></thead><tbody><tr><td>출처 라벨</td><td>품종명 + 산지 + 선별 이력</td><td>표시 누락 여부</td></tr><tr><td>식물형태</td><td>나무 생육력과 수확 타이밍</td><td>환경 반응성</td></tr><tr><td>커핑 일관성</td><td>향미 편차와 산미·단맛 신호</td><td>로스팅·가공 외 요인 분리</td></tr></tbody></table></section><section id=\"mixing-risks\"><span class=\"content-index\">04</span><h2>품종명 혼합으로 생기는 리스크</h2><p>혼합된 라벨이 들어오면 선입견이 먼저 작동해 비교가 어려워집니다. 따라서 원산지, 라벨 일관성, 수확 시즌을 먼저 확인하고 분기해야 합니다.</p><ul><li>동일 품종이라고 가정하고 실험을 실행하면 편향이 생길 수 있습니다.</li><li>한 번의 관측 실패가 반복되면 “커피가 일관되지 않다”는 판단으로 이어집니다.</li><li>기록을 계통 단위로 정리하면 의사결정이 빨라집니다.</li></ul></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 버번은 언제나 같은 향미 특성을 만든다.<br/><strong>정정:</strong> 선발 라인과 재배 환경이 관찰 편차를 크게 만듭니다.</li><li>오해: 티피카는 무조건 고품질이다.<br/><strong>정정:</strong> 토양·기후·가공이 동반되어야 향미 안정성이 확보됩니다.</li><li>오해: 계통 분류가 과학적 정확도보다 브랜드 마케팅이다.<br/><strong>정정:</strong> 계통은 생산·구매 판단의 기준으로 유효합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 계통 구분 기록 템플릿</h2><p>동일 지역에서 한 배치만 골라 아래 항목을 분리해 기록합니다.</p><ol><li>포장 라벨의 품종명과 산지 표기를 그대로 옮깁니다.</li><li>같은 추출 방식에서 향미 3개 항목(산미·단맛·바디)만 비교합니다.</li><li>성향 차이를 품종 추정값과 구획 이력으로 구분합니다.</li><li>같은 원두를 다시 사용할 때 확인 항목만 재사용합니다.</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"coffee-variety-cultivar-hybrid\" href=\"/wiki/coffee-variety-cultivar-hybrid\">품종·재래종·컬티바·하이브리드</a></li><li><a data-wikilink=\"coffee-varieties\" href=\"/wiki/coffee-varieties\">품종은 종과 어떻게 다른가</a></li><li><a href=\"https://www.worldcoffeeresearch.org/resources/coffee-varieties-catalog\">WCR Coffee Varieties Catalog</a></li><li><a href=\"https://www.sca.coffee/standards\">SCA 종·품종 교육 자료</a></li><li><a href=\"https://powo.science.kew.org/\">Kew Plants of the World Online</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>동일한 품종명이라도 계통 분기가 필요한 이유는?</li><li>라벨 기록에서 가장 먼저 보강해야 할 항목은?</li><li>버번 계통 비교에서 로스팅 변수를 고정하는 이유는?</li><li>실무에서 계통 혼합이 구매 판단에 주는 영향은?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "ethiopian-heirloom-diversity",
+    "title": "에티오피아 재래종(heirloom) 다형성: 용어의 한계와 사용 시점",
+    "category": "커피 기초",
+    "level": "전문",
+    "readingTime": "14분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "olive",
+    "fact": "재래종 표기는 하나의 고정 라벨보다 산지 집단과 수집·전달 경로를 함께 보여주는 장치로 다루는 것이 안전합니다.",
+    "sections": [
+      {
+        "id": "definition",
+        "title": "재래종 용어의 범위를 정리해야 하는 이유",
+        "paragraphs": [
+          "에티오피아의 “heirloom” 표기는 지역 단위로 형성된 집단을 묶어 설명할 때 자주 쓰입니다. 다만 용어가 한 번 정해지면 마케팅 해석과 과학적 추적이 분기될 수 있습니다.",
+          "그래서 실제 기록에서는 “어떤 산지 집단에서 어떤 경로로 유통된 원료인지”를 같이 써두는 방식이 유효합니다."
+        ]
+      },
+      {
+        "id": "regional-variation",
+        "title": "지역군 편차를 실제로 보려면",
+        "paragraphs": []
+      },
+      {
+        "id": "evidence-boundaries",
+        "title": "근거 범위와 확신 수준",
+        "paragraphs": [
+          "재래종은 향미 특징을 이야기할 때 문헌 기반의 공통 범위가 넓고, 실제 배치 비교에서는 구체적 이력 데이터가 더 중요합니다. 즉 경향은 공유하지만 개별 배치의 단정은 지양해야 합니다.",
+          "이는 데이터 해석에서 특히 중요해서, “항상 X”보다 “해당 조건에서 X일 가능성이 높다”라는 표현이 더 안정적입니다."
+        ]
+      },
+      {
+        "id": "practical-mapping",
+        "title": "실무 매핑: 구매·평가 연결",
+        "paragraphs": [
+          "구매 단계에서는 재래종 단어 자체보다 다음 항목을 우선 봅니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 재래종 정보 점수표",
+        "paragraphs": [
+          "한 달 동안 같은 상점에서 취급한 에티오피아 원두 5개를 다음 항목으로 점수화합니다.",
+          "점수 편차가 큰 배치는 다음 회차에서 우선 검증 대상으로 이동합니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-varieties",
+      "coffee-terroir-science",
+      "global-coffee-zones",
+      "coffee-trade-history",
+      "coffee-plant-taxonomy"
+    ],
+    "tags": [
+      "에티오피아",
+      "재래종",
+      "heirloom",
+      "유전 다양성",
+      "산지명"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "GEN-04 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>재래종 용어의 범위를 정리해야 하는 이유</h2><p>에티오피아의 “heirloom” 표기는 지역 단위로 형성된 집단을 묶어 설명할 때 자주 쓰입니다. 다만 용어가 한 번 정해지면 마케팅 해석과 과학적 추적이 분기될 수 있습니다.</p><p>그래서 실제 기록에서는 “어떤 산지 집단에서 어떤 경로로 유통된 원료인지”를 같이 써두는 방식이 유효합니다.</p></section><section id=\"regional-variation\"><span class=\"content-index\">02</span><h2>지역군 편차를 실제로 보려면</h2><ul><li>고도와 강우 패턴: 미세한 수확 시기 차이를 만들 수 있습니다.</li><li>가공 관행: 동일 출처라 해도 발효·건조 단계가 바뀝니다.</li><li>거래 경로: 라벨과 문서 간 정보 손실이 다릅니다.</li></ul></section><section id=\"evidence-boundaries\"><span class=\"content-index\">03</span><h2>근거 범위와 확신 수준</h2><p>재래종은 향미 특징을 이야기할 때 문헌 기반의 공통 범위가 넓고, 실제 배치 비교에서는 구체적 이력 데이터가 더 중요합니다. 즉 경향은 공유하지만 개별 배치의 단정은 지양해야 합니다.</p><p>이는 데이터 해석에서 특히 중요해서, “항상 X”보다 “해당 조건에서 X일 가능성이 높다”라는 표현이 더 안정적입니다.</p></section><section id=\"practical-mapping\"><span class=\"content-index\">04</span><h2>실무 매핑: 구매·평가 연결</h2><p>구매 단계에서는 재래종 단어 자체보다 다음 항목을 우선 봅니다.</p><ol><li>기록의 일관성(산지, 가공, 로스터 전단)</li><li>유통 라벨의 중복 표기</li><li>재고 회전 속도와 저장 조건</li></ol></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 재래종은 무조건 고유한 향만 만든다.<br/><strong>정정:</strong> 라벨 문구보다 수확·가공 이력이 먼저 작동할 수 있습니다.</li><li>오해: 용어 하나로 등급을 예측 가능하다.<br/><strong>정정:</strong> 배치 단위 조건이 더 큰 설명력을 가집니다.</li><li>오해: 추론이 힘들면 판매가 불가능하다.<br/><strong>정정:</strong> 불확실성을 문서화하면 오히려 판단의 질이 올라갑니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 재래종 정보 점수표</h2><p>한 달 동안 같은 상점에서 취급한 에티오피아 원두 5개를 다음 항목으로 점수화합니다.</p><ul><li>산지 표기 완성도(0~3점)</li><li>가공 단계 공개(0~3점)</li><li>테이스팅 편차(0~3점)</li><li>보관 상태 기록(0~3점)</li></ul><p>점수 편차가 큰 배치는 다음 회차에서 우선 검증 대상으로 이동합니다.</p></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.worldcoffeeresearch.org/resources/coffee-genetics\">WCR Coffee Genetics</a></li><li><a href=\"https://www.fao.org/\">FAO 커피 및 농업 자원</a></li><li><a data-wikilink=\"coffee-trade-history\" href=\"/wiki/coffee-trade-history\">커피 무역의 역사</a></li><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아 분석 프레임</a></li><li><a data-wikilink=\"global-coffee-zones\" href=\"/wiki/global-coffee-zones\">생산대 지도 이해</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>재래종 용어를 사용할 때 가장 먼저 보완할 기록 항목은?</li><li>왜 동일 라벨 내에서도 배치 편차가 생기나요?</li><li>구매 단계에서 heirloom 표기를 검증할 때 선행해야 할 3개 항목은?</li><li>불확실한 라벨을 만났을 때의 대응은?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "catimor-sarchimor-blight-resistance",
+    "title": "카티모르·사르치모르: 녹병 내성 이해와 관리 트레이드오프",
+    "summary": "카티모르·사르치모르 계열은 생산 안정성과 가공 변수의 설계 방식이 함께 맞아야 품질 판단이 안정됩니다.",
+    "category": "산지와 생두",
+    "level": "중급",
+    "readingTime": "11분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "내병성 계통은 생산 안정성에 유리할 수 있으나, 품질 신호는 가공·건조 조건과 함께 평가해야 합니다.",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "카티모르·사르치모르를 재료로 쓰는 이유",
+        "paragraphs": [
+          "카티모르·사르치모르는 생리적 대응력을 중심으로 선택된 계열입니다. 이 계열은 농장 운영에서 위험 완화 수단으로 자주 쓰이지만, 품질 판단은 별도로 운영되어야 합니다.",
+          "정식으로는 계통 특성과 병해 대응을 함께 읽되, 수확 후 처리 단계가 달라지면 동일 계통이라도 결과가 크게 바뀐다는 점이 중요합니다."
+        ]
+      },
+      {
+        "id": "selection-matrix",
+        "title": "선택 매트릭스",
+        "paragraphs": []
+      },
+      {
+        "id": "management-tradeoffs",
+        "title": "관리 트레이드오프",
+        "paragraphs": []
+      },
+      {
+        "id": "misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 병해-생산-향미 동시 점검",
+        "paragraphs": [
+          "동일 계통 2구획을 비교해 봅니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-plant-taxonomy",
+      "coffee-soil-nutrient-diagnosis",
+      "coffee-processing",
+      "post-harvest-processing-map",
+      "coffee-storage"
+    ],
+    "tags": [
+      "카티모르",
+      "사르치모르",
+      "녹병",
+      "내병성",
+      "선발"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "GEN-05 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"overview\"><span class=\"content-index\">01</span><h2>카티모르·사르치모르를 재료로 쓰는 이유</h2><p>카티모르·사르치모르는 생리적 대응력을 중심으로 선택된 계열입니다. 이 계열은 농장 운영에서 위험 완화 수단으로 자주 쓰이지만, 품질 판단은 별도로 운영되어야 합니다.</p><p>정식으로는 계통 특성과 병해 대응을 함께 읽되, 수확 후 처리 단계가 달라지면 동일 계통이라도 결과가 크게 바뀐다는 점이 중요합니다.</p></section><section id=\"selection-matrix\"><span class=\"content-index\">02</span><h2>선택 매트릭스</h2><ul><li>병해 압력: 병반 패턴이 반복적으로 높게 보이는 구간</li><li>토양 상태: 영양 부족과 과습이 결합되는 구간</li><li>장기 계획: 수확 안정성보다 향미 설계를 우선하는지 여부</li></ul></section><section id=\"management-tradeoffs\"><span class=\"content-index\">03</span><h2>관리 트레이드오프</h2><table><thead><tr><th>관리 항목</th><th>기대 효과</th><th>주의점</th></tr></thead><tbody><tr><td>과밀 조절</td><td>수분·병해 편차 축소</td><td>품질 분화가 일시 둔화될 수 있음</td></tr><tr><td>적정 영양</td><td>생육 안정성 개선</td><td>과다 투입 시 미성숙 체리 비중 증가</td></tr><tr><td>건조 속도 제어</td><td>보존성 개선</td><td>습도 구간별 모니터링 필수</td></tr></tbody></table></section><section id=\"misconceptions\"><span class=\"content-index\">04</span><h2>흔한 오해</h2><ul><li>오해: 내병성은 관리 노력을 줄여줍니다.<br/><strong>정정:</strong> 기초 관리와 기록은 오히려 더 안정적으로 필요합니다.</li><li>오해: 생산 안정성만 보면 되므로 가공 비교는 덜 중요합니다.<br/><strong>정정:</strong> 건조·보관 변화가 품질 편차를 크게 만듭니다.</li><li>오해: 라벨의 계통명 하나면 충분합니다.<br/><strong>정정:</strong> 구획 이력·처리 프로토콜이 함께 있어야 비교가 가능합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">05</span><h2>실습: 병해-생산-향미 동시 점검</h2><p>동일 계통 2구획을 비교해 봅니다.</p><ol><li>병징 빈도와 체리 크기 편차를 동시에 기록</li><li>수확-건조 기간의 습도 로그를 구간별로 정렬</li><li>감각 점수에서 산미/바디/잔향 편차를 분리</li><li>운영 지표로 재검토 후 다음 수확량 계획 반영</li></ol></section><section id=\"references\"><span class=\"content-index\">06</span><h2>참고 자료</h2><ul><li><a href=\"https://www.fao.org/plant-health/\">FAO 식물보건 가이드</a></li><li><a href=\"https://www.sca.coffee/standards\">SCA 품질·표준 문서</a></li><li><a data-wikilink=\"coffee-plant-taxonomy\" href=\"/wiki/coffee-plant-taxonomy\">커피 분류학</a></li><li><a data-wikilink=\"post-harvest-processing-map\" href=\"/wiki/post-harvest-processing-map\">수확 후 가공 지도</a></li><li><a data-wikilink=\"coffee-soil-nutrient-diagnosis\" href=\"/wiki/coffee-soil-nutrient-diagnosis\">토양·영양 진단</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">07</span><h2>자기 점검</h2><ul><li>동일 계통에서도 향미 편차가 생기는 연결 고리는 무엇일까요?</li><li>병해 대응에서 가장 먼저 점검해야 할 운영 지표는?</li><li>건조 편차를 줄이기 위해 실험에서 고정해야 할 항목은?</li><li>내병성 계통 선택 시 단기/중기 판단을 분리하는 기준은?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "f1-hybrid-coffee-breeding",
+    "title": "F1 하이브리드 커피: 생산성·향미·재배 리스크를 함께 읽는 기준",
+    "summary": "F1 커피 하이브리드는 세대 구분·교배 방식이 관건이며, 수량 안정성과 향미 분산의 균형을 함께 설계해야 합니다.",
+    "category": "산지와 생두",
+    "level": "전문",
+    "readingTime": "13분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "F1 하이브리드는 동질성이 크고 균일한 수확을 유도할 수 있지만, 향미 경향은 가공·재배 조건과 함께 판단해야 합니다.",
+    "sections": [
+      {
+        "id": "concept",
+        "title": "F1 하이브리드가 뜻하는 것",
+        "paragraphs": [
+          "F1 하이브리드는 서로 다른 부모 계통이 교배된 1세대 자손을 뜻합니다. 같은 종 내부에서 형성된 계통이지만, 세대가 바뀌면 유전형이 다시 분열되면서 성질이 넓게 펼쳐질 수 있습니다.",
+          "운영 관점에서 핵심은 “누가 같은 결과를 더 안정적으로 반복할 수 있느냐”입니다. F1은 이 지점에서 장점이 크지만, F2로 계속 번식하면 예측이 흔들릴 수 있다는 점을 같이 봐야 합니다."
+        ]
+      },
+      {
+        "id": "why-it-matters",
+        "title": "왜 생산자·로스터 모두 신경 쓰는가",
+        "paragraphs": [
+          "생산자는 보통 두 가지를 동시에 맞추려 합니다. 첫째는 병충해·기온 스트레스에 대한 완충력, 둘째는 건조·가공 단계에서의 향미 일관성입니다. F1이 제공하는 균일성은 이 두 지점에서 운영 부담을 줄여줄 가능성이 있습니다.",
+          "반면 상업적으로는 “재배 안정성”이 좋은 결과와 직결되더라도, 컵에서의 차이는 관리체계가 달라지면 다른 쪽으로 이동할 수 있습니다."
+        ]
+      },
+      {
+        "id": "genetic-tradeoffs",
+        "title": "세대가 바뀌는 순간 생기는 트레이드오프",
+        "paragraphs": []
+      },
+      {
+        "id": "cost-and-control",
+        "title": "경제성과 운영 난이도의 실제 비중",
+        "paragraphs": [
+          "좋은 균일성은 좋은 관리로만 완성되지 않습니다. 번식비, 묘목 조달 비용, 구획별 성숙 편차를 감안해 비용-편차 곡선을 같이 봐야 합니다. 결과적으로는 “F1 자체가 답”이 아니라 “F1을 붙잡을 운영이 있는가”가 핵심이 됩니다.",
+          "특히 산지 계약, 수확·건조 동선, 그리고 로스팅 프로파일 업데이트 주기가 맞지 않으면 F1의 장점이 단기 매출 지표로만 남을 수 있습니다."
+        ]
+      },
+      {
+        "id": "decision-matrix",
+        "title": "도입 판단 매트릭스",
+        "paragraphs": [
+          "동일 구획에서 F1 계통을 병행할 때, 구획별 출하일과 건조 조건을 먼저 맞춘 뒤에야 비교가 의미 있어집니다. 조건 통제가 없으면 “하이브리드의 실패”라고 오해되기 쉽습니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: F1 효과를 분산과 수량으로 점검",
+        "paragraphs": [
+          "동일 가공 라인에서 다음 4개 항목만 고정해 비교해 보세요."
+        ]
+      },
+      {
+        "id": "glossary",
+        "title": "용어 정리",
+        "paragraphs": []
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-variety-cultivar-hybrid",
+      "coffee-varieties",
+      "coffee-plant-taxonomy",
+      "coffee-processing"
+    ],
+    "tags": [
+      "F1",
+      "커피",
+      "하이브리드",
+      "육종",
+      "품질설계"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "GEN-06 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"concept\"><span class=\"content-index\">01</span><h2>F1 하이브리드가 뜻하는 것</h2><p>F1 하이브리드는 서로 다른 부모 계통이 교배된 1세대 자손을 뜻합니다. 같은 종 내부에서 형성된 계통이지만, 세대가 바뀌면 유전형이 다시 분열되면서 성질이 넓게 펼쳐질 수 있습니다.</p><p>운영 관점에서 핵심은 “누가 같은 결과를 더 안정적으로 반복할 수 있느냐”입니다. F1은 이 지점에서 장점이 크지만, F2로 계속 번식하면 예측이 흔들릴 수 있다는 점을 같이 봐야 합니다.</p></section><section id=\"why-it-matters\"><span class=\"content-index\">02</span><h2>왜 생산자·로스터 모두 신경 쓰는가</h2><p>생산자는 보통 두 가지를 동시에 맞추려 합니다. 첫째는 병충해·기온 스트레스에 대한 완충력, 둘째는 건조·가공 단계에서의 향미 일관성입니다. F1이 제공하는 균일성은 이 두 지점에서 운영 부담을 줄여줄 가능성이 있습니다.</p><p>반면 상업적으로는 “재배 안정성”이 좋은 결과와 직결되더라도, 컵에서의 차이는 관리체계가 달라지면 다른 쪽으로 이동할 수 있습니다.</p></section><section id=\"genetic-tradeoffs\"><span class=\"content-index\">03</span><h2>세대가 바뀌는 순간 생기는 트레이드오프</h2><table><thead><tr><th>항목</th><th>F1 세대(첫 세대) 경향</th><th>비교군(비유전적 분열 집단)</th><th>의사결정 포인트</th></tr></thead><tbody><tr><td>균일성</td><td>다소 높음</td><td>구간 편차가 클 수 있음</td><td>로트 간 비교 편의성</td></tr><tr><td>병해 대응</td><td>개량 효과가 상대적으로 빠르게 나타날 수 있음</td><td>개체 간 반응 편차</td><td>약한 구간 선별 집중</td></tr><tr><td>번식 안정성</td><td>세대 고정이 필요</td><td>계속되는 교배/선발로 운영 복잡</td><td>종자·계통 관리 체계</td></tr></tbody></table></section><section id=\"cost-and-control\"><span class=\"content-index\">04</span><h2>경제성과 운영 난이도의 실제 비중</h2><p>좋은 균일성은 좋은 관리로만 완성되지 않습니다. 번식비, 묘목 조달 비용, 구획별 성숙 편차를 감안해 비용-편차 곡선을 같이 봐야 합니다. 결과적으로는 “F1 자체가 답”이 아니라 “F1을 붙잡을 운영이 있는가”가 핵심이 됩니다.</p><p>특히 산지 계약, 수확·건조 동선, 그리고 로스팅 프로파일 업데이트 주기가 맞지 않으면 F1의 장점이 단기 매출 지표로만 남을 수 있습니다.</p></section><section id=\"decision-matrix\"><span class=\"content-index\">05</span><h2>도입 판단 매트릭스</h2><ul><li><strong>재배 안정성 우선:</strong> 재해·병해 변동이 큰 구획이라면 F1로 시작하기 쉽습니다.</li><li><strong>향미 다양성 우선:</strong> 특정한 차별 프로필을 추구한다면 비균일성을 전략적으로 허용할 수 있는지 따져야 합니다.</li><li><strong>번식비 압박:</strong> 초기 투자 대비 수익 회복 기간을 3~5기까지 고려하면 예산 실패를 줄일 수 있습니다.</li></ul><aside class=\"callout callout-note\" data-tone=\"note\"><p>동일 구획에서 F1 계통을 병행할 때, 구획별 출하일과 건조 조건을 먼저 맞춘 뒤에야 비교가 의미 있어집니다. 조건 통제가 없으면 “하이브리드의 실패”라고 오해되기 쉽습니다.</p></aside></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: F1은 일단 쓰면 늘 같은 맛이 난다.<br/><strong>정정:</strong> 수확 시기·건조 속도·가공이 같아야만 커핑 상의 편차를 분리해서 볼 수 있습니다.</li><li>오해: F1은 관리 비용을 대폭 줄여 준다.<br/><strong>정정:</strong> 초기 정비비는 줄어들 수 있어도, 계통 추적·재고 관리 비용이 별도로 늘 수 있습니다.</li><li>오해: 하이브리드는 항시 우수하다.<br/><strong>정정:</strong> 시장 타깃(추출 방식, 가공 선호)에 따라 비슷한 농도라도 향미 반응이 다르게 나타납니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: F1 효과를 분산과 수량으로 점검</h2><p>동일 가공 라인에서 다음 4개 항목만 고정해 비교해 보세요.</p><ol><li>같은 처리구획에서 F1 계통과 비교군 구획을 병렬 수확</li><li>건조 완료 시점, 수분 편차, 체리·생두 크기 비율 기록</li><li>소정량 추출 실험으로 산미·단맛·바디 편차만 분리 기록</li><li>계절 말 기준으로 비용 항목(비료·인력·가공 시간)을 같은 템플릿으로 요약</li></ol></section><section id=\"glossary\"><span class=\"content-index\">08</span><h2>용어 정리</h2><ul><li>F1: 1세대 잡종 자손 집단</li><li>균일성: 같은 조건에서 결과 편차가 상대적으로 작은 상태</li><li>향미 분산: 같은 로트 내에서도 인식되는 맛의 범위</li></ul></section><section id=\"references\"><span class=\"content-index\">09</span><h2>참고 자료</h2><ul><li><a href=\"https://www.fao.org/agriculture/crops/core-themes/theme/themes/agro-biodiversity/en/\">FAO 농업생물다양성</a></li><li><a href=\"https://www.icaeworld.org/\">IICA 커피 산업 자료</a></li><li><a data-wikilink=\"coffee-varieties\" href=\"/wiki/coffee-varieties\">품종 개요</a></li><li><a data-wikilink=\"coffee-variety-cultivar-hybrid\" href=\"/wiki/coffee-variety-cultivar-hybrid\">품종·재래종·컬티바·하이브리드</a></li><li><a data-wikilink=\"coffee-processing\" href=\"/wiki/coffee-processing\">수확 후 가공 지도</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">10</span><h2>자기 점검</h2><ul><li>F1 계통이 가지는 장점은 어떤 운영 변수에서 가장 빨리 드러나나요?</li><li>F1 성능을 오해 없이 판단하려면 어떤 조건을 고정해야 하나요?</li><li>향미 분산을 줄이기 위해서는 생산 단계와 가공 단계 중 어디를 먼저 정렬해야 하나요?</li><li>비교 실험에서 비용 항목을 누락하면 어떤 판단 오류가 생길 수 있나요?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "kenya-coffee-system",
+    "title": "케냐 커피 시스템: 생산·경매·가공이 한 고리로 이어지는 구조",
+    "summary": "케냐의 SL 계열 중심 커피 시스템을 이해하면, 경매·협동조합·가공 품질이 산지 신호와 어떻게 연결되는지 볼 수 있습니다.",
+    "category": "산지와 생두",
+    "level": "중급",
+    "readingTime": "12분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "케냐는 재배, 산지 협동조합, 경매, 가공이 상호작용해 가격·품질 신호가 형성되는 구조가 뚜렷합니다.",
+    "sections": [
+      {
+        "id": "system-map",
+        "title": "케냐를 읽는 기본 지도",
+        "paragraphs": [
+          "케냐는 단순히 특정 산지의 맛만이 아니라, 산지 조직과 유통 구조가 함께 결합된 시스템으로 이해하는 것이 정확합니다. 많은 거래 조건이 이 시스템에서 파생되기 때문입니다.",
+          "여기서는 맛의 성격뿐 아니라 산지·경매 동선, 그리고 가공 처리 일관성이 어떻게 상호작용하는지 중심으로 봅니다."
+        ]
+      },
+      {
+        "id": "climate-production",
+        "title": "고도·기후와 생산 리듬",
+        "paragraphs": [
+          "케냐 고원에서는 해발과 강우 패턴이 수확과 성숙 속도에 직접적인 구조를 만듭니다. 그래서 동일 연도라도 로트 간 체리 밀도와 당도 편차가 생길 수 있습니다.",
+          "운영에서는 고도별 수확 구간을 분리해 건조일수를 맞추는 것이 관행적으로 중요해집니다."
+        ]
+      },
+      {
+        "id": "co-op-auction",
+        "title": "협동조합과 경매: 가격 신호의 전달",
+        "paragraphs": [
+          "협동조합은 수확량 집계, 초기 선별, 출하 품질을 묶는 핵심 장치입니다. 경매는 그 후 가격 형성의 신호를 강하게 바꾸는 구간입니다.",
+          "특정 연도에는 경매가 빠르게 반응하고, 특정 연도에는 안정화 구간이 길어지는 편차가 생길 수 있어 단일 지표로 예측하기 어렵습니다."
+        ]
+      },
+      {
+        "id": "processing",
+        "title": "가공·선별이 만드는 편차",
+        "paragraphs": []
+      },
+      {
+        "id": "how-to-read",
+        "title": "구매·큐레이션 관점에서의 읽기",
+        "paragraphs": [
+          "케냐 원두를 큐레이션할 때는 “특정 농장명”보다 수집 경로·경매 단계·가공 단계의 정보가 먼저 중요해질 수 있습니다. 동일한 지리라도 처리 방식이 달라지는 지점이 잦기 때문입니다.",
+          "가격이 높은 로트는 무조건 품질이 높다는 결론으로 이어지지 않으므로, 입안 인상 외에 건조 기록 같은 운영 로그를 함께 봐야 합니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 로트별 신호 분리 체크",
+        "paragraphs": [
+          "케냐 로트를 다룰 때 다음 순서대로 점검해 보세요."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "global-coffee-zones",
+      "coffee-terroir-science",
+      "coffee-processing",
+      "coffee-climate-resilience"
+    ],
+    "tags": [
+      "케냐",
+      "생산구조",
+      "경매",
+      "협동조합",
+      "품질관리"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "ORG-04 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"system-map\"><span class=\"content-index\">01</span><h2>케냐를 읽는 기본 지도</h2><p>케냐는 단순히 특정 산지의 맛만이 아니라, 산지 조직과 유통 구조가 함께 결합된 시스템으로 이해하는 것이 정확합니다. 많은 거래 조건이 이 시스템에서 파생되기 때문입니다.</p><p>여기서는 맛의 성격뿐 아니라 산지·경매 동선, 그리고 가공 처리 일관성이 어떻게 상호작용하는지 중심으로 봅니다.</p></section><section id=\"climate-production\"><span class=\"content-index\">02</span><h2>고도·기후와 생산 리듬</h2><p>케냐 고원에서는 해발과 강우 패턴이 수확과 성숙 속도에 직접적인 구조를 만듭니다. 그래서 동일 연도라도 로트 간 체리 밀도와 당도 편차가 생길 수 있습니다.</p><p>운영에서는 고도별 수확 구간을 분리해 건조일수를 맞추는 것이 관행적으로 중요해집니다.</p></section><section id=\"co-op-auction\"><span class=\"content-index\">03</span><h2>협동조합과 경매: 가격 신호의 전달</h2><p>협동조합은 수확량 집계, 초기 선별, 출하 품질을 묶는 핵심 장치입니다. 경매는 그 후 가격 형성의 신호를 강하게 바꾸는 구간입니다.</p><p>특정 연도에는 경매가 빠르게 반응하고, 특정 연도에는 안정화 구간이 길어지는 편차가 생길 수 있어 단일 지표로 예측하기 어렵습니다.</p></section><section id=\"processing\"><span class=\"content-index\">04</span><h2>가공·선별이 만드는 편차</h2><table><thead><tr><th>요소</th><th>기대 효과</th><th>주의점</th></tr></thead><tbody><tr><td>선별 강도</td><td>이물·미숙 체리 제거</td><td>과도한 선별은 수량 손실 유발</td></tr><tr><td>건조 관리</td><td>수분 균일화 개선</td><td>건조 편차가 크면 산미 불균일 증가</td></tr><tr><td>저장</td><td>신선도 유지</td><td>온습도 관리 실패 시 산패 리스크 상승</td></tr></tbody></table></section><section id=\"how-to-read\"><span class=\"content-index\">05</span><h2>구매·큐레이션 관점에서의 읽기</h2><p>케냐 원두를 큐레이션할 때는 “특정 농장명”보다 수집 경로·경매 단계·가공 단계의 정보가 먼저 중요해질 수 있습니다. 동일한 지리라도 처리 방식이 달라지는 지점이 잦기 때문입니다.</p><p>가격이 높은 로트는 무조건 품질이 높다는 결론으로 이어지지 않으므로, 입안 인상 외에 건조 기록 같은 운영 로그를 함께 봐야 합니다.</p></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: 케냐는 항상 동일한 향미 프로파일을 낸다.<br/><strong>정정:</strong> 연도·고도·가공 동선에 따라 강한 변동이 생길 수 있습니다.</li><li>오해: 경매 라벨만으로 실사용 적합도를 판단한다.<br/><strong>정정:</strong> 로트별 건조 기록이 없으면 컵 예상 오차가 큽니다.</li><li>오해: 협동조합 정보는 유통 단계에서만 필요하다.<br/><strong>정정:</strong> 협동조합의 선별·검수 기준은 원두 특성 판단에 즉시 연결됩니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 로트별 신호 분리 체크</h2><p>케냐 로트를 다룰 때 다음 순서대로 점검해 보세요.</p><ol><li>같은 가공 라인이라도 유입 채널(협동조합·직송) 기록 분리</li><li>수분과 건조 편차를 3지점으로 평균 계산</li><li>커피의 산미·단맛 균형을 동일 추출 조건에서 비교</li><li>경매 가격과 실제 컵 점수의 분산을 월 단위로 축적</li></ol></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a href=\"https://www.ico.org/\">ICO 커피 통계와 시장 동향</a></li><li><a href=\"https://www.coffeeandclimate.org/\">Coffee and Climate Initiative</a></li><li><a data-wikilink=\"global-coffee-zones\" href=\"/wiki/global-coffee-zones\">세계 커피 지대</a></li><li><a data-wikilink=\"coffee-processing\" href=\"/wiki/coffee-processing\">커피 가공 지도</a></li><li><a data-wikilink=\"coffee-plant-taxonomy\" href=\"/wiki/coffee-plant-taxonomy\">커피 분류학</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">09</span><h2>자기 점검</h2><ul><li>케냐 로트를 비교할 때 먼저 점검해야 할 운영 신호는?</li><li>경매 경로 정보가 없을 때 어떤 가정의 위험이 커지나요?</li><li>고도별 편차를 분리하지 않으면 어떤 향미 항목 해석이 흔들리나요?</li><li>가공 단계 실패 시 가격 신호와 컵 신호가 어떻게 분리될 수 있나요?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "columbia-harvest-cycle",
+    "title": "콜롬비아 수확 주기: Main Crop와 Mitaca를 함께 설계하기",
+    "summary": "콜롬비아의 다중 수확 체계를 이해하면 물량 변동과 품질 라인을 계절 단위로 안정적으로 운영할 수 있습니다.",
+    "category": "산지와 생두",
+    "level": "중급",
+    "readingTime": "12분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "콜롬비아의 Main crop와 mitaca는 수확 시기와 처리 방식이 달라 유통·가공 전략을 구분해 관리할 필요가 있습니다.",
+    "sections": [
+      {
+        "id": "two-crops",
+        "title": "왜 콜롬비아는 두 번의 수확 구간이 생기나",
+        "paragraphs": [
+          "콜롬비아는 하나의 연도에 주수확(Main crop)과 부수확(mitaca) 구간이 이어져 나타납니다. 이 구조는 총 물량의 안정성을 높이면서도, 로트 분리와 건조 동선을 함께 요구합니다.",
+          "같은 출처라도 어느 시기의 체리가 들어갔는지 모르면 향미 편차를 단일 원인으로 설명하기 어렵다는 점이 핵심입니다."
+        ]
+      },
+      {
+        "id": "main-crop-profile",
+        "title": "Main crop의 운영 성격",
+        "paragraphs": [
+          "Main crop는 보통 유통량의 중심축이 됩니다. 비교적 넓은 성숙 구간이 생길 수 있어, 선별과 건조의 표준 루틴을 먼저 얹기 쉽습니다.",
+          "이 구간에서는 동시 수확량이 높아도 품질 편차 관리 지표를 분리하지 않으면 곧바로 비교가 흐려질 수 있습니다."
+        ]
+      },
+      {
+        "id": "mitaca-role",
+        "title": "Mitaca의 기여와 변수",
+        "paragraphs": [
+          "Mitaca는 보완적 물량이지만 성숙 시점이 다르므로 습도 반응, 수분 보존성, 산미 방향의 편차가 달라질 수 있습니다. 수요 쪽에서 가격 반응이 다를 경우도 빈번합니다.",
+          "그래서 처리 라인에서 “어느 시기 로트인지”를 먼저 표시하고 가공 조건을 맞춘 뒤에야 믹스 판단을 해야 합니다."
+        ]
+      },
+      {
+        "id": "operational-choice",
+        "title": "분리 또는 결합: 어떤 판단이 맞는가",
+        "paragraphs": [
+          "두 시즌을 무조건 분리해야 하는 건 아닙니다. 다만 분리 여부를 먼저 정하는 기준을 명확히 하면 운영 오류를 줄일 수 있습니다.",
+          "브랜드용 소량 채널, 교육용 시연, 안정성 위주의 대량판매 채널에서는 분리 수준이 서로 다릅니다."
+        ]
+      },
+      {
+        "id": "quality-tracking",
+        "title": "품질 추적을 위한 최소 로그",
+        "paragraphs": []
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 두 시즌 분기 운영 루틴",
+        "paragraphs": [
+          "같은 스페셜티 스펙트럼에서 다음 실험을 한 번 수행해 보세요."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "global-coffee-zones",
+      "coffee-terroir-science",
+      "harvest-maturity-selection",
+      "coffee-processing"
+    ],
+    "tags": [
+      "콜롬비아",
+      "수확시기",
+      "main crop",
+      "mitaca",
+      "산지운영"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "ORG-05 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"two-crops\"><span class=\"content-index\">01</span><h2>왜 콜롬비아는 두 번의 수확 구간이 생기나</h2><p>콜롬비아는 하나의 연도에 주수확(Main crop)과 부수확(mitaca) 구간이 이어져 나타납니다. 이 구조는 총 물량의 안정성을 높이면서도, 로트 분리와 건조 동선을 함께 요구합니다.</p><p>같은 출처라도 어느 시기의 체리가 들어갔는지 모르면 향미 편차를 단일 원인으로 설명하기 어렵다는 점이 핵심입니다.</p></section><section id=\"main-crop-profile\"><span class=\"content-index\">02</span><h2>Main crop의 운영 성격</h2><p>Main crop는 보통 유통량의 중심축이 됩니다. 비교적 넓은 성숙 구간이 생길 수 있어, 선별과 건조의 표준 루틴을 먼저 얹기 쉽습니다.</p><p>이 구간에서는 동시 수확량이 높아도 품질 편차 관리 지표를 분리하지 않으면 곧바로 비교가 흐려질 수 있습니다.</p></section><section id=\"mitaca-role\"><span class=\"content-index\">03</span><h2>Mitaca의 기여와 변수</h2><p>Mitaca는 보완적 물량이지만 성숙 시점이 다르므로 습도 반응, 수분 보존성, 산미 방향의 편차가 달라질 수 있습니다. 수요 쪽에서 가격 반응이 다를 경우도 빈번합니다.</p><p>그래서 처리 라인에서 “어느 시기 로트인지”를 먼저 표시하고 가공 조건을 맞춘 뒤에야 믹스 판단을 해야 합니다.</p><table><thead><tr><th>구간</th><th>핵심 성격</th><th>주요 위험</th><th>운영 대응</th></tr></thead><tbody><tr><td>Main crop</td><td>대량 수확, 표준 처리 우선</td><td>동시 성숙 구간의 편차</td><td>구획별 건조 균일성 집중</td></tr><tr><td>Mitaca</td><td>보완 물량, 후반 투입</td><td>건조 편차 및 컵 편차</td><td>강한 기록 기준 적용</td></tr></tbody></table></section><section id=\"operational-choice\"><span class=\"content-index\">04</span><h2>분리 또는 결합: 어떤 판단이 맞는가</h2><p>두 시즌을 무조건 분리해야 하는 건 아닙니다. 다만 분리 여부를 먼저 정하는 기준을 명확히 하면 운영 오류를 줄일 수 있습니다.</p><p>브랜드용 소량 채널, 교육용 시연, 안정성 위주의 대량판매 채널에서는 분리 수준이 서로 다릅니다.</p></section><section id=\"quality-tracking\"><span class=\"content-index\">05</span><h2>품질 추적을 위한 최소 로그</h2><ul><li>수확 시점(주번호), 출하 구획, 건조 시작 시각</li><li>건조 종료 수분 수치, 저장일수, 첫 유통일</li><li>동일 추출 루틴의 2회 반복 샘플 컵 점수</li></ul></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: Main crop와 mitaca는 같은 로트로 다뤄도 무방하다.<br/><strong>정정:</strong> 건조 조건과 유통 타이밍이 다르면 컵 반응이 분리되는 경향이 큽니다.</li><li>오해: mitaca는 자동으로 “덜 좋은 물량”이다.<br/><strong>정정:</strong> 선별·건조를 강화하면 용도별로 유효한 성과를 낼 수 있습니다.</li><li>오해: 수확기 구분은 거래사에게만 중요하다.<br/><strong>정정:</strong> 카페·로스팅 단계에서도 동일한 향미 관리 기준이 필요합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 두 시즌 분기 운영 루틴</h2><p>같은 스페셜티 스펙트럼에서 다음 실험을 한 번 수행해 보세요.</p><ol><li>Main crop 로트와 mitaca 로트별로 추출 레시피를 고정</li><li>각 로트에서 건조 편차와 수분 편차를 분리 측정</li><li>컵 점수의 편차가 큰 항목을 기록해 수요 채널별로 대응</li><li>다음 배치에서 유입 채널 구분과 건조 일정 조정</li></ol></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"global-coffee-zones\" href=\"/wiki/global-coffee-zones\">세계 커피 지대</a></li><li><a data-wikilink=\"harvest-maturity-selection\" href=\"/wiki/harvest-maturity-selection\">수확 성숙도 선택</a></li><li><a data-wikilink=\"coffee-processing\" href=\"/wiki/coffee-processing\">수확 후 가공 지도</a></li><li><a href=\"https://www.ico.org/\">I.C.O. 통계</a></li><li><a href=\"https://www.fao.org/3/ca8629en/ca8629en.pdf\">FAO 커피 생산 자료</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">09</span><h2>자기 점검</h2><ul><li>Main crop/mitaca 분기를 분리할 때 가장 먼저 체크할 항목은?</li><li>왜 수분 편차가 같은 향미 지표를 다르게 보이게 만들 수 있나요?</li><li>분리 운영과 결합 운영의 의사결정 기준은 어디에서 정해야 하나요?</li><li>큐레이션 과정에서 수확기 정보 누락이 가장 크게 해로운 부분은?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "french-press-immersion-guide",
+    "title": "프렌치 프레스 침지 추출 가이드: 거품과 바디를 구분해 설계하기",
+    "summary": "프렌치 프레스는 단순히 “메탈 필터”를 쓰는 방식이 아니라, 침지·교반·침전 제어를 합친 추출 설계입니다.",
+    "category": "추출",
+    "level": "입문",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "프렌치 프레스는 침지와 거품·침전 단계가 함께 결과에 영향을 주므로, 시간과 분쇄의 조합을 먼저 고정해야 일관성이 생깁니다.",
+    "sections": [
+      {
+        "id": "what-is-immersion",
+        "title": "프렌치 프레스는 침지 추출의 핵심 단계",
+        "paragraphs": [
+          "프렌치 프레스는 가열된 물이 커피층을 적셔 확산이 진행되는 구간을 만들고, 마지막에 피스톤을 눌러 고형분을 분리합니다. 이때 커피와 물의 접촉 시간을 먼저 고정하는 편이 가장 중요합니다.",
+          "메탈 메쉬는 종이 필터보다 미분 통과를 덜 제한하므로, 바디가 두텁게 느껴지는 경향이 생깁니다. 대신 과도한 미세입자 유입을 관리하지 않으면 질감이 무거워질 수 있습니다."
+        ]
+      },
+      {
+        "id": "critical-factors",
+        "title": "출발값을 만드는 네 변수",
+        "paragraphs": []
+      },
+      {
+        "id": "steps",
+        "title": "기본 제조 순서",
+        "paragraphs": [
+          "한 번의 레시피를 고정하면 오차 분석이 쉬워집니다."
+        ]
+      },
+      {
+        "id": "decanting",
+        "title": "디캔팅(디프로스팅)과 잔 품질",
+        "paragraphs": [
+          "프레스다운 직후 바로 따른 음료는 미분 농도와 잔류 추출의 영향을 더 많이 받습니다. 즉시 따른 뒤, 남은 분말이 추출을 계속 못하도록 하는 것이 기본입니다.",
+          "디캄팅은 ‘빠르게 끝내기’보다 잔량만큼 즉각 분리해야 합니다. 분리 지연은 의도치 않은 추가 추출을 만들 가능성이 큽니다."
+        ]
+      },
+      {
+        "id": "common-errors",
+        "title": "흔한 실수",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 한 주간 프레스 프로파일 설계",
+        "paragraphs": [
+          "같은 원두로 변수를 하나씩 바꿔 결과를 기록해 보세요."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "brew-methods",
+      "cold-brew",
+      "brew-profile-observables",
+      "extraction-basics"
+    ],
+    "tags": [
+      "프렌치프레스",
+      "침지",
+      "교반",
+      "디캄팅",
+      "추출"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "BRW-03 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"what-is-immersion\"><span class=\"content-index\">01</span><h2>프렌치 프레스는 침지 추출의 핵심 단계</h2><p>프렌치 프레스는 가열된 물이 커피층을 적셔 확산이 진행되는 구간을 만들고, 마지막에 피스톤을 눌러 고형분을 분리합니다. 이때 커피와 물의 접촉 시간을 먼저 고정하는 편이 가장 중요합니다.</p><p>메탈 메쉬는 종이 필터보다 미분 통과를 덜 제한하므로, 바디가 두텁게 느껴지는 경향이 생깁니다. 대신 과도한 미세입자 유입을 관리하지 않으면 질감이 무거워질 수 있습니다.</p></section><section id=\"critical-factors\"><span class=\"content-index\">02</span><h2>출발값을 만드는 네 변수</h2><table><thead><tr><th>변수</th><th>보통의 출발 범위</th><th>향미 경향</th></tr></thead><tbody><tr><td>분쇄</td><td>중간보다 굵은 편</td><td>너무 고운 분쇄는 침전 탁도를 높일 수 있음</td></tr><tr><td>물:커피 비율</td><td>1:12~1:16</td><td>농도·바디의 기본 스케일</td></tr><tr><td>침지 시간</td><td>약 4분 전후</td><td>짧으면 산미 편차, 길면 바디 편중 가능</td></tr><tr><td>교반 방식</td><td>균일한 가볍게 1~2회</td><td>분포 불균일을 줄이는 데 도움</td></tr></tbody></table></section><section id=\"steps\"><span class=\"content-index\">03</span><h2>기본 제조 순서</h2><p>한 번의 레시피를 고정하면 오차 분석이 쉬워집니다.</p><ol><li>원두를 계량하고 1회 가열한 물을 균일하게 붓는다.</li><li>가벼운 교반으로 적시는 정도를 맞춘 뒤, 타이머를 4분으로 설정한다.</li><li>상단 크레마·표면 막을 관찰하고, 1분 단위로 향미 변화를 기록한다.</li><li>예정 시간 후 30초 내외 천천히 누르기 후 즉시 잔으로 따른다.</li></ol></section><section id=\"decanting\"><span class=\"content-index\">04</span><h2>디캔팅(디프로스팅)과 잔 품질</h2><p>프레스다운 직후 바로 따른 음료는 미분 농도와 잔류 추출의 영향을 더 많이 받습니다. 즉시 따른 뒤, 남은 분말이 추출을 계속 못하도록 하는 것이 기본입니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>디캄팅은 ‘빠르게 끝내기’보다 잔량만큼 즉각 분리해야 합니다. 분리 지연은 의도치 않은 추가 추출을 만들 가능성이 큽니다.</p></aside></section><section id=\"common-errors\"><span class=\"content-index\">05</span><h2>흔한 실수</h2><ul><li>오해: 더 곱게 갈수록 더 정교해진다.<br/><strong>정정:</strong> 프렌치 프레스는 미분 유입이 누적되기 쉬워, 분쇄가 고울수록 탁도와 건조 후 느낌이 거칠어질 수 있습니다.</li><li>오해: 강하게 휘저으면 추출이 더 빨라진다.<br/><strong>정정:</strong> 과한 교반은 입자 분포와 물길을 불균일하게 만들 수 있습니다.</li><li>오해: 프레스는 누르는 힘이 강할수록 더 강한 맛이 난다.<br/><strong>정정:</strong> 프레스다운은 물리적 분리 동작이며, 맛은 주로 접촉 단계의 설정에 민감합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 한 주간 프레스 프로파일 설계</h2><p>같은 원두로 변수를 하나씩 바꿔 결과를 기록해 보세요.</p><ol><li>분쇄도만 변경하고 나머지 조건 고정</li><li>침지 시간을 3분/4분/5분으로 분리</li><li>디캄팅 시점을 20초 조정해 기록</li><li>산미·바디·미세입자 체감의 변화를 4항목 점수화</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"brew-methods\" href=\"/wiki/brew-methods\">추출법 총람</a></li><li><a href=\"https://www.craftera.com/frp-guide\">프렌치 프레스 공정 가이드(일반 제조 설명)</a></li><li><a data-wikilink=\"extraction-basics\" href=\"/wiki/extraction-basics\">농도와 수율</a></li><li><a data-wikilink=\"cold-brew\" href=\"/wiki/cold-brew\">침지류 동작 비교</a></li><li><a data-wikilink=\"brew-profile-observables\" href=\"/wiki/brew-profile-observables\">추출 관측 지표</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>프렌치 프레스에서 “시간”이 품질에 미치는 영향은 언제 가장 크게 보이나요?</li><li>디캄팅이 늦어졌을 때 발생할 수 있는 가장 흔한 문제는?</li><li>분쇄를 거칠게 할 때와 곱게 할 때 각각 생기는 변화는?</li><li>프레싱 동작보다 먼저 점검해야 할 변수가 무엇인가요?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "moka-pot-pressure-control",
+    "title": "모카포트 압력·온도 제어: 저압 추출의 경계에서 안정화하기",
+    "summary": "모카포트는 저압 가압 추출이지만 물리적 조건을 통제하면 과추출·연기 냄새 없이 반복 품질을 설계할 수 있습니다.",
+    "category": "카페와 장비",
+    "level": "중급",
+    "readingTime": "11분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sand",
+    "fact": "모카포트는 수증기 압력으로 물을 밀어 올리며 작동하므로, 가열 세기와 정렬 타이밍이 맛의 일관성을 좌우합니다.",
+    "sections": [
+      {
+        "id": "principle",
+        "title": "모카포트의 기본 원리",
+        "paragraphs": [
+          "모카포트는 물이 가열되며 수증기가 생기고, 이 압력에 밀려 물이 아래 챔버에서 위 챔버로 이동합니다. 결과적으로 짧은 시간 내 농축된 음료를 만들 수 있다는 장점이 있습니다.",
+          "다만 이 압력은 압력계로 직접 보이진 않기 때문에, 연료(가열) 강도와 추적 타이밍을 먼저 통제해야 안정성이 생깁니다."
+        ]
+      },
+      {
+        "id": "variables",
+        "title": "핵심 변수가 되는 5요소",
+        "paragraphs": []
+      },
+      {
+        "id": "steam-cycle",
+        "title": "수증기-유동 타이밍",
+        "paragraphs": [
+          "보통 처음에는 가열이 활발해질수록 유출량이 증가하고, 소리가 바뀌는 시점 뒤에는 추가 추출이 진행되기 시작합니다. 이 구간을 지나치면 쓴맛·과다 유체 통과가 증가할 수 있습니다.",
+          "모카포트는 불꽃이 남아 있는 상태에서 계속 끓일수록 추출은 ‘진하다’기보다 ‘거칠어지는’ 편향이 생깁니다. 소리와 거품 변화를 기준으로 즉시 제거하세요."
+        ]
+      },
+      {
+        "id": "safety",
+        "title": "안전 운용 포인트",
+        "paragraphs": [
+          "압력 장치는 고온·증기와 연동되므로 안전 관리가 추출 안정성보다 앞서야 합니다."
+        ]
+      },
+      {
+        "id": "common-errors",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 1일 실험 프로토콜",
+        "paragraphs": []
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "espresso-basics",
+      "water-for-coffee",
+      "brewing-gear-guide",
+      "espresso-machine-hydraulics-thermal"
+    ],
+    "tags": [
+      "모카포트",
+      "저압 가압",
+      "압력",
+      "온도",
+      "안전"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "BRW-06 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"principle\"><span class=\"content-index\">01</span><h2>모카포트의 기본 원리</h2><p>모카포트는 물이 가열되며 수증기가 생기고, 이 압력에 밀려 물이 아래 챔버에서 위 챔버로 이동합니다. 결과적으로 짧은 시간 내 농축된 음료를 만들 수 있다는 장점이 있습니다.</p><p>다만 이 압력은 압력계로 직접 보이진 않기 때문에, 연료(가열) 강도와 추적 타이밍을 먼저 통제해야 안정성이 생깁니다.</p></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>핵심 변수가 되는 5요소</h2><table><thead><tr><th>요소</th><th>일반 범위/설정</th><th>관능적 영향</th></tr></thead><tbody><tr><td>가열 강도</td><td>중약불에서 시작</td><td>예열 안정성 및 과열 억제</td></tr><tr><td>물 온도</td><td>끓는점 근처 진입</td><td>추출 타이밍에 직접 영향</td></tr><tr><td>분쇄도</td><td>미디엄 파인</td><td>유량·입자 유입 제어</td></tr><tr><td>물량</td><td>필터 탬핑 수위 근처</td><td>압력 형성 시간 조정</td></tr><tr><td>철수 타이밍</td><td>젖은 소리→끈적한 소리 전환</td><td>과추출 여부에 영향</td></tr></tbody></table></section><section id=\"steam-cycle\"><span class=\"content-index\">03</span><h2>수증기-유동 타이밍</h2><p>보통 처음에는 가열이 활발해질수록 유출량이 증가하고, 소리가 바뀌는 시점 뒤에는 추가 추출이 진행되기 시작합니다. 이 구간을 지나치면 쓴맛·과다 유체 통과가 증가할 수 있습니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>모카포트는 불꽃이 남아 있는 상태에서 계속 끓일수록 추출은 ‘진하다’기보다 ‘거칠어지는’ 편향이 생깁니다. 소리와 거품 변화를 기준으로 즉시 제거하세요.</p></aside></section><section id=\"safety\"><span class=\"content-index\">04</span><h2>안전 운용 포인트</h2><p>압력 장치는 고온·증기와 연동되므로 안전 관리가 추출 안정성보다 앞서야 합니다.</p><ul><li>가열 직후 바로 급히 흔들어 흔들지 않기</li><li>추출 직후 냉각은 너무 급하게 하지 말고 자연 냉각 우선</li><li>손잡이 주변의 누수 여부를 즉시 확인</li></ul></section><section id=\"common-errors\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 분쇄를 더 곱게 하면 향이 선명해진다.<br/><strong>정정:</strong> 모카포트에서는 과도한 미분이 막힘과 불균일 유동을 증가시킬 수 있습니다.</li><li>오해: 더 오래 끓여야 진한 풍미를 얻는다.<br/><strong>정정:</strong> 지정 타이밍 이후는 과추출/연기향 위험이 더 커집니다.</li><li>오해: 한 번 익힌 레시피는 모든 원두에 그대로 적용 가능하다.<br/><strong>정정:</strong> 수분, 산도, 선호 로스트에 따라 압력 피크 타이밍이 이동합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 1일 실험 프로토콜</h2><ol><li>같은 분쇄와 같은 물량으로 3회 반복 추출</li><li>가열 강도를 단계적으로 완만 조절</li><li>소리 전환 지점에서 시간 기록 후 제거 타이밍 비교</li><li>산미, 쓴맛, 향미 잔향의 변화를 같은 템플릿으로 기록</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 기본 변수</a></li><li><a href=\"https://www.moccamaster.com/mokapot-usage\">모카포트 사용 가이드(제조사 안내)</a></li><li><a data-wikilink=\"brewing-gear-guide\" href=\"/wiki/brewing-gear-guide\">추출 도구 가이드</a></li><li><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">커피와 물</a></li><li><a href=\"https://www.fscb.net/roasting-and-brewing\">FSCB 브루잉 참고 자료</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>모카포트에서 소리 신호가 바뀌는 이유는 무엇을 뜻하나요?</li><li>왜 가열 강도를 강제로 세게 시작하면 변동이 커지나요?</li><li>분쇄도와 유량의 균형이 어긋날 때 어떤 결과가 생기나요?</li><li>안전 관점에서 가장 먼저 확인해야 할 접점은?</li></ul></section>",
     "backlinks": []
   }
 ],
@@ -8429,7 +9348,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>커피를 이해하기 전에 “무엇인지”부터 정리합니다</h2><p>커피를 이야기할 때는 맛과 향으로 시작하는 경우가 많지만, 정확한 이해는 출발점이 식물 분류입니다. 커피라고 부르는 대상은 본질적으로 커피나무에서 얻는 씨앗이며, 이 나무가 어떤 계통에 속하는지에 따라 기본 생장 특성이 달라집니다.</p><p>분류학은 우열을 정하는 장치가 아닙니다. 같은 맛도 같은 이유로 형성되는 것이 아니라, 계통학적 친연성과 재배 환경, 가공, 로스팅이 결합하면서 맛의 방향성이 생깁니다. 그래서 먼저 분류계를 잡으면 다음 단계(재배, 가공, 추출)에 대한 질문이 더 선명해집니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>커피 품종만으로 향미를 단정하지 않기로 합니다. 분류는 시작점이며, 결과는 재배·가공·로스팅·추출의 연쇄로 정리해야 합니다.</p></aside></section><section id=\"taxonomy-frame\"><span class=\"content-index\">02</span><h2>식물 분류에서의 커피 나무 위치</h2><p>식물 분류는 보통 과, 속, 종처럼 큰 범주에서 작은 범주로 내려가며 이해하면 됩니다. 커피는 꼭두서니과(Rubiaceae)라는 큰 과의 일부이며, 그 안에서 <strong>Coffea</strong> 속이 상업적으로 가장 널리 알려져 있습니다.</p><p>과를 더 작게 나누는 방법으로 아과, 속, 종, 품종이 연결되며, 여기서 “속”은 공통된 유전·형태 특성을 공유하는 집단입니다. “종”은 더 구체적인 교배군으로 이해하고, “품종”은 재배나 선발을 통해 정해진 변이 집단이라고 정리하면 읽기 편합니다.</p><ul><li>학명은 유일성과 추적성을 높여주므로 라벨과 문헌에서 병기 이름을 같이 보는 편이 좋습니다.</li><li>일부 문헌은 같은 집단을 서로 다른 이름으로 부르는 경우가 있어, 출처와 분류 체계를 함께 확인해야 합니다.</li><li>계통 개념은 지역별 연구기관에서 업데이트될 수 있어 날짜 기반 비교가 필요합니다.</li></ul></section><section id=\"family-signature\"><span class=\"content-index\">03</span><h2>꼭두서니과의 공통 특징과 Coffea 속의 의미</h2><p>꼭두서니과는 목질성 또는 반목질성 식물을 포함하는 큰 그룹이고, 여러 속에서 꽃의 모양, 잎 배열, 과일 구조의 규칙이 반복적으로 나타납니다. 커피의 경우 이런 공통점 위에서 <strong>Coffea</strong> 속이 독자적으로 나타나는 점은 장기간의 과실 생산 전략과 연관됩니다.</p><p>식물학적으로는 잎의 배열, 꽃 구조, 씨앗 내부 구조를 통해 속 간 유사성과 차이가 추적됩니다. 특히 꽃의 형태는 수분·수정 시기를 연구할 때, 씨앗은 재배 품질 비교에서 장기적 지표로 쓰입니다.</p><p>이 분류 정보는 단순한 배경 지식이 아니라, 병해 대응 시점, 생육 환경 점검, 적정 수분 전략 같은 운영 판단의 좌표가 됩니다. 같은 재배 방식이라도 속과 종의 특성을 무시하면 기대 수확량과 향미 편차를 과소평가하기 쉽습니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>꼭두서니과라는 가족 안에서도 커피 전용의 생리 반응은 다양합니다. 커피를 커피처럼 이해하려면 속-종-품종의 차이를 함께 읽어야 합니다.</p></aside></section><section id=\"genus-structure\"><span class=\"content-index\">04</span><h2>Coffea 속의 형질을 기준으로 정리하기</h2><p>커피 속의 식물을 구분할 때 초보자는 ‘과일과 잎’만 먼저 보면 됩니다. 잎의 배열, 가지의 성장 습성, 꽃의 형성 시기, 생존을 위한 저장 전략을 함께 보면 속 내 유사군을 구분하기가 쉬워집니다.</p><p>물론 같은 속이라고 해서 모든 재배지가 같은 반응을 보이지는 않습니다. 고도, 강우, 토양, 그늘 처리, 영양 상태가 달라지면 같은 구조라도 생리 반응은 달라집니다. 이런 이유로 동일 종이라도 농가 간 성과가 편차를 보입니다.</p><p>분류학 교육에서 중요한 포인트는 “이름”을 외우는 것보다 “왜 같은 이름이 다른 결과를 보이는지”를 연결하는 것입니다. 이 연결은 이후 추출 실험에서 변수 분해에도 바로 이어집니다.</p></section><section id=\"main-cultivars\"><span class=\"content-index\">05</span><h2>주요 재배종은 어떻게 계통적으로 읽을까요</h2><p>상업 재배에서 가장 핵심적인 축은 아라비카(Coffea arabica)와 카네포라(Coffea canephora)입니다. 이 두 종은 유전적 기원, 향미 프로파일 경향, 병해 대응력, 재배지 요구 조건에서 반복적으로 구분됩니다.</p><table><thead><tr><th>분류 단위</th><th>핵심 성질</th><th>운용 맥락</th><th>주의할 점</th></tr></thead><tbody><tr><td>Coffea arabica</td><td>향미 분화가 도드라진다는 경향</td><td>고품질 원두 시장에서 선호되는 축</td><td>고온·저고도에서 환경 스트레스가 커질 수 있음</td></tr><tr><td>Coffea canephora</td><td>재배량과 강건성에서 유리한 경향</td><td>에스프레소 블렌드, 상업 생산에서 폭넓게 사용</td><td>용어 혼용으로 로부스타·카네포라 표기가 섞이는 사례 존재</td></tr><tr><td>Coffea liberica</td><td>지역 특성에 따라 독특한 향미·생육 패턴</td><td>특정 지역 브랜드성이나 향미 실험에서 활용</td><td>규모형 상업 재배 비중은 다른 두 종보다 제한적</td></tr></tbody></table><p>또한 엑셀사(또는 일부 분류에서 Liberica군 하위로 본 집단)는 상업성이나 명칭 해석이 기관·연도·데이터셋에 따라 조금씩 다를 수 있습니다. 그래서 라벨의 학명, 산지, 가공, 재배 연도까지 같이 확인해야 정보의 신뢰도를 높일 수 있습니다.</p><p><a data-wikilink=\"arabica-and-robusta\" href=\"/wiki/arabica-and-robusta\">아라비카와 로부스타 비교</a> 글은 이미 맛의 차이를 중심으로 다루고 있으므로, 여기서는 계통적 축과 재배 판단의 전제를 먼저 다루는 구조입니다.</p></section><section id=\"selection-implications\"><span class=\"content-index\">06</span><h2>재배 계획에서 종 선택이 바뀌는 지점</h2><p>실무적으로는 “무엇이 더 고급스러운가”보다 “어떤 목표에 맞는 종 조합인가”가 먼저입니다. 예를 들어 고지대의 온도 완화 구간에서 미세한 향의 차이를 추적하려면 아라비카 계열의 관리가 상대적으로 유리한 경향이 있습니다.</p><p>반대로 더 높은 수량 안정성과 내성까지 고려하는 경우 카네포라 계열이 유리한 경우가 많습니다. 이 판단은 토양·물·노동 구조와 함께 바뀌며, 같은 품종이어도 농가의 자본 효율성과 수확 주기 전략이 달라집니다.</p><p>분류학은 여기서도 역할을 합니다. 종의 기초 전제만 다르면 병해 감시, 수분 관리, 수확 주기 점검표가 달라지기 때문입니다. 따라서 “종을 바꾸지 않고 방법만 바꾼다”는 접근보다, 먼저 종-기후-노동의 조합을 점검하는 편이 실패 확률이 낮습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>정비 계획을 세울 때는 재배종명을 한 번 더 검증하세요. 아라비카, 로부스타, 리베리카가 동일 집단으로 통용되는 표기를 따라오지 않도록 주의하면 기록 품질이 좋아집니다.</p></aside></section><section id=\"common-misconceptions\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><ul><li>오해: “카네포라는 항상 질감이 거칠고 맛이 나쁘다.”</li><li>정리: 카네포라는 풍미의 “정답”이 아닐 뿐이며, 로스팅·추출 전략에 따라 컵에서의 유연성이 커질 수 있습니다.</li><li>오해: “리베리카는 고급 시장에서 거의 쓰이지 않는다.”</li><li>정리: 주류 비중은 낮아도 특정 지역 전략이나 블렌드에서는 기능성이 분명하고 실험적 가치가 존재합니다.</li><li>오해: “종 하나를 알면 재배 과정의 변수가 사라진다.”</li><li>정리: 종은 출발점일 뿐이며, 수분관리·가공법·로스팅 프로파일이 최종 품질에 필수적으로 작동합니다.</li></ul><p>오해를 줄이려면 라벨의 학명과 가공 방식, 수확 시기, 보관일을 함께 읽는 습관이 필요합니다. 단일 문장 요약을 피하고 “조건부 경향”으로 기록하면 판단의 오류를 줄일 수 있습니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>종을 단정할 수 없는 표기로 접하면 즉시 추측 대신 “확인 불가”로 처리하세요. 추측 기반 분류는 학습 속도를 빠르게 만들지 않고, 오해를 고정시킵니다.</p></aside></section><section id=\"practice\"><span class=\"content-index\">08</span><h2>실습: 한 잔에서 종/속 단서를 찾아보기</h2><p>다음 실습은 1주일 동안 한 번의 관찰 기록으로도 가능합니다. 목표는 한 잔의 맛을 맞추는 것이 아니라, 맛을 설명할 때 분류학 용어를 올바르게 쓰는 것입니다.</p><ol><li>자주 쓰는 원두 2~3가지의 봉투에서 학명, 산지, 가공, 로스팅 날짜를 확인합니다.</li><li>라벨 문구가 모호하면 원두상 이름이 아닌 “표시 없음”으로 별도 기입합니다.</li><li>같은 추출 방식에서 한 번만 변수를 바꿔(분쇄도, 추출 시간, 물 비율 중 하나) 맛을 비교하고 결과를 기록합니다.</li><li>관찰 항목을 “분류 단서(종 추정) / 공정 단서(가공·보관) / 체감 단서(향·산미·바디)”로 분리해 적습니다.</li></ol><p>기록을 한 달쯤 쌓으면 특정 종의 ‘고정된 맛’이 아니라 재배-가공-가열 조합의 분포를 보게 됩니다. 그때는 BOT-01의 다음 단계 주제인 생육 주기(BOT-02)로 넘어가도 연결성이 커집니다.</p><p>자기 점검 질문(4문항):</p><ol><li>커피 라벨에서 학명을 본인이 정확히 읽을 수 있습니까?</li><li>같은 향미 인상이라도 종·가공·로스팅 어떤 요소가 결합됐는지 구분했습니까?</li><li>정보가 빠진 라벨을 만났을 때 추측하지 않고 처리했습니까?</li><li>종 정보를 근거로 분류할 때 현재까지의 기록에 일관성이 있습니까?</li></ol></section><section id=\"references\"><span class=\"content-index\">09</span><h2>참고 자료</h2><ul><li><a href=\"https://www.ipni.org/\">International Plant Names Index (IPNI)</a></li><li><a href=\"https://powo.science.kew.org/\">Royal Botanic Gardens, Kew Plants of the World Online</a></li><li><a href=\"https://worldcoffeeresearch.org/resources/coffee-varieties-catalog\">World Coffee Research, Coffee Varieties Catalog</a></li><li><a href=\"https://www.ico.org\">International Coffee Organization, 기술·산지 개요</a></li><li><a href=\"https://www.sca.coffee/standards\">Specialty Coffee Association, 분류·품질 가이드</a></li><li><a data-wikilink=\"coffee-cherry-to-bean\" href=\"/wiki/coffee-cherry-to-bean\">커피 열매에서 생두로의 흐름 정리</a></li></ul></section>",
     "backlinks": [
-      "root-canopy-photosynthesis"
+      "root-canopy-photosynthesis",
+      "catimor-sarchimor-blight-resistance",
+      "kenya-coffee-system"
     ]
   },
   {
@@ -8544,7 +9465,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "coffee-flowering-pollination",
       "harvest-maturity-selection",
       "coffee-soil-nutrient-diagnosis",
-      "coffee-pest-symptom-map"
+      "coffee-pest-symptom-map",
+      "coffee-canopy-pruning-rejuvenation"
     ]
   },
   {
@@ -8639,7 +9561,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"flowering-why\"><span class=\"content-index\">01</span><h2>왜 개화 시점을 먼저 읽어야 할까</h2><p>커피 재배에서 개화는 단순한 시각적 현상이 아닙니다. 꽃이 언제, 얼마나 동시적으로 피는지에 따라 착과량의 기본선이 달라지기 때문입니다.</p><p>개화 관찰은 “꽃이 많았다”는 감각보다, 기후 반응·수분 상태·영양 상태와 결합해서 읽을 때 더 유효합니다. 개화가 집중되는 시기에는 현장 판단이 빠르게 바뀌므로 표준 점검이 중요합니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>개화는 품종 고유의 성질뿐 아니라 장기 강우·온도 신호와 직결됩니다. 현장에서는 꽃의 개화량보다 <strong>동시성</strong>을 같이 기록하는 편이 더 안정적입니다.</p></aside></section><section id=\"flower-synchrony\"><span class=\"content-index\">02</span><h2>강우가 개화 동기화에 관여하는 방식</h2><p>많은 지역에서 건기 종료 후 강우가 돌아오면 개화군이 비교적 동시적으로 전환되는 경향을 보입니다. 과도하게 건조하거나 급격한 가뭄이 길어지면 반응이 지연되는 경우도 있어, 연속 관측이 필요합니다.</p><p>따라서 “우기 첫 비 = 모든 나무가 반응”이 절대 공식은 아닙니다. 토양 수분 회복 속도, 그늘 정도, 나무 체력, 가지의 연령 구조가 함께 반응을 조절합니다.</p></section><section id=\"self-vs-cross\"><span class=\"content-index\">03</span><h2>자연 상태에서 자가수분과 타가수분의 차이</h2><p>자연어로는 종종 자가수분과 타가수분을 단순 비교하지만, 실무적으론 <strong>결실 확률의 차이</strong>와 꽃군의 유전적 편차 반응으로 봅니다. 자가수분은 꽃 자체의 완결성으로 일어나는 경향이 큰 반면, 타가수분은 주변 꽃군과 꽃가루의 이동성이 변수로 작동합니다.</p><p>따라서 같은 농장이라도 꽃밀도와 주변 나무의 건강, 풍향과 수분체 이동이 달라지면 동일한 자가수분률이라도 결과 편차가 큽니다. 수분 방식의 차이를 기록할 때는 “모두 동일하게” 처리하지 않고 경향으로 정리해야 합니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>‘자연수분’이든 ‘교차수분’이든, 한 번의 꽃폭발로 최종 착과률을 확정하지 않습니다. 추적은 개화군별 2~4주 단위로 봅니다.</p></aside></section><section id=\"ovule-ovary\"><span class=\"content-index\">04</span><h2>착과 초기의 병목: 수분 후 무엇이 결정될까</h2><p>수분 뒤에도 결실은 곧바로 보장되지 않습니다. 꽃수와 수분 자체뿐 아니라 영양 상태, 수분 스트레스, 병충해 압력, 영양분 이동이 동시에 작동합니다. 결과적으로 한 가지 요인을 고정 변수로 두면 현장 판단이 틀어집니다.</p><p>착과기에 과일 세포 분열과 비대가 빨라질수록 미세한 결함도 늘 수 있습니다. 그래서 영양·수분·가지 관리, 병해 점검이 같이 움직여야 합니다.</p><table><thead><tr><th>시점</th><th>우선 지표</th><th>주요 조치</th></tr></thead><tbody><tr><td>개화 초반</td><td>꽃군 동시성, 개화 밀도</td><td>수분 보강 구간 예측, 병해 관찰 강화</td></tr><tr><td>개화 중반</td><td>꽃받침 변형, 수분 실패 징후</td><td>관수 조절, 과도한 비료 투입 억제</td></tr><tr><td>착과 직후</td><td>유실율, 묶음 착과 상태</td><td>영양 균형 점검, 수분 과다 억제</td></tr></tbody></table></section><section id=\"management-checklist\"><span class=\"content-index\">05</span><h2>농사 관리에서의 실무 대응</h2><p>개화와 수분을 관리할 때 핵심은 개화 예측 후 과도한 단발 대응보다 단계별 대응입니다. 개화가 촉발되면 관수·시비·병해점검 주기를 일괄 단축해 변화를 놓치지 않습니다.</p><p>착과 실패가 반복될 때는 병해만 탓하기보다 개화 동기화 정도, 꽃군 구성, 이전 영양관리 기록을 함께 점검합니다. 수분 패턴이 안정되지 않은 지점에서 동일한 처방을 반복하면 반복 오류가 생기기 쉽습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>개화기에는 기록 항목을 늘리지 말고, 기존 항목(강우, 토양수분, 병징, 꽃군밀도)만 2배 주기로 정확히 넣는 편이 더 유효합니다.</p></aside></section><section id=\"practice-flowering\"><span class=\"content-index\">06</span><h2>실습: 개화·수분 모니터링 3주 루틴</h2><ol><li>매주 같은 요일에 3개 구획을 동일 규격으로 관찰합니다.</li><li>개화량은 절대수보다 동시성 점수(예: 낮음/보통/높음)로 표준화해 기록합니다.</li><li>강우일과 대조군 일자, 수분 상태를 함께 적어 연계표를 만듭니다.</li><li>3주 뒤 착과 실패나 유실이 높은 구획을 골라 대응이 달랐던 요소를 비교합니다.</li></ol></section><section id=\"misconceptions-flowering\"><span class=\"content-index\">07</span><h2>흔한 오해</h2><ul><li>오해: “수분은 비가 오면 일어나기만 하면 된다.”</li><li>정리: 비와 함께 토양 상태, 나무 에너지, 꽃군 동시성이 맞아야 실제 착과로 연결되기 쉽습니다.</li><li>오해: “타가수분이 항상 더 좋다.”</li><li>정리: 조건이 바뀌면 자가수분 구간도 안정적으로 작동할 수 있으므로 절대 비교는 위험합니다.</li><li>오해: “개화가 실패하면 관리 탓이다.”</li><li>정리: 개화 신호 자체는 환경 요인 영향이 커서 실패의 원인을 한 층으로만 묶기 어렵습니다.</li></ul></section><section id=\"references-flowering\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a href=\"https://www.wcr.org\">World Coffee Research, Reproductive Biology notes</a></li><li><a href=\"https://www.ico.org\">ICO Coffee Research</a></li><li><a href=\"https://www.cabi.org\">CABI, Coffee flowering ecology</a></li><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">커피나무의 생애주기와 생육 달력</a></li><li><a data-wikilink=\"coffee-processing\" href=\"/wiki/coffee-processing\">커피 가공 방식 한눈에 보기</a></li></ul></section>",
     "backlinks": [
       "coffee-plant-life-cycle",
-      "root-canopy-photosynthesis"
+      "root-canopy-photosynthesis",
+      "coffee-canopy-pruning-rejuvenation"
     ]
   },
   {
@@ -8726,7 +9649,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"term-map\"><span class=\"content-index\">01</span><h2>용어를 섞으면 생기는 비용</h2><p>커피 문맥에서 “재래종”, “품종”, “컬티바”, “하이브리드”는 같은 층위가 아닙니다. 같은 단어가 문헌·거래처·브로셔에서 다르게 쓰이면 주문, 큐레이션, 가격 협의에서 오해가 발생합니다.</p><p>문제는 용어 자체가 아니라 용어가 걸린 층위가 다르다는 점입니다. 품질과 운영의 실패는 단어가 아니라 층위를 혼동할 때 먼저 생깁니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>라벨을 해석할 때는 최소한 “유전적 기원(종/계통)”, “상업적 등록 방식”, “번식·복제 형태”를 한 줄씩 분리해 확인하세요.</p></aside></section><section id=\"definitions\"><span class=\"content-index\">02</span><h2>4개 용어의 기본 구분</h2><p><strong>품종(variety)</strong>은 한 종 안에서 유전적·형태적 특성이 일정하게 반복되는 집단으로 이해할 수 있습니다. <strong>재래종(heirloom)</strong>은 특정 지역에서 오랫동안 재배되었거나 기원·혼재력이 유연하게 전달되는 재래 집단의 표현으로 쓰입니다.</p><p><strong>컬티바(cultivar)</strong>는 주로 원예·육종 맥락에서 인간이 선발·교차·선별해 정착시킨 계통을 지칭할 때 쓰이고, <strong>하이브리드</strong>는 서로 다른 유전 배경의 교배 결과 집단을 가리킵니다. 이 네 단어는 목적과 검증 체계가 달라 거래 문헌에서 자주 충돌합니다.</p></section><section id=\"commerce-confusion\"><span class=\"content-index\">03</span><h2>거래에서 생기는 혼선 3가지</h2><p>첫째, 컬티바와 품종 명칭이 같은 발음으로 쓰이지만, 등록과 추적 체계가 다를 수 있습니다. 둘째, 재래종은 브랜드 서사와 혼동되어 유전적 기원을 확정했다고 오인되는 경우가 있습니다. 셋째, 하이브리드는 F1 표시가 생략돼 단순 “개량 계통”처럼 보일 때가 있습니다.</p><p>그래서 문서를 읽을 때 명칭 뒤에 실제 데이터가 있는지(원산지, 유전자 계보, 번식 방식, 재생산성 지표)를 우선 확인해야 합니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>브로셔의 영문명은 번역 과정에서 동일한 뜻으로 보일 수 있으나, 실제로는 통제구간이 다를 수 있습니다. 동일 스펠링=동일 품질은 아닙니다.</p></aside></section><section id=\"selection-implications\"><span class=\"content-index\">04</span><h2>육종·구매에서의 판단 기준</h2><p>구매 계약에서는 “향기 특성”만으로 결정하기보다 생산 목적(고량·고가치 분리, 로스트 용도, 분쇄 안정성)에 맞는 분류층을 맞춰야 합니다. 품종은 관능 잠재성을 설명하는데 유용하고, 재래종은 유전적 다양성·브랜드 차별성 해석에 도움이 됩니다.</p><p>컬티바와 하이브리드는 재배 안정성, 균일성, 번식비 계산에서 특히 중요합니다. 하이브리드라고 표시된 원두가 항상 복합성으로 유리한 것은 아니고, F1인지 아닌지에 따라 차이가 커질 수 있습니다.</p><table><thead><tr><th>구분</th><th>정의 중심</th><th>운영에서의 사용 포인트</th><th>주의점</th></tr></thead><tbody><tr><td>품종</td><td>종 내부의 반복적 특성</td><td>향미·수확 패턴 추정</td><td>동일 명칭 내 변동 가능성 존재</td></tr><tr><td>재래종</td><td>지역 유래·전승 계통</td><td>브랜드 스토리 및 다양성 설명</td><td>유전자 기록이 불완전할 수 있음</td></tr><tr><td>컬티바</td><td>인위 선발/안정 계통</td><td>균일성 기반 운영</td><td>등록·표기 체계 확인 필요</td></tr><tr><td>하이브리드</td><td>교배 기반 계통</td><td>강건성·생산성 가설 설정</td><td>세대 구분(F1 등) 생략 가능성</td></tr></tbody></table></section><section id=\"practice-varieties\"><span class=\"content-index\">05</span><h2>실습: 문서 한 건을 층위별로 해석해 보기</h2><p>이번 실습은 하나의 카탈로그 항목을 네 칼럼으로 풀어보는 방식입니다.</p><ol><li>항목명에서 용어(예: 게이샤, 하이브리드, 컬티바)를 먼저 분리합니다.</li><li>원산지·유통사·연도 정보가 있으면 같은 줄에 붙여 보조 근거를 적습니다.</li><li>유전적 근거가 없는 표현은 “구분 필요”로 표시하고 결제 결정을 보류합니다.</li><li>실제 시음/센서리 결과와 용어가 일치하지 않으면 “라벨·현장 분기”로 기록합니다.</li></ol></section><section id=\"misconceptions-varieties\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: “재래종은 항상 희귀하고 고가치이다.”</li><li>정리: 희귀성과 품질은 별개 축입니다. 유통량·관리 상태가 더 크게 작동할 수 있습니다.</li><li>오해: “컬티바면 반드시 유통이 투명하다.”</li><li>정리: 표준 등록만으로 충분하지 않으며 추적체계와 검증 데이터가 함께 있어야 합니다.</li><li>오해: “하이브리드는 다 같이 동일하게 반응한다.”</li><li>정리: 세대, 교배 조합, 재배 환경이 다르면 편차가 생깁니다.</li></ul></section><section id=\"references-varieties\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.wcr.org/varieties\">World Coffee Research Varieties</a></li><li><a href=\"https://www.sca.coffee/\">Specialty Coffee Association</a></li><li><a href=\"https://www.fao.org\">FAO Crop Diversity 자료</a></li><li><a href=\"https://www.ipa.ac.uk\">IPGRI 계통 데이터 가이드</a></li><li><a data-wikilink=\"coffee-varieties\" href=\"/wiki/coffee-varieties\">품종은 종과 어떻게 다른가</a></li></ul></section>",
     "backlinks": [
-      "coffee-terroir-science"
+      "coffee-terroir-science",
+      "coffee-tipica-bourbon-lineage",
+      "f1-hybrid-coffee-breeding"
     ]
   },
   {
@@ -8820,7 +9745,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       "global-coffee-zones",
       "wet-hulling",
       "altitude-rain-temp-physiology",
-      "coffee-soil-nutrient-diagnosis"
+      "coffee-soil-nutrient-diagnosis",
+      "coffee-shade-intercropping",
+      "ethiopian-heirloom-diversity"
     ]
   },
   {
@@ -8917,7 +9844,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "honey-pulped-natural-processing",
       "anaerobic-coffee-processing",
       "harvest-maturity-selection",
-      "green-bean-moisture-management"
+      "green-bean-moisture-management",
+      "catimor-sarchimor-blight-resistance"
     ]
   },
   {
@@ -9041,7 +9969,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "brew-methods",
       "home-brew-recipes",
       "brew-ratio-practice",
-      "coffee-solvent-chemistry"
+      "coffee-solvent-chemistry",
+      "french-press-immersion-guide"
     ]
   },
   {
@@ -9455,7 +10384,10 @@ export const articlesByLocale: Record<string, Article[]> = {
       "coffee-fermentation-microbiology",
       "honey-pulped-natural-processing",
       "wet-hulling",
-      "anaerobic-coffee-processing"
+      "anaerobic-coffee-processing",
+      "f1-hybrid-coffee-breeding",
+      "kenya-coffee-system",
+      "columbia-harvest-cycle"
     ]
   },
   {
@@ -9639,7 +10571,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "thermal-time-agitation-control",
       "brew-profile-observables",
       "coffee-solvent-chemistry",
-      "brew-experiment-design"
+      "brew-experiment-design",
+      "moka-pot-pressure-control"
     ]
   },
   {
@@ -9877,7 +10810,8 @@ export const articlesByLocale: Record<string, Article[]> = {
       "permeability-channeling-control",
       "espresso-machine-hydraulics-thermal",
       "espresso-puck-preparation",
-      "plant-based-milk-steaming"
+      "plant-based-milk-steaming",
+      "moka-pot-pressure-control"
     ]
   },
   {
@@ -10106,7 +11040,9 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"species-layer\"><span class=\"content-index\">01</span><h2>종과 품종은 층처럼 봐야 합니다</h2><p>종은 생물학적 분류의 큰 단위이고, 품종은 그 안에서 형성된 유전적 라인입니다. 아라비카를 예로 들면 티피카·버번·게이샤 같은 품종명이 같은 생물권 안의 서로 다른 계열을 가리킵니다.</p><p>이 구분이 중요한 이유는 가격·마케팅과의 충돌을 피하기 위해서입니다. 이름이 같아도 분포하는 환경이 다르면 같은 품종이라도 결과는 다르게 보일 수 있습니다.</p></section><section id=\"why-variety-matters\"><span class=\"content-index\">02</span><h2>품종을 보는 이유</h2><p>품종은 로트 관리에서 유리한 단서를 제공합니다. 예를 들어 수확량, 건조 민감성, 병해 동향, 향미 프로파일의 재현성에 대한 예측이 쉬워지는 구간이 있습니다.</p><p>다만 유전적 특성은 시작점이지, 결과를 고정하지 않습니다. 같은 품종이라도 재배 밀도, 수확 적기, 발효·건조의 균일성에 따라 결과의 분산이 큽니다.</p></section><section id=\"read-label\"><span class=\"content-index\">03</span><h2>라벨의 품종명이 실제로 말하는 것</h2><table><thead><tr><th>라벨 항목</th><th>확인 포인트</th><th>활용 방법</th></tr><tr><td>품종명</td><td>용어의 유효 범위</td><td>지역 및 가공 정보를 함께 읽기</td></tr><tr><td>지역 코드</td><td>재배 고도·기후 신호</td><td>동일 품종 내 편차 비교 근거 확보</td></tr><tr><td>로트 날짜</td><td>저장 손상 추정</td><td>동일 장비에서 동일 추출 조건 반복</td></tr></tbody></table></section><section id=\"common-variety-confusion\"><span class=\"content-index\">04</span><h2>오해를 줄이는 기준</h2><ul><li><strong>오해:</strong> 품종명은 곧 가격의 객관 척도입니다.<br/><strong>정리:</strong> 가격은 계약, 유통, 희소성, 시즌 수급이 함께 작용합니다.</li><li><strong>오해:</strong> 유명 품종은 항상 좋은 품질을 보장합니다.<br/><strong>정리:</strong> 관리 실패된 동일 품종도 컵에서 불안정할 수 있습니다.</li><li><strong>오해:</strong> 품종을 몰라도 추출하면 다르지 않다.<br/><strong>정리:</strong> 품종은 추출 반응의 기본 폭을 바꾸므로 동등 조건 가정이 틀릴 수 있습니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">05</span><h2>실습: 라벨과 컵의 연결</h2><p>한 달간 기록 방식으로 품종 정보를 검증해보세요.</p><ol><li>품종명이 다른 2~3개 샘플 선정(동일 추출 장비)</li><li>각 샘플을 동일 분쇄·비율·온도로 2회 추출</li><li>각 감각 척도(산미/단맛/바디/후미)를 기록</li><li>품종명만으로 설명되지 않는 오차 원인을 로트/가공과 분리해 저장</li></ol></section><section id=\"workflow\"><span class=\"content-index\">06</span><h2>구매·관리 시 1회 루틴</h2><p>바쁜 상황에서는 품종을 다음 기준으로 압축해 봅니다. 첫째, 품종명, 둘째, 가공, 셋째, 로트/로스팅일, 넷째, 추출 메모입니다.</p><p>품종별 차이를 보기 전에 공정 정보를 함께 저장하면, 동료와 논의할 때 “느낌의 오해”를 수치와 증거로 바꿀 수 있습니다.</p></section><section id=\"quiz\"><span class=\"content-index\">07</span><h2>자기 점검 퀴즈</h2><ul><li>종과 품종의 차이를 한 문장으로 정리하면?</li><li>품종만 보고 과대 일반화되는 표현 한 가지를 고쳐 쓰면?</li><li>동일 품종 샘플의 컵 편차가 크면 어디부터 확인해야 할까요?</li><li>품종명 검증에서 라벨의 1순위 항목은 무엇인가요?</li></ul></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"arabica-and-robusta\" href=\"/wiki/arabica-and-robusta\">아라비카와 로부스타</a></li><li><a href=\"https://worldcoffeeresearch.org/areas-of-focus/genetic/\">World Coffee Research, 유전·재배 자원</a></li><li><a href=\"https://www.farmer.org/\">FAO, 커피 품종·재배 데이터</a></li><li><a href=\"https://varieties.worldcoffeeresearch.org/\">WCR Arabica Varieties Catalog</a></li><li><a href=\"https://www.scielo.org/scielo.php?script=sci_abstract&pid=S1980-56742021000100123\">품종 관련 학술 사례</a></li></ul></section>",
     "backlinks": [
       "coffee-variety-cultivar-hybrid",
-      "arabica-and-robusta"
+      "arabica-and-robusta",
+      "coffee-tipica-bourbon-lineage",
+      "f1-hybrid-coffee-breeding"
     ]
   },
   {
@@ -10178,7 +11114,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"what\"><span class=\"content-index\">01</span><h2>콜드브루란 무엇인가</h2><p>콜드브루는 찬물이나 실온의 물에 커피를 오래 담가 우려내는 추출 방식입니다. 온도가 낮으면 성분이 녹아 나오는 속도가 느려지므로, 이를 긴 접촉 시간으로 보완합니다.</p><p>같은 원두라도 뜨거운 물로 빠르게 내릴 때와 향미의 균형이 달라질 수 있습니다. 흔히 신맛과 쓴맛이 덜 두드러진다고 이야기하지만, 이는 원두와 레시피에 따라 달라지는 경향일 뿐 절대적인 규칙은 아닙니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>콜드브루(냉침)와 아이스 커피(뜨겁게 내려 얼음에 식힘)는 다릅니다. 아이스 커피는 뜨거운 추출의 향미를 차갑게 즐기는 방식입니다.</p></aside></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>비율·분쇄도·시간</h2><p>아래 값은 출발점으로 삼을 참고 범위입니다. 농축액을 만들어 희석할지, 바로 마실 농도로 낼지에 따라 비율이 크게 달라집니다.</p><table><tbody><tr><th>변수</th><th>일반적 참고 범위</th><th>메모</th></tr><tr><td>커피 : 물</td><td>1:8 ~ 1:15</td><td>낮을수록 진한 농축액</td></tr><tr><td>분쇄도</td><td>중간 ~ 굵게</td><td>미분이 많으면 텁텁해지기 쉬움</td></tr><tr><td>우림 시간</td><td>냉장 12~18시간 / 실온 8~12시간</td><td>길수록 강하고 무거워지는 경향</td></tr></tbody></table></section><section id=\"method\"><span class=\"content-index\">03</span><h2>만드는 순서</h2><p>가장 단순한 방법은 침지식입니다. 용기에 커피와 물을 넣고 저은 뒤, 정해진 시간 동안 우리고 걸러냅니다.</p><ul><li>커피를 계량해 굵게 분쇄하고 물과 함께 용기에 넣습니다.</li><li>가루가 물에 고루 젖도록 가볍게 저어 줍니다.</li><li>냉장 또는 실온에서 목표 시간만큼 우립니다.</li><li>고운 필터로 두 번 걸러 미분을 줄입니다.</li></ul></section><section id=\"serving\"><span class=\"content-index\">04</span><h2>농도 맞추기와 보관</h2><p>농축액으로 만들었다면 물이나 우유로 취향에 맞게 희석합니다. 같은 레시피라도 얼음이 녹으며 연해지므로, 얼음 잔에는 조금 더 진하게 맞추면 균형이 유지됩니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>콜드브루는 저온에서 우리지만 무균은 아닙니다. 밀폐해 냉장 보관하고 며칠 안에 마시는 편이 안전하며, 향미도 시간이 지나면 무뎌집니다.</p></aside></section>",
     "backlinks": [
       "brew-methods",
-      "home-brew-recipes"
+      "home-brew-recipes",
+      "french-press-immersion-guide"
     ]
   },
   {
@@ -10955,7 +11892,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"three-principles\"><span class=\"content-index\">01</span><h2>모든 추출법은 세 가지 원리로 나뉩니다</h2><p>도구의 이름은 수십 가지지만 원리는 단순합니다. 커피와 물을 한 용기에 담가 두는 <strong>침지(immersion)</strong>, 커피층 위로 물을 통과시키는 <strong>투과(percolation)</strong>, 압력으로 물을 밀어내는 <strong>가압(pressure)</strong> — 대부분의 추출법은 이 셋 중 하나이거나 그 조합입니다.</p><table><tbody><tr><th>원리</th><th>대표 방식</th><th>추출을 정하는 핵심 변수</th><th>경향</th></tr><tr><td>침지</td><td>프렌치 프레스, 커핑, 콜드브루</td><td>시간, 비율, 온도</td><td>재현이 쉽고, 금속 필터 기준 바디가 묵직한 편</td></tr><tr><td>투과</td><td>푸어오버(핸드드립), 배치 브루어</td><td>분쇄도, 붓는 방식, 물길의 균일성</td><td>깔끔하고 향이 또렷한 편</td></tr><tr><td>가압</td><td>에스프레소, 모카포트</td><td>압력, 분쇄도, 도징, 탬핑(에스프레소 한정)</td><td>짧고 진하며 농축된 질감</td></tr></tbody></table><aside class=\"callout callout-note\" data-tone=\"note\"><p>\"경향\"은 참고일 뿐입니다. 같은 도구라도 레시피에 따라 인상은 크게 달라지며, 최종 판단 기준은 <a data-wikilink=\"extraction-basics\" href=\"/wiki/extraction-basics\">농도와 수율</a>, 그리고 잔의 맛입니다.</p></aside></section><section id=\"immersion\"><span class=\"content-index\">02</span><h2>침지: 시간이 다 해주는 방식</h2><p>커피와 물을 함께 담가 두면 시간과 비율이 추출의 대부분을 결정합니다. 물길의 균일성 문제가 없어 초심자도 재현하기 쉽고, 오일과 미분이 걸러지지 않는 도구(프렌치 프레스)에서는 바디가 무거워지는 경향이 있습니다.</p><ul><li>프렌치 프레스: 금속 메시로 눌러 거르는 대표적 침지식.</li><li>클레버·스위치류: 밸브로 침지 후 종이 필터로 내려보내는 하이브리드.</li><li><a data-wikilink=\"cold-brew\" href=\"/wiki/cold-brew\">콜드브루</a>: 낮은 온도를 긴 시간으로 보완하는 침지.</li><li><a data-wikilink=\"cupping-basics\" href=\"/wiki/cupping-basics\">커핑</a>: 평가를 위한 표준화된 침지.</li></ul></section><section id=\"percolation\"><span class=\"content-index\">03</span><h2>투과: 물길을 설계하는 방식</h2><p>푸어오버(핸드드립)는 커피층 위로 새 물이 계속 지나가므로 같은 시간이라면 침지보다 추출 효율이 높은 편입니다. 대신 물을 붓는 속도·높이·회전, 커피층의 평탄함 같은 물길 변수가 맛에 직접 개입합니다.</p><p>종이 필터가 오일과 미분을 붙잡아 깔끔한 질감과 또렷한 향미를 얻기 쉽습니다. 드리퍼의 형태(원뿔·평바닥)와 리브 구조, 필터 두께에 따라 흐름 속도가 달라지는데, 이는 <a data-wikilink=\"brewing-gear-guide\" href=\"/wiki/brewing-gear-guide\">도구 가이드</a>에서 자세히 다룹니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>푸어오버가 자꾸 흔들린다면 변수를 줄인 침지(클레버류)로 기준 맛을 먼저 잡고, 그 맛을 목표로 푸어오버를 조정하는 순서가 배우기 쉽습니다.</p></aside></section><section id=\"pressure\"><span class=\"content-index\">04</span><h2>가압: 압력이 만드는 농축</h2><p><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소</a>는 약 9기압 안팎의 압력으로 짧은 시간에 농축된 음료를 뽑는 대표적 가압 추출입니다. 압력은 물이 곱게 간 커피층을 통과하게 해 줍니다. 크레마는 가압 상태에서 녹아 있던 이산화탄소가 기포로 풀려나며 만들어지고, 유화된 오일은 진한 질감에 기여합니다.</p><p>모카포트는 증기압(대체로 1~2기압 수준)으로 물을 밀어 올리는 저압 가압 방식입니다. 진하고 묵직한 커피가 나오지만, 압력과 온도 특성이 달라 에스프레소와 같은 음료로 보기는 어렵습니다.</p></section><section id=\"hybrid\"><span class=\"content-index\">05</span><h2>경계에 있는 방식들</h2><ul><li>에어로프레스: 침지 후 손 압력으로 밀어내는 침지+가압 하이브리드. 레시피 자유도가 매우 높습니다.</li><li>사이폰: 증기압으로 물을 올려 침지하고, 불을 끄면 감압으로 내려오는 극적인 방식. 향의 표현이 화려한 편입니다.</li><li>배치 브루어: 투과 원리를 자동화한 대량 추출. 스페셜티 카페의 필터 커피 기본기입니다.</li></ul><p>어떤 방식이든 \"무엇이 추출을 움직이는가\"는 같습니다 — 분쇄도, 비율, 온도, 시간, 균일성. 방식을 바꾸는 것은 이 변수들의 우선순위를 바꾸는 일에 가깝습니다. 구체적인 출발 레시피는 <a data-wikilink=\"home-brew-recipes\" href=\"/wiki/home-brew-recipes\">기본 레시피 모음</a>을 참고하세요.</p></section>",
     "backlinks": [
       "brewing-gear-guide",
-      "brew-experiment-design"
+      "brew-experiment-design",
+      "french-press-immersion-guide"
     ]
   },
   {
@@ -11031,7 +11969,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<p>아래 브랜드·제품은 각 카테고리에서 널리 알려진 <strong>대표 예시</strong>이며, 망라도 추천 순위도 아닙니다. 제품 사양과 라인업은 수시로 바뀌므로 구매 전에는 제조사의 현행 정보를 확인하세요.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>Bean Wiki는 어떤 브랜드와도 이해관계가 없습니다. 언급 기준은 \"그 카테고리를 설명할 때 업계에서 흔히 예로 드는가\"입니다.</p></aside><section id=\"pourover\"><span class=\"content-index\">01</span><h2>푸어오버 드리퍼</h2><p>형태와 배수 구조가 흐름 속도를 정하고, 그것이 레시피의 성격을 정합니다.</p><table><tbody><tr><th>형태</th><th>대표 예시</th><th>특징</th></tr><tr><td>원뿔(큰 구멍 1개)</td><td>하리오 V60, 고노</td><td>리브는 모델별 상이(V60 나선, 고노 하단 직선), 붓는 속도가 맛에 크게 개입 — 자유도 높음</td></tr><tr><td>평바닥(작은 구멍 여러 개)</td><td>칼리타 웨이브, 에이프릴, 오레아</td><td>물빠짐이 완만해 균일성 확보가 쉬움 — 관대한 편</td></tr><tr><td>부채꼴(사다리꼴)</td><td>멜리타, 칼리타 101/102</td><td>종이 필터 드립의 고전 형태</td></tr><tr><td>겸용·변형</td><td>오리가미(원뿔·웨이브 필터 겸용), 케멕스(일체형 유리)</td><td>케멕스는 두꺼운 전용 필터로 깔끔한 질감을 얻기 쉬운 편</td></tr></tbody></table><p>멜리타는 1908년 종이 필터 드립을 창안한 브랜드로 알려져 있고, V60의 이름은 원뿔 각도 60도에서 왔습니다. 같은 원뿔이라도 리브(내벽 돌기)의 형태가 필터 밀착과 배수를 바꿉니다.</p></section><section id=\"immersion-gear\"><span class=\"content-index\">02</span><h2>침지·하이브리드 도구</h2><table><tbody><tr><th>도구</th><th>대표 예시</th><th>방식</th></tr><tr><td>프렌치 프레스</td><td>보덤 샹보르, 에스프로 P3</td><td>금속 메시 침지 — 묵직한 바디, 미분 유의</td></tr><tr><td>밸브 침지 드리퍼</td><td>클레버 드리퍼, 하리오 스위치</td><td>침지 후 종이 필터로 배출 — 재현 쉬움</td></tr><tr><td>에어로프레스</td><td>에어로프레스(오리지널·고·클리어)</td><td>침지+가압, 2005년 앨런 애들러 발명</td></tr><tr><td>사이폰</td><td>하리오 테크니카, 야마</td><td>증기압 상승·감압 하강 — 시각적, 향 표현</td></tr><tr><td>모카포트</td><td>비알레티 모카 익스프레스</td><td>1933년 알폰소 비알레티 발명(대량 상용화는 1946년 아들 레나토 주도)</td></tr></tbody></table></section><section id=\"kettle-scale\"><span class=\"content-index\">03</span><h2>케틀과 저울: 정밀함의 도구</h2><p>푸어오버에서는 물줄기를 통제하는 구즈넥(백조목) 케틀이 사실상 표준입니다. 온도 설정이 되는 전기 모델이면 온도 변수까지 고정할 수 있습니다.</p><ul><li>케틀: 펠로우 스태그 EKG, 브뤼스타 아티산, 하리오 부오노(직화)</li><li>저울: 아카이아 펄, 타임모어 블랙 미러, 하리오 드립 스케일 — 0.1g 단위와 타이머 내장 여부가 실용 포인트</li><li>온도계·TDS 미터: 레시피를 숫자로 기록하고 싶을 때의 보조 도구</li></ul><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>장비 투자 순서가 고민이라면 좋은 그라인더 → 저울 → 케틀 순이 흔히 권장됩니다. 분쇄 균일성이 맛에 미치는 영향이 가장 크기 때문입니다. <a data-wikilink=\"grinder-basics\" href=\"/wiki/grinder-basics\">그라인더 기초</a>를 참고하세요.</p></aside></section><section id=\"filters\"><span class=\"content-index\">04</span><h2>필터: 잊기 쉬운 변수</h2><p>같은 드리퍼라도 필터에 따라 흐름과 질감이 달라집니다. 종이는 표백(백색)·무표백(갈색), 두께, 조직 밀도가 다르고, 금속·천 필터는 오일을 통과시켜 바디를 무겁게 만듭니다. 종이 냄새가 걱정되면 추출 전 헹굼(린싱)이 일반적입니다.</p></section><section id=\"care\"><span class=\"content-index\">05</span><h2>도구보다 관리</h2><p>어떤 도구든 커피 기름때가 쌓이면 맛이 탁해집니다. 프렌치 프레스의 메시, 드리퍼의 리브, 서버의 바닥은 주기적으로 분해 세척하고, 천 필터는 삶아서 관리합니다. 도구 선택보다 물과 분쇄, 관리 상태가 맛을 더 크게 바꾸는 경우가 많습니다 — <a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">커피와 물</a>, <a data-wikilink=\"brew-methods\" href=\"/wiki/brew-methods\">추출법 총람</a>과 함께 읽어 보세요.</p></section>",
     "backlinks": [
-      "brew-methods"
+      "brew-methods",
+      "moka-pot-pressure-control"
     ]
   },
   {
@@ -12931,7 +13870,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"why-observables\"><span class=\"content-index\">01</span><h2>관측값이 중요한 이유</h2><p>같은 수치만으로는 같은 결과가 보장되지 않습니다. 관측값은 그 시간에 있었던 변수를 함께 설명해주므로, 기록의 공유 비용을 낮춰줍니다.</p><p>팀 단위에서는 “개인 감각”보다 “관측 템플릿”이 빠른 학습을 만듭니다.</p></section><section id=\"minimum-metrics\"><span class=\"content-index\">02</span><h2>최소 측정 항목</h2><ul><li>도즈, 물량, 추출시간</li><li>붓기 분할 횟수와 간격(필터 추출)</li><li>기온/수온, 원두 상태(표기)</li><li>맛 메모 4항목: 산미, 단맛, 바디, 쓴맛</li></ul></section><section id=\"template\"><span class=\"content-index\">03</span><h2>운영 템플릿</h2><table><thead><tr><th>항목</th><th>기록 형식</th><th>목적</th></tr><tr><td>추출 유량</td><td>초당 g 또는 구간별 누적 g</td><td>초기 과다 유입 탐지</td></tr><tr><td>온도</td><td>최초/중반/마감</td><td>열 편차 관리</td></tr><tr><td>관능</td><td>산미/단맛/바디/잔향</td><td>재현성 판단</td></tr></tbody></table></section><section id=\"process\"><span class=\"content-index\">04</span><h2>기록 루프</h2><p>관측값을 남긴 뒤의 판단은 아래 루프로 고정합니다.</p><ol><li>차이의 크기 확인: 편차가 통계적으로 반복되는지</li><li>차이의 방향 확인: 값이 늘거나 줄 때 맛 방향이 일치하는지</li><li>차이의 원인 연결: 분쇄·물·교반·온도 중 어떤 축인지</li></ol></section><section id=\"common-errors\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><p>관측값만 많다고 분석이 쉬워지는 것은 아닙니다. 핵심은 최소 5개를 꾸준히 정확히 기록해 추세를 보는 것입니다.</p></section><section id=\"self-check\"><span class=\"content-index\">06</span><h2>자기 점검 퀴즈</h2><ul><li>같은 레시피로 3회 재현해도 관측값 분산이 일정하게 줄었는가?</li><li>변경한 변수가 문서화되어 있는가?</li><li>관측값이 2개 항목에서 함께 바뀌었는지 설명할 수 있는가?</li></ul></section><section id=\"reference\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">물과 온도 기초</a></li><li><a data-wikilink=\"brew-ratio-practice\" href=\"/wiki/brew-ratio-practice\">비율 실험</a></li><li><a data-wikilink=\"home-brew-recipes\" href=\"/wiki/home-brew-recipes\">레시피 운영 예시</a></li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "french-press-immersion-guide"
+    ]
   },
   {
     "slug": "espresso-machine-hydraulics-thermal",
@@ -13717,7 +14658,8 @@ export const articlesByLocale: Record<string, Article[]> = {
     "bodyHtml": "<section id=\"what-change\"><span class=\"content-index\">01</span><h2>무역은 커피의 품질 언어를 만든다</h2><p>커피는 산지에서 수확된 씨앗으로 끝나지 않습니다. 누가 언제, 어떤 기록 기준으로 이 원물을 이동시켰는지가 다음 단계의 판단 비용을 바꿉니다. 무역은 맛을 직접 만들지는 않지만, 같은 맛으로 갈지 못하게 하는 조건차를 늘리거나 줄입니다.</p><p>그래서 같은 원두를 비교할 때는 품종·가공만이 아니라 출하 문서, 포장 상태, 보관 기간, 운송 조건을 같이 봐야 실제 추세를 읽기 쉬워집니다.</p></section><section id=\"historical-track\"><span class=\"content-index\">02</span><h2>역사 단계별 무역 구조</h2><table><thead><tr><th>시기</th><th>무역 방식</th><th>현대 품질 판단에 남은 흔적</th></tr><tr><td>식민지 확산기</td><td>항해·항만 중심 중앙화</td><td>품종/지역 표시가 생기기 시작</td></tr><tr><td>산업화</td><td>대량 생산·경매 시장</td><td>로트 단위 거래와 표준 규격의 형성</td></tr><tr><td>현대</td><td>브랜드·직거래·디지털 추적 확대</td><td>투명성 기대치가 서비스 품질 판단과 직접 연결</td></tr></tbody></table></section><section id=\"price-signals\"><span class=\"content-index\">03</span><h2>가격이 품질 판단을 오인식하게 만드는 지점</h2><p>가격은 분명 신호입니다. 다만 가격이 높은 원인과 품질 수준은 완전히 일치하지 않습니다. 농업 기상 이슈, 운송 지연, 선별 실패, 물류비 상승이 가격에 같이 반영될 수 있기 때문입니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>가격을 절대값으로 보지 말고, 가격 변동의 ‘왜’와 로트별 감각 기록을 같이 비교하세요.</p></aside></section><section id=\"chain-map\"><span class=\"content-index\">04</span><h2>현대 커피 가치사슬 4계층</h2><p>실무에서는 네 구간을 분리해 봅니다.</p><ol><li>생산·가공: 수분, 결점, 발효 편차</li><li>거래·운송: 규격 준수, 선적 조건, 보관</li><li>로스팅: 생두 상태 반응, 재고 회전</li><li>서비스: 추출·보관·제공</li></ol><p>각 구간이 독립된 값 같아 보여도 소비 경험에서는 누적 오차가 되므로, 문제가 생기면 마지막 구간부터가 아니라 첫 단계로 거꾸로 추적하는 게 빠릅니다.</p></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: “무역 이력은 단순 행정 기록이다.”<br/><strong>정정:</strong> 이력은 품질 의사결정 속도를 높이는 데이터입니다. 잘된 이력은 판단을 지연시킵니다.</li><li>오해: “유명 브랜드는 자동으로 추적성이 높다.”<br/><strong>정정:</strong> 브랜드 신뢰와 추적 체계는 별개입니다. 실제 공개 항목을 확인해야 합니다.</li><li>오해: “무역 이력은 감각 판단에 쓸모 없다.”<br/><strong>정정:</strong> 실패 로트의 반복 원인 탐색에서 매우 실용적인 축입니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 1주 기록 루프</h2><p>동일한 원두군에서 일주일 동안 다음 루프를 적용해 보세요.</p><ol><li>구매일, 출하 로트, 포장일, 운송 지연일을 기록</li><li>추출 전/후에 동일 루틴으로 맛 메모</li><li>가격 변동일과 품질 변동을 월말에 교차 비교</li><li>재구매 조건에 ‘가격 이유’와 ‘감각 이유’를 분리해 적기</li></ol></section><section id=\"quiz\"><span class=\"content-index\">07</span><h2>자기 점검</h2><ul><li>무역 구조가 품질 판단에 영향을 주는 이유를 2개 이상 적어보세요.</li><li>가격이 높아도 품질이 불안정할 수 있는 경로는 무엇인가요?</li><li>문제가 생긴 로트의 추적은 어느 구간부터 시작해야 할까요?</li><li>출처 정보 기록 시 가장 먼저 확인할 3개 항목은?</li></ul></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"global-coffee-history\" href=\"/wiki/global-coffee-history\">커피 글로벌 역사 개요</a></li><li><a href=\"https://www.ico.org/\">International Coffee Organization</a></li><li><a href=\"https://www.fao.org/faostat/\">FAOSTAT 커피 통계</a></li><li><a href=\"https://www.icaew.org/cocoa-and-coffee-chain\">국제시장 분석 보고서(예시)</a></li><li><a href=\"https://worldcoffeeresearch.org/\">World Coffee Research</a></li></ul></section>",
     "backlinks": [
       "supply-chain-transparency",
-      "farmer-income-basics"
+      "farmer-income-basics",
+      "ethiopian-heirloom-diversity"
     ]
   },
   {
@@ -14865,7 +15807,10 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"zone-frame\"><span class=\"content-index\">01</span><h2>지도 프레임을 먼저 고정해야 하는 이유</h2><p>커피 산지 정보를 “이 나라의 커피가 이런 맛”으로만 외우면 예측이 흐려집니다. 산지도는 위도, 고도, 강우, 생육 달력의 합으로 읽을 때 실무적인 의미가 커집니다.</p><p>특히 가공·수출·로스터 판단을 연결할 때 구조적 제약이 먼저 맞물립니다.</p></section><section id=\"major-belts\"><span class=\"content-index\">02</span><h2>주요 생산대 3축</h2><table><thead><tr><th>축</th><th>설명</th><th>운영 시사점</th></tr></thead><tbody><tr><td>열대 산지 벨트</td><td>강수·온도 변동 폭이 크고 생육 주기가 길다</td><td>수확기 예측 실패 시 품질 편차가 커집니다</td></tr><tr><td>열대 고원대</td><td>고도차에 따른 성숙도 편차가 시즌별로 큽니다</td><td>로트 선별과 배치 설계를 세분화</td></tr><tr><td>아열대 확장지대</td><td>기후 적응 기술 의존도가 높습니다</td><td>계절별 산화·저장 조건 감시를 강화</td></tr></tbody></table></section><section id=\"production-countries\"><span class=\"content-index\">03</span><h2>생산국별 판별 신호</h2><p>국가별 분류를 쓸 때는 대표 향미보다 거래 리듬을 먼저 봐야 합니다. 선적 주기, 가공률, 계약 조건과 라벨 용어 통일이 다르기 때문입니다.</p><ul><li>수확량 중심 시즌: 입고 간격이 짧아지는 시점</li><li>가공률 중심 시즌: 건조·발효 조건으로 결점 유형 이동</li><li>물류 중심 시즌: 선적 지연으로 보존 손실 리스크 확대</li></ul></section><section id=\"interpretation-rules\"><span class=\"content-index\">04</span><h2>산지 해석 4단계</h2><p>산지 정보를 의사결정에 쓸 때는 다음 순서가 안정적입니다.</p><ol><li>산지 기후 조건으로 수분 편차 방향 예측</li><li>수집 방식으로 점액 노출과 수확 시점 일치성 확인</li><li>가공 방식 분포로 저장 전략 기본 레벨 설정</li><li>운송 조건으로 입고 직후 점검 항목 고정</li></ol><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>같은 나라라도 고도가 다르면 결점 패턴이 달라집니다. 농장 단위보다 생산대 분해가 선행되어야 로트 추적이 쉬워집니다.</p></aside></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 생산국명만 알면 맛을 예측할 수 있다.<br/><strong>정정:</strong> 생산국은 시작점일 뿐, 고도·강우·가공·보관이 편차를 좌우합니다.</li><li>오해: 고도가 높으면 항상 더 좋은 향미다.<br/><strong>정정:</strong> 고도만으로 결정되지 않으며 수분, 품종, 가공·보관이 함께 작동합니다.</li><li>오해: 산지 라벨은 변하지 않는다.<br/><strong>정정:</strong> 계약 라인 변경, 공정 변경, 시즌별 농사 조건이 라벨 의미를 바꿉니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 4개 산지 신호로 분류하기</h2><p>로트 4개를 골라 같은 표로 기록해 보세요.</p><ol><li>산지명, 추정 고도대, 강수 특성, 주간 수분 변동을 한 줄로 기입</li><li>입고 후 24시간 내 보관 상태와 컵 점수를 함께 남김</li><li>결점 분포를 국가군별로 비교</li><li>다음 구매 판단에서 예측이 틀어진 항목을 추적</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"global-coffee-history\" href=\"/wiki/global-coffee-history\">커피 세계사 개요</a></li><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아 과학</a></li><li><a data-wikilink=\"coffee-climate-resilience\" href=\"/wiki/coffee-climate-resilience\">커피 기후 회복성</a></li><li><a href=\"https://www.ico.org/\">ICO 생산·유통 통계</a></li><li><a href=\"https://www.fao.org/fao-stats/en/\">FAO 농산물 통계</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>생산국 라벨만으로 판단하지 말아야 하는 이유는?</li><li>산지의 3축 중 하나만 바뀔 때 먼저 바뀌는 신호는?</li><li>고도와 강우를 분해해 기록할 때 우선 점검할 항목은?</li><li>입고 직후 실무 점검 항목을 한 문장으로 우선순위화할 수 있나요?</li></ul></section>",
     "backlinks": [
-      "altitude-rain-temp-physiology"
+      "altitude-rain-temp-physiology",
+      "ethiopian-heirloom-diversity",
+      "kenya-coffee-system",
+      "columbia-harvest-cycle"
     ]
   },
   {
@@ -15795,7 +16740,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"define-maturity\"><span class=\"content-index\">01</span><h2>성숙도 판별을 규칙화해야 하는 이유</h2><p>가공팀에서 가장 크게 느끼는 변동은 ‘어떤 원두를 같이 수확했는가’에서 시작합니다. 성숙도 혼입이 크면 탈수 속도, 발효 경로, 결점 발생이 동시에 흔들릴 수 있습니다.</p><p>따라서 성숙도 판단은 미관이 아니라 운영 규칙으로 둬야 합니다. 완숙, 반숙, 미숙을 구분해 배치 전략을 다르게 세팅하면 결과 추적이 쉬워집니다.</p></section><section id=\"maturity-signals\"><span class=\"content-index\">02</span><h2>성숙도 신호 5개</h2><ol><li>색: 완숙은 균일한 과색으로 이동하는 경향</li><li>질감: 과육과 과실 표면의 탄력 차이</li><li>Brix: 당도 축적의 상대 지표</li><li>밀도: 건조 후 수분 회수와 분산 안정성</li><li>향: 생과·과숙·과당취에 따른 편차</li></ol><p>이 신호를 하나만 쓰면 오판이 커집니다. 반드시 최소 3개를 함께 기록해야 합니다.</p></section><section id=\"selection-modes\"><span class=\"content-index\">03</span><h2>수확 방식의 운영 차이</h2><table><thead><tr><th>방식</th><th>장점</th><th>리스크</th><th>적합한 조건</th></tr><tr><td>선별 수확</td><td>성숙도 혼입을 낮출 수 있음</td><td>노동량 증가</td><td>가격 민감도가 높고 산지 신호 관리가 필요한 단계</td></tr><tr><td>스트립 수확</td><td>작업 속도 우수</td><td>미숙 과일 혼입 가능</td><td>기계 가용성이 높고 후가공 단계가 강한 경우</td></tr><tr><td>기계 수확</td><td>규모 대응 유리</td><td>균질성 제어가 어렵고 선별 비용 상승</td><td>규모가 크고 분할 관리 시간이 확보되는 경우</td></tr></thead></table></section><section id=\"mixing-risk\"><span class=\"content-index\">04</span><h2>혼입은 언제 문제로 바뀌나</h2><p>혼입 자체가 항상 실패가 되는 것은 아닙니다. 문제는 혼입 비율이 커피의 가공 안정성과 결점 신호를 교란할 때입니다. 특히 미숙 과일 비율이 높으면 과도 발효·불쾌한 향 경향이 먼저 나타나는 경우가 있습니다.</p></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 한 번에 많이 따는 것이 항상 비용을 줄인다.<br/><strong>정정:</strong> 장기적으로는 선별 비용·불량 배치 전가 비용이 커질 수 있습니다.</li><li>오해: 색만 같으면 성숙도가 일치한다.<br/><strong>정정:</strong> 밀도·수분·표면 신호를 함께 봐야 편차를 줄일 수 있습니다.</li><li>오해: 미숙을 많이 포함하면 항상 버리는 게 맞다.<br/><strong>정정:</strong> 목적 배치와 가공 루트를 다르면 활용 조건이 달라질 수 있습니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 수확 혼입 계량</h2><ol><li>당일 수확에서 3개 소포의 성숙도 비율을 추정해 기록</li><li>동일 배치에서 처리 후 건조 시간 및 결점 항목을 분리 기록</li><li>커핑 전 전처리 로그에서 미숙율과 향미 편차를 연동</li><li>다음 회차에 수확 기준을 1개만 수정하고 효과 비교</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"post-harvest-processing-map\" href=\"/wiki/post-harvest-processing-map\">수확 후 가공 지도</a></li><li><a href=\"https://www.ico.org/coffee-processing\">ICO 커피 가공 개요</a></li><li><a href=\"https://www.fao.org/food-safety\">FAO 커피 품질·저장 가이드</a></li><li><a href=\"https://www.scielo.org/scielo.php?script=sci_arttext&pid=S1413-80542023000100011\">수확 단계 연구 자료</a></li><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">커피 생애주기</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>성숙도 혼입을 줄이기 위해 반드시 병행해야 하는 신호는?</li><li>선별 수확과 스트립 수확의 실무 트레이드오프는?</li><li>혼입이 컵 편차로 연결되는 첫 지점은 어디인가?</li><li>실습에서 가장 먼저 수정할 변수는?</li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "columbia-harvest-cycle"
+    ]
   },
   {
     "slug": "root-canopy-photosynthesis",
@@ -15975,7 +16922,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"frame\"><span class=\"content-index\">01</span><h2>기후 신호를 ‘조건부 경향’으로 본다</h2><p>고도와 강우, 온도를 각각 단일 판단 기준으로 쓰면 과잉 단정이 생깁니다. 운영에서는 이 세 변수를 동시에 놓고, 언제, 어느 방식으로 결합되었는지를 먼저 기록해야 합니다.</p><p>특히 산지의 고도는 단순 수치보다 일교차, 구름량, 바람, 배수 특성과 함께 움직일 때 더 정확합니다.</p></section><section id=\"temperature-effect\"><span class=\"content-index\">02</span><h2>온도: 성숙 경로의 가속기</h2><p>온도는 광합성 속도, 탄소 배분, 당도 형성, 수분 스트레스 반응을 동시에 바꿉니다. 고온 구간은 성장 속도를 앞당길 수 있지만 결실의 균일성은 떨어질 가능성이 있습니다.</p></section><section id=\"rain-effect\"><span class=\"content-index\">03</span><h2>강우: 성숙 안정성과 결점의 경계</h2><p>강우는 수분 보완과 미생물 조건을 동시에 만듭니다. 강우 빈도가 높으면 건조 단계가 반복되기 쉬워 결점 관리가 어려워질 수 있고, 건조 불량이 이어지면 저장·가공 편차가 커집니다.</p></section><section id=\"altitude-effect\"><span class=\"content-index\">04</span><h2>고도: 동일 농장 내 변수의 축소도구</h2><p>고도는 평균 기후를 설명할 뿐, 같은 면적 안에서도 그늘·노출·토양이 다르면 미세한 성능 차이가 큽니다. 그래서 고도 자체보다 고도대별 운영 루틴 차이가 더 중요할 때가 많습니다.</p></section><section id=\"strategy-matrix\"><span class=\"content-index\">05</span><h2>운영 판단 매트릭스</h2><table><thead><tr><th>상황</th><th>우려 신호</th><th>우선 점검</th></tr><tr><td>고온·건조 교차기</td><td>발효 잔당 변동 확대</td><td>수확 분할, 건조 시간 재설계</td></tr><tr><td>고강우 장기 지속</td><td>수분 혼입·병해 우려</td><td>선별 강도, 저장 통풍 점검</td></tr><tr><td>고도대 이동 수확</td><td>맛 강도와 산미 편차</td><td>배치 라벨링 강화</td></tr></thead></table></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: 고도만 높으면 향이 더 좋아진다.<br/><strong>정정:</strong> 고도는 출발점이지, 운영 품질을 보장하지 않습니다.</li><li>오해: 강우가 많으면 항상 더 달다.<br/><strong>정정:</strong> 강우 패턴과 건조 조건이 맞물릴 때 결점이 늘 수 있습니다.</li><li>오해: 온도·강우·고도는 서로 독립이다.<br/><strong>정정:</strong> 세 변수의 조합이 수분·수확 시기를 함께 움직입니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 한 산지의 기후-배치 로그</h2><ol><li>주 1회로 고도대별 수분·온도·강우 기록(최근 7일 기준)</li><li>같은 수확 라인에서 성숙도와 결점 비율 비교</li><li>예상 산지 라벨과 실제 컵 감각 편차를 분리 기록</li><li>다음 주기에서 예측 모델의 한 변수만 변경해 효과 확인</li></ol></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아 과학 개요</a></li><li><a data-wikilink=\"global-coffee-zones\" href=\"/wiki/global-coffee-zones\">세계 커피 생산대 지도</a></li><li><a href=\"https://www.ico.org/climate\">ICO 기후·공급망 리포트</a></li><li><a href=\"https://www.wri.org\">World Resources Institute 커피·기후 분석</a></li><li><a href=\"https://www.cawater.com\">산지 수분·기상 가이드</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">09</span><h2>자기 점검</h2><ul><li>온도·강우·고도 중 먼저 분리해야 하는 신호는?</li><li>동일 고도에서도 편차가 나는 이유를 하나 설명하세요.</li><li>기후 로그를 추출 결과로 연결할 때 누락하기 쉬운 항목은?</li><li>실험에서 가장 먼저 조정해야 할 운영 변수는?</li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-shade-intercropping"
+    ]
   },
   {
     "slug": "roaster-machine-types-comparison",
@@ -16144,7 +17093,11 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"diagnosis-principle\"><span class=\"content-index\">01</span><h2>토양 진단의 목표를 먼저 고정한다</h2><p>토양 지표는 결과를 “좋다/나쁘다”로 분해하는 도구가 아닙니다. 수확 안정성, 미성숙 과실률, 결점 증가를 줄이기 위한 조치 우선순위를 정할 때 쓰는 판단 기반입니다.</p><aside class=\"callout\" data-tone=\"note\"><p>진단의 핵심은 성분 수치 하나가 아니라, 수분·양분·유기물의 조합을 통해 어떤 증상을 먼저 완화할지 결정하는 것입니다.</p></aside></section><section id=\"key-indicators\"><span class=\"content-index\">02</span><h2>핵심 지표 5개</h2><ol><li><strong>pH</strong>: 양분 가용성과 미생물 활성의 기본 축</li><li><strong>유기물 함량</strong>: 수분 완충과 구조 안정성</li><li><strong>질소/칼륨 균형</strong>: 생장과 결실 전환의 균형</li><li><strong>칼슘·마그네슘 지표</strong>: 세포벽 안정성과 스트레스 대응</li><li><strong>토양 수분 유지력</strong>: 건조기 대응 속도</li></ol></section><section id=\"sampling-logic\"><span class=\"content-index\">03</span><h2>샘플링은 한 번의 수치가 아니라 반복 루프</h2><p>샘플링은 계절 초기에 끝나는 행위가 아니라, 수확 전후로 다시 점검되는 반복 루프여야 합니다. 동일 구획이라도 고도와 노출 조건이 다르면 양분 반응도 달라집니다.</p><ul><li>구획별 기록: 경사, 노출, 배수 상태를 붙여 저장</li><li>분기별 기록: 비나마를 제외한 연속 시계열로 비교</li><li>표준 샘플 수: 구획의 면적·기울기 차이를 반영한 동수 분할</li></ul></section><section id=\"intervention-map\"><span class=\"content-index\">04</span><h2>개입 지도: “추가 투입”보다 “재배치·분할”부터</h2><table><thead><tr><th>진단 결과</th><th>해석</th><th>우선 액션</th></tr></thead><tbody><tr><td>pH 하락 + 유기물 부족</td><td>수분 손실과 미생물 활성이 약화될 가능성</td><td>유기물 보강·배수 점검</td></tr><tr><td>질소 과다 + 균열성 과성장</td><td>과다 생장 후 미성숙 과실 증가 가능성</td><td>질소 투입 완화·생육조절</td></tr><tr><td>칼륨/마그네슘 불균형</td><td>수분 조절 능력 저하 및 결점 편차</td><td>구획 분할 시비 설계</td></tr></tbody></table></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 양분 지표가 좋으면 결점이 사라진다.<br/><strong>정정:</strong> 수분·가공 단계까지 함께 보지 않으면 결점은 계속 반복될 수 있습니다.</li><li>오해: 비료를 늘리면 생존 스트레스가 줄어든다.<br/><strong>정정:</strong> 과투입은 성장 편차를 키울 수 있어 오히려 수확 동기 불균형이 생깁니다.</li><li>오해: 토양 검사는 1회로 충분하다.<br/><strong>정정:</strong> 구획 변화와 계절 변화를 반영해 주기적 재측정이 필요합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 구획별 진단 로그</h2><ol><li>동일 밭의 경사지, 평지, 그늘 구획을 구분해 샘플 채취</li><li>pH·유기물·질소 비율을 표준 스프레드시트에 기록</li><li>다음 수확에서 미성숙 과실률, 건조 편차와 대조</li><li>한 지표만 변경했을 때의 효과를 기록해 과잉 투입을 줄임</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.fao.org/agriculture/crops\">FAO 커피·토양 자료</a></li><li><a href=\"https://www.fao.org/3/a-i5461e.pdf\">토양·양분 관리 개요</a></li><li><a href=\"https://www.wcr.org\">WCR 재배·성장 안내</a></li><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">커피 생애주기</a></li><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아 과학</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>pH 변화와 결점 증가를 연결해 설명할 수 있나요?</li><li>샘플링을 1회로 끝내면 생기는 정보 빈틈은 무엇인가요?</li><li>토양 개입에서 과잉 투입이 야기하는 첫 신호는?</li><li>다음 액션을 정할 때 우선순위는 어떤 순서로 둘 수 있나요?</li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-shade-intercropping",
+      "coffee-canopy-pruning-rejuvenation",
+      "catimor-sarchimor-blight-resistance"
+    ]
   },
   {
     "slug": "coffee-pest-symptom-map",
@@ -16223,7 +17176,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"map-principle\"><span class=\"content-index\">01</span><h2>병해충을 먼저 분류하는 기준</h2><p>병해충 대응은 종류를 외우는 행위가 아니라 증상-시기-분포를 묶어 읽는 연습입니다. 잎, 새순, 체리, 과실에서 어떤 패턴으로 시작하는지 먼저 정하면 대응 우선순위가 보입니다.</p></section><section id=\"symptom-groups\"><span class=\"content-index\">02</span><h2>증상군 4가지</h2><ol><li><strong>잎 위축·반점군:</strong> 영양결핍과 병원의 동시 신호일 수 있음</li><li><strong>가지/줄기 이상군:</strong> 전염성 또는 생리 스트레스 연계 가능</li><li><strong>체리 상처군:</strong> 물리적 손상과 병원 침입의 경계가 겹침</li><li><strong>미숙·탈락군:</strong> 수확 적기와 결점 관리에 직결</li></ol></section><section id=\"risk-scaling\"><span class=\"content-index\">03</span><h2>위험도 스케일링</h2><table><thead><tr><th>위험 신호</th><th>해석</th><th>초기 조치</th></tr></thead><tbody><tr><td>동일 줄기 구역 집중</td><td>국지적 전파 가능성</td><td>해당 구역 분리 점검</td></tr><tr><td>다수 구획 동시 증가</td><td>기후 연동 전반 확산</td><td>전체 구획 순차 점검 및 기록 강화</td></tr><tr><td>과실 상처율 급증</td><td>수확 손실·품질 저하 우려</td><td>수확 계획 재편성·전처리 강화</td></tr></tbody></table></section><section id=\"monitoring-loop\"><span class=\"content-index\">04</span><h2>현장 모니터링 루프</h2><p>현장 모니터링은 하루의 일회 점검이 아니라 3단 루프로 운영됩니다.</p><ul><li>탐지: 증상 발생 지점의 좌표·면적을 기록</li><li>분류: 병해, 해충, 물리 손상의 구분 기준으로 태깅</li><li>행동: 제초·배수·방제·수확 분할 중 적절히 조합</li></ul></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 병해충은 한 번 찾으면 다 해결된다.<br/><strong>정정:</strong> 구획 단위 패턴이 바뀌면 관리 타이밍과 범위를 다시 잡아야 합니다.</li><li>오해: 증상은 병해와 일치하지 않는다.<br/><strong>정정:</strong> 증상은 원인 단서를 제공하지만 단정 단어로 바꾸면 조치가 어긋납니다.</li><li>오해: 병해 대응은 수확 직전에만 필요하다.<br/><strong>정정:</strong> 초기에 발견한 구획이 비용을 최소화합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 한 구획, 한 주, 한 판정</h2><ol><li>작업일 1회, 증상 지점을 5개 이상 찍고 기록</li><li>증상군을 4개 범주로 태깅 후 지도에 표시</li><li>다음 주 같은 구획을 같은 시간에 재점검</li><li>수확 이후 결점율과 연결해 판단 정확도 검토</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.fao.org/agriculture/crops\">FAO 병해충·재배 자문</a></li><li><a href=\"https://www.wcr.org\">WCR 산지 관리 가이드</a></li><li><a href=\"https://www.coffee-research.org\">커피 재배 연구 자료</a></li><li><a data-wikilink=\"coffee-climate-resilience\" href=\"/wiki/coffee-climate-resilience\">기후 리스크와 적응</a></li><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">커피 생애주기</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>병해충 조기 대응에서 가장 먼저 기록해야 하는 항목은?</li><li>동일 증상이 병해·물리 손상을 동시에 의심케 할 때의 점검 순서는?</li><li>위험도 스케일에서 “국지성”과 “확산성” 판단 기준은?</li><li>수확 분할로 이어지는 최후 판단은 어떤 조건에서 정합적인가요?</li></ul></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-shade-intercropping"
+    ]
   },
   {
     "slug": "green-bean-moisture-management",
@@ -16386,6 +17341,889 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"risk-context\"><span class=\"content-index\">01</span><h2>건강 이슈를 “위험 언어”에서 “노출 언어”로 바꿔 본다</h2><p>아크릴아마이드와 퓨란은 로스팅 반응에서 관측 가능한 부산물입니다. 하지만 실제 영향 평가는 존재 유무보다도 생성 경향, 추출/보관 방식, 음용량을 함께 봐야 정합적입니다.</p></section><section id=\"what-happens\"><span class=\"content-index\">02</span><h2>로스팅 경로에서 생기는 방식</h2><p>로스팅 중 열처리 강도와 시간, 수분 잔류는 해당 화합물의 경향을 다르게 만들 수 있습니다. 따라서 한 번의 배치 기준은 다음 배치의 일반 규범이 되기 어렵습니다.</p><aside class=\"callout\" data-tone=\"note\"><p>특정 성분의 “높은 수치”보다 반복되는 패턴을 보는 것이 운영에서 더 중요합니다.</p></aside></section><section id=\"measurement-principles\"><span class=\"content-index\">03</span><h2>측정·표현 원칙</h2><ul><li>절대 단정 대신 조건부 범위로 제시한다.</li><li>로스팅 강도 변화와 분량 안정성을 함께 기록한다.</li><li>소비량·빈도와 결합해 노출 가능성을 추정한다.</li></ul></section><section id=\"practical-reduction\"><span class=\"content-index\">04</span><h2>노출 관리의 실무 축</h2><p>감소의 방향은 “더 낮은 로스팅”만이 정답이 아닙니다. 맛·보존·안전의 균형을 조정해야 하므로, 가설-재현 방식으로 판단합니다.</p><ol><li>실험 A: 동일 원두에서 프로파일만 바꿔 컵 노출 민감도 비교</li><li>실험 B: 추출 농도와 서빙량 변화가 주는 체감 차이 기록</li><li>실험 C: 보관 기간을 늘려 향미 저하와 함께 관찰</li></ol></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 아크릴아마이드만 줄이면 안전하다.<br/><strong>정정:</strong> 퓨란과 다른 열생성물의 변화도 함께 보아야 맥락을 잃지 않습니다.</li><li>오해: 로스팅을 약하게만 하면 위험이 사라진다.<br/><strong>정정:</strong> 관능 손실이나 균일성 저하가 생기면 오히려 운영 변수가 커집니다.</li><li>오해: 건강 지표는 개인 카페에서 무시 가능하다.<br/><strong>정정:</strong> 소규모 가게도 반복 소비 패턴이 있으면 노출 해석의 근거가 필요합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 일주일 노출 점검표</h2><ol><li>동일 메뉴 3개를 같은 배치 내에서 맛·밀도·향미 편차로 기록</li><li>분량·농도·온도를 고정한 채 노출 민감도 비교</li><li>로스트 배치 라벨별로 반응 변화를 1페이지 로그로 정리</li><li>고민되는 항목은 건강 설명 문구가 아닌 운영 규칙으로 개선</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.efsa.europa.eu\">EFSA 보고 자료</a></li><li><a href=\"https://www.who.int\">WHO 발암성 물질 검토</a></li><li><a href=\"https://www.iarc.who.int\">IARC 독성 분류 개요</a></li><li><a href=\"https://www.fda.gov\">FDA 화학물질 노출 가이드</a></li><li><a data-wikilink=\"caffeine-and-health\" href=\"/wiki/caffeine-and-health\">카페인과 건강</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>아크릴아마이드 이야기가 과대 일반화되기 쉬운 지점은 어디인가요?</li><li>로스팅 조건 변경 시 왜 노출 패턴을 함께 보는가요?</li><li>건강 안내를 쓰기 전에 운영 데이터로 먼저 확인해야 할 값은?</li><li>편익과 리스크가 모두 있는 변경은 어떤 방식으로 비교하면 합리적인가요?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "coffee-shade-intercropping",
+    "title": "셰이드 커피와 혼농재배: 수량보다 안정성을 먼저 보는 운영 프레임",
+    "summary": "그늘율과 동반 작물 구조를 같이 읽으면 커피 생육, 병해 리스크, 수분 경로를 동시에 조절할 수 있습니다.",
+    "category": "산지와 생두",
+    "level": "입문",
+    "readingTime": "13분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "셰이드와 혼농의 효과는 일률적이지 않으며, 수확 목표(수량/생존성/품질)마다 우선순위를 분리해 설계해야 합니다.",
+    "sections": [
+      {
+        "id": "definition",
+        "title": "셰이드와 혼농의 기본 정의",
+        "paragraphs": [
+          "셰이드 커피와 혼농재배는 단순히 “그늘을 준다”는 개념보다 구조를 만드는 작업입니다. 나무의 활력, 토양 수분, 병해 환경을 동시에 놓고 설계할지 결정해야 운영 결과가 일관됩니다.",
+          "특히 장기적으로는 그늘률(Shade%), 동반 작물의 생물량, 그리고 토양 유기물 유지가 서로 맞물리므로 한 값만으로 판단하면 오해가 생깁니다."
+        ]
+      },
+      {
+        "id": "why-it-matters",
+        "title": "왜 기후변동기에는 셰이드가 반복 점검 항목이 되는가?",
+        "paragraphs": [
+          "고온기와 강우 편차가 커지는 해에서는 셰이드와 혼농이 번갈아 작용합니다. 짧은 기간의 생존은 높아지는 경향이 있으나, 장기적으로는 수량과 수확 적기 제어에 영향을 줍니다."
+        ]
+      },
+      {
+        "id": "system-types",
+        "title": "셰이드·혼농 시스템 유형",
+        "paragraphs": [
+          "현장에서는 보통 세 방식으로 시작합니다."
+        ]
+      },
+      {
+        "id": "tradeoffs",
+        "title": "수량, 품질, 생태의 트레이드오프",
+        "paragraphs": [
+          "한 번에 모두 최적화되기보다 우선순위를 정해야 합니다. 수량을 우선할 때는 과밀해진 셰이드가 오히려 발아·수확 균일도에 영향을 줄 수 있습니다.",
+          "반대로 품질 안정성을 우선할 때는 과도한 건조/온도 스트레스를 줄이는 쪽이 먼저 이익이 되므로 셰이드의 조정 여지가 커집니다.",
+          "동일 해도 동일 수확량이 나온다는 가정은 피하십시오. 관리 루틴(수확 시기, 건조 조건)이 먼저 고정된 뒤 셰이드율을 조정해야 편차 예측이 쉬워집니다."
+        ]
+      },
+      {
+        "id": "misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "checklist",
+        "title": "운영 체크리스트",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 한 시즌의 셰이드 가설 검증",
+        "paragraphs": [
+          "한 필지에서 동일 농장 기준으로 두 구획을 잡고 그늘 처리 강도를 다르게 둡니다."
+        ]
+      },
+      {
+        "id": "glossary",
+        "title": "용어 정리",
+        "paragraphs": []
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-terroir-science",
+      "coffee-plant-taxonomy",
+      "altitude-rain-temp-physiology",
+      "coffee-soil-nutrient-diagnosis",
+      "coffee-processing"
+    ],
+    "tags": [
+      "셰이드",
+      "혼농재배",
+      "수분관리",
+      "병해관리",
+      "생태계"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "BOT-08 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>셰이드와 혼농의 기본 정의</h2><p>셰이드 커피와 혼농재배는 단순히 “그늘을 준다”는 개념보다 구조를 만드는 작업입니다. 나무의 활력, 토양 수분, 병해 환경을 동시에 놓고 설계할지 결정해야 운영 결과가 일관됩니다.</p><p>특히 장기적으로는 그늘률(Shade%), 동반 작물의 생물량, 그리고 토양 유기물 유지가 서로 맞물리므로 한 값만으로 판단하면 오해가 생깁니다.</p></section><section id=\"why-it-matters\"><span class=\"content-index\">02</span><h2>왜 기후변동기에는 셰이드가 반복 점검 항목이 되는가?</h2><p>고온기와 강우 편차가 커지는 해에서는 셰이드와 혼농이 번갈아 작용합니다. 짧은 기간의 생존은 높아지는 경향이 있으나, 장기적으로는 수량과 수확 적기 제어에 영향을 줍니다.</p><table><thead><tr><th>운영 목적</th><th>기대 효과</th><th>추가 점검 항목</th></tr></thead><tbody><tr><td>스트레스 완화</td><td>고온·건조 충격 완화</td><td>지온 변화와 일조량</td></tr><tr><td>병해 대응</td><td>습도 변화 완화로 병원압력 완화 가능</td><td>병아리 형태와 건조 후 처리</td></tr><tr><td>수질/토양 개선</td><td>동반 작물 잎·잔재물로 토양 구조 개선</td><td>토양 수분·유기물</td></tr></tbody></table></section><section id=\"system-types\"><span class=\"content-index\">03</span><h2>셰이드·혼농 시스템 유형</h2><p>현장에서는 보통 세 방식으로 시작합니다.</p><ul><li><strong>경량 셰이드:</strong> 태양광 제한은 낮고, 수량 편차 완화가 제한적</li><li><strong>중간 셰이드:</strong> 생육 균일성과 품질 방향성 관리가 상대적으로 쉬운 편</li><li><strong>고밀도 혼농:</strong> 토양 피복·생태 다양성은 커지지만 수확 동선이 복잡해질 수 있음</li></ul></section><section id=\"tradeoffs\"><span class=\"content-index\">04</span><h2>수량, 품질, 생태의 트레이드오프</h2><p>한 번에 모두 최적화되기보다 우선순위를 정해야 합니다. 수량을 우선할 때는 과밀해진 셰이드가 오히려 발아·수확 균일도에 영향을 줄 수 있습니다.</p><p>반대로 품질 안정성을 우선할 때는 과도한 건조/온도 스트레스를 줄이는 쪽이 먼저 이익이 되므로 셰이드의 조정 여지가 커집니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>동일 해도 동일 수확량이 나온다는 가정은 피하십시오. 관리 루틴(수확 시기, 건조 조건)이 먼저 고정된 뒤 셰이드율을 조정해야 편차 예측이 쉬워집니다.</p></aside></section><section id=\"misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 셰이드는 언제나 품질을 높인다.<br/><strong>정정:</strong> 과도한 그늘은 체리의 건조 속도 분산을 키울 수 있습니다.</li><li>오해: 혼농은 병해를 무조건 줄인다.<br/><strong>정정:</strong> 동반 작물 선택이 맞지 않으면 병원성 미생물의 숨을 곳이 늘어날 수 있습니다.</li><li>오해: 그늘은 수분 손실만 줄이면 끝이다.<br/><strong>정정:</strong> 산성도·수확성 같은 품질 지표도 함께 확인해야 합니다.</li></ul></section><section id=\"checklist\"><span class=\"content-index\">06</span><h2>운영 체크리스트</h2><ol><li>파종 전: 그늘 수종, 밀도, 동반 작물 조합을 3개 항목으로 기록한다.</li><li>중기: 지온·병징·토양 수분 변화를 주차 단위로 누적한다.</li><li>수확기: 체리 수확량 편차를 품종별, 구획별로 분리해 본다.</li><li>건조 후: 건조 편차와 저장 잔류수분 변화를 비교한다.</li></ol></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 한 시즌의 셰이드 가설 검증</h2><p>한 필지에서 동일 농장 기준으로 두 구획을 잡고 그늘 처리 강도를 다르게 둡니다.</p><ol><li>같은 수분 공급 조건에서 수확량, 병해 점수, 건조 편차를 기록</li><li>발현/산도 경향을 동일한 커핑 루틴으로 2회 확인</li><li>편차가 큰 원인을 수분/그늘/혼농 중 어디서 기인했는지 구분</li><li>다음 시즌 전환값을 정량 노트로 정리</li></ol></section><section id=\"glossary\"><span class=\"content-index\">08</span><h2>용어 정리</h2><ul><li>그늘율: 상부 차광 비율</li><li>혼농: 주작물 외 동반 작물 또는 수목을 함께 키우는 방식</li><li>미생물 병압: 병해를 유발하거나 억제할 수 있는 미생물 총체의 상대적 작용</li></ul></section><section id=\"references\"><span class=\"content-index\">09</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아와 생산 환경 이해</a></li><li><a data-wikilink=\"altitude-rain-temp-physiology\" href=\"/wiki/altitude-rain-temp-physiology\">고도·강우·온도 영향</a></li><li><a data-wikilink=\"coffee-soil-nutrient-diagnosis\" href=\"/wiki/coffee-soil-nutrient-diagnosis\">토양 영양 진단</a></li><li><a data-wikilink=\"coffee-pest-symptom-map\" href=\"/wiki/coffee-pest-symptom-map\">병해 지도</a></li><li><a href=\"https://www.wcr-bes.com/resources\">WCR: Shade and biodiversity resources</a></li><li><a href=\"https://www.fao.org/\">FAO 농업 경영 자원</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">10</span><h2>자기 점검</h2><ul><li>동일 수확량을 위해 같은 그늘율을 계속 쓰는 것이 항상 좋은가요?</li><li>혼농을 도입할 때 가장 먼저 확인해야 할 3개 환경 신호는?</li><li>병해 관리와 수분 편차가 충돌할 때 어떤 변수부터 분리하나요?</li><li>이번 실습에서 혼합군과 대조군이 분리되는 핵심 지표는?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "coffee-canopy-pruning-rejuvenation",
+    "title": "전정·갱신·수관 관리: 오래된 가지를 정리해 생산력을 회복하는 루틴",
+    "summary": "수관 관리의 핵심은 잘라내기 자체가 아니라, 수확 구조와 생육 회복이 일치하는 시점을 잡는 것입니다.",
+    "category": "산지와 생두",
+    "level": "중급",
+    "readingTime": "14분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "수관을 바꾸는 작업은 “조기 생산”이 아니라 “회복 속도와 품질 편차”를 동시에 설계하는 반복 작업입니다.",
+    "sections": [
+      {
+        "id": "definition",
+        "title": "수관 관리의 역할 정리",
+        "paragraphs": [
+          "전정과 갱신은 커피나무를 “어려운 시점에서 잘라내는 처방”이 아니라, 생산 리듬을 재정렬하는 조정입니다.",
+          "자란 가지의 분포, 그늘 획득, 관수·양분 전달이 함께 바뀌므로 가지 수를 줄이는 방식 하나로 판단하지 않아야 합니다."
+        ]
+      },
+      {
+        "id": "when-to-prune",
+        "title": "언제 개입해야 하는가",
+        "paragraphs": [
+          "한 번에 대규모 전정을 하기보다, 수분·개화 패턴이 겹치는 구간을 피해서 단계적으로 진행합니다."
+        ]
+      },
+      {
+        "id": "core-methods",
+        "title": "기본 기법 3개",
+        "paragraphs": []
+      },
+      {
+        "id": "rejuvenation-loop",
+        "title": "갱신 단계에서 놓치기 쉬운 실패",
+        "paragraphs": []
+      },
+      {
+        "id": "quality-effect",
+        "title": "수확성과 품질에 미치는 영향",
+        "paragraphs": [
+          "수관이 균일해지면 체리 크기와 성숙 균일성 신호가 단기적으로 안정되는 경향이 있습니다. 다만 회복 초기에는 변동이 커질 수 있어 이 시기의 수치 변화를 “실패”로 바로 보기보다 리셋 구간으로 간주해야 합니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 두 구획 비교 템플릿",
+        "paragraphs": [
+          "동일 품종에서 두 구획만 비교합니다."
+        ]
+      },
+      {
+        "id": "related-terms",
+        "title": "용어 정리",
+        "paragraphs": []
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-plant-life-cycle",
+      "coffee-shade-intercropping",
+      "coffee-soil-nutrient-diagnosis",
+      "coffee-flowering-pollination"
+    ],
+    "tags": [
+      "전정",
+      "갱신",
+      "수관관리",
+      "수확성",
+      "오래된 가지"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "BOT-09 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>수관 관리의 역할 정리</h2><p>전정과 갱신은 커피나무를 “어려운 시점에서 잘라내는 처방”이 아니라, 생산 리듬을 재정렬하는 조정입니다.</p><p>자란 가지의 분포, 그늘 획득, 관수·양분 전달이 함께 바뀌므로 가지 수를 줄이는 방식 하나로 판단하지 않아야 합니다.</p></section><section id=\"when-to-prune\"><span class=\"content-index\">02</span><h2>언제 개입해야 하는가</h2><p>한 번에 대규모 전정을 하기보다, 수분·개화 패턴이 겹치는 구간을 피해서 단계적으로 진행합니다.</p><ul><li>과밀과 분리 실패로 공극이 늘어난 구획</li><li>영양 흡수 저하와 결실 편차가 반복되는 구획</li><li>수분·병해가 한쪽 면으로만 집중되는 수관</li></ul></section><section id=\"core-methods\"><span class=\"content-index\">03</span><h2>기본 기법 3개</h2><ol><li>재생형 전정: 하부 가지를 조정해 통풍·채광 개선</li><li>부분 갱신(Stumping): 구간별로 줄기 기반을 낮춰 생장 중심을 재설정</li><li>선별 수세: 과밀이 큰 우세 가지를 먼저 완만하게 줄이고 균형점 유지</li></ol></section><section id=\"rejuvenation-loop\"><span class=\"content-index\">04</span><h2>갱신 단계에서 놓치기 쉬운 실패</h2><table><thead><tr><th>실수 유형</th><th>표준 반응</th><th>영향</th></tr></thead><tbody><tr><td>무리한 대규모 전정</td><td>회복기 자원 고갈</td><td>수확량 급락</td></tr><tr><td>시점 분산 실패</td><td>연속 공백 구간 발생</td><td>작업량 집중으로 품질 점검 지연</td></tr><tr><td>영양 보전 생략</td><td>새순 약화</td><td>후속 수확률 저하</td></tr></tbody></table></section><section id=\"quality-effect\"><span class=\"content-index\">05</span><h2>수확성과 품질에 미치는 영향</h2><p>수관이 균일해지면 체리 크기와 성숙 균일성 신호가 단기적으로 안정되는 경향이 있습니다. 다만 회복 초기에는 변동이 커질 수 있어 이 시기의 수치 변화를 “실패”로 바로 보기보다 리셋 구간으로 간주해야 합니다.</p></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: 가지를 많이 잘라낼수록 산지 생산력이 빨리 돌아온다.<br/><strong>정정:</strong> 절단량보다 회복자원 배분이 더 큰 변수입니다.</li><li>오해: 갱신은 단발성 작업이다.<br/><strong>정정:</strong> 수명 주기별 점진적 조정이 필요합니다.</li><li>오해: 수확기 전 전정이 정답이다.<br/><strong>정정:</strong> 수분·개화 시퀀스와 동기화하지 않으면 반감기가 증가할 수 있습니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 두 구획 비교 템플릿</h2><p>동일 품종에서 두 구획만 비교합니다.</p><ol><li>작업 전 2주: 수관 밀도와 병해 점수 기록</li><li>전정 강도 A/B군으로 시범 운영</li><li>4주, 8주, 12주 간격으로 생장 반응 측정</li><li>같은 등급 선별 규칙으로 수확 후 성적 비교</li></ol></section><section id=\"related-terms\"><span class=\"content-index\">08</span><h2>용어 정리</h2><ul><li>전정(Pruning): 성장 구조를 조절하기 위한 가지 제거</li><li>갱신(Rejuvenation): 노화 구간을 새순 중심으로 재배치</li><li>Stumping: 하부 기부에서 수관을 재설정하는 강한 갱신</li></ul></section><section id=\"references\"><span class=\"content-index\">09</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"coffee-plant-life-cycle\" href=\"/wiki/coffee-plant-life-cycle\">생애주기와 구조 신호</a></li><li><a data-wikilink=\"coffee-flowering-pollination\" href=\"/wiki/coffee-flowering-pollination\">개화·수분 단계</a></li><li><a data-wikilink=\"coffee-soil-nutrient-diagnosis\" href=\"/wiki/coffee-soil-nutrient-diagnosis\">영양 회복 판단 기준</a></li><li><a href=\"https://www.fao.org/\">FAO 재배 기술 가이드</a></li><li><a href=\"https://www.wcr.org/\">WCR 재배 자원</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">10</span><h2>자기 점검</h2><ul><li>수관 관리의 1차 목표를 한 문장으로 정리해 보세요.</li><li>회복기 편차를 판단할 때 어떤 지표를 먼저 보아야 하나요?</li><li>무리한 대규모 전정의 위험 징후는 어떤 것인가요?</li><li>같은 구획에서 2주 후와 12주 후를 비교하는 이유는?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "coffee-tipica-bourbon-lineage",
+    "title": "티피카·버번 계통 지도: 품종명이 아니라 계통으로 읽기",
+    "category": "커피 기초",
+    "level": "중급",
+    "readingTime": "13분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "olive",
+    "fact": "버번 계통은 동일한 명칭 아래도 전파 경로와 선발 과정이 달라 품질 판단 기준을 분기해 쓰는 경향이 있습니다.",
+    "sections": [
+      {
+        "id": "lineage-frame",
+        "title": "왜 “버번 계통”이 혼동을 만드는가",
+        "paragraphs": [
+          "버번, 티피카, 라틴아메리카·아프리카에서 쓰이는 유사 이름은 출발점은 같아도 분포 경로와 선별 기록에 따라 분기됩니다.",
+          "그래서 같은 종명이라도 채종·증식 경로를 함께 보면 향미 해석이 훨씬 명확해집니다."
+        ]
+      },
+      {
+        "id": "history",
+        "title": "전파와 분기, 용어 경계",
+        "paragraphs": [
+          "버번 계통은 상업화된 확산 과정에서 이름이 표준화되지 않은 구간이 존재합니다. 문헌과 라벨은 버번 계통이 같다는 신호만 줄 뿐, 내부 유전 배경은 다른 경우가 있습니다.",
+          "티피카 쪽도 유사하게, 동일 계열의 확산이 여러 농장으로 전파되며 관리·환경과 결합해 표현이 달라집니다."
+        ]
+      },
+      {
+        "id": "comparison",
+        "title": "현장 분류 프레임",
+        "paragraphs": []
+      },
+      {
+        "id": "mixing-risks",
+        "title": "품종명 혼합으로 생기는 리스크",
+        "paragraphs": [
+          "혼합된 라벨이 들어오면 선입견이 먼저 작동해 비교가 어려워집니다. 따라서 원산지, 라벨 일관성, 수확 시즌을 먼저 확인하고 분기해야 합니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 계통 구분 기록 템플릿",
+        "paragraphs": [
+          "동일 지역에서 한 배치만 골라 아래 항목을 분리해 기록합니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "arabica-and-robusta",
+      "coffee-variety-cultivar-hybrid",
+      "coffee-varieties",
+      "coffee-terroir-science"
+    ],
+    "tags": [
+      "티피카",
+      "버번",
+      "계통",
+      "품종명",
+      "교배 역사"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "GEN-03 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"lineage-frame\"><span class=\"content-index\">01</span><h2>왜 “버번 계통”이 혼동을 만드는가</h2><p>버번, 티피카, 라틴아메리카·아프리카에서 쓰이는 유사 이름은 출발점은 같아도 분포 경로와 선별 기록에 따라 분기됩니다.</p><p>그래서 같은 종명이라도 채종·증식 경로를 함께 보면 향미 해석이 훨씬 명확해집니다.</p></section><section id=\"history\"><span class=\"content-index\">02</span><h2>전파와 분기, 용어 경계</h2><p>버번 계통은 상업화된 확산 과정에서 이름이 표준화되지 않은 구간이 존재합니다. 문헌과 라벨은 버번 계통이 같다는 신호만 줄 뿐, 내부 유전 배경은 다른 경우가 있습니다.</p><p>티피카 쪽도 유사하게, 동일 계열의 확산이 여러 농장으로 전파되며 관리·환경과 결합해 표현이 달라집니다.</p></section><section id=\"comparison\"><span class=\"content-index\">03</span><h2>현장 분류 프레임</h2><table><thead><tr><th>구분</th><th>우선 확인 항목</th><th>분석 포인트</th></tr></thead><tbody><tr><td>출처 라벨</td><td>품종명 + 산지 + 선별 이력</td><td>표시 누락 여부</td></tr><tr><td>식물형태</td><td>나무 생육력과 수확 타이밍</td><td>환경 반응성</td></tr><tr><td>커핑 일관성</td><td>향미 편차와 산미·단맛 신호</td><td>로스팅·가공 외 요인 분리</td></tr></tbody></table></section><section id=\"mixing-risks\"><span class=\"content-index\">04</span><h2>품종명 혼합으로 생기는 리스크</h2><p>혼합된 라벨이 들어오면 선입견이 먼저 작동해 비교가 어려워집니다. 따라서 원산지, 라벨 일관성, 수확 시즌을 먼저 확인하고 분기해야 합니다.</p><ul><li>동일 품종이라고 가정하고 실험을 실행하면 편향이 생길 수 있습니다.</li><li>한 번의 관측 실패가 반복되면 “커피가 일관되지 않다”는 판단으로 이어집니다.</li><li>기록을 계통 단위로 정리하면 의사결정이 빨라집니다.</li></ul></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 버번은 언제나 같은 향미 특성을 만든다.<br/><strong>정정:</strong> 선발 라인과 재배 환경이 관찰 편차를 크게 만듭니다.</li><li>오해: 티피카는 무조건 고품질이다.<br/><strong>정정:</strong> 토양·기후·가공이 동반되어야 향미 안정성이 확보됩니다.</li><li>오해: 계통 분류가 과학적 정확도보다 브랜드 마케팅이다.<br/><strong>정정:</strong> 계통은 생산·구매 판단의 기준으로 유효합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 계통 구분 기록 템플릿</h2><p>동일 지역에서 한 배치만 골라 아래 항목을 분리해 기록합니다.</p><ol><li>포장 라벨의 품종명과 산지 표기를 그대로 옮깁니다.</li><li>같은 추출 방식에서 향미 3개 항목(산미·단맛·바디)만 비교합니다.</li><li>성향 차이를 품종 추정값과 구획 이력으로 구분합니다.</li><li>같은 원두를 다시 사용할 때 확인 항목만 재사용합니다.</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"coffee-variety-cultivar-hybrid\" href=\"/wiki/coffee-variety-cultivar-hybrid\">품종·재래종·컬티바·하이브리드</a></li><li><a data-wikilink=\"coffee-varieties\" href=\"/wiki/coffee-varieties\">품종은 종과 어떻게 다른가</a></li><li><a href=\"https://www.worldcoffeeresearch.org/resources/coffee-varieties-catalog\">WCR Coffee Varieties Catalog</a></li><li><a href=\"https://www.sca.coffee/standards\">SCA 종·품종 교육 자료</a></li><li><a href=\"https://powo.science.kew.org/\">Kew Plants of the World Online</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>동일한 품종명이라도 계통 분기가 필요한 이유는?</li><li>라벨 기록에서 가장 먼저 보강해야 할 항목은?</li><li>버번 계통 비교에서 로스팅 변수를 고정하는 이유는?</li><li>실무에서 계통 혼합이 구매 판단에 주는 영향은?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "ethiopian-heirloom-diversity",
+    "title": "에티오피아 재래종(heirloom) 다형성: 용어의 한계와 사용 시점",
+    "category": "커피 기초",
+    "level": "전문",
+    "readingTime": "14분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "olive",
+    "fact": "재래종 표기는 하나의 고정 라벨보다 산지 집단과 수집·전달 경로를 함께 보여주는 장치로 다루는 것이 안전합니다.",
+    "sections": [
+      {
+        "id": "definition",
+        "title": "재래종 용어의 범위를 정리해야 하는 이유",
+        "paragraphs": [
+          "에티오피아의 “heirloom” 표기는 지역 단위로 형성된 집단을 묶어 설명할 때 자주 쓰입니다. 다만 용어가 한 번 정해지면 마케팅 해석과 과학적 추적이 분기될 수 있습니다.",
+          "그래서 실제 기록에서는 “어떤 산지 집단에서 어떤 경로로 유통된 원료인지”를 같이 써두는 방식이 유효합니다."
+        ]
+      },
+      {
+        "id": "regional-variation",
+        "title": "지역군 편차를 실제로 보려면",
+        "paragraphs": []
+      },
+      {
+        "id": "evidence-boundaries",
+        "title": "근거 범위와 확신 수준",
+        "paragraphs": [
+          "재래종은 향미 특징을 이야기할 때 문헌 기반의 공통 범위가 넓고, 실제 배치 비교에서는 구체적 이력 데이터가 더 중요합니다. 즉 경향은 공유하지만 개별 배치의 단정은 지양해야 합니다.",
+          "이는 데이터 해석에서 특히 중요해서, “항상 X”보다 “해당 조건에서 X일 가능성이 높다”라는 표현이 더 안정적입니다."
+        ]
+      },
+      {
+        "id": "practical-mapping",
+        "title": "실무 매핑: 구매·평가 연결",
+        "paragraphs": [
+          "구매 단계에서는 재래종 단어 자체보다 다음 항목을 우선 봅니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 재래종 정보 점수표",
+        "paragraphs": [
+          "한 달 동안 같은 상점에서 취급한 에티오피아 원두 5개를 다음 항목으로 점수화합니다.",
+          "점수 편차가 큰 배치는 다음 회차에서 우선 검증 대상으로 이동합니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-varieties",
+      "coffee-terroir-science",
+      "global-coffee-zones",
+      "coffee-trade-history",
+      "coffee-plant-taxonomy"
+    ],
+    "tags": [
+      "에티오피아",
+      "재래종",
+      "heirloom",
+      "유전 다양성",
+      "산지명"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "GEN-04 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>재래종 용어의 범위를 정리해야 하는 이유</h2><p>에티오피아의 “heirloom” 표기는 지역 단위로 형성된 집단을 묶어 설명할 때 자주 쓰입니다. 다만 용어가 한 번 정해지면 마케팅 해석과 과학적 추적이 분기될 수 있습니다.</p><p>그래서 실제 기록에서는 “어떤 산지 집단에서 어떤 경로로 유통된 원료인지”를 같이 써두는 방식이 유효합니다.</p></section><section id=\"regional-variation\"><span class=\"content-index\">02</span><h2>지역군 편차를 실제로 보려면</h2><ul><li>고도와 강우 패턴: 미세한 수확 시기 차이를 만들 수 있습니다.</li><li>가공 관행: 동일 출처라 해도 발효·건조 단계가 바뀝니다.</li><li>거래 경로: 라벨과 문서 간 정보 손실이 다릅니다.</li></ul></section><section id=\"evidence-boundaries\"><span class=\"content-index\">03</span><h2>근거 범위와 확신 수준</h2><p>재래종은 향미 특징을 이야기할 때 문헌 기반의 공통 범위가 넓고, 실제 배치 비교에서는 구체적 이력 데이터가 더 중요합니다. 즉 경향은 공유하지만 개별 배치의 단정은 지양해야 합니다.</p><p>이는 데이터 해석에서 특히 중요해서, “항상 X”보다 “해당 조건에서 X일 가능성이 높다”라는 표현이 더 안정적입니다.</p></section><section id=\"practical-mapping\"><span class=\"content-index\">04</span><h2>실무 매핑: 구매·평가 연결</h2><p>구매 단계에서는 재래종 단어 자체보다 다음 항목을 우선 봅니다.</p><ol><li>기록의 일관성(산지, 가공, 로스터 전단)</li><li>유통 라벨의 중복 표기</li><li>재고 회전 속도와 저장 조건</li></ol></section><section id=\"common-misconceptions\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 재래종은 무조건 고유한 향만 만든다.<br/><strong>정정:</strong> 라벨 문구보다 수확·가공 이력이 먼저 작동할 수 있습니다.</li><li>오해: 용어 하나로 등급을 예측 가능하다.<br/><strong>정정:</strong> 배치 단위 조건이 더 큰 설명력을 가집니다.</li><li>오해: 추론이 힘들면 판매가 불가능하다.<br/><strong>정정:</strong> 불확실성을 문서화하면 오히려 판단의 질이 올라갑니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 재래종 정보 점수표</h2><p>한 달 동안 같은 상점에서 취급한 에티오피아 원두 5개를 다음 항목으로 점수화합니다.</p><ul><li>산지 표기 완성도(0~3점)</li><li>가공 단계 공개(0~3점)</li><li>테이스팅 편차(0~3점)</li><li>보관 상태 기록(0~3점)</li></ul><p>점수 편차가 큰 배치는 다음 회차에서 우선 검증 대상으로 이동합니다.</p></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a href=\"https://www.worldcoffeeresearch.org/resources/coffee-genetics\">WCR Coffee Genetics</a></li><li><a href=\"https://www.fao.org/\">FAO 커피 및 농업 자원</a></li><li><a data-wikilink=\"coffee-trade-history\" href=\"/wiki/coffee-trade-history\">커피 무역의 역사</a></li><li><a data-wikilink=\"coffee-terroir-science\" href=\"/wiki/coffee-terroir-science\">테루아 분석 프레임</a></li><li><a data-wikilink=\"global-coffee-zones\" href=\"/wiki/global-coffee-zones\">생산대 지도 이해</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>재래종 용어를 사용할 때 가장 먼저 보완할 기록 항목은?</li><li>왜 동일 라벨 내에서도 배치 편차가 생기나요?</li><li>구매 단계에서 heirloom 표기를 검증할 때 선행해야 할 3개 항목은?</li><li>불확실한 라벨을 만났을 때의 대응은?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "catimor-sarchimor-blight-resistance",
+    "title": "카티모르·사르치모르: 녹병 내성 이해와 관리 트레이드오프",
+    "summary": "카티모르·사르치모르 계열은 생산 안정성과 가공 변수의 설계 방식이 함께 맞아야 품질 판단이 안정됩니다.",
+    "category": "산지와 생두",
+    "level": "중급",
+    "readingTime": "11분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "내병성 계통은 생산 안정성에 유리할 수 있으나, 품질 신호는 가공·건조 조건과 함께 평가해야 합니다.",
+    "sections": [
+      {
+        "id": "overview",
+        "title": "카티모르·사르치모르를 재료로 쓰는 이유",
+        "paragraphs": [
+          "카티모르·사르치모르는 생리적 대응력을 중심으로 선택된 계열입니다. 이 계열은 농장 운영에서 위험 완화 수단으로 자주 쓰이지만, 품질 판단은 별도로 운영되어야 합니다.",
+          "정식으로는 계통 특성과 병해 대응을 함께 읽되, 수확 후 처리 단계가 달라지면 동일 계통이라도 결과가 크게 바뀐다는 점이 중요합니다."
+        ]
+      },
+      {
+        "id": "selection-matrix",
+        "title": "선택 매트릭스",
+        "paragraphs": []
+      },
+      {
+        "id": "management-tradeoffs",
+        "title": "관리 트레이드오프",
+        "paragraphs": []
+      },
+      {
+        "id": "misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 병해-생산-향미 동시 점검",
+        "paragraphs": [
+          "동일 계통 2구획을 비교해 봅니다."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-plant-taxonomy",
+      "coffee-soil-nutrient-diagnosis",
+      "coffee-processing",
+      "post-harvest-processing-map",
+      "coffee-storage"
+    ],
+    "tags": [
+      "카티모르",
+      "사르치모르",
+      "녹병",
+      "내병성",
+      "선발"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "GEN-05 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"overview\"><span class=\"content-index\">01</span><h2>카티모르·사르치모르를 재료로 쓰는 이유</h2><p>카티모르·사르치모르는 생리적 대응력을 중심으로 선택된 계열입니다. 이 계열은 농장 운영에서 위험 완화 수단으로 자주 쓰이지만, 품질 판단은 별도로 운영되어야 합니다.</p><p>정식으로는 계통 특성과 병해 대응을 함께 읽되, 수확 후 처리 단계가 달라지면 동일 계통이라도 결과가 크게 바뀐다는 점이 중요합니다.</p></section><section id=\"selection-matrix\"><span class=\"content-index\">02</span><h2>선택 매트릭스</h2><ul><li>병해 압력: 병반 패턴이 반복적으로 높게 보이는 구간</li><li>토양 상태: 영양 부족과 과습이 결합되는 구간</li><li>장기 계획: 수확 안정성보다 향미 설계를 우선하는지 여부</li></ul></section><section id=\"management-tradeoffs\"><span class=\"content-index\">03</span><h2>관리 트레이드오프</h2><table><thead><tr><th>관리 항목</th><th>기대 효과</th><th>주의점</th></tr></thead><tbody><tr><td>과밀 조절</td><td>수분·병해 편차 축소</td><td>품질 분화가 일시 둔화될 수 있음</td></tr><tr><td>적정 영양</td><td>생육 안정성 개선</td><td>과다 투입 시 미성숙 체리 비중 증가</td></tr><tr><td>건조 속도 제어</td><td>보존성 개선</td><td>습도 구간별 모니터링 필수</td></tr></tbody></table></section><section id=\"misconceptions\"><span class=\"content-index\">04</span><h2>흔한 오해</h2><ul><li>오해: 내병성은 관리 노력을 줄여줍니다.<br/><strong>정정:</strong> 기초 관리와 기록은 오히려 더 안정적으로 필요합니다.</li><li>오해: 생산 안정성만 보면 되므로 가공 비교는 덜 중요합니다.<br/><strong>정정:</strong> 건조·보관 변화가 품질 편차를 크게 만듭니다.</li><li>오해: 라벨의 계통명 하나면 충분합니다.<br/><strong>정정:</strong> 구획 이력·처리 프로토콜이 함께 있어야 비교가 가능합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">05</span><h2>실습: 병해-생산-향미 동시 점검</h2><p>동일 계통 2구획을 비교해 봅니다.</p><ol><li>병징 빈도와 체리 크기 편차를 동시에 기록</li><li>수확-건조 기간의 습도 로그를 구간별로 정렬</li><li>감각 점수에서 산미/바디/잔향 편차를 분리</li><li>운영 지표로 재검토 후 다음 수확량 계획 반영</li></ol></section><section id=\"references\"><span class=\"content-index\">06</span><h2>참고 자료</h2><ul><li><a href=\"https://www.fao.org/plant-health/\">FAO 식물보건 가이드</a></li><li><a href=\"https://www.sca.coffee/standards\">SCA 품질·표준 문서</a></li><li><a data-wikilink=\"coffee-plant-taxonomy\" href=\"/wiki/coffee-plant-taxonomy\">커피 분류학</a></li><li><a data-wikilink=\"post-harvest-processing-map\" href=\"/wiki/post-harvest-processing-map\">수확 후 가공 지도</a></li><li><a data-wikilink=\"coffee-soil-nutrient-diagnosis\" href=\"/wiki/coffee-soil-nutrient-diagnosis\">토양·영양 진단</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">07</span><h2>자기 점검</h2><ul><li>동일 계통에서도 향미 편차가 생기는 연결 고리는 무엇일까요?</li><li>병해 대응에서 가장 먼저 점검해야 할 운영 지표는?</li><li>건조 편차를 줄이기 위해 실험에서 고정해야 할 항목은?</li><li>내병성 계통 선택 시 단기/중기 판단을 분리하는 기준은?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "f1-hybrid-coffee-breeding",
+    "title": "F1 하이브리드 커피: 생산성·향미·재배 리스크를 함께 읽는 기준",
+    "summary": "F1 커피 하이브리드는 세대 구분·교배 방식이 관건이며, 수량 안정성과 향미 분산의 균형을 함께 설계해야 합니다.",
+    "category": "산지와 생두",
+    "level": "전문",
+    "readingTime": "13분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "F1 하이브리드는 동질성이 크고 균일한 수확을 유도할 수 있지만, 향미 경향은 가공·재배 조건과 함께 판단해야 합니다.",
+    "sections": [
+      {
+        "id": "concept",
+        "title": "F1 하이브리드가 뜻하는 것",
+        "paragraphs": [
+          "F1 하이브리드는 서로 다른 부모 계통이 교배된 1세대 자손을 뜻합니다. 같은 종 내부에서 형성된 계통이지만, 세대가 바뀌면 유전형이 다시 분열되면서 성질이 넓게 펼쳐질 수 있습니다.",
+          "운영 관점에서 핵심은 “누가 같은 결과를 더 안정적으로 반복할 수 있느냐”입니다. F1은 이 지점에서 장점이 크지만, F2로 계속 번식하면 예측이 흔들릴 수 있다는 점을 같이 봐야 합니다."
+        ]
+      },
+      {
+        "id": "why-it-matters",
+        "title": "왜 생산자·로스터 모두 신경 쓰는가",
+        "paragraphs": [
+          "생산자는 보통 두 가지를 동시에 맞추려 합니다. 첫째는 병충해·기온 스트레스에 대한 완충력, 둘째는 건조·가공 단계에서의 향미 일관성입니다. F1이 제공하는 균일성은 이 두 지점에서 운영 부담을 줄여줄 가능성이 있습니다.",
+          "반면 상업적으로는 “재배 안정성”이 좋은 결과와 직결되더라도, 컵에서의 차이는 관리체계가 달라지면 다른 쪽으로 이동할 수 있습니다."
+        ]
+      },
+      {
+        "id": "genetic-tradeoffs",
+        "title": "세대가 바뀌는 순간 생기는 트레이드오프",
+        "paragraphs": []
+      },
+      {
+        "id": "cost-and-control",
+        "title": "경제성과 운영 난이도의 실제 비중",
+        "paragraphs": [
+          "좋은 균일성은 좋은 관리로만 완성되지 않습니다. 번식비, 묘목 조달 비용, 구획별 성숙 편차를 감안해 비용-편차 곡선을 같이 봐야 합니다. 결과적으로는 “F1 자체가 답”이 아니라 “F1을 붙잡을 운영이 있는가”가 핵심이 됩니다.",
+          "특히 산지 계약, 수확·건조 동선, 그리고 로스팅 프로파일 업데이트 주기가 맞지 않으면 F1의 장점이 단기 매출 지표로만 남을 수 있습니다."
+        ]
+      },
+      {
+        "id": "decision-matrix",
+        "title": "도입 판단 매트릭스",
+        "paragraphs": [
+          "동일 구획에서 F1 계통을 병행할 때, 구획별 출하일과 건조 조건을 먼저 맞춘 뒤에야 비교가 의미 있어집니다. 조건 통제가 없으면 “하이브리드의 실패”라고 오해되기 쉽습니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: F1 효과를 분산과 수량으로 점검",
+        "paragraphs": [
+          "동일 가공 라인에서 다음 4개 항목만 고정해 비교해 보세요."
+        ]
+      },
+      {
+        "id": "glossary",
+        "title": "용어 정리",
+        "paragraphs": []
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "coffee-variety-cultivar-hybrid",
+      "coffee-varieties",
+      "coffee-plant-taxonomy",
+      "coffee-processing"
+    ],
+    "tags": [
+      "F1",
+      "커피",
+      "하이브리드",
+      "육종",
+      "품질설계"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "GEN-06 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"concept\"><span class=\"content-index\">01</span><h2>F1 하이브리드가 뜻하는 것</h2><p>F1 하이브리드는 서로 다른 부모 계통이 교배된 1세대 자손을 뜻합니다. 같은 종 내부에서 형성된 계통이지만, 세대가 바뀌면 유전형이 다시 분열되면서 성질이 넓게 펼쳐질 수 있습니다.</p><p>운영 관점에서 핵심은 “누가 같은 결과를 더 안정적으로 반복할 수 있느냐”입니다. F1은 이 지점에서 장점이 크지만, F2로 계속 번식하면 예측이 흔들릴 수 있다는 점을 같이 봐야 합니다.</p></section><section id=\"why-it-matters\"><span class=\"content-index\">02</span><h2>왜 생산자·로스터 모두 신경 쓰는가</h2><p>생산자는 보통 두 가지를 동시에 맞추려 합니다. 첫째는 병충해·기온 스트레스에 대한 완충력, 둘째는 건조·가공 단계에서의 향미 일관성입니다. F1이 제공하는 균일성은 이 두 지점에서 운영 부담을 줄여줄 가능성이 있습니다.</p><p>반면 상업적으로는 “재배 안정성”이 좋은 결과와 직결되더라도, 컵에서의 차이는 관리체계가 달라지면 다른 쪽으로 이동할 수 있습니다.</p></section><section id=\"genetic-tradeoffs\"><span class=\"content-index\">03</span><h2>세대가 바뀌는 순간 생기는 트레이드오프</h2><table><thead><tr><th>항목</th><th>F1 세대(첫 세대) 경향</th><th>비교군(비유전적 분열 집단)</th><th>의사결정 포인트</th></tr></thead><tbody><tr><td>균일성</td><td>다소 높음</td><td>구간 편차가 클 수 있음</td><td>로트 간 비교 편의성</td></tr><tr><td>병해 대응</td><td>개량 효과가 상대적으로 빠르게 나타날 수 있음</td><td>개체 간 반응 편차</td><td>약한 구간 선별 집중</td></tr><tr><td>번식 안정성</td><td>세대 고정이 필요</td><td>계속되는 교배/선발로 운영 복잡</td><td>종자·계통 관리 체계</td></tr></tbody></table></section><section id=\"cost-and-control\"><span class=\"content-index\">04</span><h2>경제성과 운영 난이도의 실제 비중</h2><p>좋은 균일성은 좋은 관리로만 완성되지 않습니다. 번식비, 묘목 조달 비용, 구획별 성숙 편차를 감안해 비용-편차 곡선을 같이 봐야 합니다. 결과적으로는 “F1 자체가 답”이 아니라 “F1을 붙잡을 운영이 있는가”가 핵심이 됩니다.</p><p>특히 산지 계약, 수확·건조 동선, 그리고 로스팅 프로파일 업데이트 주기가 맞지 않으면 F1의 장점이 단기 매출 지표로만 남을 수 있습니다.</p></section><section id=\"decision-matrix\"><span class=\"content-index\">05</span><h2>도입 판단 매트릭스</h2><ul><li><strong>재배 안정성 우선:</strong> 재해·병해 변동이 큰 구획이라면 F1로 시작하기 쉽습니다.</li><li><strong>향미 다양성 우선:</strong> 특정한 차별 프로필을 추구한다면 비균일성을 전략적으로 허용할 수 있는지 따져야 합니다.</li><li><strong>번식비 압박:</strong> 초기 투자 대비 수익 회복 기간을 3~5기까지 고려하면 예산 실패를 줄일 수 있습니다.</li></ul><aside class=\"callout callout-note\" data-tone=\"note\"><p>동일 구획에서 F1 계통을 병행할 때, 구획별 출하일과 건조 조건을 먼저 맞춘 뒤에야 비교가 의미 있어집니다. 조건 통제가 없으면 “하이브리드의 실패”라고 오해되기 쉽습니다.</p></aside></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: F1은 일단 쓰면 늘 같은 맛이 난다.<br/><strong>정정:</strong> 수확 시기·건조 속도·가공이 같아야만 커핑 상의 편차를 분리해서 볼 수 있습니다.</li><li>오해: F1은 관리 비용을 대폭 줄여 준다.<br/><strong>정정:</strong> 초기 정비비는 줄어들 수 있어도, 계통 추적·재고 관리 비용이 별도로 늘 수 있습니다.</li><li>오해: 하이브리드는 항시 우수하다.<br/><strong>정정:</strong> 시장 타깃(추출 방식, 가공 선호)에 따라 비슷한 농도라도 향미 반응이 다르게 나타납니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: F1 효과를 분산과 수량으로 점검</h2><p>동일 가공 라인에서 다음 4개 항목만 고정해 비교해 보세요.</p><ol><li>같은 처리구획에서 F1 계통과 비교군 구획을 병렬 수확</li><li>건조 완료 시점, 수분 편차, 체리·생두 크기 비율 기록</li><li>소정량 추출 실험으로 산미·단맛·바디 편차만 분리 기록</li><li>계절 말 기준으로 비용 항목(비료·인력·가공 시간)을 같은 템플릿으로 요약</li></ol></section><section id=\"glossary\"><span class=\"content-index\">08</span><h2>용어 정리</h2><ul><li>F1: 1세대 잡종 자손 집단</li><li>균일성: 같은 조건에서 결과 편차가 상대적으로 작은 상태</li><li>향미 분산: 같은 로트 내에서도 인식되는 맛의 범위</li></ul></section><section id=\"references\"><span class=\"content-index\">09</span><h2>참고 자료</h2><ul><li><a href=\"https://www.fao.org/agriculture/crops/core-themes/theme/themes/agro-biodiversity/en/\">FAO 농업생물다양성</a></li><li><a href=\"https://www.icaeworld.org/\">IICA 커피 산업 자료</a></li><li><a data-wikilink=\"coffee-varieties\" href=\"/wiki/coffee-varieties\">품종 개요</a></li><li><a data-wikilink=\"coffee-variety-cultivar-hybrid\" href=\"/wiki/coffee-variety-cultivar-hybrid\">품종·재래종·컬티바·하이브리드</a></li><li><a data-wikilink=\"coffee-processing\" href=\"/wiki/coffee-processing\">수확 후 가공 지도</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">10</span><h2>자기 점검</h2><ul><li>F1 계통이 가지는 장점은 어떤 운영 변수에서 가장 빨리 드러나나요?</li><li>F1 성능을 오해 없이 판단하려면 어떤 조건을 고정해야 하나요?</li><li>향미 분산을 줄이기 위해서는 생산 단계와 가공 단계 중 어디를 먼저 정렬해야 하나요?</li><li>비교 실험에서 비용 항목을 누락하면 어떤 판단 오류가 생길 수 있나요?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "kenya-coffee-system",
+    "title": "케냐 커피 시스템: 생산·경매·가공이 한 고리로 이어지는 구조",
+    "summary": "케냐의 SL 계열 중심 커피 시스템을 이해하면, 경매·협동조합·가공 품질이 산지 신호와 어떻게 연결되는지 볼 수 있습니다.",
+    "category": "산지와 생두",
+    "level": "중급",
+    "readingTime": "12분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "케냐는 재배, 산지 협동조합, 경매, 가공이 상호작용해 가격·품질 신호가 형성되는 구조가 뚜렷합니다.",
+    "sections": [
+      {
+        "id": "system-map",
+        "title": "케냐를 읽는 기본 지도",
+        "paragraphs": [
+          "케냐는 단순히 특정 산지의 맛만이 아니라, 산지 조직과 유통 구조가 함께 결합된 시스템으로 이해하는 것이 정확합니다. 많은 거래 조건이 이 시스템에서 파생되기 때문입니다.",
+          "여기서는 맛의 성격뿐 아니라 산지·경매 동선, 그리고 가공 처리 일관성이 어떻게 상호작용하는지 중심으로 봅니다."
+        ]
+      },
+      {
+        "id": "climate-production",
+        "title": "고도·기후와 생산 리듬",
+        "paragraphs": [
+          "케냐 고원에서는 해발과 강우 패턴이 수확과 성숙 속도에 직접적인 구조를 만듭니다. 그래서 동일 연도라도 로트 간 체리 밀도와 당도 편차가 생길 수 있습니다.",
+          "운영에서는 고도별 수확 구간을 분리해 건조일수를 맞추는 것이 관행적으로 중요해집니다."
+        ]
+      },
+      {
+        "id": "co-op-auction",
+        "title": "협동조합과 경매: 가격 신호의 전달",
+        "paragraphs": [
+          "협동조합은 수확량 집계, 초기 선별, 출하 품질을 묶는 핵심 장치입니다. 경매는 그 후 가격 형성의 신호를 강하게 바꾸는 구간입니다.",
+          "특정 연도에는 경매가 빠르게 반응하고, 특정 연도에는 안정화 구간이 길어지는 편차가 생길 수 있어 단일 지표로 예측하기 어렵습니다."
+        ]
+      },
+      {
+        "id": "processing",
+        "title": "가공·선별이 만드는 편차",
+        "paragraphs": []
+      },
+      {
+        "id": "how-to-read",
+        "title": "구매·큐레이션 관점에서의 읽기",
+        "paragraphs": [
+          "케냐 원두를 큐레이션할 때는 “특정 농장명”보다 수집 경로·경매 단계·가공 단계의 정보가 먼저 중요해질 수 있습니다. 동일한 지리라도 처리 방식이 달라지는 지점이 잦기 때문입니다.",
+          "가격이 높은 로트는 무조건 품질이 높다는 결론으로 이어지지 않으므로, 입안 인상 외에 건조 기록 같은 운영 로그를 함께 봐야 합니다."
+        ]
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 로트별 신호 분리 체크",
+        "paragraphs": [
+          "케냐 로트를 다룰 때 다음 순서대로 점검해 보세요."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "global-coffee-zones",
+      "coffee-terroir-science",
+      "coffee-processing",
+      "coffee-climate-resilience"
+    ],
+    "tags": [
+      "케냐",
+      "생산구조",
+      "경매",
+      "협동조합",
+      "품질관리"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "ORG-04 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"system-map\"><span class=\"content-index\">01</span><h2>케냐를 읽는 기본 지도</h2><p>케냐는 단순히 특정 산지의 맛만이 아니라, 산지 조직과 유통 구조가 함께 결합된 시스템으로 이해하는 것이 정확합니다. 많은 거래 조건이 이 시스템에서 파생되기 때문입니다.</p><p>여기서는 맛의 성격뿐 아니라 산지·경매 동선, 그리고 가공 처리 일관성이 어떻게 상호작용하는지 중심으로 봅니다.</p></section><section id=\"climate-production\"><span class=\"content-index\">02</span><h2>고도·기후와 생산 리듬</h2><p>케냐 고원에서는 해발과 강우 패턴이 수확과 성숙 속도에 직접적인 구조를 만듭니다. 그래서 동일 연도라도 로트 간 체리 밀도와 당도 편차가 생길 수 있습니다.</p><p>운영에서는 고도별 수확 구간을 분리해 건조일수를 맞추는 것이 관행적으로 중요해집니다.</p></section><section id=\"co-op-auction\"><span class=\"content-index\">03</span><h2>협동조합과 경매: 가격 신호의 전달</h2><p>협동조합은 수확량 집계, 초기 선별, 출하 품질을 묶는 핵심 장치입니다. 경매는 그 후 가격 형성의 신호를 강하게 바꾸는 구간입니다.</p><p>특정 연도에는 경매가 빠르게 반응하고, 특정 연도에는 안정화 구간이 길어지는 편차가 생길 수 있어 단일 지표로 예측하기 어렵습니다.</p></section><section id=\"processing\"><span class=\"content-index\">04</span><h2>가공·선별이 만드는 편차</h2><table><thead><tr><th>요소</th><th>기대 효과</th><th>주의점</th></tr></thead><tbody><tr><td>선별 강도</td><td>이물·미숙 체리 제거</td><td>과도한 선별은 수량 손실 유발</td></tr><tr><td>건조 관리</td><td>수분 균일화 개선</td><td>건조 편차가 크면 산미 불균일 증가</td></tr><tr><td>저장</td><td>신선도 유지</td><td>온습도 관리 실패 시 산패 리스크 상승</td></tr></tbody></table></section><section id=\"how-to-read\"><span class=\"content-index\">05</span><h2>구매·큐레이션 관점에서의 읽기</h2><p>케냐 원두를 큐레이션할 때는 “특정 농장명”보다 수집 경로·경매 단계·가공 단계의 정보가 먼저 중요해질 수 있습니다. 동일한 지리라도 처리 방식이 달라지는 지점이 잦기 때문입니다.</p><p>가격이 높은 로트는 무조건 품질이 높다는 결론으로 이어지지 않으므로, 입안 인상 외에 건조 기록 같은 운영 로그를 함께 봐야 합니다.</p></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: 케냐는 항상 동일한 향미 프로파일을 낸다.<br/><strong>정정:</strong> 연도·고도·가공 동선에 따라 강한 변동이 생길 수 있습니다.</li><li>오해: 경매 라벨만으로 실사용 적합도를 판단한다.<br/><strong>정정:</strong> 로트별 건조 기록이 없으면 컵 예상 오차가 큽니다.</li><li>오해: 협동조합 정보는 유통 단계에서만 필요하다.<br/><strong>정정:</strong> 협동조합의 선별·검수 기준은 원두 특성 판단에 즉시 연결됩니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 로트별 신호 분리 체크</h2><p>케냐 로트를 다룰 때 다음 순서대로 점검해 보세요.</p><ol><li>같은 가공 라인이라도 유입 채널(협동조합·직송) 기록 분리</li><li>수분과 건조 편차를 3지점으로 평균 계산</li><li>커피의 산미·단맛 균형을 동일 추출 조건에서 비교</li><li>경매 가격과 실제 컵 점수의 분산을 월 단위로 축적</li></ol></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a href=\"https://www.ico.org/\">ICO 커피 통계와 시장 동향</a></li><li><a href=\"https://www.coffeeandclimate.org/\">Coffee and Climate Initiative</a></li><li><a data-wikilink=\"global-coffee-zones\" href=\"/wiki/global-coffee-zones\">세계 커피 지대</a></li><li><a data-wikilink=\"coffee-processing\" href=\"/wiki/coffee-processing\">커피 가공 지도</a></li><li><a data-wikilink=\"coffee-plant-taxonomy\" href=\"/wiki/coffee-plant-taxonomy\">커피 분류학</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">09</span><h2>자기 점검</h2><ul><li>케냐 로트를 비교할 때 먼저 점검해야 할 운영 신호는?</li><li>경매 경로 정보가 없을 때 어떤 가정의 위험이 커지나요?</li><li>고도별 편차를 분리하지 않으면 어떤 향미 항목 해석이 흔들리나요?</li><li>가공 단계 실패 시 가격 신호와 컵 신호가 어떻게 분리될 수 있나요?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "columbia-harvest-cycle",
+    "title": "콜롬비아 수확 주기: Main Crop와 Mitaca를 함께 설계하기",
+    "summary": "콜롬비아의 다중 수확 체계를 이해하면 물량 변동과 품질 라인을 계절 단위로 안정적으로 운영할 수 있습니다.",
+    "category": "산지와 생두",
+    "level": "중급",
+    "readingTime": "12분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sage",
+    "fact": "콜롬비아의 Main crop와 mitaca는 수확 시기와 처리 방식이 달라 유통·가공 전략을 구분해 관리할 필요가 있습니다.",
+    "sections": [
+      {
+        "id": "two-crops",
+        "title": "왜 콜롬비아는 두 번의 수확 구간이 생기나",
+        "paragraphs": [
+          "콜롬비아는 하나의 연도에 주수확(Main crop)과 부수확(mitaca) 구간이 이어져 나타납니다. 이 구조는 총 물량의 안정성을 높이면서도, 로트 분리와 건조 동선을 함께 요구합니다.",
+          "같은 출처라도 어느 시기의 체리가 들어갔는지 모르면 향미 편차를 단일 원인으로 설명하기 어렵다는 점이 핵심입니다."
+        ]
+      },
+      {
+        "id": "main-crop-profile",
+        "title": "Main crop의 운영 성격",
+        "paragraphs": [
+          "Main crop는 보통 유통량의 중심축이 됩니다. 비교적 넓은 성숙 구간이 생길 수 있어, 선별과 건조의 표준 루틴을 먼저 얹기 쉽습니다.",
+          "이 구간에서는 동시 수확량이 높아도 품질 편차 관리 지표를 분리하지 않으면 곧바로 비교가 흐려질 수 있습니다."
+        ]
+      },
+      {
+        "id": "mitaca-role",
+        "title": "Mitaca의 기여와 변수",
+        "paragraphs": [
+          "Mitaca는 보완적 물량이지만 성숙 시점이 다르므로 습도 반응, 수분 보존성, 산미 방향의 편차가 달라질 수 있습니다. 수요 쪽에서 가격 반응이 다를 경우도 빈번합니다.",
+          "그래서 처리 라인에서 “어느 시기 로트인지”를 먼저 표시하고 가공 조건을 맞춘 뒤에야 믹스 판단을 해야 합니다."
+        ]
+      },
+      {
+        "id": "operational-choice",
+        "title": "분리 또는 결합: 어떤 판단이 맞는가",
+        "paragraphs": [
+          "두 시즌을 무조건 분리해야 하는 건 아닙니다. 다만 분리 여부를 먼저 정하는 기준을 명확히 하면 운영 오류를 줄일 수 있습니다.",
+          "브랜드용 소량 채널, 교육용 시연, 안정성 위주의 대량판매 채널에서는 분리 수준이 서로 다릅니다."
+        ]
+      },
+      {
+        "id": "quality-tracking",
+        "title": "품질 추적을 위한 최소 로그",
+        "paragraphs": []
+      },
+      {
+        "id": "common-misconceptions",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 두 시즌 분기 운영 루틴",
+        "paragraphs": [
+          "같은 스페셜티 스펙트럼에서 다음 실험을 한 번 수행해 보세요."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "global-coffee-zones",
+      "coffee-terroir-science",
+      "harvest-maturity-selection",
+      "coffee-processing"
+    ],
+    "tags": [
+      "콜롬비아",
+      "수확시기",
+      "main crop",
+      "mitaca",
+      "산지운영"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "ORG-05 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"two-crops\"><span class=\"content-index\">01</span><h2>왜 콜롬비아는 두 번의 수확 구간이 생기나</h2><p>콜롬비아는 하나의 연도에 주수확(Main crop)과 부수확(mitaca) 구간이 이어져 나타납니다. 이 구조는 총 물량의 안정성을 높이면서도, 로트 분리와 건조 동선을 함께 요구합니다.</p><p>같은 출처라도 어느 시기의 체리가 들어갔는지 모르면 향미 편차를 단일 원인으로 설명하기 어렵다는 점이 핵심입니다.</p></section><section id=\"main-crop-profile\"><span class=\"content-index\">02</span><h2>Main crop의 운영 성격</h2><p>Main crop는 보통 유통량의 중심축이 됩니다. 비교적 넓은 성숙 구간이 생길 수 있어, 선별과 건조의 표준 루틴을 먼저 얹기 쉽습니다.</p><p>이 구간에서는 동시 수확량이 높아도 품질 편차 관리 지표를 분리하지 않으면 곧바로 비교가 흐려질 수 있습니다.</p></section><section id=\"mitaca-role\"><span class=\"content-index\">03</span><h2>Mitaca의 기여와 변수</h2><p>Mitaca는 보완적 물량이지만 성숙 시점이 다르므로 습도 반응, 수분 보존성, 산미 방향의 편차가 달라질 수 있습니다. 수요 쪽에서 가격 반응이 다를 경우도 빈번합니다.</p><p>그래서 처리 라인에서 “어느 시기 로트인지”를 먼저 표시하고 가공 조건을 맞춘 뒤에야 믹스 판단을 해야 합니다.</p><table><thead><tr><th>구간</th><th>핵심 성격</th><th>주요 위험</th><th>운영 대응</th></tr></thead><tbody><tr><td>Main crop</td><td>대량 수확, 표준 처리 우선</td><td>동시 성숙 구간의 편차</td><td>구획별 건조 균일성 집중</td></tr><tr><td>Mitaca</td><td>보완 물량, 후반 투입</td><td>건조 편차 및 컵 편차</td><td>강한 기록 기준 적용</td></tr></tbody></table></section><section id=\"operational-choice\"><span class=\"content-index\">04</span><h2>분리 또는 결합: 어떤 판단이 맞는가</h2><p>두 시즌을 무조건 분리해야 하는 건 아닙니다. 다만 분리 여부를 먼저 정하는 기준을 명확히 하면 운영 오류를 줄일 수 있습니다.</p><p>브랜드용 소량 채널, 교육용 시연, 안정성 위주의 대량판매 채널에서는 분리 수준이 서로 다릅니다.</p></section><section id=\"quality-tracking\"><span class=\"content-index\">05</span><h2>품질 추적을 위한 최소 로그</h2><ul><li>수확 시점(주번호), 출하 구획, 건조 시작 시각</li><li>건조 종료 수분 수치, 저장일수, 첫 유통일</li><li>동일 추출 루틴의 2회 반복 샘플 컵 점수</li></ul></section><section id=\"common-misconceptions\"><span class=\"content-index\">06</span><h2>흔한 오해</h2><ul><li>오해: Main crop와 mitaca는 같은 로트로 다뤄도 무방하다.<br/><strong>정정:</strong> 건조 조건과 유통 타이밍이 다르면 컵 반응이 분리되는 경향이 큽니다.</li><li>오해: mitaca는 자동으로 “덜 좋은 물량”이다.<br/><strong>정정:</strong> 선별·건조를 강화하면 용도별로 유효한 성과를 낼 수 있습니다.</li><li>오해: 수확기 구분은 거래사에게만 중요하다.<br/><strong>정정:</strong> 카페·로스팅 단계에서도 동일한 향미 관리 기준이 필요합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">07</span><h2>실습: 두 시즌 분기 운영 루틴</h2><p>같은 스페셜티 스펙트럼에서 다음 실험을 한 번 수행해 보세요.</p><ol><li>Main crop 로트와 mitaca 로트별로 추출 레시피를 고정</li><li>각 로트에서 건조 편차와 수분 편차를 분리 측정</li><li>컵 점수의 편차가 큰 항목을 기록해 수요 채널별로 대응</li><li>다음 배치에서 유입 채널 구분과 건조 일정 조정</li></ol></section><section id=\"references\"><span class=\"content-index\">08</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"global-coffee-zones\" href=\"/wiki/global-coffee-zones\">세계 커피 지대</a></li><li><a data-wikilink=\"harvest-maturity-selection\" href=\"/wiki/harvest-maturity-selection\">수확 성숙도 선택</a></li><li><a data-wikilink=\"coffee-processing\" href=\"/wiki/coffee-processing\">수확 후 가공 지도</a></li><li><a href=\"https://www.ico.org/\">I.C.O. 통계</a></li><li><a href=\"https://www.fao.org/3/ca8629en/ca8629en.pdf\">FAO 커피 생산 자료</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">09</span><h2>자기 점검</h2><ul><li>Main crop/mitaca 분기를 분리할 때 가장 먼저 체크할 항목은?</li><li>왜 수분 편차가 같은 향미 지표를 다르게 보이게 만들 수 있나요?</li><li>분리 운영과 결합 운영의 의사결정 기준은 어디에서 정해야 하나요?</li><li>큐레이션 과정에서 수확기 정보 누락이 가장 크게 해로운 부분은?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "french-press-immersion-guide",
+    "title": "프렌치 프레스 침지 추출 가이드: 거품과 바디를 구분해 설계하기",
+    "summary": "프렌치 프레스는 단순히 “메탈 필터”를 쓰는 방식이 아니라, 침지·교반·침전 제어를 합친 추출 설계입니다.",
+    "category": "추출",
+    "level": "입문",
+    "readingTime": "9분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "blue",
+    "fact": "프렌치 프레스는 침지와 거품·침전 단계가 함께 결과에 영향을 주므로, 시간과 분쇄의 조합을 먼저 고정해야 일관성이 생깁니다.",
+    "sections": [
+      {
+        "id": "what-is-immersion",
+        "title": "프렌치 프레스는 침지 추출의 핵심 단계",
+        "paragraphs": [
+          "프렌치 프레스는 가열된 물이 커피층을 적셔 확산이 진행되는 구간을 만들고, 마지막에 피스톤을 눌러 고형분을 분리합니다. 이때 커피와 물의 접촉 시간을 먼저 고정하는 편이 가장 중요합니다.",
+          "메탈 메쉬는 종이 필터보다 미분 통과를 덜 제한하므로, 바디가 두텁게 느껴지는 경향이 생깁니다. 대신 과도한 미세입자 유입을 관리하지 않으면 질감이 무거워질 수 있습니다."
+        ]
+      },
+      {
+        "id": "critical-factors",
+        "title": "출발값을 만드는 네 변수",
+        "paragraphs": []
+      },
+      {
+        "id": "steps",
+        "title": "기본 제조 순서",
+        "paragraphs": [
+          "한 번의 레시피를 고정하면 오차 분석이 쉬워집니다."
+        ]
+      },
+      {
+        "id": "decanting",
+        "title": "디캔팅(디프로스팅)과 잔 품질",
+        "paragraphs": [
+          "프레스다운 직후 바로 따른 음료는 미분 농도와 잔류 추출의 영향을 더 많이 받습니다. 즉시 따른 뒤, 남은 분말이 추출을 계속 못하도록 하는 것이 기본입니다.",
+          "디캄팅은 ‘빠르게 끝내기’보다 잔량만큼 즉각 분리해야 합니다. 분리 지연은 의도치 않은 추가 추출을 만들 가능성이 큽니다."
+        ]
+      },
+      {
+        "id": "common-errors",
+        "title": "흔한 실수",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 한 주간 프레스 프로파일 설계",
+        "paragraphs": [
+          "같은 원두로 변수를 하나씩 바꿔 결과를 기록해 보세요."
+        ]
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "brew-methods",
+      "cold-brew",
+      "brew-profile-observables",
+      "extraction-basics"
+    ],
+    "tags": [
+      "프렌치프레스",
+      "침지",
+      "교반",
+      "디캄팅",
+      "추출"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "BRW-03 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"what-is-immersion\"><span class=\"content-index\">01</span><h2>프렌치 프레스는 침지 추출의 핵심 단계</h2><p>프렌치 프레스는 가열된 물이 커피층을 적셔 확산이 진행되는 구간을 만들고, 마지막에 피스톤을 눌러 고형분을 분리합니다. 이때 커피와 물의 접촉 시간을 먼저 고정하는 편이 가장 중요합니다.</p><p>메탈 메쉬는 종이 필터보다 미분 통과를 덜 제한하므로, 바디가 두텁게 느껴지는 경향이 생깁니다. 대신 과도한 미세입자 유입을 관리하지 않으면 질감이 무거워질 수 있습니다.</p></section><section id=\"critical-factors\"><span class=\"content-index\">02</span><h2>출발값을 만드는 네 변수</h2><table><thead><tr><th>변수</th><th>보통의 출발 범위</th><th>향미 경향</th></tr></thead><tbody><tr><td>분쇄</td><td>중간보다 굵은 편</td><td>너무 고운 분쇄는 침전 탁도를 높일 수 있음</td></tr><tr><td>물:커피 비율</td><td>1:12~1:16</td><td>농도·바디의 기본 스케일</td></tr><tr><td>침지 시간</td><td>약 4분 전후</td><td>짧으면 산미 편차, 길면 바디 편중 가능</td></tr><tr><td>교반 방식</td><td>균일한 가볍게 1~2회</td><td>분포 불균일을 줄이는 데 도움</td></tr></tbody></table></section><section id=\"steps\"><span class=\"content-index\">03</span><h2>기본 제조 순서</h2><p>한 번의 레시피를 고정하면 오차 분석이 쉬워집니다.</p><ol><li>원두를 계량하고 1회 가열한 물을 균일하게 붓는다.</li><li>가벼운 교반으로 적시는 정도를 맞춘 뒤, 타이머를 4분으로 설정한다.</li><li>상단 크레마·표면 막을 관찰하고, 1분 단위로 향미 변화를 기록한다.</li><li>예정 시간 후 30초 내외 천천히 누르기 후 즉시 잔으로 따른다.</li></ol></section><section id=\"decanting\"><span class=\"content-index\">04</span><h2>디캔팅(디프로스팅)과 잔 품질</h2><p>프레스다운 직후 바로 따른 음료는 미분 농도와 잔류 추출의 영향을 더 많이 받습니다. 즉시 따른 뒤, 남은 분말이 추출을 계속 못하도록 하는 것이 기본입니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>디캄팅은 ‘빠르게 끝내기’보다 잔량만큼 즉각 분리해야 합니다. 분리 지연은 의도치 않은 추가 추출을 만들 가능성이 큽니다.</p></aside></section><section id=\"common-errors\"><span class=\"content-index\">05</span><h2>흔한 실수</h2><ul><li>오해: 더 곱게 갈수록 더 정교해진다.<br/><strong>정정:</strong> 프렌치 프레스는 미분 유입이 누적되기 쉬워, 분쇄가 고울수록 탁도와 건조 후 느낌이 거칠어질 수 있습니다.</li><li>오해: 강하게 휘저으면 추출이 더 빨라진다.<br/><strong>정정:</strong> 과한 교반은 입자 분포와 물길을 불균일하게 만들 수 있습니다.</li><li>오해: 프레스는 누르는 힘이 강할수록 더 강한 맛이 난다.<br/><strong>정정:</strong> 프레스다운은 물리적 분리 동작이며, 맛은 주로 접촉 단계의 설정에 민감합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 한 주간 프레스 프로파일 설계</h2><p>같은 원두로 변수를 하나씩 바꿔 결과를 기록해 보세요.</p><ol><li>분쇄도만 변경하고 나머지 조건 고정</li><li>침지 시간을 3분/4분/5분으로 분리</li><li>디캄팅 시점을 20초 조정해 기록</li><li>산미·바디·미세입자 체감의 변화를 4항목 점수화</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"brew-methods\" href=\"/wiki/brew-methods\">추출법 총람</a></li><li><a href=\"https://www.craftera.com/frp-guide\">프렌치 프레스 공정 가이드(일반 제조 설명)</a></li><li><a data-wikilink=\"extraction-basics\" href=\"/wiki/extraction-basics\">농도와 수율</a></li><li><a data-wikilink=\"cold-brew\" href=\"/wiki/cold-brew\">침지류 동작 비교</a></li><li><a data-wikilink=\"brew-profile-observables\" href=\"/wiki/brew-profile-observables\">추출 관측 지표</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>프렌치 프레스에서 “시간”이 품질에 미치는 영향은 언제 가장 크게 보이나요?</li><li>디캄팅이 늦어졌을 때 발생할 수 있는 가장 흔한 문제는?</li><li>분쇄를 거칠게 할 때와 곱게 할 때 각각 생기는 변화는?</li><li>프레싱 동작보다 먼저 점검해야 할 변수가 무엇인가요?</li></ul></section>",
+    "backlinks": []
+  },
+  {
+    "slug": "moka-pot-pressure-control",
+    "title": "모카포트 압력·온도 제어: 저압 추출의 경계에서 안정화하기",
+    "summary": "모카포트는 저압 가압 추출이지만 물리적 조건을 통제하면 과추출·연기 냄새 없이 반복 품질을 설계할 수 있습니다.",
+    "category": "카페와 장비",
+    "level": "중급",
+    "readingTime": "11분",
+    "updatedAt": "2026. 07. 27.",
+    "accent": "sand",
+    "fact": "모카포트는 수증기 압력으로 물을 밀어 올리며 작동하므로, 가열 세기와 정렬 타이밍이 맛의 일관성을 좌우합니다.",
+    "sections": [
+      {
+        "id": "principle",
+        "title": "모카포트의 기본 원리",
+        "paragraphs": [
+          "모카포트는 물이 가열되며 수증기가 생기고, 이 압력에 밀려 물이 아래 챔버에서 위 챔버로 이동합니다. 결과적으로 짧은 시간 내 농축된 음료를 만들 수 있다는 장점이 있습니다.",
+          "다만 이 압력은 압력계로 직접 보이진 않기 때문에, 연료(가열) 강도와 추적 타이밍을 먼저 통제해야 안정성이 생깁니다."
+        ]
+      },
+      {
+        "id": "variables",
+        "title": "핵심 변수가 되는 5요소",
+        "paragraphs": []
+      },
+      {
+        "id": "steam-cycle",
+        "title": "수증기-유동 타이밍",
+        "paragraphs": [
+          "보통 처음에는 가열이 활발해질수록 유출량이 증가하고, 소리가 바뀌는 시점 뒤에는 추가 추출이 진행되기 시작합니다. 이 구간을 지나치면 쓴맛·과다 유체 통과가 증가할 수 있습니다.",
+          "모카포트는 불꽃이 남아 있는 상태에서 계속 끓일수록 추출은 ‘진하다’기보다 ‘거칠어지는’ 편향이 생깁니다. 소리와 거품 변화를 기준으로 즉시 제거하세요."
+        ]
+      },
+      {
+        "id": "safety",
+        "title": "안전 운용 포인트",
+        "paragraphs": [
+          "압력 장치는 고온·증기와 연동되므로 안전 관리가 추출 안정성보다 앞서야 합니다."
+        ]
+      },
+      {
+        "id": "common-errors",
+        "title": "흔한 오해",
+        "paragraphs": []
+      },
+      {
+        "id": "practice",
+        "title": "실습: 1일 실험 프로토콜",
+        "paragraphs": []
+      },
+      {
+        "id": "references",
+        "title": "참고 자료",
+        "paragraphs": []
+      },
+      {
+        "id": "quiz",
+        "title": "자기 점검",
+        "paragraphs": []
+      }
+    ],
+    "related": [
+      "espresso-basics",
+      "water-for-coffee",
+      "brewing-gear-guide",
+      "espresso-machine-hydraulics-thermal"
+    ],
+    "tags": [
+      "모카포트",
+      "저압 가압",
+      "압력",
+      "온도",
+      "안전"
+    ],
+    "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "BRW-06 주제 초안 작성"
+      }
+    ],
+    "bodyHtml": "<section id=\"principle\"><span class=\"content-index\">01</span><h2>모카포트의 기본 원리</h2><p>모카포트는 물이 가열되며 수증기가 생기고, 이 압력에 밀려 물이 아래 챔버에서 위 챔버로 이동합니다. 결과적으로 짧은 시간 내 농축된 음료를 만들 수 있다는 장점이 있습니다.</p><p>다만 이 압력은 압력계로 직접 보이진 않기 때문에, 연료(가열) 강도와 추적 타이밍을 먼저 통제해야 안정성이 생깁니다.</p></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>핵심 변수가 되는 5요소</h2><table><thead><tr><th>요소</th><th>일반 범위/설정</th><th>관능적 영향</th></tr></thead><tbody><tr><td>가열 강도</td><td>중약불에서 시작</td><td>예열 안정성 및 과열 억제</td></tr><tr><td>물 온도</td><td>끓는점 근처 진입</td><td>추출 타이밍에 직접 영향</td></tr><tr><td>분쇄도</td><td>미디엄 파인</td><td>유량·입자 유입 제어</td></tr><tr><td>물량</td><td>필터 탬핑 수위 근처</td><td>압력 형성 시간 조정</td></tr><tr><td>철수 타이밍</td><td>젖은 소리→끈적한 소리 전환</td><td>과추출 여부에 영향</td></tr></tbody></table></section><section id=\"steam-cycle\"><span class=\"content-index\">03</span><h2>수증기-유동 타이밍</h2><p>보통 처음에는 가열이 활발해질수록 유출량이 증가하고, 소리가 바뀌는 시점 뒤에는 추가 추출이 진행되기 시작합니다. 이 구간을 지나치면 쓴맛·과다 유체 통과가 증가할 수 있습니다.</p><aside class=\"callout callout-warn\" data-tone=\"warn\"><p>모카포트는 불꽃이 남아 있는 상태에서 계속 끓일수록 추출은 ‘진하다’기보다 ‘거칠어지는’ 편향이 생깁니다. 소리와 거품 변화를 기준으로 즉시 제거하세요.</p></aside></section><section id=\"safety\"><span class=\"content-index\">04</span><h2>안전 운용 포인트</h2><p>압력 장치는 고온·증기와 연동되므로 안전 관리가 추출 안정성보다 앞서야 합니다.</p><ul><li>가열 직후 바로 급히 흔들어 흔들지 않기</li><li>추출 직후 냉각은 너무 급하게 하지 말고 자연 냉각 우선</li><li>손잡이 주변의 누수 여부를 즉시 확인</li></ul></section><section id=\"common-errors\"><span class=\"content-index\">05</span><h2>흔한 오해</h2><ul><li>오해: 분쇄를 더 곱게 하면 향이 선명해진다.<br/><strong>정정:</strong> 모카포트에서는 과도한 미분이 막힘과 불균일 유동을 증가시킬 수 있습니다.</li><li>오해: 더 오래 끓여야 진한 풍미를 얻는다.<br/><strong>정정:</strong> 지정 타이밍 이후는 과추출/연기향 위험이 더 커집니다.</li><li>오해: 한 번 익힌 레시피는 모든 원두에 그대로 적용 가능하다.<br/><strong>정정:</strong> 수분, 산도, 선호 로스트에 따라 압력 피크 타이밍이 이동합니다.</li></ul></section><section id=\"practice\"><span class=\"content-index\">06</span><h2>실습: 1일 실험 프로토콜</h2><ol><li>같은 분쇄와 같은 물량으로 3회 반복 추출</li><li>가열 강도를 단계적으로 완만 조절</li><li>소리 전환 지점에서 시간 기록 후 제거 타이밍 비교</li><li>산미, 쓴맛, 향미 잔향의 변화를 같은 템플릿으로 기록</li></ol></section><section id=\"references\"><span class=\"content-index\">07</span><h2>참고 자료</h2><ul><li><a data-wikilink=\"espresso-basics\" href=\"/wiki/espresso-basics\">에스프레소 기본 변수</a></li><li><a href=\"https://www.moccamaster.com/mokapot-usage\">모카포트 사용 가이드(제조사 안내)</a></li><li><a data-wikilink=\"brewing-gear-guide\" href=\"/wiki/brewing-gear-guide\">추출 도구 가이드</a></li><li><a data-wikilink=\"water-for-coffee\" href=\"/wiki/water-for-coffee\">커피와 물</a></li><li><a href=\"https://www.fscb.net/roasting-and-brewing\">FSCB 브루잉 참고 자료</a></li></ul></section><section id=\"quiz\"><span class=\"content-index\">08</span><h2>자기 점검</h2><ul><li>모카포트에서 소리 신호가 바뀌는 이유는 무엇을 뜻하나요?</li><li>왜 가열 강도를 강제로 세게 시작하면 변동이 커지나요?</li><li>분쇄도와 유량의 균형이 어긋날 때 어떤 결과가 생기나요?</li><li>안전 관점에서 가장 먼저 확인해야 할 접점은?</li></ul></section>",
     "backlinks": []
   }
 ],
