@@ -5644,56 +5644,6 @@ body {
 .site-header > nav .nav-accent-berry { --nav-accent: var(--berry); }
 .site-header > nav .nav-accent-sand { --nav-accent: var(--sand); }
 
-.site-header > nav .brand-palette-tab,
-.mobile-palette-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.site-header > nav .brand-palette-tab {
-  min-height: 36px;
-  padding: 7px 10px;
-  border: 1px solid color-mix(in oklab, var(--brand) 38%, var(--line));
-  border-radius: 999px;
-  background: color-mix(in oklab, var(--brand) 7%, var(--cream));
-  color: var(--ink);
-  font-size: 13px;
-  font-weight: 700;
-  white-space: nowrap;
-}
-
-.site-header > nav .brand-palette-tab:hover {
-  border-color: var(--brand);
-  color: var(--brand);
-}
-
-.brand-palette-dots {
-  display: inline-flex;
-  overflow: hidden;
-  width: 37px;
-  height: 9px;
-  flex: none;
-  border-radius: 999px;
-}
-
-.brand-palette-dots i {
-  display: block;
-  width: 20%;
-  height: 100%;
-}
-
-.brand-palette-dots i:nth-child(1) { background: var(--cherry); }
-.brand-palette-dots i:nth-child(2) { background: var(--green-bean); }
-.brand-palette-dots i:nth-child(3) { background: var(--honey); }
-.brand-palette-dots i:nth-child(4) { background: var(--roast-medium); }
-.brand-palette-dots i:nth-child(5) { background: var(--crema); }
-
-.mobile-drawer .mobile-palette-link {
-  background: color-mix(in oklab, var(--brand) 7%, var(--paper));
-  font-weight: 700;
-}
-
 /* Slow vertical dial: the window stays fixed while only its current message
    enters, avoiding layout shift in the first viewport. */
 .intro-strip-inner {
@@ -6262,10 +6212,6 @@ body {
     font-size: 14px;
   }
 
-  .site-header > nav .brand-palette-tab {
-    padding-inline: 8px;
-    font-size: 0;
-  }
 }
 
 @media (max-width: 900px) {
