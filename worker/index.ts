@@ -6,7 +6,10 @@ import {
 import handler from "vinext/server/app-router-entry";
 
 interface Env {
-  ASSETS: Fetcher;
+  // Structural stand-in for Cloudflare's `Fetcher` binding type, so the repo
+  // typechecks without pulling in @cloudflare/workers-types globally (which
+  // would conflict with DOM lib types used by the Next.js app).
+  ASSETS: { fetch(request: Request): Promise<Response> };
   IMAGES: {
     input(stream: ReadableStream): {
       transform(options: Record<string, unknown>): {
