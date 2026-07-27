@@ -5,6 +5,7 @@ import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   articlesByCategory,
@@ -67,6 +68,7 @@ export default async function EnTopicPage(props: PageProps<"/en/topics/[slug]">)
           <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href={`/topics/${slug}`} />
           <ThemeToggle />
+          <AccountMenu locale="en" />
           <MobileNav locale="en" />
         </div>
       </header>

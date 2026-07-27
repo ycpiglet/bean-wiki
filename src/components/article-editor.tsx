@@ -216,6 +216,12 @@ type EditorCopy = {
   conflict: string;
   authRequired: string;
   loginWithGithub: string;
+  loginWithGoogle: string;
+  linkGithub: string;
+  githubNeeded: string;
+  githubLinkedAs: (login: string) => string;
+  proposed: string;
+  viewPr: string;
   loggedInAs: (login: string) => string;
   logout: string;
   renameTitle: string;
@@ -299,8 +305,14 @@ const COPY: Record<Locale, EditorCopy> = {
     viewCommit: "커밋 보기 ↗",
     conflict:
       "편집을 시작한 뒤 이 문서가 변경되었습니다. 새로고침해 최신 내용을 받은 뒤 다시 반영해주세요.",
-    authRequired: "게시하려면 GitHub 로그인이 필요합니다.",
+    authRequired: "게시하려면 GitHub 계정 연동이 필요합니다.",
     loginWithGithub: "GitHub로 로그인",
+    loginWithGoogle: "Google로 로그인",
+    linkGithub: "GitHub 연동하기 (편집 권한)",
+    githubNeeded: "게시(커밋·PR 제안)에는 GitHub 계정 연동이 필요합니다.",
+    githubLinkedAs: (login) => `GitHub 연동됨: ${login}`,
+    proposed: "변경안을 PR로 제안했습니다. 관리자 검토 후 반영됩니다.",
+    viewPr: "PR 보기 ↗",
     loggedInAs: (login) => `${login} 님으로 로그인됨`,
     logout: "로그아웃",
     renameTitle: "슬러그(URL) 변경",
@@ -383,8 +395,14 @@ const COPY: Record<Locale, EditorCopy> = {
     viewCommit: "View commit ↗",
     conflict:
       "This article changed since you started editing. Reload to get the latest version, then re-apply your changes.",
-    authRequired: "Sign in with GitHub to publish.",
+    authRequired: "Link your GitHub account to publish.",
     loginWithGithub: "Sign in with GitHub",
+    loginWithGoogle: "Sign in with Google",
+    linkGithub: "Link GitHub (edit access)",
+    githubNeeded: "Publishing (commits & PR proposals) requires linking your GitHub account.",
+    githubLinkedAs: (login) => `GitHub linked: ${login}`,
+    proposed: "Your change was proposed as a pull request. It goes live after review.",
+    viewPr: "View PR ↗",
     loggedInAs: (login) => `Signed in as ${login}`,
     logout: "Sign out",
     renameTitle: "Change slug (URL)",
@@ -462,6 +480,7 @@ type SaveState =
   | { kind: "idle" }
   | { kind: "saving" }
   | { kind: "published"; url: string }
+  | { kind: "proposed"; url: string }
   | { kind: "conflict" }
   | { kind: "auth" }
   | { kind: "error"; message: string };
@@ -518,6 +537,8 @@ export function ArticleEditor({
   // Publish wiring, hydrated from GET /api/articles/[slug].
   const [commitEnabled, setCommitEnabled] = useState(false);
   const [oauthEnabled, setOauthEnabled] = useState(false);
+  const [googleEnabled, setGoogleEnabled] = useState(false);
+  const [accountName, setAccountName] = useState<string | null>(null);
   const [login, setLogin] = useState<string | null>(null);
   const [enOutOfSync, setEnOutOfSync] = useState(false);
   const [baseSha, setBaseSha] = useState<string | null>(null);
@@ -542,6 +563,8 @@ export function ArticleEditor({
         if (!live) return;
         setCommitEnabled(Boolean(d.commitEnabled));
         setOauthEnabled(Boolean(d.oauthEnabled));
+        setGoogleEnabled(Boolean(d.googleEnabled));
+        setAccountName(d.user?.name ?? null);
         setLogin(d.login ?? null);
         setEnOutOfSync(Boolean(d.enOutOfSync));
         // baseSha only matters for updates; a new article has no base file.
@@ -817,8 +840,12 @@ export function ArticleEditor({
         }),
       });
       const data = await res.json().catch(() => ({}));
-      if (res.ok && data.committed) {
-        setSaveState({ kind: "published", url: data.commit?.url ?? "" });
+      if (res.ok && (data.committed || data.proposed)) {
+        setSaveState(
+          data.proposed
+            ? { kind: "proposed", url: data.pr?.url ?? "" }
+            : { kind: "published", url: data.commit?.url ?? "" },
+        );
         try {
           localStorage.removeItem(draftKey);
         } catch {
@@ -826,7 +853,7 @@ export function ArticleEditor({
         }
       } else if (res.status === 409) {
         setSaveState({ kind: "conflict" });
-      } else if (res.status === 401) {
+      } else if (res.status === 401 || data.error === "github_link_required") {
         setSaveState({ kind: "auth" });
       } else if (res.status === 422 && Array.isArray(data.errors)) {
         setSaveState({ kind: "error", message: data.errors.join(" ") });
@@ -889,17 +916,35 @@ export function ArticleEditor({
 
         {login ? (
           <p className="editor-notice">
-            {t.loggedInAs(login)} ·{" "}
+            {accountName && accountName !== login ? `${t.loggedInAs(accountName)} · ` : ""}
+            {t.githubLinkedAs(login)} ·{" "}
             <a className="editor-login" href={`/api/auth/logout?returnTo=${prefix}/edit/${slug}`}>
               {t.logout}
             </a>
           </p>
-        ) : (
+        ) : accountName ? (
           oauthEnabled && (
             <p className="editor-notice">
+              {t.loggedInAs(accountName)} — {t.githubNeeded}{" "}
               <a className="editor-login" href={`/api/auth/github?returnTo=${prefix}/edit/${slug}`}>
-                {t.loginWithGithub}
+                {t.linkGithub}
               </a>
+            </p>
+          )
+        ) : (
+          (oauthEnabled || googleEnabled) && (
+            <p className="editor-notice">
+              {googleEnabled && (
+                <a className="editor-login" href={`/api/auth/google?returnTo=${prefix}/edit/${slug}`}>
+                  {t.loginWithGoogle}
+                </a>
+              )}
+              {googleEnabled && oauthEnabled && " · "}
+              {oauthEnabled && (
+                <a className="editor-login" href={`/api/auth/github?returnTo=${prefix}/edit/${slug}`}>
+                  {t.loginWithGithub}
+                </a>
+              )}
             </p>
           )
         )}
@@ -916,6 +961,16 @@ export function ArticleEditor({
             {saveState.url && (
               <a href={saveState.url} target="_blank" rel="noreferrer">
                 {t.viewCommit}
+              </a>
+            )}
+          </p>
+        )}
+        {saveState.kind === "proposed" && (
+          <p className="editor-banner is-ok" role="status">
+            {t.proposed}{" "}
+            {saveState.url && (
+              <a href={saveState.url} target="_blank" rel="noreferrer">
+                {t.viewPr}
               </a>
             )}
           </p>

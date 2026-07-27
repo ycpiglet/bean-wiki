@@ -1,6 +1,8 @@
 // Thin GitHub Contents API client used by the save/history routes. Plain fetch,
-// no SDK. Commits are attributed to the logged-in user's token when present,
-// otherwise to a server fine-grained PAT (GITHUB_CONTENT_TOKEN) if configured.
+// no SDK. Editing requires a linked GitHub identity: commits are made with the
+// linked user's token so history is attributed to them. A server fine-grained
+// PAT (GITHUB_CONTENT_TOKEN) is used only to open PR proposals on behalf of
+// linked users who lack push access — never for anonymous commits.
 import type { Session } from "@/lib/session";
 
 const API = "https://api.github.com";
@@ -13,14 +15,30 @@ export function getRepoConfig(): RepoConfig {
   return { owner, repo: name, branch: process.env.GITHUB_BRANCH || "main" };
 }
 
-// The token used to commit: the editor's own GitHub token (preferred, so the
-// commit is attributed to them) or a server PAT fallback.
+// The token used to commit: the linked GitHub user's own token, so the commit
+// is attributed to them. No anonymous fallback — linking GitHub is the
+// precondition for any write.
 export function resolveCommitToken(session: Session | null): string | null {
-  return session?.token || process.env.GITHUB_CONTENT_TOKEN || null;
+  return session?.github?.token ?? null;
 }
 
 export function commitEnabled(session: Session | null): boolean {
   return Boolean(resolveCommitToken(session));
+}
+
+// Server PAT used to stage PR proposals for users without push access.
+export function proposalToken(): string | null {
+  return process.env.GITHUB_CONTENT_TOKEN || null;
+}
+
+// GitHub API failure with the HTTP status attached, so callers can distinguish
+// "no push access" (403/404 on write) from other errors.
+export class GhError extends Error {
+  status: number;
+  constructor(message: string, status: number) {
+    super(message);
+    this.status = status;
+  }
 }
 
 function headers(token?: string | null): HeadersInit {
@@ -134,8 +152,10 @@ export async function ghCommitFiles(opts: {
   changes: FileChange[];
   message: string;
   token: string;
+  branch?: string; // defaults to the configured branch; pass a proposal branch for PRs
 }): Promise<{ commitSha: string }> {
-  const { owner, repo, branch } = getRepoConfig();
+  const { owner, repo, branch: defaultBranch } = getRepoConfig();
+  const branch = opts.branch || defaultBranch;
   const base = `${API}/repos/${owner}/${repo}`;
   const h = { ...headers(opts.token), "Content-Type": "application/json" };
 
@@ -143,7 +163,10 @@ export async function ghCommitFiles(opts: {
     const res = await fetch(`${base}${path}`, { ...init, headers: h, cache: "no-store" });
     if (!res.ok) {
       const detail = await res.text().catch(() => "");
-      throw new Error(`GitHub ${init?.method ?? "GET"} ${path} failed: ${res.status} ${detail}`);
+      throw new GhError(
+        `GitHub ${init?.method ?? "GET"} ${path} failed: ${res.status} ${detail}`,
+        res.status,
+      );
     }
     return res.json();
   };
@@ -183,6 +206,48 @@ export async function ghCommitFiles(opts: {
   return { commitSha: commit.sha };
 }
 
+// Create a branch off the configured base branch's current head.
+export async function ghCreateBranch(name: string, token: string): Promise<void> {
+  const { owner, repo, branch } = getRepoConfig();
+  const refRes = await fetch(`${API}/repos/${owner}/${repo}/git/ref/heads/${branch}`, {
+    headers: headers(token),
+    cache: "no-store",
+  });
+  if (!refRes.ok) throw new GhError(`GitHub ref ${branch} failed: ${refRes.status}`, refRes.status);
+  const ref = (await refRes.json()) as { object: { sha: string } };
+
+  const res = await fetch(`${API}/repos/${owner}/${repo}/git/refs`, {
+    method: "POST",
+    headers: { ...headers(token), "Content-Type": "application/json" },
+    body: JSON.stringify({ ref: `refs/heads/${name}`, sha: ref.object.sha }),
+  });
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new GhError(`GitHub create branch ${name} failed: ${res.status} ${detail}`, res.status);
+  }
+}
+
+// Open a pull request from `head` into the configured base branch.
+export async function ghOpenPullRequest(opts: {
+  head: string;
+  title: string;
+  body: string;
+  token: string;
+}): Promise<{ number: number; htmlUrl: string }> {
+  const { owner, repo, branch } = getRepoConfig();
+  const res = await fetch(`${API}/repos/${owner}/${repo}/pulls`, {
+    method: "POST",
+    headers: { ...headers(opts.token), "Content-Type": "application/json" },
+    body: JSON.stringify({ title: opts.title, body: opts.body, head: opts.head, base: branch }),
+  });
+  if (!res.ok) {
+    const detail = await res.text().catch(() => "");
+    throw new GhError(`GitHub open PR failed: ${res.status} ${detail}`, res.status);
+  }
+  const json = (await res.json()) as { number: number; html_url: string };
+  return { number: json.number, htmlUrl: json.html_url };
+}
+
 async function putRaw(
   path: string,
   contentBase64: string,
@@ -201,7 +266,7 @@ async function putRaw(
   });
   if (!res.ok) {
     const detail = await res.text().catch(() => "");
-    throw new Error(`GitHub PUT ${path} failed: ${res.status} ${detail}`);
+    throw new GhError(`GitHub PUT ${path} failed: ${res.status} ${detail}`, res.status);
   }
   const json = (await res.json()) as {
     commit: { sha: string; html_url: string };

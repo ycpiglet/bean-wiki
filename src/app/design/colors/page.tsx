@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 // Brand color guide — the coffee lifecycle palette, from cherry to cup.
@@ -99,6 +100,7 @@ export default function ColorGuide() {
             ← 홈으로
           </Link>
           <ThemeToggle />
+          <AccountMenu locale="ko" />
         </div>
       </header>
 

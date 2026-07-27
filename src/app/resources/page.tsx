@@ -3,6 +3,7 @@ import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { resources, type ResourceKind } from "@/content/resources";
 
@@ -27,6 +28,7 @@ export default function ResourcesPage() {
           <Link href="/" className="back-link">← 홈으로</Link>
           <HeaderSearchButton locale="ko" />
           <ThemeToggle />
+          <AccountMenu locale="ko" />
           <MobileNav />
         </div>
       </header>

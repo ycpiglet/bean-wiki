@@ -1,15 +1,14 @@
-// GitHub OAuth callback: verify CSRF state, exchange the code for a token,
-// fetch the user, enforce the login allowlist, and set the encrypted session
-// cookie before redirecting back to where the user started. When an account
-// session already exists (Google sign-in), GitHub is attached as the edit-
-// rights link; otherwise GitHub becomes the account too.
+// Google OAuth callback: verify CSRF state, exchange the code for a token,
+// fetch the user, enforce the optional email allowlist, and set the encrypted
+// session cookie. A pre-existing GitHub link (edit rights) is preserved —
+// Google only (re)sets the account layer.
 import { NextResponse, type NextRequest } from "next/server";
 import {
-  exchangeCodeForToken,
-  fetchGitHubUser,
+  exchangeGoogleCode,
+  fetchGoogleUser,
   getOrigin,
-  isAllowedLogin,
-  oauthConfigured,
+  googleConfigured,
+  isAllowedGoogleEmail,
   safeReturnTo,
   STATE_COOKIE,
 } from "@/lib/oauth";
@@ -17,7 +16,7 @@ import {
   SESSION_COOKIE,
   cookieOptions,
   encryptSession,
-  linkGitHub,
+  newGoogleSession,
   readSession,
 } from "@/lib/session";
 
@@ -34,7 +33,7 @@ function fail(origin: string, reason: string): NextResponse {
 
 export async function GET(req: NextRequest) {
   const origin = getOrigin(req);
-  if (!oauthConfigured()) return fail(origin, "not_configured");
+  if (!googleConfigured()) return fail(origin, "not_configured");
 
   const code = req.nextUrl.searchParams.get("code");
   const state = req.nextUrl.searchParams.get("state");
@@ -46,15 +45,13 @@ export async function GET(req: NextRequest) {
   const returnTo = safeReturnTo(returnToRaw);
 
   try {
-    const token = await exchangeCodeForToken(code, origin);
-    const user = await fetchGitHubUser(token);
-    if (!isAllowedLogin(user.login)) return fail(origin, "not_allowed");
+    const accessToken = await exchangeGoogleCode(code, origin);
+    const user = await fetchGoogleUser(accessToken);
+    if (!user.email_verified) return fail(origin, "email_unverified");
+    if (!isAllowedGoogleEmail(user.email)) return fail(origin, "not_allowed");
 
     const existing = await readSession();
-    const session = linkGitHub(
-      { login: user.login, name: user.name, avatar: user.avatar, token },
-      existing,
-    );
+    const session = newGoogleSession(user, existing);
     const encrypted = encryptSession(session);
     if (!encrypted) return fail(origin, "session_error");
 

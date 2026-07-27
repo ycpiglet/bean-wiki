@@ -5,6 +5,7 @@ import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { QuizRunner } from "@/components/quiz-runner";
 import { LearningDashboard } from "@/components/learning-dashboard";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { quiz } from "@/content/quiz";
 
@@ -32,6 +33,7 @@ export default function QuizPage() {
           </Link>
           <HeaderSearchButton locale="ko" />
           <ThemeToggle />
+          <AccountMenu locale="ko" />
           <MobileNav />
         </div>
       </header>

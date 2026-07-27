@@ -6,6 +6,7 @@ import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { categories, getPublishedArticles, levels } from "@/lib/content";
 
@@ -53,6 +54,7 @@ export default function EnWikiIndex() {
           <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href="/wiki" />
           <ThemeToggle />
+          <AccountMenu locale="en" />
           <MobileNav locale="en" />
         </div>
       </header>

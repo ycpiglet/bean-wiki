@@ -12,6 +12,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ShareButtons } from "@/components/share-buttons";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { articles, getArticle, getCategoryByName } from "@/lib/content";
 import { toISODate } from "@/lib/dates";
@@ -135,6 +136,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
           <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href={`/en/wiki/${slug}`} />
           <ThemeToggle />
+          <AccountMenu locale="ko" />
           <MobileNav />
         </div>
       </header>

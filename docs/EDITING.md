@@ -18,9 +18,34 @@
   출처·라이선스 표기), **이름 변경 리다이렉트**, **문서 역사/복원**, **초안**,
   **ko/en 구조 동기화 알림**.
 
+## 인증 모델 (2계층)
+
+| 계층 | 프로바이더 | 부여 범위 |
+| --- | --- | --- |
+| **계정** | Google (또는 GitHub 단독) | 사이트 로그인·프로필. 읽기 전용 — 편집 권한 없음 |
+| **편집 권한** | GitHub 연동 | 커밋·PR 제안. 게시는 반드시 GitHub 연동 필요 |
+
+- 헤더의 계정 메뉴에서 Google 로그인 후, 같은 메뉴(또는 에디터 배너)에서
+  **GitHub 연동**을 하면 편집 권한이 생깁니다. GitHub로 바로 로그인하면 계정과
+  편집 권한이 한 번에 처리됩니다.
+- 커밋은 항상 **연동된 사용자의 GitHub 토큰**으로 이뤄져 편집 이력이 실제
+  사용자에게 귀속됩니다. 익명(서버 PAT 단독) 커밋 경로는 제거됐습니다.
+- 연동 사용자가 push 권한이 없으면 저장은 자동으로 **PR 제안**이 됩니다
+  (서버 PAT `GITHUB_CONTENT_TOKEN`가 브랜치 생성·PR 오픈을 대행, PR 본문에
+  제안자 GitHub 로그인 명시).
+
 ## 게시 활성화에 필요한 것 (사용자 작업)
 
-### 1. GitHub OAuth 앱
+### 0. Google OAuth 클라이언트 (계정 로그인)
+
+<https://console.cloud.google.com/apis/credentials> → **Create credentials →
+OAuth client ID** (Web application)
+
+- Authorized redirect URI: `https://bean-wiki.vercel.app/api/auth/google/callback`
+  (로컬 테스트는 `http://localhost:3000/api/auth/google/callback` 추가)
+- OAuth consent screen의 scope는 기본(openid/email/profile)이면 충분합니다.
+
+### 1. GitHub OAuth 앱 (편집 권한 연동)
 
 <https://github.com/settings/developers> → **New OAuth App**
 
@@ -35,17 +60,22 @@ Client ID와 새로 만든 Client secret을 환경변수로 넣습니다.
 | 변수 | 필수 | 용도 |
 | --- | --- | --- |
 | `AUTH_SECRET` | ✅ | 세션 쿠키(AES-256-GCM) 암호화 키. 임의의 긴 문자열(`openssl rand -hex 32`) |
-| `GITHUB_OAUTH_CLIENT_ID` | ✅ | OAuth 앱 Client ID |
-| `GITHUB_OAUTH_CLIENT_SECRET` | ✅ | OAuth 앱 Client secret |
-| `GITHUB_ALLOWED_LOGINS` | 권장 | 편집 허용 GitHub 로그인(쉼표 구분). 미설정 시 인증된 누구나 로그인 가능하되, 커밋은 저장소 push 권한이 있어야 성공 |
+| `GOOGLE_OAUTH_CLIENT_ID` | 계정 로그인 | Google OAuth 클라이언트 ID |
+| `GOOGLE_OAUTH_CLIENT_SECRET` | 계정 로그인 | Google OAuth 클라이언트 secret |
+| `GOOGLE_ALLOWED_EMAILS` | 선택 | Google 로그인 허용 이메일(쉼표 구분). 미설정 시 누구나 로그인(읽기 전용 계정) |
+| `GITHUB_OAUTH_CLIENT_ID` | 편집 권한 | GitHub OAuth 앱 Client ID |
+| `GITHUB_OAUTH_CLIENT_SECRET` | 편집 권한 | GitHub OAuth 앱 Client secret |
+| `GITHUB_ALLOWED_LOGINS` | 권장 | GitHub 연동 허용 로그인(쉼표 구분). 미설정 시 인증된 누구나 연동 가능하되, push 권한이 없으면 저장은 PR 제안으로 처리 |
 | `GITHUB_REPO` | 선택 | 기본 `ycpiglet/bean-wiki` |
 | `GITHUB_BRANCH` | 선택 | 기본 `main` |
 | `AUTH_ORIGIN` | 선택 | 프록시 환경에서 OAuth redirect_uri 오리진 고정용 |
-| `GITHUB_CONTENT_TOKEN` | 선택 | OAuth 대신(또는 폴백) 서버 신원으로 커밋할 fine-grained PAT(`contents:write`) |
+| `GITHUB_CONTENT_TOKEN` | 권장 | PR 제안 대행용 fine-grained PAT(`contents:write` + `pull requests:write`). push 권한 없는 연동 사용자의 저장을 브랜치+PR로 스테이징. **익명 커밋에는 더 이상 사용되지 않음** |
 | `UNSPLASH_ACCESS_KEY` | 선택 | Unsplash 이미지 검색. 미설정 시 Wikimedia Commons만 동작 |
 
-커밋 토큰 우선순위: **로그인 사용자의 OAuth 토큰** → 없으면 `GITHUB_CONTENT_TOKEN`.
-둘 다 없으면 편집은 미리보기 전용입니다.
+게시 조건: **GitHub 연동 필수**. 연동 사용자의 토큰으로 커밋하고, push 권한이
+없으면 `GITHUB_CONTENT_TOKEN`으로 PR을 제안합니다(둘 다 불가하면 403 안내).
+프로바이더 환경변수가 하나도 없으면 에디터는 미리보기 전용이고 헤더 계정
+메뉴는 렌더되지 않습니다.
 
 ### 3. 커밋 권한
 
@@ -56,12 +86,14 @@ OAuth 스코프는 기본 `public_repo read:user`(`GITHUB_OAUTH_SCOPE`로 변경
 ## 동작 방식 (아키텍처)
 
 ```
+[헤더 계정 메뉴] 로그인: /api/auth/google → Google → /callback (계정 세션)
+     │           연동:   /api/auth/github → GitHub → /callback (편집 권한 부착)
 [문서 페이지] --[편집]--> /edit/[slug] (TipTap)
-     │  로그인: /api/auth/github → GitHub → /callback (암호화 세션 쿠키)
-     ▼  게시(편집 요약 + baseSha)
+     ▼  게시(편집 요약 + baseSha) — GitHub 연동 필수
 [POST /api/articles/[slug]]
      정제(HTML 새니타이즈) → 검증(카테고리·accent·related) → 직렬화
-     → 충돌 감지(baseSha) → GitHub Contents API 커밋
+     → 충돌 감지(baseSha) → 사용자 토큰으로 Contents API 커밋
+     └─ push 권한 없음(403/404) → 서버 PAT로 proposal/* 브랜치 커밋 + PR 오픈
 [GitHub main] → Vercel 자동 빌드(~1–2분) → 라이브 반영
      ▲ 문서 역사 = git 커밋 (역사/복원 UI가 GitHub API로 읽기/역커밋)
 ```
@@ -78,8 +110,8 @@ OAuth 스코프는 기본 `public_repo read:user`(`GITHUB_OAUTH_SCOPE`로 변경
 
 초기엔 소유자 1인 편집을 전제로 하지만, 기여자를 늘리는 것은 설정 두 가지로 됩니다.
 
-1. **저장소 write 권한 부여** — GitHub `ycpiglet/bean-wiki` → Settings → Collaborators에서 초대. 커밋은 로그인한 사용자의 토큰으로 이뤄지므로, push 권한이 없으면 게시가 403으로 막힙니다(로그인만으론 부족).
-2. **로그인 허용목록에 추가** — Vercel 환경변수 `GITHUB_ALLOWED_LOGINS`에 쉼표로 로그인을 추가(예: `ycpiglet,teammate1`) 후 재배포. 미설정이면 인증된 누구나 로그인은 되지만, 위 write 권한이 있어야 실제 커밋이 성공합니다.
+1. **저장소 write 권한 부여** — GitHub `ycpiglet/bean-wiki` → Settings → Collaborators에서 초대. 커밋은 연동한 사용자의 토큰으로 이뤄지므로, push 권한이 있으면 `main` 직접 커밋, 없으면 자동으로 PR 제안이 됩니다.
+2. **연동 허용목록에 추가** — Vercel 환경변수 `GITHUB_ALLOWED_LOGINS`에 쉼표로 로그인을 추가(예: `ycpiglet,teammate1`) 후 재배포. 미설정이면 인증된 누구나 연동할 수 있고, push 권한 유무에 따라 직접 커밋/PR 제안으로 갈립니다.
 
 ### 리뷰 흐름 (현재 모델)
 
@@ -88,9 +120,13 @@ OAuth 스코프는 기본 `public_repo read:user`(`GITHUB_OAUTH_SCOPE`로 변경
 - **초안(draft) 기반 검토** — 기여자가 에디터에서 **"초안으로 저장"**을 체크해 게시하면, 문서는 목록·검색·사이트맵에서 숨겨지고 `/wiki/<slug>`에서 **초안 배지**와 함께 검토할 수 있습니다(noindex). 소유자가 확인한 뒤 초안 체크를 해제해 정식 공개합니다.
 - **문서 역사로 감사** — 모든 편집이 git 커밋이라 `/wiki/<slug>/history`에서 누가·언제·무엇을(편집 요약) 바꿨는지 추적하고, 문제가 있으면 이전 버전으로 복원할 수 있습니다.
 
-### 더 엄격한 검토가 필요해지면 (후속 옵션)
+### PR 기반 편집 (구현됨)
 
-불특정 다수의 기여를 받는 단계가 되면 **PR 기반 편집**(기여자 편집 → 저장이 브랜치에 커밋되고 PR 자동 생성 → 소유자 승인 시 병합)이 적합합니다. 현재는 미구현이며, 필요할 때 저장 API에 브랜치/PR 경로를 추가하면 됩니다. 실시간 동시편집(CRDT)은 동시 편집이 실제로 생기기 전까지는 도입하지 않습니다.
+push 권한이 없는 GitHub 연동 사용자가 저장하면 자동으로 **PR 제안**이 됩니다:
+서버 PAT가 `proposal/<slug>-<id>` 브랜치에 변경을 원자 커밋하고(새 문서는
+`order.json` 등록 포함) PR을 열며, 본문에 제안자 GitHub 로그인을 명시합니다.
+소유자가 PR을 병합하면 반영됩니다. 실시간 동시편집(CRDT)은 동시 편집이 실제로
+생기기 전까지는 도입하지 않습니다.
 
 ## 관련 코드
 

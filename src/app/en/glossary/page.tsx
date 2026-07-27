@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   categoryLabel,
@@ -61,6 +62,7 @@ export default function EnGlossaryPage() {
           <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href="/glossary" />
           <ThemeToggle />
+          <AccountMenu locale="en" />
           <MobileNav locale="en" />
         </div>
       </header>

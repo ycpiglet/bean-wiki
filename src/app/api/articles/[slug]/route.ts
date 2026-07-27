@@ -1,11 +1,23 @@
 // Save API: validate editor input, serialize to a canonical HTML source, and
-// commit to GitHub (which triggers a Vercel rebuild). Commits are attributed to
-// the logged-in user's token, or a server PAT fallback. Editing is disabled
-// (401) until a token is configured — the credential is user-supplied, exactly
-// like CI.
+// commit to GitHub (which triggers a Vercel rebuild). Editing requires a
+// linked GitHub identity (Google sign-in alone is read-only): the commit is
+// made with the linked user's token so history is attributed to them. When
+// that token lacks push access, the save is staged as a PR proposal via the
+// server PAT (GITHUB_CONTENT_TOKEN) instead of a direct commit.
 import type { NextRequest } from "next/server";
-import { readSession } from "@/lib/session";
-import { ghGetFile, ghPutFile, resolveCommitToken, commitEnabled } from "@/lib/github";
+import { readSession, type Session } from "@/lib/session";
+import {
+  GhError,
+  ghCommitFiles,
+  ghCreateBranch,
+  ghGetFile,
+  ghOpenPullRequest,
+  ghPutFile,
+  proposalToken,
+  resolveCommitToken,
+  commitEnabled,
+} from "@/lib/github";
+import { googleConfigured, oauthConfigured } from "@/lib/oauth";
 import { getArticle } from "@/lib/content";
 import {
   sourcePath,
@@ -50,9 +62,14 @@ export async function GET(req: NextRequest, ctx: RouteContext<"/api/articles/[sl
 
   return Response.json({
     loggedIn: Boolean(session),
-    login: session?.login ?? null,
+    user: session
+      ? { name: session.user.name, provider: session.user.provider, avatar: session.user.avatar ?? null }
+      : null,
+    login: session?.github?.login ?? null,
+    githubLinked: Boolean(session?.github),
     commitEnabled: commitEnabled(session),
-    oauthEnabled: Boolean(process.env.GITHUB_OAUTH_CLIENT_ID && process.env.AUTH_SECRET),
+    oauthEnabled: oauthConfigured(),
+    googleEnabled: googleConfigured(),
     enOutOfSync,
     sha,
   });
@@ -61,15 +78,20 @@ export async function GET(req: NextRequest, ctx: RouteContext<"/api/articles/[sl
 export async function POST(req: NextRequest, ctx: RouteContext<"/api/articles/[slug]">) {
   const { slug } = await ctx.params;
   const session = await readSession();
+  if (!session) {
+    return Response.json(
+      { error: "auth_required", message: "Sign in to publish." },
+      { status: 401 },
+    );
+  }
   const token = resolveCommitToken(session);
   if (!token) {
     return Response.json(
       {
-        error: "auth_required",
-        message:
-          "Editing is not connected yet. Sign in with GitHub (or configure GITHUB_CONTENT_TOKEN) to publish.",
+        error: "github_link_required",
+        message: "Publishing requires a linked GitHub account (commits and PR proposals run under your GitHub identity).",
       },
-      { status: 401 },
+      { status: 403 },
     );
   }
 
@@ -122,13 +144,19 @@ export async function POST(req: NextRequest, ctx: RouteContext<"/api/articles/[s
     const source = creating ? buildNewSource(input) : buildUpdatedSource(existing!.text, input);
     const verb = creating ? "create" : "edit";
     const tag = locale === "en" ? " en" : "";
-    const put = await ghPutFile({
-      path,
-      text: source,
-      message: `content: ${verb}(${slug}${tag}): ${input.editSummary.trim()}`,
-      token,
-      sha: existing?.sha,
-    });
+    const message = `content: ${verb}(${slug}${tag}): ${input.editSummary.trim()}`;
+
+    let put;
+    try {
+      put = await ghPutFile({ path, text: source, message, token, sha: existing?.sha });
+    } catch (error) {
+      // 403/404 on write = the linked user has no push access. Stage the same
+      // change as a PR proposal via the server PAT instead.
+      if (error instanceof GhError && (error.status === 403 || error.status === 404)) {
+        return proposeAsPullRequest({ session, slug, path, source, message, creating, locale });
+      }
+      throw error;
+    }
 
     // A brand-new Korean article must also be registered in order.json.
     if (creating && locale === "ko") {
@@ -157,5 +185,66 @@ export async function POST(req: NextRequest, ctx: RouteContext<"/api/articles/[s
   } catch (error) {
     const message = error instanceof Error ? error.message : "commit failed";
     return Response.json({ error: "commit_failed", message }, { status: 502 });
+  }
+}
+
+// PR-proposal path for linked users without push access: branch off main with
+// the server PAT, commit the change there (atomically, including order.json
+// for new articles), and open a PR crediting the proposer's GitHub login.
+async function proposeAsPullRequest(opts: {
+  session: Session;
+  slug: string;
+  path: string;
+  source: string;
+  message: string;
+  creating: boolean;
+  locale: "ko" | "en";
+}): Promise<Response> {
+  const pat = proposalToken();
+  const login = opts.session.github!.login;
+  if (!pat) {
+    return Response.json(
+      {
+        error: "no_push_access",
+        message:
+          "Your GitHub account has no push access to this repo, and PR proposals are not configured (GITHUB_CONTENT_TOKEN). Ask a maintainer for write access.",
+      },
+      { status: 403 },
+    );
+  }
+
+  try {
+    const branch = `proposal/${opts.slug}-${Date.now().toString(36)}`;
+    await ghCreateBranch(branch, pat);
+
+    const changes = [{ path: opts.path, content: opts.source }];
+    if (opts.creating && opts.locale === "ko") {
+      const orderFile = await ghGetFile(ORDER_PATH, pat);
+      if (orderFile) {
+        const order = JSON.parse(orderFile.text) as string[];
+        if (!order.includes(opts.slug)) {
+          order.push(opts.slug);
+          changes.push({ path: ORDER_PATH, content: JSON.stringify(order, null, 2) + "\n" });
+        }
+      }
+    }
+
+    await ghCommitFiles({ changes, message: opts.message, token: pat, branch });
+    const pr = await ghOpenPullRequest({
+      head: branch,
+      title: opts.message.split("\n")[0],
+      body: `Proposed from the Bean Wiki editor by @${login}.`,
+      token: pat,
+    });
+
+    return Response.json({
+      committed: false,
+      proposed: true,
+      creating: opts.creating,
+      pr: { number: pr.number, url: pr.htmlUrl },
+    });
+  } catch (error) {
+    const message = error instanceof Error ? error.message : "proposal failed";
+    return Response.json({ error: "proposal_failed", message }, { status: 502 });
   }
 }

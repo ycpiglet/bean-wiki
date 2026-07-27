@@ -5,6 +5,7 @@ import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { getArticle, glossaryByCategory, glossaryTerms } from "@/lib/content";
 import { SITE_NAME } from "@/lib/site";
@@ -50,6 +51,7 @@ export default function GlossaryPage() {
           <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href="/en/glossary" />
           <ThemeToggle />
+          <AccountMenu locale="ko" />
           <MobileNav />
         </div>
       </header>

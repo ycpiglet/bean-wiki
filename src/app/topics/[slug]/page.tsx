@@ -5,6 +5,7 @@ import { BeanMark } from "@/components/bean-logo";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   articlesByCategory,
@@ -64,6 +65,7 @@ export default async function TopicPage(props: PageProps<"/topics/[slug]">) {
           <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href={`/en/topics/${slug}`} />
           <ThemeToggle />
+          <AccountMenu locale="ko" />
           <MobileNav />
         </div>
       </header>

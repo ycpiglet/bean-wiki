@@ -4,6 +4,7 @@ import { BeanMark } from "@/components/bean-logo";
 import { ContactForm } from "@/components/contact-form";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 
 export const metadata: Metadata = {
@@ -32,6 +33,7 @@ export default function ContactPage() {
           <Link href="/" className="back-link">← 홈으로</Link>
           <HeaderSearchButton locale="ko" />
           <ThemeToggle />
+          <AccountMenu locale="ko" />
           <MobileNav />
         </div>
       </header>

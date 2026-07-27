@@ -7,6 +7,7 @@ import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { ShareButtons } from "@/components/share-buttons";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { categoryLabel, getArticle, getArticles } from "@/lib/content";
 import { toISODate } from "@/lib/dates";
@@ -93,6 +94,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
           <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href={`/wiki/${slug}`} />
           <ThemeToggle />
+          <AccountMenu locale="en" />
           <MobileNav locale="en" />
         </div>
       </header>

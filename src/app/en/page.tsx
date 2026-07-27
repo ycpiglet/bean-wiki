@@ -5,6 +5,7 @@ import { HeaderSearchButton } from "@/components/header-search-button";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileNav } from "@/components/mobile-nav";
 import { Search } from "@/components/search";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   categories,
@@ -98,6 +99,7 @@ export default function EnHome() {
           <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href="/" />
           <ThemeToggle />
+          <AccountMenu locale="en" />
           <MobileNav locale="en" />
         </div>
       </header>

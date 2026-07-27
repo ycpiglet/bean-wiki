@@ -5,6 +5,7 @@ import { HeaderSearchButton } from "@/components/header-search-button";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { MobileNav } from "@/components/mobile-nav";
 import { Search } from "@/components/search";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import {
   categories,
@@ -94,6 +95,7 @@ export default function Home() {
           <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href="/en" />
           <ThemeToggle />
+          <AccountMenu locale="ko" />
           <MobileNav />
         </div>
       </header>

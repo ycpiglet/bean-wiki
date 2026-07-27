@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
+import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { allTags, articlesByTag } from "@/lib/content";
 
@@ -61,6 +62,7 @@ export default async function TagPage(props: PageProps<"/tags/[tag]">) {
           </Link>
           <HeaderSearchButton locale="ko" />
           <ThemeToggle />
+          <AccountMenu locale="ko" />
           <MobileNav />
         </div>
       </header>
