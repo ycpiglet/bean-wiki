@@ -8,61 +8,134 @@ export const articlesByLocale: Record<string, Article[]> = {
   ko: [
   {
     "slug": "coffee-cherry-to-bean",
-    "title": "커피 체리에서 한 잔까지",
-    "summary": "커피 열매가 수확, 가공, 로스팅과 추출을 거쳐 우리가 마시는 한 잔이 되는 과정을 살펴봅니다.",
+    "title": "커피는 무엇인가: 열매에서 한 잔까지",
+    "summary": "커피나무의 열매와 씨앗이 수확, 가공, 건조, 로스팅, 분쇄와 추출을 거쳐 음료가 되는 전체 여정을 초보자의 눈높이에서 연결합니다.",
     "category": "커피 기초",
     "level": "입문",
-    "readingTime": "6분",
-    "updatedAt": "2026. 07. 20.",
+    "readingTime": "15분",
+    "updatedAt": "2026. 07. 27.",
     "accent": "olive",
-    "fact": "우리가 흔히 커피콩이라고 부르는 것은 커피나무 열매 안에 들어 있는 씨앗입니다.",
+    "fact": "우리가 커피콩이라고 부르는 것은 커피나무 열매의 씨앗이며, 한 잔의 맛은 재배부터 추출까지 이어지는 선택의 결과입니다.",
     "sections": [
       {
-        "id": "fruit",
-        "title": "커피는 열매에서 시작됩니다",
+        "id": "definition",
+        "title": "커피는 식물의 씨앗으로 만든 음료입니다",
         "paragraphs": [
-          "커피나무는 꼭두서니과 코페아속에 속하는 상록 식물입니다. 꽃이 진 자리에 생긴 열매는 익으면서 대체로 초록색에서 붉은색이나 노란색으로 변합니다. 이 열매를 커피 체리라고 부릅니다.",
-          "체리 안에는 보통 두 개의 씨앗이 마주 보고 있습니다. 과육과 점액질, 파치먼트 같은 여러 층을 제거하고 건조한 씨앗이 생두이며, 이를 가열해 향미를 발달시킨 것이 원두입니다."
+          "우리가 마시는 커피는 커피나무의 열매 안에 든 씨앗에서 시작합니다. 볶기 전 씨앗은 생두, 볶은 뒤에는 원두라고 부릅니다. 원두를 잘게 분쇄하고 물과 만나게 하면 씨앗 안의 일부 성분이 물로 이동하며 향과 맛, 색과 질감을 가진 음료가 됩니다.",
+          "따라서 커피를 이해한다는 것은 원두 봉투에 적힌 이름을 외우는 일이 아닙니다. 나무가 자란 환경, 열매를 수확한 시점, 씨앗을 꺼내 말린 방법, 볶은 정도, 보관 상태와 추출 방법이 어떻게 연결되는지 살피는 일입니다. 어느 한 단계도 최종 맛을 혼자 결정하지 않지만, 각 단계는 다음 단계가 사용할 수 있는 가능성과 한계를 만듭니다.",
+          "예를 들어 잘 익은 열매를 세심하게 골라도 건조 과정이 고르지 않으면 불쾌한 발효취가 생길 수 있습니다. 좋은 생두라도 지나치게 오래 보관하거나 원두를 부적절하게 볶으면 향의 선명도가 떨어질 수 있습니다. 반대로 이름난 원두라고 해도 물과 분쇄도, 추출 시간이 맞지 않으면 그 특징을 충분히 느끼기 어렵습니다.",
+          "한 잔의 맛을 한 가지 원인으로 설명하지 마세요. 산지·품종·가공·로스팅·추출은 순서대로 이어지며 서로의 결과를 바꿉니다."
         ]
       },
       {
-        "id": "process",
-        "title": "가공은 씨앗을 안정적으로 보존하는 과정입니다",
+        "id": "plant-fruit",
+        "title": "커피나무는 꽃을 피우고 열매를 맺습니다",
         "paragraphs": [
-          "수확한 체리는 시간이 지나면 빠르게 변질됩니다. 생산자는 체리에서 씨앗을 분리하고 적정 수분까지 건조해 장거리 이동과 보관이 가능한 생두로 만듭니다."
+          "커피나무는 꼭두서니과 코페아속에 속하는 상록 식물입니다. 상업적으로 널리 재배되는 종에는 아라비카와 카네포라가 있으며, 카네포라의 대표적인 재배 집단을 흔히 로부스타라고 부릅니다. 종과 품종은 나무의 크기, 병에 대한 저항성, 적합한 재배 환경과 잔에서 느껴지는 경향에 영향을 줍니다.",
+          "흰 꽃이 진 자리에는 작은 열매가 생깁니다. 열매는 익으면서 대체로 초록색에서 붉은색이나 노란색으로 변하며, 겉모양 때문에 커피 체리라고 부릅니다. 색만으로 모든 성숙도를 판단할 수는 없지만 생산자는 색, 촉감, 당도와 농장의 기준을 함께 보며 수확 시점을 정합니다.",
+          "커피나무는 같은 가지에서도 꽃이 피고 열매가 익는 시점이 다를 수 있습니다. 그래서 잘 익은 열매만 손으로 여러 차례 골라 따는 방식과 가지의 열매를 한 번에 수확하는 방식 사이에는 작업량과 균일성의 차이가 생깁니다. 기계 수확도 지형과 농장 설계, 선별 공정에 따라 결과가 달라지므로 어느 한 방식이 항상 우월하다고 단정하기는 어렵습니다.",
+          "단계눈으로 볼 수 있는 것다음 단계의 질문꽃흰 꽃과 개화 시기열매가 언제 형성될까요?체리색, 크기, 손상 여부얼마나 고르게 익었을까요?생두색, 밀도, 수분, 결점어떻게 보관하고 볶을까요?원두색, 표면, 향, 가스어떤 물과 레시피가 맞을까요?"
+        ]
+      },
+      {
+        "id": "anatomy",
+        "title": "체리 안에는 여러 층과 보통 두 개의 씨앗이 있습니다",
+        "paragraphs": [
+          "커피 체리의 바깥에는 껍질과 과육이 있고, 그 안쪽에는 끈적한 점액질, 단단한 파치먼트, 얇은 실버스킨과 씨앗이 차례로 자리합니다. 용어는 교육 자료와 지역에 따라 조금 다르게 번역되지만, 핵심은 씨앗이 여러 보호층 안에 있다는 점입니다.",
+          "한 체리 안에는 보통 평평한 면을 맞댄 씨앗 두 개가 들어 있습니다. 드물게 하나의 둥근 씨앗만 자라는 경우를 피베리라고 부릅니다. 피베리는 모양과 선별 방식이 다르지만 그 사실만으로 향미가 항상 더 좋다고 말할 수는 없습니다.",
+          "생두 가운데 보이는 홈은 두 씨앗이 맞닿아 자란 구조와 관련이 있습니다. 볶는 동안 수분이 빠지고 세포 구조가 팽창하면서 원두는 가벼워지고 부피가 커집니다. 우리가 흔히 보는 갈색 원두는 농장에서 수확한 씨앗과 같은 물질이지만 열을 거치며 물리적·화학적으로 크게 변한 상태입니다.",
+          "‘커피콩’은 익숙한 일상어이지만 식물학적으로는 콩과 식물의 콩이 아니라 커피 열매의 씨앗입니다."
+        ]
+      },
+      {
+        "id": "harvest-processing",
+        "title": "수확 뒤에는 씨앗을 분리하고 안정적으로 말립니다",
+        "paragraphs": [
+          "수확한 체리는 호흡과 미생물 활동이 계속되므로 그대로 오래 둘 수 없습니다. 생산자는 이물질과 덜 익은 열매를 골라내고, 목표한 가공 방식에 따라 과육을 제거하거나 체리 상태로 건조를 시작합니다. 이때 발효는 무조건 나쁜 현상이 아니라 관리해야 할 생물학적 과정입니다.",
+          "워시드 가공은 대체로 과육을 제거한 뒤 점액질을 발효 또는 기계적 방법으로 줄이고 세척해 건조합니다. 내추럴 가공은 열매 상태로 말린 뒤 마른 껍질과 과육을 벗깁니다. 허니 또는 펄프드 내추럴 계열은 과육을 제거하되 점액질 일부를 남겨 건조합니다. 같은 이름의 가공이라도 지역, 장비, 물 사용, 발효 시간과 건조 방식에 따라 세부 공정은 다릅니다.",
+          "가공 이름은 향미를 예상하는 단서이지만 정답표는 아닙니다. 내추럴은 과일 향과 발효 인상이 강한 경향이, 워시드는 향의 구분과 산미가 선명한 경향이 자주 언급됩니다. 그러나 품종, 성숙도, 위생과 건조 관리가 함께 작용하므로 가공명 하나만으로 맛을 확정해서는 안 됩니다.",
+          "건조의 목적은 운송과 보관이 가능한 수준으로 수분과 수분활성도를 낮추는 것입니다. 너무 빠르거나 불균일한 건조, 비와 높은 습도에 반복적으로 노출되는 상황은 품질 위험을 높입니다. 생산자는 건조대나 파티오, 기계 건조기 등을 사용하고 층의 두께와 뒤집는 빈도, 온도와 시간을 조절합니다."
+        ]
+      },
+      {
+        "id": "green-coffee",
+        "title": "생두는 선별·보관·운송을 거쳐 로스터에게 갑니다",
+        "paragraphs": [
+          "충분히 건조된 커피는 일정 기간 안정화한 뒤 파치먼트나 마른 과육을 제거합니다. 크기와 밀도, 색, 결점에 따라 선별하고 샘플을 볶아 맛을 확인합니다. 생두의 등급 체계는 나라와 거래 방식에 따라 다르며, 화면 크기나 고도 표시가 곧바로 관능 품질을 보증하지는 않습니다.",
+          "생두는 향을 완성한 제품이 아니라 변화가 느린 농산물입니다. 높은 온도와 습도, 산소와 냄새에 노출되면 품질이 달라질 수 있습니다. 포장재와 창고 조건, 운송 기간은 생산지에서 평가한 특성을 소비지까지 얼마나 보존하는지에 관여합니다.",
+          "원두 봉투에 적힌 국가명은 넓은 범위만 알려줍니다. 지역, 농장 또는 협동조합, 생산자, 고도, 품종, 가공, 수확 시기와 로스팅 날짜가 함께 있을수록 한 잔의 배경을 더 구체적으로 추적할 수 있습니다. 정보가 많다고 자동으로 더 좋은 커피인 것은 아니지만, 비교와 재구매에는 유용합니다.",
+          "원두를 살 때는 ‘고소한가, 화사한가’라는 취향과 함께 로스팅 날짜, 가공 방식, 권장 추출법을 물어보세요. 다음 선택에 쓸 수 있는 기록이 됩니다."
+        ]
+      },
+      {
+        "id": "roasting",
+        "title": "로스팅은 생두의 잠재력을 향과 맛으로 바꿉니다",
+        "paragraphs": [
+          "생두에 열을 가하면 수분이 빠지고 색이 노란색에서 갈색으로 변합니다. 당과 아미노산이 관여하는 반응, 열분해와 향기 성분의 생성·분해가 동시에 일어나며 원두의 부피는 커지고 질량은 줄어듭니다. 로스터는 투입량, 열 공급, 공기 흐름과 시간을 조절해 이 변화를 설계합니다.",
+          "밝은 로스팅은 산지와 품종에서 오는 향을 비교적 선명하게 표현하는 경향이 있지만 충분한 에너지와 발달이 없으면 풋내나 날카로운 인상이 남을 수 있습니다. 어두운 로스팅은 쓴맛과 로스팅 향, 무거운 질감이 두드러지는 경향이 있지만 지나치면 원재료 차이가 가려질 수 있습니다. 색만으로 내부 발달이나 품질을 완전히 판단할 수는 없습니다.",
+          "볶은 직후 원두에서는 이산화탄소가 빠져나옵니다. 이 과정은 디개싱이라고 하며 추출의 흐름과 향의 표현에 영향을 줍니다. 모든 커피에 같은 휴지 기간을 적용하기보다는 로스팅 정도, 포장, 추출 방식과 로스터의 안내를 출발점으로 삼는 편이 좋습니다.",
+          "로스팅은 결점을 없애는 마법이 아닙니다. 생두의 품질과 보관 상태가 만들지 못한 향을 새로 복원할 수는 없습니다. 대신 이미 존재하는 물질을 열로 변화시켜 어떤 특성을 강조하고 어떤 균형을 만들지 선택합니다."
+        ]
+      },
+      {
+        "id": "grind-brew",
+        "title": "분쇄와 물이 만나면 추출이 시작됩니다",
+        "paragraphs": [
+          "원두를 분쇄하면 물과 닿는 표면적이 크게 늘어납니다. 가늘게 갈수록 일반적으로 성분 이동이 빨라지지만 물의 흐름 저항과 미분의 영향도 커집니다. 굵게 갈면 흐름은 빨라지고 같은 시간 안에 추출되는 양이 줄어드는 경향이 있습니다.",
+          "추출에서는 커피와 물의 비율, 분쇄도, 물 온도와 성분, 접촉 시간, 물을 붓거나 섞는 방식이 함께 작동합니다. 커피가 너무 시거나 비어 있다고 느껴질 때 무조건 온도만 올리기보다 레시피를 기록하고 한 번에 한 변수를 바꾸는 편이 원인을 찾기 쉽습니다.",
+          "진한 커피와 많이 추출된 커피는 같은 뜻이 아닙니다. 농도는 잔 안에 녹아 있는 커피 성분의 비율이고, 추출 수율은 투입한 원두 가운데 물로 이동한 비율입니다. 물을 적게 사용하면 충분히 추출되지 않았어도 진할 수 있으므로 맛과 수치를 함께 해석해야 합니다.",
+          "좋은 추출은 하나의 고정된 숫자가 아니라 목표한 맛을 반복해서 만드는 과정입니다. 장비와 원두가 달라지면 적합한 레시피도 달라질 수 있습니다. 먼저 기준 레시피를 정하고 향, 산미, 단맛, 쓴맛, 질감과 후미를 짧게 기록하면 다음 조정이 쉬워집니다."
+        ]
+      },
+      {
+        "id": "practice-references",
+        "title": "첫 주에는 한 잔의 경로를 직접 추적해 봅니다",
+        "paragraphs": [
+          "첫 실습으로 원두 봉투 한 개와 평소 사용하는 추출 도구를 준비합니다. 봉투에서 산지, 생산자 또는 지역, 품종, 가공, 로스팅 날짜를 찾아 적습니다. 표시가 없는 항목은 추측하지 말고 ‘정보 없음’으로 남깁니다.",
+          "흔한 오해도 점검합니다. 비싼 원두가 모든 사람에게 더 맛있는 것은 아니며, 산미가 느껴진다고 모두 덜 볶거나 덜 추출된 것도 아닙니다. 강한 쓴맛이 곧 카페인이 더 많다는 뜻도 아닙니다. 감각의 인상과 원인 가설을 분리해 기록하면 커피를 더 정확하게 배울 수 있습니다.",
+          "이 글 다음에는 종의 차이를 다루는 아라비카와 로부스타, 가공의 세부를 다루는 커피 가공 방식, 열 변화를 다루는 로스팅 기초, 물로 성분을 옮기는 추출의 기본 순서로 읽으면 전체 흐름을 단계별로 확장할 수 있습니다.",
+          "참고 자료"
         ],
         "points": [
-          "워시드: 과육을 제거한 뒤 발효와 세척을 거쳐 건조합니다.",
-          "내추럴: 체리 상태로 건조한 뒤 마른 과육을 벗깁니다.",
-          "허니: 점액질 일부를 남긴 채 건조하며 제거 정도에 따라 이름이 달라집니다."
-        ]
-      },
-      {
-        "id": "roast-brew",
-        "title": "로스팅과 추출이 향미를 완성합니다",
-        "paragraphs": [
-          "생두에 열을 가하면 수분이 빠지고 색이 짙어지며 수많은 향기 성분이 만들어집니다. 로스터는 열의 세기와 시간을 조절해 원재료의 특성을 어떤 방식으로 표현할지 결정합니다.",
-          "마지막으로 분쇄한 원두에 물이 닿으면 녹을 수 있는 성분이 물로 이동합니다. 분쇄도, 물의 온도와 조성, 접촉 시간, 커피와 물의 비율이 최종적인 농도와 수율, 맛의 균형을 좌우합니다."
+          "원두 상태에서 향을 맡고 색과 표면을 관찰합니다.",
+          "사용한 원두와 물의 질량, 분쇄도, 물 온도와 총 시간을 기록합니다.",
+          "마신 직후와 조금 식은 뒤의 향·산미·단맛·질감·후미를 각각 한 단어로 적습니다.",
+          "다음 추출에서는 분쇄도처럼 변수 하나만 바꾸고 같은 항목을 비교합니다.",
+          "World Coffee Research, 품종·재배 연구 자료",
+          "World Coffee Research, Arabica Varieties Catalog",
+          "Specialty Coffee Association, Coffee Standards",
+          "International Coffee Organization, Coffee Development Report",
+          "UC Davis Coffee Center, 교육 자료",
+          "Illy, A. & Viani, R. (eds.), Espresso Coffee: The Science of Quality, 2nd ed.",
+          "Folmer, B. (ed.), The Craft and Science of Coffee, Academic Press."
         ]
       }
     ],
     "related": [
+      "arabica-and-robusta",
       "coffee-processing",
-      "roast-development",
+      "roasting-basics",
       "extraction-basics"
     ],
     "tags": [
+      "커피나무",
       "생두",
       "가공",
-      "기초"
+      "로스팅",
+      "추출",
+      "초보자"
     ],
     "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "초보자 10편 학습 경로의 첫 문서로 전면 개정하고 실습·오해·참고자료를 보강"
+      },
       {
         "date": "2026. 07. 20.",
         "note": "문서 최초 작성 및 시드 콘텐츠 공개"
       }
     ],
-    "bodyHtml": "<section id=\"fruit\"><span class=\"content-index\">01</span><h2>커피는 열매에서 시작됩니다</h2><p>커피나무는 꼭두서니과 코페아속에 속하는 상록 식물입니다. 꽃이 진 자리에 생긴 열매는 익으면서 대체로 초록색에서 붉은색이나 노란색으로 변합니다. 이 열매를 커피 체리라고 부릅니다.</p><p>체리 안에는 보통 두 개의 씨앗이 마주 보고 있습니다. 과육과 점액질, 파치먼트 같은 여러 층을 제거하고 건조한 씨앗이 생두이며, 이를 가열해 향미를 발달시킨 것이 원두입니다.</p></section><section id=\"process\"><span class=\"content-index\">02</span><h2>가공은 씨앗을 안정적으로 보존하는 과정입니다</h2><p>수확한 체리는 시간이 지나면 빠르게 변질됩니다. 생산자는 체리에서 씨앗을 분리하고 적정 수분까지 건조해 장거리 이동과 보관이 가능한 생두로 만듭니다.</p><ul><li>워시드: 과육을 제거한 뒤 발효와 세척을 거쳐 건조합니다.</li><li>내추럴: 체리 상태로 건조한 뒤 마른 과육을 벗깁니다.</li><li>허니: 점액질 일부를 남긴 채 건조하며 제거 정도에 따라 이름이 달라집니다.</li></ul></section><section id=\"roast-brew\"><span class=\"content-index\">03</span><h2>로스팅과 추출이 향미를 완성합니다</h2><p>생두에 열을 가하면 수분이 빠지고 색이 짙어지며 수많은 향기 성분이 만들어집니다. 로스터는 열의 세기와 시간을 조절해 원재료의 특성을 어떤 방식으로 표현할지 결정합니다.</p><p>마지막으로 분쇄한 원두에 물이 닿으면 녹을 수 있는 성분이 물로 이동합니다. 분쇄도, 물의 온도와 조성, 접촉 시간, 커피와 물의 비율이 최종적인 농도와 수율, 맛의 균형을 좌우합니다.</p></section>",
+    "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>커피는 식물의 씨앗으로 만든 음료입니다</h2><p>우리가 마시는 커피는 커피나무의 열매 안에 든 씨앗에서 시작합니다. 볶기 전 씨앗은 생두, 볶은 뒤에는 원두라고 부릅니다. 원두를 잘게 분쇄하고 물과 만나게 하면 씨앗 안의 일부 성분이 물로 이동하며 향과 맛, 색과 질감을 가진 음료가 됩니다.</p><p>따라서 커피를 이해한다는 것은 원두 봉투에 적힌 이름을 외우는 일이 아닙니다. 나무가 자란 환경, 열매를 수확한 시점, 씨앗을 꺼내 말린 방법, 볶은 정도, 보관 상태와 추출 방법이 어떻게 연결되는지 살피는 일입니다. 어느 한 단계도 최종 맛을 혼자 결정하지 않지만, 각 단계는 다음 단계가 사용할 수 있는 가능성과 한계를 만듭니다.</p><p>예를 들어 잘 익은 열매를 세심하게 골라도 건조 과정이 고르지 않으면 불쾌한 발효취가 생길 수 있습니다. 좋은 생두라도 지나치게 오래 보관하거나 원두를 부적절하게 볶으면 향의 선명도가 떨어질 수 있습니다. 반대로 이름난 원두라고 해도 물과 분쇄도, 추출 시간이 맞지 않으면 그 특징을 충분히 느끼기 어렵습니다.</p><aside class=\"callout callout-important\" data-tone=\"important\"><p>한 잔의 맛을 한 가지 원인으로 설명하지 마세요. 산지·품종·가공·로스팅·추출은 순서대로 이어지며 서로의 결과를 바꿉니다.</p></aside></section><section id=\"plant-fruit\"><span class=\"content-index\">02</span><h2>커피나무는 꽃을 피우고 열매를 맺습니다</h2><p>커피나무는 꼭두서니과 코페아속에 속하는 상록 식물입니다. 상업적으로 널리 재배되는 종에는 아라비카와 카네포라가 있으며, 카네포라의 대표적인 재배 집단을 흔히 로부스타라고 부릅니다. 종과 품종은 나무의 크기, 병에 대한 저항성, 적합한 재배 환경과 잔에서 느껴지는 경향에 영향을 줍니다.</p><p>흰 꽃이 진 자리에는 작은 열매가 생깁니다. 열매는 익으면서 대체로 초록색에서 붉은색이나 노란색으로 변하며, 겉모양 때문에 커피 체리라고 부릅니다. 색만으로 모든 성숙도를 판단할 수는 없지만 생산자는 색, 촉감, 당도와 농장의 기준을 함께 보며 수확 시점을 정합니다.</p><p>커피나무는 같은 가지에서도 꽃이 피고 열매가 익는 시점이 다를 수 있습니다. 그래서 잘 익은 열매만 손으로 여러 차례 골라 따는 방식과 가지의 열매를 한 번에 수확하는 방식 사이에는 작업량과 균일성의 차이가 생깁니다. 기계 수확도 지형과 농장 설계, 선별 공정에 따라 결과가 달라지므로 어느 한 방식이 항상 우월하다고 단정하기는 어렵습니다.</p><table><tbody><tr><th>단계</th><th>눈으로 볼 수 있는 것</th><th>다음 단계의 질문</th></tr><tr><td>꽃</td><td>흰 꽃과 개화 시기</td><td>열매가 언제 형성될까요?</td></tr><tr><td>체리</td><td>색, 크기, 손상 여부</td><td>얼마나 고르게 익었을까요?</td></tr><tr><td>생두</td><td>색, 밀도, 수분, 결점</td><td>어떻게 보관하고 볶을까요?</td></tr><tr><td>원두</td><td>색, 표면, 향, 가스</td><td>어떤 물과 레시피가 맞을까요?</td></tr></tbody></table></section><section id=\"anatomy\"><span class=\"content-index\">03</span><h2>체리 안에는 여러 층과 보통 두 개의 씨앗이 있습니다</h2><p>커피 체리의 바깥에는 껍질과 과육이 있고, 그 안쪽에는 끈적한 점액질, 단단한 파치먼트, 얇은 실버스킨과 씨앗이 차례로 자리합니다. 용어는 교육 자료와 지역에 따라 조금 다르게 번역되지만, 핵심은 씨앗이 여러 보호층 안에 있다는 점입니다.</p><p>한 체리 안에는 보통 평평한 면을 맞댄 씨앗 두 개가 들어 있습니다. 드물게 하나의 둥근 씨앗만 자라는 경우를 피베리라고 부릅니다. 피베리는 모양과 선별 방식이 다르지만 그 사실만으로 향미가 항상 더 좋다고 말할 수는 없습니다.</p><p>생두 가운데 보이는 홈은 두 씨앗이 맞닿아 자란 구조와 관련이 있습니다. 볶는 동안 수분이 빠지고 세포 구조가 팽창하면서 원두는 가벼워지고 부피가 커집니다. 우리가 흔히 보는 갈색 원두는 농장에서 수확한 씨앗과 같은 물질이지만 열을 거치며 물리적·화학적으로 크게 변한 상태입니다.</p><aside class=\"callout callout-note\" data-tone=\"note\"><p>‘커피콩’은 익숙한 일상어이지만 식물학적으로는 콩과 식물의 콩이 아니라 커피 열매의 씨앗입니다.</p></aside></section><section id=\"harvest-processing\"><span class=\"content-index\">04</span><h2>수확 뒤에는 씨앗을 분리하고 안정적으로 말립니다</h2><p>수확한 체리는 호흡과 미생물 활동이 계속되므로 그대로 오래 둘 수 없습니다. 생산자는 이물질과 덜 익은 열매를 골라내고, 목표한 가공 방식에 따라 과육을 제거하거나 체리 상태로 건조를 시작합니다. 이때 발효는 무조건 나쁜 현상이 아니라 관리해야 할 생물학적 과정입니다.</p><p>워시드 가공은 대체로 과육을 제거한 뒤 점액질을 발효 또는 기계적 방법으로 줄이고 세척해 건조합니다. 내추럴 가공은 열매 상태로 말린 뒤 마른 껍질과 과육을 벗깁니다. 허니 또는 펄프드 내추럴 계열은 과육을 제거하되 점액질 일부를 남겨 건조합니다. 같은 이름의 가공이라도 지역, 장비, 물 사용, 발효 시간과 건조 방식에 따라 세부 공정은 다릅니다.</p><p>가공 이름은 향미를 예상하는 단서이지만 정답표는 아닙니다. 내추럴은 과일 향과 발효 인상이 강한 경향이, 워시드는 향의 구분과 산미가 선명한 경향이 자주 언급됩니다. 그러나 품종, 성숙도, 위생과 건조 관리가 함께 작용하므로 가공명 하나만으로 맛을 확정해서는 안 됩니다.</p><p>건조의 목적은 운송과 보관이 가능한 수준으로 수분과 수분활성도를 낮추는 것입니다. 너무 빠르거나 불균일한 건조, 비와 높은 습도에 반복적으로 노출되는 상황은 품질 위험을 높입니다. 생산자는 건조대나 파티오, 기계 건조기 등을 사용하고 층의 두께와 뒤집는 빈도, 온도와 시간을 조절합니다.</p></section><section id=\"green-coffee\"><span class=\"content-index\">05</span><h2>생두는 선별·보관·운송을 거쳐 로스터에게 갑니다</h2><p>충분히 건조된 커피는 일정 기간 안정화한 뒤 파치먼트나 마른 과육을 제거합니다. 크기와 밀도, 색, 결점에 따라 선별하고 샘플을 볶아 맛을 확인합니다. 생두의 등급 체계는 나라와 거래 방식에 따라 다르며, 화면 크기나 고도 표시가 곧바로 관능 품질을 보증하지는 않습니다.</p><p>생두는 향을 완성한 제품이 아니라 변화가 느린 농산물입니다. 높은 온도와 습도, 산소와 냄새에 노출되면 품질이 달라질 수 있습니다. 포장재와 창고 조건, 운송 기간은 생산지에서 평가한 특성을 소비지까지 얼마나 보존하는지에 관여합니다.</p><p>원두 봉투에 적힌 국가명은 넓은 범위만 알려줍니다. 지역, 농장 또는 협동조합, 생산자, 고도, 품종, 가공, 수확 시기와 로스팅 날짜가 함께 있을수록 한 잔의 배경을 더 구체적으로 추적할 수 있습니다. 정보가 많다고 자동으로 더 좋은 커피인 것은 아니지만, 비교와 재구매에는 유용합니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>원두를 살 때는 ‘고소한가, 화사한가’라는 취향과 함께 로스팅 날짜, 가공 방식, 권장 추출법을 물어보세요. 다음 선택에 쓸 수 있는 기록이 됩니다.</p></aside></section><section id=\"roasting\"><span class=\"content-index\">06</span><h2>로스팅은 생두의 잠재력을 향과 맛으로 바꿉니다</h2><p>생두에 열을 가하면 수분이 빠지고 색이 노란색에서 갈색으로 변합니다. 당과 아미노산이 관여하는 반응, 열분해와 향기 성분의 생성·분해가 동시에 일어나며 원두의 부피는 커지고 질량은 줄어듭니다. 로스터는 투입량, 열 공급, 공기 흐름과 시간을 조절해 이 변화를 설계합니다.</p><p>밝은 로스팅은 산지와 품종에서 오는 향을 비교적 선명하게 표현하는 경향이 있지만 충분한 에너지와 발달이 없으면 풋내나 날카로운 인상이 남을 수 있습니다. 어두운 로스팅은 쓴맛과 로스팅 향, 무거운 질감이 두드러지는 경향이 있지만 지나치면 원재료 차이가 가려질 수 있습니다. 색만으로 내부 발달이나 품질을 완전히 판단할 수는 없습니다.</p><p>볶은 직후 원두에서는 이산화탄소가 빠져나옵니다. 이 과정은 디개싱이라고 하며 추출의 흐름과 향의 표현에 영향을 줍니다. 모든 커피에 같은 휴지 기간을 적용하기보다는 로스팅 정도, 포장, 추출 방식과 로스터의 안내를 출발점으로 삼는 편이 좋습니다.</p><p>로스팅은 결점을 없애는 마법이 아닙니다. 생두의 품질과 보관 상태가 만들지 못한 향을 새로 복원할 수는 없습니다. 대신 이미 존재하는 물질을 열로 변화시켜 어떤 특성을 강조하고 어떤 균형을 만들지 선택합니다.</p></section><section id=\"grind-brew\"><span class=\"content-index\">07</span><h2>분쇄와 물이 만나면 추출이 시작됩니다</h2><p>원두를 분쇄하면 물과 닿는 표면적이 크게 늘어납니다. 가늘게 갈수록 일반적으로 성분 이동이 빨라지지만 물의 흐름 저항과 미분의 영향도 커집니다. 굵게 갈면 흐름은 빨라지고 같은 시간 안에 추출되는 양이 줄어드는 경향이 있습니다.</p><p>추출에서는 커피와 물의 비율, 분쇄도, 물 온도와 성분, 접촉 시간, 물을 붓거나 섞는 방식이 함께 작동합니다. 커피가 너무 시거나 비어 있다고 느껴질 때 무조건 온도만 올리기보다 레시피를 기록하고 한 번에 한 변수를 바꾸는 편이 원인을 찾기 쉽습니다.</p><p>진한 커피와 많이 추출된 커피는 같은 뜻이 아닙니다. 농도는 잔 안에 녹아 있는 커피 성분의 비율이고, 추출 수율은 투입한 원두 가운데 물로 이동한 비율입니다. 물을 적게 사용하면 충분히 추출되지 않았어도 진할 수 있으므로 맛과 수치를 함께 해석해야 합니다.</p><p>좋은 추출은 하나의 고정된 숫자가 아니라 목표한 맛을 반복해서 만드는 과정입니다. 장비와 원두가 달라지면 적합한 레시피도 달라질 수 있습니다. 먼저 기준 레시피를 정하고 향, 산미, 단맛, 쓴맛, 질감과 후미를 짧게 기록하면 다음 조정이 쉬워집니다.</p></section><section id=\"practice-references\"><span class=\"content-index\">08</span><h2>첫 주에는 한 잔의 경로를 직접 추적해 봅니다</h2><p>첫 실습으로 원두 봉투 한 개와 평소 사용하는 추출 도구를 준비합니다. 봉투에서 산지, 생산자 또는 지역, 품종, 가공, 로스팅 날짜를 찾아 적습니다. 표시가 없는 항목은 추측하지 말고 ‘정보 없음’으로 남깁니다.</p><ol><li>원두 상태에서 향을 맡고 색과 표면을 관찰합니다.</li><li>사용한 원두와 물의 질량, 분쇄도, 물 온도와 총 시간을 기록합니다.</li><li>마신 직후와 조금 식은 뒤의 향·산미·단맛·질감·후미를 각각 한 단어로 적습니다.</li><li>다음 추출에서는 분쇄도처럼 변수 하나만 바꾸고 같은 항목을 비교합니다.</li></ol><p>흔한 오해도 점검합니다. 비싼 원두가 모든 사람에게 더 맛있는 것은 아니며, 산미가 느껴진다고 모두 덜 볶거나 덜 추출된 것도 아닙니다. 강한 쓴맛이 곧 카페인이 더 많다는 뜻도 아닙니다. 감각의 인상과 원인 가설을 분리해 기록하면 커피를 더 정확하게 배울 수 있습니다.</p><p>이 글 다음에는 종의 차이를 다루는 <a data-wikilink=\"arabica-and-robusta\" href=\"/wiki/arabica-and-robusta\">아라비카와 로부스타</a>, 가공의 세부를 다루는 <a data-wikilink=\"coffee-processing\" href=\"/wiki/coffee-processing\">커피 가공 방식</a>, 열 변화를 다루는 <a data-wikilink=\"roasting-basics\" href=\"/wiki/roasting-basics\">로스팅 기초</a>, 물로 성분을 옮기는 <a data-wikilink=\"extraction-basics\" href=\"/wiki/extraction-basics\">추출의 기본</a> 순서로 읽으면 전체 흐름을 단계별로 확장할 수 있습니다.</p><h3>참고 자료</h3><ul><li><a href=\"https://worldcoffeeresearch.org/resources\">World Coffee Research, 품종·재배 연구 자료</a></li><li><a href=\"https://varieties.worldcoffeeresearch.org/\">World Coffee Research, Arabica Varieties Catalog</a></li><li><a href=\"https://sca.coffee/research/coffee-standards\">Specialty Coffee Association, Coffee Standards</a></li><li><a href=\"https://www.ico.org/coffee-development-report-2/\">International Coffee Organization, Coffee Development Report</a></li><li><a href=\"https://coffeecenter.ucdavis.edu/education\">UC Davis Coffee Center, 교육 자료</a></li><li>Illy, A. &amp; Viani, R. (eds.), <em>Espresso Coffee: The Science of Quality</em>, 2nd ed.</li><li>Folmer, B. (ed.), <em>The Craft and Science of Coffee</em>, Academic Press.</li></ul></section>",
     "backlinks": []
   },
   {
@@ -133,6 +206,7 @@ export const articlesByLocale: Record<string, Article[]> = {
     ],
     "bodyHtml": "<section id=\"two-measures\"><span class=\"content-index\">01</span><h2>농도와 수율은 서로 다른 값입니다</h2><p>농도는 완성된 음료 중 커피에서 녹아 나온 고형분이 차지하는 비율입니다. 같은 원두를 사용해도 물을 적게 쓰면 더 진한 커피가 될 수 있습니다.</p><p>추출 수율은 투입한 원두 질량 중 물에 녹아 음료로 이동한 성분의 비율입니다. 진하기만으로는 원두가 충분히 추출되었는지 판단할 수 없기 때문에 두 값을 함께 봅니다.</p><p>업계에서는 흔히 추출 수율 약 18~22%, 필터 커피 기준 농도(TDS) 약 1.15~1.45%를 균형 잡힌 출발점으로 이야기합니다. 다만 이 범위는 절대 기준이 아니라 원두, 로스팅, 취향에 따라 조정하는 참고선입니다.</p><table><tbody><tr><th>상태</th><th>대략적 지표</th><th>자주 나타나는 인상</th></tr><tr><td>과소 추출</td><td>수율이 낮은 편</td><td>날카로운 신맛, 짠맛, 빈 여운</td></tr><tr><td>균형</td><td>수율 약 18~22%, TDS 약 1.15~1.45%(필터 기준)</td><td>단맛과 산미의 균형, 깔끔한 여운</td></tr><tr><td>과다 추출</td><td>수율이 높은 편</td><td>쓴맛, 텁텁함, 마른 뒷맛</td></tr></tbody></table></section><section id=\"variables\"><span class=\"content-index\">02</span><h2>추출을 움직이는 주요 변수</h2><p>분쇄도가 가늘수록 물과 닿는 표면적이 늘어나고 흐름의 저항도 커집니다. 일반적으로 추출이 빨라지지만, 채널링이나 미분 이동처럼 균일성을 해치는 변수도 함께 커질 수 있습니다.</p><ul><li>분쇄도와 입자 분포</li><li>커피와 물의 비율</li><li>물의 온도와 미네랄 조성</li><li>접촉 시간과 교반</li><li>커피층을 통과하는 물의 균일성</li></ul></section><section id=\"dial-in\"><span class=\"content-index\">03</span><h2>한 번에 하나씩 바꿉니다</h2><p>레시피를 조정할 때는 먼저 목표 음료량과 비율을 정하고 분쇄도로 시간을 맞추는 방식이 재현하기 쉽습니다. 맛을 기록하고 한 번에 한 변수만 바꾸면 원인과 결과를 비교할 수 있습니다.</p><aside class=\"callout callout-tip\" data-tone=\"tip\"><p>한 번에 한 변수만 바꾸고 맛을 기록하세요. 여러 변수를 동시에 바꾸면 무엇이 맛을 바꿨는지 되짚기 어렵습니다.</p></aside><p>신맛, 쓴맛 같은 단어 하나만으로 과소·과다 추출을 단정하지 마세요. 향의 선명도, 단맛, 질감, 후미와 전체 균형을 함께 평가하는 것이 중요합니다.</p></section>",
     "backlinks": [
+      "coffee-cherry-to-bean",
       "brew-methods",
       "home-brew-recipes"
     ]
@@ -194,7 +268,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"stages\"><span class=\"content-index\">01</span><h2>로스팅은 연속된 단계로 진행됩니다</h2><p>생두에 열이 가해지면 먼저 수분이 빠지고(건조), 이어서 색이 짙어지며 향이 만들어지고(갈변), 원두가 팽창하면서 향미가 발현됩니다. 이 과정은 끊기지 않고 이어지며, 중간의 몇몇 신호로 진행 정도를 가늠합니다.</p><ul><li>옐로 포인트: 수분이 상당히 빠지고 색이 노랗게 도는 지점</li><li>1차 크랙: 내부 압력으로 원두가 팽창·파열하며 나는 소리, 발현 단계의 시작</li><li>2차 크랙: 더 진행되면 나타나며 이 부근부터 표면에 오일과 다크 로스트 특성이 강해짐</li></ul></section><section id=\"color\"><span class=\"content-index\">02</span><h2>색은 로스팅 정도를 가늠하는 지표입니다</h2><p>원두의 색은 로스팅 정도를 판단하는 가장 직관적인 단서입니다. 표면색과 분쇄한 가루의 색이 다를 수 있으므로 둘을 함께 보고, 가능하면 표준 색도 기준과 비교합니다.</p><p>다만 색은 결과의 요약일 뿐이어서, 같은 색이라도 배치와 프로파일에 따라 맛은 다를 수 있습니다. 색만으로 품질이나 향미를 단정하지 않는 것이 중요합니다.</p></section><section id=\"reading\"><span class=\"content-index\">03</span><h2>색·향·소리·시간을 함께 읽습니다</h2><p>일반적으로 라이트 로스트는 산미와 원물 고유의 특성이, 다크 로스트는 쓴맛과 바디, 로스팅에서 온 향이 두드러지는 경향이 있습니다. 그러나 이는 경향일 뿐, 생두와 프로파일에 따라 얼마든지 달라집니다.</p><p>따라서 색 하나에 의존하기보다 향, 크랙 소리, 시간과 온도를 함께 기록하고, 마지막에는 컵으로 확인하는 습관이 로스팅을 이해하는 지름길입니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-cherry-to-bean"
+    ]
   },
   {
     "slug": "cupping-basics",
@@ -376,7 +452,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"layers\"><span class=\"content-index\">01</span><h2>체리의 층을 이해하면 가공이 보입니다</h2><p>커피 씨앗은 파치먼트, 점액질, 과육과 껍질에 둘러싸여 있습니다. 가공 방식은 이 층들을 어느 시점에 어떤 방법으로 제거하고, 씨앗을 어떻게 건조하는지에 따라 구분할 수 있습니다.</p></section><section id=\"methods\"><span class=\"content-index\">02</span><h2>대표적인 세 가지 접근</h2><p>명칭과 세부 방식은 국가와 생산자마다 다를 수 있습니다. 같은 이름 아래에서도 발효 시간, 물 사용, 건조 환경과 선별 수준에 따라 결과는 크게 달라집니다.</p><ul><li>워시드: 과육 제거 후 점액질을 분해·제거하고 파치먼트 상태로 건조</li><li>내추럴: 체리를 통째로 건조한 뒤 마른 외피와 과육을 제거</li><li>허니·펄프드 내추럴: 과육을 벗기고 점액질 일부 또는 전부를 남겨 건조</li></ul></section><section id=\"quality\"><span class=\"content-index\">03</span><h2>품질은 공정 관리에서 갈립니다</h2><p>균일한 성숙도, 위생적인 발효, 건조 속도, 수분 균일성과 보관 조건이 품질과 안정성에 큰 영향을 줍니다. 새로운 발효 기법도 이름보다 공정 변수와 재현성, 관능 결과를 중심으로 평가해야 합니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-cherry-to-bean"
+    ]
   },
   {
     "slug": "roast-development",
@@ -673,7 +751,9 @@ export const articlesByLocale: Record<string, Article[]> = {
       }
     ],
     "bodyHtml": "<section id=\"species\"><span class=\"content-index\">01</span><h2>서로 다른 두 종</h2><p>상업적으로 가장 많이 재배되는 커피는 아라비카와 카네포라(흔히 로부스타로 부름)입니다. 두 종은 유전적으로 다르며, 자라는 환경과 병해에 대한 강인함, 성분 구성에서 차이를 보입니다.</p></section><section id=\"growing\"><span class=\"content-index\">02</span><h2>재배 환경의 차이</h2><p>아라비카는 대체로 서늘한 고지대에서 잘 자라지만 병해에 상대적으로 민감합니다. 로부스타는 더 낮은 고도와 더운 기후에서도 잘 견디고 수확량이 많은 편입니다.</p><ul><li>아라비카: 고지대 선호, 섬세한 향미 경향</li><li>로부스타: 저지대·고온에 강함, 카페인 함량이 높은 경향</li><li>재배 고도만으로 품질을 단정할 수는 없습니다.</li></ul></section><section id=\"flavor\"><span class=\"content-index\">03</span><h2>향미는 종만으로 결정되지 않습니다</h2><p>종의 특성은 향미의 큰 방향을 만들지만, 최종 컵은 품종, 재배 관리, 가공과 로스팅, 추출까지의 모든 단계가 함께 결정합니다. 종의 이름만으로 좋고 나쁨을 나누기보다 전체 과정을 함께 봐야 합니다.</p></section>",
-    "backlinks": []
+    "backlinks": [
+      "coffee-cherry-to-bean"
+    ]
   },
   {
     "slug": "coffee-varieties",
@@ -2395,61 +2475,97 @@ export const articlesByLocale: Record<string, Article[]> = {
   en: [
   {
     "slug": "coffee-cherry-to-bean",
-    "title": "From Coffee Cherry to Cup",
-    "summary": "We explore the journey of how coffee fruit goes through harvesting, processing, roasting, and extraction to become the cup we drink.",
+    "title": "What Coffee Is: From Fruit to Cup",
+    "summary": "A beginner-friendly map of how a coffee seed travels through harvesting, processing, drying, roasting, grinding, and brewing.",
     "category": "커피 기초",
     "level": "입문",
-    "readingTime": "6 min",
-    "updatedAt": "2026. 07. 20.",
+    "readingTime": "12 min",
+    "updatedAt": "2026. 07. 27.",
     "accent": "olive",
-    "fact": "What we commonly call a coffee bean is actually a seed found inside the fruit of a coffee tree.",
+    "fact": "What we call a coffee bean is the seed of a coffee fruit, and the cup reflects choices made at every stage.",
     "sections": [
       {
-        "id": "fruit",
-        "title": "Coffee Begins with Fruit",
+        "id": "definition",
+        "title": "Coffee is a drink made from a plant seed",
         "paragraphs": [
-          "The coffee tree is an evergreen plant belonging to the genus Coffea in the Rubiaceae family. The fruit that grows where flowers bloom changes color as it ripens, typically from green to red or yellow. This fruit is called the coffee cherry.",
-          "Inside the cherry are usually two seeds facing each other. After removing several layers such as the flesh, mucilage, and parchment, and drying the seeds, we get green coffee beans. When these are heated to develop flavor, they become roasted coffee beans."
+          "The drink begins with seeds inside the fruit of a coffee tree. Before roasting they are called green coffee; after roasting they become the fragrant brown beans we grind and combine with water. Understanding coffee means following the relationships among farming, harvest, processing, storage, roasting, grinding, water, and brewing rather than treating any one label as a complete explanation of flavor."
         ]
       },
       {
-        "id": "process",
-        "title": "Processing Stabilizes and Preserves Seeds",
+        "id": "plant-fruit",
+        "title": "Coffee trees flower and produce fruit",
         "paragraphs": [
-          "Harvested cherries deteriorate rapidly over time. Producers separate the seeds from the cherry, dry them to an appropriate moisture level, and create green coffee beans that can withstand long-distance transport and storage."
-        ],
-        "points": [
-          "Washed: The flesh is removed, then the beans undergo fermentation and washing before drying.",
-          "Natural: The cherries are dried as-is before the dried flesh is removed.",
-          "Honey: Drying occurs with some mucilage retained, and the name varies depending on the degree of removal."
+          "Coffee belongs to the genus Coffea. Arabica and canephora are the two most commercially important species, and robusta is a commonly used name for major canephora groups. White flowers develop into fruit that usually changes from green to red or yellow as it ripens. Producers judge ripeness with color, texture, sugar level, and farm-specific standards."
         ]
       },
       {
-        "id": "roast-brew",
-        "title": "Roasting and Extraction Complete the Flavor",
+        "id": "anatomy",
+        "title": "A cherry usually contains two seeds protected by layers",
         "paragraphs": [
-          "When heat is applied to green coffee beans, moisture is released, color deepens, and numerous aromatic compounds are created. The roaster controls the intensity and duration of heat to determine how to express the characteristics of the raw material.",
-          "Finally, when water touches the ground beans, soluble components dissolve and transfer into the water. The grind size, water temperature and composition, contact time, and the ratio of coffee to water ultimately determine the final strength, extraction yield, and flavor balance."
+          "Skin and pulp surround sticky mucilage, parchment, silverskin, and the seeds. Most cherries hold two seeds with flat faces toward each other. A cherry that develops one rounded seed is called a peaberry, but the shape alone does not guarantee higher quality. “Bean” is a useful everyday word; botanically, coffee is a seed rather than a legume."
+        ]
+      },
+      {
+        "id": "harvest-processing",
+        "title": "Processing separates and stabilizes the seeds",
+        "paragraphs": [
+          "Fresh cherries continue to respire and support microbial activity, so producers sort and process them promptly. Washed coffees are generally depulped, have mucilage removed, and are then dried. Natural coffees dry in the fruit. Honey or pulped-natural approaches remove the skin while retaining some mucilage. Each label covers many regional and technical variations, so it is a clue—not a flavor guarantee."
+        ]
+      },
+      {
+        "id": "green-coffee",
+        "title": "Dry green coffee can be stored and transported",
+        "paragraphs": [
+          "Controlled drying reduces moisture and water activity until the seed is stable enough for storage. After hulling and grading, green coffee travels in protective packaging. Time, heat, moisture, and odors can still reduce quality, which is why storage history matters alongside origin, variety, and processing."
+        ]
+      },
+      {
+        "id": "roasting",
+        "title": "Roasting makes green coffee aromatic and brittle",
+        "paragraphs": [
+          "Heat drives off water, expands the cellular structure, changes color, and creates volatile aroma compounds. Roast degree and the way heat is applied shape solubility and flavor, but roasting cannot restore quality that was lost earlier. A useful roast description therefore connects the green coffee, the intended brew method, and the sensory result."
+        ]
+      },
+      {
+        "id": "grind-brew",
+        "title": "Grinding and water turn roasted coffee into a beverage",
+        "paragraphs": [
+          "Grinding increases surface area and lets water reach soluble material. Dose, water amount, grind size, water composition, temperature, contact time, and agitation work together. A practical starting point is to change one variable at a time, taste again, and keep notes instead of searching for a single universal recipe."
+        ]
+      },
+      {
+        "id": "practice-references",
+        "title": "Practice the whole chain, then verify the details",
+        "paragraphs": [
+          "Choose one coffee bag and write down every claim on its label. Sort each claim into species or variety, place, processing, roast, and brewing. Mark what is missing and what is only an expectation about taste. Brew the coffee twice with one deliberate change, then connect the sensory difference to the stage you changed. Continue with the linked processing, roasting, and extraction articles for deeper explanations and references."
         ]
       }
     ],
     "related": [
+      "arabica-and-robusta",
       "coffee-processing",
-      "roast-development",
+      "roasting-basics",
       "extraction-basics"
     ],
     "tags": [
+      "커피나무",
       "생두",
       "가공",
-      "기초"
+      "로스팅",
+      "추출",
+      "초보자"
     ],
     "history": [
+      {
+        "date": "2026. 07. 27.",
+        "note": "Rebuilt as the first article in the ten-part beginner path"
+      },
       {
         "date": "2026. 07. 20.",
         "note": "Initial article and seed content published"
       }
     ],
-    "bodyHtml": "<section id=\"fruit\"><span class=\"content-index\">01</span><h2>Coffee Begins with Fruit</h2><p>The coffee tree is an evergreen plant belonging to the genus Coffea in the Rubiaceae family. The fruit that grows where flowers bloom changes color as it ripens, typically from green to red or yellow. This fruit is called the coffee cherry.</p><p>Inside the cherry are usually two seeds facing each other. After removing several layers such as the flesh, mucilage, and parchment, and drying the seeds, we get green coffee beans. When these are heated to develop flavor, they become roasted coffee beans.</p></section><section id=\"process\"><span class=\"content-index\">02</span><h2>Processing Stabilizes and Preserves Seeds</h2><p>Harvested cherries deteriorate rapidly over time. Producers separate the seeds from the cherry, dry them to an appropriate moisture level, and create green coffee beans that can withstand long-distance transport and storage.</p><ul><li>Washed: The flesh is removed, then the beans undergo fermentation and washing before drying.</li><li>Natural: The cherries are dried as-is before the dried flesh is removed.</li><li>Honey: Drying occurs with some mucilage retained, and the name varies depending on the degree of removal.</li></ul></section><section id=\"roast-brew\"><span class=\"content-index\">03</span><h2>Roasting and Extraction Complete the Flavor</h2><p>When heat is applied to green coffee beans, moisture is released, color deepens, and numerous aromatic compounds are created. The roaster controls the intensity and duration of heat to determine how to express the characteristics of the raw material.</p><p>Finally, when water touches the ground beans, soluble components dissolve and transfer into the water. The grind size, water temperature and composition, contact time, and the ratio of coffee to water ultimately determine the final strength, extraction yield, and flavor balance.</p></section>",
+    "bodyHtml": "<section id=\"definition\"><span class=\"content-index\">01</span><h2>Coffee is a drink made from a plant seed</h2><p>The drink begins with seeds inside the fruit of a coffee tree. Before roasting they are called green coffee; after roasting they become the fragrant brown beans we grind and combine with water. Understanding coffee means following the relationships among farming, harvest, processing, storage, roasting, grinding, water, and brewing rather than treating any one label as a complete explanation of flavor.</p></section><section id=\"plant-fruit\"><span class=\"content-index\">02</span><h2>Coffee trees flower and produce fruit</h2><p>Coffee belongs to the genus Coffea. Arabica and canephora are the two most commercially important species, and robusta is a commonly used name for major canephora groups. White flowers develop into fruit that usually changes from green to red or yellow as it ripens. Producers judge ripeness with color, texture, sugar level, and farm-specific standards.</p></section><section id=\"anatomy\"><span class=\"content-index\">03</span><h2>A cherry usually contains two seeds protected by layers</h2><p>Skin and pulp surround sticky mucilage, parchment, silverskin, and the seeds. Most cherries hold two seeds with flat faces toward each other. A cherry that develops one rounded seed is called a peaberry, but the shape alone does not guarantee higher quality. “Bean” is a useful everyday word; botanically, coffee is a seed rather than a legume.</p></section><section id=\"harvest-processing\"><span class=\"content-index\">04</span><h2>Processing separates and stabilizes the seeds</h2><p>Fresh cherries continue to respire and support microbial activity, so producers sort and process them promptly. Washed coffees are generally depulped, have mucilage removed, and are then dried. Natural coffees dry in the fruit. Honey or pulped-natural approaches remove the skin while retaining some mucilage. Each label covers many regional and technical variations, so it is a clue—not a flavor guarantee.</p></section><section id=\"green-coffee\"><span class=\"content-index\">05</span><h2>Dry green coffee can be stored and transported</h2><p>Controlled drying reduces moisture and water activity until the seed is stable enough for storage. After hulling and grading, green coffee travels in protective packaging. Time, heat, moisture, and odors can still reduce quality, which is why storage history matters alongside origin, variety, and processing.</p></section><section id=\"roasting\"><span class=\"content-index\">06</span><h2>Roasting makes green coffee aromatic and brittle</h2><p>Heat drives off water, expands the cellular structure, changes color, and creates volatile aroma compounds. Roast degree and the way heat is applied shape solubility and flavor, but roasting cannot restore quality that was lost earlier. A useful roast description therefore connects the green coffee, the intended brew method, and the sensory result.</p></section><section id=\"grind-brew\"><span class=\"content-index\">07</span><h2>Grinding and water turn roasted coffee into a beverage</h2><p>Grinding increases surface area and lets water reach soluble material. Dose, water amount, grind size, water composition, temperature, contact time, and agitation work together. A practical starting point is to change one variable at a time, taste again, and keep notes instead of searching for a single universal recipe.</p></section><section id=\"practice-references\"><span class=\"content-index\">08</span><h2>Practice the whole chain, then verify the details</h2><p>Choose one coffee bag and write down every claim on its label. Sort each claim into species or variety, place, processing, roast, and brewing. Mark what is missing and what is only an expectation about taste. Brew the coffee twice with one deliberate change, then connect the sensory difference to the stage you changed. Continue with the linked processing, roasting, and extraction articles for deeper explanations and references.</p></section>",
     "backlinks": []
   },
   {

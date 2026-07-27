@@ -15,6 +15,7 @@ import {
 
 export function LearningDashboard() {
   const [progress, setProgress] = useState<LearningProgress>(EMPTY_PROGRESS);
+  const [accountName, setAccountName] = useState<string | null>(null);
 
   useEffect(() => {
     const sync = () => setProgress(readProgress());
@@ -23,6 +24,33 @@ export function LearningDashboard() {
     const frame = window.requestAnimationFrame(() => {
       touchDailyVisit();
       sync();
+      void fetch("/api/me")
+        .then((response) => response.json())
+        .then((data: {
+          user?: { displayName: string } | null;
+          profile?: { xp: number } | null;
+          stats?: Record<string, number>;
+        }) => {
+          if (!data.user || !data.profile) return;
+          setAccountName(data.user.displayName);
+          setProgress((current) => ({
+            ...current,
+            xp: Math.max(current.xp, data.profile?.xp ?? 0),
+            articleViews: Math.max(
+              current.articleViews,
+              data.stats?.article_view ?? 0,
+            ),
+            quizCorrect: Math.max(
+              current.quizCorrect,
+              data.stats?.quiz_correct ?? 0,
+            ),
+            postsWritten: Math.max(
+              current.postsWritten,
+              data.stats?.post ?? 0,
+            ),
+          }));
+        })
+        .catch(() => undefined);
     });
     return () => {
       window.cancelAnimationFrame(frame);
@@ -40,8 +68,10 @@ export function LearningDashboard() {
         <span>LEVEL {String(level.level).padStart(2, "0")}</span>
         <strong id="learning-title">{levelTitle(level.level)}</strong>
         <p>
-          읽고, 풀고, 나눌수록 커피 지식 여정이 쌓입니다. 모든 기록은 이
-          브라우저에만 안전하게 저장됩니다.
+          읽고, 풀고, 나눌수록 커피 지식 여정이 쌓입니다.{" "}
+          {accountName
+            ? `${accountName}님의 계정과 동기화 중입니다.`
+            : "로그인하면 여러 기기에서 기록을 이어갈 수 있습니다."}
         </p>
         <div
           className="xp-track"
@@ -94,6 +124,7 @@ export function LearningDashboard() {
         <Link href="/quiz">오늘의 퀴즈 +10 XP</Link>
         <Link href="/wiki">새 문서 읽기 +5 XP</Link>
         <Link href="/community">지식 나누기 +20 XP</Link>
+        <Link href="/account">{accountName ? "내 계정 보기" : "경험치 동기화"}</Link>
       </div>
     </section>
   );

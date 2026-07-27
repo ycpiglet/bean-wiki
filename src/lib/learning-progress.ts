@@ -63,6 +63,18 @@ function saveProgress(progress: LearningProgress) {
   return progress;
 }
 
+function syncAccountActivity(
+  kind: "visit" | "article_view" | "quiz_correct" | "quiz_complete",
+  entityKey: string,
+) {
+  void fetch("/api/progress", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ kind, entityKey }),
+    keepalive: true,
+  }).catch(() => undefined);
+}
+
 export function touchDailyVisit() {
   const progress = readProgress();
   const today = localDate();
@@ -80,6 +92,7 @@ export function touchDailyVisit() {
     streak,
     lastVisit: today,
   });
+  syncAccountActivity("visit", today);
   return { progress: next, awarded: 2 };
 }
 
@@ -94,6 +107,7 @@ export function recordArticleView(slug: string) {
       ? [...progress.seenArticles, slug]
       : progress.seenArticles,
   });
+  if (firstView) syncAccountActivity("article_view", slug);
   return { progress: next, awarded: firstView ? 5 : 0 };
 }
 
@@ -110,6 +124,7 @@ export function recordQuizAnswer(questionId: string, correct: boolean) {
       ? [...progress.rewardedQuizQuestions, questionId]
       : progress.rewardedQuizQuestions,
   });
+  if (firstCorrect) syncAccountActivity("quiz_correct", questionId);
   return { progress: next, awarded: firstCorrect ? 10 : 0 };
 }
 
@@ -123,6 +138,7 @@ export function recordQuizCompletion(sessionId: string) {
     quizzesCompleted: progress.quizzesCompleted + 1,
     rewards: rewarded ? [...progress.rewards, rewardKey] : progress.rewards,
   });
+  if (rewarded) syncAccountActivity("quiz_complete", sessionId);
   return { progress: next, awarded: rewarded ? 15 : 0 };
 }
 

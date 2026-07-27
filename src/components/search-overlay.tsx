@@ -14,14 +14,13 @@ export const OPEN_SEARCH_EVENT = "bean-wiki:open-search";
 // available on every page via ⌘K / Ctrl+K or a header button. It picks the
 // locale index from the current path, so the Korean and English trees share one
 // mount without the server layout needing to know the active locale.
-export function SearchOverlay({
-  indexes,
-}: {
-  indexes: { ko: SearchIndexItem[]; en: SearchIndexItem[] };
-}) {
+export function SearchOverlay() {
   const pathname = usePathname();
   const locale: Locale = pathname === "/en" || pathname.startsWith("/en/") ? "en" : "ko";
   const [open, setOpen] = useState(false);
+  const [indexes, setIndexes] = useState<
+    Partial<Record<Locale, SearchIndexItem[]>>
+  >({});
   const restoreFocusRef = useRef<HTMLElement | null>(null);
   const t = getDictionary(locale).search;
 
@@ -70,6 +69,20 @@ export function SearchOverlay({
     };
   }, [open]);
 
+  useEffect(() => {
+    if (!open || indexes[locale]) return;
+    const controller = new AbortController();
+    void fetch(`/api/search-index?locale=${locale}`, {
+      signal: controller.signal,
+    })
+      .then((response) => response.json())
+      .then((data: { items: SearchIndexItem[] }) =>
+        setIndexes((current) => ({ ...current, [locale]: data.items })),
+      )
+      .catch(() => undefined);
+    return () => controller.abort();
+  }, [indexes, locale, open]);
+
   if (!open) return null;
 
   return (
@@ -83,13 +96,19 @@ export function SearchOverlay({
       }}
     >
       <div className="search-overlay-panel">
-        <Search
-          key={locale}
-          articles={indexes[locale]}
-          locale={locale}
-          manageShortcut={false}
-          autoFocus
-        />
+        {indexes[locale] ? (
+          <Search
+            key={locale}
+            articles={indexes[locale] ?? []}
+            locale={locale}
+            manageShortcut={false}
+            autoFocus
+          />
+        ) : (
+          <p className="search-loading" role="status">
+            검색 색인을 불러오는 중…
+          </p>
+        )}
         <button
           type="button"
           className="search-overlay-close"

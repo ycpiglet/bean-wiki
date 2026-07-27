@@ -27,8 +27,11 @@
     "start": "next start",
     "start:sites": "WRANGLER_LOG_PATH=.wrangler/wrangler.log vinext start",
     "lint": "eslint",
+    "db:generate": "drizzle-kit generate",
     "build:content": "node scripts/build-content.mjs",
     "check-content": "node scripts/check-content.mjs",
+    "check:editorial": "node scripts/check-editorial.mjs",
+    "verify": "npm run lint && npm run check-content && npm run check:editorial && npm run build",
     "new-article": "node scripts/new-article.mjs"
   },
   "dependencies": {
@@ -36,6 +39,7 @@
     "@tiptap/pm": "^3.28.0",
     "@tiptap/react": "^3.28.0",
     "@tiptap/starter-kit": "^3.28.0",
+    "drizzle-orm": "^0.45.2",
     "next": "16.2.10",
     "postcss": "8.5.20",
     "react": "19.2.6",
@@ -49,6 +53,7 @@
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "6.0.2",
     "@vitejs/plugin-rsc": "0.5.26",
+    "drizzle-kit": "^0.31.10",
     "eslint": "^9",
     "eslint-config-next": "16.2.10",
     "react-server-dom-webpack": "19.2.6",

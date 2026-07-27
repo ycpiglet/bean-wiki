@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
 import { HeaderSearchButton } from "@/components/header-search-button";
@@ -85,13 +86,14 @@ export default function Home() {
         </Link>
         <nav aria-label="주 메뉴">
           <Link href="/wiki">문서</Link>
-          <Link href="/roadmap">주제 기획</Link>
-          <Link href="/resources">자료실</Link>
+          <Link href="/discover">추천</Link>
+          <Link href="/learning-path">학습 경로</Link>
           <Link href="/quiz">퀴즈</Link>
           <Link href="/community">커뮤니티</Link>
-          <Link href="/contact">문의</Link>
+          <Link href="/suggestions">제안</Link>
         </nav>
         <div className="header-tools">
+          <Link href="/account" className="header-account">내 계정</Link>
           <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href="/en" />
           <ThemeToggle />
@@ -148,6 +150,30 @@ export default function Home() {
             발견해보세요.
           </p>
           <span className="scroll-mark">SCROLL ↓</span>
+        </div>
+      </section>
+
+      <section className="brand-story shell">
+        <div className="brand-story-copy">
+          <span className="section-index">BEAN WIKI FIELD MAP</span>
+          <h2>한 알의 원두에서<br />열두 개의 지식 영역으로.</h2>
+          <p>
+            지난 공유 카드의 강렬한 원두 지도는 Bean Wiki가 다루는 전체 여정을
+            압축한 이미지입니다. 산지와 가공, 로스팅, 향, 물과 추출, 한 잔의
+            경험이 서로 연결된다는 뜻을 담았습니다.
+          </p>
+          <Link href="/learning-path" className="text-link">
+            초보자 학습 경로 시작하기 <ArrowIcon />
+          </Link>
+        </div>
+        <div className="brand-story-image">
+          <Image
+            src="/og.png"
+            alt="원두를 중심으로 산지, 로스팅, 향, 물과 한 잔을 연결한 Bean Wiki 지식 지도"
+            width={1734}
+            height={907}
+            sizes="(max-width: 900px) 100vw, 58vw"
+          />
         </div>
       </section>
 
@@ -262,7 +288,7 @@ export default function Home() {
         </div>
 
         <div className="path-grid">
-          <Link href="/wiki?level=입문" className="path-card">
+          <Link href="/learning-path" className="path-card">
             <span className="path-level">STARTER</span>
             <strong>커피를 처음 알아간다면</strong>
             <p>열매와 씨앗, 로스팅과 추출의 전체 흐름부터 시작합니다.</p>

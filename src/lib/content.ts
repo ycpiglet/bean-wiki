@@ -122,7 +122,6 @@ export function getSearchIndex(locale: Locale = "ko"): SearchIndexItem[] {
       article.summary,
       categoryLabel(article.category, locale),
       (article.tags ?? []).join(" "),
-      articleBodyText(article),
     ]
       .join(" ")
       .toLocaleLowerCase("ko"),
