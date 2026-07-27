@@ -1,0 +1,64 @@
+---
+slug: roaster-heat-transfer
+title: 로스터 열전달: 왜 같은 온도라도 반응이 다르게 느껴질까
+summary: 로스터 내부의 전도·대류·복사 요소가 어떻게 상호작용하는지 정리하고, 설정 과오를 줄이는 점검표를 제시합니다.
+category: 로스팅
+level: 중급
+readingTime: 13분
+updatedAt: 2026. 07. 27.
+accent: copper
+fact: 열전달은 수치보다 장비-배치량-생두 상태의 조합으로 좌우되며, 동일 온도 표기라도 반응은 다르게 나옵니다.
+related: ["roast-development-signals","roast-development","roast-profile-design","roast-stage-and-cracks","water-for-coffee"]
+tags: ["열전달","로스터","전도","대류","복사"]
+history: [{"date":"2026. 07. 27.","note":"열전달 이론을 실무 점검 항목으로 환원한 중급 가이드 확장"}]
+---
+<h2 id="heat-modes">열은 하나가 아니라 3개 경로입니다</h2>
+<p>로스터의 온도 값은 결과를 유도하는 신호 중 하나일 뿐입니다. 실제 반응은 전도, 대류, 복사가 언제 어느 경로로 얼마나 기여하는지에 따라 달라집니다.</p>
+<p>세 경로가 균형을 이루면 로트 간 비교가 쉬워지지만, 특정 구간이 한쪽으로 치우치면 수율과 향미 편차가 확대됩니다.</p>
+
+<h2 id="path-characteristics">경로별 특징 정리</h2>
+<table><thead><tr><th>경로</th><th>특징</th><th>점검 포인트</th></tr><tr><td>전도</td><td>직접 접촉면의 반응이 빠름</td><td>배치량·투입 밀도 변화에 민감</td></tr><tr><td>대류</td><td>공기 교환이 결정 변수</td><td>팬 속도·공기 경로 균형</td></tr><tr><td>복사</td><td>표면 가열과 색도 변화에 영향</td><td>노즐·도어 개방 빈도</td></tr></tbody></table>
+
+<h2 id="operating-checks">운영에서 바로 쓰는 점검 4단계</h2>
+<ol>
+  <li>투입 전 배치량과 생두 초기 수분 기록</li>
+  <li>초기 1/3 구간에서 한 경로가 과도하지 않은지 센서와 체감으로 교차 확인</li>
+  <li>크랙 구간 이전 공기량 변화를 기록</li>
+  <li>감각 결과와 열전달 변화 기록을 대응표로 분리</li>
+</ol>
+
+<h2 id="common-misconceptions">흔한 오해</h2>
+<ul>
+  <li>오해: 프로브 온도만 맞추면 열전달은 통제된다.<br/>
+  <strong>정정:</strong> 장비 내부 유동·접촉면이 함께 바뀌면 동일 온도도 다르게 반응합니다.</li>
+  <li>오해: 전도, 대류, 복사를 따로 최적화하면 된다.<br/>
+  <strong>정정:</strong> 세 경로는 분리보다 결합 최적화가 더 중요합니다.</li>
+  <li>오해: 경로 보정은 기획 문서만 보면 충분하다.<br/>
+  <strong>정정:</strong> 배치별 로그와 실패 사례를 같이 봐야 개선이 누적됩니다.</li>
+</ul>
+
+<h2 id="practice">실습: 경로 편향 줄이기</h2>
+<p>한 로스터에서 단일 배치량 조건으로 2회 반복합니다.</p>
+<ol>
+  <li>같은 배치에서 공기량을 소폭 조정해 반응 시간 차이 기록</li>
+  <li>팬 속도와 투입량은 고정해 변수 혼입을 방지</li>
+  <li>크랙 구간 색상·소리 체감 포인트를 동시 기록</li>
+  <li>편차가 줄어든 조합을 다음 배치의 기본값으로 설정</li>
+</ol>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>열전달 3경로 중 어떤 지표가 로스터 운용에서 가장 늦게 드러나나요?</li>
+  <li>동일 배치에서 열편차를 분해할 때 먼저 고정해야 할 값은?</li>
+  <li>경로별 과열 증상은 어떻게 감지하나요?</li>
+  <li>기록 템플릿에서 빠지기 쉬운 항목은?</li>
+</ul>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="roast-development" href="/wiki/roast-development">로스트 발달 기본</a></li>
+  <li><a data-wikilink="roast-development-signals" href="/wiki/roast-development-signals">발달 신호</a></li>
+  <li><a data-wikilink="roast-profile-design" href="/wiki/roast-profile-design">프로파일 설계</a></li>
+  <li><a href="https://www.sca.coffee/research">SCA 연구 안내</a></li>
+  <li><a href="https://www.coffee-roasting-society.org/">로스팅 엔지니어링 참고</a></li>
+</ul>
