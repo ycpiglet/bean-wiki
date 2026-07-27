@@ -86,6 +86,84 @@ export type CommitInfo = {
   htmlUrl: string;
 };
 
+// Whether the linked user's token can push to the repo. Decides the account
+// page's edit-rights badge: push → direct commits, otherwise → PR proposals.
+export async function ghCanPush(token: string): Promise<boolean> {
+  const { owner, repo } = getRepoConfig();
+  try {
+    const res = await fetch(`${API}/repos/${owner}/${repo}`, {
+      headers: headers(token),
+      cache: "no-store",
+    });
+    if (!res.ok) return false;
+    const json = (await res.json()) as { permissions?: { push?: boolean } };
+    return Boolean(json.permissions?.push);
+  } catch {
+    return false;
+  }
+}
+
+// Recent commits authored by one GitHub login, across the whole repo (the
+// account page's contribution list). Read-only; tolerates rate limits.
+export async function ghCommitsByAuthor(
+  login: string,
+  token?: string | null,
+  limit = 10,
+): Promise<CommitInfo[]> {
+  const { owner, repo, branch } = getRepoConfig();
+  const url = `${API}/repos/${owner}/${repo}/commits?author=${encodeURIComponent(login)}&sha=${encodeURIComponent(branch)}&per_page=${limit}`;
+  try {
+    const res = await fetch(url, { headers: headers(token), cache: "no-store" });
+    if (!res.ok) return [];
+    const json = (await res.json()) as {
+      sha: string;
+      html_url: string;
+      commit: { message: string; author?: { name?: string; date?: string } };
+      author?: { login?: string } | null;
+    }[];
+    return json.map((c) => ({
+      sha: c.sha,
+      message: c.commit.message.split("\n")[0],
+      date: c.commit.author?.date ?? "",
+      author: c.author?.login || c.commit.author?.name || login,
+      htmlUrl: c.html_url,
+    }));
+  } catch {
+    return [];
+  }
+}
+
+// Open PR proposals authored by the server PAT on this user's behalf. The
+// proposal body records "@login", so that is the search key.
+export async function ghProposalsFor(
+  login: string,
+  token?: string | null,
+  limit = 10,
+): Promise<{ number: number; title: string; htmlUrl: string; state: string }[]> {
+  const { owner, repo } = getRepoConfig();
+  try {
+    const res = await fetch(
+      `${API}/repos/${owner}/${repo}/pulls?state=all&per_page=${limit * 3}`,
+      { headers: headers(token), cache: "no-store" },
+    );
+    if (!res.ok) return [];
+    const json = (await res.json()) as {
+      number: number;
+      title: string;
+      html_url: string;
+      state: string;
+      body: string | null;
+      head: { ref: string };
+    }[];
+    return json
+      .filter((p) => p.head.ref.startsWith("proposal/") && (p.body ?? "").includes(`@${login}`))
+      .slice(0, limit)
+      .map((p) => ({ number: p.number, title: p.title, htmlUrl: p.html_url, state: p.state }));
+  } catch {
+    return [];
+  }
+}
+
 // List the commit history for a single path (newest first). Works
 // unauthenticated for public repos.
 export async function ghListCommits(

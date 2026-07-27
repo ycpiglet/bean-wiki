@@ -320,7 +320,8 @@ export default function EnHome() {
         </Link>
         <p>An open coffee encyclopedia, built together and free to learn from.</p>
         <span>
-          © 2026 BEAN WIKI · <Link href="/en/privacy">Privacy</Link>
+          © 2026 BEAN WIKI · <Link href="/design/colors">Color guide</Link> ·{" "}
+          <Link href="/en/privacy">Privacy</Link>
         </span>
       </footer>
     </main>

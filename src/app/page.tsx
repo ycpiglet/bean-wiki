@@ -355,6 +355,7 @@ export default function Home() {
         <span>
           © 2026 BEAN WIKI · <Link href="/resources">자료실</Link> ·{" "}
           <Link href="/community">커뮤니티</Link> · <Link href="/contact">문의</Link> ·{" "}
+          <Link href="/design/colors">색상 가이드</Link> ·{" "}
           <Link href="/privacy">개인정보</Link>
         </span>
       </footer>

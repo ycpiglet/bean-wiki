@@ -25,6 +25,8 @@ const STRINGS = {
     linkedAs: (login: string) => `@${login} 연동됨`,
     unlink: "연동 해제",
     editHint: "문서 편집(커밋·PR 제안)에는 GitHub 연동이 필요합니다.",
+    signInHint: "Google 계정으로 시작하세요. 편집 권한은 로그인 후 GitHub를 연동해 받습니다.",
+    manageAccount: "계정 관리",
     signOut: "로그아웃",
   },
   en: {
@@ -38,6 +40,8 @@ const STRINGS = {
     linkedAs: (login: string) => `Linked as @${login}`,
     unlink: "Unlink",
     editHint: "Editing (commits & PR proposals) requires a linked GitHub account.",
+    signInHint: "Start with a Google account. Link GitHub afterwards to get edit access.",
+    manageAccount: "Manage account",
     signOut: "Sign out",
   },
 } as const;
@@ -55,6 +59,7 @@ export function AccountMenu({ locale = "ko" }: { locale?: "ko" | "en" }) {
   const t = STRINGS[locale];
   const pathname = usePathname() || "/";
   const returnTo = encodeURIComponent(pathname);
+  const accountHref = "/account";
   const [me, setMe] = useState<Me | null>(null);
   const [open, setOpen] = useState(false);
   const rootRef = useRef<HTMLDivElement>(null);
@@ -138,23 +143,29 @@ export function AccountMenu({ locale = "ko" }: { locale?: "ko" | "en" }) {
                   <span className="account-hint">{t.editHint}</span>
                 )}
               </div>
+              <a className="account-action" href={accountHref}>
+                {t.manageAccount}
+              </a>
               <a className="account-action is-quiet" href={`/api/auth/logout?returnTo=${returnTo}`}>
                 {t.signOut}
               </a>
             </>
           ) : (
             <>
-              {me.providers.google && (
+              {me.providers.google ? (
                 <a className="account-action" href={`/api/auth/google?returnTo=${returnTo}`}>
                   {t.signInGoogle}
                 </a>
+              ) : (
+                // GitHub is only an entry point where Google isn't configured;
+                // otherwise signing in always starts with a Google account.
+                me.providers.github && (
+                  <a className="account-action" href={`/api/auth/github?returnTo=${returnTo}`}>
+                    {t.signInGithub}
+                  </a>
+                )
               )}
-              {me.providers.github && (
-                <a className="account-action" href={`/api/auth/github?returnTo=${returnTo}`}>
-                  {t.signInGithub}
-                </a>
-              )}
-              <span className="account-hint">{t.editHint}</span>
+              <span className="account-hint">{t.signInHint}</span>
             </>
           )}
         </div>
