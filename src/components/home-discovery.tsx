@@ -147,7 +147,18 @@ export function HomeDiscovery({ items, questions }: HomeDiscoveryProps) {
       <div className="section-heading home-discovery-heading">
         <div>
           <span className="section-index">DAILY DISCOVERY</span>
-          <h2>알고 계셨나요?</h2>
+          <h2>
+            <Link
+              href={
+                currentTrivia.related
+                  ? `/wiki/${currentTrivia.related}`
+                  : "/wiki"
+              }
+            >
+              알고 계셨나요?
+              <span aria-hidden="true">↗</span>
+            </Link>
+          </h2>
         </div>
         <p>
           한 가지 흥미로운 이야기와 오늘의 한 문제로 커피 지식을 가볍게
@@ -202,7 +213,15 @@ export function HomeDiscovery({ items, questions }: HomeDiscoveryProps) {
                 exitingTrivia ? `is-entering is-${direction}` : ""
               }`}
             >
-              <strong>{currentTrivia.title}</strong>
+              <strong>
+                {currentTrivia.related ? (
+                  <Link href={`/wiki/${currentTrivia.related}`}>
+                    {currentTrivia.title}
+                  </Link>
+                ) : (
+                  currentTrivia.title
+                )}
+              </strong>
               <p>{currentTrivia.body}</p>
               {currentTrivia.related && (
                 <Link href={`/wiki/${currentTrivia.related}`}>
@@ -217,14 +236,11 @@ export function HomeDiscovery({ items, questions }: HomeDiscoveryProps) {
               {String(triviaIndex + 1).padStart(2, "0")} /{" "}
               {String(items.length).padStart(2, "0")}
             </span>
-            {reducedMotion ? (
-              <span className="motion-status">자동 전환 꺼짐</span>
-            ) : (
-              <AutoplayToggle
-                paused={paused}
-                onToggle={() => setPaused((value) => !value)}
-              />
-            )}
+            <AutoplayToggle
+              paused={paused || reducedMotion}
+              disabled={reducedMotion}
+              onToggle={() => setPaused((value) => !value)}
+            />
           </footer>
           <span className="sr-only" aria-live="polite">
             {announcement}
@@ -234,8 +250,12 @@ export function HomeDiscovery({ items, questions }: HomeDiscoveryProps) {
         <article className="home-daily-quiz">
           <header className="home-quiz-head">
             <div>
-              <span className="trivia-label">TODAY&apos;S QUIZ · +10 XP</span>
-              <strong>오늘의 한 문제</strong>
+              <Link href="/quiz" className="trivia-label">
+                TODAY&apos;S QUIZ · +10 XP
+              </Link>
+              <strong>
+                <Link href="/quiz">오늘의 한 문제</Link>
+              </strong>
             </div>
             <span className={`quiz-level accent-${currentQuestion.accent}`}>
               {currentQuestion.level} · {currentQuestion.category}

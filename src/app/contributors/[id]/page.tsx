@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
+import { PrimaryNav } from "@/components/primary-nav";
 import { ContributorAvatar } from "@/components/contributor-avatar";
 import { AccountMenu } from "@/components/account-menu";
 import { HeaderSearchButton } from "@/components/header-search-button";
@@ -54,6 +55,7 @@ export default async function ContributorPage(
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
+        <PrimaryNav />
         <div className="header-tools">
           <Link href="/wiki" className="back-link">
             ← 모든 문서

@@ -2,12 +2,14 @@ type AutoplayToggleProps = {
   paused: boolean;
   onToggle: () => void;
   locale?: "ko" | "en";
+  disabled?: boolean;
 };
 
 export function AutoplayToggle({
   paused,
   onToggle,
   locale = "ko",
+  disabled = false,
 }: AutoplayToggleProps) {
   const label =
     locale === "en"
@@ -25,16 +27,14 @@ export function AutoplayToggle({
       aria-label={label}
       aria-pressed={paused}
       title={label}
+      disabled={disabled}
       onClick={onToggle}
     >
       <svg aria-hidden="true" viewBox="0 0 20 20">
         {paused ? (
-          <path d="m7 5 8 5-8 5V5Z" />
+          <path d="m6.5 4.5 9 5.5-9 5.5v-11Z" />
         ) : (
-          <>
-            <path d="M6.5 5.2v9.6" />
-            <path d="M13.5 5.2v9.6" />
-          </>
+          <path d="M5.5 4.5h3v11h-3v-11Zm6 0h3v11h-3v-11Z" />
         )}
       </svg>
     </button>

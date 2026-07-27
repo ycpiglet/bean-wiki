@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
+import { PrimaryNav } from "@/components/primary-nav";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { AccountMenu } from "@/components/account-menu";
@@ -56,6 +57,7 @@ export default async function TagPage(props: PageProps<"/tags/[tag]">) {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
+        <PrimaryNav />
         <div className="header-tools">
           <Link href="/wiki" className="back-link">
             모든 문서 →

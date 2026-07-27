@@ -6413,17 +6413,88 @@ body {
   }
 }
 
-/* Final cascade: the home-discovery stylesheet is appended late in this
-   legacy global file, so keep the user-selected quiet navigation and
-   icon-only media control authoritative here. */
+/* Final cascade: shared header navigation, lifecycle divider, discovery
+   controls, and contributor marks. These rules intentionally live last while
+   the legacy global stylesheet is gradually split into component modules. */
 .site-header::after,
 .article-header::after {
-  content: none;
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  z-index: 1;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    var(--green-bean),
+    var(--honey) 27%,
+    var(--cherry) 50%,
+    var(--roast-medium) 74%,
+    var(--crema)
+  );
 }
 
-.site-header > nav {
-  gap: 22px;
-  margin-right: 28px;
+:is(.site-header, .article-header) > .primary-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  margin-right: 22px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 650;
+  white-space: nowrap;
+}
+
+:is(.site-header, .article-header) > .primary-nav a {
+  position: relative;
+  min-height: 40px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 9px;
+  border-radius: 6px;
+  transition:
+    color 170ms ease,
+    background-color 170ms ease,
+    transform 170ms ease;
+}
+
+:is(.site-header, .article-header) > .primary-nav a::after {
+  content: "";
+  position: absolute;
+  right: 9px;
+  bottom: 4px;
+  left: 9px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--brand);
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 190ms cubic-bezier(0.22, 0.8, 0.28, 1);
+}
+
+:is(.site-header, .article-header) > .primary-nav a:hover,
+:is(.site-header, .article-header) > .primary-nav a:focus-visible {
+  background: color-mix(in oklab, var(--brand) 7%, transparent);
+  color: var(--brand);
+  transform: translateY(-1px);
+}
+
+:is(.site-header, .article-header) > .primary-nav a:hover::after,
+:is(.site-header, .article-header) > .primary-nav a:focus-visible::after,
+:is(.site-header, .article-header) > .primary-nav a.is-active::after {
+  transform: scaleX(1);
+}
+
+:is(.site-header, .article-header) > .primary-nav a.is-active {
+  background: color-mix(in oklab, var(--brand) 9%, var(--cream));
+  color: var(--ink);
+  font-weight: 760;
+}
+
+.article-header .back-link {
+  display: none;
 }
 
 .knowledge-dial-controls .autoplay-toggle,
@@ -6438,22 +6509,123 @@ body {
 .autoplay-toggle svg {
   width: 17px;
   height: 17px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.8;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.autoplay-toggle.is-paused svg {
   fill: currentColor;
   stroke: none;
 }
 
+.autoplay-toggle {
+  border-radius: 50%;
+}
+
+.autoplay-toggle:disabled {
+  opacity: 0.62;
+  cursor: default;
+}
+
+.home-discovery-heading h2 a,
+.home-quiz-head a,
+.home-fact-panel strong a {
+  color: inherit;
+}
+
+.home-discovery-heading h2 a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.home-discovery-heading h2 a span {
+  color: var(--brand);
+  font-family: var(--font-mono);
+  font-size: 0.48em;
+  transition: transform 170ms ease;
+}
+
+.home-discovery-heading h2 a:hover span,
+.home-discovery-heading h2 a:focus-visible span {
+  transform: translate(2px, -2px);
+}
+
+.home-quiz-head a:hover,
+.home-quiz-head a:focus-visible,
+.home-fact-panel strong a:hover,
+.home-fact-panel strong a:focus-visible {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.learning-panel.is-locked .learning-panel-content {
+  opacity: 0.52;
+  filter: blur(2.5px) saturate(0.82);
+  transform: scale(0.998);
+}
+
+.learning-login-gate {
+  background: color-mix(in oklab, var(--cream) 42%, transparent);
+  backdrop-filter: blur(1px);
+}
+
+.contributor-avatar {
+  background: color-mix(
+    in oklab,
+    var(--contributor-accent) 16%,
+    var(--cream)
+  );
+}
+
+.contributor-avatar svg,
+.contributor-avatar img {
+  display: none;
+}
+
+.contributor-avatar b {
+  font-size: 13px;
+  font-weight: 780;
+  letter-spacing: 0.06em;
+}
+
+.contributor-avatar.is-large b {
+  font-size: clamp(24px, 2.4vw, 32px);
+}
+
 @media (max-width: 1120px) and (min-width: 981px) {
-  .site-header > nav {
+  :is(.site-header, .article-header) > .primary-nav {
+    margin-right: 12px;
+    font-size: 13px;
+  }
+
+  :is(.site-header, .article-header) > .primary-nav a {
+    padding-inline: 6px;
+  }
+
+  .header-search-label,
+  .header-search-key {
+    display: none;
+  }
+
+  .header-tools {
     gap: 10px;
-    margin-right: 14px;
-    font-size: 14px;
+  }
+}
+
+@media (max-width: 980px) {
+  :is(.site-header, .article-header) > .primary-nav {
+    display: none;
+  }
+
+  .article-header .back-link {
+    display: inline-flex;
+  }
+}
+
+@media (max-width: 680px) {
+  .header-tools {
+    gap: 8px;
+  }
+
+  .header-search-label,
+  .header-search-key {
+    display: none;
   }
 }

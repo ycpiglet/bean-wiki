@@ -72,14 +72,11 @@ export function KnowledgeDial({ items }: KnowledgeDialProps) {
           <button type="button" aria-label="다음 지식 문구" onClick={() => move(1)}>
             →
           </button>
-          {reducedMotion ? (
-            <span className="motion-status">자동 전환 꺼짐</span>
-          ) : (
-            <AutoplayToggle
-              paused={paused}
-              onToggle={() => setPaused((value) => !value)}
-            />
-          )}
+          <AutoplayToggle
+            paused={paused || reducedMotion}
+            disabled={reducedMotion}
+            onToggle={() => setPaused((value) => !value)}
+          />
         </div>
         <span className="sr-only" aria-live="polite">
           {announcement}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
+import { PrimaryNav } from "@/components/primary-nav";
 import {
   ArticleQuiz,
   ArticleViewReward,
@@ -140,6 +141,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
+        <PrimaryNav />
         <div className="header-tools">
           <Link href="/" className="back-link">
             ← 모든 지식 둘러보기

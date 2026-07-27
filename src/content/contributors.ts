@@ -159,11 +159,17 @@ export function contributorRefsForArticle(
 function humanProfile(
   contributor: ArticleContributor,
 ): ContributorProfile {
-  const initials = contributor.name
+  const nameParts = contributor.name
     .split(/\s+/)
-    .slice(0, 2)
-    .map((part) => part[0]?.toUpperCase())
-    .join("");
+    .map((part) => part.replace(/[^\p{L}\p{N}]/gu, ""))
+    .filter(Boolean);
+  const initials =
+    nameParts.length > 1
+      ? nameParts
+          .slice(0, 2)
+          .map((part) => part[0]?.toUpperCase())
+          .join("")
+      : (nameParts[0]?.slice(0, 2).toUpperCase() ?? "");
 
   return {
     ...contributor,
@@ -177,7 +183,7 @@ function humanProfile(
     specialtiesKo: ["문서 작성", "교정", "커뮤니티 검토"],
     specialtiesEn: ["Writing", "Editing", "Community review"],
     accent: "olive",
-    monogram: initials || "BW",
+    monogram: initials.padEnd(2, "W").slice(0, 2),
     baseLevel: 1,
     baseXp: 0,
   };
@@ -245,4 +251,3 @@ export function contributorMetrics(
     xp,
   };
 }
-

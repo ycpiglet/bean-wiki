@@ -7,6 +7,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import { Search } from "@/components/search";
 import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { PrimaryNav } from "@/components/primary-nav";
 import {
   categories,
   categoryArticleCount,
@@ -90,11 +91,7 @@ export default function EnHome() {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
-        <nav aria-label="Primary">
-          <Link href="/en/wiki">Articles</Link>
-          <Link href="/en/glossary">Glossary</Link>
-          <a href="#contribute">Contribute</a>
-        </nav>
+        <PrimaryNav locale="en" />
         <div className="header-tools">
           <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href="/" />
