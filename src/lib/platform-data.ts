@@ -1,5 +1,5 @@
 import { getD1 } from "../../db";
-import type { ChatGPTUser } from "@/lib/chatgpt-auth";
+import type { PlatformUser } from "@/lib/platform-auth";
 
 export type ActivityKind =
   | "visit"
@@ -22,7 +22,7 @@ const XP_BY_KIND: Record<ActivityKind, number> = {
   suggestion: 10,
 };
 
-export async function ensureProfile(user: ChatGPTUser) {
+export async function ensureProfile(user: PlatformUser) {
   const db = getD1();
   await db
     .prepare(
@@ -32,12 +32,12 @@ export async function ensureProfile(user: ChatGPTUser) {
          display_name = excluded.display_name,
          updated_at = CURRENT_TIMESTAMP`,
     )
-    .bind(user.email, user.displayName)
+    .bind(user.accountKey, user.displayName)
     .run();
 }
 
 export async function recordActivity(
-  user: ChatGPTUser,
+  user: PlatformUser,
   kind: ActivityKind,
   entityKey: string,
 ) {
@@ -50,7 +50,13 @@ export async function recordActivity(
         (id, email, kind, entity_key, xp)
        VALUES (?, ?, ?, ?, ?)`,
     )
-    .bind(crypto.randomUUID(), user.email, kind, entityKey.slice(0, 160), xp)
+    .bind(
+      crypto.randomUUID(),
+      user.accountKey,
+      kind,
+      entityKey.slice(0, 160),
+      xp,
+    )
     .run();
 
   const awarded = Number(inserted.meta.changes ?? 0) > 0 ? xp : 0;
@@ -61,23 +67,22 @@ export async function recordActivity(
          SET xp = xp + ?, updated_at = CURRENT_TIMESTAMP
          WHERE email = ?`,
       )
-      .bind(awarded, user.email)
+      .bind(awarded, user.accountKey)
       .run();
   }
   return awarded;
 }
 
-export async function getProfile(user: ChatGPTUser) {
+export async function getProfile(user: PlatformUser) {
   await ensureProfile(user);
   const db = getD1();
   const profile = await db
     .prepare(
-      `SELECT email, display_name AS displayName, xp, created_at AS createdAt
+      `SELECT display_name AS displayName, xp, created_at AS createdAt
        FROM profiles WHERE email = ?`,
     )
-    .bind(user.email)
+    .bind(user.accountKey)
     .first<{
-      email: string;
       displayName: string;
       xp: number;
       createdAt: string;
@@ -89,7 +94,7 @@ export async function getProfile(user: ChatGPTUser) {
        WHERE email = ?
        GROUP BY kind`,
     )
-    .bind(user.email)
+    .bind(user.accountKey)
     .all<{ kind: ActivityKind; count: number }>();
   return {
     profile,
@@ -158,7 +163,7 @@ export async function getArticleFeedback(articleSlug: string) {
 }
 
 export async function upsertArticleReview(
-  user: ChatGPTUser,
+  user: PlatformUser,
   articleSlug: string,
   rating: number,
   body: string,
@@ -179,7 +184,7 @@ export async function upsertArticleReview(
     .bind(
       crypto.randomUUID(),
       articleSlug,
-      user.email,
+      user.accountKey,
       user.displayName,
       rating,
       body,
@@ -189,7 +194,7 @@ export async function upsertArticleReview(
 }
 
 export async function addArticleComment(
-  user: ChatGPTUser,
+  user: PlatformUser,
   articleSlug: string,
   body: string,
   parentId: string | null,
@@ -202,7 +207,7 @@ export async function addArticleComment(
         (id, article_slug, email, display_name, body, parent_id)
        VALUES (?, ?, ?, ?, ?, ?)`,
     )
-    .bind(id, articleSlug, user.email, user.displayName, body, parentId)
+    .bind(id, articleSlug, user.accountKey, user.displayName, body, parentId)
     .run();
   const awarded = await recordActivity(user, "comment", id);
   return { id, awarded };
@@ -230,7 +235,7 @@ export async function listSuggestions() {
 }
 
 export async function createSuggestion(
-  user: ChatGPTUser,
+  user: PlatformUser,
   kind: string,
   title: string,
   body: string,
@@ -243,7 +248,7 @@ export async function createSuggestion(
         (id, email, display_name, kind, title, body)
        VALUES (?, ?, ?, ?, ?, ?)`,
     )
-    .bind(id, user.email, user.displayName, kind, title, body)
+    .bind(id, user.accountKey, user.displayName, kind, title, body)
     .run();
   const awarded = await recordActivity(user, "suggestion", id);
   return { id, awarded };
@@ -270,7 +275,7 @@ export async function listCommunityPosts() {
 }
 
 export async function createCommunityPost(
-  user: ChatGPTUser,
+  user: PlatformUser,
   board: string,
   title: string,
   body: string,
@@ -283,7 +288,7 @@ export async function createCommunityPost(
         (id, email, display_name, board, title, body)
        VALUES (?, ?, ?, ?, ?, ?)`,
     )
-    .bind(id, user.email, user.displayName, board, title, body)
+    .bind(id, user.accountKey, user.displayName, board, title, body)
     .run();
   const awarded = await recordActivity(user, "post", id);
   return { id, awarded };

@@ -93,7 +93,6 @@ export default function Home() {
           <Link href="/suggestions">제안</Link>
         </nav>
         <div className="header-tools">
-          <Link href="/account" className="header-account">내 계정</Link>
           <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href="/en" />
           <ThemeToggle />

@@ -1,15 +1,16 @@
-import { env } from "cloudflare:workers";
+import { getRuntimeBindings } from "../../../../../platform/runtime-bindings";
 import {
   importRecommendations,
   type ImportedRecommendation,
 } from "@/lib/platform-data";
+import { storageUnavailableResponse } from "@/lib/platform-storage";
 
 const KINDS = new Set(["store", "menu", "bean", "recipe"]);
 
 export async function POST(request: Request) {
-  const expected = (
-    env as unknown as { COFFEE_CHERRY_IMPORT_TOKEN?: string }
-  ).COFFEE_CHERRY_IMPORT_TOKEN;
+  const expected =
+    getRuntimeBindings().COFFEE_CHERRY_IMPORT_TOKEN ??
+    process.env.COFFEE_CHERRY_IMPORT_TOKEN;
   const authorization = request.headers.get("authorization");
   if (!expected || authorization !== `Bearer ${expected}`) {
     return Response.json({ error: "unauthorized" }, { status: 401 });
@@ -45,6 +46,12 @@ export async function POST(request: Request) {
   if (!valid) {
     return Response.json({ error: "invalid_item" }, { status: 400 });
   }
-  const imported = await importRecommendations(data.sourceName, data.items);
-  return Response.json({ imported });
+  try {
+    const imported = await importRecommendations(data.sourceName, data.items);
+    return Response.json({ imported });
+  } catch (error) {
+    return storageUnavailableResponse(error, {
+      error: "storage_unavailable",
+    });
+  }
 }

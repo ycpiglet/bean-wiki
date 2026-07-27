@@ -29,7 +29,11 @@ export default function WikiIndex() {
       accent,
     }),
   );
-  const browseCategories = categories.map(({ slug, name }) => ({ slug, name }));
+  const browseCategories = categories.map(({ slug, name }) => ({
+    slug,
+    name,
+    label: name,
+  }));
 
   return (
     <main className="article-page">

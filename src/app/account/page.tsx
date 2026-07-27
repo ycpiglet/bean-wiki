@@ -1,16 +1,22 @@
-// Account management for the Vercel deployment: Google account profile, the
-// GitHub edit-rights link, and the contribution record that link produced.
-// Everything here reads the encrypted session cookie (src/lib/session.ts) —
-// there is no user database; GitHub is the system of record for edits.
+// One account surface for the application OAuth session and the Sites-provided
+// identity. GitHub remains the source of truth for document edit attribution;
+// D1 stores learning/community activity against the unified account key.
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
 import { AccountMenu } from "@/components/account-menu";
 import { HeaderSearchButton } from "@/components/header-search-button";
+import { LearningDashboard } from "@/components/learning-dashboard";
 import { MobileNav } from "@/components/mobile-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { getRepoConfig, ghCanPush, ghCommitsByAuthor, ghProposalsFor } from "@/lib/github";
-import { googleConfigured, oauthConfigured } from "@/lib/oauth";
+import {
+  getRepoConfig,
+  ghCanPush,
+  ghCommitsByAuthor,
+  ghProposalsFor,
+} from "@/lib/github";
+import { googleConfigured, oauthConfigured, safeReturnTo } from "@/lib/oauth";
+import { getPlatformUser, platformSignOutPath } from "@/lib/platform-auth";
 import { readSession } from "@/lib/session";
 
 export const runtime = "nodejs";
@@ -33,8 +39,20 @@ function formatDate(iso: string): string {
   return `${d.getFullYear()}. ${String(d.getMonth() + 1).padStart(2, "0")}. ${String(d.getDate()).padStart(2, "0")}.`;
 }
 
-export default async function AccountPage() {
+export default async function AccountPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ returnTo?: string | string[] }>;
+}) {
+  const query = await searchParams;
+  const requestedReturnTo = Array.isArray(query.returnTo)
+    ? query.returnTo[0]
+    : query.returnTo;
+  const returnTo = requestedReturnTo
+    ? safeReturnTo(requestedReturnTo)
+    : "/account";
   const session = await readSession();
+  const user = await getPlatformUser(session);
   const { owner, repo } = getRepoConfig();
 
   const github = session?.github ?? null;
@@ -73,47 +91,70 @@ export default async function AccountPage() {
           </p>
         </header>
 
-        {!session ? (
+        {!user ? (
           <section className="acct-card acct-empty">
             <h2>로그인이 필요합니다</h2>
             <p>
-              Google 계정으로 로그인하면 프로필과 편집 권한 상태를 이곳에서
-              관리할 수 있습니다.
+              로그인하면 학습 경험치와 커뮤니티 활동, 편집 권한 상태를 한곳에서
+              관리할 수 있습니다. 공개 문서는 로그인 없이 계속 읽을 수 있습니다.
             </p>
             {googleConfigured() ? (
-              <a className="acct-button" href="/api/auth/google?returnTo=/account">
+              <a
+                className="acct-button"
+                href={`/api/auth/google?returnTo=${encodeURIComponent(returnTo)}`}
+              >
                 Google로 로그인
               </a>
             ) : oauthConfigured() ? (
-              <a className="acct-button" href="/api/auth/github?returnTo=/account">
+              <a
+                className="acct-button"
+                href={`/api/auth/github?returnTo=${encodeURIComponent(returnTo)}`}
+              >
                 GitHub로 로그인
               </a>
             ) : (
-              <p className="acct-note">이 배포에는 로그인이 설정되어 있지 않습니다.</p>
+              <p className="acct-note">
+                이 배포에는 계정 로그인이 설정되어 있지 않습니다. 운영 환경의
+                OAuth 설정을 확인해 주세요.
+              </p>
             )}
           </section>
         ) : (
           <>
             <section className="acct-card acct-profile">
               <div className="acct-avatar" aria-hidden="true">
-                {session.user.avatar ? (
+                {user.avatar ? (
                   // eslint-disable-next-line @next/next/no-img-element -- small external avatar; next/image adds nothing here
-                  <img src={session.user.avatar} alt="" referrerPolicy="no-referrer" />
+                  <img src={user.avatar} alt="" referrerPolicy="no-referrer" />
                 ) : (
-                  <span>{initial(session.user.name)}</span>
+                  <span>{initial(user.displayName)}</span>
                 )}
               </div>
               <div className="acct-profile-text">
-                <h2>{session.user.name}</h2>
-                {session.user.email && <p className="acct-email">{session.user.email}</p>}
+                <h2>{user.displayName}</h2>
+                {user.email && <p className="acct-email">{user.email}</p>}
                 <p className="acct-note">
-                  {session.user.provider === "google" ? "Google" : "GitHub"} 계정으로 로그인됨
+                  {user.provider === "google"
+                    ? "Google"
+                    : user.provider === "github"
+                      ? "GitHub"
+                      : "ChatGPT"}{" "}
+                  계정으로 로그인됨
                 </p>
               </div>
-              <a className="acct-button is-quiet" href="/api/auth/logout?returnTo=/">
+              <a
+                className="acct-button is-quiet"
+                href={
+                  user.provider === "chatgpt"
+                    ? platformSignOutPath("/")
+                    : "/api/auth/logout?returnTo=/"
+                }
+              >
                 로그아웃
               </a>
             </section>
+
+            <LearningDashboard showAccountAction={false} />
 
             <section className="acct-card">
               <div className="acct-card-head">
@@ -165,7 +206,7 @@ export default async function AccountPage() {
                       </dd>
                     </div>
                   </dl>
-                  {session.user.provider !== "github" && (
+                  {session?.user.provider !== "github" && (
                     <a className="acct-button is-quiet" href="/api/auth/github/unlink?returnTo=/account">
                       GitHub 연동 해제
                     </a>
@@ -218,10 +259,10 @@ export default async function AccountPage() {
             <section className="acct-card">
               <h2>데이터와 개인정보</h2>
               <p>
-                Bean Wiki는 별도의 회원 데이터베이스를 두지 않습니다. 로그인 정보는
-                브라우저의 암호화된 세션 쿠키에만 담기고 7일 뒤 만료됩니다.
-                로그아웃하면 즉시 삭제되며, 편집 기록은 공개 저장소의 커밋으로
-                남습니다.
+                Google·GitHub 로그인 정보는 브라우저의 암호화된 세션 쿠키에
+                담기고 7일 뒤 만료됩니다. 학습 경험치, 글 평가, 댓글, 게시글과
+                제안은 계정 식별자와 함께 데이터베이스에 저장됩니다. 편집 기록은
+                공개 저장소의 커밋으로 남습니다.
               </p>
               <p className="acct-links">
                 <Link href="/privacy">개인정보 처리방침</Link> ·{" "}

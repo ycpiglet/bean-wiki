@@ -13,7 +13,11 @@ import {
   type LearningProgress,
 } from "@/lib/learning-progress";
 
-export function LearningDashboard() {
+export function LearningDashboard({
+  showAccountAction = true,
+}: {
+  showAccountAction?: boolean;
+}) {
   const [progress, setProgress] = useState<LearningProgress>(EMPTY_PROGRESS);
   const [accountName, setAccountName] = useState<string | null>(null);
 
@@ -124,7 +128,11 @@ export function LearningDashboard() {
         <Link href="/quiz">오늘의 퀴즈 +10 XP</Link>
         <Link href="/wiki">새 문서 읽기 +5 XP</Link>
         <Link href="/community">지식 나누기 +20 XP</Link>
-        <Link href="/account">{accountName ? "내 계정 보기" : "경험치 동기화"}</Link>
+        {showAccountAction && (
+          <Link href="/account">
+            {accountName ? "내 계정 보기" : "경험치 동기화"}
+          </Link>
+        )}
       </div>
     </section>
   );

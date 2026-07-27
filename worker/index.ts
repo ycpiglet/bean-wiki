@@ -4,8 +4,13 @@ import {
   handleImageOptimization,
 } from "vinext/server/image-optimization";
 import handler from "vinext/server/app-router-entry";
+import {
+  setRuntimeBindings,
+  type RuntimeD1Database,
+  type RuntimeBindings,
+} from "../platform/runtime-bindings";
 
-interface Env {
+interface Env extends RuntimeBindings {
   // Structural stand-in for Cloudflare's `Fetcher` binding type, so the repo
   // typechecks without pulling in @cloudflare/workers-types globally (which
   // would conflict with DOM lib types used by the Next.js app).
@@ -20,7 +25,7 @@ interface Env {
       };
     };
   };
-  DB: D1Database;
+  DB: RuntimeD1Database;
 }
 
 interface ExecutionContext {
@@ -34,6 +39,7 @@ const worker = {
     env: Env,
     ctx: ExecutionContext,
   ): Promise<Response> {
+    setRuntimeBindings(env);
     const url = new URL(request.url);
 
     if (url.pathname === "/_vinext/image") {

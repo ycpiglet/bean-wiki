@@ -71,7 +71,14 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
       return;
     }
     if (!response.ok) {
-      setMessage("내용을 확인해 주세요. 댓글은 2자 이상이어야 합니다.");
+      const error = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+      setMessage(
+        error?.error === "storage_unavailable"
+          ? "현재 이 배포에서는 저장 기능을 사용할 수 없습니다."
+          : "내용을 확인해 주세요. 댓글은 2자 이상이어야 합니다.",
+      );
       return;
     }
     const result = (await response.json()) as { awarded?: number };
@@ -154,8 +161,8 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
         <p className="discussion-message" role="status">
           {message}{" "}
           {needsLogin && (
-            <Link href={`/signin-with-chatgpt?return_to=${encodeURIComponent(`/wiki/${slug}`)}`}>
-              ChatGPT로 로그인
+            <Link href={`/account?returnTo=${encodeURIComponent(`/wiki/${slug}`)}`}>
+              로그인
             </Link>
           )}
         </p>

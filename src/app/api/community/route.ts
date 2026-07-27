@@ -1,15 +1,20 @@
-import { getChatGPTUser } from "@/lib/chatgpt-auth";
+import { getPlatformUser } from "@/lib/platform-auth";
 import {
   createCommunityPost,
   listCommunityPosts,
 } from "@/lib/platform-data";
+import { storageUnavailableResponse } from "@/lib/platform-storage";
 
 export async function GET() {
-  return Response.json({ posts: await listCommunityPosts() });
+  try {
+    return Response.json({ posts: await listCommunityPosts() });
+  } catch (error) {
+    return storageUnavailableResponse(error, { posts: [] }, 200);
+  }
 }
 
 export async function POST(request: Request) {
-  const user = await getChatGPTUser();
+  const user = await getPlatformUser();
   if (!user) return Response.json({ error: "auth_required" }, { status: 401 });
   const data = (await request.json().catch(() => null)) as {
     board?: string;
@@ -27,5 +32,11 @@ export async function POST(request: Request) {
   ) {
     return Response.json({ error: "invalid_post" }, { status: 400 });
   }
-  return Response.json(await createCommunityPost(user, board, title, body));
+  try {
+    return Response.json(await createCommunityPost(user, board, title, body));
+  } catch (error) {
+    return storageUnavailableResponse(error, {
+      error: "storage_unavailable",
+    });
+  }
 }

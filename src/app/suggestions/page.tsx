@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { AccountMenu } from "@/components/account-menu";
 import { BeanMark } from "@/components/bean-logo";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
@@ -25,6 +26,7 @@ export default function SuggestionsPage() {
           <Link href="/" className="back-link">← 홈으로</Link>
           <HeaderSearchButton locale="ko" />
           <ThemeToggle />
+          <AccountMenu locale="ko" />
           <MobileNav />
         </div>
       </header>

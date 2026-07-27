@@ -89,18 +89,19 @@ background: color-mix(in oklab, var(--copper) 9%, var(--paper));
 
 | 토큰 | 값 | 용도 |
 |---|---|---|
-| `--font-sans` | `var(--font-geist-sans), var(--font-noto-kr), …` | 기본 UI·본문 |
+| `--font-sans` | `var(--font-geist-sans), "Pretendard", "Apple SD Gothic Neo", …` | 기본 UI·본문 |
 | `--font-mono` | `var(--font-geist-mono), ui-monospace, …` | 라벨·번호·코드 |
 
-- **로딩**: `src/app/layout.tsx`에서 `next/font/google`로 Geist / Geist Mono /
-  Noto Sans KR을 로드하고 각각 `--font-geist-sans` · `--font-geist-mono` ·
-  `--font-noto-kr` CSS 변수로 노출합니다(`<html>` className).
-- **라틴/한글 전략**: Geist에는 한글 글리프가 없습니다. 스택에서 Geist를 먼저,
-  Noto Sans KR을 그다음에 두어 브라우저가 **글자마다** 고릅니다 — 라틴(로고·숫자·
-  영문)은 Geist, 한글은 Noto. Noto는 용량이 커서 `preload: false`로 논블로킹.
-- ⚠️ **주의(과거 버그)**: CSS에서 `"Geist"` 같은 **리터럴 이름**을 쓰면 안 됩니다.
-  next/font는 해시된 패밀리명을 만들고 오직 `var(--font-*)` 변수로만 노출하므로,
-  리터럴 이름은 매칭되지 않아 시스템 폰트로 떨어집니다. 항상 변수를 참조하세요.
+- **로딩**: `src/app/layout.tsx`에서 작은 라틴 서브셋인 Geist / Geist Mono만
+  `next/font/google`로 자체 호스팅하고, `--font-geist-sans` ·
+  `--font-geist-mono` CSS 변수로 노출합니다.
+- **라틴/한글 전략**: Geist에는 한글 글리프가 없습니다. 한글은 설치된
+  Pretendard → Apple SD Gothic Neo → Malgun Gothic → 시스템 sans 순으로
+  선택합니다. 첫 화면에서 수 MB짜리 CJK 웹폰트를 내려받지 않아도 되어
+  렌더링 지연과 흐릿한 폰트 교체를 피합니다.
+- ⚠️ **주의**: CSS에서 `"Geist"` 같은 **리터럴 이름**을 쓰면 안 됩니다.
+  `next/font`는 해시된 패밀리명을 만들고 오직 `var(--font-*)` 변수로만
+  노출하므로 항상 변수를 참조하세요.
 
 ## 3. 타입 스케일
 
@@ -151,5 +152,7 @@ h1, h2, h3, h4 {
   선)입니다. 과거 폼(크림)색 채움은 원두가 아니라 빈 자리처럼 읽혀 교체했습니다.
   헤더의 작은 마크는 `--brand` 윤곽선만 사용합니다(`.bean-mark-small`).
 - 파비콘/아이콘: `src/app/icon.svg`, `src/app/favicon.ico`.
-- OG 이미지: `src/app/opengraph-image.tsx`(`next/og`로 동적 생성).
-- 외부 폰트 파일은 저장소에 두지 않습니다(next/font가 빌드 시 자체 호스팅).
+- OG 이미지: `public/og.png`. 홈의 브랜드 스토리 이미지와 공유 카드가 같은
+  원두 지식 지도를 사용합니다.
+- 외부 CJK 폰트 파일은 저장소에 두지 않습니다. 라틴 Geist 서브셋만
+  `next/font`가 빌드 시 자체 호스팅합니다.

@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { useMemo, useState } from "react";
-import { categoryLabel } from "@/lib/content";
 import { getDictionary } from "@/i18n";
 import type { Locale } from "@/i18n/config";
 
@@ -20,6 +19,7 @@ type BrowseArticle = {
 type BrowseCategory = {
   slug: string;
   name: string;
+  label: string;
 };
 
 export function ArticleBrowser({
@@ -37,6 +37,10 @@ export function ArticleBrowser({
   const levelLabels = getDictionary(locale).levels;
   const prefix = locale === "en" ? "/en" : "";
   const searchParams = useSearchParams();
+  const categoryLabels = useMemo(
+    () => new Map(categories.map((item) => [item.name, item.label])),
+    [categories],
+  );
 
   // Seed filters from the URL once (e.g. /wiki?cat=brewing&level=입문);
   // afterwards the chips control the state locally. Values stay canonical
@@ -78,7 +82,7 @@ export function ArticleBrowser({
               className={`filter-chip${category === item.name ? " is-active" : ""}`}
               onClick={() => setCategory(item.name)}
             >
-              {categoryLabel(item.name, locale)}
+              {item.label}
             </button>
           ))}
         </div>
@@ -119,7 +123,7 @@ export function ArticleBrowser({
             >
               <div className="browse-card-top">
                 <span className="article-category">
-                  {categoryLabel(article.category, locale)}
+                  {categoryLabels.get(article.category) ?? article.category}
                 </span>
                 <span className={`level-badge accent-${article.accent}`}>
                   {levelLabels[article.level] ?? article.level}

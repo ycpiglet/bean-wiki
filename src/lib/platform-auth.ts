@@ -1,10 +1,13 @@
 import { headers } from "next/headers";
-import { redirect } from "next/navigation";
+import { readSession, type Session } from "@/lib/session";
 
-export type ChatGPTUser = {
+export type PlatformUser = {
+  accountKey: string;
   displayName: string;
-  email: string;
+  email: string | null;
   fullName: string | null;
+  provider: "google" | "github" | "chatgpt";
+  avatar: string | null;
 };
 
 const USER_EMAIL_HEADER = "oai-authenticated-user-email";
@@ -16,9 +19,27 @@ const SIGN_IN_PATH = "/signin-with-chatgpt";
 const SIGN_OUT_PATH = "/signout-with-chatgpt";
 const CALLBACK_PATH = "/callback";
 
-export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
+export async function getPlatformUser(
+  sessionOverride?: Session | null,
+): Promise<PlatformUser | null> {
+  const session =
+    sessionOverride === undefined ? await readSession() : sessionOverride;
+  if (session) {
+    const email = session.user.email?.trim() || null;
+    return {
+      accountKey:
+        email?.toLowerCase() ??
+        `${session.user.provider}:${session.user.id.toLowerCase()}`,
+      displayName: session.user.name,
+      email,
+      fullName: session.user.name,
+      provider: session.user.provider,
+      avatar: session.user.avatar ?? null,
+    };
+  }
+
   const requestHeaders = await headers();
-  const email = requestHeaders.get(USER_EMAIL_HEADER);
+  const email = requestHeaders.get(USER_EMAIL_HEADER)?.trim() || null;
   if (!email) return null;
 
   const encodedFullName = requestHeaders.get(USER_FULL_NAME_HEADER);
@@ -29,25 +50,16 @@ export async function getChatGPTUser(): Promise<ChatGPTUser | null> {
       : null;
 
   return {
+    accountKey: email.toLowerCase(),
     displayName: fullName ?? email.split("@")[0],
     email,
     fullName,
+    provider: "chatgpt",
+    avatar: null,
   };
 }
 
-export async function requireChatGPTUser(
-  returnTo: string,
-): Promise<ChatGPTUser> {
-  const user = await getChatGPTUser();
-  if (user) return user;
-  redirect(chatGPTSignInPath(returnTo));
-}
-
-export function chatGPTSignInPath(returnTo: string): string {
-  return `${SIGN_IN_PATH}?return_to=${encodeURIComponent(safeRelativeReturnPath(returnTo))}`;
-}
-
-export function chatGPTSignOutPath(returnTo = "/"): string {
+export function platformSignOutPath(returnTo = "/"): string {
   return `${SIGN_OUT_PATH}?return_to=${encodeURIComponent(safeRelativeReturnPath(returnTo))}`;
 }
 

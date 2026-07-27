@@ -1,10 +1,11 @@
-import { getChatGPTUser } from "@/lib/chatgpt-auth";
+import { getPlatformUser } from "@/lib/platform-auth";
 import { getArticle } from "@/lib/content";
 import {
   addArticleComment,
   getArticleFeedback,
   upsertArticleReview,
 } from "@/lib/platform-data";
+import { storageUnavailableResponse } from "@/lib/platform-storage";
 
 export async function GET(
   _request: Request,
@@ -14,7 +15,19 @@ export async function GET(
   if (!getArticle(slug)) {
     return Response.json({ error: "article_not_found" }, { status: 404 });
   }
-  return Response.json(await getArticleFeedback(slug));
+  try {
+    return Response.json(await getArticleFeedback(slug));
+  } catch (error) {
+    return storageUnavailableResponse(
+      error,
+      {
+        summary: { average: null, count: 0 },
+        reviews: [],
+        comments: [],
+      },
+      200,
+    );
+  }
 }
 
 export async function POST(
@@ -25,7 +38,7 @@ export async function POST(
   if (!getArticle(slug)) {
     return Response.json({ error: "article_not_found" }, { status: 404 });
   }
-  const user = await getChatGPTUser();
+  const user = await getPlatformUser();
   if (!user) return Response.json({ error: "auth_required" }, { status: 401 });
   const data = (await request.json().catch(() => null)) as {
     action?: "review" | "comment";
@@ -44,27 +57,39 @@ export async function POST(
     ) {
       return Response.json({ error: "invalid_review" }, { status: 400 });
     }
-    const awarded = await upsertArticleReview(
-      user,
-      slug,
-      data.rating as number,
-      body,
-    );
-    return Response.json({ ok: true, awarded });
+    try {
+      const awarded = await upsertArticleReview(
+        user,
+        slug,
+        data.rating as number,
+        body,
+      );
+      return Response.json({ ok: true, awarded });
+    } catch (error) {
+      return storageUnavailableResponse(error, {
+        error: "storage_unavailable",
+      });
+    }
   }
 
   if (data?.action === "comment") {
     if (body.length < 2 || body.length > 1200) {
       return Response.json({ error: "invalid_comment" }, { status: 400 });
     }
-    return Response.json(
-      await addArticleComment(
-        user,
-        slug,
-        body,
-        typeof data.parentId === "string" ? data.parentId : null,
-      ),
-    );
+    try {
+      return Response.json(
+        await addArticleComment(
+          user,
+          slug,
+          body,
+          typeof data.parentId === "string" ? data.parentId : null,
+        ),
+      );
+    } catch (error) {
+      return storageUnavailableResponse(error, {
+        error: "storage_unavailable",
+      });
+    }
   }
   return Response.json({ error: "invalid_action" }, { status: 400 });
 }

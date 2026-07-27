@@ -1,8 +1,9 @@
-import { getChatGPTUser } from "@/lib/chatgpt-auth";
+import { getPlatformUser } from "@/lib/platform-auth";
 import {
   recordActivity,
   type ActivityKind,
 } from "@/lib/platform-data";
+import { storageUnavailableResponse } from "@/lib/platform-storage";
 
 const validKinds = new Set<ActivityKind>([
   "visit",
@@ -12,7 +13,7 @@ const validKinds = new Set<ActivityKind>([
 ]);
 
 export async function POST(request: Request) {
-  const user = await getChatGPTUser();
+  const user = await getPlatformUser();
   if (!user) return Response.json({ error: "auth_required" }, { status: 401 });
   const data = (await request.json().catch(() => null)) as {
     kind?: ActivityKind;
@@ -27,6 +28,12 @@ export async function POST(request: Request) {
   ) {
     return Response.json({ error: "invalid_event" }, { status: 400 });
   }
-  const awarded = await recordActivity(user, data.kind, data.entityKey);
-  return Response.json({ awarded });
+  try {
+    const awarded = await recordActivity(user, data.kind, data.entityKey);
+    return Response.json({ awarded });
+  } catch (error) {
+    return storageUnavailableResponse(error, {
+      error: "storage_unavailable",
+    });
+  }
 }

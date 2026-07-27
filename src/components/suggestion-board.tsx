@@ -57,7 +57,14 @@ export function SuggestionBoard() {
       return;
     }
     if (!response.ok) {
-      setMessage("제목은 4자, 설명은 10자 이상 적어주세요.");
+      const error = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+      setMessage(
+        error?.error === "storage_unavailable"
+          ? "현재 이 배포에서는 제안 저장 기능을 사용할 수 없습니다."
+          : "제목은 4자, 설명은 10자 이상 적어주세요.",
+      );
       return;
     }
     const result = (await response.json()) as { awarded?: number };
@@ -106,7 +113,7 @@ export function SuggestionBoard() {
           <p role="status">
             {message}{" "}
             {message.startsWith("로그인") && (
-              <Link href="/signin-with-chatgpt?return_to=%2Fsuggestions">로그인</Link>
+              <Link href="/account?returnTo=%2Fsuggestions">로그인</Link>
             )}
           </p>
         )}

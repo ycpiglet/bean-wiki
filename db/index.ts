@@ -1,10 +1,21 @@
-import { env } from "cloudflare:workers";
+import {
+  getRuntimeBindings,
+  type RuntimeD1Database,
+} from "../platform/runtime-bindings";
 
-export function getD1(): D1Database {
-  if (!env.DB) {
-    throw new Error(
+export class D1UnavailableError extends Error {
+  constructor() {
+    super(
       "Cloudflare D1 binding `DB` is unavailable. Set d1 to DB in .openai/hosting.json.",
     );
+    this.name = "D1UnavailableError";
   }
-  return env.DB;
+}
+
+export function getD1(): RuntimeD1Database {
+  const { DB } = getRuntimeBindings();
+  if (!DB) {
+    throw new D1UnavailableError();
+  }
+  return DB;
 }

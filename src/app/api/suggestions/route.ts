@@ -1,17 +1,22 @@
-import { getChatGPTUser } from "@/lib/chatgpt-auth";
+import { getPlatformUser } from "@/lib/platform-auth";
 import {
   createSuggestion,
   listSuggestions,
 } from "@/lib/platform-data";
+import { storageUnavailableResponse } from "@/lib/platform-storage";
 
 const KINDS = new Set(["궁금한 내용", "새 글 제안", "내용 보완", "기능 제안"]);
 
 export async function GET() {
-  return Response.json({ suggestions: await listSuggestions() });
+  try {
+    return Response.json({ suggestions: await listSuggestions() });
+  } catch (error) {
+    return storageUnavailableResponse(error, { suggestions: [] }, 200);
+  }
 }
 
 export async function POST(request: Request) {
-  const user = await getChatGPTUser();
+  const user = await getPlatformUser();
   if (!user) return Response.json({ error: "auth_required" }, { status: 401 });
   const data = (await request.json().catch(() => null)) as {
     kind?: string;
@@ -30,5 +35,11 @@ export async function POST(request: Request) {
   ) {
     return Response.json({ error: "invalid_suggestion" }, { status: 400 });
   }
-  return Response.json(await createSuggestion(user, kind, title, body));
+  try {
+    return Response.json(await createSuggestion(user, kind, title, body));
+  } catch (error) {
+    return storageUnavailableResponse(error, {
+      error: "storage_unavailable",
+    });
+  }
 }

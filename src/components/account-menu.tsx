@@ -1,15 +1,18 @@
 "use client";
 
-// Site-wide account menu (header). Google sign-in is the account layer;
-// linking GitHub grants edit rights (commits / PR proposals). Renders nothing
-// until /api/auth/me confirms at least one provider is configured, so an
-// unconfigured deployment looks exactly as before.
+// Site-wide account menu. Google/GitHub OAuth and the Sites-provided ChatGPT
+// identity all resolve to the same platform account shape.
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 
 type Me = {
   providers: { google: boolean; github: boolean };
-  user: { provider: "google" | "github"; name: string; email: string | null; avatar: string | null } | null;
+  user: {
+    provider: "google" | "github" | "chatgpt";
+    name: string;
+    email: string | null;
+    avatar: string | null;
+  } | null;
   github: { login: string; avatar: string | null } | null;
 };
 
@@ -93,9 +96,31 @@ export function AccountMenu({ locale = "ko" }: { locale?: "ko" | "en" }) {
     };
   }, [open]);
 
-  if (!me || (!me.providers.google && !me.providers.github)) return null;
+  if (!me) {
+    return (
+      <a className="account-trigger" href={accountHref} aria-label={t.account}>
+        <PersonIcon />
+      </a>
+    );
+  }
+  if (!me.user && !me.providers.google && !me.providers.github) {
+    return (
+      <a className="account-trigger" href={accountHref} aria-label={t.account}>
+        <PersonIcon />
+      </a>
+    );
+  }
 
-  const providerLabel = me.user?.provider === "google" ? "Google" : "GitHub";
+  const providerLabel =
+    me.user?.provider === "google"
+      ? "Google"
+      : me.user?.provider === "github"
+        ? "GitHub"
+        : "ChatGPT";
+  const signOutHref =
+    me.user?.provider === "chatgpt"
+      ? `/signout-with-chatgpt?return_to=${returnTo}`
+      : `/api/auth/logout?returnTo=${returnTo}`;
 
   return (
     <div className="account-menu" ref={rootRef}>
@@ -146,7 +171,7 @@ export function AccountMenu({ locale = "ko" }: { locale?: "ko" | "en" }) {
               <a className="account-action" href={accountHref}>
                 {t.manageAccount}
               </a>
-              <a className="account-action is-quiet" href={`/api/auth/logout?returnTo=${returnTo}`}>
+              <a className="account-action is-quiet" href={signOutHref}>
                 {t.signOut}
               </a>
             </>

@@ -8,7 +8,12 @@ import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
-import { categories, getPublishedArticles, levels } from "@/lib/content";
+import {
+  categories,
+  categoryLabel,
+  getPublishedArticles,
+  levels,
+} from "@/lib/content";
 
 export const metadata: Metadata = {
   title: "All articles",
@@ -37,7 +42,11 @@ export default function EnWikiIndex() {
       accent,
     }),
   );
-  const browseCategories = categories.map(({ slug, name }) => ({ slug, name }));
+  const browseCategories = categories.map(({ slug, name }) => ({
+    slug,
+    name,
+    label: categoryLabel(name, "en"),
+  }));
 
   return (
     <main className="article-page" lang="en">
