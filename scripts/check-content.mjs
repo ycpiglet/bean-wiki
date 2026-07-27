@@ -84,6 +84,21 @@ for (const slug of slugs)
 
 // Article referential checks.
 for (const a of articles) {
+  for (const key of [
+    "slug",
+    "title",
+    "summary",
+    "category",
+    "level",
+    "readingTime",
+    "updatedAt",
+    "accent",
+    "fact",
+  ]) {
+    if (typeof a[key] !== "string" || !a[key].trim()) {
+      err(`article "${a.slug || "unknown"}" is missing required "${key}"`);
+    }
+  }
   if (!categoryNames.has(a.category))
     err(`article "${a.slug}" uses unknown category "${a.category}"`);
   if (!validAccents.has(a.accent))
