@@ -6786,6 +6786,7 @@ export const articlesByLocale: Record<string, Article[]> = {
   {
     "slug": "honey-pulped-natural-processing",
     "title": "허니·펄프드 내추럴: 점액 보존이 만드는 신뢰성 있는 처리",
+    "summary": "점액질을 얼마나 남기고 어떻게 건조하느냐에 따라 허니·펄프드 내추럴의 균일성과 결점 위험이 어떻게 달라지는지 공정 변수 중심으로 설명합니다.",
     "category": "산지와 생두",
     "level": "중급",
     "readingTime": "11분",
@@ -14957,6 +14958,7 @@ export const articlesByLocale: Record<string, Article[]> = {
   {
     "slug": "honey-pulped-natural-processing",
     "title": "허니·펄프드 내추럴: 점액 보존이 만드는 신뢰성 있는 처리",
+    "summary": "점액질을 얼마나 남기고 어떻게 건조하느냐에 따라 허니·펄프드 내추럴의 균일성과 결점 위험이 어떻게 달라지는지 공정 변수 중심으로 설명합니다.",
     "category": "산지와 생두",
     "level": "중급",
     "readingTime": "11분",
