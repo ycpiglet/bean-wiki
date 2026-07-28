@@ -19,20 +19,15 @@
   --coffee-leaf: #4f6b3d;
   --matcha: #738846;
   --lemongrass: #a9b96d;
-  --lemon: #d3b62f;
   --hibiscus: #9f3e5a;
-  --cascara-rose: #d1a09a;
+  --strawberry-jam: #b6534f;
   --spent-puck: #654638;
   --pitcher-silver: #b5b9b5;
-  --counter-greige: #aaa394;
-  --pearl-sugar: #f7f5ee;
-  --pastry-cream: #e9cc86;
+  --bread-flour: #efe8d8;
+  --bakers-yeast: #b8a178;
   --butter-block: #ebc86a;
-  --pistachio-frangipane: #8c9455;
-  --raspberry-couverture: #c84f6b;
-  --brioche-gold: #c8862d;
-  --beurre-noisette: #aa6f32;
-  --dutch-cocoa: #7a342c;
+  --focaccia-oil: #b29a3f;
+  --cacao: #7a342c;
   --canele-crust: #4a251b;
 
   /* Coffee lifecycle palette — the brand identity. From cherry to cup:
@@ -43,18 +38,22 @@
   --parchment: #e3d4b4;
   --honey: #c8a24c;
   --yellow-bourbon: #c79b35;
-  --pink-bourbon: #b76e79;
+  --kenya-aa: #7e855a;
   --wet-hulled: #5f796c;
   --geisha-silver: #a7aa91;
   --monsooned-gold: #c3a66a;
-  --peaberry-olive: #7e855a;
-  --decaf-green: #a39383;
+  --coffee-chaff: #a39383;
   --roast-light: #a26a42;
+  --roast-city: #8f5d3b;
   --roast-medium: #7c5233;
   --roast-dark: #4e3524;
   --espresso: #2b1d13;
+  --brew-amber: #b47a3b;
   --crema: #c99b5f;
   --foam: #f6efe3;
+  --iced-latte: #d8c7af;
+  --cold-brew: #3b2b2a;
+  --affogato: #d6b88b;
   /* Primary UI accent = roasted bean (medium roast). */
   --brand: var(--roast-medium);
   --brand-strong: var(--roast-dark);
@@ -79,20 +78,15 @@
   --coffee-leaf: #7fa06a;
   --matcha: #a0b56f;
   --lemongrass: #c8d58f;
-  --lemon: #e7d162;
   --hibiscus: #cf728c;
-  --cascara-rose: #e5bcb6;
+  --strawberry-jam: #d57d76;
   --spent-puck: #a07868;
   --pitcher-silver: #d3d6d1;
-  --counter-greige: #c9c2b5;
-  --pearl-sugar: #eeeae0;
-  --pastry-cream: #f0dca6;
+  --bread-flour: #e6ddca;
+  --bakers-yeast: #d0bb91;
   --butter-block: #f1d98c;
-  --pistachio-frangipane: #b3ba7b;
-  --raspberry-couverture: #e37d91;
-  --brioche-gold: #e1a55a;
-  --beurre-noisette: #ce965b;
-  --dutch-cocoa: #ad5b50;
+  --focaccia-oil: #cdb45f;
+  --cacao: #ad5b50;
   --canele-crust: #805044;
 
   /* Lifecycle palette, lightened for dark surfaces. */
@@ -102,18 +96,22 @@
   --parchment: #d9c8a6;
   --honey: #ddbf73;
   --yellow-bourbon: #ddb75e;
-  --pink-bourbon: #d69aa3;
+  --kenya-aa: #aab17d;
   --wet-hulled: #8eaa9c;
   --geisha-silver: #c4c8ad;
   --monsooned-gold: #dbc28d;
-  --peaberry-olive: #aab17d;
-  --decaf-green: #c2b5a7;
+  --coffee-chaff: #c2b5a7;
   --roast-light: #c08a5c;
+  --roast-city: #b9825a;
   --roast-medium: #c89e6f;
   --roast-dark: #8d6844;
   --espresso: #3a2a1c;
+  --brew-amber: #d19b68;
   --crema: #d9b586;
   --foam: #efe6d6;
+  --iced-latte: #e5d5bf;
+  --cold-brew: #755856;
+  --affogato: #e2c9a5;
   --brand: var(--roast-medium);
   --brand-strong: #ddb98b;
 }
@@ -1413,11 +1411,32 @@ a.figure-credit {
   margin-top: 68px;
 }
 
+.palette-group-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 18px;
+  margin-bottom: 10px;
+}
+
 .palette-group h2 {
   margin: 0 0 10px;
   font-size: clamp(26px, 3vw, 34px);
   font-weight: 680;
   letter-spacing: -0.025em;
+}
+
+.palette-group-heading h2 {
+  margin-bottom: 0;
+}
+
+.palette-group-heading span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
 }
 
 .palette-desc {
@@ -1430,7 +1449,7 @@ a.figure-credit {
 
 .palette-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   grid-auto-rows: 1fr;
   gap: 18px;
 }

@@ -5,15 +5,31 @@ import {
   existsSync,
   mkdirSync,
   mkdtempSync,
+  readFileSync,
   rmSync,
   writeFileSync,
 } from "node:fs";
 import { createServer } from "node:net";
 import { tmpdir } from "node:os";
-import { join } from "node:path";
+import { dirname, join } from "node:path";
+import { fileURLToPath } from "node:url";
+import { retiredPaletteTerms } from "./lib/brand-colors.mjs";
 
 const targetUrl = process.argv[2] ?? "http://127.0.0.1:3100/design/colors";
 const artifactDir = process.env.PALETTE_ARTIFACT_DIR ?? join(tmpdir(), "bean-wiki-palette");
+const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+const palette = JSON.parse(
+  readFileSync(join(root, "src", "design", "brand-colors.json"), "utf8"),
+);
+const expectedSwatches = palette.groups.flatMap((group) => group.swatches);
+const expectedCount = expectedSwatches.length;
+const expectedFirstHex = expectedSwatches[0]?.hex;
+const expectedNames = new Map(
+  expectedSwatches.map((swatch) => [swatch.id, swatch.brandName]),
+);
+const expectedGroups = new Map(
+  palette.groups.map((group) => [group.id, group.swatches.length]),
+);
 const chromeCandidates = [
   process.env.CHROME_BIN,
   "/usr/bin/google-chrome",
@@ -143,6 +159,61 @@ function assert(condition, message) {
   if (!condition) assertions.push(message);
 }
 
+function assertCatalogLayout(snapshot, viewportWidth) {
+  assert(
+    !snapshot.horizontalOverflow,
+    `${viewportWidth}px viewport has horizontal page overflow`,
+  );
+  assert(
+    snapshot.cards.length === expectedCount,
+    `${viewportWidth}px: expected ${expectedCount} cards, found ${snapshot.cards.length}`,
+  );
+
+  for (const group of snapshot.groups) {
+    const expected = expectedGroups.get(group.id);
+    assert(
+      expected !== undefined,
+      `${viewportWidth}px: unexpected palette group "${group.id}"`,
+    );
+    assert(
+      group.count === expected,
+      `${viewportWidth}px: group "${group.id}" has ${group.count} cards; expected ${expected}`,
+    );
+    assert(
+      Number(group.declaredCount) === expected,
+      `${viewportWidth}px: group "${group.id}" data count drifted`,
+    );
+  }
+  assert(
+    snapshot.groups.length === expectedGroups.size,
+    `${viewportWidth}px: expected ${expectedGroups.size} groups, found ${snapshot.groups.length}`,
+  );
+
+  for (const card of snapshot.cards) {
+    const expectedName = expectedNames.get(card.id);
+    assert(
+      expectedName !== undefined,
+      `${viewportWidth}px: unexpected palette card "${card.id}"`,
+    );
+    assert(
+      card.name === expectedName,
+      `${viewportWidth}px: "${card.id}" rendered "${card.name}" instead of "${expectedName}"`,
+    );
+    assert(
+      card.lines === 1,
+      `${viewportWidth}px: "${card.id}" (${card.name}) wrapped to ${card.lines} lines`,
+    );
+    assert(
+      card.scrollWidth <= card.clientWidth + 1,
+      `${viewportWidth}px: "${card.id}" (${card.name}) overflows ${card.scrollWidth}/${card.clientWidth}px`,
+    );
+    assert(
+      card.textOverflow !== "ellipsis",
+      `${viewportWidth}px: "${card.id}" hides its name with ellipsis`,
+    );
+  }
+}
+
 const port = await getPort();
 const profileDir = mkdtempSync(join(tmpdir(), "bean-wiki-palette-chrome-"));
 mkdirSync(artifactDir, { recursive: true });
@@ -187,18 +258,45 @@ try {
   await session.call("Page.navigate", { url: targetUrl });
   await loaded;
   await wait(600);
+  await session.evaluate("document.fonts.ready.then(() => true)");
 
   const desktop = await session.evaluate(`(() => {
     const cards = [...document.querySelectorAll(".palette-card")];
     const codes = [...document.querySelectorAll(".palette-code-row code")];
     const widths = cards.map((card) => Math.round(card.getBoundingClientRect().width));
     const firstRect = cards[0]?.getBoundingClientRect();
+    const readName = (card) => {
+      const name = card.querySelector(".palette-korean-name");
+      const range = document.createRange();
+      range.selectNodeContents(name);
+      const lines = new Set(
+        [...range.getClientRects()]
+          .filter((rect) => rect.width > 0 && rect.height > 0)
+          .map((rect) => Math.round(rect.top * 10) / 10)
+      ).size;
+      const style = getComputedStyle(name);
+      return {
+        id: card.dataset.paletteId,
+        name: name.textContent.trim(),
+        lines,
+        scrollWidth: name.scrollWidth,
+        clientWidth: name.clientWidth,
+        textOverflow: style.textOverflow
+      };
+    };
     return {
       title: document.title,
       bodyLength: document.body.innerText.trim().length,
+      bodyText: document.body.innerText,
       hasOverlay: Boolean(document.querySelector("[data-nextjs-dialog], .vite-error-overlay, #webpack-dev-server-client-overlay")),
       cardCount: cards.length,
       codeCount: codes.length,
+      cards: cards.map(readName),
+      groups: [...document.querySelectorAll("[data-palette-group]")].map((group) => ({
+        id: group.dataset.paletteGroup,
+        declaredCount: group.dataset.paletteCount,
+        count: group.querySelectorAll(".palette-card").length
+      })),
       firstCode: codes[0]?.textContent,
       firstColor: getComputedStyle(document.querySelector(".palette-chip")).backgroundColor,
       pageBackground: getComputedStyle(document.body).backgroundColor,
@@ -216,11 +314,27 @@ try {
 
   assert(desktop.bodyLength > 1000, "page body is unexpectedly empty");
   assert(!desktop.hasOverlay, "framework error overlay is visible");
-  assert(desktop.cardCount === 47, `expected 47 cards, found ${desktop.cardCount}`);
-  assert(desktop.codeCount === 47, `expected 47 HEX rows, found ${desktop.codeCount}`);
-  assert(desktop.firstCode === "#A03D36", `unexpected first HEX ${desktop.firstCode}`);
+  assert(
+    desktop.cardCount === expectedCount,
+    `expected ${expectedCount} cards, found ${desktop.cardCount}`,
+  );
+  assert(
+    desktop.codeCount === expectedCount,
+    `expected ${expectedCount} HEX rows, found ${desktop.codeCount}`,
+  );
+  assert(
+    desktop.firstCode === expectedFirstHex,
+    `unexpected first HEX ${desktop.firstCode}`,
+  );
   assert(desktop.maxWidth - desktop.minWidth <= 1, "desktop card widths are not uniform");
   assert(!desktop.horizontalOverflow, "desktop page has horizontal overflow");
+  assertCatalogLayout(desktop, 1440);
+  for (const retired of retiredPaletteTerms) {
+    assert(
+      !desktop.bodyText.includes(retired),
+      `retired palette term is visible: "${retired}"`,
+    );
+  }
   const lightCardShot = await session.call("Page.captureScreenshot", {
     format: "png",
     captureBeyondViewport: true,
@@ -274,6 +388,48 @@ try {
   const desktopPath = join(artifactDir, "palette-desktop-dark.png");
   writeFileSync(desktopPath, Buffer.from(desktopShot.data, "base64"));
 
+  for (const viewportWidth of [1121, 1120, 901, 681, 680, 390, 320]) {
+    await session.call("Emulation.setDeviceMetricsOverride", {
+      width: viewportWidth,
+      height: 900,
+      deviceScaleFactor: 1,
+      mobile: viewportWidth <= 390,
+    });
+    await wait(120);
+    const snapshot = await session.evaluate(`(async () => {
+      await document.fonts.ready;
+      const cards = [...document.querySelectorAll(".palette-card")].map((card) => {
+        const name = card.querySelector(".palette-korean-name");
+        const range = document.createRange();
+        range.selectNodeContents(name);
+        const lines = new Set(
+          [...range.getClientRects()]
+            .filter((rect) => rect.width > 0 && rect.height > 0)
+            .map((rect) => Math.round(rect.top * 10) / 10)
+        ).size;
+        const style = getComputedStyle(name);
+        return {
+          id: card.dataset.paletteId,
+          name: name.textContent.trim(),
+          lines,
+          scrollWidth: name.scrollWidth,
+          clientWidth: name.clientWidth,
+          textOverflow: style.textOverflow
+        };
+      });
+      return {
+        cards,
+        groups: [...document.querySelectorAll("[data-palette-group]")].map((group) => ({
+          id: group.dataset.paletteGroup,
+          declaredCount: group.dataset.paletteCount,
+          count: group.querySelectorAll(".palette-card").length
+        })),
+        horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth
+      };
+    })()`);
+    assertCatalogLayout(snapshot, viewportWidth);
+  }
+
   await session.call("Emulation.setDeviceMetricsOverride", {
     width: 390,
     height: 844,
@@ -326,7 +482,7 @@ try {
     process.exitCode = 1;
   } else {
     console.log(
-      `✓ palette browser check: 47 cards, fixed theme swatches, copy feedback, desktop/mobile layout`,
+      `✓ palette browser check: ${expectedCount} cards, fixed theme swatches, one-line names, copy feedback, responsive layout`,
     );
     console.log(`  - ${desktopPath}`);
     console.log(`  - ${lightCardPath}`);

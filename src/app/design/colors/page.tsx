@@ -42,28 +42,36 @@ export default function ColorGuide() {
         <header className="wiki-title">
           <h1>Bean Wiki 브랜드 컬러</h1>
           <p>
-            Bean Wiki의 색은 팔레트보다 먼저 장면에서 시작됩니다. 수확
-            바구니의 체리, 아직 열을 만나지 않은 생두, 첫 크랙 직후의
-            캐러멜 향, 65°C의 벨벳 밀크와 카페 쇼케이스의 페이스트리까지.
-            이름을 읽는 것만으로도 한 잔의 온도와 향이 떠오르도록
-            골랐습니다.
+            Bean Wiki의 색은 팔레트보다 먼저 장면에서 시작됩니다. 익숙한
+            산지의 생두, 첫 크랙을 지나는 로스트, 93°C 브루잉과 65°C의
+            벨벳 밀크, 빵집의 기본 재료와 카페 바의 도구까지. 이름을 읽는
+            것만으로도 한 잔의 온도와 향이 떠오르도록 골랐습니다.
           </p>
         </header>
 
         <div className="palette-note">
-          <span>HOW THE COLORS FLOW</span>
+          <span>SHORT NAME, CLEAR SCENE</span>
           <p>
-            기본 순서는 색상 코드순이 아니라 커피에서 카페로 이어지는 소재의
-            흐름입니다. 같은 그룹에서는 밝고 깨끗한 색에서 채도가 높은 색,
-            깊게 구워진 색으로 이동합니다. HEX 문자열은 색의 가까움을
-            나타내지 않기 때문에, 내부 검증은 사람의 지각에 가까운 OKLCH
-            밝기와 색상군을 사용합니다.
+            한국어 이름은 한 줄에서 바로 읽히도록 12자를 목표로 줄이고,
+            정확한 색상 맥락은 영문명과 이야기로 보완합니다. 각 파트는
+            여섯 색을 기본으로 하며, HEX 문자열순이 아니라 원두에서 잔과
+            카페로 이어지는 장면의 순서로 읽습니다. 산지명은 공식 고유색을
+            뜻하지 않으며, 모든 HEX는 출처를 바탕으로 만든 브랜드
+            근사값입니다.
           </p>
         </div>
 
         {brandPalette.groups.map((group) => (
-          <section key={group.id} className="palette-group">
-            <h2>{group.title}</h2>
+          <section
+            key={group.id}
+            className="palette-group"
+            data-palette-group={group.id}
+            data-palette-count={group.swatches.length}
+          >
+            <div className="palette-group-heading">
+              <h2>{group.title}</h2>
+              <span>{group.swatches.length} COLORS</span>
+            </div>
             <p className="palette-desc">{group.description}</p>
             <div className="palette-grid">
               {group.swatches.map((swatch) => (

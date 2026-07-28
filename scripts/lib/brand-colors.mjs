@@ -11,6 +11,37 @@ export const retiredPaletteTerms = [
   "쿠키 앤 크림 그레이",
   "Espresso Macchiato Black",
   "에스프레소 마키아토 블랙",
+  "Cascara Infusion Rose",
+  "카스카라 인퓨전 로즈",
+  "Swedish Pearl Sugar White",
+  "스웨디시 펄 슈거 화이트",
+  "Lemon Peel Yellow",
+  "레몬 필 옐로",
+  "Spent Espresso Puck Umber",
+  "스펜트 에스프레소 퍽 엄버",
+  "Ceremonial Matcha Green",
+  "세리머니얼 말차 그린",
+  "Sourdough Open Crumb Ivory",
+  "사워도우 오픈 크럼 아이보리",
+  "Black Sesame Frangipane Gray",
+  "블랙 세서미 프랑지판 그레이",
+  "Coffee Farm Mist Sage",
+  "커피 팜 미스트 세이지",
+  "Washed Tank Blue",
+  "워시드 탱크 블루",
+];
+
+export const retiredPaletteIds = [
+  "cascara-infusion-rose",
+  "swedish-pearl-sugar-white",
+  "lemon-peel-yellow",
+  "spent-espresso-puck-umber",
+  "ceremonial-matcha-green",
+  "sourdough-open-crumb-ivory",
+  "black-sesame-frangipane-gray",
+  "coffee-farm-mist-sage",
+  "washed-tank-blue",
+  "concrete-counter-greige",
 ];
 
 export function parseThemeTokens(css) {
@@ -81,6 +112,8 @@ function addUniqueError(seen, errors, label, value) {
 export function validateBrandColors(palette, themes) {
   const errors = [];
   const warnings = [];
+  const groupIds = new Set();
+  const groupTitles = new Set();
   const ids = new Set();
   const tokens = new Set();
   const brandNames = new Set();
@@ -94,6 +127,74 @@ export function validateBrandColors(palette, themes) {
   }
   if (!palette.disclaimer?.trim()) errors.push("palette disclaimer is missing");
   if (!swatches.length) errors.push("palette has no swatches");
+
+  const namingPolicy = palette.namingPolicy ?? {};
+  for (const key of [
+    "targetKoreanCharacters",
+    "hardMaxKoreanCharacters",
+    "preferredGroupSize",
+    "minimumGroupSize",
+    "maximumGroupSize",
+  ]) {
+    if (!Number.isInteger(namingPolicy[key]) || namingPolicy[key] < 1) {
+      errors.push(`namingPolicy.${key} must be a positive integer`);
+    }
+  }
+  if (
+    namingPolicy.targetKoreanCharacters >
+    namingPolicy.hardMaxKoreanCharacters
+  ) {
+    errors.push(
+      "namingPolicy.targetKoreanCharacters must not exceed hardMaxKoreanCharacters",
+    );
+  }
+  if (
+    namingPolicy.minimumGroupSize > namingPolicy.preferredGroupSize ||
+    namingPolicy.preferredGroupSize > namingPolicy.maximumGroupSize
+  ) {
+    errors.push(
+      "namingPolicy group sizes must satisfy minimum ≤ preferred ≤ maximum",
+    );
+  }
+
+  for (const group of palette.groups ?? []) {
+    const prefix = group.id || group.title || "unknown group";
+    addUniqueError(groupIds, errors, "group id", group.id);
+    addUniqueError(groupTitles, errors, "group title", group.title);
+    for (const field of ["id", "title", "description"]) {
+      if (typeof group[field] !== "string" || !group[field].trim()) {
+        errors.push(`${prefix}: missing group "${field}"`);
+      }
+    }
+    if (!Array.isArray(group.swatches)) {
+      errors.push(`${prefix}: swatches must be an array`);
+      continue;
+    }
+    if (
+      Number.isInteger(namingPolicy.minimumGroupSize) &&
+      group.swatches.length < namingPolicy.minimumGroupSize
+    ) {
+      errors.push(
+        `${prefix}: ${group.swatches.length} swatches is below the minimum ${namingPolicy.minimumGroupSize}`,
+      );
+    }
+    if (
+      Number.isInteger(namingPolicy.maximumGroupSize) &&
+      group.swatches.length > namingPolicy.maximumGroupSize
+    ) {
+      errors.push(
+        `${prefix}: ${group.swatches.length} swatches exceeds the maximum ${namingPolicy.maximumGroupSize}`,
+      );
+    }
+    if (
+      Number.isInteger(namingPolicy.preferredGroupSize) &&
+      group.swatches.length !== namingPolicy.preferredGroupSize
+    ) {
+      warnings.push(
+        `${prefix}: ${group.swatches.length} swatches differs from preferred ${namingPolicy.preferredGroupSize}`,
+      );
+    }
+  }
 
   for (const [id, source] of Object.entries(palette.sources ?? {})) {
     if (!source.label?.trim()) errors.push(`source "${id}" is missing a label`);
@@ -136,6 +237,31 @@ export function validateBrandColors(palette, themes) {
     }
     if (/[\u3131-\uD79D]/.test(swatch.englishName ?? "")) {
       errors.push(`${prefix}: English name contains Hangul`);
+    }
+    if (retiredPaletteIds.includes(swatch.id)) {
+      errors.push(`retired palette id remains: "${swatch.id}"`);
+    }
+    if (
+      swatch.brandName !== swatch.brandName?.trim() ||
+      /[\n\r\t]|\s{2,}/.test(swatch.brandName ?? "")
+    ) {
+      errors.push(`${prefix}: Korean brand name has invalid whitespace`);
+    }
+    const displayCharacters = Array.from(swatch.brandName ?? "").length;
+    if (
+      Number.isInteger(namingPolicy.hardMaxKoreanCharacters) &&
+      displayCharacters > namingPolicy.hardMaxKoreanCharacters
+    ) {
+      errors.push(
+        `${prefix}: Korean brand name has ${displayCharacters} characters; hard maximum is ${namingPolicy.hardMaxKoreanCharacters}`,
+      );
+    } else if (
+      Number.isInteger(namingPolicy.targetKoreanCharacters) &&
+      displayCharacters > namingPolicy.targetKoreanCharacters
+    ) {
+      warnings.push(
+        `${prefix}: Korean brand name has ${displayCharacters} characters; target is ${namingPolicy.targetKoreanCharacters}`,
+      );
     }
 
     const lightValue = themes.light.get(swatch.token);
@@ -242,11 +368,17 @@ export function validateBrandColors(palette, themes) {
     }
   };
   assertLighter("coffee-blossom-white", "white-paper-filter");
-  assertLighter("white-paper-filter", "sourdough-open-crumb-ivory");
-  assertLighter("swedish-pearl-sugar-white", "sourdough-open-crumb-ivory");
-  assertLighter("first-crack-caramel", "brown-sugar-roast");
-  assertLighter("brown-sugar-roast", "dark-chocolate-crack");
-  assertLighter("dark-chocolate-crack", "vanilla-bean-black");
+  assertLighter("white-paper-filter", "bread-flour-white");
+  assertLighter("bread-flour-white", "sourdough-ivory");
+  assertLighter("first-crack-caramel", "light-roast-brown");
+  assertLighter("light-roast-brown", "medium-roast-brown");
+  assertLighter("medium-roast-brown", "dark-roast-brown");
+  assertLighter("dark-roast-brown", "vanilla-bean-black");
+  assertLighter("velvet-milk-65", "iced-latte-beige");
+  assertLighter("iced-latte-beige", "affogato-cream");
+  assertLighter("affogato-cream", "espresso-crema-gold");
+  assertLighter("espresso-crema-gold", "brewing-93-amber");
+  assertLighter("brewing-93-amber", "cold-brew-brown");
 
   for (let index = 0; index < swatches.length; index += 1) {
     const left = swatches[index];

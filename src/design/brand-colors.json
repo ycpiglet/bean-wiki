@@ -1,6 +1,13 @@
 {
-  "version": 1,
-  "disclaimer": "표시된 HEX는 실제 재료의 공식 표준색이 아니라, 출처의 재료·공정 설명을 바탕으로 정한 Bean Wiki의 브랜드 기준색입니다. 실제 색은 조명, 수분, 로트와 제조 조건에 따라 달라질 수 있습니다.",
+  "version": 2,
+  "disclaimer": "표시된 HEX는 산지나 재료의 공식 표준색이 아니라, 출처에서 확인한 원두·공정·메뉴·도구의 장면을 바탕으로 정한 Bean Wiki의 브랜드 기준색입니다. 실제 색은 품종, 로트, 수분, 조명과 제조 조건에 따라 달라질 수 있습니다.",
+  "namingPolicy": {
+    "targetKoreanCharacters": 12,
+    "hardMaxKoreanCharacters": 14,
+    "preferredGroupSize": 6,
+    "minimumGroupSize": 5,
+    "maximumGroupSize": 7
+  },
   "sources": {
     "sca-color": {
       "label": "Specialty Coffee Association — What Color Is Your Coffee?",
@@ -22,9 +29,33 @@
       "label": "Specialty Coffee Association — Coffee Taster’s Flavor Wheel",
       "url": "https://sca.coffee/sca-news/how-to-use-the-flavor-wheel-in-eight-steps-ab2hy"
     },
+    "sca-brew-temperature": {
+      "label": "Specialty Coffee Association — Certified Home Brewer Requirements",
+      "url": "https://sca.coffee/s/2017-SCA-CHB-Program-Requirements-ba6g.pdf"
+    },
+    "sca-espresso": {
+      "label": "Specialty Coffee Association — Defining Espresso",
+      "url": "https://sca.coffee/sca-news/25-magazine/issue-3/defining-ever-changing-espresso-25-magazine-issue-3-zyx36"
+    },
     "cirad-coffee": {
       "label": "CIRAD — Coffee plant and uses",
       "url": "https://www.cirad.fr/en/our-activities-our-impact/tropical-value-chains/coffee/plant-and-uses"
+    },
+    "ethiopian-coffee-association": {
+      "label": "Ethiopian Coffee Association — Yirgacheffe coffee",
+      "url": "https://www.ethiopiancoffeeassociation.org/"
+    },
+    "afa-kenya-aa": {
+      "label": "Kenya Agriculture and Food Authority — Coffee grading",
+      "url": "https://www.afa.go.ke/download/3279/?tmstv=1749557135"
+    },
+    "indonesia-wet-hulled": {
+      "label": "Ministry of Foreign Affairs of Indonesia — Coffee: A Cup of Greatness",
+      "url": "https://kemlu.go.id/files/repositori/72883/Kopi%20-%20A%20Cup%20of%20Greatness.pdf"
+    },
+    "wcr-geisha": {
+      "label": "World Coffee Research — Geisha (Panama)",
+      "url": "https://varieties.worldcoffeeresearch.org/varieties/geisha-panama"
     },
     "wcr-bourbon": {
       "label": "World Coffee Research — Bourbon",
@@ -34,73 +65,57 @@
       "label": "Embrapa Café — Catálogo de cultivares de café arábica",
       "url": "https://www.infoteca.cnptia.embrapa.br/infoteca/bitstream/doc/1145722/1/v18-09-09-22-Embrapa-Cafe-Documentos-16.pdf"
     },
-    "cafe-imports-pink-bourbon": {
-      "label": "Cafe Imports — Pink Bourbon genetics and field name",
-      "url": "https://www.cafeimports.com/north-america/blog/2023/09/26/pink-bourbon-cryptozoology-and-genetics-in-specialty-coffee/"
-    },
-    "indonesia-wet-hulled": {
-      "label": "Ministry of Foreign Affairs of Indonesia — Coffee: A Cup of Greatness",
-      "url": "https://kemlu.go.id/files/repositori/72883/Kopi%20-%20A%20Cup%20of%20Greatness.pdf"
-    },
     "coffee-board-india": {
-      "label": "Coffee Board of India — Coffee regions and specialty coffees",
+      "label": "Coffee Board of India — Monsooned Malabar",
       "url": "https://coffeeboard.gov.in/coffee-regions-india.html"
     },
-    "icafe-honey": {
-      "label": "ICAFE Costa Rica — Honey processing practices",
-      "url": "https://www.icafe.cr/buenas-practicas/"
+    "la-marzocco-milk": {
+      "label": "La Marzocco — Milk steaming temperature",
+      "url": "https://www.lamarzocco.com/de/de/milch-richtig-aufschaeumen/"
     },
-    "ico-cascara": {
-      "label": "International Coffee Organization — Coffee Development Report",
-      "url": "https://www.ico.org/documents/cy2024-25/coffee-development-report-2022-23.pdf"
+    "nespresso-iced-latte": {
+      "label": "Nespresso Professional — Iced Latte",
+      "url": "https://www.nespresso.com/pro/kr/en/story/iced-latte"
     },
-    "wcr-brand": {
-      "label": "World Coffee Research — Brand Guidelines",
-      "url": "https://worldcoffeeresearch.org/download/37e40441-40fa-4a99-84e6-9ab5b044095b"
+    "toddy-cold-brew": {
+      "label": "Toddy — Commercial Cold Brew System instructions",
+      "url": "https://www.toddycafe.com/downloads/toddy_commercial_model_instuctions.pdf"
+    },
+    "nespresso-affogato": {
+      "label": "Nespresso — Affogato recipe",
+      "url": "https://www.nespresso.com/us/en/coffee-recipes/details/affogato"
     },
     "hario-filters": {
       "label": "Hario — Coffee Catalog",
       "url": "https://global.hario.com/pdf2016/2016COFFEEcatalog.pdf"
     },
-    "nespresso-milk": {
-      "label": "Nespresso Professional — Momento Milk Recipe Book",
-      "url": "https://www.nespresso.com/ecom/medias/sys_master/public/14182635175966/Nespresso-Professional-Momento-Milk-Recipe-Book.pdf"
-    },
     "spent-grounds-study": {
-      "label": "Scientific study — color measurements of spent coffee grounds",
+      "label": "Scientific study — Color measurements of spent coffee grounds",
       "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC13027593/"
-    },
-    "kingarthur-sugar": {
-      "label": "King Arthur Baking — Guide to sugars",
-      "url": "https://www.kingarthurbaking.com/blog/2023/03/21/a-guide-to-different-types-of-sugars-how-to-use-them-and-when-to-substitute"
     },
     "kingarthur-sourdough": {
       "label": "King Arthur Baking — Open crumb sourdough",
       "url": "https://www.kingarthurbaking.com/blog/2020/11/05/how-to-produce-an-open-crumb-in-sourdough-bread"
     },
+    "kingarthur-black-sesame": {
+      "label": "King Arthur Baking — Black sesame frangipane",
+      "url": "https://www.kingarthurbaking.com/blog/2025/06/09/go-nuts-and-beyond-with-frangipane"
+    },
+    "kingarthur-bread-flour": {
+      "label": "King Arthur Baking — What is bread flour?",
+      "url": "https://www.kingarthurbaking.com/blog/2025/03/05/what-is-bread-flour"
+    },
+    "kingarthur-yeast": {
+      "label": "King Arthur Baking — Guide to baking with yeast",
+      "url": "https://www.kingarthurbaking.com/blog/2023/05/10/guide-to-baking-with-yeast"
+    },
     "kingarthur-croissant": {
       "label": "King Arthur Baking — Croissant lamination",
       "url": "https://www.kingarthurbaking.com/blog/2018/11/26/how-to-make-croissants"
     },
-    "kingarthur-pastry-cream": {
-      "label": "King Arthur Baking — Crème pâtissière",
-      "url": "https://www.kingarthurbaking.com/recipes/pastry-cream-creme-patissiere-recipe"
-    },
-    "kingarthur-frangipane": {
-      "label": "King Arthur Baking — Frangipane",
-      "url": "https://www.kingarthurbaking.com/blog/2023/08/21/what-is-frangipane"
-    },
-    "valrhona-raspberry": {
-      "label": "Valrhona — Raspberry Inspiration couverture",
-      "url": "https://www.valrhona.com/en/our-products/for-professionals/chocolate-co/pioneer-range/inspiration-range/raspberry-inspiration"
-    },
-    "kingarthur-brioche": {
-      "label": "King Arthur Baking — Classic brioche",
-      "url": "https://www.kingarthurbaking.com/recipes/classic-brioche-recipe"
-    },
-    "kingarthur-brown-butter": {
-      "label": "King Arthur Baking — Brown butter",
-      "url": "https://www.kingarthurbaking.com/blog/2020/01/08/brown-butter"
+    "kingarthur-focaccia": {
+      "label": "King Arthur Baking — Herb & Olive Oil Focaccia",
+      "url": "https://www.kingarthurbaking.com/recipes/herb-olive-oil-focaccia-recipe"
     },
     "valrhona-cocoa": {
       "label": "Valrhona — Cocoa powder",
@@ -110,9 +125,9 @@
       "label": "Institute of Culinary Education — Canelé",
       "url": "https://www.ice.edu/blog/how-to-make-canele"
     },
-    "kingarthur-black-sesame": {
-      "label": "King Arthur Baking — Black sesame frangipane",
-      "url": "https://www.kingarthurbaking.com/blog/2025/06/09/go-nuts-and-beyond-with-frangipane"
+    "maff-uji-matcha": {
+      "label": "Japan Ministry of Agriculture, Forestry and Fisheries — Uji Tea",
+      "url": "https://www.maff.go.jp/e/policies/market/dento_syoku/menu/uzi_tea.html"
     },
     "turkiye-coffee": {
       "label": "Republic of Türkiye Ministry of Culture — Turkish coffee culture",
@@ -121,157 +136,79 @@
   },
   "groups": [
     {
-      "id": "coffee-materials",
-      "title": "원두가 가진 색",
-      "description": "열매의 익음에서 가공과 생두의 표면까지. 실제 품종·공정·부산물에서 관찰되는 색의 흐름을 밝은 톤에서 깊은 톤으로 묶었습니다.",
+      "id": "coffee-origins",
+      "title": "원두가 온 곳",
+      "description": "카페 메뉴판에서 자주 만나는 산지·등급·품종을 여섯 장면으로 추렸습니다. 이름은 익숙한 출발점이고, 색은 각 산지의 공식색이 아니라 생두와 체리에서 관찰한 Bean Wiki의 브랜드 근사값입니다.",
       "swatches": [
         {
-          "id": "coffee-cherry-ruby-red",
-          "brandName": "커피체리 루비 레드",
-          "englishName": "Coffee Cherry Ruby Red",
-          "token": "--cherry",
-          "hex": "#A03D36",
-          "darkHex": "#CD7A6E",
-          "family": "red",
-          "relation": "coffee-plant",
-          "material": "ripe coffee cherry",
-          "evidence": ["cirad-coffee"],
-          "story": "수확 바구니에서 가장 잘 익은 체리만 골라냈을 때 만나는 또렷한 루비 레드입니다. 새콤달콤한 과즙이 금방이라도 터질 듯 생동감이 있습니다."
-        },
-        {
-          "id": "yellow-bourbon-cherry-gold",
-          "brandName": "옐로 버번 체리 골드",
-          "englishName": "Yellow Bourbon Cherry Gold",
-          "token": "--yellow-bourbon",
-          "hex": "#C79B35",
-          "darkHex": "#DDB75E",
-          "family": "gold",
-          "relation": "coffee-plant",
-          "material": "yellow Bourbon field selection",
-          "evidence": ["embrapa-yellow-bourbon", "wcr-bourbon"],
-          "story": "햇살 아래 노랗게 익은 옐로 버번 체리에서 가져온 골든 옐로입니다. 작은 열매 한 알에 오후의 햇빛을 고이 담은 듯 밝게 웃습니다."
-        },
-        {
-          "id": "pink-bourbon-cherry-coral",
-          "brandName": "핑크 버번 체리 코랄",
-          "englishName": "Pink Bourbon Cherry Coral",
-          "token": "--pink-bourbon",
-          "hex": "#B76E79",
-          "darkHex": "#D69AA3",
-          "family": "pink",
-          "relation": "coffee-plant",
-          "material": "Pink Bourbon field name",
-          "evidence": ["cafe-imports-pink-bourbon"],
-          "story": "농가와 스페셜티 시장에서 핑크 버번이라 부르는 체리의 살몬빛에서 가져왔습니다. 진지한 커핑 테이블에도 가벼운 설렘을 놓아주는 코랄입니다."
-        },
-        {
-          "id": "cascara-husk-burgundy",
-          "brandName": "카스카라 허스크 버건디",
-          "englishName": "Cascara Husk Burgundy",
-          "token": "--cherry-deep",
-          "hex": "#712A28",
-          "darkHex": "#A75950",
-          "family": "burgundy",
-          "relation": "processing",
-          "material": "dried coffee cherry husk",
-          "evidence": ["ico-cascara"],
-          "story": "커피 체리의 껍질과 과육이 햇빛과 시간을 지나 카스카라로 마를 때 깊어지는 버건디입니다. 달콤한 과실과 긴 건조의 시간을 함께 담았습니다."
-        },
-        {
-          "id": "washed-green-bean-olive",
-          "brandName": "워시드 그린빈 올리브",
-          "englishName": "Washed Green Bean Olive",
+          "id": "ethiopia-yirgacheffe-green",
+          "brandName": "에티오피아 예가체프",
+          "englishName": "Ethiopia Yirgacheffe Green",
           "token": "--green-bean",
           "hex": "#7D8F69",
           "darkHex": "#9DB184",
           "family": "olive",
           "relation": "green-coffee",
-          "material": "washed green coffee",
-          "evidence": ["sca-cva", "sca-color"],
-          "story": "워시드 생두를 그레이딩 매트 위에 펼쳤을 때 보이는 푸른 기의 연한 올리브입니다. 아직 열을 만나지 않은 향의 가능성을 닮았습니다."
+          "material": "washed Yirgacheffe green coffee",
+          "evidence": ["ethiopian-coffee-association", "sca-cva"],
+          "story": "예가체프라는 익숙한 산지명 아래 워시드 생두를 펼쳤을 때 보이는 연한 올리브를 담았습니다. 꽃향을 기다리는 로스팅 전의 차분한 순간입니다."
         },
         {
-          "id": "sumatra-wet-hulled-blue-green",
-          "brandName": "수마트라 웻헐 블루그린",
-          "englishName": "Sumatra Wet-Hulled Blue Green",
+          "id": "kenya-aa-olive",
+          "brandName": "케냐 AA",
+          "englishName": "Kenya AA Olive",
+          "token": "--kenya-aa",
+          "hex": "#7E855A",
+          "darkHex": "#AAB17D",
+          "family": "olive",
+          "relation": "green-coffee",
+          "material": "Kenyan AA green coffee",
+          "evidence": ["afa-kenya-aa", "sca-cva"],
+          "story": "케냐의 건식 밀링에서 크기와 밀도로 선별되는 AA 생두를 그레이딩 테이블에 펼친 장면입니다. 등급 자체가 색을 뜻하지는 않으며, 단단한 올리브 톤으로 기억했습니다."
+        },
+        {
+          "id": "indonesia-mandheling-blue-green",
+          "brandName": "인도네시아 만델링",
+          "englishName": "Indonesia Mandheling Blue Green",
           "token": "--wet-hulled",
           "hex": "#5F796C",
           "darkHex": "#8EAA9C",
           "family": "teal",
           "relation": "processing",
-          "material": "wet-hulled green coffee",
+          "material": "wet-hulled Indonesian green coffee",
           "evidence": ["indonesia-wet-hulled"],
-          "story": "인도네시아의 웻헐 공정을 지난 생두에 실제로 나타나는 짙은 그린과 블루 사이의 색입니다. 촉촉한 가공장의 공기까지 은근히 겹칩니다."
+          "story": "인도네시아의 습식 탈곡 생두에서 자주 만나는 짙은 그린과 블루 사이의 색입니다. 만델링 한 봉지를 열었을 때의 촉촉하고 묵직한 첫인상을 담았습니다."
         },
         {
-          "id": "silver-green-bean",
-          "brandName": "실버그린 그린빈",
-          "englishName": "Silver-Green Bean",
+          "id": "panama-geisha-silver",
+          "brandName": "파나마 게이샤",
+          "englishName": "Panama Geisha Silver Green",
           "token": "--geisha-silver",
           "hex": "#A7AA91",
           "darkHex": "#C4C8AD",
           "family": "sage",
           "relation": "green-coffee",
-          "material": "silver-green coffee surface",
-          "evidence": ["sca-cva", "sca-color"],
-          "story": "그레이딩 테이블 위에 선별한 생두를 펼치면 은빛과 연두가 얇게 포개져 보입니다. 화려하게 말하기보다 조용히 향을 예고하는 톤입니다."
+          "material": "Panamanian Geisha green coffee",
+          "evidence": ["wcr-geisha", "sca-color"],
+          "story": "파나마에서 이름을 알린 게이샤를 떠올리며, 선별한 생두 표면의 은빛과 연두가 얇게 포개진 순간을 골랐습니다. 품종의 공식색이 아닌 조용한 브랜드 장면입니다."
         },
         {
-          "id": "peaberry-olive",
-          "brandName": "피베리 올리브",
-          "englishName": "Peaberry Olive",
-          "token": "--peaberry-olive",
-          "hex": "#7E855A",
-          "darkHex": "#AAB17D",
-          "family": "olive",
-          "relation": "green-coffee",
-          "material": "peaberry green coffee",
-          "evidence": ["sca-cva"],
-          "story": "납작한 두 알 대신 동그랗게 여문 피베리를 손끝에서 데구르르 굴릴 때 보이는 단단한 올리브입니다. 작고 둥근 형태만큼 이름도 경쾌합니다."
-        },
-        {
-          "id": "coffee-chaff-taupe",
-          "brandName": "커피 채프 토프",
-          "englishName": "Coffee Chaff Taupe",
-          "token": "--decaf-green",
-          "hex": "#A39383",
-          "darkHex": "#C2B5A7",
-          "family": "taupe",
-          "relation": "roasting",
-          "material": "coffee chaff",
-          "evidence": ["wcr-brand"],
-          "story": "로스팅 중 원두에서 가볍게 벗겨져 채프 컬렉터에 모이는 실버스킨의 따뜻한 토프입니다. 로스터에게는 매일 마주치는 작고 가벼운 부산물입니다."
-        },
-        {
-          "id": "dry-parchment-beige",
-          "brandName": "드라이 파치먼트 베이지",
-          "englishName": "Dry Parchment Beige",
-          "token": "--parchment",
-          "hex": "#E3D4B4",
-          "darkHex": "#D9C8A6",
-          "family": "beige",
-          "relation": "processing",
-          "material": "dried coffee parchment",
-          "evidence": ["sca-cva"],
-          "story": "건조대 위에서 수분을 덜어낸 파치먼트의 담백한 베이지입니다. 손끝에 바스락거리는 얇은 껍질과 고요한 오후를 떠올립니다."
-        },
-        {
-          "id": "yellow-honey-parchment",
-          "brandName": "옐로 허니 파치먼트",
-          "englishName": "Yellow Honey Parchment",
-          "token": "--honey",
-          "hex": "#C8A24C",
-          "darkHex": "#DDBF73",
+          "id": "brazil-yellow-bourbon-gold",
+          "brandName": "브라질 옐로 버번",
+          "englishName": "Brazil Yellow Bourbon Gold",
+          "token": "--yellow-bourbon",
+          "hex": "#C79B35",
+          "darkHex": "#DDB75E",
           "family": "gold",
-          "relation": "processing",
-          "material": "yellow honey process parchment",
-          "evidence": ["icafe-honey"],
-          "story": "점액질을 남긴 파치먼트가 햇빛을 받으며 노랗게 건조되는 옐로 허니의 골드입니다. 건조대 위에 꿀 한 스푼 같은 햇살이 머뭅니다."
+          "relation": "coffee-plant",
+          "material": "ripe Yellow Bourbon coffee cherry",
+          "evidence": ["embrapa-yellow-bourbon", "wcr-bourbon"],
+          "story": "브라질 밭에서 노랗게 익은 옐로 버번 체리의 골드입니다. 이름과 실제 열매의 익은 색이 자연스럽게 만나는, 햇빛 같은 포인트 컬러입니다."
         },
         {
-          "id": "monsooned-malabar-straw-gold",
-          "brandName": "몬순드 말라바 스트로 골드",
-          "englishName": "Monsooned Malabar Straw Gold",
+          "id": "india-monsooned-malabar-gold",
+          "brandName": "인도 몬순드 말라바",
+          "englishName": "India Monsooned Malabar Gold",
           "token": "--monsooned-gold",
           "hex": "#C3A66A",
           "darkHex": "#DBC28D",
@@ -279,15 +216,28 @@
           "relation": "processing",
           "material": "Monsooned Malabar green coffee",
           "evidence": ["coffee-board-india"],
-          "story": "몬순의 습한 바람을 지나며 생두가 노란 짚빛으로 옅어지는 장면입니다. 오래된 창고 문틈으로 들어온 부드러운 햇살 같습니다."
+          "story": "인도 서해안의 습한 몬순 바람을 맞으며 부풀고 노랗게 변한 생두에서 가져온 부드러운 골드입니다. 긴 항해의 우연을 오늘의 가공으로 되살린 색입니다."
         }
       ]
     },
     {
       "id": "roasting",
       "title": "로스터가 듣는 색",
-      "description": "크랙 소리와 갈변, 초콜릿 향이 차례로 깊어지는 로스팅룸의 팔레트입니다. 로스트 색은 조명과 측정 방식에 따라 달라지는 연속값입니다.",
+      "description": "가벼운 채프에서 첫 크랙, 라이트·미디엄·다크 로스트와 가장 깊은 블랙까지. 로스터 앞에서 원두가 갈변하는 순서대로 읽습니다.",
       "swatches": [
+        {
+          "id": "coffee-chaff-taupe",
+          "brandName": "커피 채프 토프",
+          "englishName": "Coffee Chaff Taupe",
+          "token": "--coffee-chaff",
+          "hex": "#A39383",
+          "darkHex": "#C2B5A7",
+          "family": "taupe",
+          "relation": "roasting",
+          "material": "coffee chaff",
+          "evidence": ["sca-roasting"],
+          "story": "로스팅 중 원두에서 가볍게 벗겨져 채프 컬렉터에 모이는 실버스킨의 따뜻한 토프입니다. 로스터에게는 매일 만나는 작고 가벼운 부산물입니다."
+        },
         {
           "id": "first-crack-caramel",
           "brandName": "퍼스트 크랙 캐러멜",
@@ -297,14 +247,27 @@
           "darkHex": "#C08A5C",
           "family": "caramel",
           "relation": "roasting",
-          "material": "light roasted coffee",
+          "material": "coffee at first crack",
           "evidence": ["sca-color", "sca-roasting"],
-          "story": "첫 번째 크랙이 톡 터지고 로스팅룸에 구운 설탕을 닮은 향이 번지는 순간의 밝은 브라운입니다. 소리와 향이 동시에 깨어납니다."
+          "story": "첫 크랙이 톡톡 들리기 시작할 때 원두 표면에 번지는 캐러멜 브라운입니다. 향이 열리고 로스터의 집중이 가장 또렷해지는 순간입니다."
         },
         {
-          "id": "brown-sugar-roast",
-          "brandName": "브라운 슈거 로스트",
-          "englishName": "Brown Sugar Roast",
+          "id": "light-roast-brown",
+          "brandName": "라이트 로스트 브라운",
+          "englishName": "Light Roast Brown",
+          "token": "--roast-city",
+          "hex": "#8F5D3B",
+          "darkHex": "#B9825A",
+          "family": "brown",
+          "relation": "roasting",
+          "material": "light roasted coffee",
+          "evidence": ["sca-color"],
+          "story": "첫 크랙을 지난 라이트 로스트의 밝고 붉은 브라운입니다. 원산지의 향을 오래 남겨두고 싶은 로스터의 가벼운 마침표를 닮았습니다."
+        },
+        {
+          "id": "medium-roast-brown",
+          "brandName": "미디엄 로스트 브라운",
+          "englishName": "Medium Roast Brown",
           "token": "--roast-medium",
           "hex": "#7C5233",
           "darkHex": "#C89E6F",
@@ -312,20 +275,20 @@
           "relation": "roasting",
           "material": "medium roasted coffee",
           "evidence": ["sca-color"],
-          "story": "브라운 슈거처럼 편안하고 균형 잡힌 미디엄 브라운입니다. 매일 마셔도 질리지 않는 한 잔처럼 Bean Wiki의 중심을 잡습니다."
+          "story": "단맛과 고소함, 원두의 개성이 편안하게 만나는 미디엄 로스트의 브라운입니다. Bean Wiki의 중심 액센트가 되는 균형 잡힌 색입니다."
         },
         {
-          "id": "dark-chocolate-crack",
-          "brandName": "다크 초콜릿 크랙",
-          "englishName": "Dark Chocolate Crack",
+          "id": "dark-roast-brown",
+          "brandName": "다크 로스트 브라운",
+          "englishName": "Dark Roast Brown",
           "token": "--roast-dark",
           "hex": "#4E3524",
           "darkHex": "#8D6844",
           "family": "dark-brown",
           "relation": "roasting",
           "material": "dark roasted coffee",
-          "evidence": ["sca-color", "sca-roasting"],
-          "story": "열이 한 단계 깊어지며 다크 초콜릿과 토스트를 떠올리게 하는 짙은 브라운입니다. 로스트 색의 연속선에서 어두운 기준점을 맡습니다."
+          "evidence": ["sca-color"],
+          "story": "열이 더 깊이 스며든 다크 로스트의 짙은 브라운입니다. 표면의 윤기와 스모키한 향이 한 톤 안에 조용히 가라앉아 있습니다."
         },
         {
           "id": "vanilla-bean-black",
@@ -338,18 +301,31 @@
           "relation": "cafe-menu",
           "material": "split vanilla bean",
           "evidence": [],
-          "story": "카페의 페이스트리와 시럽에 쓰는 바닐라빈을 길게 갈랐을 때 보이는, 검정보다 조금 따뜻한 짙은 갈색입니다."
+          "story": "바닐라빈을 길게 갈랐을 때 드러나는 윤기 있는 씨앗의 깊은 블랙입니다. 달콤한 향을 숨긴 채 가장 어두운 로스트 옆에 자연스럽게 놓입니다."
         }
       ]
     },
     {
       "id": "cup",
       "title": "잔 위의 온도",
-      "description": "에스프레소 크레마와 벨벳 밀크처럼, 손끝과 입술에 가장 가까운 두 가지 색입니다.",
+      "description": "93°C 브루잉에서 65°C 스팀 밀크, 얼음과 긴 저온 추출, 따뜻한 에스프레소가 녹이는 디저트까지. 한 잔의 온도가 만드는 여섯 색입니다.",
       "swatches": [
         {
+          "id": "brewing-93-amber",
+          "brandName": "93° 브루잉 앰버",
+          "englishName": "93° Brewing Amber",
+          "token": "--brew-amber",
+          "hex": "#B47A3B",
+          "darkHex": "#D19B68",
+          "family": "amber",
+          "relation": "cafe-menu",
+          "material": "filter coffee brewed near 93°C",
+          "evidence": ["sca-brew-temperature"],
+          "story": "SCA 브루어 범위 안의 93°C 물이 커피층을 지나 맑은 호박빛으로 내려오는 장면입니다. 하나의 정답 온도가 아니라, 막 피어나는 브루잉의 따뜻함을 기억한 색입니다."
+        },
+        {
           "id": "espresso-crema-gold",
-          "brandName": "에스프레소 크레마 골드",
+          "brandName": "크레마 골드",
           "englishName": "Espresso Crema Gold",
           "token": "--crema",
           "hex": "#C99B5F",
@@ -357,8 +333,8 @@
           "family": "gold",
           "relation": "espresso",
           "material": "espresso crema",
-          "evidence": ["sca-campus"],
-          "story": "갓 내린 에스프레소 위, 타이거 스트라이프 사이로 반짝이는 크레마의 금빛입니다. 짧은 한 잔에도 풍성한 첫인상을 남깁니다."
+          "evidence": ["sca-espresso"],
+          "story": "갓 추출한 에스프레소 위에 얇고 촘촘하게 올라오는 짙은 금빛 크레마입니다. 작은 데미타세 안에서 가장 먼저 눈에 닿는 컬러입니다."
         },
         {
           "id": "velvet-milk-65",
@@ -371,15 +347,54 @@
           "nearDuplicateGroup": "warm-whites",
           "relation": "milk",
           "material": "steamed milk microfoam",
-          "evidence": ["nespresso-milk"],
-          "story": "약 65°C에서 매끈한 마이크로폼으로 스티밍한 우유의 따뜻한 아이보리입니다. 라떼 위 작은 하트를 기다리는 기분을 담았습니다."
+          "evidence": ["la-marzocco-milk"],
+          "story": "60–65°C 구간에서 곱게 스티밍한 우유의 부드럽고 따뜻한 밀크색입니다. 피처를 돌릴 때 표면이 벨벳처럼 접히는 순간을 담았습니다."
+        },
+        {
+          "id": "iced-latte-beige",
+          "brandName": "아이스 라테 베이지",
+          "englishName": "Iced Latte Beige",
+          "token": "--iced-latte",
+          "hex": "#D8C7AF",
+          "darkHex": "#E5D5BF",
+          "family": "beige",
+          "relation": "cafe-menu",
+          "material": "espresso, cold milk, and ice",
+          "evidence": ["nespresso-iced-latte"],
+          "story": "투명한 잔 속 얼음과 찬 우유에 에스프레소가 천천히 섞인 뒤 남는 시원한 베이지입니다. 여름 카페에서 누구나 바로 알아보는 한 잔의 색입니다."
+        },
+        {
+          "id": "cold-brew-brown",
+          "brandName": "콜드브루 브라운",
+          "englishName": "Cold Brew Brown",
+          "token": "--cold-brew",
+          "hex": "#3B2B2A",
+          "darkHex": "#755856",
+          "family": "brown",
+          "relation": "cafe-menu",
+          "material": "cold brew concentrate",
+          "evidence": ["toddy-cold-brew"],
+          "story": "차가운 물과 긴 시간이 만든 콜드브루 농축액의 투명하고 짙은 브라운입니다. 원두와 희석에 따라 달라지는 색 가운데, 가장 진한 첫 방울을 골랐습니다."
+        },
+        {
+          "id": "affogato-cream",
+          "brandName": "아포가토 크림",
+          "englishName": "Affogato Cream",
+          "token": "--affogato",
+          "hex": "#D6B88B",
+          "darkHex": "#E2C9A5",
+          "family": "beige",
+          "relation": "cafe-menu",
+          "material": "espresso melting vanilla ice cream",
+          "evidence": ["nespresso-affogato"],
+          "story": "뜨거운 에스프레소가 바닐라 아이스크림 가장자리를 녹일 때 잠깐 만들어지는 따뜻한 크림색입니다. 디저트와 커피가 만나는 경계라서 더 맛있게 보입니다."
         }
       ]
     },
     {
       "id": "quiet-surfaces",
       "title": "카운터 위 기본색",
-      "description": "꽃, 필터, 빵의 속살과 바 도구에서 고른 밝고 어두운 기준색입니다. 가장 하얀 색부터 가장 깊은 색까지 자연스럽게 이어집니다.",
+      "description": "필터와 빵 속살, 검은깨, 포터필터와 추출 뒤의 퍽처럼 매일 손이 닿는 조용한 재료를 UI의 바탕과 글자색에 연결했습니다.",
       "swatches": [
         {
           "id": "coffee-blossom-white",
@@ -393,7 +408,7 @@
           "relation": "coffee-plant",
           "material": "coffee blossom",
           "evidence": ["cirad-coffee"],
-          "story": "커피나무 가지를 한꺼번에 덮는 향기로운 흰 꽃잎에서 가져온 가장 밝은 화이트입니다. 짧은 개화기가 남기는 맑고 조용한 순간을 담았습니다."
+          "story": "커피나무 가지 사이에서 잠깐 피어나는 작은 흰 꽃의 깨끗한 화이트입니다. 화면의 가장 밝은 표면에 은은한 향처럼 머뭅니다."
         },
         {
           "id": "white-paper-filter",
@@ -407,12 +422,12 @@
           "relation": "equipment",
           "material": "white coffee paper filter",
           "evidence": ["hario-filters"],
-          "story": "드리퍼에 펼쳐 놓은 화이트 페이퍼 필터의 따뜻한 백색입니다. 완전한 순백보다 종이 섬유의 부드러운 온기를 남겼습니다."
+          "story": "드리퍼에 새 필터를 접어 올렸을 때의 살짝 따뜻한 화이트입니다. 매일 읽고 쓰는 Bean Wiki 페이지의 종이 같은 바탕이 됩니다."
         },
         {
-          "id": "sourdough-open-crumb-ivory",
-          "brandName": "사워도우 오픈 크럼 아이보리",
-          "englishName": "Sourdough Open Crumb Ivory",
+          "id": "sourdough-ivory",
+          "brandName": "사워도우 아이보리",
+          "englishName": "Sourdough Ivory",
           "token": "--paper-deep",
           "hex": "#E8E1D4",
           "darkHex": "#1B1F16",
@@ -420,25 +435,25 @@
           "relation": "baking",
           "material": "white sourdough crumb",
           "evidence": ["kingarthur-sourdough"],
-          "story": "잘 발효한 사워도우를 갈랐을 때 큰 기공 사이로 드러나는 촉촉한 속살의 아이보리입니다. 표면색보다 한 톤 차분합니다."
+          "story": "사워도우를 반으로 가르면 보이는 촉촉하고 가벼운 속살의 아이보리입니다. 종이보다 한 톤 눌린 카드와 패널에 포근한 깊이를 줍니다."
         },
         {
-          "id": "black-sesame-frangipane-gray",
-          "brandName": "블랙 세서미 프랑지판 그레이",
-          "englishName": "Black Sesame Frangipane Gray",
+          "id": "black-sesame-gray",
+          "brandName": "블랙 세서미 그레이",
+          "englishName": "Black Sesame Gray",
           "token": "--muted",
           "hex": "#565451",
           "darkHex": "#A9A59F",
           "family": "gray",
           "relation": "baking",
-          "material": "black sesame frangipane",
+          "material": "ground black sesame",
           "evidence": ["kingarthur-black-sesame"],
-          "story": "검은깨가 아몬드 크림에 고르게 섞이며 만들어내는 입자감 있는 차콜 그레이입니다. 고소한 페이스트리의 질감까지 함께 떠오릅니다."
+          "story": "검은깨를 곱게 갈았을 때 생기는 부드러운 차콜 그레이입니다. 완전한 검정 대신 작은 라벨과 설명을 편안하게 받쳐줍니다."
         },
         {
-          "id": "portafilter-handle-black",
-          "brandName": "포터필터 핸들 블랙",
-          "englishName": "Portafilter Handle Black",
+          "id": "portafilter-black",
+          "brandName": "포터필터 블랙",
+          "englishName": "Portafilter Black",
           "token": "--ink",
           "hex": "#1E1B18",
           "darkHex": "#ECE7DA",
@@ -446,46 +461,58 @@
           "relation": "equipment",
           "material": "matte black portafilter handle",
           "evidence": ["sca-campus"],
-          "story": "바리스타가 하루에도 수십 번 쥐는 포터필터의 매트한 검정 손잡이에서 가져왔습니다. 단단한 도구의 감촉처럼 문장과 화면의 중심을 잡습니다."
+          "story": "바에 놓인 포터필터 손잡이의 단단한 매트 블랙입니다. 제목과 본문을 또렷하게 잡아주는 화면의 가장 진한 잉크 역할을 합니다."
+        },
+        {
+          "id": "espresso-puck-umber",
+          "brandName": "에스프레소 퍽 엄버",
+          "englishName": "Espresso Puck Umber",
+          "token": "--spent-puck",
+          "hex": "#654638",
+          "darkHex": "#A07868",
+          "family": "umber",
+          "relation": "espresso",
+          "material": "spent espresso puck",
+          "evidence": ["spent-grounds-study"],
+          "story": "추출을 마치고 포터필터에서 똑 떨어진 에스프레소 퍽의 촉촉한 엄버입니다. 한 잔이 지나간 뒤 카운터에 남는 가장 익숙한 브라운입니다."
         }
       ]
     },
     {
       "id": "bakery",
-      "title": "베이커리 쇼케이스",
-      "description": "카페 베이커리에서 실제로 쓰는 설탕, 버터, 크림, 프랑지판, 커버처와 캐러멜라이즈된 크러스트를 밝기와 굽기 흐름으로 배열했습니다.",
+      "title": "베이커리 기본 재료",
+      "description": "낯선 제과 용어를 덜어내고, 강력분·이스트·버터·오일·카카오·카눌레처럼 쇼케이스와 주방에서 바로 알아보는 여섯 소재만 남겼습니다.",
       "swatches": [
         {
-          "id": "swedish-pearl-sugar-white",
-          "brandName": "스웨디시 펄 슈거 화이트",
-          "englishName": "Swedish Pearl Sugar White",
-          "token": "--pearl-sugar",
-          "hex": "#F7F5EE",
-          "darkHex": "#EEEAE0",
-          "family": "white",
-          "nearDuplicateGroup": "warm-whites",
+          "id": "bread-flour-white",
+          "brandName": "강력분 화이트",
+          "englishName": "Bread Flour White",
+          "token": "--bread-flour",
+          "hex": "#EFE8D8",
+          "darkHex": "#E6DDCA",
+          "family": "warm-white",
           "relation": "baking",
-          "material": "Swedish pearl sugar",
-          "evidence": ["kingarthur-sugar"],
-          "story": "오븐 열에도 하얀 알갱이 형태를 남기는 스웨디시 펄 슈거의 깨끗한 화이트입니다. 카페 베이커리의 작은 장식처럼 가볍게 반짝입니다."
+          "material": "bread flour",
+          "evidence": ["kingarthur-bread-flour"],
+          "story": "빵 반죽에 힘을 주는 강력분을 계량대에 수북이 담았을 때의 따뜻한 오프화이트입니다. 손가락으로 가볍게 선을 그으면 금세 사라질 듯 보송합니다."
         },
         {
-          "id": "creme-patissiere-yellow",
-          "brandName": "크렘 파티시에 옐로",
-          "englishName": "Crème Pâtissière Yellow",
-          "token": "--pastry-cream",
-          "hex": "#E9CC86",
-          "darkHex": "#F0DCA6",
-          "family": "yellow",
+          "id": "bakers-yeast-beige",
+          "brandName": "베이커스 이스트 베이지",
+          "englishName": "Baker’s Yeast Beige",
+          "token": "--bakers-yeast",
+          "hex": "#B8A178",
+          "darkHex": "#D0BB91",
+          "family": "beige",
           "relation": "baking",
-          "material": "crème pâtissière",
-          "evidence": ["kingarthur-pastry-cream"],
-          "story": "우유와 달걀노른자가 매끈하고 윤기 있는 커스터드로 변하는 순간의 부드러운 옐로입니다. 에클레어와 타르트 속에서 자주 만납니다."
+          "material": "dry baker's yeast granules",
+          "evidence": ["kingarthur-yeast"],
+          "story": "마른 이스트 봉투를 열었을 때 굴러나오는 작고 보송한 과립의 베이지입니다. 조용히 반죽을 부풀리는 힘처럼 차분하고 따뜻합니다."
         },
         {
-          "id": "croissant-butter-block-yellow",
-          "brandName": "크루아상 버터 블록 옐로",
-          "englishName": "Croissant Butter Block Yellow",
+          "id": "butter-block-yellow",
+          "brandName": "버터 블록 옐로",
+          "englishName": "Butter Block Yellow",
           "token": "--butter-block",
           "hex": "#EBC86A",
           "darkHex": "#F1D98C",
@@ -493,72 +520,33 @@
           "relation": "baking",
           "material": "lamination butter block",
           "evidence": ["kingarthur-croissant"],
-          "story": "반죽 안에 잠기기 직전, 고른 두께로 차갑게 편 라미네이션 버터 블록의 따뜻한 옐로입니다."
+          "story": "크루아상 반죽 안에 넣기 전, 차갑고 매끈하게 편 버터 블록의 노랑입니다. 결을 만드는 재료답게 밝지만 지나치게 달지 않습니다."
         },
         {
-          "id": "pistachio-frangipane-green",
-          "brandName": "피스타치오 프랑지판 그린",
-          "englishName": "Pistachio Frangipane Green",
-          "token": "--pistachio-frangipane",
-          "hex": "#8C9455",
-          "darkHex": "#B3BA7B",
-          "family": "green",
-          "relation": "baking",
-          "material": "pistachio frangipane",
-          "evidence": ["kingarthur-frangipane"],
-          "story": "피스타치오를 갈아 아몬드 크림과 섞은 프랑지판의 자연스러운 그린입니다. 형광색보다 고소하고 차분한 실제 재료의 톤에 가깝습니다."
-        },
-        {
-          "id": "raspberry-couverture-pink",
-          "brandName": "라즈베리 커버처 핑크",
-          "englishName": "Raspberry Couverture Pink",
-          "token": "--raspberry-couverture",
-          "hex": "#C84F6B",
-          "darkHex": "#E37D91",
-          "family": "pink",
-          "relation": "baking",
-          "material": "raspberry couverture",
-          "evidence": ["valrhona-raspberry"],
-          "story": "라즈베리와 코코아버터로 만드는 전문 제과용 커버처의 선명한 핑크입니다. 쇼케이스 안 작은 디저트에도 확실한 존재감을 남깁니다."
-        },
-        {
-          "id": "brioche-egg-wash-gold",
-          "brandName": "브리오슈 에그 워시 골드",
-          "englishName": "Brioche Egg-Wash Gold",
-          "token": "--brioche-gold",
-          "hex": "#C8862D",
-          "darkHex": "#E1A55A",
+          "id": "focaccia-oil-gold",
+          "brandName": "포카치아 오일 골드",
+          "englishName": "Focaccia Oil Gold",
+          "token": "--focaccia-oil",
+          "hex": "#B29A3F",
+          "darkHex": "#CDB45F",
           "family": "gold",
           "relation": "baking",
-          "material": "egg-washed brioche crust",
-          "evidence": ["kingarthur-brioche"],
-          "story": "달걀물을 얇게 바른 브리오슈가 오븐 안에서 깊고 윤기 있는 금빛으로 구워지는 순간입니다."
+          "material": "olive oil on focaccia",
+          "evidence": ["kingarthur-focaccia"],
+          "story": "포카치아의 손가락 자국 사이에 고인 올리브 오일이 오븐 빛을 받아 만드는 그린 골드입니다. 오일의 품질 표준색이 아니라 굽기 직전의 반짝임을 담았습니다."
         },
         {
-          "id": "beurre-noisette-amber",
-          "brandName": "뵈르 누아제트 앰버",
-          "englishName": "Beurre Noisette Amber",
-          "token": "--beurre-noisette",
-          "hex": "#AA6F32",
-          "darkHex": "#CE965B",
-          "family": "amber",
-          "relation": "baking",
-          "material": "brown butter",
-          "evidence": ["kingarthur-brown-butter"],
-          "story": "버터의 우유 고형분이 헤이즐넛빛으로 갈변하며 고소한 향을 내기 시작하는 브라운 버터의 앰버입니다."
-        },
-        {
-          "id": "dutch-cocoa-mahogany",
-          "brandName": "더치 코코아 마호가니",
-          "englishName": "Dutch Cocoa Mahogany",
-          "token": "--dutch-cocoa",
+          "id": "cacao-powder-brown",
+          "brandName": "카카오 파우더 브라운",
+          "englishName": "Cacao Powder Brown",
+          "token": "--cacao",
           "hex": "#7A342C",
           "darkHex": "#AD5B50",
           "family": "mahogany",
           "relation": "baking",
           "material": "Dutch-process cocoa powder",
           "evidence": ["valrhona-cocoa"],
-          "story": "알칼리 처리한 코코아 파우더에서 만나는 따뜻하고 붉은 기의 마호가니입니다. 로스트 브라운과는 다른 제과용 초콜릿의 깊이입니다."
+          "story": "체에 내린 카카오 파우더의 붉고 따뜻한 브라운입니다. 한 스푼만으로 티라미수와 초콜릿 케이크가 떠오르는, 익숙하고 진한 색입니다."
         },
         {
           "id": "canele-crust-brown",
@@ -571,14 +559,14 @@
           "relation": "baking",
           "material": "caramelized canelé crust",
           "evidence": ["ice-canele"],
-          "story": "몰드 안에서 거의 검게 캐러멜라이즈된 카눌레의 얇고 바삭한 껍질색입니다. 밝은 속살과 대비될수록 더 맛있어 보입니다."
+          "story": "구리 몰드 안에서 짙게 캐러멜라이즈된 카눌레의 얇고 바삭한 껍질색입니다. 거의 검게 보이는 가장자리 안에 달콤한 향을 숨겼습니다."
         }
       ]
     },
     {
       "id": "garden-menu",
       "title": "정원과 메뉴",
-      "description": "커피나무의 잎에서 차, 허브, 과일과 카스카라까지. 카페 메뉴와 센서리 테이블에서 실제로 만나는 선명한 포인트 컬러입니다.",
+      "description": "커피나무의 잎에서 말차·허브티·잼과 커핑 향미까지. 카페 메뉴판에서 실제로 읽거나 맛볼 수 있는 친숙한 포인트 컬러입니다.",
       "swatches": [
         {
           "id": "coffee-leaf-green",
@@ -591,20 +579,20 @@
           "relation": "coffee-plant",
           "material": "mature coffee leaf",
           "evidence": ["cirad-coffee"],
-          "story": "비를 머금은 커피나무의 두꺼운 잎에서 가져온 깊은 초록입니다. 체리와 생두가 태어나기 전의 조용한 시작을 담았습니다."
+          "story": "커피나무에서 오래 햇빛을 받은 잎의 짙고 안정적인 그린입니다. 열매보다 먼저 농장의 계절을 보여주는 차분한 시작점입니다."
         },
         {
-          "id": "ceremonial-matcha-green",
-          "brandName": "세리머니얼 말차 그린",
-          "englishName": "Ceremonial Matcha Green",
+          "id": "kyoto-matcha-green",
+          "brandName": "교토 말차 그린",
+          "englishName": "Kyoto Matcha Green",
           "token": "--matcha",
           "hex": "#738846",
           "darkHex": "#A0B56F",
           "family": "green",
           "relation": "cafe-menu",
-          "material": "ceremonial matcha powder",
-          "evidence": [],
-          "story": "말차를 곱게 체에 내리고 첫 물을 붓기 직전의 진하고 보송한 그린입니다. 카페 티 메뉴에서 한눈에 알아보는 존재감이 있습니다."
+          "material": "Uji matcha powder from Kyoto",
+          "evidence": ["maff-uji-matcha"],
+          "story": "교토 우지의 텐차를 곱게 갈아 만든 말차 파우더를 떠올리는 선명한 그린입니다. 라테와 디저트 위에서도 단번에 알아보는 카페의 초록입니다."
         },
         {
           "id": "lemongrass-lime",
@@ -617,37 +605,11 @@
           "relation": "cafe-menu",
           "material": "fresh lemongrass",
           "evidence": [],
-          "story": "갓 자른 레몬그라스 줄기에서 번지는 연두와 노랑 사이의 색입니다. 아이스 티 잔에 산뜻한 바람 한 줄기를 더합니다."
-        },
-        {
-          "id": "lemon-peel-yellow",
-          "brandName": "레몬 필 옐로",
-          "englishName": "Lemon Peel Yellow",
-          "token": "--lemon",
-          "hex": "#D3B62F",
-          "darkHex": "#E7D162",
-          "family": "yellow",
-          "relation": "cafe-menu",
-          "material": "fresh lemon peel",
-          "evidence": [],
-          "story": "레몬 껍질을 얇게 비틀 때 향과 함께 튀어나오는 밝은 노랑입니다. 작은 면적만으로도 메뉴판을 경쾌하게 깨웁니다."
-        },
-        {
-          "id": "cascara-infusion-rose",
-          "brandName": "카스카라 인퓨전 로즈",
-          "englishName": "Cascara Infusion Rose",
-          "token": "--cascara-rose",
-          "hex": "#D1A09A",
-          "darkHex": "#E5BCB6",
-          "family": "rose",
-          "relation": "cafe-menu",
-          "material": "cascara infusion",
-          "evidence": ["ico-cascara"],
-          "story": "말린 커피 체리 껍질을 우렸을 때 잔 안에 번지는 살구빛 로즈입니다. 체리에서 음료까지 이어지는 커피의 또 다른 순환을 담았습니다."
+          "story": "티 바에서 레몬그라스 줄기를 잘랐을 때 드러나는 밝고 산뜻한 라임입니다. 차갑게 우린 허브티처럼 가볍고 깨끗합니다."
         },
         {
           "id": "hibiscus-tea-ruby",
-          "brandName": "히비스커스 티 루비",
+          "brandName": "히비스커스 루비",
           "englishName": "Hibiscus Tea Ruby",
           "token": "--hibiscus",
           "hex": "#9F3E5A",
@@ -656,11 +618,24 @@
           "relation": "cafe-menu",
           "material": "hibiscus infusion",
           "evidence": [],
-          "story": "히비스커스가 물속에서 천천히 풀어놓는 새콤한 루비빛입니다. 차갑게 마셔도 온도가 느껴지는 선명한 레드입니다."
+          "story": "히비스커스 티백에 뜨거운 물을 부었을 때 빠르게 번지는 새콤한 루비입니다. 유리잔을 통과한 빛까지 메뉴의 일부로 만드는 색입니다."
+        },
+        {
+          "id": "strawberry-jam-red",
+          "brandName": "딸기잼 레드",
+          "englishName": "Strawberry Jam Red",
+          "token": "--strawberry-jam",
+          "hex": "#B6534F",
+          "darkHex": "#D57D76",
+          "family": "red",
+          "relation": "cafe-menu",
+          "material": "strawberry jam",
+          "evidence": [],
+          "story": "스콘을 반으로 갈라 한 스푼 올린 딸기잼의 맑고 달콤한 레드입니다. 설명이 없어도 맛과 질감이 바로 떠오르는 쇼케이스의 포인트입니다."
         },
         {
           "id": "blackcurrant-cupping-berry",
-          "brandName": "블랙커런트 커핑 베리",
+          "brandName": "블랙커런트 베리",
           "englishName": "Blackcurrant Cupping Berry",
           "token": "--berry",
           "hex": "#8B5964",
@@ -669,45 +644,32 @@
           "relation": "sensory",
           "material": "blackcurrant sensory reference",
           "evidence": ["sca-flavor-wheel"],
-          "story": "커핑 스푼 끝에서 블랙커런트를 닮은 베리 향을 발견했을 때의 차분한 자주색입니다. 향이 선명해지는 작은 발견의 순간을 담았습니다."
-        },
-        {
-          "id": "spent-espresso-puck-umber",
-          "brandName": "스펜트 에스프레소 퍽 엄버",
-          "englishName": "Spent Espresso Puck Umber",
-          "token": "--spent-puck",
-          "hex": "#654638",
-          "darkHex": "#A07868",
-          "family": "umber",
-          "relation": "espresso",
-          "material": "spent espresso puck",
-          "evidence": ["spent-grounds-study"],
-          "story": "추출을 마친 뒤 포터필터에서 떨어지는 젖은 커피 퍽의 깊은 엄버입니다. 매일 바에서 직접 만나는 커피의 마지막 장면을 담았습니다."
+          "story": "커핑 노트에서 자주 만나는 블랙커런트의 차분한 베리 톤입니다. 맛을 단정하지 않고, 향미를 떠올리는 작은 힌트처럼 사용합니다."
         }
       ]
     },
     {
       "id": "bar-interior",
       "title": "바와 인테리어",
-      "description": "앞치마, 피처, 카운터와 브루잉 도구까지. 바리스타의 손이 자주 닿는 집기와 공간에서 가져온 색입니다.",
+      "description": "앞치마, 농장의 안개, 워싱 탱크, 스팀 피처, 오크 카운터와 체즈베. 카페 공간을 이루는 도구와 표면을 짧고 직관적인 이름으로 묶었습니다.",
       "swatches": [
         {
-          "id": "roasters-apron-green",
-          "brandName": "로스터스 에이프런 그린",
-          "englishName": "Roaster’s Apron Green",
+          "id": "roaster-apron-green",
+          "brandName": "로스터 에이프런 그린",
+          "englishName": "Roaster Apron Green",
           "token": "--olive",
           "hex": "#6F7D48",
           "darkHex": "#A6B673",
           "family": "olive",
           "relation": "equipment",
-          "material": "work apron",
+          "material": "roaster work apron",
           "evidence": ["sca-campus"],
-          "story": "오래 입은 로스터의 앞치마에 커피 잎과 생두 먼지가 자연스럽게 스민 듯한 그린입니다. 일 잘하는 사람의 편안함이 있습니다."
+          "story": "생두 자루와 로스터 사이를 오가는 작업용 앞치마의 단단한 올리브입니다. 얼룩이 쌓일수록 더 자연스러워지는 현장의 그린입니다."
         },
         {
-          "id": "coffee-farm-mist-sage",
-          "brandName": "커피 팜 미스트 세이지",
-          "englishName": "Coffee Farm Mist Sage",
+          "id": "coffee-farm-sage",
+          "brandName": "커피팜 세이지",
+          "englishName": "Coffee Farm Sage",
           "token": "--sage",
           "hex": "#78907E",
           "darkHex": "#93AA98",
@@ -715,25 +677,25 @@
           "relation": "coffee-plant",
           "material": "mist over coffee foliage",
           "evidence": ["cirad-coffee"],
-          "story": "비가 그친 커피밭의 젖은 잎 위로 옅은 안개가 머무는 순간의 세이지입니다. 산지의 이른 아침처럼 한 번 숨을 고르게 합니다."
+          "story": "해 뜨기 전 얇은 안개가 커피나무 잎 위에 머물 때 보이는 부드러운 세이지입니다. 농장의 초록을 실내로 차분하게 옮겨옵니다."
         },
         {
-          "id": "washed-tank-blue",
-          "brandName": "워시드 탱크 블루",
-          "englishName": "Washed Tank Blue",
+          "id": "washing-tank-blue",
+          "brandName": "워싱 탱크 블루",
+          "englishName": "Washing Tank Blue",
           "token": "--blue",
           "hex": "#577D8D",
           "darkHex": "#7BA7B8",
           "family": "blue",
           "relation": "processing",
-          "material": "washing tank water",
+          "material": "water in a coffee washing tank",
           "evidence": ["sca-campus"],
-          "story": "세척 가공 탱크에 맑은 물을 채운 이른 아침의 푸른빛입니다. 깨끗한 산미처럼 시원하고 또렷합니다."
+          "story": "워시드 커피 가공장에서 탱크의 물과 하늘빛이 겹치는 차분한 블루입니다. 깨끗한 공정과 시원한 물의 흐름을 직관적으로 보여줍니다."
         },
         {
-          "id": "stainless-pitcher-silver",
-          "brandName": "스테인리스 피처 실버",
-          "englishName": "Stainless Pitcher Silver",
+          "id": "steam-pitcher-silver",
+          "brandName": "스팀 피처 실버",
+          "englishName": "Steam Pitcher Silver",
           "token": "--pitcher-silver",
           "hex": "#B5B9B5",
           "darkHex": "#D3D6D1",
@@ -741,25 +703,12 @@
           "relation": "equipment",
           "material": "stainless steel milk pitcher",
           "evidence": ["sca-campus"],
-          "story": "깨끗이 닦은 스팀 피처에 아침빛이 길게 미끄러지는 실버입니다. 카드에는 금속의 미세한 명암을 더해 단순한 그레이와 구분합니다."
+          "story": "스팀 완드 아래 놓인 스테인리스 피처가 바의 빛을 길게 반사하는 실버입니다. 평면 스와치에도 금속의 밝은 결이 보이도록 은은한 광택을 더합니다."
         },
         {
-          "id": "concrete-counter-greige",
-          "brandName": "콘크리트 카운터 그레이지",
-          "englishName": "Concrete Counter Greige",
-          "token": "--counter-greige",
-          "hex": "#AAA394",
-          "darkHex": "#C9C2B5",
-          "family": "greige",
-          "relation": "interior",
-          "material": "polished concrete counter",
-          "evidence": [],
-          "story": "고운 골재를 넣어 매끈하게 연마한 카페 콘크리트 카운터의 그레이지입니다. 다양한 잔과 도구가 올라와도 공간을 차분하게 묶어줍니다."
-        },
-        {
-          "id": "oiled-oak-counter",
-          "brandName": "오일드 오크 카운터",
-          "englishName": "Oiled Oak Counter",
+          "id": "oiled-oak",
+          "brandName": "오일드 오크",
+          "englishName": "Oiled Oak",
           "token": "--sand",
           "hex": "#A2875D",
           "darkHex": "#C3A877",
@@ -767,7 +716,7 @@
           "relation": "interior",
           "material": "oiled oak counter",
           "evidence": [],
-          "story": "오일을 먹여 나뭇결이 한층 깊어진 오크 카운터의 따뜻한 탠입니다. 손바닥으로 여러 번 쓸어 매끈해진 바의 온도를 닮았습니다."
+          "story": "오일을 먹인 오크 카운터를 손바닥으로 쓸었을 때 느껴지는 따뜻한 탄 컬러입니다. 차가운 장비와 잔 사이에 편안한 온도를 놓아줍니다."
         },
         {
           "id": "copper-cezve",
@@ -780,7 +729,7 @@
           "relation": "equipment",
           "material": "copper cezve",
           "evidence": ["turkiye-coffee"],
-          "story": "터키식 커피를 천천히 끓이는 카퍼 체즈베의 따뜻한 구릿빛입니다. 긴 손잡이를 잡고 잔에 커피를 따르는 느린 리듬을 담았습니다."
+          "story": "곱게 간 커피를 천천히 끓이는 구리 체즈베의 따뜻한 코퍼입니다. 오래된 추출 도구가 현대적인 바 위에서 반짝이는 장면을 담았습니다."
         }
       ]
     }

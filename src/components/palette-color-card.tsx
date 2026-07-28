@@ -80,9 +80,11 @@ export function PaletteColorCard({ swatch }: { swatch: BrandSwatch }) {
       : { backgroundColor: swatch.hex };
 
   return (
-    <article className="palette-card">
+    <article className="palette-card" data-palette-id={swatch.id}>
       <span className="palette-chip" style={chipStyle} aria-hidden="true" />
-      <strong>{swatch.brandName}</strong>
+      <strong className="palette-korean-name" lang="ko">
+        {swatch.brandName}
+      </strong>
       <small className="palette-english-name" lang="en">
         {swatch.englishName}
       </small>

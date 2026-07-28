@@ -64,6 +64,13 @@ export type BrandSwatch = {
 export type BrandPalette = {
   version: number;
   disclaimer: string;
+  namingPolicy: {
+    targetKoreanCharacters: number;
+    hardMaxKoreanCharacters: number;
+    preferredGroupSize: number;
+    minimumGroupSize: number;
+    maximumGroupSize: number;
+  };
   sources: Record<string, { label: string; url: string }>;
   groups: Array<{
     id: string;
