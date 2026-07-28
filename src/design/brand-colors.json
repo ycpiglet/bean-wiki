@@ -1,12 +1,11 @@
 {
-  "version": 2,
+  "version": 3,
   "disclaimer": "표시된 HEX는 산지나 재료의 공식 표준색이 아니라, 출처에서 확인한 원두·공정·메뉴·도구의 장면을 바탕으로 정한 Bean Wiki의 브랜드 기준색입니다. 실제 색은 품종, 로트, 수분, 조명과 제조 조건에 따라 달라질 수 있습니다.",
   "namingPolicy": {
-    "targetKoreanCharacters": 12,
-    "hardMaxKoreanCharacters": 14,
-    "preferredGroupSize": 6,
-    "minimumGroupSize": 5,
-    "maximumGroupSize": 7
+    "desktopColumns": 4,
+    "minimumGroupSize": 4,
+    "maximumGroupSize": 12,
+    "singleLineDisplay": true
   },
   "sources": {
     "sca-color": {
@@ -138,12 +137,12 @@
     {
       "id": "coffee-origins",
       "title": "원두가 온 곳",
-      "description": "카페 메뉴판에서 자주 만나는 산지·등급·품종을 여섯 장면으로 추렸습니다. 이름은 익숙한 출발점이고, 색은 각 산지의 공식색이 아니라 생두와 체리에서 관찰한 Bean Wiki의 브랜드 근사값입니다.",
+      "description": "카페 메뉴판에서 자주 만나는 산지·등급·품종 뒤에 그린빈·커피 체리처럼 실제 장면을 붙였습니다. 산지의 공식색이 아니라 생두와 열매에서 가져온 Bean Wiki의 브랜드 근사값입니다.",
       "swatches": [
         {
           "id": "ethiopia-yirgacheffe-green",
-          "brandName": "에티오피아 예가체프",
-          "englishName": "Ethiopia Yirgacheffe Green",
+          "brandName": "에티오피아 예가체프 그린빈",
+          "englishName": "Ethiopia Yirgacheffe Green Bean",
           "token": "--green-bean",
           "hex": "#7D8F69",
           "darkHex": "#9DB184",
@@ -154,22 +153,22 @@
           "story": "예가체프라는 익숙한 산지명 아래 워시드 생두를 펼쳤을 때 보이는 연한 올리브를 담았습니다. 꽃향을 기다리는 로스팅 전의 차분한 순간입니다."
         },
         {
-          "id": "kenya-aa-olive",
-          "brandName": "케냐 AA",
-          "englishName": "Kenya AA Olive",
-          "token": "--kenya-aa",
-          "hex": "#7E855A",
-          "darkHex": "#AAB17D",
-          "family": "olive",
-          "relation": "green-coffee",
-          "material": "Kenyan AA green coffee",
-          "evidence": ["afa-kenya-aa", "sca-cva"],
-          "story": "케냐의 건식 밀링에서 크기와 밀도로 선별되는 AA 생두를 그레이딩 테이블에 펼친 장면입니다. 등급 자체가 색을 뜻하지는 않으며, 단단한 올리브 톤으로 기억했습니다."
+          "id": "kenya-aa-coffee-cherry",
+          "brandName": "케냐 AA 커피 체리",
+          "englishName": "Kenya AA Coffee Cherry",
+          "token": "--cherry",
+          "hex": "#A03D36",
+          "darkHex": "#CD7A6E",
+          "family": "red",
+          "relation": "coffee-plant",
+          "material": "ripe Kenyan coffee cherry paired with the familiar AA market label",
+          "evidence": ["afa-kenya-aa", "cirad-coffee"],
+          "story": "케냐의 붉게 익은 커피 체리와 익숙한 AA 라벨을 한 장면에 겹쳤습니다. AA는 수확 뒤 생두에 붙는 크기 등급이지 체리의 품종이나 공식색은 아닙니다."
         },
         {
           "id": "indonesia-mandheling-blue-green",
-          "brandName": "인도네시아 만델링",
-          "englishName": "Indonesia Mandheling Blue Green",
+          "brandName": "인도네시아 만델링 그린빈",
+          "englishName": "Indonesia Mandheling Green Bean",
           "token": "--wet-hulled",
           "hex": "#5F796C",
           "darkHex": "#8EAA9C",
@@ -181,8 +180,8 @@
         },
         {
           "id": "panama-geisha-silver",
-          "brandName": "파나마 게이샤",
-          "englishName": "Panama Geisha Silver Green",
+          "brandName": "파나마 게이샤 실버그린",
+          "englishName": "Panama Geisha Silver Green Bean",
           "token": "--geisha-silver",
           "hex": "#A7AA91",
           "darkHex": "#C4C8AD",
@@ -194,8 +193,8 @@
         },
         {
           "id": "brazil-yellow-bourbon-gold",
-          "brandName": "브라질 옐로 버번",
-          "englishName": "Brazil Yellow Bourbon Gold",
+          "brandName": "브라질 옐로 버번 커피 체리",
+          "englishName": "Brazil Yellow Bourbon Coffee Cherry",
           "token": "--yellow-bourbon",
           "hex": "#C79B35",
           "darkHex": "#DDB75E",
@@ -207,8 +206,8 @@
         },
         {
           "id": "india-monsooned-malabar-gold",
-          "brandName": "인도 몬순드 말라바",
-          "englishName": "India Monsooned Malabar Gold",
+          "brandName": "몬순드 말라바 스트로 골드",
+          "englishName": "Monsooned Malabar Straw Gold",
           "token": "--monsooned-gold",
           "hex": "#C3A66A",
           "darkHex": "#DBC28D",
@@ -223,7 +222,7 @@
     {
       "id": "roasting",
       "title": "로스터가 듣는 색",
-      "description": "가벼운 채프에서 첫 크랙, 라이트·미디엄·다크 로스트와 가장 깊은 블랙까지. 로스터 앞에서 원두가 갈변하는 순서대로 읽습니다.",
+      "description": "가벼운 채프에서 첫 크랙, 브라운 슈거와 다크 초콜릿을 닮은 로스트, 가장 깊은 블랙까지. 로스터 앞에서 원두가 갈변하는 순서대로 읽습니다.",
       "swatches": [
         {
           "id": "coffee-chaff-taupe",
@@ -252,22 +251,9 @@
           "story": "첫 크랙이 톡톡 들리기 시작할 때 원두 표면에 번지는 캐러멜 브라운입니다. 향이 열리고 로스터의 집중이 가장 또렷해지는 순간입니다."
         },
         {
-          "id": "light-roast-brown",
-          "brandName": "라이트 로스트 브라운",
-          "englishName": "Light Roast Brown",
-          "token": "--roast-city",
-          "hex": "#8F5D3B",
-          "darkHex": "#B9825A",
-          "family": "brown",
-          "relation": "roasting",
-          "material": "light roasted coffee",
-          "evidence": ["sca-color"],
-          "story": "첫 크랙을 지난 라이트 로스트의 밝고 붉은 브라운입니다. 원산지의 향을 오래 남겨두고 싶은 로스터의 가벼운 마침표를 닮았습니다."
-        },
-        {
-          "id": "medium-roast-brown",
-          "brandName": "미디엄 로스트 브라운",
-          "englishName": "Medium Roast Brown",
+          "id": "brown-sugar-roast",
+          "brandName": "브라운 슈거 로스트",
+          "englishName": "Brown Sugar Roast",
           "token": "--roast-medium",
           "hex": "#7C5233",
           "darkHex": "#C89E6F",
@@ -275,20 +261,20 @@
           "relation": "roasting",
           "material": "medium roasted coffee",
           "evidence": ["sca-color"],
-          "story": "단맛과 고소함, 원두의 개성이 편안하게 만나는 미디엄 로스트의 브라운입니다. Bean Wiki의 중심 액센트가 되는 균형 잡힌 색입니다."
+          "story": "브라운 슈거처럼 편안하고 균형 잡힌 미디엄 브라운입니다. 매일 마셔도 질리지 않는 한 잔처럼 Bean Wiki의 중심을 잡습니다."
         },
         {
-          "id": "dark-roast-brown",
-          "brandName": "다크 로스트 브라운",
-          "englishName": "Dark Roast Brown",
+          "id": "dark-chocolate-crack",
+          "brandName": "다크 초콜릿 크랙",
+          "englishName": "Dark Chocolate Crack",
           "token": "--roast-dark",
           "hex": "#4E3524",
           "darkHex": "#8D6844",
           "family": "dark-brown",
           "relation": "roasting",
           "material": "dark roasted coffee",
-          "evidence": ["sca-color"],
-          "story": "열이 더 깊이 스며든 다크 로스트의 짙은 브라운입니다. 표면의 윤기와 스모키한 향이 한 톤 안에 조용히 가라앉아 있습니다."
+          "evidence": ["sca-color", "sca-roasting"],
+          "story": "열이 한 단계 깊어지며 다크 초콜릿과 토스트를 떠올리게 하는 짙은 브라운입니다. 로스트 색의 연속선에서 어두운 기준점을 맡습니다."
         },
         {
           "id": "vanilla-bean-black",
@@ -325,7 +311,7 @@
         },
         {
           "id": "espresso-crema-gold",
-          "brandName": "크레마 골드",
+          "brandName": "에스프레소 크레마 골드",
           "englishName": "Espresso Crema Gold",
           "token": "--crema",
           "hex": "#C99B5F",
@@ -338,8 +324,8 @@
         },
         {
           "id": "velvet-milk-65",
-          "brandName": "65° 벨벳 밀크",
-          "englishName": "65° Velvet Milk",
+          "brandName": "65° 벨벳 스팀 밀크",
+          "englishName": "65° Velvet Steam Milk",
           "token": "--foam",
           "hex": "#F6EFE3",
           "darkHex": "#EFE6D6",
@@ -378,8 +364,8 @@
         },
         {
           "id": "affogato-cream",
-          "brandName": "아포가토 크림",
-          "englishName": "Affogato Cream",
+          "brandName": "아포가토 멜트 크림",
+          "englishName": "Affogato Melt Cream",
           "token": "--affogato",
           "hex": "#D6B88B",
           "darkHex": "#E2C9A5",
@@ -452,8 +438,8 @@
         },
         {
           "id": "portafilter-black",
-          "brandName": "포터필터 블랙",
-          "englishName": "Portafilter Black",
+          "brandName": "포터필터 핸들 블랙",
+          "englishName": "Portafilter Handle Black",
           "token": "--ink",
           "hex": "#1E1B18",
           "darkHex": "#ECE7DA",
@@ -481,11 +467,11 @@
     {
       "id": "bakery",
       "title": "베이커리 기본 재료",
-      "description": "낯선 제과 용어를 덜어내고, 강력분·이스트·버터·오일·카카오·카눌레처럼 쇼케이스와 주방에서 바로 알아보는 여섯 소재만 남겼습니다.",
+      "description": "브레드 플라워·베이커스 이스트·버터 블록·올리브 오일처럼 카페 쇼케이스와 베이킹 패키지에서 익숙한 이름을 골랐습니다.",
       "swatches": [
         {
           "id": "bread-flour-white",
-          "brandName": "강력분 화이트",
+          "brandName": "브레드 플라워 화이트",
           "englishName": "Bread Flour White",
           "token": "--bread-flour",
           "hex": "#EFE8D8",
@@ -511,8 +497,8 @@
         },
         {
           "id": "butter-block-yellow",
-          "brandName": "버터 블록 옐로",
-          "englishName": "Butter Block Yellow",
+          "brandName": "크루아상 버터 블록 옐로",
+          "englishName": "Croissant Butter Block Yellow",
           "token": "--butter-block",
           "hex": "#EBC86A",
           "darkHex": "#F1D98C",
@@ -524,8 +510,8 @@
         },
         {
           "id": "focaccia-oil-gold",
-          "brandName": "포카치아 오일 골드",
-          "englishName": "Focaccia Oil Gold",
+          "brandName": "포카치아 올리브 오일 골드",
+          "englishName": "Focaccia Olive Oil Gold",
           "token": "--focaccia-oil",
           "hex": "#B29A3F",
           "darkHex": "#CDB45F",
@@ -537,8 +523,8 @@
         },
         {
           "id": "cacao-powder-brown",
-          "brandName": "카카오 파우더 브라운",
-          "englishName": "Cacao Powder Brown",
+          "brandName": "더치 코코아 마호가니",
+          "englishName": "Dutch Cocoa Mahogany",
           "token": "--cacao",
           "hex": "#7A342C",
           "darkHex": "#AD5B50",
@@ -609,7 +595,7 @@
         },
         {
           "id": "hibiscus-tea-ruby",
-          "brandName": "히비스커스 루비",
+          "brandName": "히비스커스 티 루비",
           "englishName": "Hibiscus Tea Ruby",
           "token": "--hibiscus",
           "hex": "#9F3E5A",
@@ -622,7 +608,7 @@
         },
         {
           "id": "strawberry-jam-red",
-          "brandName": "딸기잼 레드",
+          "brandName": "스트로베리 잼 레드",
           "englishName": "Strawberry Jam Red",
           "token": "--strawberry-jam",
           "hex": "#B6534F",
@@ -635,7 +621,7 @@
         },
         {
           "id": "blackcurrant-cupping-berry",
-          "brandName": "블랙커런트 베리",
+          "brandName": "블랙커런트 커핑 베리",
           "englishName": "Blackcurrant Cupping Berry",
           "token": "--berry",
           "hex": "#8B5964",
@@ -651,12 +637,12 @@
     {
       "id": "bar-interior",
       "title": "바와 인테리어",
-      "description": "앞치마, 농장의 안개, 워싱 탱크, 스팀 피처, 오크 카운터와 체즈베. 카페 공간을 이루는 도구와 표면을 짧고 직관적인 이름으로 묶었습니다.",
+      "description": "에이프런, 워싱 스테이션, 스테인리스 피처, 콘크리트와 오크 카운터, 체즈베. 카페 공간을 이루는 도구와 표면을 구체적인 이름으로 묶었습니다.",
       "swatches": [
         {
           "id": "roaster-apron-green",
-          "brandName": "로스터 에이프런 그린",
-          "englishName": "Roaster Apron Green",
+          "brandName": "로스터스 에이프런 그린",
+          "englishName": "Roaster’s Apron Green",
           "token": "--olive",
           "hex": "#6F7D48",
           "darkHex": "#A6B673",
@@ -681,8 +667,8 @@
         },
         {
           "id": "washing-tank-blue",
-          "brandName": "워싱 탱크 블루",
-          "englishName": "Washing Tank Blue",
+          "brandName": "워싱 스테이션 블루",
+          "englishName": "Washing Station Blue",
           "token": "--blue",
           "hex": "#577D8D",
           "darkHex": "#7BA7B8",
@@ -694,8 +680,8 @@
         },
         {
           "id": "steam-pitcher-silver",
-          "brandName": "스팀 피처 실버",
-          "englishName": "Steam Pitcher Silver",
+          "brandName": "스테인리스 피처 실버",
+          "englishName": "Stainless Pitcher Silver",
           "token": "--pitcher-silver",
           "hex": "#B5B9B5",
           "darkHex": "#D3D6D1",
@@ -706,9 +692,22 @@
           "story": "스팀 완드 아래 놓인 스테인리스 피처가 바의 빛을 길게 반사하는 실버입니다. 평면 스와치에도 금속의 밝은 결이 보이도록 은은한 광택을 더합니다."
         },
         {
-          "id": "oiled-oak",
-          "brandName": "오일드 오크",
-          "englishName": "Oiled Oak",
+          "id": "concrete-counter-greige",
+          "brandName": "콘크리트 카운터 그레이지",
+          "englishName": "Concrete Counter Greige",
+          "token": "--counter-greige",
+          "hex": "#AAA394",
+          "darkHex": "#C9C2B5",
+          "family": "greige",
+          "relation": "interior",
+          "material": "polished concrete counter",
+          "evidence": [],
+          "story": "고운 골재를 넣어 매끈하게 연마한 카페 콘크리트 카운터의 그레이지입니다. 다양한 잔과 도구가 올라와도 공간을 차분하게 묶어줍니다."
+        },
+        {
+          "id": "oiled-oak-counter",
+          "brandName": "오일드 오크 카운터",
+          "englishName": "Oiled Oak Counter",
           "token": "--sand",
           "hex": "#A2875D",
           "darkHex": "#C3A877",

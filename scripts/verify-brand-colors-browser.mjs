@@ -30,6 +30,7 @@ const expectedNames = new Map(
 const expectedGroups = new Map(
   palette.groups.map((group) => [group.id, group.swatches.length]),
 );
+const expectedDesktopColumns = palette.namingPolicy.desktopColumns;
 const chromeCandidates = [
   process.env.CHROME_BIN,
   "/usr/bin/google-chrome",
@@ -160,6 +161,8 @@ function assert(condition, message) {
 }
 
 function assertCatalogLayout(snapshot, viewportWidth) {
+  const expectedColumns =
+    viewportWidth <= 680 ? 1 : viewportWidth <= 1080 ? 2 : expectedDesktopColumns;
   assert(
     !snapshot.horizontalOverflow,
     `${viewportWidth}px viewport has horizontal page overflow`,
@@ -182,6 +185,10 @@ function assertCatalogLayout(snapshot, viewportWidth) {
     assert(
       Number(group.declaredCount) === expected,
       `${viewportWidth}px: group "${group.id}" data count drifted`,
+    );
+    assert(
+      group.columns === Math.min(expectedColumns, expected),
+      `${viewportWidth}px: group "${group.id}" has ${group.columns} columns; expected ${Math.min(expectedColumns, expected)}`,
     );
   }
   assert(
@@ -295,7 +302,12 @@ try {
       groups: [...document.querySelectorAll("[data-palette-group]")].map((group) => ({
         id: group.dataset.paletteGroup,
         declaredCount: group.dataset.paletteCount,
-        count: group.querySelectorAll(".palette-card").length
+        count: group.querySelectorAll(".palette-card").length,
+        columns: new Set(
+          [...group.querySelectorAll(".palette-card")].map((card) =>
+            Math.round(card.getBoundingClientRect().left)
+          )
+        ).size
       })),
       firstCode: codes[0]?.textContent,
       firstColor: getComputedStyle(document.querySelector(".palette-chip")).backgroundColor,
@@ -388,7 +400,7 @@ try {
   const desktopPath = join(artifactDir, "palette-desktop-dark.png");
   writeFileSync(desktopPath, Buffer.from(desktopShot.data, "base64"));
 
-  for (const viewportWidth of [1121, 1120, 901, 681, 680, 390, 320]) {
+  for (const viewportWidth of [1120, 1081, 1080, 901, 681, 680, 390, 320]) {
     await session.call("Emulation.setDeviceMetricsOverride", {
       width: viewportWidth,
       height: 900,
@@ -422,7 +434,12 @@ try {
         groups: [...document.querySelectorAll("[data-palette-group]")].map((group) => ({
           id: group.dataset.paletteGroup,
           declaredCount: group.dataset.paletteCount,
-          count: group.querySelectorAll(".palette-card").length
+          count: group.querySelectorAll(".palette-card").length,
+          columns: new Set(
+            [...group.querySelectorAll(".palette-card")].map((card) =>
+              Math.round(card.getBoundingClientRect().left)
+            )
+          ).size
         })),
         horizontalOverflow: document.documentElement.scrollWidth > window.innerWidth
       };

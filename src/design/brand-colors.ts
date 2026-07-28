@@ -65,11 +65,10 @@ export type BrandPalette = {
   version: number;
   disclaimer: string;
   namingPolicy: {
-    targetKoreanCharacters: number;
-    hardMaxKoreanCharacters: number;
-    preferredGroupSize: number;
+    desktopColumns: number;
     minimumGroupSize: number;
     maximumGroupSize: number;
+    singleLineDisplay: boolean;
   };
   sources: Record<string, { label: string; url: string }>;
   groups: Array<{

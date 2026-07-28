@@ -26,11 +26,9 @@ test("the checked-in palette satisfies the material and theme contract", () => {
   assert.deepEqual(result.errors, []);
   assert.equal(result.count, expectedCount);
   assert.equal(result.count, 42);
-  assert.ok(
-    palette.groups.every(
-      (group) =>
-        group.swatches.length === palette.namingPolicy.preferredGroupSize,
-    ),
+  assert.deepEqual(
+    palette.groups.map((group) => group.swatches.length),
+    [6, 5, 6, 6, 6, 6, 7],
   );
 });
 
@@ -64,9 +62,9 @@ test("a white hierarchy inversion is rejected", () => {
   );
 });
 
-test("groups outside the five-to-seven balance contract are rejected", () => {
+test("groups may vary in size but remain within the catalog bounds", () => {
   const tooSmall = clone(palette);
-  tooSmall.groups[0].swatches = tooSmall.groups[0].swatches.slice(0, 4);
+  tooSmall.groups[0].swatches = tooSmall.groups[0].swatches.slice(0, 3);
   assert.ok(
     validateBrandColors(tooSmall, themes).errors.some((error) =>
       error.includes("below the minimum"),
@@ -74,9 +72,8 @@ test("groups outside the five-to-seven balance contract are rejected", () => {
   );
 
   const tooLarge = clone(palette);
-  tooLarge.groups[0].swatches.push(
-    clone(tooLarge.groups[1].swatches[0]),
-    clone(tooLarge.groups[1].swatches[1]),
+  tooLarge.groups[0].swatches = clone(
+    palette.groups.flatMap((group) => group.swatches).slice(0, 13),
   );
   assert.ok(
     validateBrandColors(tooLarge, themes).errors.some((error) =>
@@ -85,24 +82,15 @@ test("groups outside the five-to-seven balance contract are rejected", () => {
   );
 });
 
-test("Korean display names enforce a 12-character target and 14-character cap", () => {
-  const overTarget = clone(palette);
-  overTarget.groups[0].swatches[0].brandName = "가나다라마바사아자차카타파";
-  const targetResult = validateBrandColors(overTarget, themes);
+test("display names are not rejected by a character-count shortcut", () => {
+  const changed = clone(palette);
+  changed.groups[0].swatches[0].brandName =
+    "에티오피아 예가체프 워시드 그린빈 올리브";
+  const result = validateBrandColors(changed, themes);
   assert.ok(
-    targetResult.warnings.some((warning) => warning.includes("target is 12")),
-  );
-  assert.ok(
-    targetResult.errors.every(
-      (error) => !error.includes("hard maximum is 14"),
-    ),
-  );
-
-  const overLimit = clone(palette);
-  overLimit.groups[0].swatches[0].brandName = "가나다라마바사아자차카타파하허";
-  assert.ok(
-    validateBrandColors(overLimit, themes).errors.some((error) =>
-      error.includes("hard maximum is 14"),
+    result.errors.every(
+      (error) =>
+        !error.includes("hard maximum") && !error.includes("character"),
     ),
   );
 });
@@ -121,6 +109,14 @@ test("invalid whitespace and retired ids cannot hide in display data", () => {
   assert.ok(
     validateBrandColors(retiredId, themes).errors.some((error) =>
       error.includes("retired palette id"),
+    ),
+  );
+
+  const translatedIngredient = clone(palette);
+  translatedIngredient.groups[0].swatches[0].brandName = "강력분 화이트";
+  assert.ok(
+    validateBrandColors(translatedIngredient, themes).errors.some((error) =>
+      error.includes("retired palette term"),
     ),
   );
 });

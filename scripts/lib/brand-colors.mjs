@@ -29,6 +29,8 @@ export const retiredPaletteTerms = [
   "커피 팜 미스트 세이지",
   "Washed Tank Blue",
   "워시드 탱크 블루",
+  "강력분 화이트",
+  "딸기잼 레드",
 ];
 
 export const retiredPaletteIds = [
@@ -41,7 +43,6 @@ export const retiredPaletteIds = [
   "black-sesame-frangipane-gray",
   "coffee-farm-mist-sage",
   "washed-tank-blue",
-  "concrete-counter-greige",
 ];
 
 export function parseThemeTokens(css) {
@@ -130,9 +131,7 @@ export function validateBrandColors(palette, themes) {
 
   const namingPolicy = palette.namingPolicy ?? {};
   for (const key of [
-    "targetKoreanCharacters",
-    "hardMaxKoreanCharacters",
-    "preferredGroupSize",
+    "desktopColumns",
     "minimumGroupSize",
     "maximumGroupSize",
   ]) {
@@ -140,21 +139,13 @@ export function validateBrandColors(palette, themes) {
       errors.push(`namingPolicy.${key} must be a positive integer`);
     }
   }
-  if (
-    namingPolicy.targetKoreanCharacters >
-    namingPolicy.hardMaxKoreanCharacters
-  ) {
+  if (namingPolicy.minimumGroupSize > namingPolicy.maximumGroupSize) {
     errors.push(
-      "namingPolicy.targetKoreanCharacters must not exceed hardMaxKoreanCharacters",
+      "namingPolicy group sizes must satisfy minimum ≤ maximum",
     );
   }
-  if (
-    namingPolicy.minimumGroupSize > namingPolicy.preferredGroupSize ||
-    namingPolicy.preferredGroupSize > namingPolicy.maximumGroupSize
-  ) {
-    errors.push(
-      "namingPolicy group sizes must satisfy minimum ≤ preferred ≤ maximum",
-    );
+  if (typeof namingPolicy.singleLineDisplay !== "boolean") {
+    errors.push("namingPolicy.singleLineDisplay must be a boolean");
   }
 
   for (const group of palette.groups ?? []) {
@@ -184,14 +175,6 @@ export function validateBrandColors(palette, themes) {
     ) {
       errors.push(
         `${prefix}: ${group.swatches.length} swatches exceeds the maximum ${namingPolicy.maximumGroupSize}`,
-      );
-    }
-    if (
-      Number.isInteger(namingPolicy.preferredGroupSize) &&
-      group.swatches.length !== namingPolicy.preferredGroupSize
-    ) {
-      warnings.push(
-        `${prefix}: ${group.swatches.length} swatches differs from preferred ${namingPolicy.preferredGroupSize}`,
       );
     }
   }
@@ -247,23 +230,6 @@ export function validateBrandColors(palette, themes) {
     ) {
       errors.push(`${prefix}: Korean brand name has invalid whitespace`);
     }
-    const displayCharacters = Array.from(swatch.brandName ?? "").length;
-    if (
-      Number.isInteger(namingPolicy.hardMaxKoreanCharacters) &&
-      displayCharacters > namingPolicy.hardMaxKoreanCharacters
-    ) {
-      errors.push(
-        `${prefix}: Korean brand name has ${displayCharacters} characters; hard maximum is ${namingPolicy.hardMaxKoreanCharacters}`,
-      );
-    } else if (
-      Number.isInteger(namingPolicy.targetKoreanCharacters) &&
-      displayCharacters > namingPolicy.targetKoreanCharacters
-    ) {
-      warnings.push(
-        `${prefix}: Korean brand name has ${displayCharacters} characters; target is ${namingPolicy.targetKoreanCharacters}`,
-      );
-    }
-
     const lightValue = themes.light.get(swatch.token);
     const darkValue = themes.dark.get(swatch.token);
     if (!lightValue) {
@@ -370,10 +336,9 @@ export function validateBrandColors(palette, themes) {
   assertLighter("coffee-blossom-white", "white-paper-filter");
   assertLighter("white-paper-filter", "bread-flour-white");
   assertLighter("bread-flour-white", "sourdough-ivory");
-  assertLighter("first-crack-caramel", "light-roast-brown");
-  assertLighter("light-roast-brown", "medium-roast-brown");
-  assertLighter("medium-roast-brown", "dark-roast-brown");
-  assertLighter("dark-roast-brown", "vanilla-bean-black");
+  assertLighter("first-crack-caramel", "brown-sugar-roast");
+  assertLighter("brown-sugar-roast", "dark-chocolate-crack");
+  assertLighter("dark-chocolate-crack", "vanilla-bean-black");
   assertLighter("velvet-milk-65", "iced-latte-beige");
   assertLighter("iced-latte-beige", "affogato-cream");
   assertLighter("affogato-cream", "espresso-crema-gold");
