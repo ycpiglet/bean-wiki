@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import localFont from "next/font/local";
 import Link from "next/link";
 import { AccountMenu } from "@/components/account-menu";
 import { BeanMark } from "@/components/bean-logo";
@@ -8,6 +9,17 @@ import { PaletteColorCard } from "@/components/palette-color-card";
 import { PrimaryNav } from "@/components/primary-nav";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { brandPalette } from "@/design/brand-colors";
+
+const paletteNameFont = localFont({
+  src: "./fonts/LINESeedKR-Bd.woff2",
+  variable: "--font-palette-name",
+  weight: "700",
+  style: "normal",
+  display: "swap",
+  preload: true,
+  fallback: ["Pretendard", "Apple SD Gothic Neo", "sans-serif"],
+  adjustFontFallback: false,
+});
 
 export const metadata: Metadata = {
   title: "브랜드 컬러",
@@ -38,7 +50,7 @@ export default function ColorGuide() {
         </div>
       </header>
 
-      <div className="shell palette-page">
+      <div className={`shell palette-page ${paletteNameFont.variable}`}>
         <header className="wiki-title">
           <h1>Bean Wiki 브랜드 컬러</h1>
           <p>

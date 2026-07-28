@@ -124,6 +124,7 @@ background: color-mix(in oklab, var(--copper) 9%, var(--paper));
 |---|---|---|
 | `--font-sans` | `var(--font-geist-sans), "Pretendard", "Apple SD Gothic Neo", …` | 기본 UI·본문 |
 | `--font-mono` | `var(--font-geist-mono), ui-monospace, …` | 라벨·번호·코드 |
+| `--font-palette-name` | LINE Seed Sans KR Bold | `/design/colors`의 공개 컬러 네임 |
 
 - **로딩**: `src/app/layout.tsx`에서 작은 라틴 서브셋인 Geist / Geist Mono만
   `next/font/google`로 자체 호스팅하고, `--font-geist-sans` ·
@@ -135,6 +136,10 @@ background: color-mix(in oklab, var(--copper) 9%, var(--paper));
 - ⚠️ **주의**: CSS에서 `"Geist"` 같은 **리터럴 이름**을 쓰면 안 됩니다.
   `next/font`는 해시된 패밀리명을 만들고 오직 `var(--font-*)` 변수로만
   노출하므로 항상 변수를 참조하세요.
+- **팔레트 조합**: 컬러 네임은 둥근 모서리의 LINE Seed Sans KR Bold
+  700을 사용합니다. 영문명은 Geist Mono 450, HEX 값은 Geist Mono 500으로
+  낮춰 이름과 정보 계층을 분리하고, 카드 설명은 기존 본문 산세리프를
+  유지합니다. LINE Seed 파일은 해당 페이지에서만 자체 호스팅합니다.
 
 ## 3. 타입 스케일
 
@@ -187,5 +192,6 @@ h1, h2, h3, h4 {
 - 파비콘/아이콘: `src/app/icon.svg`, `src/app/favicon.ico`.
 - OG 이미지: `public/og.png`. 홈의 브랜드 스토리 이미지와 공유 카드가 같은
   원두 지식 지도를 사용합니다.
-- 외부 CJK 폰트 파일은 저장소에 두지 않습니다. 라틴 Geist 서브셋만
-  `next/font`가 빌드 시 자체 호스팅합니다.
+- 일반 UI에는 별도 CJK 웹폰트를 추가하지 않고 라틴 Geist 서브셋만
+  `next/font`로 자체 호스팅합니다. 브랜드 컬러 네임에 필요한 LINE Seed
+  Sans KR Bold 한 벌은 `/design/colors` 한정 디스플레이 자산으로 허용합니다.

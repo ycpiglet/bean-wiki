@@ -272,6 +272,14 @@ try {
     const codes = [...document.querySelectorAll(".palette-code-row code")];
     const widths = cards.map((card) => Math.round(card.getBoundingClientRect().width));
     const firstRect = cards[0]?.getBoundingClientRect();
+    const nameStyle = getComputedStyle(document.querySelector(".palette-korean-name"));
+    const primaryNameFamily = nameStyle.fontFamily
+      .split(",")[0]
+      .trim()
+      .replace(/^["']|["']$/g, "");
+    const paletteNameFace = [...document.fonts].find(
+      (face) => face.family.replace(/^["']|["']$/g, "") === primaryNameFamily
+    );
     const readName = (card) => {
       const name = card.querySelector(".palette-korean-name");
       const range = document.createRange();
@@ -312,6 +320,13 @@ try {
       firstCode: codes[0]?.textContent,
       firstColor: getComputedStyle(document.querySelector(".palette-chip")).backgroundColor,
       pageBackground: getComputedStyle(document.body).backgroundColor,
+      typography: {
+        nameFontFamily: nameStyle.fontFamily,
+        nameFontWeight: nameStyle.fontWeight,
+        nameFontLoaded: paletteNameFace?.status === "loaded",
+        englishFontWeight: getComputedStyle(document.querySelector(".palette-english-name")).fontWeight,
+        codeFontWeight: getComputedStyle(document.querySelector(".palette-code-row code")).fontWeight
+      },
       firstCardBox: firstRect ? {
         x: firstRect.left + window.scrollX,
         y: firstRect.top + window.scrollY,
@@ -341,6 +356,22 @@ try {
   assert(desktop.maxWidth - desktop.minWidth <= 1, "desktop card widths are not uniform");
   assert(!desktop.horizontalOverflow, "desktop page has horizontal overflow");
   assertCatalogLayout(desktop, 1440);
+  assert(
+    desktop.typography.nameFontLoaded,
+    `palette name webfont did not load: ${desktop.typography.nameFontFamily}`,
+  );
+  assert(
+    Number(desktop.typography.nameFontWeight) >= 700,
+    `palette name weight is not bold: ${desktop.typography.nameFontWeight}`,
+  );
+  assert(
+    Number(desktop.typography.englishFontWeight) <= 500,
+    `English palette name is too heavy: ${desktop.typography.englishFontWeight}`,
+  );
+  assert(
+    Number(desktop.typography.codeFontWeight) <= 550,
+    `HEX value is too heavy: ${desktop.typography.codeFontWeight}`,
+  );
   for (const retired of retiredPaletteTerms) {
     assert(
       !desktop.bodyText.includes(retired),
