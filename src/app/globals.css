@@ -3,8 +3,8 @@
 :root {
   --paper: #f4f0e7;
   --paper-deep: #e8e1d4;
-  --ink: #182019;
-  --muted: #62675f;
+  --ink: #1e1b18;
+  --muted: #565451;
   --prose: #3f463f;
   --prose-soft: #454b45;
   --line: rgba(24, 32, 25, 0.16);
@@ -21,10 +21,19 @@
   --lemongrass: #a9b96d;
   --lemon: #d3b62f;
   --hibiscus: #9f3e5a;
-  --pink-salt: #d1a09a;
-  --terroir-earth: #654638;
+  --cascara-rose: #d1a09a;
+  --spent-puck: #654638;
   --pitcher-silver: #b5b9b5;
-  --terrazzo: #aaa394;
+  --counter-greige: #aaa394;
+  --pearl-sugar: #f7f5ee;
+  --pastry-cream: #e9cc86;
+  --butter-block: #ebc86a;
+  --pistachio-frangipane: #8c9455;
+  --raspberry-couverture: #c84f6b;
+  --brioche-gold: #c8862d;
+  --beurre-noisette: #aa6f32;
+  --dutch-cocoa: #7a342c;
+  --canele-crust: #4a251b;
 
   /* Coffee lifecycle palette — the brand identity. From cherry to cup:
      see /design/colors and docs/DESIGN.md before adding new colors. */
@@ -32,14 +41,14 @@
   --cherry-deep: #712a28;
   --green-bean: #7d8f69;
   --parchment: #e3d4b4;
-  --honey: #c08a3e;
+  --honey: #c8a24c;
   --yellow-bourbon: #c79b35;
   --pink-bourbon: #b76e79;
   --wet-hulled: #5f796c;
   --geisha-silver: #a7aa91;
   --monsooned-gold: #c3a66a;
   --peaberry-olive: #7e855a;
-  --decaf-green: #8a836c;
+  --decaf-green: #a39383;
   --roast-light: #a26a42;
   --roast-medium: #7c5233;
   --roast-dark: #4e3524;
@@ -55,7 +64,7 @@
   --paper: #14170f;
   --paper-deep: #1b1f16;
   --ink: #ece7da;
-  --muted: #a0a394;
+  --muted: #a9a59f;
   --prose: #cfcabc;
   --prose-soft: #c4c0b3;
   --line: rgba(236, 231, 218, 0.16);
@@ -72,24 +81,33 @@
   --lemongrass: #c8d58f;
   --lemon: #e7d162;
   --hibiscus: #cf728c;
-  --pink-salt: #e5bcb6;
-  --terroir-earth: #a07868;
+  --cascara-rose: #e5bcb6;
+  --spent-puck: #a07868;
   --pitcher-silver: #d3d6d1;
-  --terrazzo: #c9c2b5;
+  --counter-greige: #c9c2b5;
+  --pearl-sugar: #eeeae0;
+  --pastry-cream: #f0dca6;
+  --butter-block: #f1d98c;
+  --pistachio-frangipane: #b3ba7b;
+  --raspberry-couverture: #e37d91;
+  --brioche-gold: #e1a55a;
+  --beurre-noisette: #ce965b;
+  --dutch-cocoa: #ad5b50;
+  --canele-crust: #805044;
 
   /* Lifecycle palette, lightened for dark surfaces. */
   --cherry: #cd7a6e;
   --cherry-deep: #a75950;
   --green-bean: #9db184;
   --parchment: #d9c8a6;
-  --honey: #d9a95e;
+  --honey: #ddbf73;
   --yellow-bourbon: #ddb75e;
   --pink-bourbon: #d69aa3;
   --wet-hulled: #8eaa9c;
   --geisha-silver: #c4c8ad;
   --monsooned-gold: #dbc28d;
   --peaberry-olive: #aab17d;
-  --decaf-green: #b3aa8d;
+  --decaf-green: #c2b5a7;
   --roast-light: #c08a5c;
   --roast-medium: #c89e6f;
   --roast-dark: #8d6844;
@@ -1418,8 +1436,10 @@ a.figure-credit {
 }
 
 .palette-card {
-  min-height: 350px;
+  min-height: 448px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
   padding: 18px;
   border: 1px solid var(--line);
   border-radius: 10px;
@@ -1429,6 +1449,7 @@ a.figure-credit {
 
 .palette-chip {
   display: block;
+  flex: 0 0 auto;
   height: 92px;
   margin-bottom: 18px;
   border-radius: 7px;
@@ -1454,10 +1475,163 @@ a.figure-credit {
 }
 
 .palette-card p {
-  margin: 12px 0 0;
+  margin: 8px 0 0;
   color: var(--prose);
   font-size: 15px;
   line-height: 1.75;
+}
+
+.palette-code-row {
+  min-height: 46px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 44px;
+  align-items: center;
+  gap: 9px;
+  margin-top: 14px;
+  padding: 0 0 0 12px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: color-mix(in oklab, var(--paper) 72%, var(--cream));
+}
+
+.palette-code-row > span {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 760;
+  letter-spacing: 0.09em;
+}
+
+.palette-code-row code {
+  overflow: hidden;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 680;
+  letter-spacing: 0.025em;
+  text-overflow: ellipsis;
+  user-select: all;
+}
+
+.palette-code-row button {
+  width: 44px;
+  height: 44px;
+  display: inline-grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-left: 1px solid var(--line);
+  border-radius: 0 6px 6px 0;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  transition:
+    background 160ms ease,
+    color 160ms ease,
+    transform 160ms ease;
+}
+
+.palette-code-row button:hover {
+  background: color-mix(in oklab, var(--brand) 10%, transparent);
+  color: var(--brand-strong);
+}
+
+.palette-code-row button:active {
+  transform: scale(0.94);
+}
+
+.palette-code-row button:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 3px solid color-mix(in oklab, var(--brand) 42%, transparent);
+  outline-offset: -3px;
+}
+
+.palette-copy-status {
+  min-height: 18px;
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.palette-copy-status.is-copied {
+  color: var(--coffee-leaf);
+}
+
+.palette-copy-status.is-error {
+  color: var(--cherry);
+}
+
+.palette-research {
+  margin-top: 76px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--cream) 88%, var(--paper));
+}
+
+.palette-research > span {
+  color: var(--brand);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 760;
+  letter-spacing: 0.12em;
+}
+
+.palette-research h2 {
+  margin: 9px 0 10px;
+  font-size: clamp(24px, 3vw, 31px);
+  letter-spacing: -0.025em;
+}
+
+.palette-research > p {
+  max-width: 760px;
+  margin: 0;
+  color: var(--prose);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.palette-research details {
+  margin-top: 18px;
+  border-top: 1px solid var(--line);
+}
+
+.palette-research summary {
+  min-height: 48px;
+  display: flex;
+  align-items: center;
+  color: var(--ink);
+  font-size: 15px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.palette-research ul {
+  columns: 2;
+  gap: 34px;
+  margin: 2px 0 0;
+  padding: 0 0 2px 20px;
+}
+
+.palette-research li {
+  break-inside: avoid;
+  margin: 0 0 10px;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.palette-research a {
+  text-decoration: underline;
+  text-decoration-color: color-mix(in oklab, var(--brand) 42%, transparent);
+  text-underline-offset: 3px;
+}
+
+.palette-research a:hover {
+  color: var(--brand-strong);
 }
 
 /* ---- Article history (/wiki/[slug]/history) ---- */
@@ -6213,8 +6387,8 @@ body {
   grid-template-columns: 1fr;
 }
 
-/* Public palette cards tell a coffee story; implementation metadata stays in
-   docs/DESIGN.md and CSS tokens rather than the reader-facing catalog. */
+/* Public palette cards keep a fixed reference HEX while CSS theme adapters
+   remain internal. The copy control is visible without relying on hover. */
 .palette-note,
 .palette-desc {
   font-size: 16px;
@@ -6235,7 +6409,7 @@ body {
 
 .palette-card p {
   min-height: 0;
-  margin-top: 12px;
+  margin-top: 8px;
   color: var(--prose);
   font-size: 15px;
   line-height: 1.75;
@@ -6379,12 +6553,20 @@ body {
     grid-template-columns: 1fr;
   }
 
+  .palette-research {
+    padding: 22px 18px;
+  }
+
+  .palette-research ul {
+    columns: 1;
+  }
+
   .palette-card p {
     min-height: 0;
   }
 
   .palette-card {
-    min-height: 318px;
+    min-height: 390px;
   }
 }
 
