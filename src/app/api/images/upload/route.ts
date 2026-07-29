@@ -4,6 +4,7 @@
 import type { NextRequest } from "next/server";
 import { readSession } from "@/lib/session";
 import { ghPutFileBase64, resolveCommitToken } from "@/lib/github";
+import { crossOriginBlocked } from "@/lib/same-origin";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -21,6 +22,8 @@ function safeName(name: string): string {
 }
 
 export async function POST(req: NextRequest) {
+  const blockedOrigin = crossOriginBlocked(req);
+  if (blockedOrigin) return blockedOrigin;
   const session = await readSession();
   const token = resolveCommitToken(session);
   if (!token) {

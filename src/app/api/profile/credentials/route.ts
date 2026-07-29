@@ -3,6 +3,7 @@
 // turn it into a public badge, so this route never sets `status` from input.
 import type { NextRequest } from "next/server";
 import { getPlatformUser } from "@/lib/platform-auth";
+import { crossOriginBlocked } from "@/lib/same-origin";
 import {
   ProfileStoreError,
   addCredential,
@@ -43,6 +44,8 @@ export async function GET() {
 }
 
 export async function POST(req: NextRequest) {
+  const blockedOrigin = crossOriginBlocked(req);
+  if (blockedOrigin) return blockedOrigin;
   const user = await getPlatformUser();
   if (!user) return Response.json({ error: "auth_required" }, { status: 401 });
   const blocked = guard();
@@ -72,6 +75,8 @@ export async function POST(req: NextRequest) {
 // Withdraw one's own submission. Scoped by account_key in the query, so a user
 // cannot delete somebody else's credential by guessing an id.
 export async function DELETE(req: NextRequest) {
+  const blockedOrigin = crossOriginBlocked(req);
+  if (blockedOrigin) return blockedOrigin;
   const user = await getPlatformUser();
   if (!user) return Response.json({ error: "auth_required" }, { status: 401 });
   const blocked = guard();

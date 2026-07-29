@@ -3,6 +3,7 @@
 import type { NextRequest } from "next/server";
 import { isAdminUser } from "@/lib/admin";
 import { getPlatformUser } from "@/lib/platform-auth";
+import { crossOriginBlocked } from "@/lib/same-origin";
 import {
   ProfileStoreError,
   findProfile,
@@ -45,6 +46,8 @@ export async function GET() {
 }
 
 export async function PATCH(req: NextRequest) {
+  const blockedOrigin = crossOriginBlocked(req);
+  if (blockedOrigin) return blockedOrigin;
   const gate = await requireAdmin();
   if (gate.error) return gate.error;
 

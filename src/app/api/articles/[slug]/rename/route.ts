@@ -6,6 +6,7 @@ import { readSession } from "@/lib/session";
 import { ghGetFile, ghCommitFiles, resolveCommitToken, type FileChange } from "@/lib/github";
 import { rewriteReferences, renameSelf } from "@/lib/editing";
 import { getArticles } from "@/lib/content";
+import { crossOriginBlocked } from "@/lib/same-origin";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -17,6 +18,8 @@ const ORDER = "src/content/articles/order.json";
 const REDIRECTS = "src/content/redirects.json";
 
 export async function POST(req: NextRequest, ctx: RouteContext<"/api/articles/[slug]/rename">) {
+  const blockedOrigin = crossOriginBlocked(req);
+  if (blockedOrigin) return blockedOrigin;
   const { slug } = await ctx.params;
   const session = await readSession();
   const token = resolveCommitToken(session);

@@ -3,6 +3,7 @@
 // sanitizeProfilePatch only ever returns the editable subset.
 import type { NextRequest } from "next/server";
 import { getPlatformUser } from "@/lib/platform-auth";
+import { crossOriginBlocked } from "@/lib/same-origin";
 import {
   ProfileStoreError,
   getOrCreateProfile,
@@ -43,6 +44,8 @@ export async function GET() {
 }
 
 export async function PATCH(req: NextRequest) {
+  const blockedOrigin = crossOriginBlocked(req);
+  if (blockedOrigin) return blockedOrigin;
   const user = await getPlatformUser();
   if (!user) return Response.json({ error: "auth_required" }, { status: 401 });
   if (!profileStoreConfigured()) return unconfigured();

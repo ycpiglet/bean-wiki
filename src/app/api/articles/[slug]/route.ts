@@ -19,6 +19,7 @@ import {
 } from "@/lib/github";
 import { googleConfigured, oauthConfigured } from "@/lib/oauth";
 import { getArticle } from "@/lib/content";
+import { crossOriginBlocked } from "@/lib/same-origin";
 import {
   sourcePath,
   validateSave,
@@ -76,6 +77,8 @@ export async function GET(req: NextRequest, ctx: RouteContext<"/api/articles/[sl
 }
 
 export async function POST(req: NextRequest, ctx: RouteContext<"/api/articles/[slug]">) {
+  const blockedOrigin = crossOriginBlocked(req);
+  if (blockedOrigin) return blockedOrigin;
   const { slug } = await ctx.params;
   const session = await readSession();
   if (!session) {
