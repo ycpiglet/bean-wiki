@@ -39,7 +39,12 @@
     "check:palette": "node --test tests/brand-colors.test.mjs && node scripts/check-brand-colors.mjs",
     "verify:palette-browser": "node scripts/verify-brand-colors-browser.mjs",
     "check:editorial": "node scripts/check-editorial.mjs",
-    "verify": "npm run lint && npm run check:palette && npm run check-content && npm run check:editorial && npm run build",
+    "check:vocabulary": "node scripts/check-vocabulary.mjs",
+    "check:api-contract": "node scripts/check-api-contract.mjs",
+    "check:bot-catalog": "node scripts/check-bot-catalog.mjs",
+    "check:platform": "npm run check:vocabulary && npm run check:api-contract && npm run check:bot-catalog",
+    "verify": "npm run lint && npm run check:palette && npm run check-content && npm run check:editorial && npm run check:platform && npm run build",
+    "mint:api-client": "node scripts/mint-api-client.mjs",
     "new-article": "node scripts/new-article.mjs",
     "publish:content": "node scripts/publish-agent-content.mjs",
     "publish:content:live": "node scripts/publish-agent-content.mjs --push"

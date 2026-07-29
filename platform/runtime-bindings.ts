@@ -17,7 +17,16 @@ export type RuntimeD1Database = {
 
 export type RuntimeBindings = {
   DB?: RuntimeD1Database;
+  /** Legacy single-token import credential. Superseded by `api_clients`. */
   COFFEE_CHERRY_IMPORT_TOKEN?: string;
+  /** Proves a request arrived via the platform gateway; see platform-auth.ts. */
+  PLATFORM_GATEWAY_SECRET?: string;
+  /** Comma-separated origins allowed to read the public knowledge API. */
+  KNOWLEDGE_API_CORS_ORIGINS?: string;
+  /** Comma-separated emails bootstrapped to the `owner` role; see src/lib/roles.ts. */
+  PLATFORM_OWNER_EMAILS?: string;
+  /** Daily-rotating salt base for page_views.session_hash. */
+  TELEMETRY_SALT?: string;
 };
 
 const runtime = globalThis as typeof globalThis & {

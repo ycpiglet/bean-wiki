@@ -1,5 +1,7 @@
 import { headers } from "next/headers";
 import { readSession, type Session } from "@/lib/session";
+import { getRuntimeBindings } from "../../platform/runtime-bindings";
+import { timingSafeEqualHex } from "@/lib/api/crypto";
 
 export type PlatformUser = {
   accountKey: string;
@@ -15,6 +17,15 @@ const USER_FULL_NAME_HEADER = "oai-authenticated-user-full-name";
 const USER_FULL_NAME_ENCODING_HEADER =
   "oai-authenticated-user-full-name-encoding";
 const PERCENT_ENCODED_UTF8 = "percent-encoded-utf-8";
+// The `oai-authenticated-user-*` headers are only trustworthy when the request
+// provably arrived through the platform gateway that sets them. The deployment
+// is directly reachable, so without proof any caller could assert any identity
+// and write posts, XP, and suggestions as that user.
+//
+// Trust therefore requires a shared secret that only the gateway knows. When
+// PLATFORM_GATEWAY_SECRET is unset the headers are ignored entirely: sessions
+// keep working, header-only identity does not. See docs/PLATFORM-CONTRACT-V1.md §7.
+const GATEWAY_SECRET_HEADER = "x-platform-gateway-secret";
 const SIGN_IN_PATH = "/signin-with-chatgpt";
 const SIGN_OUT_PATH = "/signout-with-chatgpt";
 const CALLBACK_PATH = "/callback";
@@ -56,6 +67,9 @@ export async function getPlatformUser(
   if (!platformHeadersTrusted()) return null;
 
   const requestHeaders = await headers();
+  if (!gatewayHeadersTrusted(requestHeaders.get(GATEWAY_SECRET_HEADER))) {
+    return null;
+  }
   const email = requestHeaders.get(USER_EMAIL_HEADER)?.trim() || null;
   if (!email) return null;
 
@@ -74,6 +88,19 @@ export async function getPlatformUser(
     provider: "chatgpt",
     avatar: null,
   };
+}
+
+/**
+ * True only when a gateway secret is configured AND the request presents it.
+ * Fails closed: an unset secret means header identity is disabled, not open.
+ */
+function gatewayHeadersTrusted(presented: string | null): boolean {
+  const expected =
+    getRuntimeBindings().PLATFORM_GATEWAY_SECRET ??
+    process.env.PLATFORM_GATEWAY_SECRET;
+  if (!expected || expected.length < 16) return false;
+  if (!presented) return false;
+  return timingSafeEqualHex(presented, expected);
 }
 
 export function platformSignOutPath(returnTo = "/"): string {
