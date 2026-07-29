@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
+import { PrimaryNav } from "@/components/primary-nav";
 import { ContactForm } from "@/components/contact-form";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
@@ -29,6 +30,7 @@ export default function ContactPage() {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
+        <PrimaryNav />
         <div className="header-tools">
           <Link href="/" className="back-link">← 홈으로</Link>
           <HeaderSearchButton locale="ko" />

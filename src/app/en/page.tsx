@@ -7,6 +7,7 @@ import { MobileNav } from "@/components/mobile-nav";
 import { Search } from "@/components/search";
 import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { PrimaryNav } from "@/components/primary-nav";
 import {
   categories,
   categoryArticleCount,
@@ -90,21 +91,7 @@ export default function EnHome() {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
-        <nav aria-label="Primary">
-          <Link href="/en/wiki" className="nav-accent-olive">Articles</Link>
-          <Link href="/en/glossary" className="nav-accent-berry">Glossary</Link>
-          <a href="#contribute" className="nav-accent-copper">Contribute</a>
-          <Link href="/design/colors" className="brand-palette-tab">
-            <span className="brand-palette-dots" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-              <i />
-              <i />
-            </span>
-            PALETTE · BEAN WIKI CITY
-          </Link>
-        </nav>
+        <PrimaryNav locale="en" />
         <div className="header-tools">
           <HeaderSearchButton locale="en" />
           <LanguageSwitcher locale="en" href="/" />

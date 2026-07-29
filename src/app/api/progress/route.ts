@@ -14,7 +14,11 @@ const validKinds = new Set<ActivityKind>([
 
 export async function POST(request: Request) {
   const user = await getPlatformUser();
-  if (!user) return Response.json({ error: "auth_required" }, { status: 401 });
+  // Learning events are fired as background telemetry from public pages.
+  // Anonymous visitors simply receive no account XP; a 200 avoids turning the
+  // expected signed-out state into a noisy browser-console error.
+  if (!user)
+    return Response.json({ awarded: 0, authenticated: false });
   const data = (await request.json().catch(() => null)) as {
     kind?: ActivityKind;
     entityKey?: string;

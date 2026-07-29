@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { allTags, articlesByCategory, categories, getPublishedArticles } from "@/lib/content";
+import { allContributorProfiles } from "@/content/contributors";
 import { parseKoreanDate } from "@/lib/dates";
 import { SITE_URL } from "@/lib/site";
 
@@ -57,6 +58,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const contributorRoutes: MetadataRoute.Sitemap = allContributorProfiles(
+    articles,
+  ).map((contributor) => ({
+    url: `${SITE_URL}/contributors/${contributor.id}`,
+    lastModified: siteLastModified,
+    changeFrequency: "weekly",
+    priority: 0.5,
+  }));
+
   const tagRoutes: MetadataRoute.Sitemap = allTags().map((tag) => ({
     url: `${SITE_URL}/tags/${encodeURIComponent(tag)}`,
     lastModified: siteLastModified,
@@ -88,6 +98,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...staticRoutes,
     ...topicRoutes,
     ...articleRoutes,
+    ...contributorRoutes,
     ...tagRoutes,
     ...enRoutes,
   ];

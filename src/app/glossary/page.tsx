@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
+import { PrimaryNav } from "@/components/primary-nav";
 import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
@@ -44,6 +45,7 @@ export default function GlossaryPage() {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
+        <PrimaryNav />
         <div className="header-tools">
           <Link href="/" className="back-link">
             ← 홈으로

@@ -10,6 +10,7 @@ import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { HomeDiscovery } from "@/components/home-discovery";
 import { KnowledgeDial } from "@/components/knowledge-dial";
+import { PrimaryNav } from "@/components/primary-nav";
 import {
   categories,
   categoryArticleCount,
@@ -91,24 +92,7 @@ export default function Home() {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
-        <nav aria-label="주 메뉴">
-          <Link href="/wiki" className="nav-accent-olive">문서</Link>
-          <Link href="/discover" className="nav-accent-sage">추천</Link>
-          <Link href="/learning-path" className="nav-accent-copper">학습 경로</Link>
-          <Link href="/quiz" className="nav-accent-berry">퀴즈</Link>
-          <Link href="/community" className="nav-accent-blue">커뮤니티</Link>
-          <Link href="/suggestions" className="nav-accent-sand">제안</Link>
-          <Link href="/design/colors" className="brand-palette-tab">
-            <span className="brand-palette-dots" aria-hidden="true">
-              <i />
-              <i />
-              <i />
-              <i />
-              <i />
-            </span>
-            PALETTE · 빈위키 시티
-          </Link>
-        </nav>
+        <PrimaryNav />
         <div className="header-tools">
           <HeaderSearchButton locale="ko" />
           <LanguageSwitcher locale="ko" href="/en" />
@@ -158,13 +142,6 @@ export default function Home() {
         </div>
       </section>
 
-      <KnowledgeDial items={homeHighlights} />
-
-      <HomeDiscovery
-        items={trivia}
-        questions={homeQuizQuestions}
-      />
-
       <section className="brand-story shell">
         <div className="brand-story-copy">
           <span className="section-index">BEAN WIKI FIELD MAP</span>
@@ -188,6 +165,13 @@ export default function Home() {
           />
         </div>
       </section>
+
+      <KnowledgeDial items={homeHighlights} />
+
+      <HomeDiscovery
+        items={trivia}
+        questions={homeQuizQuestions}
+      />
 
       <section className="progress-section shell">
         <div className="section-heading">

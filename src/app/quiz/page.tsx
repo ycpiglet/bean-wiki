@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
+import { PrimaryNav } from "@/components/primary-nav";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
 import { QuizRunner } from "@/components/quiz-runner";
@@ -27,6 +28,7 @@ export default function QuizPage() {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
+        <PrimaryNav />
         <div className="header-tools">
           <Link href="/wiki" className="back-link">
             ← 모든 문서

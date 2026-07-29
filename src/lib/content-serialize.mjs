@@ -16,7 +16,7 @@
 // scripts (`node scripts/*.mjs`), the content check, and the Next.js save API
 // route all round-trip through the exact same code.
 
-const STRUCTURED = new Set(["related", "tags", "history"]);
+const STRUCTURED = new Set(["related", "tags", "history", "contributors"]);
 const SCALARS = [
   "slug",
   "title",
@@ -70,6 +70,8 @@ function serializeFrontmatter(a) {
   for (const key of SCALARS) fm.push(`${key}: ${a[key]}`);
   fm.push(`related: ${JSON.stringify(a.related)}`);
   if (a.tags) fm.push(`tags: ${JSON.stringify(a.tags)}`);
+  if (a.contributors?.length)
+    fm.push(`contributors: ${JSON.stringify(a.contributors)}`);
   if (a.history) fm.push(`history: ${JSON.stringify(a.history)}`);
   if (a.draft === true || a.draft === "true") fm.push(`draft: true`);
   return fm.join("\n");
@@ -193,6 +195,7 @@ export function articleFromSource(source) {
     related: fm.related,
   };
   if (fm.tags) article.tags = fm.tags;
+  if (fm.contributors) article.contributors = fm.contributors;
   if (fm.history) article.history = fm.history;
   if (fm.draft === "true" || fm.draft === true) article.draft = true;
   article.bodyHtml = renderSectionedHtml(body);
