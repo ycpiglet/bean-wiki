@@ -10,6 +10,7 @@ import { ShareButtons } from "@/components/share-buttons";
 import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { categoryLabel, getArticle, getArticles } from "@/lib/content";
+import { sanitizeRenderedHtml } from "@/lib/sanitize-render";
 import { toISODate } from "@/lib/dates";
 import { getDictionary } from "@/i18n";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
@@ -143,7 +144,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
 
           <div
             className="article-content"
-            dangerouslySetInnerHTML={{ __html: article.bodyHtml }}
+            dangerouslySetInnerHTML={{ __html: sanitizeRenderedHtml(article.bodyHtml) }}
           />
 
           {history.length > 0 && (

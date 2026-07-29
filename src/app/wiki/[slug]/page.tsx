@@ -16,6 +16,7 @@ import { ShareButtons } from "@/components/share-buttons";
 import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { articles, getArticle, getCategoryByName } from "@/lib/content";
+import { sanitizeRenderedHtml } from "@/lib/sanitize-render";
 import { toISODate } from "@/lib/dates";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { quiz } from "@/content/quiz";
@@ -202,7 +203,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
 
           <div
             className="article-content"
-            dangerouslySetInnerHTML={{ __html: article.bodyHtml }}
+            dangerouslySetInnerHTML={{ __html: sanitizeRenderedHtml(article.bodyHtml) }}
           />
 
           <ArticleResources category={article.category} />
