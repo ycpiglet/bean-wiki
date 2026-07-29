@@ -137,11 +137,31 @@ if (execute) {
   }
 
   // Aggregates must pass the k-anonymity floor.
+  //
+  // Checking that the FILE mentions the helper is far too weak: it passed while
+  // runContentGaps() returned raw single-hit rows with `suppressed: 0`. So assert
+  // it per handler — every handler that returns rows must either suppress or
+  // hard-code `suppressed: 0` alongside a documented exemption.
   if (!/applySuppression|suppressSmall/.test(execute)) {
     err(
       "execute.ts: never calls applySuppression()/suppressSmall(). " +
         "Aggregates must respect K_ANONYMITY_FLOOR (docs/TELEMETRY-AND-PRIVACY.md).",
     );
+  }
+  for (const handler of handlers) {
+    const body = handlerBody(execute, handler);
+    if (!body) continue;
+    const returnsRows = /rowCount:\s*(?!null)/.test(body);
+    if (!returnsRows) continue;
+    const suppresses = /applySuppression|suppressSmall/.test(body);
+    const exempt = /suppression-exempt:/.test(body);
+    if (!suppresses && !exempt) {
+      err(
+        `execute.ts: handler "${handler}" returns rows without calling ` +
+          `applySuppression()/suppressSmall(). Add the floor, or justify it with a ` +
+          `\`// suppression-exempt: <reason>\` comment inside the handler.`,
+      );
+    }
   }
 
   // Personal data must not be selected at all.
@@ -187,6 +207,16 @@ if (existsSync(docPath)) {
   }
 } else {
   warn("docs/BOT-COMMAND-CATALOG.md does not exist yet.");
+}
+
+/** Body of `async function run<Handler>(...)`, up to the next top-level function. */
+function handlerBody(source, handler) {
+  const name = `run${handler.charAt(0).toUpperCase()}${handler.slice(1)}`;
+  const start = source.search(new RegExp(`(?:async\\s+)?function\\s+${name}\\b`));
+  if (start < 0) return null;
+  const rest = source.slice(start + 1);
+  const next = rest.search(/\n(?:async\s+)?function\s/);
+  return next < 0 ? rest : rest.slice(0, next);
 }
 
 for (const warning of warnings) console.warn(`  warn  ${warning}`);

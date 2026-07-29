@@ -9,6 +9,8 @@ import {
   applySuppression,
   getMetric,
   resolveMetricParams,
+  suppressSmall,
+  K_ANONYMITY_FLOOR,
   type MetricRow,
 } from "@/lib/metrics/catalog";
 import { topMisses } from "@/lib/knowledge/gaps";
@@ -140,9 +142,12 @@ async function runStatsToday(context: ExecContext): Promise<ExecOutcome> {
       ? ((todayViews.value - yesterdayViews.value) / yesterdayViews.value) * 100
       : null;
 
-  // Below the floor we report the aggregate but not a per-reader breakdown, and
-  // we say so, because "0" would be a lie on a genuinely quiet day.
-  const thin = todayUnique.value > 0 && todayUnique.value < 5;
+  // suppression-exempt: site-wide daily totals have no dimension to re-identify
+  // through — there is exactly one row and its subject is "the site". What the
+  // floor protects here is the *breakdown*, so below the floor this reports the
+  // totals and explicitly withholds any per-entity detail. Reporting 0 instead
+  // would be a lie on a genuinely quiet day, which is why the aggregate stays.
+  const thin = todayUnique.value > 0 && todayUnique.value < K_ANONYMITY_FLOOR;
 
   return {
     ok: true,
@@ -155,7 +160,7 @@ async function runStatsToday(context: ExecContext): Promise<ExecOutcome> {
         : `- 전일 대비: ${delta >= 0 ? "+" : ""}${delta.toFixed(1)}%`,
       `- 미처리 콘텐츠 요청: ${openRequests}`,
       thin
-        ? "\n고유 세션이 최소 인원 기준(5) 미만이라 문서별 분해는 제공하지 않습니다."
+        ? `\n고유 세션이 최소 인원 기준(${K_ANONYMITY_FLOOR}) 미만이라 문서별 분해는 제공하지 않습니다.`
         : "",
     ]
       .filter(Boolean)
@@ -176,7 +181,20 @@ async function runStatsToday(context: ExecContext): Promise<ExecOutcome> {
 async function runContentGaps(context: ExecContext): Promise<ExecOutcome> {
   const limit = clamp(Number(context.params.limit ?? 15), 1, 50);
   const sinceDays = clamp(Number(context.params.window_days ?? 30), 1, 90);
-  const misses = await topMisses({ limit, sinceDays, onlyUnfiled: true });
+
+  // Over-fetch, because the floor below removes rows and we still want a full page.
+  const raw = await topMisses({ limit: 50, sinceDays, onlyUnfiled: true });
+
+  // A resolve miss is a string somebody's app sent us. A query seen once can be a
+  // typo, a customer's own cafe name, or something otherwise identifying — so the
+  // same minimum-observation floor that governs every other aggregate applies
+  // here. `hit_count` is the subject proxy: resolve_misses stores no session.
+  // (docs/TELEMETRY-AND-PRIVACY.md §7.)
+  const { rows: kept, suppressed } = suppressSmall(
+    raw.map((miss) => ({ ...miss, subject_count: miss.hit_count })),
+    "subject_count",
+  );
+  const misses = kept.slice(0, limit);
 
   const lines = misses.map(
     (miss, index) =>
@@ -189,20 +207,29 @@ async function runContentGaps(context: ExecContext): Promise<ExecOutcome> {
       `**콘텐츠 공백 — 최근 ${sinceDays}일**`,
       lines.length
         ? lines.join("\n")
-        : "미해결 조회 실패가 없습니다. 외부 앱이 찾는 용어를 모두 설명하고 있습니다.",
+        : `${K_ANONYMITY_FLOOR}회 이상 관측된 미해결 조회 실패가 없습니다.`,
       lines.length
-        ? "\n이 용어들은 외부 앱이 /resolve로 정규화하려다 실패한 것입니다. 요청이 등록된 항목은 제외했습니다."
+        ? "\n외부 앱이 /resolve로 정규화하려다 실패한 용어입니다. 이미 요청이 등록된 항목은 제외했습니다."
+        : "",
+      suppressed > 0
+        ? `\n관측 ${K_ANONYMITY_FLOOR}회 미만이라 ${suppressed}개 항목을 숨겼습니다.`
         : "",
     ]
       .filter(Boolean)
       .join("\n"),
-    data: { window_days: sinceDays, misses },
+    data: { window_days: sinceDays, misses, floor: K_ANONYMITY_FLOOR },
     rowCount: misses.length,
-    suppressed: 0,
+    suppressed,
   };
 }
 
 async function runRequestsQueue(context: ExecContext): Promise<ExecOutcome> {
+  // suppression-exempt: a work queue, not a measurement of people. These are
+  // operational items an editor must see individually in order to act on them,
+  // and hiding a two-item backlog protects nobody. Matches the `exempt` marking
+  // already on the `requests.open_count` metric. Note the SELECT deliberately
+  // omits the request body and any submitter identity — only id, kind, title,
+  // status, priority, and whether it came from an app or a person.
   const limit = clamp(Number(context.params.limit ?? 20), 1, 50);
   const status = asString(context.params.status);
   if (status && !(REQUEST_STATUSES as readonly string[]).includes(status)) {
@@ -256,6 +283,11 @@ async function runRequestsQueue(context: ExecContext): Promise<ExecOutcome> {
 }
 
 async function runClientsUsage(context: ExecContext): Promise<ExecOutcome> {
+  // suppression-exempt: the subject of every row is an organisation's API client,
+  // not a person. There is no end-user dimension to protect — a client making 3
+  // calls reveals nothing about any human. Suppressing here would instead hide
+  // exactly the low-volume clients an operator needs to notice (a broken new
+  // integration, or one that has silently stopped calling).
   const limit = clamp(Number(context.params.limit ?? 20), 1, 50);
   const windowDays = clamp(Number(context.params.window_days ?? 7), 1, 90);
 

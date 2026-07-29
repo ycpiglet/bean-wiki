@@ -8,7 +8,7 @@
 
 import { ok, problem, newRequestId } from "@/lib/api/envelope";
 import { requireClient } from "@/lib/api/auth";
-import { SCOPES } from "@/lib/api/scopes";
+import { SCOPES, grantsScope } from "@/lib/api/scopes";
 import { getPlatformUser } from "@/lib/platform-auth";
 import { resolveRole, roleAtLeast, type Role } from "@/lib/roles";
 import { route } from "@/lib/bot/router";
@@ -80,6 +80,30 @@ export async function POST(request: Request) {
   }
 
   const { command, params, source } = routed;
+
+  // The catalogue declares a per-command scope, and until now that declaration
+  // did nothing at runtime: the endpoint checked only `bot:command` plus the
+  // operator's role. An adapter granted `bot:command` could therefore reach
+  // `requests.triage`, which declares `content-requests:triage`, without ever
+  // holding it. Client-authenticated callers must satisfy both.
+  if (actor.clientScopes && !grantsScope(actor.clientScopes, command.requiredScope)) {
+    await recordCommand({
+      requestId,
+      actorRef,
+      actorRole: role,
+      surface,
+      commandId: command.id,
+      params,
+      mode: command.mode,
+      outcome: "forbidden_scope",
+      rowCount: null,
+      suppressed: 0,
+    });
+    return problem("forbidden_scope", {
+      requestId,
+      detail: `\`${command.id}\`에는 \`${command.requiredScope}\` 스코프가 필요합니다.`,
+    });
+  }
 
   if (!roleAtLeast(role, command.requiredRole)) {
     await recordCommand({
@@ -206,6 +230,11 @@ type ActorResolution =
       actorRef: string;
       surface: string;
       requestId: string;
+      /**
+       * Scopes of the authenticated adapter, or undefined for a browser-session
+       * operator (who holds no client credential and is governed by role alone).
+       */
+      clientScopes?: string[];
     }
   | { ok: false; response: Response };
 
@@ -249,6 +278,7 @@ async function resolveActor(
       actorRef: onBehalfOf.toLowerCase(),
       surface: typeof body?.surface === "string" ? body.surface.slice(0, 40) : "client",
       requestId: auth.requestId,
+      clientScopes: auth.client.scopes,
     };
   }
 

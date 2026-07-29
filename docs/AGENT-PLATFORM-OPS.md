@@ -113,7 +113,8 @@ node scripts/mint-api-client.mjs --name "Beanote" --org "Beanote" \
   `POST /api/telemetry/v1/rollup`을 트리거할 수 있습니다.
 - 스코프는 `src/lib/api/scopes.ts`의 `SCOPES` / 스크립트의 `KNOWN_SCOPES` /
   계약 §8.1 표 **세 곳이 일치**해야 합니다. 어긋나면 발급이 거부되거나 라우트가
-  `internal`(500)로 실패합니다.
+  `internal`(500)로 실패합니다. 가드레일은 `scopes.ts`만 정본으로 보므로 이
+  드리프트를 잡지 못합니다 — 스코프를 추가할 때 손으로 세 곳을 확인합니다.
 - 운영·스테이징 자격증명을 분리합니다.
 
 회전:

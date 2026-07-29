@@ -23,6 +23,13 @@ description: Bean Wiki에 `/api/<domain>/v1` 엔드포인트를 추가·수정. 
    정당한 스코프를 거부하거나 라우트가 500으로 실패한다(`requireClient()`는
    `isKnownScope()` 미통과 스코프를 `internal`로 떨어뜨린다).
 
+   > 실제 사례: `contributions:read`는 `scopes.ts`에 있고 두 라우트가 요구하는데
+   > `mint-api-client.mjs`의 `KNOWN_SCOPES`와 계약 §8.1 표에는 없다. 그 결과 그
+   > 스코프를 가진 자격증명을 **발급할 수 없고** 해당 엔드포인트에 도달할 수 있는
+   > 클라이언트가 존재하지 않는다. 스코프를 추가할 때 세 곳을 같이 고치지 않으면
+   > 이렇게 된다. `check-api-contract.mjs`는 이 종류의 드리프트를 잡지 못한다 —
+   > `scopes.ts`만 정본으로 보기 때문이다.
+
    | 방향 | 인증 |
    | --- | --- |
    | 공개 지식 읽기 | `optionalClient()` (`src/lib/knowledge/access.ts`). 자격증명 없으면 익명 통과, **깨진 자격증명은 익명으로 격하하지 않고 `access.rejection`을 그대로 반환** |

@@ -13,12 +13,17 @@
 
 import { webcrypto } from "node:crypto";
 
+// MUST stay in sync with SCOPES in src/lib/api/scopes.ts. A scope that exists in
+// the code but not here cannot be granted to anyone, which silently makes the
+// endpoints requiring it unreachable. check-api-contract.mjs cannot catch that,
+// because it reads scopes.ts as the source of truth and never looks here.
 const KNOWN_SCOPES = [
   "knowledge:read",
   "content-requests:read",
   "content-requests:write",
   "content-requests:triage",
   "contributions:write",
+  "contributions:read",
   "metrics:read",
   "bot:command",
   "recommendations:write",
