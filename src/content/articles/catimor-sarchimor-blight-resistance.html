@@ -5,12 +5,12 @@ summary: 카티모르·사르치모르 계열은 생산 안정성과 가공 변�
 category: 산지와 생두
 level: 중급
 readingTime: 11분
-updatedAt: 2026. 07. 27.
+updatedAt: 2026. 07. 28.
 accent: sage
 fact: 내병성 계통은 생산 안정성에 유리할 수 있으나, 품질 신호는 가공·건조 조건과 함께 평가해야 합니다.
 related: ["coffee-plant-taxonomy","coffee-soil-nutrient-diagnosis","coffee-processing","post-harvest-processing-map","coffee-storage"]
 tags: ["카티모르","사르치모르","녹병","내병성","선발"]
-history: [{"date":"2026. 07. 27.","note":"GEN-05 주제 초안 작성"}]
+history: [{"date":"2026. 07. 27.","note":"GEN-05 주제 초안 작성"},{"date":"2026. 07. 28.","note":"구조 설계, 운영 체크리스트, 실패 지도, 2주 루틴을 추가해 의사결정 프레임 강화"},{"date":"2026. 07. 28.","note":"GEN-05 보강: 교대 인수인계 체크리스트 추가로 운영 전달 규칙 고정"}]
 ---
 <h2 id="overview">카티모르·사르치모르를 재료로 쓰는 이유</h2>
 <p>카티모르·사르치모르는 생리적 대응력을 중심으로 선택된 계열입니다. 이 계열은 농장 운영에서 위험 완화 수단으로 자주 쓰이지만, 품질 판단은 별도로 운영되어야 합니다.</p>
@@ -51,6 +51,34 @@ history: [{"date":"2026. 07. 27.","note":"GEN-05 주제 초안 작성"}]
   <li>운영 지표로 재검토 후 다음 수확량 계획 반영</li>
 </ol>
 
+<h2 id="operating-checklist">현장 운영 체크리스트</h2>
+<ul>
+  <li><strong>입고 직전:</strong> 병반 빈도, 체리 수분, 토양 배수 조건을 교차 기록</li>
+  <li><strong>수확 기간:</strong> 구획별 채집 비율과 품질 편차를 동일 표준으로 수집</li>
+  <li><strong>건조 단계:</strong> 2~4시간 간격 습도 로그와 공기 교환 상태 기록</li>
+  <li><strong>가공 단계:</strong> 건조 편차가 큰 구획의 전처리 방법을 별도 추적</li>
+  <li><strong>출하 전:</strong> 품질 시편 2구간 추출로 내재 향미 시그널 검증</li>
+</ul>
+
+<h2 id="failure-map">오해·실수 지도</h2>
+<table><thead><tr><th>문제</th><th>원인 후보</th><th>기본 대응</th></tr><tr><td>수확량은 많지만 향미 편차가 커짐</td><td>구획별 건조 프로토콜 통일 실패</td><td>건조 구간별 시간/환기 기준 재설정</td></tr><tr><td>병해는 낮은데 컵 편차가 큼</td><td>분리 보관·선별 이력 누락</td><td>구획 로트 추적표와 가공 조건 재기록</td></tr><tr><td>내병성 선택 후 바디감 저하</td><td>영양/수확 시기 조합의 과도 최적화</td><td>영양-수확 간격 변화의 분할 실험</td></tr></tbody></table>
+
+<h2 id="two-week-routine">2주 운영 루틴</h2>
+<ol>
+  <li>1주차: 두 구획을 고정해 병해 점검표와 건조 로그만 운용</li>
+  <li>1주차 중반: 편차가 큰 구간의 가공·건조 데이터를 분리</li>
+  <li>2주차: 분리된 구간은 수분/건조 속도만 변경하고 영양·수확 조건 유지</li>
+  <li>2주차 말: 감각 점수와 생산 지표에서 상관이 높은 변수만 다음 의사결정에 반영</li>
+</ol>
+
+<h2 id="decision-lexicon">의사결정 키워드</h2>
+<p>현장 합의 문구를 3개로 고정하면 분쟁을 줄일 수 있습니다.</p>
+<ul>
+  <li><strong>안정성 우선:</strong> 생산량 감소 허용 범위 내에서 품질 편차를 줄이는 쪽을 선택</li>
+  <li><strong>구획 우선:</strong> 계통명이 아니라 같은 구획의 히스토리를 기준으로 비교</li>
+  <li><strong>분리 우선:</strong> 건조/보관 변수와 유전적 특성을 분리해 기록</li>
+</ul>
+
 <h2 id="references">참고 자료</h2>
 <ul>
   <li><a href="https://www.fao.org/plant-health/">FAO 식물보건 가이드</a></li>
@@ -58,6 +86,15 @@ history: [{"date":"2026. 07. 27.","note":"GEN-05 주제 초안 작성"}]
   <li><a data-wikilink="coffee-plant-taxonomy" href="/wiki/coffee-plant-taxonomy">커피 분류학</a></li>
   <li><a data-wikilink="post-harvest-processing-map" href="/wiki/post-harvest-processing-map">수확 후 가공 지도</a></li>
   <li><a data-wikilink="coffee-soil-nutrient-diagnosis" href="/wiki/coffee-soil-nutrient-diagnosis">토양·영양 진단</a></li>
+</ul>
+
+<h2 id="handover-checklist-gen05">교대 인수인계 체크리스트</h2>
+<ul>
+  <li>2주 루틴에서 고정한 기준(병해 점검, 건조 통제, 수확 구간)은 누가 이어도 같은 기록 형식으로 재현되는가?</li>
+  <li>실험군/대조군의 구획 정의(동일 토양군/동일 수확 구간)가 팀 내에서 합의돼 있는가?</li>
+  <li>편차 원인 가설을 운영 가설 1개(병해·건조·보관)로 분리해 다음 교대자에게 남겼는가?</li>
+  <li>분석 결과를 의사결정으로 바꾸기 전, 라벨 오해 가능성 점검을 별도 체크했는가?</li>
+  <li>다음 교체 근무자가 시작 시 참고할 수 있도록 미해결 항목과 보류 조건을 우선순위로 정리했는가?</li>
 </ul>
 
 <h2 id="quiz">자기 점검</h2>

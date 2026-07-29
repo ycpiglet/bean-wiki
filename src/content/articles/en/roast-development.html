@@ -4,19 +4,37 @@ title: Understanding Roast Development Time
 summary: Establishing a perspective on reading the full thermal history rather than judging roasting by the time ratio after the first crack alone.
 category: 로스팅
 level: 중급
-readingTime: 10 min
-updatedAt: 2026. 07. 20.
+readingTime: 12분
+updatedAt: 2026. 07. 28.
 accent: copper
 fact: The same development time ratio can produce completely different results depending on batch size, heat input, and the energy from preceding stages.
-related: ["cupping-basics","roast-profile-design","coffee-processing"]
-tags: ["로스팅","프로파일","품질관리"]
-history: [{"date":"2026. 07. 20.","note":"First draft on the development-time perspective"}]
+related: ["roast-development-signals","roast-profile-design","coffee-cherry-to-bean","cupping-basics"]
+tags: ["로스팅","프로파일","품질관리","발달시간","배치관리"]
+history: [{"date":"2026. 07. 20.","note":"First draft on the development-time perspective"},{"date":"2026. 07. 28.","note":"Expanded into decision/practice/misconception/quiz/references structure for operational stability"}]
 ---
-<h2 id="definition">Development is not just what happens after first crack</h2>
-<p>In practice, many refer to the period from the start of first crack to discharge as the development stage. While useful for recording and communication, the reactions that create flavor occur continuously throughout the entire roasting process.</p>
-<p>Therefore, rather than using development time or ratio as a single quality target value, you need to read the charge temperature, energy application, rate of change, and discharge state together.</p>
-<h2 id="signals">Signals to record together</h2>
-<p>The temperature displayed by the machine is influenced by sensor position and response speed. Don't just look at the curve—recording color, aroma, sound, exhaust condition, and physical changes together makes batch-to-batch comparison more accurate.</p>
-<ul><li>Batch weight and green bean density and moisture content</li><li>Timing of gas or electrical input changes</li><li>Exhaust and drum speed</li><li>Yellow point, first crack, and discharge timing</li><li>Weight loss ratio, color, and cupping results</li></ul>
-<h2 id="evaluation">The answer to your profile is confirmed in the cup</h2>
-<p>A good profile is not a beautiful-looking curve but a profile that consistently produces the intended flavor. Cupping under the same conditions and connecting roasting records to results creates meaningful benchmarks.</p>
+<h2 id="definition">Development is not only the period after first crack</h2>
+<p>In practice, teams often call the period from first crack onset to discharge “development time.” It is useful in communication, but flavor-forming reactions continue across the full roast, not only after first crack.</p>
+<p>Therefore development ratio should be used with charge conditions and energy context, not as a single quality target.</p>
+
+<h2 id="timeline">Stage-level purpose during roasting</h2>
+<ul><li><strong>Drying stage:</strong> moisture removal and heat normalization set the baseline; instability here usually spreads to later outcomes.</li><li><strong>Maillard stage:</strong> color and sugar-derived transitions accelerate, then feed into later flavor perception.</li><li><strong>Development stage:</strong> post-crack tailing behaviors shape acidity, body, and bitterness balance.</li></ul>
+<aside class="callout callout-note" data-tone="note"><p>Track stage transitions before final duration; this reduces overheat/underheat variance much faster than changing one value late.</p></aside>
+
+<h2 id="signals">Signals to log together</h2>
+<p>The displayed temperature is affected by probe placement and response speed. Record color, aroma, crack pattern, exhaust, and physical signs together for better batch comparison.</p>
+<table><thead><tr><th>Signal</th><th>Why to watch</th><th>What to verify</th></tr><tr><td>Charge weight / bean density / moisture</td><td>normalize energy loading</td><td>standardize among comparison batches</td></tr><tr><td>First crack onset and end</td><td>estimate risk of overt development</td><td>monitor first-to-second crack interval</td></tr><tr><td>Exhaust and aroma cues</td><td>spot over-oxidation behavior</td><td>separate from machine condition or contamination</td></tr><tr><td>Post-drop cooling</td><td>freeze finishing point</td><td>record cooling consistency</td></tr></tbody></table>
+
+<h2 id="decision">Operational decision frame</h2>
+<ol><li><strong>Set flavor goal:</strong> define whether acidity, sweetness, or body is the first priority.</li><li><strong>Fix variables:</strong> change only one control at a time.</li><li><strong>Verify:</strong> roast the same lot with repeated extractions and compare the same taste checkpoints.</li><li><strong>Lock settings:</strong> keep the setting if sensory spread narrows.</li></ol>
+
+<h2 id="risk-map">Typical failure patterns</h2>
+<table><thead><tr><th>Pattern</th><th>Interpretation</th><th>First move</th></tr><tr><td>Fast first-crack arrival only</td><td>possible early heat overload</td><td>reduce early stage heat ramp</td></tr><tr><td>Flavor flattens after finishing</td><td>insufficient development resolution</td><td>split development adjustment by time and cooling</td></tr><tr><td>Color stable but taste drifts</td><td>input variability or logging inconsistency</td><td>recheck moisture and logging template</td></tr></tbody></table>
+
+<h2 id="practice">Practice: 3-batch stabilization loop</h2>
+<ol><li>Set one baseline profile and roast three batches of the same lot first.</li><li>Log only crack timing, development ratio, and taste notes each batch.</li><li>Compare first two batches; adjust only one axis in batch three.</li><li>Move the next axis only after acidity, body, and bitterness tighten together.</li></ol>
+
+<h2 id="quiz">Self-check</h2>
+<ul><li>Why is stage transition stability often more useful than total roast time?</li><li>What two conditions can make identical totals produce different outcomes?</li><li>Which three signals are most useful during development validation?</li><li>When first crack is unreliable, what additional cue should you check?</li></ul>
+
+<h2 id="references">References</h2>
+<ul><li><a href="https://www.illoway.com/coffee-roasting-basics">Roasting basics: stage model overview</a></li><li><a href="https://sca.coffee/research-and-science">SCA Research &amp; Science portal</a></li><li><a href="https://www.cqa.org/">Coffee Quality Association, roast quality references</a></li><li><a data-wikilink="roast-profile-design" href="/wiki/roast-profile-design">Roast profile design</a></li><li><a data-wikilink="coffee-aroma-chemistry" href="/wiki/coffee-aroma-chemistry">Aroma chemistry after roasting</a></li></ul>

@@ -1,0 +1,136 @@
+---
+slug: cold-brew-chemistry-safety-storage
+title: 콜드브루 실험 정렬: 화학 반응·안전·보관의 반복 기준
+summary: 콜드브루는 장시간 추출과 보관 단계가 다르게 작동하므로 추출 구간과 저장 구간의 제어를 분리해야 합니다.
+category: 추출
+level: 중급
+readingTime: 10분
+updatedAt: 2026. 07. 28.
+accent: blue
+fact: 콜드브루는 동일한 농도라도 추출 조건과 보관 조건이 다르면 감각 차이가 크게 벌어지므로, 실험에서는 단계별로 고정값을 분리해야 합니다.
+related: ["cold-brew","coffee-storage","coffee-oxidation-pathway","water-for-coffee","brew-ratio-practice","home-brew-recipes"]
+tags: ["콜드브루","화학","안전","보관","희석","BRW-09"]
+history: [{"date":"2026. 07. 28.","note":"BRW-09 초안 작성"},{"date":"2026. 07. 28.","note":"BRW-09 보강: 실패 지도, 2주 정렬 루프, 인수인계 체크리스트 추가"}]
+---
+<h2 id="topic-brw09">BRW-09 정렬: 추출화학과 보관 안전을 분리해서 본다</h2>
+<p>콜드브루를 반복 실험할 때 가장 먼저 나누어야 하는 지점은 “추출 완료 시점”과 “보관 시작 시점”입니다. 이 둘을 동시에 바꾸면 문제가 생겼을 때 어디서 온지 추적이 안 됩니다.</p>
+<table>
+  <thead>
+    <tr><th>구간</th><th>우선점검</th><th>편차 신호</th><th>교정 포인트</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>추출 구간</td><td>원두량·분쇄·물량·시간 고정</td><td>첫 향이 자주 흔들림</td><td>온도와 접촉 조건만 분리해 조정</td></tr>
+    <tr><td>희석 구간</td><td>농축액 비율·희석액 상태 고정</td><td>같은 추출인데 농도와 단맛이 다름</td><td>희석 단계는 추출 후 1회차에서만 조정</td></tr>
+    <tr><td>보관 구간</td><td>밀폐·온도·개봉 빈도 고정</td><td>1~2일 뒤 둔향·잡미 증가</td><td>보관 변수는 오로지 해당 구간에서만 변경</td></tr>
+  </tbody>
+</table>
+
+<h2 id="failure-map-brw09">실패 지도: 단계별 오차 추적</h2>
+<table>
+  <thead>
+    <tr><th>신호</th><th>의심 원인</th><th>다음 조치</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>추출량은 비슷한데 농도가 매번 다름</td>
+      <td>추출 종료 시점과 잔류 분리 시점이 혼재</td>
+      <td>추출 종료와 분리 기록을 분리한 뒤 동일 추출 시간에서 반복측정</td>
+    </tr>
+    <tr>
+      <td>희석 후 2회차부터 단맛이 급감</td>
+      <td>희석 비율 변경과 개봉 빈도가 한 번에 이동</td>
+      <td>회차당 하나의 이동 축만 허용하고 나머지 구간은 고정</td>
+    </tr>
+    <tr>
+      <td>냉장 24시간 뒤 잡향만 유독 큼</td>
+      <td>보관 온도·개봉 간격 기록 누락</td>
+      <td>보관 로그의 온도·개봉 횟수를 표준 템플릿으로 고정 후 재측정</td>
+    </tr>
+    <tr>
+      <td>거품/침강 패턴만 변하고 산미은 안정</td>
+      <td>교반 횟수와 분쇄도가 함께 변함</td>
+      <td>교반은 고정값으로 두고 분쇄도만 조정하는 회차로 분리</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="chemistry-frame">장시간 추출의 화학 축</h2>
+<p>저온이더라도 추출은 단일 반응이 아닙니다. 용해, 확산, 미세입자 이동이 다른 속도로 누적됩니다. BRW-09에서는 오차를 축별로 고정합니다.</p>
+<table>
+  <thead>
+    <tr><th>축</th><th>의미</th><th>실험 점검</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>용해 축</td><td>희석 전 농축액의 기본 강도</td><td>동일 분쇄에서 농도 재현성 우선 확인</td></tr>
+    <tr><td>확산 축</td><td>추출시간과 접촉 균일성</td><td>한 번에 1회차만 시간을 이동</td></tr>
+    <tr><td>입자 축</td><td>거친 미분의 비중</td><td>필터 단계에서 잔차 수치로 확인</td></tr>
+    <tr><td>안정성 축</td><td>보관에서의 산화·발효 신호</td><td>개봉 주기 기준으로 미생물 리스크 확인</td></tr>
+  </tbody>
+</table>
+
+<h2 id="safe-process">안전·보관 정렬</h2>
+<p>콜드브루는 ‘차갑다’는 이유로 무균 처리가 필요 없다는 뜻이 아닙니다. 보관 실패는 맛보다 먼저 안전 이슈로 작동합니다.</p>
+<ol>
+  <li><strong>추출 종료 즉시 분리:</strong> 거친 입자와 과다 미분을 줄입니다.</li>
+  <li><strong>밀폐·냉장 보관:</strong> 노출 시간을 단축하고 냉장 온도를 고정합니다.</li>
+  <li><strong>1차 소비 기준 설정:</strong> 개봉 후 사용량 상한을 정해 잔여 시 유효성을 제한합니다.</li>
+  <li><strong>기록 분리:</strong> 추출 로그와 보관 로그를 섞지 말고 분리해 유지하세요.</li>
+</ol>
+
+<h2 id="common-misconceptions-brw09">BRW-09 흔한 오해</h2>
+<ul>
+  <li>오해: 콜드브루는 길면 길수록 더 무난하다.<br/><strong>정정:</strong> 과다 추출은 신선한 단맛보다 피로한 쓴맛을 먼저 키울 수 있습니다.</li>
+  <li>오해: 냉장 보관만 하면 미생물은 크게 신경 쓰지 않아도 된다.<br/><strong>정정:</strong> 보관 온도와 노출 시간이 반복 오차와 안전 리스크를 동시에 만듭니다.</li>
+  <li>오해: 희석은 단순히 농도 맞추기만 하면 된다.<br/><strong>정정:</strong> 추출 종료 직후 농도와 희석 타이밍을 분리해 기록해야 반복성이 생깁니다.</li>
+  <li>오해: 향미만 나쁘면 그날까지만 신경 쓰면 된다.<br/><strong>정정:</strong> 보관 중 산화 신호는 며칠 뒤에 크게 커집니다.</li>
+  <li>오해: 거품이 약하면 오래 못 두는 게 맞다.<br/><strong>정정:</strong> 거품은 변수 중 하나일 뿐, 개봉·노출 조건이 훨씬 크게 작동할 수 있습니다.</li>
+</ul>
+
+<h2 id="practice-brw09">실습: BRW-09 4회 정렬 루프</h2>
+<ol>
+  <li>회차 1: 분쇄·원두량·물량·시간 고정, 농축비는 동일</li>
+  <li>회차 2: 추출 시간을 10~20%만 이동해 농도 변화와 첫 향 응답 비교</li>
+  <li>회차 3: 동일 농축액을 다른 희석비로 나눠 1회만 비교</li>
+  <li>회차 4: 보관 조건(밀폐/온도)을 이동해 24~48시간 감각 변화를 점수화</li>
+</ol>
+<p>합격 판정은 ‘농도 맞춤’보다 ‘오차 분해’가 선행되어야 합니다.</p>
+
+<h2 id="two-week-loop-brw09">2주 정렬 루프</h2>
+<ol>
+  <li><strong>1주차:</strong> 추출 구간은 고정, 보관 조건만 통제해 2회차 안정성 기준을 수집한다.</li>
+  <li><strong>2주차:</strong> 이동 축은 1개만 설정(추출, 희석, 보관 중 택1)하고, 1주차 기준과 비교해 유지안·보류안을 분리 기록한다.</li>
+</ol>
+
+<h2 id="handover-checklist-brw09">교대 인수인계 체크리스트</h2>
+<ul>
+  <li>추출 로그와 보관 로그가 각각 독립적으로 쌓여 있는가?</li>
+  <li>현재 이동 축(추출/희석/보관)과 고정 축이 1줄 문장으로 정리되어 있는가?</li>
+  <li>개봉 횟수 및 개봉 직후 잔류 사용량 규칙이 다음 교대에 즉시 전달 가능한가?</li>
+  <li>채점 문구(향/산미/잡미)는 교대 전후 동일한 기준을 쓰고 있는가?</li>
+  <li>현재 보류안(재측정 필요 항목)과 다음 수정안이 구분되어 있는가?</li>
+</ul>
+
+<h2 id="template">안전·실험 템플릿</h2>
+<ul>
+  <li>기록 항목: 추출 시작/종료, 분쇄, 비율, 추출 시간, 희석 비율, 냉장 보관 시작 시간, 개봉 횟수</li>
+  <li>평가 항목: 향의 선명도, 산미/단맛 균형, 씀바귀 감, 보관 후 잡향</li>
+  <li>합격 기준: 동일 추출에서 보관 변동이 허용 범위 내에 들어와야 함</li>
+</ul>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="cold-brew" href="/wiki/cold-brew">콜드브루 기본 가이드</a></li>
+  <li><a data-wikilink="coffee-storage" href="/wiki/coffee-storage">커피 보관과 신선도</a></li>
+  <li><a data-wikilink="coffee-oxidation-pathway" href="/wiki/coffee-oxidation-pathway">산화 경로 정리</a></li>
+  <li><a data-wikilink="water-for-coffee" href="/wiki/water-for-coffee">커피와 물</a></li>
+  <li><a data-wikilink="brew-ratio-practice" href="/wiki/brew-ratio-practice">비율 실습 가이드</a></li>
+  <li><a data-wikilink="home-brew-recipes" href="/wiki/home-brew-recipes">가정용 레시피</a></li>
+</ul>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>콜드브루 오차에서 추출 단계와 보관 단계 중 먼저 분리해야 할 값은?</li>
+  <li>안전 측면에서 개봉 빈도가 높은 레시피의 위험 신호는 무엇인가요?</li>
+  <li>희석 단계에서 변수 변경이 2개 이상 섞이면 생기는 문제가 무엇인가요?</li>
+  <li>보관 실패를 처음 감지할 때 가장 먼저 보는 항목은?</li>
+</ul>

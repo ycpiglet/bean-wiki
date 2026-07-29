@@ -5,7 +5,10 @@
 // submitting.
 import { useState } from "react";
 import Link from "next/link";
-import { SKILL_TIER_LABEL, type SkillTier } from "@/lib/profile-store";
+import {
+  SKILL_TIER_LABEL,
+  type SkillTier,
+} from "@/lib/profile-store-contract";
 
 type Question = {
   id: string;

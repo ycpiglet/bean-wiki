@@ -3,7 +3,11 @@
 // Self-editable profile fields. Skill tier and admin status are absent by
 // design — the server derives those and rejects them in the patch.
 import { useState } from "react";
-import type { CoffeeRole, Gender, Profile } from "@/lib/profile-store";
+import type {
+  CoffeeRole,
+  Gender,
+  Profile,
+} from "@/lib/profile-store-contract";
 
 const GENDERS: { value: Gender; label: string }[] = [
   { value: "undisclosed", label: "밝히지 않음" },

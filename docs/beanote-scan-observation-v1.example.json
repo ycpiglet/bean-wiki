@@ -1,0 +1,58 @@
+{
+  "contract_version": 1,
+  "schema_version": "scan_observation.v1",
+  "request_id": "req_01K1DX8F2YMCJZ1G",
+  "snapshot_at": "2026-07-28T08:29:00Z",
+  "privacy": {
+    "tier": "T2",
+    "subject_namespace": "client_01HZX4TQ8M"
+  },
+  "lineage": {
+    "pipeline_name": "beanote-card-ocr",
+    "pipeline_version": "2026.07.3",
+    "normalization_version": "coffee-fields.4"
+  },
+  "page": {
+    "limit": 100,
+    "has_more": false,
+    "next_cursor": "opaque-checkpoint-for-next-sync"
+  },
+  "data": [
+    {
+      "scan_field_id": "sf_01K1DX6P2J0Q1F9V",
+      "scan_id": "sc_01K1DX5M8YP4N7VA",
+      "revision": 2,
+      "record_status": "active",
+      "name": "origin_country",
+      "raw_value": "ETHIOPIA",
+      "normalized_value": "Ethiopia",
+      "confidence": 0.98,
+      "quality": {
+        "value_state": "present",
+        "verification_state": "verified",
+        "is_outlier": false
+      },
+      "observed_at": "2026-07-26T03:12:10Z",
+      "updated_at": "2026-07-28T04:02:11Z",
+      "deleted_at": null
+    },
+    {
+      "scan_field_id": "sf_01K1DX6Q4K1R2G0W",
+      "scan_id": "sc_01K1DX5M8YP4N7VA",
+      "revision": 1,
+      "record_status": "active",
+      "name": "harvest_year",
+      "raw_value": "2O2S/26",
+      "normalized_value": null,
+      "confidence": 0.41,
+      "quality": {
+        "value_state": "parse_failed",
+        "verification_state": "unverified",
+        "is_outlier": null
+      },
+      "observed_at": "2026-07-26T03:12:10Z",
+      "updated_at": "2026-07-26T03:12:10Z",
+      "deleted_at": null
+    }
+  ]
+}

@@ -15,6 +15,7 @@ import { ProfileForm } from "@/components/profile-form";
 import { SkillAssessment } from "@/components/skill-assessment";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { isAdminUser } from "@/lib/admin";
+import { devAuthConfigured } from "@/lib/dev-auth";
 import {
   getRepoConfig,
   ghCanPush,
@@ -129,7 +130,14 @@ export default async function AccountPage({
               로그인하면 학습 경험치와 커뮤니티 활동, 편집 권한 상태를 한곳에서
               관리할 수 있습니다. 공개 문서는 로그인 없이 계속 읽을 수 있습니다.
             </p>
-            {googleConfigured() ? (
+            {devAuthConfigured() ? (
+              <a
+                className="acct-button"
+                href={`/api/auth/dev?returnTo=${encodeURIComponent(returnTo)}`}
+              >
+                개발 계정으로 로그인
+              </a>
+            ) : googleConfigured() ? (
               <a
                 className="acct-button"
                 href={`/api/auth/google?returnTo=${encodeURIComponent(returnTo)}`}
@@ -197,8 +205,8 @@ export default async function AccountPage({
             )}
             {!storeReady && (
               <p className="acct-card acct-note" role="status">
-                프로필 저장소가 아직 설정되지 않았습니다. 닉네임·실력 측정·자격 인증은
-                <code> SUPABASE_SERVICE_ROLE_KEY</code>를 설정하면 활성화됩니다.
+                프로필 저장소가 읽기 전용 모드입니다. 닉네임·실력 측정·자격 인증은
+                로컬에서 <code>npm run dev:full</code>로 시험할 수 있습니다.
               </p>
             )}
 

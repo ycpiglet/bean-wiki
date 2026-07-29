@@ -1,0 +1,150 @@
+---
+slug: espresso-dialing-protocol
+title: CAF-01 실습: 에스프레소 다이얼인 프레임
+summary: 에스프레소는 변수를 다 쓰기보다 고정값의 순서를 먼저 정리해야 다이얼인이 가능합니다.
+category: 카페와 장비
+level: 입문
+readingTime: 10분
+updatedAt: 2026. 07. 28.
+accent: sand
+fact: 다이얼인은 레시피를 외우는 행위가 아니라 dose, grind, time, yield(비율) 우선순위를 고정하고 오차를 한 구간씩 분해해 재현성에 맞추는 과정입니다.
+related: ["espresso-basics","espresso-preinfusion-guide","espresso-machine-hydraulics-thermal","espresso-puck-preparation","grinder-basics","brew-ratio-practice"]
+tags: ["에스프레소","다이얼인","변수","커핑","CAF-01"]
+history: [{"date":"2026. 07. 28.","note":"CAF-01 초안 작성"},{"date":"2026. 07. 28.","note":"CAF-01 보강: 실패 지도, 2주 다이얼인 루프, 온도/채널링 정렬, 체크리스트 섹션 추가"},{"date":"2026. 07. 28.","note":"CAF-01 추가 보강: 교대 인수인계 체크리스트 항목 추가"}]
+---
+<h2 id="topic-caf01">CAF-01 정렬: 다이얼인은 변수보다 ‘우선순위’로 시작한다</h2>
+<p>에스프레소 다이얼인의 핵심은 “더 멋진 설정”이 아니라 “실행 가능한 재현 규칙”입니다. 같은 장비, 같은 원두에서 다음 4개를 먼저 정렬해야만 다음 수정을 판단할 수 있습니다.</p>
+<table>
+  <thead>
+    <tr><th>축</th><th>고정값</th><th>실험값(1회차당 1개)</th><th>검증 포인트</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>Dose</td><td>원두량·정착량 기준</td><td>도징량(1단계)</td><td>첫 음용 컵의 볼륨 변화와 초기 유량 패턴</td></tr>
+    <tr><td>Grind</td><td>분쇄 분포</td><td>분쇄도 한칸 이동</td><td>초반 수율 변화의 민감도 확인</td></tr>
+    <tr><td>Time</td><td>추출 시간대(추출 시작~종료)</td><td>타이밍만 1초 단위</td><td>산미-쓴맛 균형의 일관성</td></tr>
+    <tr><td>Yield</td><td>출액량/디커트 규칙</td><td>타겟 yield 1회 조정</td><td>바디와 잔향 지속성 비교</td></tr>
+  </tbody>
+</table>
+
+<h2 id="dialing-order">다이얼인 기본 순서</h2>
+<p>순서가 깨지면 다이얼인 실패를 “원두 불량”으로 오해하게 됩니다. 아래 순서로 고정하고 수정하세요.</p>
+<ol>
+  <li><strong>1단계:</strong> 도징량 고정 + 도징 위치 점검</li>
+  <li><strong>2단계:</strong> 분쇄를 1칸씩 조정해 추출량 1회차 기록</li>
+  <li><strong>3단계:</strong> 추출 시간은 목표범위 안에서만 변경</li>
+  <li><strong>4단계:</strong> 목표 yield 달성 시 분쇄와 탬핑 관찰값 고정</li>
+</ol>
+
+<h2 id="signal-reading">오차 신호와 우선 수정</h2>
+<table>
+  <thead>
+    <tr><th>신호</th><th>해석</th><th>먼저 고칠 것</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>초반 과속</td><td>채널링/분쇄 과도 미분</td><td>분쇄·그라인더 청결·재분배</td></tr>
+    <tr><td>끝맛 텁텁</td><td>과추출이나 과다 채널</td><td>추출 시간 축소 또는 도징 점검</td></tr>
+    <tr><td>잔량이 불안정</td><td>도징/탬핑 오차</td><td>단계별 분배·탬핑 일관성</td></tr>
+    <tr><td>컵 편차 증가</td><td>기록 순서 흔들림</td><td>순서 고정: 시작시간→추출시간→디커트</td></tr>
+  </tbody>
+</table>
+
+<h2 id="common-misconceptions-caf01">CAF-01 흔한 오해</h2>
+<ul>
+  <li>오해: 분쇄만 바꾸면 다이얼인이 된다.<br/><strong>정정:</strong> 도징량·추출량·타이밍이 같이 흔들리면 분쇄 수정의 의미가 사라집니다.</li>
+  <li>오해: 온도는 카운트에서 제외해도 된다.<br/><strong>정정:</strong> 장비 안정화 후의 데이터만 다이얼인으로 사용해야 재현성이 생깁니다.</li>
+  <li>오해: 탬핑 압력은 무조건 일정하면 충분하다.<br/><strong>정정:</strong> 도징량과 분배 편차를 먼저 고정해야 탬핑의 의미가 유지됩니다.</li>
+  <li>오해: 맛만 좋아지면 최적이다.<br/><strong>정정:</strong> 반복 가능한 맛이 최적이며, 단발적 인상은 테스트 오차가 큽니다.</li>
+  <li>오해: 추출량 규칙은 다이얼인 후에만 잡으면 된다.<br/><strong>정정:</strong> yield 규칙은 도징과 분쇄를 잡은 뒤에도 고정해야만 비교가 가능합니다.</li>
+</ul>
+
+<h2 id="practice-caf01">실습: CAF-01 4회 다이얼인 루프</h2>
+<ol>
+  <li>회차 1: 도징량 고정 + 3회 동일 추출로 기준 컵 기록</li>
+  <li>회차 2: 분쇄도 1회 이동(고정 1회차), 산미/바디/잔향 점수 기록</li>
+  <li>회차 3: 추출시간 1초만 이동, 추출량과 잔당 지표 비교</li>
+  <li>회차 4: yield만 한 단계 이동, 회차별 오차 수렴 여부 판단</li>
+</ol>
+<p>판단은 회차당 최고점이 아니라 “한 값이 반복될수록 분산이 줄어드는지”입니다.</p>
+
+<h2 id="template-caf01">에스프레소 다이얼인 템플릿</h2>
+<ul>
+  <li>기록 항목: 도징, 분쇄레벨, 추출 시작/종료, 추출량, 분배 여부, 탬핑 일치성</li>
+  <li>평가 항목: 산미, 바디, 쓴맛, 향미 초기 강도, 잔향 지속성</li>
+  <li>합격 기준: 같은 회차 내 분산이 3회 연속 허용범위 수렴</li>
+</ul>
+
+<h2 id="failure-map">실패 지도: 가장 먼저 분해해야 할 신호</h2>
+<table>
+  <thead>
+    <tr><th>신호</th><th>1차 가능 원인</th><th>다음 조치</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>첫 2샷에서 유량 편차가 커짐</td>
+      <td>도징 위치·분배 일관성 부족</td>
+      <td>분쇄를 고정한 채 도징 위치와 분배 동작을 1회차처럼 정렬</td>
+    </tr>
+    <tr>
+      <td>초반에 산미가 갑자기 치솟음</td>
+      <td>온도 안정성 미달 또는 분쇄편차</td>
+      <td>온도 안정 구간 기록을 먼저 분리하고 분쇄 이동은 다음 회차로 미룸</td>
+    </tr>
+    <tr>
+      <td>끝맛이 계속 거칠고 떫음</td>
+      <td>추출 시간 축적 길이와 채널링 동시 발생</td>
+      <td>yield 고정, 시간만 1초 축소해 3회 반복 측정</td>
+    </tr>
+    <tr>
+      <td>같은 설정에서 점수만 오르내림</td>
+      <td>기록 순서·샷 간 휴식 조건 불일치</td>
+      <td>회차 간 공통 로그 항목(시작시각, 탬핑 1회성, 머신 상태)을 먼저 맞춤</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="dialing-loop">2주 다이얼인 운영 루프</h2>
+<ol>
+  <li><strong>1~2일차:</strong> 도징 고정, 분쇄 1칸 이동만으로 수율 및 산미 흐름만 기록.</li>
+  <li><strong>3~4일차:</strong> 동일 분쇄에서 추출시간을 1초씩 조정해 추출량 분산 비교.</li>
+  <li><strong>5일차:</strong> 4회차에서 yield 고정 기준을 반영해 바디/잔향 유지성 확인.</li>
+  <li><strong>5~7일차:</strong> 탬핑·분배 동작만 1회 점검하고, 다음 회차는 값 고정으로만 반복.</li>
+  <li><strong>8~10일차:</strong> 온도 안정구간 로그만 남긴 상태에서 2회 반복 검증.</li>
+</ol>
+
+<h2 id="decision-checklist">운영 체크리스트(인수인계용)</h2>
+<ul>
+  <li>현재 고정값: dose/분쇄/시간/yield 중 어떤 값이 고정됐고 최근에 변경됐는지 한 줄로 남긴다.</li>
+  <li>다음 조치 후보: 분쇄, 도징, 추출시간 중 우선순위를 한 개만 남긴다.</li>
+  <li>재현성 지표: 동일 회차 3잔 간 표준편차가 줄어드는지 확인한다.</li>
+  <li>안전 조건: 머신 안정화 시간, 세척 완료 여부, 샷당 라인 상태를 교대별로 공유한다.</li>
+</ul>
+
+<h2 id="handover-checklist-caf01">교대 인수인계 체크리스트(CAF-01)</h2>
+<ul>
+  <li>교대 시작 시 dose·분쇄·추출시간·yield의 현재 고정값을 동일 양식으로 전달했는가?</li>
+  <li>회차별로 변경한 축(예: 분쇄 1단계)이 1개인지 다시 확인했는가?</li>
+  <li>도징/분배 동작이 1회 이상 예외 없이 반복되었는지 체크했는가?</li>
+  <li>2주 루프에서 유지안/보류안이 분리되어 다음 교대에서 바로 실행 가능한지 확인했는가?</li>
+  <li>머신 안정화 상태(워밍업 시간, 온도 안정, 청소 상태)에서 예외 조건이 생기지 않았는지 기록했는가?</li>
+</ul>
+
+<h2 id="references-caf01">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="espresso-basics" href="/wiki/espresso-basics">에스프레소 기초 정리</a></li>
+  <li><a data-wikilink="espresso-machine-hydraulics-thermal" href="/wiki/espresso-machine-hydraulics-thermal">보일러·열·수력 기본</a></li>
+  <li><a data-wikilink="espresso-puck-preparation" href="/wiki/espresso-puck-preparation">퍽 준비와 채널링</a></li>
+  <li><a data-wikilink="espresso-preinfusion-guide" href="/wiki/espresso-preinfusion-guide">프리인퓨전 제어</a></li>
+  <li><a data-wikilink="grinder-basics" href="/wiki/grinder-basics">분쇄의 변동성 이해</a></li>
+  <li><a data-wikilink="brew-ratio-practice" href="/wiki/brew-ratio-practice">비율 실습 지도</a></li>
+  <li><a data-wikilink="cafe-quality-system" href="/wiki/cafe-quality-system">카페 품질 시스템</a></li>
+</ul>
+
+<h2 id="quiz-caf01">자기 점검</h2>
+<ul>
+  <li>에스프레소 다이얼인의 첫 3단계 고정값은 무엇인가요?</li>
+  <li>초반 과속 신호가 보이면 어느 축부터 점검해야 하나요?</li>
+  <li>좋은 컵이 나와도 재현되지 않는 경우 원인은 대체로 어디에서 옵니까?</li>
+  <li>yield 변동이 큰 원두에서 안정화 우선순위는?</li>
+  <li>1회차에서 실패 지표가 생겼을 때, 도즈/분쇄/시간 중 무엇을 먼저 분리 점검해야 할까요?</li>
+  <li>2주 루프에서 어떤 회차를 건너뛰지 말아야 재현성 판단이 가능할까요?</li>
+</ul>

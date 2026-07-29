@@ -1,0 +1,124 @@
+---
+slug: coffee-futures-and-differentials
+title: 커피 선물가격과 디퍼렌셜: 계약으로 읽는 실무 가격 신호
+summary: 선물 가격과 현물 가격을 같은 프레임에서 해석하고 디퍼렌셜의 구성 요소를 분해하면 가격 협상에서의 판단 오류를 줄일 수 있습니다.
+category: 지속가능성과 거래
+level: 전문
+readingTime: 20분
+updatedAt: 2026. 07. 28.
+accent: sage
+fact: 커피 가격은 선물 지수만으로 결정되지 않고, 디퍼렌셜·환율·물류·조건 편차를 결합한 계약 구조에서 해석되어야 합니다.
+related: ["coffee-trade-history","farmer-income-basics","supply-chain-transparency","coffee-climate-resilience","climate-risk-and-quality","global-coffee-history"]
+tags: ["선물","디퍼렌셜","basis","헤지","계약","가격위험"]
+history: [{"date":"2026. 07. 28.","note":"IND-02 커피 선물시장·디퍼렌셜 초안 작성"}]
+---
+<h2 id="definition">왜 선물 가격만으로는 판단이 부족한가</h2>
+<p>현장에서 자주 나오는 착시는 “선물 가격이 오르니 커피도 올랐을 것이다”입니다. 선물은 미래 납품을 전제로 한 가격 신호를 모아 보여주지만, 실제 결제는 로트별 조건으로 쪼개집니다.</p>
+<p>가격이 같아도 다음 조건이 다르면 실제 거래 결과가 달라집니다. 첫째는 품질과 산지의 불일치 가능성, 둘째는 물류와 선적 타이밍, 셋째는 계약 단가의 보정 항목입니다.</p>
+
+<aside class="callout callout-note" data-tone="note"><p>선물 가격을 ‘현재 시장의 절대값’으로 보지 말고, 협상에서 적용할 수 있는 경계값(bound)로 먼저 계산하는 편이 오차를 줄입니다.</p></aside>
+
+<h2 id="contract-basics">선물·현물·스팟 가격의 연결</h2>
+<p>실무에서는 다음 관계를 출발점으로 둡니다.
+<strong>현물 가격(실제 구매 가격) ≈ 선물가 + 디퍼렌셜</strong></p>
+<p>디퍼렌셜은 단순한 가감이 아니라, 선적 국가의 규격 적합성, 수분·결점 규격, 선적 시기, 결제 통화에 따라 달라집니다. 결국 디퍼렌셜은 “거래 문장”의 번역값입니다.</p>
+
+<h2 id="contract-layers">디퍼렌셜의 3개 축</h2>
+<table>
+  <thead>
+    <tr><th>축</th><th>의미</th><th>검증 포인트</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>품질 축</td><td>결점률, 수분, 발효 이력, 선별 방식</td><td>로트별 샘플과 계약 규격의 일치 여부</td></tr>
+    <tr><td>물류 축</td><td>출항지·도착지 간 운송 리스크</td><td>보험, 선적 지연, 적재 기간, 온습도 로그</td></tr>
+    <tr><td>자금 축</td><td>환율·금리·결제조건</td><td>선결제/후불 비율과 환전 기준일</td></tr>
+  </tbody>
+</table>
+
+<h2 id="c-contract">C Contract를 실무 시선으로 풀어보면</h2>
+<p>여기서 말하는 C Contract는 교육 목적에서 사용되는 통합 분류용 이름으로, 실무에서는 계약서의 거래 규격, 결제방식, 납품 기간이 다르면 동일 명칭이라도 실제 현물 반응은 달라집니다.</p>
+<p>따라서 동일 계약군을 다룰 때도 ‘어느 선적 조건이 기본값으로 고정되어 있는지’를 먼저 확인해야 합니다. 특히 품질 감점 항목, 선적 보험, 지연 패널티 조항은 계약 종료 후 월말 재계산을 유도합니다.</p>
+<aside class="callout callout-warn" data-tone="warn"><p>C Contract 명칭 자체를 안전한 기준으로 보지 말고, 디퍼렌셜 항목별 보정 규칙을 문서로 고정해야 합니다.</p></aside>
+
+<h2 id="basis-and-hedge">Basis와 헤지: 가격 안정화의 반쪽 그림</h2>
+<p>basis는 선물 기준 대비 현물 차이를 의미합니다. basis가 넓어지면 유통·품질 차이가 커져 선물 신호만으로는 위험을 충분히 포착하지 못한 것입니다.</p>
+<p>헤지는 가격 변동을 완전히 제거하지 않습니다. 헤지는 변동 경로의 일부를 잠금해두는 장치이고, 디퍼렌셜을 포함한 계약 구조를 다시 계산해야만 실질 위험이 줄어듭니다.</p>
+<ol>
+  <li>헤지 비중: 계약 볼륨의 어느 비율을 선물로 묶는지</li>
+  <li>리밸런싱 주기: 월중/주간/분기 단위의 조정 방식</li>
+  <li>예상 basis drift: 계약 말기 basis가 이동할 수 있는 구간</li>
+  <li>현물 재검증: 실제 수입일 기준으로 스프레드 재계산</li>
+</ol>
+
+<h2 id="currency-logistics-risk">환율, 보험, 선적 지연이 디퍼렌셜을 바꾸는 방식</h2>
+<p>환율은 디퍼렌셜의 가장 빠른 반응 변수입니다. 선물 지수는 통화 가정이 있지만, 실제 결제일의 환차손은 로트 단위 현금흐름을 바꿉니다.</p>
+<p>보험과 선적 지연은 비용만 추가하는 단계가 아닙니다. 지연으로 인해 숙성 상태가 달라지거나 보관이 늘면 품질 감점이 발생할 수 있어 디퍼렌셜이 다시 확장됩니다.</p>
+<aside class="callout callout-tip" data-tone="tip"><p>환율이 급변하는 시기에는 헤지 대상·물류 리드타임·보험 범위를 같은 표로 묶어야 재평가가 빠릅니다.</p></aside>
+
+<h2 id="negotiation-frame">구매 협상에서 쓰는 6단계 프레임</h2>
+<ol>
+  <li>선물 기준일과 실제 입고 기준일을 분리해 가정값을 정리</li>
+  <li>로트별 표본 기준의 수분·결점·특이 가공 이력 점검</li>
+  <li>품질 디퍼렌셜, 물류 디퍼렌셜, 환율 디퍼렌셜을 항목별로 분리</li>
+  <li>각 항목의 민감도(±1단위 변화)와 비용 임계값 기록</li>
+  <li>계약서에 자동 조정 조항이 있는지와 분쟁 해결 절차 확인</li>
+  <li>정산 완료 후 2회 이상 이력 비교로 디퍼렌셜 오차를 누적 추적</li>
+</ol>
+
+<h2 id="common-misconceptions">흔한 오해</h2>
+<ul>
+  <li>오해: 선물 가격이 오르면 농가 단가가 항상 오른다.<br/>
+  <strong>정정:</strong> 선물 상승은 단지 기준점 변화입니다. 현물 가산금이 오히려 감소하면 실제 단가는 낮아질 수 있습니다.</li>
+  <li>오해: 디퍼렌셜은 일회성 가감값이다.<br/>
+  <strong>정정:</strong> 품질·물류·재고 상태에 따라 계약 내내 이동 가능합니다.</li>
+  <li>오해: 헤지를 걸면 가격 리스크가 사라진다.<br/>
+  <strong>정정:</strong> 헤지는 선물 축을 안정화할 뿐, 디퍼렌셜 변동은 별도 점검이 필요합니다.</li>
+  <li>오해: C Contract 이름이 같으면 조건도 같다.<br/>
+  <strong>정정:</strong> 같은 시장명이라도 공급자별로 선적지, 최소 오더, 지불 조건이 다를 수 있습니다.</li>
+  <li>오해: 기준일 1개만 맞으면 충분하다.<br/>
+  <strong>정정:</strong> 출항 기준·도착 기준·결제 기준이 다르면 기준일을 나눠야 합니다.</li>
+</ul>
+
+<h2 id="practice">실습: 4회 루프로 보는 계약 오차 진단</h2>
+<p>실무에서 바로 적용 가능한 진단 루틴입니다.</p>
+<ol>
+  <li>최근 4개 입고 로트의 선물 기준가, 디퍼렌셜, 결제 통화일을 정리</li>
+  <li>각 로트의 품질 감점 조건을 규격표와 비교해 basis 변화를 분해</li>
+  <li>동일 공급자의 경우 선적 지연 1회 분류, 동시 대체 공급자 1개를 비교</li>
+  <li>환율 경로와 결제일 차이를 반영해 실제 현금유출 변화를 다시 계산</li>
+  <li>변동이 큰 항목 3개를 다음 계약에서 고정 가능한지 여부로 재설계</li>
+</ol>
+
+<h2 id="glossary">핵심 용어 정리</h2>
+<ul>
+  <li><strong>Basis</strong>: 선물 가격 대비 현물 가격의 차이(통상 단일 통화로 계산).</li>
+  <li><strong>Differential (디퍼렌셜)</strong>: 품질·물류·결제 조건으로 조정되는 가감 항목의 합.</li>
+  <li><strong>Hedging(헤지)</strong>: 가격 변동에 대한 노출을 의도적으로 줄이는 포지션 관리.</li>
+  <li><strong>Delivery Month</strong>: 인도 월 기준의 선물 계약 구간.</li>
+  <li><strong>C Contract</strong>: 내부 프로세스에서 쓰는 분류명으로, 실제 계약 문안별 하위 조항이 핵심입니다.</li>
+  <li><strong>Prompt Spread(가격 반응 폭)</strong>: 주요 리스크 이벤트 후 가격이 반응하는 속도와 폭.</li>
+</ul>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="coffee-trade-history" href="/wiki/coffee-trade-history">커피 무역의 역사</a></li>
+  <li><a data-wikilink="farmer-income-basics" href="/wiki/farmer-income-basics">농가 소득 기초</a></li>
+  <li><a data-wikilink="supply-chain-transparency" href="/wiki/supply-chain-transparency">공급망 투명성</a></li>
+  <li><a data-wikilink="coffee-climate-resilience" href="/wiki/coffee-climate-resilience">기후 회복성</a></li>
+  <li><a data-wikilink="climate-risk-and-quality" href="/wiki/climate-risk-and-quality">기후 위험과 품질</a></li>
+  <li><a href="https://www.ico.org/">ICO 커피 시장 자료</a></li>
+  <li><a href="https://www.intercontinentalexchange.com/">ICE 선물 상품 개요</a></li>
+  <li><a href="https://www.cmegroup.com/learn/ice-commodities/coffee.html">CME Group 커피 선물 상품 가이드</a></li>
+  <li><a href="https://www.imf.org/">IMF 통화·거시 동향</a></li>
+  <li><a href="https://www.oecd.org/">OECD 농산물시장 동향</a></li>
+</ul>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>현물 가격을 계산할 때 선물 가격 이외에 반드시 분해해야 하는 요소는 무엇인가요?</li>
+  <li>basis가 넓어지는 원인을 품질·물류·자금 축으로 구분해 설명할 수 있나요?</li>
+  <li>헤지가 줄여주는 리스크와 줄여주지 못하는 리스크는 무엇인가요?</li>
+  <li>같은 C Contract 명칭에서도 계약이 달라지는 조건은 어떤 부분이 먼저 확인되어야 하나요?</li>
+  <li>환율 변화가 디퍼렌셜에 반영되는 두 가지 경로를 말해보세요.</li>
+  <li>다음 구매 회차에서 디퍼렌셜 오차 상위 3개 항목을 선제 점검하려면 어떤 자료가 먼저 필요합니까?</li>
+</ul>

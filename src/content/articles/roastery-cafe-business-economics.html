@@ -1,0 +1,176 @@
+---
+slug: roastery-cafe-business-economics
+title: 로스터리·카페 사업 경제학: 수율·재고·인건비로 본 가격 설계
+summary: 로스터리·카페 수익성은 단가 차이만으로 결정되지 않고 수율, 재고회전, 고정비, 인건비의 연결을 기준으로 판단할 때 지속 가능한 가격과 운영이 가능해집니다.
+category: 지속가능성과 거래
+level: 전문
+readingTime: 23분
+updatedAt: 2026. 07. 28.
+accent: sage
+fact: 로스터리·카페의 가격·수익 판단은 생두·로스팅 손실과 회전 속도, 고정비 부담, 인건비 구조를 함께 분해해 계산할 때만 재현 가능합니다.
+related: ["coffee-futures-and-differentials","green-bean-purchase-contracts-and-logistics","cafe-menu-pricing-quality","cafe-shift-operations"]
+tags: ["수익성","수율","재고회전","고정비","인건비","가격설계"]
+history: [{"date":"2026. 07. 28.","note":"IND-10 로스터리·카페 사업 경제학 초안 작성"}]
+---
+<h2 id="definition">사업 경제학은 계산식이 아니라 운영 설계입니다</h2>
+<p>로스터리·카페 수익은 생두 단가, 원두 손실, 메뉴 가격의 단순 차이로 정리되지 않습니다. 주문량이 비슷해도 운영 방식이 달라지면 손익 곡선은 크게 다르게 움직입니다.</p>
+<p>따라서 수익을 이해하려면 하나의 숫자보다 먼저 아래 네 항목이 어떤 방식으로 연결되는지부터 봐야 합니다.</p>
+<ul>
+  <li>수율: 동일 입력 대비 팔 수 있는 출고량</li>
+  <li>회전율: 재고가 현금화되는 속도</li>
+  <li>고정비: 임대·설비·인건비 등 매출과 무관한 지출</li>
+  <li>가격: 시장·메뉴·브랜드에 반영되는 회수 속도</li>
+</ul>
+
+<h2 id="profit-structure">손익의 기본 구조를 4구간으로 정리</h2>
+<p>현장에서 가장 많이 쓰는 틀은 아래처럼 씁니다. 핵심은 손익을 순이익 하나로만 보는 대신, 구조를 분해한다는 점입니다.</p>
+<table>
+  <thead>
+    <tr><th>구간</th><th>의미</th><th>주요 질문</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>매출</td><td>메뉴별 판매량×판매가</td><td>메뉴 믹스는 안정적인가?</td></tr>
+    <tr><td>변동원가</td><td>생두, 우유, 소모품, 유틸리티(사용량 기준)</td><td>동일 음료의 원가가 일정한가?</td></tr>
+    <tr><td>고정비</td><td>임대료, 감가상각, 인건비 기반비</td><td>매출 부진기에 방어되나?</td></tr>
+    <tr><td>손실·폐기비</td><td>과소비, 폐기, 재작업</td><td>어느 단계에서 누수가 생기나?</td></tr>
+  </tbody>
+</table>
+<p>이 구분이 있어야 메뉴 가격 인상 논의가 단발성 조정이 아니라 구조 조정이 됩니다.</p>
+
+<h2 id="roast-yield">수율이 먼저 흔들리는 지점: 로스터링·조리의 변환율</h2>
+<p>로스터리·카페의 가장 흔한 오류는 “생두를 샀으니 매출로 바로 연결된다”는 전제입니다. 실제로는 수율 단계마다 손실이 생깁니다.</p>
+<ol>
+  <li><strong>투입 수율:</strong> 생두 배치 손실(파손, 분쇄 손실, 불량 분리)</li>
+  <li><strong>가공 수율:</strong> 로스팅 팽창·파절 손실·보관 잔존 손실</li>
+  <li><strong>제조 수율:</strong> 컵 기준의 추출량, 유량 편차, 시범 준비로 빠져나가는 시간</li>
+  <li><strong>판매 수율:</strong> 폐기·재작업·교차 오염으로 실판매량이 줄어든 부분</li>
+</ol>
+<p>이때 문제는 로스터리 수율만 높이는 방향으로 접근하면, 추출 품질이 떨어지거나 폐기율이 올라가면서 전체 수익성이 반대로 악화될 수 있다는 점입니다.</p>
+<aside class="callout callout-note" data-tone="note"><p>수율 개선은 항상 “폐기율”과 같이 봐야 합니다. 수율은 오히려 폐기를 통해 매출 손실을 가릴 수 있기 때문입니다.</p></aside>
+
+<h2 id="inventory-speed">재고회전은 품목 조정보다 우선입니다</h2>
+<p>재고회전이 느려지면 매출이 있어도 현금이 묶이고, 회전이 빨라지면 동일 고정비로 더 많은 회차를 소화할 수 있습니다.</p>
+<p>카페에서는 ‘재고 회전율’을 과잉 이론보다 ‘만기·소모·폐기’의 결합지표로 보는 편이 정확합니다.</p>
+<table>
+  <thead>
+    <tr><th>지표</th><th>측정 방식</th><th>의사결정 신호</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>소진율(일 단위)</td><td>기간 매출량 / 평균 로스팅 재고</td><td>낮으면 과재고 또는 소화 속도 저하</td></tr>
+    <tr><td>폐기율</td><td>(폐기량 / 총출고량)</td><td>높으면 수분·보관·제조 루틴 재설계 필요</td></tr>
+    <tr><td>로스팅-판매 지연일</td><td>로스팅일~판매일 차이</td><td>길수록 유통비용 및 신선도 리스크 증가</td></tr>
+    <tr><td>메뉴별 회전속도</td><td>메뉴 판매량 / 메뉴 개시 시점</td><td>저회전 메뉴는 가격·공수 조정 후보</td></tr>
+  </tbody>
+</table>
+<p>매출이 늘어도 이 지표가 개선되지 않으면 “숫자만 커진 손익”에 가까워집니다.</p>
+
+<h2 id="cost-classification">고정비와 인건비의 ‘비용 고정성’ 분해</h2>
+<p>고정비는 월 단위로 계속 지불돼야 하는 부담입니다. 반대로 변수비는 수요 변화에 따라 함께 움직입니다. 인건비는 일부는 고정, 일부는 주문량에 따라 변하는 형태가 공존합니다.</p>
+<ol>
+  <li>공통 고정비: 임대료, 감가상각, 보험, 기본 인력비</li>
+  <li>반고정비: 급여 조정 기준, 파트타임 가변분, 야간 할증</li>
+  <li>변수비: 생두·소모품·에너지·포장재 등</li>
+</ol>
+<p>이 분해를 안 하면 “가격을 500원 올렸는가?” 같은 질문만 남고 “얼마나 버틸 수 있는지”를 못 묻게 됩니다.</p>
+
+<h2 id="price-design">가격 설계는 기여마진 역산으로 시작</h2>
+<p>메뉴 가격을 올리기 전에 먼저 메뉴의 기여마진을 봅니다. 메뉴별 기여마진이 낮으면 가격 조정보다 제조시간 단축이나 표준 레시피 고정이 우선입니다.</p>
+<aside class="callout callout-tip" data-tone="tip"><p>가격 상향보다 먼저, 메뉴별 음료당 변동원가와 폐기율의 결합 지표를 계산하세요.</p></aside>
+<ol>
+  <li><strong>기여마진:</strong> 판매가 – 음료당 변수비</li>
+  <li><strong>공헌손익 커버:</strong> 고정비를 메뉴군별로 얼마나 메울 수 있나</li>
+  <li><strong>시간당 기여:</strong> 음료당 이익을 제조시간으로 나눔</li>
+  <li><strong>피크 탄력성:</strong> 피크시간대에서 가격탄력도와 처리량의 균형</li>
+</ol>
+<p>가격 전략은 단가와 품질 모두의 민감도를 동시에 보지 않으면 단기 현금은 나아져도 장기 매출이 흔들릴 수 있습니다.</p>
+
+<h2 id="break-even-and-safety">손익분기점은 ‘판매량’이 아니라 ‘안전 마진’을 같이 봅니다</h2>
+<p>손익분기점 계산은 필요하지만, 단일 분기값만으로는 불안정한 분기 운영을 설명하기 어렵습니다.</p>
+<table>
+  <thead>
+    <tr><th>항목</th><th>기준</th><th>의미</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>일별 고정비</td><td>월 고정비 / 영업일수</td><td>매일 부담해야 하는 최소 비율</td></tr>
+    <tr><td>필요 매출</td><td>일별 고정비 / 평균 기여마진률</td><td>영업 손익균형선</td></tr>
+    <tr><td>안전마진</td><td>예상 판매액 – 필수 판매액</td><td>가격 변동/재고 지연 흡수 여력</td></tr>
+  </tbody>
+</table>
+<p>안전마진을 포함하면 천재지변·원두 단가 급등·인력 결손 같은 변수가 발생해도 대응 범위를 미리 확인할 수 있습니다.</p>
+
+<h2 id="operation-loop">사업 운영 루프: 6단계 정기 점검</h2>
+<p>월별 점검만으로는 대응이 느립니다. 4~6주 단위로 반복해 조정해야 합니다.</p>
+<ol>
+  <li>주간 수익표에서 메뉴별 매출·변수비·폐기량을 집계</li>
+  <li>재고회전율을 로스팅 배치 단위로 분해해 지연 구간 추적</li>
+  <li>로스트 프로필별 추출 성공률(폐기율)과 제조 소요시간을 함께 집계</li>
+  <li>인건비를 시간대별 공수로 나누고 초과근무를 가시화</li>
+  <li>고정비 충당이 약한 메뉴군 1~2개를 선정해 실험적 가격 또는 레시피 조정</li>
+  <li>변화 전후 2주를 비교해 3개 지표만 승인: 기여마진, 폐기율, 고객 이탈 신호</li>
+</ol>
+<p>한 번에 여러 항목을 동시에 바꾸지 말고, 한 사이클당 1~2개만 바꾸는 방식이 더 재현성이 높습니다.</p>
+
+<h2 id="common-misconceptions">흔한 오해</h2>
+<ul>
+  <li>오해: 고정비를 줄이려면 인건비만 줄이면 된다.<br/>
+  <strong>정정:</strong> 인건비가 너무 민감하게 줄면 조제·서비스 변동이 커져 폐기와 반품 비용이 늘 수 있습니다.</li>
+  <li>오해: 수율은 로스터만의 문제다.<br/>
+  <strong>정정:</strong> 추출·보관·서비스 단계의 손실이 합쳐져 최종 수율이 결정됩니다.</li>
+  <li>오해: 메뉴가 잘 팔리면 가격은 바꾸지 않아도 된다.<br/>
+  <strong>정정:</strong> 가격은 고정비 분담 구조와 폐기율을 함께 담아야 손익이 안정됩니다.</li>
+  <li>오해: 손익분기점이 낮아지면 충분하다.<br/>
+  <strong>정정:</strong> 안전마진이 충분하지 않으면 변동성 충격에서 바로 손실 전환됩니다.</li>
+  <li>오해: 재고가 많으면 품절 위험이 줄어 안정적이다.<br/>
+  <strong>정정:</strong> 과잉 재고는 유통비와 노후비용을 만들며 가격 경쟁력을 잠식할 수 있습니다.</li>
+</ul>
+
+<h2 id="glossary">용어 정리</h2>
+<ul>
+  <li><strong>수율:</strong> 투입량 대비 판매 가능한 산출량 비율. 로스팅·제조 단계 모두 포함합니다.</li>
+  <li><strong>기여마진:</strong> 판매가에서 변수비를 뺀 금액. 고정비 충당력의 기초 지표입니다.</li>
+  <li><strong>재고회전율:</strong> 일정 기간 내 재고가 판매되어 자본이 다시 회수되는 속도.</li>
+  <li><strong>안전마진:</strong> 현재 추정 매출과 손익분기점 매출의 차이로, 충격 흡수 여력을 표현합니다.</li>
+  <li><strong>시간당 기여:</strong> 시간 단위로 나눈 기여마진으로, 피크 대응 능력을 비교합니다.</li>
+  <li><strong>고정비 레버리지:</strong> 고정비가 일정할 때 매출 변동이 손익에 미치는 영향의 크기.</li>
+</ul>
+
+<h2 id="practice">실습: 10주 사업 경제학 스프린트</h2>
+<p>초기 10주 동안은 6개 메뉴와 2개 로트군만 대상으로 운영 루프를 돌립니다.</p>
+<ol>
+  <li>메뉴별 기여마진과 제조시간을 동시에 기록(일 3회 체크)</li>
+  <li>로스팅 배치 단위로 로트별 폐기·보관 경과를 분리 기록</li>
+  <li>인건비를 시간대별로 나누고 초과근무 사유를 1문장으로 정리</li>
+  <li>주차별로 고정비를 동일한 고정비/변동비 항목으로 재배치</li>
+  <li>4주차: 가격 조정 1개 메뉴 + 제조시간 1개 항목만 변경</li>
+  <li>6주차: 폐기율이 높았던 메뉴군을 제거 또는 동선 개편</li>
+  <li>8주차: 메뉴 조합 재구성 후 안전마진 재계산</li>
+  <li>10주차: 3개 핵심 지표(기여마진률, 폐기율, 손익분기 거리)로 최종 의사결정</li>
+</ol>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="farm-to-cafe-value-chain" href="/wiki/farm-to-cafe-value-chain">농장에서 카페까지의 가치사슬</a></li>
+  <li><a data-wikilink="coffee-futures-and-differentials" href="/wiki/coffee-futures-and-differentials">커피 선물가격과 디퍼렌셜</a></li>
+  <li><a data-wikilink="green-bean-purchase-contracts-and-logistics" href="/wiki/green-bean-purchase-contracts-and-logistics">생두 구매 계약과 물류</a></li>
+  <li><a data-wikilink="coffee-traceability-and-due-diligence" href="/wiki/coffee-traceability-and-due-diligence">추적성·투명성·실사 규제</a></li>
+  <li><a data-wikilink="coffee-carbon-water-footprint" href="/wiki/coffee-carbon-water-footprint">커피의 탄소·물 발자국</a></li>
+  <li><a data-wikilink="cafe-menu-pricing-quality" href="/wiki/cafe-menu-pricing-quality">카페 메뉴 가격과 품질</a></li>
+  <li><a data-wikilink="cafe-shift-operations" href="/wiki/cafe-shift-operations">카페 교대 운영</a></li>
+  <li><a href="https://www.ico.org/">International Coffee Organization</a></li>
+  <li><a href="https://www.fao.org/">FAO 농산물 경영 자료</a></li>
+  <li><a href="https://www.who.int/">WHO 보건·안전 운영 프레임(참고)</a></li>
+  <li><a href="https://www.iso.org/">ISO 22000(식품안전 경영)</a></li>
+  <li><a href="https://www.iso.org/">ISO 9001(품질경영)</a></li>
+  <li><a href="https://www.imf.org/">IMF 가격 및 거시 동향</a></li>
+  <li><a href="https://www.bls.gov/">미국 고용·임금 참고치</a></li>
+</ul>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>수익 판단에서 수율만 보지 말고 함께 보아야 하는 지표 3가지는?</li>
+  <li>재고회전율이 낮을 때 생길 수 있는 손익 경로를 2개 설명해보세요.</li>
+  <li>고정비가 높을수록 메뉴 조정에서 먼저 봐야 하는 항목은 무엇인가요?</li>
+  <li>손익분기점만으로 가격 결정을 내리면 놓치기 쉬운 위험은?</li>
+  <li>기여마진이 높은데 폐기율이 동시에 높은 메뉴는 어떤 의사결정이 필요한가요?</li>
+  <li>10주 스프린트에서 가장 먼저 실험할 2개 항목은?</li>
+</ul>

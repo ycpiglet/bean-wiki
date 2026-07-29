@@ -6,7 +6,7 @@ import {
   SKILL_TIER_LABEL,
   type Credential,
   type SkillTier,
-} from "@/lib/profile-store";
+} from "@/lib/profile-store-contract";
 
 function SealIcon() {
   return (

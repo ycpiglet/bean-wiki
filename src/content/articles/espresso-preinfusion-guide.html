@@ -10,7 +10,7 @@ accent: sand
 fact: 프리인퓨전은 추출 직전의 안정화를 돕는 단계로, 채널링 억제와 레시피 재현성을 높이는 데 유리합니다.
 related: ["espresso-basics","espresso-machines-grinders","grinder-burr-profile"]
 tags: ["에스프레소","프리인퓨전","추출시간","채널링"]
-history: [{"date":"2026. 07. 27.","note":"프리인퓨전 실전 가이드 작성"}]
+history: [{"date":"2026. 07. 27.","note":"프리인퓨전 실전 가이드 작성"},{"date":"2026. 07. 28.","note":"실험 프레임·실패 진단·적용 체크리스트·참고자료 보강"}]
 ---
 <h2 id="what-it-does">프리인퓨전의 목적은 압력 균일화입니다</h2>
 <p>에스프레소는 짧은 시간 안에 많은 물이 지나가므로, 커피 층 내부로 물이 들어가는 방식이 중요합니다. 프리인퓨전은 압력이 올라가기 전, 먼저 커피 층을 축축하게 만들어 채널이 갑자기 열리는 현상을 완화합니다.</p>
@@ -23,3 +23,33 @@ history: [{"date":"2026. 07. 27.","note":"프리인퓨전 실전 가이드 작�
 <h2 id="mistake-check">흔한 오해 정리</h2>
 <p>프리인퓨전은 장비가 더 오래 돌아가는 대체 용어가 아니라, 물의 침투 균형을 만드는 과정입니다. 시간이 길수록 무조건 좋다는 보장은 없고, 경우에 따라 산미가 약해지거나 추출이 무겁게 보일 수 있습니다.</p>
 <p>기본적으로 <a data-wikilink="espresso-basics" href="/wiki/espresso-basics">압력 추출의 기본 원리</a>와 연결해 해석하고, 동일 조건에서 한 번에 하나만 바꾸는 방식이 유효합니다.</p>
+
+<h2 id="failure-signals">실패 신호 분기</h2>
+<ul>
+  <li>한 컵의 산미가 과하게 일어나고 끝맛이 거칠면 프리인퓨전 시간 과다 또는 유량 급증을 의심.</li>
+  <li>초반만 과대하고 후반이 약하면 첫 2초의 물주입 타이밍이 과격했을 수 있습니다.</li>
+  <li>같은 로트에서 매번 추출감이 달라지면 분쇄도/도즈의 재현성 문제가 먼저 우선입니다.</li>
+</ul>
+<p>문제의 원인을 단번에 단정하지 말고, “동일값에서 1~2개만 바꾼 설계”로 원인 후보를 축소하세요.</p>
+
+<h2 id="experiment-loop">2주 실험 루프</h2>
+<ol>
+  <li>1주차: 시간만 0/2/4초로 고정 비교, 도즈·분쇄도·탬핑은 유지.</li>
+  <li>2주차: 프리인퓨전 2초 고정 후 유량/압력만 단계적으로 조정.</li>
+  <li>각 조건은 3잔 내지 4잔 연속 기록 후, 조건별 평균을 비교해 해석.</li>
+</ol>
+
+<h2 id="quick-checklist">시작 5분 점검표</h2>
+<ul>
+  <li>현재 장비 설정이 프리인퓨전 기능의 최대/최소 범위 내인지 확인</li>
+  <li>샘플 로트의 보관일·수분·분쇄 노이즈 변화를 분리해서 기록</li>
+  <li>실험 중 추출 실패가 발생하면 즉시 유량 대신 도즈 고정으로 복귀</li>
+</ul>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="espresso-basics" href="/wiki/espresso-basics">에스프레소 추출 기본 프레임</a></li>
+  <li><a data-wikilink="grinder-burr-profile" href="/wiki/grinder-burr-profile">분쇄 분포와 밸런싱</a></li>
+  <li><a data-wikilink="espresso-machine-hydraulics-thermal" href="/wiki/espresso-machine-hydraulics-thermal">수력·열 시스템</a></li>
+  <li><a data-wikilink="espresso-puck-preparation" href="/wiki/espresso-puck-preparation">퍽 준비 정합성</a></li>
+</ul>

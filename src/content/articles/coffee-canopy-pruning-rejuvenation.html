@@ -1,87 +1,182 @@
 ---
 slug: coffee-canopy-pruning-rejuvenation
-title: 전정·갱신·수관 관리: 오래된 가지를 정리해 생산력을 회복하는 루틴
-summary: 수관 관리의 핵심은 잘라내기 자체가 아니라, 수확 구조와 생육 회복이 일치하는 시점을 잡는 것입니다.
+title: 전정·갱신·수관 관리: 밀식재배 구획의 의사결정 설계
+summary: 전정은 “잘라내기”가 아니라, 수관 구조를 다시 짜서 수확 안정성·품질 편차·노동 효율을 함께 맞추는 운영 결정입니다. 밀식재배 구획에서는 시기와 강도보다 회복 루틴이 성패를 가릅니다.
 category: 산지와 생두
-level: 중급
-readingTime: 14분
-updatedAt: 2026. 07. 27.
+level: 전문
+readingTime: 20분
+updatedAt: 2026. 07. 28.
 accent: sage
-fact: 수관을 바꾸는 작업은 “조기 생산”이 아니라 “회복 속도와 품질 편차”를 동시에 설계하는 반복 작업입니다.
-related: ["coffee-plant-life-cycle","coffee-shade-intercropping","coffee-soil-nutrient-diagnosis","coffee-flowering-pollination"]
-tags: ["전정","갱신","수관관리","수확성","오래된 가지"]
-history: [{"date":"2026. 07. 27.","note":"BOT-09 주제 초안 작성"}]
+fact: 전정·갱신은 수분·병해·광량·노동 제약이 동시에 작동하는 상태에서 수확의 회복력을 설계하는 일이며, 즉시 수확 반응보다 2~3개 계절 구간의 변화를 함께 봐야 합니다.
+related: ["coffee-plant-life-cycle","root-canopy-photosynthesis","coffee-soil-nutrient-diagnosis","coffee-shade-intercropping","altitude-rain-temp-physiology","coffee-climate-resilience"]
+tags: ["전정","갱신","Stumping","수관관리","밀식재배","의사결정"]
+history: [{"date":"2026. 07. 27.","note":"BOT-09 주제 초안 작성"}, {"date":"2026. 07. 28.","note":"BOT-09 정렬: 밀식재배 구획 기준 진단 프레임·오해 정리·실습 루프 보강"}]
 ---
-<h2 id="definition">수관 관리의 역할 정리</h2>
-<p>전정과 갱신은 커피나무를 “어려운 시점에서 잘라내는 처방”이 아니라, 생산 리듬을 재정렬하는 조정입니다.</p>
-<p>자란 가지의 분포, 그늘 획득, 관수·양분 전달이 함께 바뀌므로 가지 수를 줄이는 방식 하나로 판단하지 않아야 합니다.</p>
+<h2 id="topic">왜 전정은 단기 처방이 아니라 운영 루프인가</h2>
+<p>전정·갱신·수관 관리는 수확량을 즉시 올리는 처방보다, 수분·병해·광량·노동의 네 변수를 다시 맞추는 설계 작업에 가깝습니다. 같은 나무라도 가지 수만 줄였다는 이유로 판단하면 오히려 병해, 미성숙, 변동이 커지는 경우가 많습니다.</p>
+<p>특히 밀식재배 구획에서는 수관 간 간격이 작기 때문에 개별 나무의 구조 변화가 인접 나무의 통풍, 그늘, 수분 분배에 즉시 전달됩니다. 그래서 전정의 성패는 “이번 주 잘랐는가”보다 “나중에 어떤 신호가 줄어들었는가”로 평가하는 편이 정확합니다.</p>
+<aside class="callout callout-note" data-tone="note"><p>일반적으로 전정은 한 번 정리로 끝나는 작업이 아닙니다. 절단 강도는 낮추고, 관측 주기는 높이는 방식으로 2~3주기 동안 완만하게 수렴시키는 편이 안정적인 편입니다.</p></aside>
 
-<h2 id="when-to-prune">언제 개입해야 하는가</h2>
-<p>한 번에 대규모 전정을 하기보다, 수분·개화 패턴이 겹치는 구간을 피해서 단계적으로 진행합니다.</p>
-<ul>
-  <li>과밀과 분리 실패로 공극이 늘어난 구획</li>
-  <li>영양 흡수 저하와 결실 편차가 반복되는 구획</li>
-  <li>수분·병해가 한쪽 면으로만 집중되는 수관</li>
-</ul>
-
-<h2 id="core-methods">기본 기법 3개</h2>
+<h2 id="goal">BOT-09 정렬: 목표를 수확량만으로 두지 않는다</h2>
+<p>BOT-09의 핵심은 “많이 자르기”가 아니라 “목표 신호를 좁히기”입니다. 전정 작업의 성공은 체리 무게·생산량만으로 보지 않고, 동일 구획에서 품질 편차, 미성숙 비율, 병해 재확산 간격이 줄어들어야 확인됩니다.</p>
 <ol>
-  <li>재생형 전정: 하부 가지를 조정해 통풍·채광 개선</li>
-  <li>부분 갱신(Stumping): 구간별로 줄기 기반을 낮춰 생장 중심을 재설정</li>
-  <li>선별 수세: 과밀이 큰 우세 가지를 먼저 완만하게 줄이고 균형점 유지</li>
+  <li><strong>공간 신호:</strong> 수관 밀도와 공기 순환이 함께 안정화되는가.</li>
+  <li><strong>자원 신호:</strong> 회복 초기 급격한 자원 투입 없이 새순 재생이 진행되는가.</li>
+  <li><strong>품질 신호:</strong> 같은 등급 내에서 성숙 편차가 축소되는가.</li>
+  <li><strong>노동 신호:</strong> 수확·방제·가지 정리 동선을 다시 설계할 때 병목이 줄어드는가.</li>
 </ol>
 
-<h2 id="rejuvenation-loop">갱신 단계에서 놓치기 쉬운 실패</h2>
+<h2 id="diagnosis">4개 축으로 판단을 시작한다</h2>
+<p>밀식재배 구획에서 전정 시나리오를 고를 때는 먼저 4개 축을 동시에 봐야 합니다.</p>
+<ol>
+  <li><strong>생리 축:</strong> 새순 약화, 잎 크기 저하, 당화 지연이 동시에 보이는가.</li>
+  <li><strong>병해 축:</strong> 동일 구획의 병해 발생이 한쪽면 집중인지, 군집성으로 확산되는지.</li>
+  <li><strong>수분·토양 축:</strong> 뿌리대 주위 습윤 편차, 경사면 침수, 건조 경로가 큰가.</li>
+  <li><strong>작업 축:</strong> 현재 인력, 수확력, 접근 동선이 해당 강도의 갱신을 견딜 수 있는가.</li>
+</ol>
+<p>이 4축 중 하나라도 과도하게 불안하면 “완만한 갱신”으로 가고, 2개 이상 동시에 위험이 크면 <strong>Stumping(스텁핑)</strong>을 검토할 근거가 생깁니다. 반대로 4축이 안정되어 있는데도 성과 정체가 있으면 전정 자체가 아니라 영양·수확 전략과의 정렬이 먼저입니다.</p>
+
+<h2 id="decision-logic">의사결정 로직: 전정·갱신·정지</h2>
+<p>의사결정은 아래 구조로 정리하면 현장에서 합의가 빠릅니다. 문서의 목적은 정답을 주는 것이 아니라 회피 비용을 줄이는 것입니다.</p>
 <table>
   <thead>
-    <tr><th>실수 유형</th><th>표준 반응</th><th>영향</th></tr>
+    <tr><th>현장 상태</th><th>1차 개입</th><th>2차 개입</th><th>주의 신호</th></tr>
   </thead>
   <tbody>
-    <tr><td>무리한 대규모 전정</td><td>회복기 자원 고갈</td><td>수확량 급락</td></tr>
-    <tr><td>시점 분산 실패</td><td>연속 공백 구간 발생</td><td>작업량 집중으로 품질 점검 지연</td></tr>
-    <tr><td>영양 보전 생략</td><td>새순 약화</td><td>후속 수확률 저하</td></tr>
+    <tr>
+      <td>병해는 있으나 새순 회복 탄력은 유지</td>
+      <td>선택 전정(수관 정리)</td>
+      <td>2~4주 후 통풍·병반 밀도 재측정</td>
+      <td>동일 위치 반복 발병 시 병해 관리와 작업 동선 동시 조정</td>
+    </tr>
+    <tr>
+      <td>병해·과밀이 동시에 심화, 새순 회복이 약함</td>
+      <td>부분 갱신(Rejuvenation)</td>
+      <td>영양·급수 동시 조절과 회복 루틴 고정</td>
+      <td>지나친 수분 저류와 병반 재확산</td>
+    </tr>
+    <tr>
+      <td>기초 구조가 이미 노후·파쇄, 동일 수확 효율이 떨어짐</td>
+      <td>구간 단위 Stumping</td>
+      <td>재식 또는 회복 구획 분리, 최소한 1시즌 분리 운영</td>
+      <td>회복기 과도한 강도, 동시 다구획 적용</td>
+    </tr>
+    <tr>
+      <td>근본 축이 안정, 수확기는 정상 범위</td>
+      <td>당분간 보류(관측 강화)</td>
+      <td>주기 점검만 유지</td>
+      <td>측정 실패, 기록 누락</td>
+    </tr>
   </tbody>
 </table>
 
-<h2 id="quality-effect">수확성과 품질에 미치는 영향</h2>
-<p>수관이 균일해지면 체리 크기와 성숙 균일성 신호가 단기적으로 안정되는 경향이 있습니다. 다만 회복 초기에는 변동이 커질 수 있어 이 시기의 수치 변화를 “실패”로 바로 보기보다 리셋 구간으로 간주해야 합니다.</p>
-
-<h2 id="common-misconceptions">흔한 오해</h2>
-<ul>
-  <li>오해: 가지를 많이 잘라낼수록 산지 생산력이 빨리 돌아온다.<br/><strong>정정:</strong> 절단량보다 회복자원 배분이 더 큰 변수입니다.</li>
-  <li>오해: 갱신은 단발성 작업이다.<br/><strong>정정:</strong> 수명 주기별 점진적 조정이 필요합니다.</li>
-  <li>오해: 수확기 전 전정이 정답이다.<br/><strong>정정:</strong> 수분·개화 시퀀스와 동기화하지 않으면 반감기가 증가할 수 있습니다.</li>
-</ul>
-
-<h2 id="practice">실습: 두 구획 비교 템플릿</h2>
-<p>동일 품종에서 두 구획만 비교합니다.</p>
+<h2 id="dense">밀식재배에서 전정 강도는 왜 달라져야 하는가</h2>
+<p>밀식재배 구획은 간격이 촘촘해 빛 분배가 불균일하고, 통풍이 나빠 곰팡이·병해가 국소적으로 생기기 쉽습니다. 여기서 동일 강도로 전정을 하면 한두 구획은 회복되다가 나머지 구획은 오히려 과부하로 밀집화가 커지는 경향이 있습니다.</p>
+<p>밀식에서 더 중요한 판단은 “어떤 가지를 언제 줄일지”보다 “어느 구획을 먼저 덜 건드리고 어떤 구획을 더 분절해서 갱신할지”입니다. 구획 간 동시 전정은 작업량을 줄이는 대신 회복 지연과 병해 재확산을 키우는 경우가 있어, 30~40% 구획을 건드리고 나머지는 2~3주차에 이어서 처리하는 방식이 안정적입니다.</p>
 <ol>
-  <li>작업 전 2주: 수관 밀도와 병해 점수 기록</li>
-  <li>전정 강도 A/B군으로 시범 운영</li>
-  <li>4주, 8주, 12주 간격으로 생장 반응 측정</li>
-  <li>같은 등급 선별 규칙으로 수확 후 성적 비교</li>
+  <li>최초 1차 대상은 병해군집 + 과밀군집의 교차 구간으로 제한합니다.</li>
+  <li>2차 대상은 첫 관측에서 회복 반응이 낮았던 구획을 우선합니다.</li>
+  <li>3차 대상은 주변 수확 동선이 유연한 구획을 잡아 작업 집중을 분산합니다.</li>
 </ol>
 
-<h2 id="related-terms">용어 정리</h2>
+<h2 id="timing">시기 설계: 개화·수분·기후 캘린더와 동기화</h2>
+<p>시기는 항상 지역 생육 단계와 맞추어야 합니다. <a data-wikilink="coffee-plant-life-cycle" href="/wiki/coffee-plant-life-cycle">커피 생애주기</a>의 영양생장기와 개화 직전의 수분 신호를 같이 보면 잘못된 시기를 줄일 수 있습니다.</p>
+<p>첫 수분 스트레스가 강한 해에 바로 강한 갱신을 시행하면 새순 회복과 병해 유입이 동시에 일어나 회복을 늘립니다. 완만한 갱신일수록 회복 기간을 두고 보정할 수 있으므로 장기적으로 동일 노동 투입 대비 안정성이 높습니다.</p>
+<aside class="callout callout-important" data-tone="important"><p>개화기 전면 전정을 단일 규칙으로 정하면 안 됩니다. 구획별로 수분 상태와 병해 농도를 반영해 “전면”이 아니라 “분절”로 밀어야 합니다.</p></aside>
+<p><a data-wikilink="coffee-flowering-pollination" href="/wiki/coffee-flowering-pollination">개화·수분</a> 단계가 길게 분산되거나 지연되는 구획은 전정보다 수분·병해 보정이 먼저 선행돼야 하고, 개화 정점이 짧게 모일 때는 가벼운 전정으로 작업 범위를 제한하는 편이 좋습니다.</p>
+
+<h2 id="nutrition-water">회복기에는 수분·토양·영양을 분리해 설계한다</h2>
+<p>전정 뒤의 약화는 대부분 과소영양에서만 생기는 게 아니라 과잉 관수·고밀도 병해 압력에서도 생깁니다. <a data-wikilink="coffee-soil-nutrient-diagnosis" href="/wiki/coffee-soil-nutrient-diagnosis">토양·영양 진단</a>을 같이 쓰면 “적게 자르기”를 “적게 회복 손실하기”로 바꿀 수 있습니다.</p>
+<p>회복기 체크리스트는 원칙적으로 아래를 분리해 기록합니다.</p>
 <ul>
-  <li>전정(Pruning): 성장 구조를 조절하기 위한 가지 제거</li>
-  <li>갱신(Rejuvenation): 노화 구간을 새순 중심으로 재배치</li>
-  <li>Stumping: 하부 기부에서 수관을 재설정하는 강한 갱신</li>
+  <li>수분 신호: 토양 표면 건조 기간과 주간 급수의 균일성</li>
+  <li>수관 신호: 새순 길이, 잎 크기, 가지 신선도 회복 간격</li>
+  <li>병해 신호: 병반 이동 범위와 처리 구획별 재발 빈도</li>
+  <li>품질 신호: 수확 편차가 1, 2차 계절에서 수렴하는지</li>
+</ul>
+<p>세 가지 축이 동시에 안정될 때까지는 추가 강한 갱신을 미루는 편이 비용 대비 안정성이 높습니다.</p>
+
+<h2 id="risk-matrix">작업 실패 패턴 5가지와 대응</h2>
+<p>전정 현장에서 가장 흔한 실패는 기술 미숙이 아니라 시나리오 불일치에서 시작됩니다. 아래 매트릭스는 자주 반복되는 결함입니다.</p>
+<table>
+  <thead>
+    <tr><th>실패 패턴</th><th>원인</th><th>대응 우선순위</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>동시 다구획 Stumping</td>
+      <td>회복자원 분산, 병해 관리 포기</td>
+      <td>구획 단위로 분할, 3~5단계 분기 운영</td>
+    </tr>
+    <tr>
+      <td>완전 무게 중심 전정</td>
+      <td>병해·수분 축 미확인</td>
+      <td>4개 축 진단 후 강도 축소</td>
+    </tr>
+    <tr>
+      <td>“잘린 즉시 효과” 가정</td>
+      <td>회복기 변동을 실패로 오해</td>
+      <td>4주·8주·12주 기준치로 재판단</td>
+    </tr>
+    <tr>
+      <td>영양 보전 생략</td>
+      <td>새순 회복 지연</td>
+      <td>토양 수분·영양 동시 점검 후 단계 복귀</td>
+    </tr>
+    <tr>
+      <td>기록 미실행</td>
+      <td>개입 효과 판별 불가</td>
+      <td>정량 포맷 고정(구획 단위 비교표)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="misconceptions">흔한 오해와 정정</h2>
+<ul>
+  <li>오해: 강하게 자르면 회복이 빠르다.<br/><strong>정정:</strong> 강도보다 회복 자원(수분·병해·노동)이 맞물릴 때 회복 속도가 결정됩니다.</li>
+  <li>오해: 한 번의 전정으로 매 시즌 문제를 해결한다.<br/><strong>정정:</strong> 밀식재배에서는 구획 단위 분절이 기본이며, 같은 해라도 2~3회 확인 주기가 필요합니다.</li>
+  <li>오해: 밀식 구획은 Stumping이 정답이다.<br/><strong>정정:</strong> 회복기와 병해 조건이 완화되면 부분 갱신으로도 충분한 경우가 많습니다.</li>
+  <li>오해: 수관이 높으면 무조건 좋다.<br/><strong>정정:</strong> 수관 높이와 통풍, 그늘, 병해가 동시에 작동하므로 밀도별 최적값이 다릅니다.</li>
+  <li>오해: 전정이 곧 수확량 회복이다.<br/><strong>정정:</strong> 수확량은 개화·수분·회복 루프를 함께 바꿨을 때 동반적으로 개선됩니다.</li>
+</ul>
+
+<h2 id="practice">실습: 16주 A/B 갱신 루프</h2>
+<p>가능하면 동일 품종, 유사 토양, 유사 고도 구획에서 두 반을 나눕니다. 초기 2주차에는 2주간격으로 기록 루프를 고정해야 비교가 가능합니다.</p>
+<ol>
+  <li>1주차: 대상 구획 2개를 선별하고 베이스라인을 고정한다(병해 수치, 수관 밀도, 잎 무늬, 토양 수분 신호).</li>
+  <li>2~4주차: A구획은 가벼운 전정·가지 정리, B구획은 관측 보강만 유지한다.</li>
+  <li>6주차: 새순 길이, 병반 지도, 병해 재확산 위치를 같은 포맷으로 비교한다.</li>
+  <li>8주차: B구획은 1차 전정 조건으로 전환하고, A구획은 회복기 데이터만 추가 입력한다.</li>
+  <li>12~16주차: 수확 적기 지표, 미성숙 과실 비율, 수확 후 편차를 동일 선택 규칙으로 비교한다.</li>
+  <li>최종: 각 구획을 “전단계-중간-회복” 기록으로 저장해 다음 시즌의 기준점으로 둔다.</li>
+</ol>
+
+<h2 id="terms">용어 정리</h2>
+<ul>
+  <li>전정(Pruning): 수관 구조를 조정해 통풍·채광·병해 동선을 바꾸는 작업.</li>
+  <li>갱신(Rejuvenation): 노후·과밀 구획을 분할해 새순 중심으로 생산축을 재배치하는 단계적 개입.</li>
+  <li>Stumping(스템핑): 하부부위 기준으로 수관 기준점을 내려 강하게 재설정하는 갱신 방식.</li>
+  <li>밀식재배(고밀도 재배): 간격이 촘촘한 구획에서 통풍·작업 동선 손실을 줄이기 위해 구조 설계를 다단계로 나누는 운영 방식.</li>
+  <li>수관 신호: 잎 밀도, 새순 분화, 병해 밀도, 가지 분기 상태를 통해 작업 반응을 해석하는 판단 단서.</li>
 </ul>
 
 <h2 id="references">참고 자료</h2>
 <ul>
-  <li><a data-wikilink="coffee-plant-life-cycle" href="/wiki/coffee-plant-life-cycle">생애주기와 구조 신호</a></li>
-  <li><a data-wikilink="coffee-flowering-pollination" href="/wiki/coffee-flowering-pollination">개화·수분 단계</a></li>
-  <li><a data-wikilink="coffee-soil-nutrient-diagnosis" href="/wiki/coffee-soil-nutrient-diagnosis">영양 회복 판단 기준</a></li>
-  <li><a href="https://www.fao.org/">FAO 재배 기술 가이드</a></li>
-  <li><a href="https://www.wcr.org/">WCR 재배 자원</a></li>
+  <li><a href="https://www.wcr.org/" target="_blank" rel="noopener noreferrer">WCR: 커피 생리·재배 가이드(업데이트 버전)</a></li>
+  <li><a href="https://www.fao.org/" target="_blank" rel="noopener noreferrer">FAO 커피·작물 경영 자료</a></li>
+  <li><a href="https://www.ico.org/" target="_blank" rel="noopener noreferrer">ICO: 시장·생산·기후 이슈 브리핑</a></li>
+  <li><a data-wikilink="root-canopy-photosynthesis" href="/wiki/root-canopy-photosynthesis">뿌리·수관·광합성</a></li>
+  <li><a data-wikilink="coffee-climate-resilience" href="/wiki/coffee-climate-resilience">기후 회복력</a></li>
+  <li><a data-wikilink="coffee-soil-nutrient-diagnosis" href="/wiki/coffee-soil-nutrient-diagnosis">토양·영양 진단</a></li>
+  <li><a data-wikilink="coffee-shade-intercropping" href="/wiki/coffee-shade-intercropping">그늘·혼농재배</a></li>
+  <li><a href="https://www.wcr.org/resources" target="_blank" rel="noopener noreferrer">WCR 재배 자료 아카이브</a></li>
 </ul>
 
-<h2 id="quiz">자기 점검</h2>
+<h2 id="self-check">자기 점검</h2>
 <ul>
-  <li>수관 관리의 1차 목표를 한 문장으로 정리해 보세요.</li>
-  <li>회복기 편차를 판단할 때 어떤 지표를 먼저 보아야 하나요?</li>
-  <li>무리한 대규모 전정의 위험 징후는 어떤 것인가요?</li>
-  <li>같은 구획에서 2주 후와 12주 후를 비교하는 이유는?</li>
+  <li>현재 구획에서 4개 축(생리·병해·수분·노동) 중 어떤 축이 먼저 개입 우선순위인가요?</li>
+  <li>같은 강도로 A/B구획을 처리했을 때 회복 비교를 하려면 어떤 기록 포맷이 필요한가요?</li>
+  <li>Stumping을 선택할 때 병해·노동·회복 자원 중 어떤 조건이 동시에 충족되어야 하나요?</li>
+  <li>6주와 12주 시점에서 확인해야 하는 가장 먼저의 실패 신호는 무엇인가요?</li>
+  <li>밀식재배에서 수확 동선·병해 지도·전정 강도를 어떻게 분절해야 비용이 낮아질까요?</li>
 </ul>

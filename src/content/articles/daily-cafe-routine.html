@@ -10,7 +10,7 @@ accent: sand
 fact: 품질은 한 번의 기술보다 일상 루틴의 누적이 만들며, 짧은 점검이 큰 편차를 줄입니다.
 related: ["cafe-quality-system","espresso-machines-grinders","roast-profile-design"]
 tags: ["카페운영","품질관리","체크리스트","서비스"]
-history: [{"date":"2026. 07. 27.","note":"일일 운영 품질 루틴 가이드 작성"}]
+history: [{"date":"2026. 07. 27.","note":"일일 운영 품질 루틴 가이드 작성"},{"date":"2026. 07. 28.","note":"오픈/운영/마감 루틴 보강, 오해 정리, 실습·자기점검·참고자료 추가"}]
 ---
 <h2 id="start-routine">오픈 전 10분이 운영의 질을 정합니다</h2>
 <p>오픈 전 루틴은 바빠 보이는 시간에 가장 큰 비용을 줄입니다. 물 온도, 추출 압력, 그라인더 분쇄 상태, 스팀 라인의 청결처럼 작은 항목이 잔 맛의 변동으로 누적되기 때문입니다.</p>
@@ -23,3 +23,45 @@ history: [{"date":"2026. 07. 27.","note":"일일 운영 품질 루틴 가이드 
 <table><tbody><tr><th>구간</th><th>조치</th><th>목적</th></tr><tr><td>영업 중반</td><td>품질 이슈 발생 잔 수집</td><td>야간 분석 데이터 확보</td></tr><tr><td>영업 종료</td><td>브루어/그라인더 세척</td><td>교차 오염·냄새 고정 예방</td></tr><tr><td>마감 기록</td><td>불일치 원인 1개 이상 기록</td><td>다음 영업일 재현성</td></tr></tbody></table>
 <h2 id="culture">운영 문화</h2>
 <p>문서화가 부담스럽다면 단 3줄만 남겨도 효과가 있습니다. “무엇이 문제였는지, 언제 발생했는지, 다음 수정안”이 보이면 팀 내 전달 속도가 빨라지고, 품질 회복 시간이 줄어듭니다.</p>
+
+<h2 id="decision-priority">우선순위 판단 기준</h2>
+<table><tbody><tr><th>심각도</th><th>우선순위</th><th>조치</th></tr><tr><td>고객 불만 직접 반영(쓴맛 과다, 추출 지연)</td><td>1순위</td><td>즉시 원인 후보 제한 후 1컵 단위 재측정</td></tr><tr><td>서비스 속도 저하</td><td>2순위</td><td>시프트 분업·작업 동선 즉시 조정</td></tr><tr><td>기기 이상징후</td><td>3순위</td><td>고장 예측 신호를 유지보수 큐로 이관</td></tr></tbody></table>
+
+<h2 id="common-errors">흔한 오해</h2>
+<ul>
+  <li><strong>오해:</strong> 루틴은 인력 여건이 좋아야만 가능하다<br/><strong>정정:</strong> 항목을 줄이고 2주 반복하면 오히려 여건이 안 좋은 날 오차가 줄어듭니다.</li>
+  <li><strong>오해:</strong> 문제는 항상 장비 이상으로 시작된다<br/><strong>정정:</strong> 기록 누락·의사소통 누락이 먼저 원인인 경우가 많습니다.</li>
+  <li><strong>오해:</strong> 마감 정리는 마무리할 시간이 있으니 미뤄도 된다<br/><strong>정정:</strong> 마감 정리가 없으면 다음 영업일 문제 판단 비용이 비약적으로 증가합니다.</li>
+</ul>
+<aside class="callout callout-note" data-tone="note"><p>문서화가 완벽해야 하는 게 아닙니다. “무엇이 바뀌었는지”와 “누가 확인했는지”만 남겨도 팀이 같은 상태를 빠르게 공유합니다.</p></aside>
+
+<h2 id="template-sheet">루틴 체크 템플릿</h2>
+<ul>
+  <li>날짜/시프트: __ / __ / __ (아침/점심/저녁)</li>
+  <li>장비 상태: 그룹 압력, 물온도, 그라인더 도즈 일치 여부</li>
+  <li>제품 품질: 잔별 샘플 기록(산미/바디/감촉 중 1개씩)</li>
+  <li>이슈 이탈: 이탈 건수, 발생 시간, 가설, 다음 조치</li>
+</ul>
+
+<h2 id="two-week-practice">2주 실습 루틴</h2>
+<ol>
+  <li><strong>1주차:</strong> 오픈 전 점검 + 운영 중 3개 항목만 추적</li>
+  <li><strong>2주차:</strong> 마감 기록을 기준으로 실패 패턴 2개만 잡아 원인-조치 가설 검증</li>
+  <li><strong>2주 종료:</strong> 가장 잦은 실패 유형 1개만 팀 규칙으로 고정</li>
+</ol>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>문제가 감지됐을 때 첫 반응은 무엇을 고정해서 확인해야 하나요?</li>
+  <li>하루 중 어느 구간이 재현성 저하가 가장 쉽게 누적되나요?</li>
+  <li>문서화 항목 중 가장 빈번히 누락되는 항목은 어떤 것이었고, 왜 문제가 생기나요?</li>
+  <li>2주 루틴에서 1개 실패 패턴만 고정할 때 팀 공유 문구는 어떻게 만들어야 하나요?</li>
+</ul>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="cafe-quality-system" href="/wiki/cafe-quality-system">카페 품질시스템</a></li>
+  <li><a data-wikilink="espresso-basics" href="/wiki/espresso-basics">에스프레소 기본 운영 규칙</a></li>
+  <li><a data-wikilink="milk-steaming-protein-chemistry" href="/wiki/milk-steaming-protein-chemistry">우유 스티밍 화학 원리</a></li>
+  <li><a data-wikilink="bar-throughput-and-flow" href="/wiki/bar-throughput-and-flow">동선·처리량 운영</a></li>
+</ul>
