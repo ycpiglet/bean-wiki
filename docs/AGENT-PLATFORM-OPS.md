@@ -147,7 +147,8 @@ node scripts/mint-api-client.mjs --name "Beanote" --org "Beanote" \
 
 | 이름 | 없으면 |
 | --- | --- |
-| `PLATFORM_GATEWAY_SECRET` | 게이트웨이 신원 헤더를 **완전히 무시**합니다. 기본값은 닫힘 |
+| `AUTH_TRUST_PLATFORM_HEADERS` | 게이트웨이 신원 헤더를 **완전히 무시**합니다. OpenAI Apps 인증 프록시 배포에서만 `1` 또는 `true`로 설정합니다 |
+| `PLATFORM_GATEWAY_SECRET` | 게이트웨이 신원 헤더를 **완전히 무시**합니다. 16자 이상의 값을 opt-in과 함께 설정해야 하며 기본값은 닫힘입니다 |
 | `TELEMETRY_SALT` | `session_hash`가 요청별 난수가 되어 세션 그룹핑을 잃습니다. salt 없는 해시로 폴백하지 않습니다 |
 | `KNOWLEDGE_API_CORS_ORIGINS` | 기본 allowlist(`https://bean-wiki.vercel.app`)만 허용 |
 | `PLATFORM_OWNER_EMAILS` | 새 DB에 역할을 부여할 수 있는 사람이 없습니다 |
@@ -172,7 +173,7 @@ node scripts/mint-api-client.mjs --name "Beanote" --org "Beanote" \
 | --- | --- | --- |
 | 봇이 SQL을 생성 | 프롬프트 인젝션의 피해가 "임의 쿼리 실행"으로 확대됩니다 | `BOT_COMMANDS`의 고정 파라미터화 쿼리. LLM은 카탈로그 ID 분류만 |
 | 사람 검수 없이 기여를 게시 | 출처 없는 자동 게시는 되돌릴 근거가 없습니다 | `POST /api/requests/v1/contributions`는 `received`에 멈춥니다. 기존 편집 게이트 + 사람 승인 커밋 또는 PR 제안 |
-| 공유 비밀 확인 없이 게이트웨이 신원 헤더를 신뢰 | 배포처가 직접 접근 가능하면 임의 호출자가 타인 신원을 주장할 수 있습니다 | `x-platform-gateway-secret`을 `PLATFORM_GATEWAY_SECRET`과 상수 시간 비교. 미설정 시 헤더 무시 |
+| 명시적 opt-in 또는 공유 비밀 확인 없이 게이트웨이 신원 헤더를 신뢰 | 배포처가 직접 접근 가능하면 임의 호출자가 타인 신원을 주장할 수 있습니다 | `AUTH_TRUST_PLATFORM_HEADERS=1`과 16자 이상의 `PLATFORM_GATEWAY_SECRET`을 모두 요구하고, `x-platform-gateway-secret`을 상수 시간 비교. 하나라도 없으면 헤더 무시 |
 | 최소 인원 기준 미달 집계를 노출 | 1~4 세션 뒤의 행은 그 사람을 지목하는 것에 가깝습니다 | `applySuppression()` / `suppressSmall(rows, "subject_count")`, `K_ANONYMITY_FLOOR = 5`. 억제 건수를 함께 보고 |
 | 어휘 ID를 삭제하거나 변경 | 외부 앱 DB에 저장된 값입니다 | `status: "deprecated"` + `replacedBy`. 이름이 바뀌면 `labels`만 |
 | 상태 컬럼을 직접 UPDATE | "accepted를 거치지 않은 published"가 표현 가능해집니다 | `transitionRequest()` / `PATCH …/content-requests/{id}` |

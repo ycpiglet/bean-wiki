@@ -19,7 +19,8 @@ npm run dev:full
 
 1. Bean Wiki 전용 로컬 Supabase를 `55321`/`55322` 포트에서 시작한다.
    Docker 포트는 loopback 전용 네트워크에 묶여 같은 LAN에 노출되지 않는다.
-2. 로컬 API URL과 service-role 키를 출력하지 않고 개발 서버에만 전달한다.
+2. 로컬 API URL은 접속 확인용으로 출력하고, service-role 키는 출력하지 않은 채
+   개발 서버에만 전달한다.
 3. `developer@bean.wiki` 개발 계정을 관리자 목록에 추가한다.
 4. 여러 워크트리가 함께 떠 있어도 파일 감시 한도를 넘기지 않도록 polling
    모드의 Next.js 개발 서버를 시작한다.

@@ -1541,3 +1541,37 @@
     `climate-risk-and-quality`, `farmer-income-basics`, `coffee-solvent-chemistry`,
     `coffee-oxidation-pathway`, `caffeine-timing`, `cafe-shift-operations`
   - 실행 작업: 각 기사 본문 확장(원인-개념-실습-오해-퀴즈-참고자료), `order.json` 신규 슬러그 반영, 상호 참조 정합성 점검
+
+- 신규 글 10편 추가 생성 및 동기화 준비(카테고리 확장 2차):
+  - `coffee-cherry-anatomy`, `global-coffee-zones`, `coffee-fermentation-microbiology`,
+    `honey-pulped-natural-processing`, `wet-hulling`, `anaerobic-coffee-processing`,
+    `roast-stage-and-cracks`, `roaster-heat-transfer`, `brew-experiment-design`,
+    `cafe-menu-pricing-quality`
+  - 실행 작업: `order.json` 추가 반영, 프론트매터(related/색상/카테고리 일치) 정합성 수정,
+    `npm run build:content`, `npm run check-content`, `npm run check:editorial` 통과
+
+- 웹 동기화 준비 완료:
+  - `npm run publish:content:live -- --message "docs(content): publish next 10 editorial additions"`
+  - 대상: 신규 10편 동시 게시
+
+- 2026-07-27 추가 배치: 신규 10편 본문 작성·보강
+  - 새로 작성/보강한 대상:
+    - `roast-maillard-strecker-pyrolysis`, `green-bean-grading-defects`, `harvest-maturity-selection`,
+      `root-canopy-photosynthesis`, `altitude-rain-temp-physiology`
+    - `roaster-machine-types-comparison`, `coffee-soil-nutrient-diagnosis`, `coffee-pest-symptom-map`,
+      `green-bean-moisture-management`, `acrylamide-and-furans`
+  - 반영 작업:
+    - frontmatter 정합성(카테고리/액센트/related/tags), 실습·흔한 오해·참고자료·자기 점검 섹션 보강
+    - `order.json` 신규 5편 추가 반영을 포함한 총 10편 일괄 등록
+
+- 2026-07-27 추가 배치(요청 반영): 10편 신규 글 본문 완료 및 동기화
+  - 신규 완료: `catimor-sarchimor-blight-resistance`, `coffee-canopy-pruning-rejuvenation`,
+    `coffee-shade-intercropping`, `coffee-tipica-bourbon-lineage`, `columbia-harvest-cycle`,
+    `ethiopian-heirloom-diversity`, `f1-hybrid-coffee-breeding`, `french-press-immersion-guide`,
+    `kenya-coffee-system`, `moka-pot-pressure-control`
+  - 게이트 실행:
+    - `npm run build:content`
+    - `npm run check-content`
+    - `npm run check:editorial`
+    - `npm run publish:content:live -- --message "docs(content): publish botany-trade and brewing genetics batch"`
+  - 배포 결과: 커밋 `d4ce9a9` 생성, `origin/main` 푸시 완료 (Vercel 자동 배포 트리거)

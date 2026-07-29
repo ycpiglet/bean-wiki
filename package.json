@@ -34,6 +34,7 @@
     "profile-db:reset": "node scripts/profile-db.mjs reset",
     "profile-db:test": "node scripts/profile-db.mjs test",
     "test:profile-store": "node --test tests/profile-store-mode.test.mjs",
+    "test:platform-auth": "node --test tests/platform-header-trust.test.mjs",
     "build:content": "node scripts/build-content.mjs",
     "check-content": "node scripts/check-content.mjs",
     "check:palette": "node --test tests/brand-colors.test.mjs && node scripts/check-brand-colors.mjs",

@@ -186,9 +186,10 @@
 플랫폼 게이트웨이가 주입하는 신원 헤더(`oai-authenticated-user-*` 등)는
 **요청이 실제로 그 게이트웨이를 통과했음을 증명할 때만** 신뢰합니다.
 
-- 증명 수단: `x-platform-gateway-secret` 헤더가 `PLATFORM_GATEWAY_SECRET`과
-  일치(상수 시간 비교).
-- `PLATFORM_GATEWAY_SECRET`이 없으면 신원 헤더를 **완전히 무시**합니다.
+- 배포 opt-in: `AUTH_TRUST_PLATFORM_HEADERS`가 `1` 또는 `true`여야 합니다.
+- 증명 수단: `x-platform-gateway-secret` 헤더가 16자 이상인
+  `PLATFORM_GATEWAY_SECRET`과 일치해야 합니다(상수 시간 비교).
+- opt-in과 공유 비밀 중 하나라도 없으면 신원 헤더를 **완전히 무시**합니다.
   기본값은 닫힘입니다.
 - 배포처가 직접 접근 가능한 상태에서 헤더를 그대로 신뢰하면 임의 호출자가
   타인 신원을 주장할 수 있습니다. 구현: `src/lib/platform-auth.ts`.

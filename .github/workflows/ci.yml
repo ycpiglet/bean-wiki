@@ -28,4 +28,5 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run test:profile-store
+      - run: npm run test:platform-auth
       - run: npm run verify

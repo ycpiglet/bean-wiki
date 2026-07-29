@@ -2,6 +2,7 @@ import { headers } from "next/headers";
 import { readSession, type Session } from "@/lib/session";
 import { getRuntimeBindings } from "../../platform/runtime-bindings";
 import { timingSafeEqualHex } from "@/lib/api/crypto";
+import { platformHeaderTrustConfigured } from "@/lib/platform-header-trust";
 
 export type PlatformUser = {
   accountKey: string;
@@ -41,8 +42,18 @@ const CALLBACK_PATH = "/callback";
 const TRUST_PLATFORM_HEADERS_ENV = "AUTH_TRUST_PLATFORM_HEADERS";
 
 function platformHeadersTrusted(): boolean {
-  const value = process.env[TRUST_PLATFORM_HEADERS_ENV]?.trim().toLowerCase();
-  return value === "1" || value === "true";
+  return platformHeaderTrustConfigured({
+    AUTH_TRUST_PLATFORM_HEADERS:
+      process.env[TRUST_PLATFORM_HEADERS_ENV],
+    PLATFORM_GATEWAY_SECRET: configuredGatewaySecret(),
+  });
+}
+
+function configuredGatewaySecret(): string | undefined {
+  return (
+    getRuntimeBindings().PLATFORM_GATEWAY_SECRET ??
+    process.env.PLATFORM_GATEWAY_SECRET
+  );
 }
 
 export async function getPlatformUser(
@@ -95,9 +106,7 @@ export async function getPlatformUser(
  * Fails closed: an unset secret means header identity is disabled, not open.
  */
 function gatewayHeadersTrusted(presented: string | null): boolean {
-  const expected =
-    getRuntimeBindings().PLATFORM_GATEWAY_SECRET ??
-    process.env.PLATFORM_GATEWAY_SECRET;
+  const expected = configuredGatewaySecret();
   if (!expected || expected.length < 16) return false;
   if (!presented) return false;
   return timingSafeEqualHex(presented, expected);
