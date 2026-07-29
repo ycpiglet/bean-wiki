@@ -19,6 +19,21 @@ const SIGN_IN_PATH = "/signin-with-chatgpt";
 const SIGN_OUT_PATH = "/signout-with-chatgpt";
 const CALLBACK_PATH = "/callback";
 
+// The `oai-authenticated-user-*` headers are only an identity claim if something
+// in front of the app guarantees the client cannot set them. On OpenAI Apps
+// hosting the authenticating proxy does exactly that: it injects them and strips
+// inbound copies. Nothing else does — this repo also deploys to Vercel (DEPLOY.md)
+// — and there an anonymous caller can send `oai-authenticated-user-email: <anyone>`
+// to be treated as that account, including an ADMIN_EMAILS address. So the headers
+// are honoured only where the deployment declares it sits behind that proxy;
+// everywhere else the encrypted bw_session cookie is the only accepted identity.
+const TRUST_PLATFORM_HEADERS_ENV = "AUTH_TRUST_PLATFORM_HEADERS";
+
+function platformHeadersTrusted(): boolean {
+  const value = process.env[TRUST_PLATFORM_HEADERS_ENV]?.trim().toLowerCase();
+  return value === "1" || value === "true";
+}
+
 export async function getPlatformUser(
   sessionOverride?: Session | null,
 ): Promise<PlatformUser | null> {
@@ -37,6 +52,8 @@ export async function getPlatformUser(
       avatar: session.user.avatar ?? null,
     };
   }
+
+  if (!platformHeadersTrusted()) return null;
 
   const requestHeaders = await headers();
   const email = requestHeaders.get(USER_EMAIL_HEADER)?.trim() || null;
