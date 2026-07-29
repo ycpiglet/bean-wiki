@@ -6812,6 +6812,7 @@ export const articlesByLocale: Record<string, Article[]> = {
   {
     "slug": "honey-pulped-natural-processing",
     "title": "허니·펄프드 내추럴: 점액 보존이 만드는 신뢰성 있는 처리",
+    "summary": "허니·펄프드 내추럴은 점액 보존량, 건조 방식, 저장 조건이 함께 맞물릴 때 처리 결과가 안정적으로 분리됩니다.",
     "category": "산지와 생두",
     "level": "중급",
     "readingTime": "11분",
@@ -8447,6 +8448,7 @@ export const articlesByLocale: Record<string, Article[]> = {
   {
     "slug": "coffee-tipica-bourbon-lineage",
     "title": "티피카·버번 계통 지도: 품종명이 아니라 계통으로 읽기",
+    "summary": "티피카와 버번은 이름보다 계통 확산의 경로가 중요합니다. 용어 혼선을 줄이려면 전파 맥락·선발 방식·실무 기록을 함께 봐야 합니다.",
     "category": "커피 기초",
     "level": "중급",
     "readingTime": "13분",
@@ -8530,6 +8532,7 @@ export const articlesByLocale: Record<string, Article[]> = {
   {
     "slug": "ethiopian-heirloom-diversity",
     "title": "에티오피아 재래종(heirloom) 다형성: 용어의 한계와 사용 시점",
+    "summary": "에티오피아 재래종은 유전 집단, 산지 그룹, 거래 라벨을 구분해 써야 분류 오해를 줄일 수 있습니다.",
     "category": "커피 기초",
     "level": "전문",
     "readingTime": "14분",
@@ -15902,6 +15905,7 @@ export const articlesByLocale: Record<string, Article[]> = {
   {
     "slug": "honey-pulped-natural-processing",
     "title": "허니·펄프드 내추럴: 점액 보존이 만드는 신뢰성 있는 처리",
+    "summary": "허니·펄프드 내추럴은 점액 보존량, 건조 방식, 저장 조건이 함께 맞물릴 때 처리 결과가 안정적으로 분리됩니다.",
     "category": "산지와 생두",
     "level": "중급",
     "readingTime": "11분",
@@ -17537,6 +17541,7 @@ export const articlesByLocale: Record<string, Article[]> = {
   {
     "slug": "coffee-tipica-bourbon-lineage",
     "title": "티피카·버번 계통 지도: 품종명이 아니라 계통으로 읽기",
+    "summary": "티피카와 버번은 이름보다 계통 확산의 경로가 중요합니다. 용어 혼선을 줄이려면 전파 맥락·선발 방식·실무 기록을 함께 봐야 합니다.",
     "category": "커피 기초",
     "level": "중급",
     "readingTime": "13분",
@@ -17620,6 +17625,7 @@ export const articlesByLocale: Record<string, Article[]> = {
   {
     "slug": "ethiopian-heirloom-diversity",
     "title": "에티오피아 재래종(heirloom) 다형성: 용어의 한계와 사용 시점",
+    "summary": "에티오피아 재래종은 유전 집단, 산지 그룹, 거래 라벨을 구분해 써야 분류 오해를 줄일 수 있습니다.",
     "category": "커피 기초",
     "level": "전문",
     "readingTime": "14분",
