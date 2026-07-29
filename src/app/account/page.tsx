@@ -5,10 +5,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { BeanMark } from "@/components/bean-logo";
 import { AccountMenu } from "@/components/account-menu";
+import { CredentialPanel } from "@/components/credential-panel";
+import { ExpertiseBadges } from "@/components/expertise-badges";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { LearningDashboard } from "@/components/learning-dashboard";
 import { MobileNav } from "@/components/mobile-nav";
+import { ProfileForm } from "@/components/profile-form";
+import { SkillAssessment } from "@/components/skill-assessment";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { isAdminUser } from "@/lib/admin";
 import {
   getRepoConfig,
   ghCanPush,
@@ -17,6 +22,13 @@ import {
 } from "@/lib/github";
 import { googleConfigured, oauthConfigured, safeReturnTo } from "@/lib/oauth";
 import { getPlatformUser, platformSignOutPath } from "@/lib/platform-auth";
+import {
+  getOrCreateProfile,
+  listCredentials,
+  profileStoreConfigured,
+  type Credential,
+  type Profile,
+} from "@/lib/profile-store";
 import { readSession } from "@/lib/session";
 
 export const runtime = "nodejs";
@@ -63,6 +75,23 @@ export default async function AccountPage({
         ghProposalsFor(github.login, github.token),
       ])
     : [[], []];
+
+  // Profile, skill tier and credentials live in Supabase. A store outage or a
+  // deployment without credentials must not take the whole account page down,
+  // so failures degrade to the identity-only view.
+  const storeReady = profileStoreConfigured();
+  let profile: Profile | null = null;
+  let credentials: Credential[] = [];
+  let storeError: string | null = null;
+  if (user && storeReady) {
+    try {
+      profile = await getOrCreateProfile(user);
+      credentials = await listCredentials(user.accountKey);
+    } catch (error) {
+      storeError = error instanceof Error ? error.message : "profile store unavailable";
+    }
+  }
+  const admin = isAdminUser(user, profile);
 
   return (
     <main className="article-page">
@@ -131,7 +160,12 @@ export default async function AccountPage({
                 )}
               </div>
               <div className="acct-profile-text">
-                <h2>{user.displayName}</h2>
+                <h2>
+                  {profile?.nickname || user.displayName}
+                  {profile && (
+                    <ExpertiseBadges tier={profile.skill_tier} credentials={credentials} />
+                  )}
+                </h2>
                 {user.email && <p className="acct-email">{user.email}</p>}
                 <p className="acct-note">
                   {user.provider === "google"
@@ -153,6 +187,63 @@ export default async function AccountPage({
                 로그아웃
               </a>
             </section>
+
+            {storeError && (
+              <p className="acct-card acct-note" role="status">
+                프로필 저장소에 연결하지 못했습니다. 신원 정보만 표시합니다. ({storeError})
+              </p>
+            )}
+            {!storeReady && (
+              <p className="acct-card acct-note" role="status">
+                프로필 저장소가 아직 설정되지 않았습니다. 닉네임·실력 측정·자격 인증은
+                <code> SUPABASE_SERVICE_ROLE_KEY</code>를 설정하면 활성화됩니다.
+              </p>
+            )}
+
+            {profile && (
+              <>
+                <section className="acct-card">
+                  <div className="acct-card-head">
+                    <h2>프로필</h2>
+                    <span className="acct-note">닉네임만 공개됩니다</span>
+                  </div>
+                  <ProfileForm profile={profile} />
+                </section>
+
+                <section className="acct-card">
+                  <div className="acct-card-head">
+                    <h2>실력 측정</h2>
+                    <span className="acct-note">퀴즈 기반 자기 진단</span>
+                  </div>
+                  <SkillAssessment
+                    tier={profile.skill_tier}
+                    attempts={profile.quiz_attempts}
+                    bestPct={profile.quiz_best_pct}
+                  />
+                </section>
+
+                <section className="acct-card">
+                  <div className="acct-card-head">
+                    <h2>전문성 인증</h2>
+                    <span className="acct-note">관리자 심사 후 배지 부여</span>
+                  </div>
+                  <CredentialPanel initial={credentials} />
+                </section>
+
+                {admin && (
+                  <section className="acct-card">
+                    <div className="acct-card-head">
+                      <h2>관리자</h2>
+                      <span className="acct-badge is-push">ADMIN</span>
+                    </div>
+                    <p>제출된 자격 증빙을 심사할 수 있습니다.</p>
+                    <Link className="acct-button" href="/admin/credentials">
+                      자격 심사 큐 열기
+                    </Link>
+                  </section>
+                )}
+              </>
+            )}
 
             <LearningDashboard showAccountAction={false} />
 
