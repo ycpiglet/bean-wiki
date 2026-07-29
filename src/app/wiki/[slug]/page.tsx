@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BeanMark } from "@/components/bean-logo";
+import { PrimaryNav } from "@/components/primary-nav";
 import {
   ArticleQuiz,
   ArticleViewReward,
 } from "@/components/article-learning";
 import { ArticleDiscussion } from "@/components/article-discussion";
 import { ArticleResources } from "@/components/article-resources";
+import { ArticleContributors } from "@/components/article-contributors";
 import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
@@ -20,6 +22,7 @@ import { sanitizeRenderedHtml } from "@/lib/sanitize-render";
 import { toISODate } from "@/lib/dates";
 import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { quiz } from "@/content/quiz";
+import { contributorProfilesForArticle } from "@/content/contributors";
 
 export const dynamicParams = false;
 
@@ -81,6 +84,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
     ? toISODate(history[history.length - 1].date)
     : toISODate(article.updatedAt);
   const curatedQuestion = quiz.find((question) => question.source === slug);
+  const contributors = contributorProfilesForArticle(article);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -92,7 +96,14 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
     keywords: article.tags?.join(", "),
     datePublished: published,
     dateModified: toISODate(article.updatedAt),
-    author: { "@type": "Organization", name: SITE_NAME },
+    author: contributors.map((contributor) => ({
+      "@type": contributor.kind === "human" ? "Person" : "Organization",
+      name:
+        contributor.kind === "human"
+          ? contributor.name
+          : `${contributor.name} · Bean Wiki AI Contributor`,
+      url: `${SITE_URL}/contributors/${contributor.id}`,
+    })),
     publisher: { "@type": "Organization", name: SITE_NAME },
     mainEntityOfPage: `${SITE_URL}/wiki/${slug}`,
   };
@@ -131,6 +142,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
           <span>BEAN</span>
           <em>WIKI</em>
         </Link>
+        <PrimaryNav />
         <div className="header-tools">
           <Link href="/" className="back-link">
             ← 모든 지식 둘러보기
@@ -174,6 +186,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             {article.draft && <span className="draft-badge">초안</span>}
             <h1>{article.title}</h1>
             <p>{article.summary}</p>
+            <ArticleContributors article={article} />
             <div className="article-meta">
               <span>읽는 시간 {article.readingTime}</span>
               <span>최근 수정 {article.updatedAt}</span>

@@ -4,6 +4,7 @@ import type { FocusEvent } from "react";
 import { useEffect, useState } from "react";
 import type { HomeHighlight } from "@/content/home-highlights";
 import { useAutoplayState } from "@/lib/use-autoplay-state";
+import { AutoplayToggle } from "@/components/autoplay-toggle";
 
 type KnowledgeDialProps = {
   items: HomeHighlight[];
@@ -71,17 +72,11 @@ export function KnowledgeDial({ items }: KnowledgeDialProps) {
           <button type="button" aria-label="다음 지식 문구" onClick={() => move(1)}>
             →
           </button>
-          {reducedMotion ? (
-            <span className="motion-status">자동 전환 꺼짐</span>
-          ) : (
-            <button
-              type="button"
-              aria-pressed={paused}
-              onClick={() => setPaused((value) => !value)}
-            >
-              {paused ? "재생" : "일시정지"}
-            </button>
-          )}
+          <AutoplayToggle
+            paused={paused || reducedMotion}
+            disabled={reducedMotion}
+            onToggle={() => setPaused((value) => !value)}
+          />
         </div>
         <span className="sr-only" aria-live="polite">
           {announcement}

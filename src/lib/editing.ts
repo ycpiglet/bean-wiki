@@ -7,7 +7,11 @@ import {
   editorHtmlToSourceBody,
 } from "@/lib/content-serialize.mjs";
 import { categories } from "@/content/categories";
-import { getArticles, type Level } from "@/lib/content";
+import {
+  getArticles,
+  type ArticleContributor,
+  type Level,
+} from "@/lib/content";
 import { levels } from "@/content/types";
 
 export type SaveInput = {
@@ -26,6 +30,9 @@ export type SaveInput = {
   accent?: string;
   tags?: string[];
   related?: string[];
+  // Set only by the authenticated save route. Never trust a client-supplied
+  // author identity.
+  contributor?: ArticleContributor;
 };
 
 type HistoryEntry = { date: string; note: string };
@@ -42,8 +49,20 @@ type Frontmatter = {
   related: string[];
   tags?: string[];
   history?: HistoryEntry[];
+  contributors?: ArticleContributor[];
   draft?: boolean | string;
 };
+
+function mergeContributors(
+  existing: ArticleContributor[] | undefined,
+  current: ArticleContributor | undefined,
+): ArticleContributor[] | undefined {
+  if (!current) return existing;
+  return [
+    current,
+    ...(existing ?? []).filter((contributor) => contributor.id !== current.id),
+  ];
+}
 
 export function sourcePath(slug: string, locale: "ko" | "en"): string {
   const base = "src/content/articles";
@@ -101,6 +120,7 @@ export function buildUpdatedSource(existingSource: string, input: SaveInput): st
     updatedAt: today,
     related: input.related ?? fm.related,
     tags: input.tags ?? fm.tags,
+    contributors: mergeContributors(fm.contributors, input.contributor),
     history,
     draft: input.draft !== undefined ? input.draft : fm.draft,
   };
@@ -145,6 +165,7 @@ export function buildNewSource(input: SaveInput): string {
     fact: (input.fact ?? "").trim(),
     related: input.related ?? [],
     tags: input.tags ?? [],
+    contributors: mergeContributors(undefined, input.contributor),
     history: [{ date: today, note: input.editSummary.trim() || "문서 최초 작성" }],
     draft: input.draft || undefined,
   };

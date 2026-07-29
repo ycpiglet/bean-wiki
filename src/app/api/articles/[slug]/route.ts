@@ -120,6 +120,19 @@ export async function POST(req: NextRequest, ctx: RouteContext<"/api/articles/[s
     accent: raw.accent,
     tags: raw.tags,
     related: raw.related,
+    contributor: session.github
+      ? {
+          id: `github:${session.github.login.toLowerCase()}`,
+          name:
+            session.github.name ||
+            session.user.name ||
+            session.github.login,
+          handle: `@${session.github.login}`,
+          avatar: session.github.avatar || session.user.avatar,
+          kind: "human",
+          role: "Community Contributor",
+        }
+      : undefined,
   };
 
   try {
