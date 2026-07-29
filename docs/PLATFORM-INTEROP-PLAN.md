@@ -413,43 +413,33 @@ formatter           # 표·요약 렌더러
 6. `@company/coffee-protocol`의 배포 위치(사내 레지스트리 / GitHub Packages).
 7. Knowledge API를 완전 공개로 둘지, client key를 필수로 할지.
 
-## 7.1 병합 전 반드시 결정할 것 — 저장소·역할 이중화
+## 7.1 저장소·역할 경계 결정
 
-**상태: 미해결. 이 브랜치를 병합하기 전에 사람이 결정해야 합니다.**
+**상태: 해결됨 (2026-07-30 합집합 통합).**
 
 이 브랜치가 진행되는 동안 다른 브랜치에서 `808309a`가 계정·권한 기능을
 독립적으로 구현했습니다. 두 구현이 같은 문제를 서로 다른 저장소에서
 해결했습니다.
 
-| 항목 | 이 브랜치 | `808309a` |
+| 항목 | D1 커뮤니티·플랫폼 영역 | Supabase 전문성 영역 |
 | --- | --- | --- |
 | 저장소 | Cloudflare D1 (`getD1()`) | Supabase PostgREST (`SUPABASE_URL`) |
 | 테이블 키 | `profiles.email` | `profiles.account_key` |
-| 역할 컬럼 | `profiles.role` (신규 추가) | `profiles.role` + `profiles.is_admin` (이미 존재) |
+| 역할 컬럼 | `profiles.role` = 운영 권한 | `profiles.role` = 커피 직군, `profiles.is_admin` = 자격 심사 권한 |
 | 부트스트랩 env | `PLATFORM_OWNER_EMAILS` | `ADMIN_EMAILS` |
 | 구현 | `src/lib/roles.ts` | `src/lib/admin.ts`, `src/lib/profile-store.ts` |
 
-git은 텍스트 충돌을 보고하지 않습니다. 두 코드가 서로 다른 파일에 있기
-때문입니다. 그러나 **의미상으로는 충돌합니다.** 같은 개념(누가 운영자인가)에
-대한 진실의 원천이 둘이 되고, `profiles` 테이블이 서로 다른 DB에 두 개
-존재합니다.
+두 테이블은 이름만 같고 서로 다른 bounded context입니다. D1 프로필은 로그인,
+커뮤니티, XP와 플랫폼 운영 권한의 정본이며 사이트 핵심 런타임에 속합니다.
+Supabase 프로필은 닉네임, 커피 직군, 실력 측정, 자격 증빙을 위한 선택적
+전문성 확장입니다. 따라서 Supabase가 중지되어도 `resolveRole()`과 봇 권한
+판정은 D1만 사용하며 영향을 받지 않습니다.
 
-결정해야 할 것:
-
-1. 계정·프로필의 정본 저장소는 D1인가 Supabase인가. 프로젝트가 D1에서
-   Supabase로 이전 중인지 확인이 필요합니다.
-2. 운영자 판정을 `role` 하나(reader/editor/admin/owner)로 할지,
-   `is_admin`(불리언)과 `role`을 함께 둘지. `808309a`의 `PROFILE_COLS`에 이미
-   `role`이 있으므로 그 `role`이 권한인지 자기 신고 직군인지 확인해야 합니다.
-3. env 이름을 하나로 통일 (`ADMIN_EMAILS` 또는 `PLATFORM_OWNER_EMAILS`).
-
-이 브랜치의 나머지(`api_clients`, 콘텐츠 요청, 어휘, Knowledge API,
-텔레메트리, 봇 카탈로그)는 `profiles`에 의존하지 않으므로 이 결정과 무관하게
-동작합니다. 영향 범위는 `src/lib/roles.ts`와 그것을 쓰는 봇 권한 판정뿐입니다.
-
-권장: 정본을 하나 정한 뒤 `resolveRole()` 본문만 그 저장소로 바꿉니다.
-호출 지점(`resolveRole`/`roleAtLeast`)이 이미 분리되어 있어 그 외에는 수정할
-곳이 없습니다.
+환경변수도 하나로 합치지 않습니다. `PLATFORM_OWNER_EMAILS`는 플랫폼 전체의
+owner 권한을, `ADMIN_EMAILS`는 전문 자격 증빙 심사 권한만 부여합니다. 한쪽의
+관리자가 자동으로 다른 쪽 권한까지 얻지 않게 하는 최소 권한 분리입니다.
+Supabase `profiles.role`은 `CoffeeRole`로 타입이 고정되어 있어 운영 권한으로
+사용할 수 없습니다.
 
 ## 8. 작업 격리 규칙
 

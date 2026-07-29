@@ -3,7 +3,9 @@
 // The site already had two env allowlists (GOOGLE_ALLOWED_EMAILS,
 // GITHUB_ALLOWED_LOGINS) but they answer "may this person sign in / edit", not
 // "may this person read site-wide metrics or approve a request". Those are
-// different questions, so roles live on `profiles.role`.
+// different questions, so operator roles live on the D1 `profiles.role`.
+// Supabase also has a `profiles.role`, but that value is a coffee vocation
+// (barista, roaster, and so on), never an authorization decision.
 //
 // PLATFORM_OWNER_EMAILS bootstraps the first owners; without it a fresh
 // database has no one who can grant roles.
@@ -41,7 +43,10 @@ function bootstrapOwners(): string[] {
 }
 
 /**
- * Resolves the effective role for an account key (normally a lowercased email).
+ * Resolves the effective operator role for an account key (normally a
+ * lowercased email). This intentionally does not query the optional Supabase
+ * expertise profile, so pausing Supabase cannot grant or revoke platform
+ * permissions.
  *
  * The env bootstrap wins over the stored row so an operator locked out by a bad
  * role edit can always recover by setting PLATFORM_OWNER_EMAILS.

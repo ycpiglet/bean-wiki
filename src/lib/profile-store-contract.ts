@@ -38,6 +38,8 @@ export type Profile = {
   bio: string | null;
   region: string | null;
   website: string | null;
+  // Coffee vocation/self-description. This is not an authorization role;
+  // operator permissions live in the D1-backed src/lib/roles.ts domain.
   role: CoffeeRole;
   years_experience: number | null;
   quiz_score: number;
