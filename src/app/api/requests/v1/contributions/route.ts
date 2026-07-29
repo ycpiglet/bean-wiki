@@ -159,7 +159,8 @@ export async function POST(request: Request) {
 }
 
 export async function GET(request: Request) {
-  const auth = await requireClient(request, SCOPES.contributionsWrite);
+  // Reading your own submissions must not require write permission.
+  const auth = await requireClient(request, SCOPES.contributionsRead);
   if (!auth.ok) return auth.response;
   const { client, requestId } = auth;
 

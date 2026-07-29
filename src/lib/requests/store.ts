@@ -48,6 +48,30 @@ export type ContentRequest = {
 
 type Row = Record<string, unknown>;
 
+// SQLite's CURRENT_TIMESTAMP writes "YYYY-MM-DD HH:MM:SS" (space separator).
+// The contract requires RFC 3339 on the wire ("...THH:MM:SSZ").
+//
+// This is not cosmetic. `updated_at > ?` is a STRING comparison in SQLite, and
+// " " (0x20) sorts before "T" (0x54). Passing an RFC 3339 `updated_after`
+// straight into that predicate makes every row from the same date compare as
+// older and silently vanish from the result — which would quietly break the
+// incremental sync that the whole polling contract depends on.
+//
+// So: convert to SQL form at every SQL boundary, and to RFC 3339 at every wire
+// boundary. Never mix.
+
+function toSqlTimestamp(value: string): string {
+  const parsed = Date.parse(value);
+  if (Number.isNaN(parsed)) return value;
+  return new Date(parsed).toISOString().replace("T", " ").replace(/\.\d{3}Z$/, "");
+}
+
+function toRfc3339(value: string): string {
+  if (!value) return value;
+  if (value.includes("T")) return value;
+  return `${value.replace(" ", "T")}Z`;
+}
+
 const SELECT = `SELECT id, client_id, external_id, kind, title, body, locale,
     entity_refs_json, demand_evidence_json, priority_hint, status,
     resolution_article_slug, resolution_url, declined_reason, duplicate_of,
@@ -152,11 +176,12 @@ export async function listRequests(
   }
   if (filter.updatedAfter) {
     where.push("updated_at > ?");
-    binds.push(filter.updatedAfter);
+    binds.push(toSqlTimestamp(filter.updatedAfter));
   }
   if (filter.after) {
+    const cursorAt = toSqlTimestamp(filter.after.updatedAt);
     where.push("(updated_at > ? OR (updated_at = ? AND id > ?))");
-    binds.push(filter.after.updatedAt, filter.after.updatedAt, filter.after.id);
+    binds.push(cursorAt, cursorAt, filter.after.id);
   }
 
   const sql = `${SELECT}${where.length ? ` WHERE ${where.join(" AND ")}` : ""}
@@ -184,7 +209,11 @@ export type TransitionInput = {
 
 export type TransitionResult =
   | { ok: true; request: ContentRequest }
-  | { ok: false; reason: "not_found" | "illegal_transition" | "missing_field"; detail: string };
+  | {
+      ok: false;
+      reason: "not_found" | "illegal_transition" | "missing_field" | "concurrent_change";
+      detail: string;
+    };
 
 /**
  * Applies a status transition. Rejects illegal edges and terminal states that
@@ -229,7 +258,7 @@ export async function transitionRequest(
   }
 
   const db = getD1();
-  await db
+  const update = await db
     .prepare(
       `UPDATE content_requests SET
          status = ?,
@@ -251,6 +280,19 @@ export async function transitionRequest(
       current.status,
     )
     .run();
+
+  // `WHERE id = ? AND status = ?` is the optimistic-concurrency guard: it applies
+  // only if the row is still in the status we validated against. Zero rows means
+  // another triage call moved it in between, so this transition did NOT happen.
+  // Returning success here would lose a write silently AND append a timeline
+  // event describing a transition that never occurred.
+  if ((update.meta?.changes ?? 0) === 0) {
+    return {
+      ok: false,
+      reason: "concurrent_change",
+      detail: `The request changed status while this transition was being applied; re-read and retry.`,
+    };
+  }
 
   await recordEvent(
     input.id,
@@ -333,8 +375,8 @@ function mapRow(row: Row): ContentRequest {
     duplicate_of: (row.duplicate_of as string | null) ?? null,
     suggestion_id: (row.suggestion_id as string | null) ?? null,
     revision: Number(row.revision ?? 1),
-    created_at: String(row.created_at ?? ""),
-    updated_at: String(row.updated_at ?? ""),
+    created_at: toRfc3339(String(row.created_at ?? "")),
+    updated_at: toRfc3339(String(row.updated_at ?? "")),
   };
 }
 

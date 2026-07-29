@@ -11,7 +11,7 @@
 
 import { ok, problem } from "@/lib/api/envelope";
 import { corsHeaders, preflight } from "@/lib/api/cors";
-import { optionalClient } from "@/lib/knowledge/access";
+import { optionalClient, knowledgeCacheControl } from "@/lib/knowledge/access";
 import { recordResolveMiss } from "@/lib/knowledge/gaps";
 import { wireEntity } from "@/lib/knowledge/serialize";
 import { aliasIndex, byId } from "@/content/vocabulary";
@@ -121,9 +121,11 @@ export async function GET(request: Request) {
     {
       requestId,
       headers: cors,
-      // Vocabulary changes only on deploy, so a shared cache is safe and this is
-      // the hottest endpoint in the API.
-      cacheControl: "public, max-age=300, stale-while-revalidate=86400",
+      // Vocabulary only changes on deploy, so this is the most cacheable endpoint
+      // in the API — but an identified caller's response must not land in a shared
+      // cache, so the policy comes from knowledgeCacheControl() like every other
+      // knowledge route rather than being hardcoded public here.
+      cacheControl: knowledgeCacheControl(client),
     },
   );
 }

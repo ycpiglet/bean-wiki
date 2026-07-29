@@ -52,7 +52,13 @@ export async function GET(
 
   const children = vocabulary.filter((candidate) => candidate.parent === entity.id);
   const ancestors = collectAncestors(entity.parent);
-  const article = entity.articleSlug ? getArticle(entity.articleSlug, "ko") : undefined;
+
+  // Drafts are excluded here for the same reason they are excluded from
+  // listings, search, the sitemap, the feed, and /articles/{slug}. This is the
+  // one place the gate is easy to forget, because the article is reached
+  // indirectly through the vocabulary entity rather than requested by slug.
+  const linked = entity.articleSlug ? getArticle(entity.articleSlug, "ko") : undefined;
+  const article = linked && !linked.draft ? linked : undefined;
 
   return ok(
     SCHEMA,

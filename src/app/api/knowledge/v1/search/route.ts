@@ -116,10 +116,20 @@ export async function GET(request: Request) {
   hits.sort((a, b) => b.score - a.score || (a.title < b.title ? -1 : 1));
   const page = hits.slice(0, limit);
 
+  // Search is relevance-ranked and intentionally not cursor-paginated: a stable
+  // keyset over a score that changes with the corpus is not meaningful. So
+  // has_more stays false and the truncated total is reported instead — promising
+  // has_more: true with next_cursor: null would advertise a page the caller can
+  // never fetch. Callers needing everything should raise `limit` (max 100) or use
+  // /articles and /entities, which are cursored.
   return ok(SCHEMA, page, {
     requestId,
-    page: { limit, has_more: hits.length > limit, next_cursor: null },
-    headers: { ...cors, "x-total-count": String(hits.length) },
+    page: { limit, has_more: false, next_cursor: null },
+    headers: {
+      ...cors,
+      "x-total-count": String(hits.length),
+      "x-truncated": hits.length > limit ? "true" : "false",
+    },
     cacheControl: knowledgeCacheControl(client),
   });
 }

@@ -94,22 +94,36 @@ description: 운영 봇 명령을 카탈로그에 추가·수정. 사용자가 �
 
 ## 사전 점검표
 
+`check-bot-catalog.mjs`가 **실패(오류)** 시키는 것:
+
 | 항목 | 근거 |
 | --- | --- |
-| 새 SQL이 `metrics/catalog.ts` 또는 `execute.ts`에 전문으로 있는가 | 카탈로그 외 쿼리 금지 |
-| 호출자 입력이 바인드 파라미터로만 들어가는가 | 문자열 연결로 SQL을 만들지 않는다 |
-| `requiredRole`·`requiredScope`·`mode`가 모두 지정됐는가 | 가드레일 실패 조건 |
-| `requiredScope`가 `SCOPES` 상수인가 | `src/lib/api/scopes.ts` |
-| `handler`가 `execute.ts`의 `switch`에 있는가 | 없으면 런타임 실패 |
-| `patterns`에 한국어·영어가 모두 있는가 | 가드레일 실패 조건 |
-| 기존 명령의 `examples`가 새 패턴에 걸리지 않는가 | `router.ts` 모호성 |
-| 집계가 `applySuppression()`/`suppressSmall()`을 통과하는가 | `K_ANONYMITY_FLOOR = 5` |
-| 억제 건수를 응답에 보고하는가 | "억제됨"과 "0"의 구분 |
-| 응답에 이메일·표시명·개별 사용자 행이 없는가 | 절대 조건 |
-| write면 확인 토큰 경로를 타는가 | `bot/audit.ts` |
-| write면 상태 변경을 정식 API로 위임하는가 | `requests/status.ts` 전이표 |
-| `docs/BOT-COMMAND-CATALOG.md`에 행을 추가했는가 | 가드레일 실패 조건 |
-| `node scripts/check-bot-catalog.mjs`가 통과하는가 | 필수 |
+| `id` 누락·중복 | 카탈로그 파싱 |
+| `requiredRole` 누락 또는 `ROLES`에 없는 값 | `src/lib/roles.ts` |
+| `requiredScope` 누락 또는 `SCOPES.<key>` 형식이 아님 | `src/lib/api/scopes.ts` — 문자열 리터럴은 통과하지 못한다 |
+| `mode`가 `read`/`write`가 아님 | 카탈로그 |
+| `handler` 누락, 또는 `execute.ts`에 `case "<handler>"`가 없음 | 런타임 실패 방지 |
+| `patterns` 비어 있음 / `examples` 0개 | 도움말·테스트가 함께 쓴다 |
+| `metricId` 미지정(값 또는 `null` 필수) | 지표 연결 명시 |
+| `execute.ts`의 SQL 템플릿이 `${…}`를 보간 (`${placeholders}` 예외) | **핵심 불변식: 봇은 SQL을 조립하지 않는다** |
+| `execute.ts`가 `applySuppression`/`suppressSmall`을 전혀 호출하지 않음 | `K_ANONYMITY_FLOOR` |
+| `SELECT`에 `email`·`display_name`·`session_hash`·`secret_hash`·`body_html`이 등장 | 봇 응답에 개인정보가 닿을 수 없다 |
+| write 명령이 있는데 `audit.ts`에 `issueConfirmation`/`consumeConfirmation`이 없거나 `consumed_at IS NULL` 조건이 없음 | 확인 절차·단발성 |
+| `router.ts`에 `mode === "read"` 제한이 없음 | 모호한 매칭이 write로 귀결되지 않음 |
+
+**경고**(실패는 아니지만 남긴 채 머지하지 않는다): 한국어 패턴 없음, 영어 패턴
+없음, `docs/BOT-COMMAND-CATALOG.md` 미기재.
+
+스크립트가 못 보는 것 — 직접 확인:
+
+| 항목 | 확인 방법 |
+| --- | --- |
+| 새 패턴이 기존 명령의 `examples`를 가로채지 않는가 | 기존 `examples` 전부를 새 패턴에 통과시켜 본다 |
+| 새 `examples`가 의도한 명령으로 라우팅되는가 | `route()`를 직접 호출해 확인 |
+| 억제 건수를 응답에 보고하는가 | `suppressed` 필드. 스크립트는 호출 존재만 본다 — **새 handler가 억제를 건너뛰어도 다른 handler가 호출하고 있으면 통과한다** |
+| `mode: "read"` handler가 정말 읽기만 하는가 | handler 본문 |
+| write handler가 상태 변경을 정식 API로 위임하는가 | `requests/status.ts` 전이표 우회 금지 |
+| `node scripts/check-bot-catalog.mjs`가 오류 0·경고 0인가 | 필수 |
 
 ## 규칙
 

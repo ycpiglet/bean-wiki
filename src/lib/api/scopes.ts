@@ -8,6 +8,7 @@ export const SCOPES = {
   contentRequestsWrite: "content-requests:write",
   contentRequestsTriage: "content-requests:triage",
   contributionsWrite: "contributions:write",
+  contributionsRead: "contributions:read",
   metricsRead: "metrics:read",
   botCommand: "bot:command",
   recommendationsWrite: "recommendations:write",

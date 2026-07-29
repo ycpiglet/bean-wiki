@@ -29,9 +29,11 @@ export async function GET(
 
   try {
     const found = await getRequest(id);
-    // A client must not be able to probe for other clients' request ids, so an
-    // unauthorised id is indistinguishable from a missing one.
-    if (!found || (found.client_id && found.client_id !== client.id)) {
+    // A client sees only its OWN requests. Anything else — another client's row,
+    // or a human web-form submission with a null client_id — reads as missing, so
+    // an id cannot be probed for existence. (Previously a null client_id row was
+    // readable by any credential holder.)
+    if (!found || found.client_id !== client.id) {
       return problem("not_found", { requestId, detail: "No such request." });
     }
     const events = await listEvents(id);
@@ -82,6 +84,20 @@ export async function PATCH(
     if (!result.ok) {
       if (result.reason === "not_found") {
         return problem("not_found", { requestId, detail: "No such request." });
+      }
+      if (result.reason === "concurrent_change") {
+        const current = await getRequest(id);
+        return problem("state_conflict", {
+          requestId,
+          detail: result.detail,
+          extra: current
+            ? {
+                current_status: current.status,
+                current_revision: current.revision,
+                allowed_next: allowedNext(current.status),
+              }
+            : undefined,
+        });
       }
       if (result.reason === "illegal_transition") {
         const current = await getRequest(id);

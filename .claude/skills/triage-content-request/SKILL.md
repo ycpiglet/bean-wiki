@@ -32,11 +32,15 @@ description: 콘텐츠 요청 큐를 처리해 accept·decline·duplicate를 판
    | `published`·`declined`·`duplicate` | (종결. 다시 전이하지 않음) |
 
    불법 전이는 `409 state-conflict`이며 응답에 `current_status`와 `allowed_next`가
-   실려 온다. 두 단계를 건너뛰려 하지 말고 중간 상태를 거친다.
+   실려 온다. 두 단계를 건너뛰려 하지 말고 중간 상태를 거친다. 같은 행을 다른
+   트리아지 주체가 먼저 바꿨으면 `concurrent_change`(역시 409, `current_revision`
+   포함)다 — 최신 상태를 다시 읽고 판정을 재검토한다. 재시도로 밀어붙이지 않는다.
 
-2. **큐를 읽는다**: 봇 `requests.queue`(우선순위 → `updated_at DESC`) 또는
-   `GET /api/requests/v1/content-requests?status=…`로 미종결 요청을 가져온다.
-   `client_id`가 있으면 앱 요청, 없으면 사람 제안이다.
+2. **큐를 읽는다**: 봇 `requests.queue`(우선순위 → `updated_at DESC`)를 쓴다.
+   `GET /api/requests/v1/content-requests`와 `GET …/{id}`는 **자기 client의 행만**
+   돌려주므로 트리아지 전체 뷰가 아니다(사람 접수 행은 `client_id`가 없어 아예
+   보이지 않는다). 전체 큐는 봇 명령이나 `content-requests` 테이블 직접 읽기로
+   본다. `client_id`가 있으면 앱 요청, 없으면 사람 제안이다.
 
 3. **근거를 본다 — 제목·본문보다 먼저**:
 

@@ -95,9 +95,14 @@ export async function POST(request: Request) {
 
   const refsResult = readEntityRefs(body.entity_refs);
   if (!refsResult.ok) {
-    // 422, not 400: the payload parsed fine, the referenced entity just is not
-    // one we publish. The caller needs to resolve it first.
-    return problem("unprocessable", { requestId, detail: refsResult.detail });
+    // Shape errors are 400 (fix your payload); an unknown-but-well-formed
+    // vocabulary id is 422 (payload is fine, the referent does not exist).
+    // Collapsing both into 422 told the caller to go resolve an id when the real
+    // problem was that they sent a string instead of an array.
+    return problem(refsResult.kind === "shape" ? "invalid_request" : "unprocessable", {
+      requestId,
+      detail: refsResult.detail,
+    });
   }
 
   const callbackUrl = str(body.callback_url);
@@ -219,16 +224,19 @@ export async function GET(request: Request) {
   }
 }
 
-function readEntityRefs(
-  value: unknown,
-): { ok: true; refs: EntityRef[] } | { ok: false; detail: string } {
+type RefsResult =
+  | { ok: true; refs: EntityRef[] }
+  | { ok: false; kind: "shape" | "semantic"; detail: string };
+
+function readEntityRefs(value: unknown): RefsResult {
   if (value === undefined || value === null) return { ok: true, refs: [] };
   if (!Array.isArray(value)) {
-    return { ok: false, detail: "`entity_refs` must be an array." };
+    return { ok: false, kind: "shape", detail: "`entity_refs` must be an array." };
   }
   if (value.length > MAX_ENTITY_REFS) {
     return {
       ok: false,
+      kind: "shape",
       detail: `\`entity_refs\` must hold at most ${MAX_ENTITY_REFS} entries.`,
     };
   }
@@ -237,11 +245,12 @@ function readEntityRefs(
     const id =
       typeof entry === "string" ? entry : str((entry as Record<string, unknown>)?.id);
     if (!id) {
-      return { ok: false, detail: "Each entity ref needs an `id`." };
+      return { ok: false, kind: "shape", detail: "Each entity ref needs an `id`." };
     }
     if (!byId.has(id)) {
       return {
         ok: false,
+        kind: "semantic",
         detail: `Unknown vocabulary id \`${id}\`. Resolve it via /api/knowledge/v1/resolve first.`,
       };
     }

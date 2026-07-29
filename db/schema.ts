@@ -151,6 +151,9 @@ export const apiClients = sqliteTable(
     quotaResetAt: text("quota_reset_at"),
     ipAllowlistJson: text("ip_allowlist_json").notNull().default("[]"),
     webhookUrl: text("webhook_url"),
+    // Verifies a signature the CLIENT sends us. It cannot produce one: outbound
+    // signing needs the plaintext, which we deliberately do not store. See the
+    // STATUS note in src/lib/requests/webhook.ts before enabling delivery.
     webhookSecretHash: text("webhook_secret_hash"),
     contactEmail: text("contact_email"),
     expiresAt: text("expires_at"),

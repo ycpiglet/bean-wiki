@@ -43,7 +43,9 @@ description: Bean Wiki에 `/api/<domain>/v1` 엔드포인트를 추가·수정. 
    `reason === "expired"`는 `cursor_expired`(410), 나머지는 `invalid_request`.
    `offset`·`page` 쿼리는 금지다.
 
-5. **헤더**: 인증 라우트는 `rateHeaders()`로 `X-RateLimit-*`을 붙인다(계약 §9).
+5. **헤더**: 인증 라우트는 `rateHeaders(auth.rate)`로 `X-RateLimit-*`을 붙인다
+   (계약 §9). `requireClient()`가 성공 시 실제 소비된 예산을 `rate`로 돌려주므로
+   값을 재구성하지 않는다.
    브라우저 노출 라우트는 `corsHeaders(request)`를 성공·오류 응답 **양쪽**에 붙이고
    `OPTIONS`에 `preflight()`를 둔다. 캐시가 가능한 공개 읽기는
    `knowledgeCacheControl(client)` 또는 명시적 `cacheControl`을 준다.
@@ -90,7 +92,7 @@ const SCHEMA = "<resource>.v1";
 export async function GET(request: Request) {
   const auth = await requireClient(request, SCOPES.<key>);
   if (!auth.ok) return auth.response;
-  const { client, requestId } = auth;
+  const { client, requestId, rate } = auth;
 
   const url = new URL(request.url);
   const limit = clampLimit(url.searchParams.get("limit"));
@@ -134,12 +136,8 @@ export async function GET(request: Request) {
             ? await encodeCursor({ k: last.updated_at, i: last.id, s: snapshotAt })
             : null,
       },
-      headers: rateHeaders({
-        allowed: true,
-        limit: client.rateLimitPerMin,
-        remaining: client.rateLimitPerMin,
-        resetSeconds: 60,
-      }),
+      // 이 호출에서 실제로 소비된 예산. 값을 재구성하지 않는다.
+      headers: rateHeaders(rate),
     });
   } catch (error) {
     return storageProblem(error, requestId);
@@ -237,7 +235,7 @@ export async function GET(request: Request) {
 | tier 요건이 있으면 `clientAllowsTier()`로 상한을 확인했는가 | 계약 §8.1 |
 | 목록이 결정적 정렬 + 커서인가 (`offset`·`page` 없음) | 계약 §6 |
 | `limit`이 `clampLimit()`을 통과하는가 | 계약 §6 |
-| 인증 응답에 `rateHeaders()`가 붙었는가 | 계약 §9 |
+| 인증 응답에 `rateHeaders(auth.rate)`가 붙었는가 | 계약 §9 |
 | 브라우저 노출이면 CORS allowlist + `preflight()`인가 (`*` 금지) | `src/lib/api/cors.ts` |
 | 저장소 예외만 503이고 나머지는 rethrow인가 | 계약 §4 |
 | 쓰기가 `(client_id, external_id)`로 멱등한가 | 계약 §10 |

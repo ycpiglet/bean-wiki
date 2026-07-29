@@ -3,6 +3,22 @@
 // Webhooks are the convenience path, not the contract path: clients are told to
 // poll `?updated_after=` as their source of truth. Delivery here is best-effort
 // and recorded, so "we tried and your endpoint 500'd" is answerable.
+//
+// STATUS: NOT YET WIRED. `deliver()` has no caller, deliberately, because two
+// pieces are missing and shipping a half-path would look like a working feature:
+//
+//   1. Signing needs the plaintext webhook secret, but `api_clients` stores only
+//      `webhook_secret_hash` (correct for verifying an inbound signature, useless
+//      for producing an outbound one). Enabling outbound delivery requires an
+//      encrypted secret column or an external secret store — not a hash.
+//   2. Nothing reads `webhook_deliveries.next_attempt_at`, so MAX_ATTEMPTS is
+//      aspirational; retries need a cron or queue consumer.
+//
+// `verifySignature()` below IS complete and is the useful half today: a company
+// app can import it to verify signatures using exactly our scheme instead of
+// reimplementing HMAC comparison and getting the timing or the replay window
+// subtly wrong. Polling covers the notification requirement until (1) and (2)
+// land. See docs/CONTENT-REQUEST-API-V1.md §7.
 
 import { getD1 } from "../../../db";
 import { hmacSha256Hex } from "@/lib/api/crypto";

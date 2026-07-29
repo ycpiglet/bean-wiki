@@ -47,8 +47,10 @@ export async function GET(request: Request) {
     })),
     {
       requestId,
-      page: { limit: terms.length, has_more: false, next_cursor: null },
-      headers: cors,
+      // `limit` is the contract's page size (1..500), not the row count — an
+      // empty glossary previously reported `limit: 0`, which is out of range.
+      page: { limit: 500, has_more: false, next_cursor: null },
+      headers: { ...cors, "x-total-count": String(terms.length) },
       cacheControl: knowledgeCacheControl(client),
     },
   );
