@@ -93,6 +93,7 @@ for (const route of routes) {
       });
 
       let snapshotName = `${route.name}-${theme}.png`;
+      let actionAreaSnapshotName: string | null = null;
       if (route.name === "coffee-cherry-to-bean") {
         const actionArea = page.locator(".article-action-area");
         await expect(actionArea).toHaveCount(1);
@@ -109,15 +110,19 @@ for (const route of routes) {
             );
           });
           expect(actionsBeforeDiscussion).toBe(true);
-          await expect(actionArea).toHaveScreenshot(
-            `${route.name}-content-end-actions-${theme}.png`,
-          );
+          actionAreaSnapshotName =
+            `${route.name}-content-end-actions-${theme}.png`;
         }
       }
 
       await expect(page).toHaveScreenshot(snapshotName, {
         fullPage: false,
       });
+      if (actionAreaSnapshotName) {
+        await expect(page.locator(".article-action-area")).toHaveScreenshot(
+          actionAreaSnapshotName,
+        );
+      }
     });
   }
 }
