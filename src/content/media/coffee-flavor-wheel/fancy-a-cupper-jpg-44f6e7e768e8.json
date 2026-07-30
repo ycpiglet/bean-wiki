@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:16101489",
+  "articleSlug": "coffee-flavor-wheel",
+  "section": "practice",
+  "localPath": "/article-media/coffee-flavor-wheel/fancy-a-cupper-jpg-44f6e7e768e8.jpg",
+  "sha256": "44f6e7e768e88bf379f68ebb1da1008a59c9ea2e1062f840011aacbf276bfb47",
+  "bytes": 324174,
+  "mime": "image/jpeg",
+  "alt": "두 명의 커피 테이스터가 여러 커핑 볼에 코를 가까이 대고 향을 비교하는 모습",
+  "caption": "향미 어휘는 휠을 보는 것만으로 익히기보다, 여러 잔의 향을 나란히 비교할 때 구체적인 감각과 연결됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "16101489",
+    "title": "Fancy a cupper.jpg",
+    "author": "DFID - UK Department for International Development",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Fancy_a_cupper.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8b/Fancy_a_cupper.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Fancy_a_cupper.jpg/1920px-Fancy_a_cupper.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T05:52:35.649Z",
+    "researchManifest": "coffee-flavor-wheel-2026-07-30.json",
+    "query": "coffee cupping aroma",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}
