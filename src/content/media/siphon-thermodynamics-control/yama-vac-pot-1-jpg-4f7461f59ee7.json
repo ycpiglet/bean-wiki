@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:114858573",
+  "articleSlug": "siphon-thermodynamics-control",
+  "section": "topic-brw07",
+  "localPath": "/article-media/siphon-thermodynamics-control/yama-vac-pot-1-jpg-4f7461f59ee7.jpg",
+  "sha256": "4f7461f59ee7e1c677c52eb175e22ed0c76599c8911726d725e36b68fefbf008",
+  "bytes": 290211,
+  "mime": "image/jpeg",
+  "alt": "야마 사이폰 진공 커피 추출기",
+  "caption": "사이폰은 가열로 물이 올라가는 상승 구간과 냉각 후 내려오는 하강 구간이 뚜렷이 나뉘는 도구로, 이 두 경계를 먼저 분리해야 변수를 통제할 수 있습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "114858573",
+    "title": "Yama Vac Pot 1.jpg",
+    "author": "Proshot04",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yama_Vac_Pot_1.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Yama_Vac_Pot_1.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/7/7a/Yama_Vac_Pot_1.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:49:14.962Z",
+    "researchManifest": "img8-19.json",
+    "query": "siphon coffee brewer vacuum pot",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

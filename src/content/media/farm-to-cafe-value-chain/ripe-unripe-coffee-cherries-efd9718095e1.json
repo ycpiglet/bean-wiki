@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:0254b740-963d-42ad-97d4-7592a39808c2",
+  "articleSlug": "farm-to-cafe-value-chain",
+  "section": "why-chain",
+  "localPath": "/article-media/farm-to-cafe-value-chain/ripe-unripe-coffee-cherries-efd9718095e1.jpg",
+  "sha256": "efd9718095e12701a957a296c71b61c28282ef15ef8615bf5015206cfc873ad4",
+  "bytes": 144175,
+  "mime": "image/jpeg",
+  "alt": "익은 것과 덜 익은 것이 섞인 커피 체리",
+  "caption": "생산자의 첫 선별 판단부터 이미 정보가 만들어지며, 이 정보가 다음 단계로 끊기지 않고 전달되는지가 가치사슬의 핵심입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "0254b740-963d-42ad-97d4-7592a39808c2",
+    "title": "Ripe & Unripe coffee cherries",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/6344036621",
+    "originalUrl": "https://live.staticflickr.com/6106/6344036621_5df95f16a6_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/6106/6344036621_5df95f16a6_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:47:14.264Z",
+    "researchManifest": "img8-11.json",
+    "query": "coffee cherries ripe farm",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

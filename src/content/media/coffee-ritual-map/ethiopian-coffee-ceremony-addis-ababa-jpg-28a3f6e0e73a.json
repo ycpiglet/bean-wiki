@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:6089900",
+  "articleSlug": "coffee-ritual-map",
+  "section": "ritual-definition",
+  "localPath": "/article-media/coffee-ritual-map/ethiopian-coffee-ceremony-addis-ababa-jpg-28a3f6e0e73a.jpg",
+  "sha256": "28a3f6e0e73a497f56390a623e634f1f3a5eaacf630f5a0118e57df7f88037b6",
+  "bytes": 694070,
+  "mime": "image/jpeg",
+  "alt": "아디스아바바에서 진행되는 에티오피아 커피 의례 장면",
+  "caption": "의례는 완벽한 연출이 아니라, 매번 같은 절차를 반복해 관측 조건을 고정하는 장치입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "6089900",
+    "title": "Ethiopian coffee ceremony - Addis Ababa.jpg",
+    "author": "Irene2005",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ethiopian_coffee_ceremony_-_Addis_Ababa.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Ethiopian_coffee_ceremony_-_Addis_Ababa.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Ethiopian_coffee_ceremony_-_Addis_Ababa.jpg/1920px-Ethiopian_coffee_ceremony_-_Addis_Ababa.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:46:06.687Z",
+    "researchManifest": "img8-1.json",
+    "query": "Ethiopian coffee ceremony jebena",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

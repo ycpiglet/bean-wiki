@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:128829789",
+  "articleSlug": "coffee-ritual-map",
+  "section": "global-map",
+  "localPath": "/article-media/coffee-ritual-map/coffee-ceremony-of-ethiopia-and-eritrea-4-jpg-7fb0572c15a8.jpg",
+  "sha256": "7fb0572c15a884b644a03fcede1eadcde668620a42e9fa2864b163acfbff23a9",
+  "bytes": 214102,
+  "mime": "image/jpeg",
+  "alt": "에티오피아·에리트레아 커피 의례에 쓰이는 제베나 주전자와 잔들",
+  "caption": "터키식·에티오피아식·이탈리아식·북유럽식 의례는 동작은 다르지만, 입장-주문-제공이라는 최소 루프 구조는 공통적으로 반복됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "128829789",
+    "title": "Coffee ceremony of Ethiopia and Eritrea 4.jpg",
+    "author": "ProtoplasmaKid",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_ceremony_of_Ethiopia_and_Eritrea_4.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/72/Coffee_ceremony_of_Ethiopia_and_Eritrea_4.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/72/Coffee_ceremony_of_Ethiopia_and_Eritrea_4.jpg/1920px-Coffee_ceremony_of_Ethiopia_and_Eritrea_4.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:45:56.436Z",
+    "researchManifest": "img8-1.json",
+    "query": "Ethiopian coffee ceremony jebena",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

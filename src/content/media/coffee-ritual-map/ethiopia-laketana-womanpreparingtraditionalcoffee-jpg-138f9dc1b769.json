@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:64469555",
+  "articleSlug": "coffee-ritual-map",
+  "section": "regional-variants",
+  "localPath": "/article-media/coffee-ritual-map/ethiopia-laketana-womanpreparingtraditionalcoffee-jpg-138f9dc1b769.jpg",
+  "sha256": "138f9dc1b769fbfef5482262211d1f1e896d0e49796e4f88e0f81052c58223c8",
+  "bytes": 366542,
+  "mime": "image/jpeg",
+  "alt": "에티오피아 여성이 제베나에 분쇄한 커피를 넣어 전통 커피를 준비하는 모습",
+  "caption": "도구나 잔의 형태는 지역마다 다르지만, 주문에서 제공까지 이어지는 일관성 확보라는 목표는 공통적입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "64469555",
+    "title": "Ethiopia LakeTana WomanPreparingTraditionalCoffee.JPG",
+    "author": "Charliefleurene",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ethiopia_LakeTana_WomanPreparingTraditionalCoffee.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Ethiopia_LakeTana_WomanPreparingTraditionalCoffee.JPG",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Ethiopia_LakeTana_WomanPreparingTraditionalCoffee.JPG/1920px-Ethiopia_LakeTana_WomanPreparingTraditionalCoffee.JPG"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:45:57.728Z",
+    "researchManifest": "img8-1.json",
+    "query": "Ethiopian coffee ceremony jebena",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:19c80a9f-92fc-4e3e-88e0-ad09c96bdd95",
+  "articleSlug": "espresso-puck-preparation",
+  "section": "definition",
+  "localPath": "/article-media/espresso-puck-preparation/barista-tamping-ground-coffee-in-portafilter-8e47c1cdbaf6.jpg",
+  "sha256": "8e47c1cdbaf6ff765e79a93fd3ade9d4f24e190ce218dddb64a2519ed86c4574",
+  "bytes": 151704,
+  "mime": "image/jpeg",
+  "alt": "포터필터에 담긴 분쇄 커피를 탬핑하는 모습",
+  "caption": "도즈, 분배, 탬핑, 헤드스페이스는 각각 독립적으로 물길을 만들기 때문에, 결과 편차를 볼 때는 어느 축이 바뀌었는지부터 분리해야 합니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "19c80a9f-92fc-4e3e-88e0-ad09c96bdd95",
+    "title": "Barista Tamping Ground Coffee in Portafilter",
+    "author": "markolaz",
+    "sourceUrl": "https://www.flickr.com/photos/195403219@N08/52220220781",
+    "originalUrl": "https://live.staticflickr.com/65535/52220220781_68538f258d_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/52220220781_68538f258d_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:46:38.115Z",
+    "researchManifest": "img8-10.json",
+    "query": "barista tamping ground coffee portafilter",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
