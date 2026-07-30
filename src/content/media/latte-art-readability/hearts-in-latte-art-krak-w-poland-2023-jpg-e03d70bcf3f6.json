@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:143493218",
+  "articleSlug": "latte-art-readability",
+  "section": "flow-model",
+  "localPath": "/article-media/latte-art-readability/hearts-in-latte-art-krak-w-poland-2023-jpg-e03d70bcf3f6.jpg",
+  "sha256": "e03d70bcf3f6c5a1cd8a1d7f4091d8181fc5f3984a7a28400a5f864071ff3bcc",
+  "bytes": 481609,
+  "mime": "image/jpeg",
+  "alt": "크라쿠프의 한 카페에서 만든 하트 라테아트",
+  "caption": "피처 높이·유량·대비라는 3축이 모두 일관될 때만 같은 패턴이 반복해서 재현됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "143493218",
+    "title": "Hearts in latte art, Kraków, Poland, 2023.jpg",
+    "author": "Kgbo",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hearts_in_latte_art,_Krak%C3%B3w,_Poland,_2023.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/45/Hearts_in_latte_art%2C_Krak%C3%B3w%2C_Poland%2C_2023.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Hearts_in_latte_art%2C_Krak%C3%B3w%2C_Poland%2C_2023.jpg/1920px-Hearts_in_latte_art%2C_Krak%C3%B3w%2C_Poland%2C_2023.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:15:53.518Z",
+    "researchManifest": "img6-7.json",
+    "query": "latte art heart cup",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

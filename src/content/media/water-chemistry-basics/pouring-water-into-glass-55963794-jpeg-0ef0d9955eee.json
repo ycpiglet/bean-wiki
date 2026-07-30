@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:71384639",
+  "articleSlug": "water-chemistry-basics",
+  "section": "definition",
+  "localPath": "/article-media/water-chemistry-basics/pouring-water-into-glass-55963794-jpeg-0ef0d9955eee.jpg",
+  "sha256": "0ef0d9955eeeff4e99343dd817c10d8783a1dd856a8146051af26b16b4fa938e",
+  "bytes": 211545,
+  "mime": "image/jpeg",
+  "alt": "유리컵에 물을 따르는 모습",
+  "caption": "물은 단독 변수가 아니라 원두·분쇄·온도와 결합될 때 비로소 해석이 성립하는 매개체입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "71384639",
+    "title": "Pouring Water Into Glass (55963794).jpeg",
+    "author": "Hasan Hagi",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pouring_Water_Into_Glass_(55963794).jpeg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Pouring_Water_Into_Glass_%2855963794%29.jpeg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/b/bc/Pouring_Water_Into_Glass_%2855963794%29.jpeg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by/3.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:16:25.599Z",
+    "researchManifest": "img6-8.json",
+    "query": "water drop glass",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:ddcfe08c-b0b7-4f3d-926c-79cabf5874bc",
+  "articleSlug": "pour-over-rhythm-control",
+  "section": "topic-brw-02",
+  "localPath": "/article-media/pour-over-rhythm-control/water-poured-over-hario-v60-82b916c9c6dc.jpg",
+  "sha256": "82b916c9c6dc80f7bec7012ba2f0a40ed37b49f1575f64cf5aefca8503ce1c69",
+  "bytes": 103846,
+  "mime": "image/jpeg",
+  "alt": "하리오 V60에 물을 붓는 모습",
+  "caption": "블룸·주입·마무리로 이어지는 붓기 흐름은 하나의 연쇄 과정이며, 한 구간의 유량 편차가 다음 구간의 채널링으로 넘어갑니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "ddcfe08c-b0b7-4f3d-926c-79cabf5874bc",
+    "title": "Water Poured over Hario V60",
+    "author": "markolaz",
+    "sourceUrl": "https://www.flickr.com/photos/195403219@N08/52220797396",
+    "originalUrl": "https://live.staticflickr.com/65535/52220797396_58cea8f943_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/52220797396_58cea8f943_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:17:02.590Z",
+    "researchManifest": "img6-9.json",
+    "query": "pour over gooseneck kettle pouring V60",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:26528705",
+  "articleSlug": "water-chemistry-basics",
+  "section": "dimensions",
+  "localPath": "/article-media/water-chemistry-basics/water-drop-glass-jpg-4694cb9190f8.jpg",
+  "sha256": "4694cb9190f88f1147bcb53bd52640b8ca39dfd1089e95b4e4d911eddf7b1206",
+  "bytes": 192193,
+  "mime": "image/jpeg",
+  "alt": "물방울이 유리잔 속 물에 떨어지며 튀어 오르는 순간",
+  "caption": "TDS·경도·pH는 서로 다른 성질을 가리키는 세 개의 축이며, 하나만 보면 나머지 두 축의 영향을 놓치게 됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "26528705",
+    "title": "Water Drop Glass.jpg",
+    "author": "Pdpics",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Water_Drop_Glass.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/00/Water_Drop_Glass.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Water_Drop_Glass.jpg/1920px-Water_Drop_Glass.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:16:29.614Z",
+    "researchManifest": "img6-8.json",
+    "query": "water drop glass",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
