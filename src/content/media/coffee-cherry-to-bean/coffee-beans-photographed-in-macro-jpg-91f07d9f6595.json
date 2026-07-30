@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:11862687",
+  "articleSlug": "coffee-cherry-to-bean",
+  "section": "roasting",
+  "localPath": "/article-media/coffee-cherry-to-bean/coffee-beans-photographed-in-macro-jpg-91f07d9f6595.jpg",
+  "sha256": "91f07d9f6595426ece16a1e9ec12a218189f9676b08dd424233620874b53f5ca",
+  "bytes": 196540,
+  "mime": "image/jpeg",
+  "alt": "로스팅을 마친 짙은 갈색 원두를 매크로로 촬영한 모습",
+  "caption": "생두였을 때보다 부피는 커지고 색은 짙어졌지만, 이 원두 안에는 재배·가공 단계에서 만들어진 잠재력이 그대로 담겨 있습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "11862687",
+    "title": "Coffee Beans Photographed in Macro.jpg",
+    "author": "Photographer Robert Knapp www.modernartphotograph.com",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Beans_Photographed_in_Macro.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/06/Coffee_Beans_Photographed_in_Macro.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Coffee_Beans_Photographed_in_Macro.jpg/1920px-Coffee_Beans_Photographed_in_Macro.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:44:03.219Z",
+    "researchManifest": "img-c2b-9.json",
+    "query": "roasted coffee beans close up",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

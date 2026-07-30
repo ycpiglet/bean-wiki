@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:5704390",
+  "articleSlug": "coffee-cherry-to-bean",
+  "section": "anatomy",
+  "localPath": "/article-media/coffee-cherry-to-bean/peaberry-coffee-beans-close-up-jpg-68b9cf112ec3.jpg",
+  "sha256": "68b9cf112ec3a4addc68b08ce69a271875639e345198d4eaebc75a5380f5a66d",
+  "bytes": 326941,
+  "mime": "image/jpeg",
+  "alt": "일반적인 두 개 대신 하나의 둥근 씨앗만 든 피베리 원두를 클로즈업한 모습",
+  "caption": "한 체리에 씨앗이 하나만 자라는 피베리는 모양이 다를 뿐, 그 자체로 향미가 더 뛰어나다는 뜻은 아닙니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "5704390",
+    "title": "Peaberry coffee beans, close up.jpg",
+    "author": "Ragesoss",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peaberry_coffee_beans,_close_up.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/b/b3/Peaberry_coffee_beans%2C_close_up.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b3/Peaberry_coffee_beans%2C_close_up.jpg/1920px-Peaberry_coffee_beans%2C_close_up.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:44:00.001Z",
+    "researchManifest": "img-c2b-9.json",
+    "query": "roasted coffee beans close up",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

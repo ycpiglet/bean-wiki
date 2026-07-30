@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:56e870dd-c8be-43c9-af59-bbf796a721f6",
+  "articleSlug": "coffee-cherry-to-bean",
+  "section": "plant-fruit",
+  "localPath": "/article-media/coffee-cherry-to-bean/coffee-cherries-kona-coffee-living-history-farm-hawaii-7fed3b384f96.jpg",
+  "sha256": "7fed3b384f96184508c6e2c371fde12a27f3bed8afab01f8aac086aef2ea5225",
+  "bytes": 72191,
+  "mime": "image/jpeg",
+  "alt": "가지에 빨갛게 익은 커피 체리들이 매달린 모습",
+  "caption": "겉으로는 과일처럼 보이지만, 우리가 마시는 커피는 이 체리 안에 들어 있는 씨앗에서 시작합니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "56e870dd-c8be-43c9-af59-bbf796a721f6",
+    "title": "coffee cherries - Kona Coffee Living History Farm - Hawaii",
+    "author": "watts_photos",
+    "sourceUrl": "https://www.flickr.com/photos/126288307@N05/53062877610",
+    "originalUrl": "https://live.staticflickr.com/65535/53062877610_58865f3af0_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/53062877610_58865f3af0_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:43:57.914Z",
+    "researchManifest": "img-c2b-4.json",
+    "query": "coffee cherries red ripe",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

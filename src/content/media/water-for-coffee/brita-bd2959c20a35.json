@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:9f3cfff7-f645-42d5-8d0b-4c70881825a3",
+  "articleSlug": "water-for-coffee",
+  "section": "equipment",
+  "localPath": "/article-media/water-for-coffee/brita-bd2959c20a35.jpg",
+  "sha256": "bd2959c20a35353583b3687bb6ab98cd3ae4af26c62a4ba5a1bba27597f8dbb5",
+  "bytes": 225555,
+  "mime": "image/jpeg",
+  "alt": "가정용 정수 필터 피처",
+  "caption": "정수는 목적에 따라 효과가 다르므로, 추출 향미 조정용인지 장비 보호용인지를 먼저 구분해야 합니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "9f3cfff7-f645-42d5-8d0b-4c70881825a3",
+    "title": "Brita",
+    "author": "Razor512",
+    "sourceUrl": "https://www.flickr.com/photos/13144581@N00/3998894459",
+    "originalUrl": "https://live.staticflickr.com/3465/3998894459_96f98a51ca_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/3465/3998894459_96f98a51ca_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:47:32.733Z",
+    "researchManifest": "img-water-5.json",
+    "query": "water filter pitcher coffee",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

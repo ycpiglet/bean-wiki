@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:5b0c7b86-824b-4d41-b807-e749c3c9e589",
+  "articleSlug": "grinder-basics",
+  "section": "cleaning",
+  "localPath": "/article-media/grinder-basics/obel-junior-lower-burr-pre-cleaning-d349042b36ca.jpg",
+  "sha256": "d349042b36ca39f3279b889466d0dcde1a46cada8b9594243b8d4391fa16139c",
+  "bytes": 262440,
+  "mime": "image/jpeg",
+  "alt": "청소 전 그라인더 하부 버에 남은 커피 잔여물",
+  "caption": "오일과 미분이 버 주변에 쌓이면 분쇄 입도가 눈에 띄지 않게 흐트러질 수 있어 정기 점검이 필요합니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "5b0c7b86-824b-4d41-b807-e749c3c9e589",
+    "title": "Obel Junior lower burr - pre-cleaning",
+    "author": "GVDub",
+    "sourceUrl": "https://www.flickr.com/photos/35443717@N02/7578439440",
+    "originalUrl": "https://live.staticflickr.com/8011/7578439440_20fbe1ba26_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/8011/7578439440_20fbe1ba26_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:48:30.638Z",
+    "researchManifest": "img-grind-3.json",
+    "query": "cleaning coffee grinder maintenance",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

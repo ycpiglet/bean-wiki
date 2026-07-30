@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:05e24992-da52-47f7-8fad-1b5a3cba97df",
+  "articleSlug": "grinder-basics",
+  "section": "burr-types",
+  "localPath": "/article-media/grinder-basics/quickmill-apollo-060-grinder-repair-37-fdbd1400f6c4.jpg",
+  "sha256": "fdbd1400f6c486bd855c95f9beedf42f25b988986455ea9ebbea147e7545d22b",
+  "bytes": 150693,
+  "mime": "image/jpeg",
+  "alt": "그라인더를 분해해 버를 점검·수리하는 모습",
+  "caption": "코니컬이든 플랫이든 버 상태와 유지관리 주기가 같아야 타입 간 분산 특성을 공정하게 비교할 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "05e24992-da52-47f7-8fad-1b5a3cba97df",
+    "title": "Quickmill Apollo 060 grinder repair 37",
+    "author": "kimbareimer",
+    "sourceUrl": "https://www.flickr.com/photos/127023326@N06/16784873336",
+    "originalUrl": "https://live.staticflickr.com/7648/16784873336_4846980bac_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/7648/16784873336_4846980bac_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:48:31.543Z",
+    "researchManifest": "img-grind-3.json",
+    "query": "cleaning coffee grinder maintenance",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:36801458",
+  "articleSlug": "coffee-processing",
+  "section": "washed",
+  "localPath": "/article-media/coffee-processing/coffee-processing-separating-basins-jpg-78c783fe61d3.jpg",
+  "sha256": "78c783fe61d35eda16d9f336cc685fd897c6c9735c1d6b31c3bd5f30a3801634",
+  "bytes": 441003,
+  "mime": "image/jpeg",
+  "alt": "커피 가공장에서 발효·세척 단계를 나누는 분리 수조들",
+  "caption": "수조를 나누어 발효·세척 구간을 분리하면 물 교체 주기와 발효 시간을 로트별로 다르게 관리할 수 있습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "36801458",
+    "title": "Coffee Processing – Separating Basins.jpg",
+    "author": "Ludger001",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Processing_%E2%80%93_Separating_Basins.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/03/Coffee_Processing_%E2%80%93_Separating_Basins.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Coffee_Processing_%E2%80%93_Separating_Basins.jpg/1920px-Coffee_Processing_%E2%80%93_Separating_Basins.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:46:07.958Z",
+    "researchManifest": "img-proc-22.json",
+    "query": "coffee cherry processing",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
