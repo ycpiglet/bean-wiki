@@ -92,27 +92,54 @@ for (const route of routes) {
         window.scrollTo(0, 0);
       });
 
-      let snapshotName = `${route.name}-${theme}.png`;
+      const snapshotName = `${route.name}-${theme}.png`;
       let actionAreaSnapshotName: string | null = null;
+      if (route.name === "home") {
+        const discoveryTitle = page.locator(
+          ".home-fact-panel.is-current strong a",
+        );
+        const discoveryBody = page.locator(".home-fact-panel.is-current p");
+        await expect(discoveryTitle).toBeVisible();
+        const [titleSize, bodySize] = await Promise.all([
+          discoveryTitle.evaluate((element) =>
+            Number.parseFloat(getComputedStyle(element).fontSize),
+          ),
+          discoveryBody.evaluate((element) =>
+            Number.parseFloat(getComputedStyle(element).fontSize),
+          ),
+        ]);
+        expect(titleSize).toBeGreaterThanOrEqual(32);
+        expect(titleSize).toBeGreaterThan(bodySize * 1.8);
+      }
+
       if (route.name === "coffee-cherry-to-bean") {
         const actionArea = page.locator(".article-action-area");
+        await expect(page.locator(".wiki-title .article-action-area")).toHaveCount(
+          0,
+        );
         await expect(actionArea).toHaveCount(1);
-        const actionsAtContentEnd =
-          (await page.locator(".wiki-title .article-action-area").count()) === 0;
-        if (actionsAtContentEnd) {
-          snapshotName = `${route.name}-content-end-${theme}.png`;
-          const actionsBeforeDiscussion = await actionArea.evaluate((element) => {
-            const discussion = document.querySelector(".article-discussion");
-            return Boolean(
-              discussion &&
-                (element.compareDocumentPosition(discussion) &
-                  Node.DOCUMENT_POSITION_FOLLOWING),
-            );
-          });
-          expect(actionsBeforeDiscussion).toBe(true);
-          actionAreaSnapshotName =
-            `${route.name}-content-end-actions-${theme}.png`;
-        }
+        const sectionOrder = await page
+          .locator(".article-quiz, .article-action-area, .article-discussion")
+          .evaluateAll((elements) =>
+            elements.map((element) =>
+              element.classList.contains("article-quiz")
+                ? "quiz"
+                : element.classList.contains("article-action-area")
+                  ? "actions"
+                  : "discussion",
+            ),
+          );
+        expect(sectionOrder).toEqual(["quiz", "actions", "discussion"]);
+        await expect(
+          actionArea.locator(".article-engagement-counts dt"),
+        ).toHaveText(["조회", "좋아요", "댓글"]);
+        await expect(
+          actionArea.getByRole("button", { name: "좋아요", exact: true }),
+        ).not.toContainText("0");
+        await expect(
+          actionArea.getByRole("link", { name: "댓글 쓰기", exact: true }),
+        ).toBeVisible();
+        actionAreaSnapshotName = `${route.name}-actions-${theme}.png`;
       }
 
       await expect(page).toHaveScreenshot(snapshotName, {
