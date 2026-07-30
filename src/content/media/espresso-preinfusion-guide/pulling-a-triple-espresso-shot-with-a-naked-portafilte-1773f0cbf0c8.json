@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:99902648",
+  "articleSlug": "espresso-preinfusion-guide",
+  "section": "what-it-does",
+  "localPath": "/article-media/espresso-preinfusion-guide/pulling-a-triple-espresso-shot-with-a-naked-portafilte-1773f0cbf0c8.jpg",
+  "sha256": "1773f0cbf0c85311d8336181dd20ccd0a73f7511a4caec84f4b5faa28ae28e32",
+  "bytes": 345416,
+  "mime": "image/jpeg",
+  "alt": "네이키드 포터필터로 트리플 에스프레소를 아래에서 올려다본 모습",
+  "caption": "짧은 시간 안에 물이 커피층 전체를 고르게 적시는지가 관건이며, 프리인퓨전은 압력이 급격히 오르기 전 이 과정을 완화하는 단계입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "99902648",
+    "title": "Pulling a triple espresso shot with a naked portafilter, view from the bottom.jpg",
+    "author": "massage-techniques",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pulling_a_triple_espresso_shot_with_a_naked_portafilter,_view_from_the_bottom.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Pulling_a_triple_espresso_shot_with_a_naked_portafilter%2C_view_from_the_bottom.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Pulling_a_triple_espresso_shot_with_a_naked_portafilter%2C_view_from_the_bottom.jpg/1920px-Pulling_a_triple_espresso_shot_with_a_naked_portafilter%2C_view_from_the_bottom.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:14:48.919Z",
+    "researchManifest": "img14-6.json",
+    "query": "espresso naked portafilter shot pulling",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
