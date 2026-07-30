@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:23466941",
+  "articleSlug": "coffee-drink-taxonomy",
+  "section": "regional",
+  "localPath": "/article-media/coffee-drink-taxonomy/vietnam-08-132-vietnamese-coffee-3185747640-jpg-abbd6eea5bf2.jpg",
+  "sha256": "abbd6eea5bf2cf076ee2d11ed7b0074d8b7be2ea40a5521d73874d2701190f3e",
+  "bytes": 263370,
+  "mime": "image/jpeg",
+  "alt": "핀 필터로 내리는 베트남식 커피",
+  "caption": "핀 필터, 진한 커피, 연유의 조합인 카페 쓰어다는 지역 역사와 무역이 함께 만든 음료입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "23466941",
+    "title": "Vietnam 08 - 132 - Vietnamese coffee (3185747640).jpg",
+    "author": "McKay Savage from London, UK",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Vietnam_08_-_132_-_Vietnamese_coffee_(3185747640).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Vietnam_08_-_132_-_Vietnamese_coffee_%283185747640%29.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Vietnam_08_-_132_-_Vietnamese_coffee_%283185747640%29.jpg/1920px-Vietnam_08_-_132_-_Vietnamese_coffee_%283185747640%29.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:05:06.109Z",
+    "researchManifest": "img5-24.json",
+    "query": "Vietnamese coffee phin filter",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

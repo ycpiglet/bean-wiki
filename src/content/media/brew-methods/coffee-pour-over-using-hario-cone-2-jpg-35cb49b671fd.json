@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:27697916",
+  "articleSlug": "brew-methods",
+  "section": "percolation",
+  "localPath": "/article-media/brew-methods/coffee-pour-over-using-hario-cone-2-jpg-35cb49b671fd.jpg",
+  "sha256": "35cb49b671fd95f0c343cc4480ad9f8cc164463802c269316a245ba8eb174d37",
+  "bytes": 159978,
+  "mime": "image/jpeg",
+  "alt": "하리오 콘 드리퍼로 커피를 내리는 모습",
+  "caption": "물을 붓는 속도·높이·회전 같은 물길 변수가 맛에 직접 개입하는 것이 투과식의 특징입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "27697916",
+    "title": "Coffee pour over using Hario cone 2.jpg",
+    "author": "User:GorillaWarfare",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_pour_over_using_Hario_cone_2.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Coffee_pour_over_using_Hario_cone_2.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Coffee_pour_over_using_Hario_cone_2.jpg/1920px-Coffee_pour_over_using_Hario_cone_2.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/licenses/by-sa/1.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 1.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:07:14.571Z",
+    "researchManifest": "img5-26.json",
+    "query": "pour over V60 dripper coffee",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

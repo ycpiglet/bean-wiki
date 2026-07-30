@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:34009510",
+  "articleSlug": "coffeehouse-culture",
+  "section": "italian-bar-culture",
+  "localPath": "/article-media/coffeehouse-culture/mumac-ricostruzione-di-un-bancone-jpg-56cbf43ac8e5.jpg",
+  "sha256": "56cbf43ac8e5ab99d8d5cbdb1a7d7e7c38b130f53b2d78b8f8f5ee5023fef35a",
+  "bytes": 326028,
+  "mime": "image/jpeg",
+  "alt": "이탈리아 커피머신 박물관에 복원 전시된 옛 에스프레소 바 카운터",
+  "caption": "짧은 대화와 빠른 회전이라는 이탈리아 바의 리듬은 이런 카운터 구조와 에스프레소 기계의 배치에서부터 시작됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "34009510",
+    "title": "Mumac - Ricostruzione di un bancone.jpg",
+    "author": "Jong Hoon Lee",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Mumac_-_Ricostruzione_di_un_bancone.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Mumac_-_Ricostruzione_di_un_bancone.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Mumac_-_Ricostruzione_di_un_bancone.jpg/1920px-Mumac_-_Ricostruzione_di_un_bancone.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:01:01.009Z",
+    "researchManifest": "img5-19.json",
+    "query": "vintage espresso bar Italy museum",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

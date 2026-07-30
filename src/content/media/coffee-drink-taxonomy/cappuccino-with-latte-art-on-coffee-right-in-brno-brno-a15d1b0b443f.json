@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:6085504",
+  "articleSlug": "coffee-drink-taxonomy",
+  "section": "milk",
+  "localPath": "/article-media/coffee-drink-taxonomy/cappuccino-with-latte-art-on-coffee-right-in-brno-brno-a15d1b0b443f.jpg",
+  "sha256": "a15d1b0b443f534eba76c5ce11c389d8a0657dbaf2a57d8c4e53ff29f58d81cc",
+  "bytes": 174975,
+  "mime": "image/jpeg",
+  "alt": "라떼아트가 그려진 카푸치노",
+  "caption": "카푸치노·라테·플랫화이트는 결국 샷·우유량·공기 혼입 비율이 만드는 연속선 위의 지점들이며, 이름이 항상 고정된 비율을 보장하지는 않습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "6085504",
+    "title": "Cappuccino with latte art on Coffee Right in Brno, Brno-City District.jpg",
+    "author": "Frettie",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cappuccino_with_latte_art_on_Coffee_Right_in_Brno,_Brno-City_District.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Cappuccino_with_latte_art_on_Coffee_Right_in_Brno%2C_Brno-City_District.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Cappuccino_with_latte_art_on_Coffee_Right_in_Brno%2C_Brno-City_District.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by/3.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:04:43.695Z",
+    "researchManifest": "img5-3.json",
+    "query": "cappuccino latte art cup",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

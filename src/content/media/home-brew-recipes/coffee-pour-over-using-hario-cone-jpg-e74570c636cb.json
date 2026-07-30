@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:27697828",
+  "articleSlug": "home-brew-recipes",
+  "section": "baseline",
+  "localPath": "/article-media/home-brew-recipes/coffee-pour-over-using-hario-cone-jpg-e74570c636cb.jpg",
+  "sha256": "e74570c636cbd3b43624be33c6e0c4453d658ab6ec347c4b46e4f1e61d73a61d",
+  "bytes": 162387,
+  "mime": "image/jpeg",
+  "alt": "하리오 콘 드리퍼로 커피를 내리는 모습",
+  "caption": "비율·온도·분쇄도는 방식마다 다르지만, 어떤 도구든 기록 없이 반복하면 같은 레시피를 재현하기 어렵습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "27697828",
+    "title": "Coffee pour over using Hario cone.jpg",
+    "author": "User:GorillaWarfare",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_pour_over_using_Hario_cone.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Coffee_pour_over_using_Hario_cone.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Coffee_pour_over_using_Hario_cone.jpg/1920px-Coffee_pour_over_using_Hario_cone.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/licenses/by-sa/1.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 1.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:01:55.041Z",
+    "researchManifest": "img5-9.json",
+    "query": "pour over V60 dripper coffee",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
