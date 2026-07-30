@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:30360602",
+  "articleSlug": "coffee-plant-life-cycle",
+  "section": "definition",
+  "localPath": "/article-media/coffee-plant-life-cycle/coffee-blossom-jpg-e9d487e6b2ad.jpg",
+  "sha256": "e9d487e6b2ad6312d2eb9f8d40c9548112ea8010a4df6931587013a3c2114b40",
+  "bytes": 365860,
+  "mime": "image/jpeg",
+  "alt": "커피나무 가지에 하얀 꽃이 만개한 모습",
+  "caption": "생애주기는 개화처럼 눈에 띄는 사건 하나가 아니라, 착근부터 결실까지 이어지는 여러 단계가 겹쳐진 과정입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "30360602",
+    "title": "Coffee blossom.JPG",
+    "author": "[Tycho]",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_blossom.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Coffee_blossom.JPG",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Coffee_blossom.JPG"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:21:26.204Z",
+    "researchManifest": "img3-4.json",
+    "query": "coffee flower blossom",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

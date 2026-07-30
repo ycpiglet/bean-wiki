@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:d042c44a-01cf-4b03-b178-b548470e87e6",
+  "articleSlug": "coffee-plant-life-cycle",
+  "section": "biennial-bearing",
+  "localPath": "/article-media/coffee-plant-life-cycle/colombia-coffee-triangle-012-coffee-plantation-tour-a5635d818013.jpg",
+  "sha256": "a5635d8180133c277a4dc8ba7b1ce6d37be9eec54f5efdd7eb9c291f839e0d0a",
+  "bytes": 267276,
+  "mime": "image/jpeg",
+  "alt": "콜롬비아 커피 농장을 둘러보는 투어에서 촬영한 커피나무들",
+  "caption": "한 해의 결실 부담이 컸던 구간은 다음 시즌 회복 계획을 별도로 세워야 격년결실의 편차를 줄일 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "d042c44a-01cf-4b03-b178-b548470e87e6",
+    "title": "Colombia - Coffee Triangle 012 - coffee plantation tour",
+    "author": "mckaysavage",
+    "sourceUrl": "https://www.flickr.com/photos/56796376@N00/8808037070",
+    "originalUrl": "https://live.staticflickr.com/5344/8808037070_03be81f1af_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/5344/8808037070_03be81f1af_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:21:28.166Z",
+    "researchManifest": "img3-10.json",
+    "query": "coffee cherry harvest hand picking",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

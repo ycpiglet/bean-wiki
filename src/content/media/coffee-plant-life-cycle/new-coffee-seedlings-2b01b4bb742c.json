@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:a96aaf98-9ae0-4be9-a0ac-58ff6074de62",
+  "articleSlug": "coffee-plant-life-cycle",
+  "section": "stage-map",
+  "localPath": "/article-media/coffee-plant-life-cycle/new-coffee-seedlings-2b01b4bb742c.jpg",
+  "sha256": "2b01b4bb742c999dc6804530f9a5c565f468824b37c60bb211f2761b539abc8c",
+  "bytes": 171603,
+  "mime": "image/jpeg",
+  "alt": "묘목장에서 자라고 있는 어린 커피 씨앗묘들",
+  "caption": "활착·정착기의 어린 나무는 결실기와 전혀 다른 관리 판단(과습·질소 과잉 위험)이 필요합니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "a96aaf98-9ae0-4be9-a0ac-58ff6074de62",
+    "title": "new coffee seedlings",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/6207726361",
+    "originalUrl": "https://live.staticflickr.com/6184/6207726361_9785dcebef_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/6184/6207726361_9785dcebef_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:21:27.028Z",
+    "researchManifest": "img3-6.json",
+    "query": "coffee seedling nursery",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:61165416",
+  "articleSlug": "coffee-varieties",
+  "section": "species-layer",
+  "localPath": "/article-media/coffee-varieties/coffea-arabica-0zz-jpg-50999f1c6a94.jpg",
+  "sha256": "50999f1c6a949f3fa965fd010663b572b702839168e600d8e404468d8350570b",
+  "bytes": 147064,
+  "mime": "image/jpeg",
+  "alt": "커피 아라비카 나무의 전체 모습",
+  "caption": "종은 이 나무 전체가 속하는 큰 분류이고, 품종은 그 안에서 다시 갈라진 유전적 계열입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "61165416",
+    "title": "Coffea arabica 0zz.jpg",
+    "author": "Photo by David J. Stang",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffea_arabica_0zz.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f7/Coffea_arabica_0zz.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Coffea_arabica_0zz.jpg/1920px-Coffea_arabica_0zz.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:25:49.736Z",
+    "researchManifest": "img3-40.json",
+    "query": "Coffea arabica plant tree",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

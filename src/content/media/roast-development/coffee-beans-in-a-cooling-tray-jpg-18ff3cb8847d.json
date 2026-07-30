@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:27929313",
+  "articleSlug": "roast-development",
+  "section": "signals",
+  "localPath": "/article-media/roast-development/coffee-beans-in-a-cooling-tray-jpg-18ff3cb8847d.jpg",
+  "sha256": "18ff3cb8847df55263fd3f8f61bce0bbc025e68a85d5eec0268538c49bfe46ba",
+  "bytes": 260557,
+  "mime": "image/jpeg",
+  "alt": "쿨링 트레이에서 식고 있는 로스팅된 원두",
+  "caption": "냉각 속도가 배치마다 다르면 같은 배출 시점이라도 최종 발달 정도가 달라질 수 있어 함께 기록해야 합니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "27929313",
+    "title": "Coffee Beans in a Cooling Tray.JPG",
+    "author": "Jkafader",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Beans_in_a_Cooling_Tray.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/59/Coffee_Beans_in_a_Cooling_Tray.JPG",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Coffee_Beans_in_a_Cooling_Tray.JPG/1920px-Coffee_Beans_in_a_Cooling_Tray.JPG"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:23:01.248Z",
+    "researchManifest": "img3-18.json",
+    "query": "roasted coffee beans cooling tray",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

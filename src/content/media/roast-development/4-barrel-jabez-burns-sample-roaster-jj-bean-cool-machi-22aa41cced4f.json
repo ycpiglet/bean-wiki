@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:965fb91d-555b-4991-87d1-873ffab5e48e",
+  "articleSlug": "roast-development",
+  "section": "practice",
+  "localPath": "/article-media/roast-development/4-barrel-jabez-burns-sample-roaster-jj-bean-cool-machi-22aa41cced4f.jpg",
+  "sha256": "22aa41cced4f63e265a98df0ac900930d6a9c88eea2e67952d9527f55c63a958",
+  "bytes": 161812,
+  "mime": "image/jpeg",
+  "alt": "샘플 로스터로 소량 배치를 볶고 있는 모습",
+  "caption": "본 배치를 늘리기 전에 샘플 로스터로 구간 전환을 먼저 확인하면 실패 배치의 비용을 줄일 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "965fb91d-555b-4991-87d1-873ffab5e48e",
+    "title": "4-barrel Jabez-Burns sample roaster - JJ Bean cool machine - Roland in Vancouver 2269",
+    "author": "roland",
+    "sourceUrl": "https://www.flickr.com/photos/35034347371@N01/148541441",
+    "originalUrl": "https://live.staticflickr.com/53/148541441_e25f8af6d7_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/53/148541441_e25f8af6d7_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc0",
+    "label": "CC0 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "cc0 1.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:23:03.041Z",
+    "researchManifest": "img3-17.json",
+    "query": "commercial coffee roaster machine",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
