@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:17009383",
+  "articleSlug": "catimor-sarchimor-blight-resistance",
+  "section": "overview",
+  "localPath": "/article-media/catimor-sarchimor-blight-resistance/hemileia-vastatrix-coffee-leaf-rust-jpg-7f0cd112454f.jpg",
+  "sha256": "7f0cd112454ff4932550b71533e27cac1b7be8c53a348c733cf6076ebb75f698",
+  "bytes": 282992,
+  "mime": "image/jpeg",
+  "alt": "커피 잎 뒷면에 노란빛 녹병(Hemileia vastatrix) 병반이 퍼진 모습",
+  "caption": "카티모르·사르치모르 계열이 대응하도록 육종된 커피 녹병(Hemileia vastatrix) 병반의 실제 모습입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "17009383",
+    "title": "Hemileia vastatrix - coffee leaf rust.jpg",
+    "author": "Smartse",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Hemileia_vastatrix_-_coffee_leaf_rust.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Hemileia_vastatrix_-_coffee_leaf_rust.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Hemileia_vastatrix_-_coffee_leaf_rust.jpg/1920px-Hemileia_vastatrix_-_coffee_leaf_rust.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T23:22:27.885Z",
+    "researchManifest": "rust.json",
+    "query": "coffee leaf rust Hemileia vastatrix",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

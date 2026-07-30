@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:7c527ded-ca3f-49d8-9c44-192105554c90",
+  "articleSlug": "sca-cupping-workflow",
+  "section": "vocabulary",
+  "localPath": "/article-media/sca-cupping-workflow/taste-51ca5d35151c.jpg",
+  "sha256": "51ca5d35151ce094d0678e44e673ebbdef971c8c0d2d0ee224762427b55a7ad0",
+  "bytes": 171256,
+  "mime": "image/jpeg",
+  "alt": "커핑 스푼으로 커피를 강하게 슬러핑(빨아들이며 시음)하는 모습",
+  "caption": "향미 용어를 재현 가능하게 기록하려면 슬러핑처럼 동일한 시음 동작을 반복하는 절차가 먼저 필요합니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "7c527ded-ca3f-49d8-9c44-192105554c90",
+    "title": "Taste!",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/6302789843",
+    "originalUrl": "https://live.staticflickr.com/6052/6302789843_267fb8a180_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/6052/6302789843_267fb8a180_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T23:26:07.719Z",
+    "researchManifest": "cupping3.json",
+    "query": "cupping spoons coffee tasting",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:99902661",
+  "articleSlug": "espresso-machine-hydraulics-thermal",
+  "section": "thermal-subsystem",
+  "localPath": "/article-media/espresso-machine-hydraulics-thermal/lelit-semiautomatic-espresso-machine-with-pid-and-pres-14051421ec44.jpg",
+  "sha256": "14051421ec44e5596558dc96b6a816fb02606bda24993ed534e3c8285711abee",
+  "bytes": 342662,
+  "mime": "image/jpeg",
+  "alt": "PID 컨트롤러와 압력 게이지가 나란히 장착된 세미오토매틱 에스프레소 머신 정면",
+  "caption": "PID로 보일러 온도를 세팅하고 압력 게이지로 펌프 압력을 함께 확인하는 세미오토매틱 머신의 예시입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "99902661",
+    "title": "Lelit Semiautomatic Espresso Machine with PID and Pressure Gauge.jpg",
+    "author": "massage-techniques",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Lelit_Semiautomatic_Espresso_Machine_with_PID_and_Pressure_Gauge.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/1f/Lelit_Semiautomatic_Espresso_Machine_with_PID_and_Pressure_Gauge.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Lelit_Semiautomatic_Espresso_Machine_with_PID_and_Pressure_Gauge.jpg/1920px-Lelit_Semiautomatic_Espresso_Machine_with_PID_and_Pressure_Gauge.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T23:00:07.300Z",
+    "researchManifest": "espresso2.json",
+    "query": "espresso machine",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
