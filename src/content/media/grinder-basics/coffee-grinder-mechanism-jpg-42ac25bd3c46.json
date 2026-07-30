@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:56604136",
+  "articleSlug": "grinder-basics",
+  "section": "burr-types",
+  "localPath": "/article-media/grinder-basics/coffee-grinder-mechanism-jpg-42ac25bd3c46.jpg",
+  "sha256": "42ac25bd3c46b34425ac5b824ef01cda03f026090a753f3a9828af5203393bd2",
+  "bytes": 187065,
+  "mime": "image/jpeg",
+  "alt": "그라인더 내부의 원뿔형(코니컬) 버 분쇄 기구",
+  "caption": "코니컬 버는 원뿔 모양의 회전자와 고정자 사이에서 원두를 갈아내는 구조로, 플랫 버와는 분쇄 패턴과 유지관리 포인트가 다릅니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "56604136",
+    "title": "Coffee grinder mechanism.jpg",
+    "author": "Wikimalte",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_grinder_mechanism.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4a/Coffee_grinder_mechanism.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Coffee_grinder_mechanism.jpg/1920px-Coffee_grinder_mechanism.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:13:51.523Z",
+    "researchManifest": "img-grind-10.json",
+    "query": "burr grinder mill mechanism",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
