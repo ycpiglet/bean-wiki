@@ -197,11 +197,6 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
                 역사
               </Link>
             </div>
-            <ArticleEngagement
-              slug={slug}
-              title={article.title}
-              path={`/wiki/${slug}`}
-            />
             {article.tags && article.tags.length > 0 && (
               <div className="article-tags">
                 {article.tags.map((tag) => (
@@ -242,6 +237,12 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
                   }
                 : undefined
             }
+          />
+
+          <ArticleEngagement
+            slug={slug}
+            title={article.title}
+            path={`/wiki/${slug}`}
           />
 
           <ArticleDiscussion slug={slug} />
