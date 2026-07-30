@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:174790648",
+  "articleSlug": "sca-cupping-protocol",
+  "section": "work-standards",
+  "localPath": "/article-media/sca-cupping-protocol/tasty-coffee-lab-cupping-izhevsk-2025-jpg-7b5452443b97.jpg",
+  "sha256": "7b5452443b978d36a26f8c3242246e7861aac57a2ea15789e73d917fef8a3793",
+  "bytes": 155005,
+  "mime": "image/jpeg",
+  "alt": "커핑 랩에서 여러 평가자가 함께 시료를 평가하는 모습",
+  "caption": "조건이 같아도 평가자 간 기준이 다르면 점수가 흩어지므로, 교차 검토 루틴이 운영 표준의 핵심입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "174790648",
+    "title": "Tasty Coffee lab cupping Izhevsk 2025.jpg",
+    "author": "Indigo.udm",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Tasty_Coffee_lab_cupping_Izhevsk_2025.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Tasty_Coffee_lab_cupping_Izhevsk_2025.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Tasty_Coffee_lab_cupping_Izhevsk_2025.jpg/1920px-Tasty_Coffee_lab_cupping_Izhevsk_2025.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:46:18.214Z",
+    "researchManifest": "img4-13.json",
+    "query": "coffee cupping",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

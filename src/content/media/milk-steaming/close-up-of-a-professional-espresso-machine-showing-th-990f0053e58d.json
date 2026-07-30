@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:79f0e598-3433-4b93-a60b-6ac04ac96dad",
+  "articleSlug": "milk-steaming",
+  "section": "goal-frame",
+  "localPath": "/article-media/milk-steaming/close-up-of-a-professional-espresso-machine-showing-th-990f0053e58d.jpg",
+  "sha256": "990f0053e58d91211a0a67c90e7cb9c81728c6850b89ae7563dc16594f359663",
+  "bytes": 202383,
+  "mime": "image/jpeg",
+  "alt": "포터필터와 스팀 완드, 스테인리스 우유 피처가 보이는 에스프레소 머신 클로즈업",
+  "caption": "스티밍의 목표는 표면의 예쁜 거품이 아니라, 피처 전체에 걸쳐 균일한 입자감을 만드는 것입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "79f0e598-3433-4b93-a60b-6ac04ac96dad",
+    "title": "Close-up of a professional espresso machine, showing the portafilter, steam wand, and a stainless steel milk frothing pitcher. The machine’s control panel and temperature gauge are visible on the top.",
+    "author": "Nilo Velez",
+    "sourceUrl": "https://wordpress.org/photos/photo/97767858db/",
+    "originalUrl": "https://pd.w.org/2025/01/97767858dbe21e6f5.89479321-2048x1365.jpg",
+    "acquiredFrom": "https://pd.w.org/2025/01/97767858dbe21e6f5.89479321-2048x1365.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc0",
+    "label": "CC0 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "cc0 1.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:45:32.613Z",
+    "researchManifest": "img4-8.json",
+    "query": "steaming milk espresso machine steam wand",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
