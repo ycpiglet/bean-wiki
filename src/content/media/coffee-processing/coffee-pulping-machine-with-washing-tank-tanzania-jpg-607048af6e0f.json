@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:155918578",
+  "articleSlug": "coffee-processing",
+  "section": "washed",
+  "localPath": "/article-media/coffee-processing/coffee-pulping-machine-with-washing-tank-tanzania-jpg-607048af6e0f.jpg",
+  "sha256": "607048af6e0fc1726459a4b373faf9c104e586628049453e330bc214ee4f6a6d",
+  "bytes": 395841,
+  "mime": "image/jpeg",
+  "alt": "탄자니아 커피 농장의 펄핑 기계와 세척용 물탱크",
+  "caption": "펄핑 기계로 과육을 제거한 뒤 물탱크에서 세척하는 설비 구성이 워시드 공정의 물리적 뼈대입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "155918578",
+    "title": "Coffee Pulping Machine with Washing Tank - Tanzania.jpg",
+    "author": "Harald Ulver",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Pulping_Machine_with_Washing_Tank_-_Tanzania.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d4/Coffee_Pulping_Machine_with_Washing_Tank_-_Tanzania.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Coffee_Pulping_Machine_with_Washing_Tank_-_Tanzania.jpg/1920px-Coffee_Pulping_Machine_with_Washing_Tank_-_Tanzania.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:46:06.454Z",
+    "researchManifest": "img-proc-21.json",
+    "query": "coffee pulper machine",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

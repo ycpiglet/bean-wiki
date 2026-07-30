@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:82c49e69-c867-4690-96a9-75f52e8e35b0",
+  "articleSlug": "grinder-basics",
+  "section": "grain",
+  "localPath": "/article-media/grinder-basics/exit-chute-4771677b6ddb.jpg",
+  "sha256": "4771677b6ddb3e9f2eeffbfc46753f5ff9d10f26aa49ff98dfa0f5c6efcc036a",
+  "bytes": 119354,
+  "mime": "image/jpeg",
+  "alt": "그라인더의 분쇄 배출구에서 원두가 갈려 나오는 모습",
+  "caption": "같은 숫자로 맞춰도 배출구를 통과하는 입자들이 고르지 않으면 추출은 서로 다른 흐름으로 갈라집니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "82c49e69-c867-4690-96a9-75f52e8e35b0",
+    "title": "Exit Chute",
+    "author": "nalundgaard",
+    "sourceUrl": "https://www.flickr.com/photos/43547678@N00/3407605744",
+    "originalUrl": "https://live.staticflickr.com/3386/3407605744_4436808b2e_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/3386/3407605744_4436808b2e_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:48:29.899Z",
+    "researchManifest": "img-grind-1.json",
+    "query": "coffee burr grinder conical flat burr",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

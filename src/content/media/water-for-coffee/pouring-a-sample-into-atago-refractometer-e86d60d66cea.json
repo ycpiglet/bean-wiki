@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:33922d5f-4ebe-44ac-8e33-9469ed3d77dc",
+  "articleSlug": "water-for-coffee",
+  "section": "practice",
+  "localPath": "/article-media/water-for-coffee/pouring-a-sample-into-atago-refractometer-e86d60d66cea.jpg",
+  "sha256": "e86d60d66cea972701a243abfc941a162cc3242737ce729be03d8128ddd39ccf",
+  "bytes": 109075,
+  "mime": "image/jpeg",
+  "alt": "굴절계에 커피 샘플을 부어 농도를 측정하는 모습",
+  "caption": "느낌만으로 비교하기 어려울 때는 간단한 수치 측정을 더해 물 변경 전후의 체감 차이를 구체적으로 기록할 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "33922d5f-4ebe-44ac-8e33-9469ed3d77dc",
+    "title": "Pouring a Sample into Atago Refractometer",
+    "author": "markolaz",
+    "sourceUrl": "https://www.flickr.com/photos/195403219@N08/52223324665",
+    "originalUrl": "https://live.staticflickr.com/65535/52223324665_8cea59d3c7_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/52223324665_8cea59d3c7_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:47:33.452Z",
+    "researchManifest": "img-water-6.json",
+    "query": "refractometer coffee measurement",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

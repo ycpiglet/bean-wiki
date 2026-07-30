@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:89b2b3cd-32a4-4ff9-9716-f194e807744b",
+  "articleSlug": "coffee-cherry-to-bean",
+  "section": "green-coffee",
+  "localPath": "/article-media/coffee-cherry-to-bean/parchment-beans-8b5168051ba9.jpg",
+  "sha256": "8b5168051ba91995f5ecd7abb4772a275e9a888c7b230262dc37a02e6aa12acd",
+  "bytes": 93219,
+  "mime": "image/jpeg",
+  "alt": "단단한 파치먼트에 싸인 채 건조된 생두 더미",
+  "caption": "파치먼트를 벗기고 선별을 마치기 전까지 생두는 아직 로스터에게 전달할 준비가 끝나지 않은 상태입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "89b2b3cd-32a4-4ff9-9716-f194e807744b",
+    "title": "parchment beans",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/6260613369",
+    "originalUrl": "https://live.staticflickr.com/6234/6260613369_ca64a41b98_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/6234/6260613369_ca64a41b98_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:44:01.075Z",
+    "researchManifest": "img-c2b-8.json",
+    "query": "green coffee beans parchment",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

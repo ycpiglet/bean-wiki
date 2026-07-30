@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:ff1ad473-da6f-4918-82f8-a8e31d7c879f",
+  "articleSlug": "water-for-coffee",
+  "section": "composition",
+  "localPath": "/article-media/water-for-coffee/coffee-brewing-in-hario-v60-7999f53f5a64.jpg",
+  "sha256": "7999f53f5a647151a93ff821dd84f1ffa250f20c8fa21e150eb2fec547331a57",
+  "bytes": 114636,
+  "mime": "image/jpeg",
+  "alt": "V60 드리퍼에 물을 부어 커피를 추출하는 모습",
+  "caption": "같은 원두와 레시피로 추출해도 물의 구성이 다르면 눈에 보이지 않는 곳에서 산미·단맛의 균형이 달라질 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "ff1ad473-da6f-4918-82f8-a8e31d7c879f",
+    "title": "Coffee Brewing in Hario V60",
+    "author": "markolaz",
+    "sourceUrl": "https://www.flickr.com/photos/195403219@N08/52221286810",
+    "originalUrl": "https://live.staticflickr.com/65535/52221286810_15b5692647_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/52221286810_15b5692647_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:47:31.826Z",
+    "researchManifest": "img-water-1.json",
+    "query": "pouring water coffee brewing kettle",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

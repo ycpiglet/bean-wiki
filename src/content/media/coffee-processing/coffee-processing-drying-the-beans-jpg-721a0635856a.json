@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:36801460",
+  "articleSlug": "coffee-processing",
+  "section": "natural",
+  "localPath": "/article-media/coffee-processing/coffee-processing-drying-the-beans-jpg-721a0635856a.jpg",
+  "sha256": "721a0635856af36919db523073792270db2ce8813ffdfa7b1c87443d0b391341",
+  "bytes": 465597,
+  "mime": "image/jpeg",
+  "alt": "커피 원두(또는 체리)를 넓게 펼쳐 건조하는 모습",
+  "caption": "내추럴 가공은 과육이 붙은 채로 건조가 진행되므로, 두께와 뒤집는 빈도를 관리하지 않으면 편차가 쉽게 커집니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "36801460",
+    "title": "Coffee Processing – Drying the beans.jpg",
+    "author": "Ludger001",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Processing_%E2%80%93_Drying_the_beans.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Coffee_Processing_%E2%80%93_Drying_the_beans.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Coffee_Processing_%E2%80%93_Drying_the_beans.jpg/1920px-Coffee_Processing_%E2%80%93_Drying_the_beans.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:46:09.496Z",
+    "researchManifest": "img-proc-22.json",
+    "query": "coffee cherry processing",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

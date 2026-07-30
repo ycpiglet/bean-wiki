@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:17070423",
+  "articleSlug": "espresso-basics",
+  "section": "practice",
+  "localPath": "/article-media/espresso-basics/portafilter-and-tamper-jpg-ff125b346a09.jpg",
+  "sha256": "ff125b346a0983b8243ea58e461a6e173b98d375e1901e3f7fbf9643c4f3a67c",
+  "bytes": 281569,
+  "mime": "image/jpeg",
+  "alt": "포터필터와 탬퍼가 나란히 놓인 모습",
+  "caption": "같은 컵을 다시 만들려면 도징부터 탬핑까지 매번 같은 동작을 반복하는 것이 장비 설정보다 먼저입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "17070423",
+    "title": "Portafilter and tamper.jpg",
+    "author": "Czosnek112",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Portafilter_and_tamper.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Portafilter_and_tamper.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/f/ff/Portafilter_and_tamper.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:49:30.629Z",
+    "researchManifest": "img-esp-6.json",
+    "query": "espresso machine portafilter group",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}
