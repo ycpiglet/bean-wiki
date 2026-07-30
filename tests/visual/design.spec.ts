@@ -92,7 +92,17 @@ for (const route of routes) {
         window.scrollTo(0, 0);
       });
 
-      await expect(page).toHaveScreenshot(`${route.name}-${theme}.png`, {
+      let snapshotName = `${route.name}-${theme}.png`;
+      if (route.name === "coffee-cherry-to-bean") {
+        await expect(page.locator(".article-action-area")).toHaveCount(1);
+        const actionsAtContentEnd =
+          (await page.locator(".wiki-title .article-action-area").count()) === 0;
+        if (actionsAtContentEnd) {
+          snapshotName = `${route.name}-content-end-${theme}.png`;
+        }
+      }
+
+      await expect(page).toHaveScreenshot(snapshotName, {
         fullPage: false,
       });
     });
