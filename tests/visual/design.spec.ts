@@ -94,11 +94,24 @@ for (const route of routes) {
 
       let snapshotName = `${route.name}-${theme}.png`;
       if (route.name === "coffee-cherry-to-bean") {
-        await expect(page.locator(".article-action-area")).toHaveCount(1);
+        const actionArea = page.locator(".article-action-area");
+        await expect(actionArea).toHaveCount(1);
         const actionsAtContentEnd =
           (await page.locator(".wiki-title .article-action-area").count()) === 0;
         if (actionsAtContentEnd) {
           snapshotName = `${route.name}-content-end-${theme}.png`;
+          const actionsBeforeDiscussion = await actionArea.evaluate((element) => {
+            const discussion = document.querySelector(".article-discussion");
+            return Boolean(
+              discussion &&
+                (element.compareDocumentPosition(discussion) &
+                  Node.DOCUMENT_POSITION_FOLLOWING),
+            );
+          });
+          expect(actionsBeforeDiscussion).toBe(true);
+          await expect(actionArea).toHaveScreenshot(
+            `${route.name}-content-end-actions-${theme}.png`,
+          );
         }
       }
 
