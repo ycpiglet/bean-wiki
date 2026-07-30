@@ -5,15 +5,17 @@ summary: 투입 온도부터 배출까지, 프로파일의 구간별 변수와 R
 category: 로스팅
 level: 전문
 readingTime: 9분
-updatedAt: 2026. 07. 28.
+updatedAt: 2026. 07. 31.
+mediaMinimum: 1
 accent: copper
 fact: 프로파일 설계는 목표 곡선 그리기가 아니라, 기록과 커핑으로 가설을 검증하는 반복 루프입니다. 지표는 설계의 언어이지 목표값이 아닙니다.
 related: ["roast-development","roasting-basics","sca-cupping-protocol"]
 tags: ["로스팅","프로파일","전문"]
-history: [{"date":"2026. 07. 24.","note":"프로파일 설계 변수와 지표 초안 작성 (페르소나 패널 검수)"},{"date":"2026. 07. 28.","note":"정합성 보강: updatedAt 및 history 동기화, 문서 상태 정렬"}]
+history: [{"date":"2026. 07. 24.","note":"프로파일 설계 변수와 지표 초안 작성 (페르소나 패널 검수)"},{"date":"2026. 07. 28.","note":"정합성 보강: updatedAt 및 history 동기화, 문서 상태 정렬"},{"date":"2026. 07. 31.","note":"자유 라이선스 로스팅 사진 1장과 출처·라이선스 증거 추가"}]
 ---
 <h2 id="frame">프로파일을 구간으로 읽기</h2>
 <p><a data-wikilink="roast-development" href="/wiki/roast-development">로스트 발달</a>에서 다뤘듯 향미를 만드는 반응은 로스팅 전 과정에서 연속적으로 일어납니다. 다만 설계와 소통을 위해 실무에서는 곡선을 몇 개의 구간으로 나눠 읽는 관행이 자리 잡았습니다.</p>
+<figure class="article-figure" data-author="Jkafader" data-license="CC BY-SA 3.0" data-source="https://commons.wikimedia.org/wiki/File:Beans_Dropping_from_a_Coffee_Roaster.JPG"><img src="/article-media/roast-profile-design/beans-dropping-from-a-coffee-roaster-jpg-d3a2d4848ae8.jpg" alt="로스터 배출구에서 원두가 쏟아져 나오는 순간" /><figcaption>배출 시점은 발달 구간의 끝일 뿐, 건조·갈변 구간부터 이어진 곡선 전체를 함께 읽어야 설계가 완성됩니다. <a href="https://commons.wikimedia.org/wiki/File:Beans_Dropping_from_a_Coffee_Roaster.JPG" target="_blank" rel="noreferrer" class="figure-credit">Jkafader · CC BY-SA 3.0</a></figcaption></figure>
 <table><tbody><tr><th>구간</th><th>경계 신호</th><th>설계에서 주로 보는 것</th></tr><tr><td>건조</td><td>투입 → 옐로 포인트</td><td>투입 온도·초기 화력, 수분 제거의 균일성</td></tr><tr><td>갈변(마이야르·카라멜화)</td><td>옐로 → 1차 크랙</td><td>화력 조절 타이밍, 향 전구체 형성 시간</td></tr><tr><td>발달</td><td>1차 크랙 → 배출</td><td>발달 시간과 배출 시점, 최종 색도</td></tr></tbody></table>
 <p>구간 경계는 콩의 색·향·소리로 판단하며, 온도계 수치는 기계마다 다르게 읽힙니다. 프로브 위치와 배치량이 다르면 같은 숫자가 같은 상태를 뜻하지 않는다는 점이 프로파일 소통의 첫 함정입니다.</p>
 <h2 id="charge">투입 온도와 터닝 포인트</h2>

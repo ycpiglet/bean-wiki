@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:27929316",
+  "articleSlug": "roast-profile-design",
+  "section": "frame",
+  "localPath": "/article-media/roast-profile-design/beans-dropping-from-a-coffee-roaster-jpg-d3a2d4848ae8.jpg",
+  "sha256": "d3a2d4848ae8de7c513c89d6deb2cd88d04a7147137e400b062078cc8d12f1cd",
+  "bytes": 187765,
+  "mime": "image/jpeg",
+  "alt": "로스터 배출구에서 원두가 쏟아져 나오는 순간",
+  "caption": "배출 시점은 발달 구간의 끝일 뿐, 건조·갈변 구간부터 이어진 곡선 전체를 함께 읽어야 설계가 완성됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "27929316",
+    "title": "Beans Dropping from a Coffee Roaster.JPG",
+    "author": "Jkafader",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Beans_Dropping_from_a_Coffee_Roaster.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7f/Beans_Dropping_from_a_Coffee_Roaster.JPG",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Beans_Dropping_from_a_Coffee_Roaster.JPG/1920px-Beans_Dropping_from_a_Coffee_Roaster.JPG"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:30:16.958Z",
+    "researchManifest": "img11-13.json",
+    "query": "coffee beans dropping cooling tray roaster",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
