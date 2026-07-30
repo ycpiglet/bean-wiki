@@ -18,7 +18,9 @@ export function ArticleEngagement({ slug }: { slug: string }) {
     const response = await fetch(`/api/articles/${slug}/feedback`, {
       cache: "no-store",
     });
-    if (response.ok) setData((await response.json()) as Snapshot);
+    if (response.ok) {
+      setData(normalizeSnapshot((await response.json()) as Partial<Snapshot>));
+    }
   }, [slug]);
 
   useEffect(() => {
@@ -29,7 +31,7 @@ export function ArticleEngagement({ slug }: { slug: string }) {
     })
       .then((response) => (response.ok ? response.json() : null))
       .then((snapshot: Snapshot | null) => {
-        if (snapshot) setData(snapshot);
+        if (snapshot) setData(normalizeSnapshot(snapshot));
       })
       .catch(() => undefined);
     const refresh = () => void load();
@@ -125,4 +127,17 @@ function ChatIcon() {
       <path d="M4 5.5h16v11H9l-5 3v-14Z" />
     </svg>
   );
+}
+
+function normalizeSnapshot(value: Partial<Snapshot>): Snapshot {
+  return {
+    likes: {
+      total: value.likes?.total ?? 0,
+      agent: value.likes?.agent ?? 0,
+      viewerLiked: value.likes?.viewerLiked ?? false,
+    },
+    views: typeof value.views === "number" ? value.views : 0,
+    comments: Array.isArray(value.comments) ? value.comments : [],
+    viewer: { signedIn: value.viewer?.signedIn ?? false },
+  };
 }

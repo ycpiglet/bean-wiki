@@ -63,7 +63,9 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
         signal,
         cache: "no-store",
       });
-      if (response.ok) setData((await response.json()) as Feedback);
+      if (response.ok) {
+        setData(normalizeFeedback((await response.json()) as Partial<Feedback>));
+      }
     },
     [slug],
   );
@@ -76,7 +78,7 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
     })
       .then((response) => (response.ok ? response.json() : null))
       .then((feedback: Feedback | null) => {
-        if (feedback) setData(feedback);
+        if (feedback) setData(normalizeFeedback(feedback));
       })
       .catch(() => undefined);
     const refresh = () => void load();
@@ -444,4 +446,15 @@ function formatDate(value: string) {
     month: "short",
     day: "numeric",
   }).format(date);
+}
+
+function normalizeFeedback(value: Partial<Feedback>): Feedback {
+  return {
+    summary: { ...EMPTY.summary, ...(value.summary ?? {}) },
+    likes: { ...EMPTY.likes, ...(value.likes ?? {}) },
+    views: typeof value.views === "number" ? value.views : 0,
+    reviews: Array.isArray(value.reviews) ? value.reviews : [],
+    comments: Array.isArray(value.comments) ? value.comments : [],
+    viewer: { ...EMPTY.viewer, ...(value.viewer ?? {}) },
+  };
 }
