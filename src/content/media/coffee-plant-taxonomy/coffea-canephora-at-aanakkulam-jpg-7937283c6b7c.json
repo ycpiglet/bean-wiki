@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:30167425",
+  "articleSlug": "coffee-plant-taxonomy",
+  "section": "why-taxonomy-matters",
+  "localPath": "/article-media/coffee-plant-taxonomy/coffea-canephora-at-aanakkulam-jpg-7937283c6b7c.jpg",
+  "sha256": "6f25a7b62e1246794001438bc79e9c4407c43bddf6cda1d692042850a505122a",
+  "bytes": 173370,
+  "mime": "image/jpeg",
+  "alt": "카네포라(로부스타) 커피나무가 여러 그루 자라고 있는 모습",
+  "caption": "카네포라는 아라비카보다 병해충 저항성이 높고 수확량이 많은 경향이 있어, 종 구분이 재배·가공 계획에 실질적인 영향을 줍니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "30167425",
+    "title": "Coffea canephora at Aanakkulam.jpg",
+    "author": "Jeevan Jose, Kerala, India",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffea_canephora_at_Aanakkulam.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/64/Coffea_canephora_at_Aanakkulam.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Coffea_canephora_at_Aanakkulam.jpg/1920px-Coffea_canephora_at_Aanakkulam.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:05:38.487Z",
+    "researchManifest": "img-taxonomy-2.json",
+    "query": "Coffea canephora robusta plant",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

@@ -83,13 +83,32 @@ export function assessImageLicense(rawLicense, licenseUrl = "") {
     id: rule.id,
     label: version ? `${rule.label} ${version}` : rule.label,
     version,
-    url: String(licenseUrl || ""),
+    url: canonicalLicenseUrl(rule.id, licenseUrl),
     requiresAttribution: rule.requiresAttribution,
     shareAlike: rule.shareAlike,
     allowsCommercialUse: true,
     allowsModification: true,
     raw: stripHtml(rawLicense),
   };
+}
+
+// Wikimedia/Openverse sometimes report an http:// license URL or omit it
+// entirely for CC0/Public Domain works. The evidence gate requires HTTPS, so
+// fall back to the canonical deed page for the identified license instead of
+// failing an otherwise-valid candidate on a metadata quirk.
+const CANONICAL_LICENSE_URLS = {
+  cc0: "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+  pdm: "https://creativecommons.org/publicdomain/mark/1.0/",
+};
+
+function canonicalLicenseUrl(ruleId, licenseUrl) {
+  const value = String(licenseUrl || "").trim();
+  if (isSafeHttpsUrl(value)) return value;
+  if (value.startsWith("http://")) {
+    const upgraded = `https://${value.slice("http://".length)}`;
+    if (isSafeHttpsUrl(upgraded)) return upgraded;
+  }
+  return CANONICAL_LICENSE_URLS[ruleId] ?? value;
 }
 
 export function isSafeHttpsUrl(value) {

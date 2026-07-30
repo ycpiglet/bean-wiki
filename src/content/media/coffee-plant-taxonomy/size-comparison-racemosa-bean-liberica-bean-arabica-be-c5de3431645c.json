@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:94560163",
+  "articleSlug": "coffee-plant-taxonomy",
+  "section": "key-cultivars",
+  "localPath": "/article-media/coffee-plant-taxonomy/size-comparison-racemosa-bean-liberica-bean-arabica-be-c5de3431645c.jpg",
+  "sha256": "699aa1be9af0e4aa7646c9543d521838947edb51567d2da830b53fbf0239ae51",
+  "bytes": 112858,
+  "mime": "image/jpeg",
+  "alt": "라세모사, 리베리카, 아라비카 생두를 나란히 놓고 크기를 비교한 모습",
+  "caption": "같은 '생두'라는 말도 종에 따라 크기·형태가 크게 다르며, 이 차이가 선별·로스팅 설정의 출발점이 됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "94560163",
+    "title": "Size Comparison Racemosa Bean Liberica Bean Arabica Bean.jpg",
+    "author": "LeClairOrganics",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Size_Comparison_Racemosa_Bean_Liberica_Bean_Arabica_Bean.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c6/Size_Comparison_Racemosa_Bean_Liberica_Bean_Arabica_Bean.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Size_Comparison_Racemosa_Bean_Liberica_Bean_Arabica_Bean.jpg/1920px-Size_Comparison_Racemosa_Bean_Liberica_Bean_Arabica_Bean.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:05:23.345Z",
+    "researchManifest": "img-taxonomy-5.json",
+    "query": "Coffea liberica",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

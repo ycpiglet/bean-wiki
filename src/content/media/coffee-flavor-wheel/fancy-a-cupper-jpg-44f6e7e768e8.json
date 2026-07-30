@@ -4,8 +4,8 @@
   "articleSlug": "coffee-flavor-wheel",
   "section": "practice",
   "localPath": "/article-media/coffee-flavor-wheel/fancy-a-cupper-jpg-44f6e7e768e8.jpg",
-  "sha256": "44f6e7e768e88bf379f68ebb1da1008a59c9ea2e1062f840011aacbf276bfb47",
-  "bytes": 324174,
+  "sha256": "878915a2d0756227c59d26bc5a93758a3553d53690818e9f48b565d0b1be4628",
+  "bytes": 180166,
   "mime": "image/jpeg",
   "alt": "두 명의 커피 테이스터가 여러 커핑 볼에 코를 가까이 대고 향을 비교하는 모습",
   "caption": "향미 어휘는 휠을 보는 것만으로 익히기보다, 여러 잔의 향을 나란히 비교할 때 구체적인 감각과 연결됩니다.",
@@ -35,6 +35,8 @@
     "researchManifest": "coffee-flavor-wheel-2026-07-30.json",
     "query": "coffee cupping aroma",
     "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
-    "beanWikiTransformations": []
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
   }
 }

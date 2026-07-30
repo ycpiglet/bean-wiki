@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:dcc20f17-90b2-4c73-a9f0-af8098b0dc95",
+  "articleSlug": "roasting-basics",
+  "section": "light-vs-dark",
+  "localPath": "/article-media/roasting-basics/sample-roasting-9b3941ef3dcd.jpg",
+  "sha256": "9b3941ef3dcd11ac4000fde5b9a4f1d333f61b4e6ea10bc9ab377489d7855cf7",
+  "bytes": 111796,
+  "mime": "image/jpeg",
+  "alt": "로스팅 정도가 서로 다른 원두 샘플들을 늘어놓고 비교하는 모습",
+  "caption": "같은 로트라도 로스팅 단계별 샘플을 나란히 두고 봐야 색 차이가 실제로 무엇을 의미하는지 비교할 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "dcc20f17-90b2-4c73-a9f0-af8098b0dc95",
+    "title": "Sample roasting",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/6299034493",
+    "originalUrl": "https://live.staticflickr.com/6225/6299034493_a4c3a4c8bb_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/6225/6299034493_a4c3a4c8bb_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:06:45.082Z",
+    "researchManifest": "img-roast-3.json",
+    "query": "coffee beans roasting first crack",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
