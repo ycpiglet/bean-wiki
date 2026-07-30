@@ -4554,10 +4554,6 @@ textarea:focus-visible,
 }
 
 @media (max-width: 720px) {
-  .article-header .back-link {
-    display: none;
-  }
-
   .home-live-heading {
     display: block;
   }
@@ -8470,6 +8466,12 @@ body {
 
   .article-header .back-link {
     display: inline-flex;
+  }
+}
+
+@media (max-width: 720px) {
+  .article-detail-header .back-link {
+    display: none;
   }
 }
 

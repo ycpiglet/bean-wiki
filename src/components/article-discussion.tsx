@@ -191,7 +191,7 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
           response: fetch(`/api/articles/${slug}/feedback`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ action: "review", rating, body: "" }),
+            body: JSON.stringify({ action: "review", rating }),
           }),
         });
       }
@@ -206,7 +206,7 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
         });
       }
 
-      const results = await Promise.all(
+      const settled = await Promise.allSettled(
         requests.map(async ({ kind, response }) => {
           const resolved = await response;
           const payload = (await resolved.json().catch(() => ({}))) as {
@@ -216,17 +216,26 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
           return { kind, response: resolved, payload };
         }),
       );
-
-      if (results.some(({ response }) => response.status === 401)) {
-        setNeedsLogin(true);
-        setMessage("평가와 대화는 로그인 후 참여할 수 있습니다.");
-        return;
-      }
+      const results = settled.flatMap((result) =>
+        result.status === "fulfilled" ? [result.value] : [],
+      );
+      const rejectedKinds = settled.flatMap((result, index) =>
+        result.status === "rejected" ? [requests[index].kind] : [],
+      );
 
       const succeeded = results.filter(({ response }) => response.ok);
       const failed = results.filter(({ response }) => !response.ok);
-      if (succeeded.some(({ kind }) => kind === "review")) setRating(0);
-      if (succeeded.some(({ kind }) => kind === "comment")) setComment("");
+      const reviewSucceeded = succeeded.some(({ kind }) => kind === "review");
+      const commentSucceeded = succeeded.some(({ kind }) => kind === "comment");
+      const failedKinds = [
+        ...failed.map(({ kind }) => kind),
+        ...rejectedKinds,
+      ];
+      const unauthorized = failed.some(
+        ({ response }) => response.status === 401,
+      );
+      if (reviewSucceeded) setRating(0);
+      if (commentSucceeded) setComment("");
 
       if (succeeded.length > 0) {
         const awarded = succeeded.reduce(
@@ -234,20 +243,36 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
           0,
         );
         const successLabel =
-          hasRating && hasComment
-            ? "평가와 댓글이 등록되었습니다."
-            : hasRating
+          reviewSucceeded && commentSucceeded
+            ? "평가가 반영되었고 댓글이 등록되었습니다."
+            : reviewSucceeded
               ? "평가가 반영되었습니다."
               : "댓글이 등록되었습니다.";
+        const retryLabel =
+          failedKinds.includes("review") && failedKinds.includes("comment")
+            ? "평가와 댓글은 다시 시도해 주세요."
+            : failedKinds.includes("review")
+              ? "평가는 다시 시도해 주세요."
+              : "댓글은 다시 시도해 주세요.";
+        setNeedsLogin(unauthorized);
         setMessage(
-          failed.length > 0
-            ? `${successLabel} 나머지 항목은 다시 시도해 주세요.`
+          failedKinds.length > 0
+            ? `${successLabel} ${retryLabel}`
             : `${successLabel}${awarded ? ` +${awarded} XP` : ""}`,
         );
         window.dispatchEvent(new Event("beanwiki:feedback"));
         return;
       }
 
+      if (unauthorized) {
+        setNeedsLogin(true);
+        setMessage("평가와 대화는 로그인 후 참여할 수 있습니다.");
+        return;
+      }
+      if (rejectedKinds.length > 0) {
+        setMessage("연결이 원활하지 않습니다. 잠시 뒤 다시 시도해 주세요.");
+        return;
+      }
       setMessage(
         failed.some(({ payload }) => payload.error === "storage_unavailable")
           ? "현재 저장소 연결을 확인하고 있습니다. 잠시 뒤 다시 시도해 주세요."

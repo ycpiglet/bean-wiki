@@ -136,7 +136,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
     <main className="article-page">
       <JsonLd data={articleSchema} />
       <JsonLd data={breadcrumbSchema} />
-      <header className="article-header shell">
+      <header className="article-header article-detail-header shell">
         <Link href="/" className="brand" aria-label="Bean Wiki 홈">
           <BeanMark compact />
           <span>BEAN</span>

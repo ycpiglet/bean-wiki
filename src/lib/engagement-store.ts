@@ -528,7 +528,7 @@ export async function upsertArticleReview(
   actor: EngagementActor,
   articleSlug: string,
   rating: number,
-  body: string,
+  body?: string,
 ) {
   if (backend() === "d1") {
     await ensureD1Actor(actor);
@@ -542,7 +542,10 @@ export async function upsertArticleReview(
          ON CONFLICT(article_slug, email) DO UPDATE SET
            display_name = excluded.display_name,
            rating = excluded.rating,
-           body = excluded.body,
+           body = CASE
+             WHEN ? = 1 THEN excluded.body
+             ELSE article_reviews.body
+           END,
            updated_at = CURRENT_TIMESTAMP`,
       )
       .bind(
@@ -551,10 +554,17 @@ export async function upsertArticleReview(
         actor.key,
         actor.displayName,
         rating,
-        body,
+        body ?? "",
+        body === undefined ? 0 : 1,
       )
       .run();
   } else {
+    const previous =
+      body === undefined
+        ? await rest<{ body: string }[]>(
+            `article_reviews?article_slug=eq.${encodeURIComponent(articleSlug)}&actor_key=eq.${encodeURIComponent(actor.key)}&select=body&limit=1`,
+          )
+        : [];
     await rest("article_reviews?on_conflict=article_slug,actor_key", {
       method: "POST",
       prefer: "return=minimal,resolution=merge-duplicates",
@@ -563,7 +573,7 @@ export async function upsertArticleReview(
         actor_key: actor.key,
         display_name: actor.displayName,
         rating,
-        body,
+        body: body ?? previous[0]?.body ?? "",
         updated_at: new Date().toISOString(),
       }),
     });
