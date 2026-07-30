@@ -3658,11 +3658,81 @@ textarea:focus-visible,
 }
 
 /* Article engagement and privacy-preserving analytics */
+.article-action-area {
+  margin-top: 20px;
+  padding: clamp(26px, 4vw, 36px) 0 28px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.article-engagement-summary {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.article-engagement-summary > div > span {
+  color: var(--brand);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 680;
+  letter-spacing: .1em;
+}
+
+.article-engagement-summary h2 {
+  margin: 7px 0 0;
+  font-size: 23px;
+  font-weight: 720;
+  letter-spacing: -.025em;
+}
+
+.article-engagement-counts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(92px, 1fr));
+  margin: 0;
+}
+
+.article-engagement-counts > div {
+  min-width: 0;
+  padding: 1px 20px 0;
+  border-left: 1px solid var(--line);
+}
+
+.article-engagement-counts dt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.article-engagement-counts dd {
+  margin: 5px 0 0;
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 20px;
+  font-weight: 710;
+  letter-spacing: -.025em;
+}
+
+.article-engagement-counts svg {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.7;
+}
+
 .article-engagement {
   display: flex;
   align-items: center;
   gap: 12px;
-  margin-top: 22px;
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 14px;
 }
@@ -3680,7 +3750,7 @@ textarea:focus-visible,
 }
 
 .article-engagement-primary > :is(button, a),
-.article-engagement-tools > :is(button, .article-action-metric),
+.article-engagement-tools > button,
 .article-action-more > summary {
   display: inline-flex;
   align-items: center;
@@ -3749,31 +3819,6 @@ textarea:focus-visible,
 
 .article-engagement .filled {
   fill: currentColor;
-}
-
-.article-engagement-primary strong {
-  min-width: 1ch;
-  color: inherit;
-  font-family: var(--font-mono);
-  font-size: 12px;
-}
-
-.article-engagement-tools > .article-action-metric {
-  padding-inline: 7px;
-  border-color: transparent;
-  background: transparent;
-  cursor: default;
-}
-
-.article-action-metric strong {
-  color: var(--ink);
-  font-family: var(--font-mono);
-  font-size: 12px;
-}
-
-.article-action-metric small {
-  color: inherit;
-  font-size: 12px;
 }
 
 .article-action-more {
@@ -3860,6 +3905,12 @@ textarea:focus-visible,
   font-weight: 650;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.article-action-area + .article-discussion {
+  margin-top: 0;
+  padding-top: clamp(48px, 7vw, 72px);
+  border-top: 0;
 }
 
 .discussion-heading > div > p {
@@ -4554,6 +4605,24 @@ textarea:focus-visible,
 }
 
 @media (max-width: 720px) {
+  .article-engagement-summary {
+    display: block;
+  }
+
+  .article-engagement-counts {
+    width: 100%;
+    margin-top: 22px;
+  }
+
+  .article-engagement-counts > div {
+    padding-inline: 14px;
+  }
+
+  .article-engagement-counts > div:first-child {
+    padding-left: 0;
+    border-left: 0;
+  }
+
   .home-live-heading {
     display: block;
   }
@@ -4604,6 +4673,26 @@ textarea:focus-visible,
 }
 
 @media (max-width: 520px) {
+  .article-action-area {
+    padding-block: 24px;
+  }
+
+  .article-engagement-summary h2 {
+    font-size: 21px;
+  }
+
+  .article-engagement-counts {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .article-engagement-counts > div {
+    padding-inline: 10px;
+  }
+
+  .article-engagement-counts dd {
+    font-size: 18px;
+  }
+
   .article-engagement {
     display: block;
   }
@@ -4623,13 +4712,13 @@ textarea:focus-visible,
     margin-top: 8px;
   }
 
-  .article-engagement-tools > :is(button, .article-action-metric),
+  .article-engagement-tools > button,
   .article-action-more {
     flex: 1 1 calc(50% - 4px);
     min-width: 0;
   }
 
-  .article-engagement-tools > :is(button, .article-action-metric),
+  .article-engagement-tools > button,
   .article-action-more > summary {
     width: 100%;
     padding-inline: 8px;
@@ -7787,7 +7876,7 @@ body {
   word-break: keep-all;
 }
 
-.home-fact-panel a {
+.home-fact-panel > a {
   width: fit-content;
   margin-top: auto;
   padding-top: 24px;

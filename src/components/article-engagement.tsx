@@ -149,9 +149,43 @@ export function ArticleEngagement({
   const commentCount =
     data?.comments.filter((item) => !item.deletedAt).length ?? 0;
   const loginHref = `/account?returnTo=${encodeURIComponent(path)}`;
+  const metricValue = (value: number) =>
+    data ? value.toLocaleString("ko-KR") : "—";
 
   return (
-    <div className="article-action-area">
+    <section
+      className="article-action-area"
+      aria-labelledby={`article-reactions-${slug}`}
+    >
+      <div className="article-engagement-summary">
+        <div>
+          <span>READER SIGNALS</span>
+          <h2 id={`article-reactions-${slug}`}>문서 반응</h2>
+        </div>
+        <dl className="article-engagement-counts">
+          <div>
+            <dt>
+              <EyeIcon />
+              조회
+            </dt>
+            <dd>{metricValue(data?.views ?? 0)}</dd>
+          </div>
+          <div>
+            <dt>
+              <HeartIcon filled={false} />
+              좋아요
+            </dt>
+            <dd>{metricValue(data?.likes.total ?? 0)}</dd>
+          </div>
+          <div>
+            <dt>
+              <ChatIcon />
+              댓글
+            </dt>
+            <dd>{metricValue(commentCount)}</dd>
+          </div>
+        </dl>
+      </div>
       <div className="article-engagement" aria-label="문서 활동과 도구">
         <div className="article-engagement-primary">
           <button
@@ -162,21 +196,14 @@ export function ArticleEngagement({
             aria-pressed={data?.likes.viewerLiked ?? false}
           >
             <HeartIcon filled={data?.likes.viewerLiked ?? false} />
-            <span>좋아요</span>
-            <strong>{(data?.likes.total ?? 0).toLocaleString("ko-KR")}</strong>
+            <span>{data?.likes.viewerLiked ? "좋아요 취소" : "좋아요"}</span>
           </button>
           <a href="#reader-conversation">
             <ChatIcon />
-            <span>댓글</span>
-            <strong>{commentCount}</strong>
+            <span>댓글 쓰기</span>
           </a>
         </div>
         <div className="article-engagement-tools">
-          <span className="article-action-metric" title="누적 문서 조회">
-            <EyeIcon />
-            <strong>{(data?.views ?? 0).toLocaleString("ko-KR")}</strong>
-            <small>조회</small>
-          </span>
           <button
             type="button"
             className={scrapped ? "is-active" : undefined}
@@ -233,7 +260,7 @@ export function ArticleEngagement({
           <Link href={loginHref}>로그인하면 좋아요·활동 기록이 계정에 저장됩니다 →</Link>
         )}
       </div>
-    </div>
+    </section>
   );
 }
 
