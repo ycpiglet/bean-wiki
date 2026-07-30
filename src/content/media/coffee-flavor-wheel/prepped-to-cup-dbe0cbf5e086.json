@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:eeb0d7de-e9cc-4f78-b0e5-9d1fa11cbae9",
+  "articleSlug": "coffee-flavor-wheel",
+  "section": "structure",
+  "localPath": "/article-media/coffee-flavor-wheel/prepped-to-cup-dbe0cbf5e086.jpg",
+  "sha256": "dbe0cbf5e0861eb72e4c45bb99795dbe1f6f6252c1dae5e1d0aec2452ae94944",
+  "bytes": 203529,
+  "mime": "image/jpeg",
+  "alt": "커핑을 준비하기 위해 같은 양의 분쇄 커피를 세 잔에 나누어 담고 르완다 원두를 함께 놓은 모습",
+  "caption": "같은 커피를 여러 잔에 같은 조건으로 나누어 준비하면 한 번의 강한 인상보다 반복해서 감지되는 향미를 확인하기 쉽습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "eeb0d7de-e9cc-4f78-b0e5-9d1fa11cbae9",
+    "title": "Prepped to Cup",
+    "author": "nalundgaard",
+    "sourceUrl": "https://www.flickr.com/photos/43547678@N00/2900394948",
+    "originalUrl": "https://live.staticflickr.com/3187/2900394948_8a0f7f1e49_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/3187/2900394948_8a0f7f1e49_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T09:19:39.878Z",
+    "researchManifest": "coffee-flavor-wheel-2026-07-30.json",
+    "query": "coffee cupping Ethiopia",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

@@ -3,6 +3,7 @@ import "server-only";
 import { getRuntimeBindings } from "../../platform/runtime-bindings";
 import type { PlatformUser } from "@/lib/platform-auth";
 import type { Role } from "@/lib/roles";
+import type { LiveSignals } from "@/lib/live-signals-types";
 
 export type EngagementActor = {
   key: string;
@@ -962,6 +963,207 @@ export async function getAnalyticsDashboard(
     countries: countries.results.map(numberPoint),
     hours: hours.results.map(numberPoint),
   };
+}
+
+const PUBLIC_TRAFFIC_FLOOR = 5;
+const LIVE_RETENTION_DAYS = 90;
+
+type RankedSignal = {
+  slug: string;
+  views: number;
+};
+
+export async function getLiveSignals(): Promise<Omit<LiveSignals, "articleCount">> {
+  if (backend() === "supabase") {
+    const [today, week, month, retained] = await Promise.all([
+      getAnalyticsDashboard(1),
+      getAnalyticsDashboard(7),
+      getAnalyticsDashboard(30),
+      getAnalyticsDashboard(LIVE_RETENTION_DAYS),
+    ]);
+    return {
+      available: true,
+      generatedAt: new Date().toISOString(),
+      refreshSeconds: 60,
+      today: {
+        views: today.totals.views,
+        visitors: today.totals.uniqueDailyReaders,
+      },
+      retained: {
+        days: LIVE_RETENTION_DAYS,
+        views: retained.totals.views,
+        dailyVisitors: retained.totals.uniqueDailyReaders,
+      },
+      trend: week.trend.map((point) => ({
+        day: point.key,
+        views: point.value,
+        visitors: point.secondary ?? 0,
+      })),
+      popular: {
+        day: today.topArticles.slice(0, 5).map(toRankedSignal),
+        week: week.topArticles.slice(0, 5).map(toRankedSignal),
+        month: month.topArticles.slice(0, 5).map(toRankedSignal),
+      },
+      // The current Supabase compatibility RPC does not expose the velocity
+      // baseline. Keep this empty rather than deriving a misleading ranking.
+      trending: [],
+    };
+  }
+
+  const db = d1();
+  if (!db) throw new EngagementStoreUnavailableError();
+  const today = new Date().toISOString().slice(0, 10);
+  const weekFrom = shiftIsoDay(today, -6);
+  const monthFrom = shiftIsoDay(today, -29);
+  const retainedFrom = shiftIsoDay(today, -(LIVE_RETENTION_DAYS - 1));
+  const baselineFrom = shiftIsoDay(today, -7);
+
+  const [
+    todayTotals,
+    retainedTotals,
+    trend,
+    dayPopular,
+    weekPopular,
+    monthPopular,
+    trending,
+  ] = await Promise.all([
+    db
+      .prepare(
+        `SELECT COUNT(*) AS views,
+                COUNT(DISTINCT session_hash) AS visitors
+           FROM page_views WHERE day = ?`,
+      )
+      .bind(today)
+      .first<{ views: number; visitors: number }>(),
+    db
+      .prepare(
+        `SELECT COUNT(*) AS views,
+                COUNT(DISTINCT day || ':' || session_hash) AS dailyVisitors
+           FROM page_views WHERE day >= ? AND day <= ?`,
+      )
+      .bind(retainedFrom, today)
+      .first<{ views: number; dailyVisitors: number }>(),
+    db
+      .prepare(
+        `SELECT day, COUNT(*) AS views,
+                COUNT(DISTINCT session_hash) AS visitors
+           FROM page_views
+          WHERE day >= ? AND day <= ?
+          GROUP BY day
+         HAVING COUNT(DISTINCT session_hash) >= ?
+          ORDER BY day ASC`,
+      )
+      .bind(weekFrom, today, PUBLIC_TRAFFIC_FLOOR)
+      .all<{ day: string; views: number; visitors: number }>(),
+    popularQuery(db, today, today),
+    popularQuery(db, weekFrom, today),
+    popularQuery(db, monthFrom, today),
+    db
+      .prepare(
+        `SELECT current.entity_key AS slug,
+                current.views AS views,
+                ROUND((current.views + 1.0) /
+                  ((COALESCE(baseline.views, 0) / 7.0) + 1.0), 2) AS ratio
+           FROM (
+             SELECT entity_key, COUNT(*) AS views,
+                    COUNT(DISTINCT session_hash) AS visitors
+               FROM page_views
+              WHERE day = ? AND entity_type = 'article'
+              GROUP BY entity_key
+           ) AS current
+           LEFT JOIN (
+             SELECT entity_key, COUNT(*) AS views
+               FROM page_views
+              WHERE day >= ? AND day < ? AND entity_type = 'article'
+              GROUP BY entity_key
+           ) AS baseline ON baseline.entity_key = current.entity_key
+          WHERE current.views >= 10 AND current.visitors >= ?
+            AND (current.views + 1.0) /
+                ((COALESCE(baseline.views, 0) / 7.0) + 1.0) >= 1.5
+          ORDER BY ratio DESC, current.views DESC
+          LIMIT 5`,
+      )
+      .bind(today, baselineFrom, today, PUBLIC_TRAFFIC_FLOOR)
+      .all<{ slug: string; views: number; ratio: number }>(),
+  ]);
+
+  const todayVisitors = Number(todayTotals?.visitors ?? 0);
+  const retainedVisitors = Number(retainedTotals?.dailyVisitors ?? 0);
+  return {
+    available: true,
+    generatedAt: new Date().toISOString(),
+    refreshSeconds: 60,
+    today: {
+      views:
+        todayVisitors >= PUBLIC_TRAFFIC_FLOOR
+          ? Number(todayTotals?.views ?? 0)
+          : 0,
+      visitors:
+        todayVisitors >= PUBLIC_TRAFFIC_FLOOR ? todayVisitors : 0,
+    },
+    retained: {
+      days: LIVE_RETENTION_DAYS,
+      views:
+        retainedVisitors >= PUBLIC_TRAFFIC_FLOOR
+          ? Number(retainedTotals?.views ?? 0)
+          : 0,
+      dailyVisitors:
+        retainedVisitors >= PUBLIC_TRAFFIC_FLOOR ? retainedVisitors : 0,
+    },
+    trend: trend.results.map((row) => ({
+      day: String(row.day),
+      views: Number(row.views),
+      visitors: Number(row.visitors),
+    })),
+    popular: {
+      day: dayPopular.results.map(normalizeRankedSignal),
+      week: weekPopular.results.map(normalizeRankedSignal),
+      month: monthPopular.results.map(normalizeRankedSignal),
+    },
+    trending: trending.results.map((row) => ({
+      slug: String(row.slug),
+      title: "",
+      views: Number(row.views),
+      ratio: Number(row.ratio),
+    })),
+  };
+}
+
+function popularQuery(
+  db: NonNullable<ReturnType<typeof d1>>,
+  from: string,
+  to: string,
+) {
+  return db
+    .prepare(
+      `SELECT entity_key AS slug, COUNT(*) AS views
+         FROM page_views
+        WHERE day >= ? AND day <= ? AND entity_type = 'article'
+        GROUP BY entity_key
+       HAVING COUNT(DISTINCT session_hash) >= ?
+        ORDER BY views DESC, slug ASC
+        LIMIT 5`,
+    )
+    .bind(from, to, PUBLIC_TRAFFIC_FLOOR)
+    .all<RankedSignal>();
+}
+
+function normalizeRankedSignal(row: RankedSignal) {
+  return {
+    slug: String(row.slug),
+    title: "",
+    views: Number(row.views),
+  };
+}
+
+function toRankedSignal(row: AnalyticsDashboard["topArticles"][number]) {
+  return { slug: row.slug, title: "", views: row.views };
+}
+
+function shiftIsoDay(day: string, amount: number) {
+  return new Date(Date.parse(`${day}T00:00:00Z`) + amount * 86_400_000)
+    .toISOString()
+    .slice(0, 10);
 }
 
 function numberPoint(point: AnalyticsPoint): AnalyticsPoint {

@@ -58,6 +58,10 @@ export type Article = {
   // Draft articles still build (and their page renders with a badge + noindex)
   // but are excluded from listings, search, the sitemap, and the feed.
   draft?: boolean;
+  // New and actively enriched articles declare their explanatory-media gate.
+  // Legacy articles are migrated progressively instead of being padded with
+  // decorative images solely to satisfy a global count.
+  mediaMinimum?: number;
 };
 
 export type Category = {
