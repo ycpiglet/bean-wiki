@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:71d9c6e8-bb92-4f75-8038-aeb4f89ca892",
+  "articleSlug": "moka-pot-pressure-control",
+  "section": "topic-brw-06",
+  "localPath": "/article-media/moka-pot-pressure-control/moka-pot-exploded-view-c77c75c2f565.jpg",
+  "sha256": "c77c75c2f5650ebf5eb7ae507b49e79b6ae34ceb234489aa9e0b1781531ae6e5",
+  "bytes": 50430,
+  "mime": "image/jpeg",
+  "alt": "모카포트의 내부 구조를 분해해서 보여주는 도해",
+  "caption": "하단 보일러, 바스켓, 상단 수집부로 나뉜 구조를 먼저 이해해야 가열-압력형성-분리 3구간을 분리해서 진단할 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "71d9c6e8-bb92-4f75-8038-aeb4f89ca892",
+    "title": "moka-pot-exploded-view",
+    "author": "honestcoffeeguide",
+    "sourceUrl": "https://www.flickr.com/photos/199185372@N02/53205986329",
+    "originalUrl": "https://live.staticflickr.com/65535/53205986329_d4823f3eb6_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/53205986329_d4823f3eb6_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:43:02.437Z",
+    "researchManifest": "img12-3.json",
+    "query": "moka pot stovetop brewing",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

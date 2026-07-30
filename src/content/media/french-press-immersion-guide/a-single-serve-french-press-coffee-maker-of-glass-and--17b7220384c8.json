@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:4edefb6d-42c0-451d-b8eb-7d934401b300",
+  "articleSlug": "french-press-immersion-guide",
+  "section": "topic-brw-03",
+  "localPath": "/article-media/french-press-immersion-guide/a-single-serve-french-press-coffee-maker-of-glass-and--17b7220384c8.jpg",
+  "sha256": "17b7220384c8db157bd87d79f57c9e14155c391fd66402e87d61d6fee8ea68ce",
+  "bytes": 166898,
+  "mime": "image/jpeg",
+  "alt": "플런저 손잡이가 끝까지 올라온 상태로, 진한 커피가 가득 담긴 프렌치프레스",
+  "caption": "프렌치프레스는 좋은 레시피 하나가 아니라, 침지·교반·디캉팅 각 지점에서 오차가 생기는 방식으로 이해해야 재현성이 생깁니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "4edefb6d-42c0-451d-b8eb-7d934401b300",
+    "title": "A single-serve French press coffee maker of glass and black plastic sits on a red and white checkered vinyl tablecloth. It is full of dark liquid, and the plunger handle is as high as it will go.",
+    "author": "David Jackmanson",
+    "sourceUrl": "https://www.flickr.com/photos/58301516@N00/45018874942",
+    "originalUrl": "https://live.staticflickr.com/1933/45018874942_e1d61e5690_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/1933/45018874942_e1d61e5690_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:44:44.317Z",
+    "researchManifest": "img12-7.json",
+    "query": "French press coffee maker glass",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
