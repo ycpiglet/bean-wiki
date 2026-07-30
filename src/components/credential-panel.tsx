@@ -4,7 +4,11 @@
 // marks it 심사 대기; an admin has to verify it before the badge appears, so the
 // status shown here is the honest state, never an assumed pass.
 import { useState } from "react";
-import { CREDENTIAL_LABEL, type Credential, type CredentialKind } from "@/lib/profile-store";
+import {
+  CREDENTIAL_LABEL,
+  type Credential,
+  type CredentialKind,
+} from "@/lib/profile-store-contract";
 
 const KINDS = Object.entries(CREDENTIAL_LABEL) as [CredentialKind, string][];
 

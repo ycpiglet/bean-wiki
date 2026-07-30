@@ -7,72 +7,34 @@
 // service-role key, which bypasses RLS. Never import this from a client
 // component. Until SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY are set the store
 // reports itself unconfigured and the UI degrades to read-only, the same way
-// the editor behaves without OAuth credentials.
+// the editor behaves without OAuth credentials. Production requires an
+// explicit PROFILE_STORE_MODE=supabase opt-in; local development can use the
+// checked-in Supabase stack through `npm run dev:full`.
+import "server-only";
 import type { PlatformUser } from "@/lib/platform-auth";
+import {
+  CREDENTIAL_LABEL,
+  type CoffeeRole,
+  type Credential,
+  type CredentialKind,
+  type Gender,
+  type Profile,
+  type SkillTier,
+} from "@/lib/profile-store-contract";
+import { resolveProfileStoreMode } from "@/lib/profile-store-mode";
 
-export type Gender = "female" | "male" | "other" | "undisclosed";
-export type CoffeeRole =
-  | "enthusiast"
-  | "home_brewer"
-  | "barista"
-  | "roaster"
-  | "q_grader"
-  | "educator"
-  | "producer"
-  | "other";
-export type SkillTier = "unranked" | "beginner" | "intermediate" | "advanced" | "expert";
-export type CredentialStatus = "pending" | "verified" | "rejected";
-export type CredentialKind =
-  | "sca_barista"
-  | "sca_brewing"
-  | "sca_roasting"
-  | "sca_sensory"
-  | "sca_green"
-  | "q_grader"
-  | "cqi_r_grader"
-  | "wbc_competitor"
-  | "other";
-
-export type Profile = {
-  account_key: string;
-  display_name: string;
-  nickname: string | null;
-  full_name: string | null;
-  gender: Gender;
-  pronouns: string | null;
-  bio: string | null;
-  region: string | null;
-  website: string | null;
-  role: CoffeeRole;
-  years_experience: number | null;
-  quiz_score: number;
-  quiz_attempts: number;
-  quiz_best_pct: number;
-  skill_tier: SkillTier;
-  is_admin: boolean;
-  created_at: string;
-  updated_at: string;
-};
-
-export type Credential = {
-  id: string;
-  account_key: string;
-  kind: CredentialKind;
-  title: string;
-  issuer: string | null;
-  credential_id: string | null;
-  issued_on: string | null;
-  expires_on: string | null;
-  evidence_url: string | null;
-  status: CredentialStatus;
-  review_note: string | null;
-  reviewed_by: string | null;
-  reviewed_at: string | null;
-  created_at: string;
-};
+export type {
+  CoffeeRole,
+  Credential,
+  CredentialKind,
+  CredentialStatus,
+  Gender,
+  Profile,
+  SkillTier,
+} from "@/lib/profile-store-contract";
 
 export function profileStoreConfigured(): boolean {
-  return Boolean(process.env.SUPABASE_URL && process.env.SUPABASE_SERVICE_ROLE_KEY);
+  return resolveProfileStoreMode(process.env).mode === "supabase";
 }
 
 export class ProfileStoreError extends Error {
@@ -90,20 +52,28 @@ async function rest<T>(
 ): Promise<T> {
   const base = process.env.SUPABASE_URL;
   const key = process.env.SUPABASE_SERVICE_ROLE_KEY;
-  if (!base || !key) throw new ProfileStoreError("profile store not configured", 501);
+  if (!profileStoreConfigured() || !base || !key) {
+    throw new ProfileStoreError("profile store not configured", 501);
+  }
 
   const { prefer, ...rest } = init;
-  const res = await fetch(`${base}/rest/v1/${path}`, {
-    ...rest,
-    headers: {
-      apikey: key,
-      Authorization: `Bearer ${key}`,
-      "Content-Type": "application/json",
-      ...(prefer ? { Prefer: prefer } : {}),
-      ...(rest.headers ?? {}),
-    },
-    cache: "no-store",
-  });
+  let res: Response;
+  try {
+    res = await fetch(`${base}/rest/v1/${path}`, {
+      ...rest,
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${key}`,
+        "Content-Type": "application/json",
+        ...(prefer ? { Prefer: prefer } : {}),
+        ...(rest.headers ?? {}),
+      },
+      cache: "no-store",
+      signal: rest.signal ?? AbortSignal.timeout(5_000),
+    });
+  } catch {
+    throw new ProfileStoreError("profile store unavailable", 502);
+  }
 
   if (!res.ok) {
     const detail = await res.text().catch(() => "");
@@ -114,7 +84,9 @@ async function rest<T>(
     throw new ProfileStoreError(`supabase ${res.status}: ${detail.slice(0, 300)}`, 502);
   }
   if (res.status === 204) return undefined as T;
-  return (await res.json()) as T;
+  const body = await res.text();
+  if (!body) return undefined as T;
+  return JSON.parse(body) as T;
 }
 
 const PROFILE_COLS =
@@ -252,14 +224,6 @@ export function skillTierFor(bestPct: number, attempts: number): SkillTier {
   return "beginner";
 }
 
-export const SKILL_TIER_LABEL: Record<SkillTier, string> = {
-  unranked: "미측정",
-  beginner: "입문",
-  intermediate: "중급",
-  advanced: "숙련",
-  expert: "전문가",
-};
-
 // Record a graded attempt and roll the derived skill fields forward.
 export async function recordAssessment(
   accountKey: string,
@@ -303,18 +267,6 @@ export async function recordAssessment(
 }
 
 // --- Credentials ------------------------------------------------------------
-
-export const CREDENTIAL_LABEL: Record<CredentialKind, string> = {
-  sca_barista: "SCA Barista Skills",
-  sca_brewing: "SCA Brewing",
-  sca_roasting: "SCA Roasting",
-  sca_sensory: "SCA Sensory Skills",
-  sca_green: "SCA Green Coffee",
-  q_grader: "Q Grader",
-  cqi_r_grader: "CQI R Grader",
-  wbc_competitor: "WBC 출전",
-  other: "기타 자격·경력",
-};
 
 const CREDENTIAL_KINDS = Object.keys(CREDENTIAL_LABEL) as CredentialKind[];
 

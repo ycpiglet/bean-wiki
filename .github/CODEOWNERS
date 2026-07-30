@@ -1,0 +1,21 @@
+# Bean Wiki shared design contracts.
+# This records ownership and requests review. Required Code Owner approval
+# remains disabled while the repository has only one human collaborator.
+
+/.github/CODEOWNERS @ycpiglet
+/.github/workflows/ci.yml @ycpiglet
+/agents/host/MERGE-GATES.json @ycpiglet
+/docs/DESIGN.md @ycpiglet
+/package-lock.json @ycpiglet
+/package.json @ycpiglet
+/playwright.config.ts @ycpiglet
+/scripts/check-design-contract.mjs @ycpiglet
+/scripts/generate-design-tokens.mjs @ycpiglet
+/scripts/lib/design-tokens.mjs @ycpiglet
+/src/app/design/ @ycpiglet
+/src/app/globals.css @ycpiglet
+/src/app/layout.tsx @ycpiglet
+/src/components/ @ycpiglet
+/src/design/ @ycpiglet
+/tests/design-contract.test.mjs @ycpiglet
+/tests/visual/ @ycpiglet

@@ -1,28 +1,104 @@
 ---
 slug: thermal-time-agitation-control
 title: 온도·시간·교반을 함께 조절하는 추출 제어
-summary: 온도, 추출시간, 교반은 서로의 결과를 바꾸므로, 변수 간 순서를 분리해 실험할 때 재현성이 커집니다.
+summary: 온도, 추출시간, 교반은 서로 다른 축으로 작동하므로 실험에서 한 번에 한 축만 바꾸는 방식이 결과 해석의 잡음을 줄입니다.
 category: 추출
 level: 중급
-readingTime: 9분
-updatedAt: 2026. 07. 27.
+readingTime: 10분
+updatedAt: 2026. 07. 28.
 accent: blue
-fact: 온도는 속도, 시간은 깊이, 교반은 분포 균일성과 동시 효과가 있어 단일 변수로 최적화하면 오해가 생기기 쉽습니다.
-related: ["extraction-basics","brew-ratio-practice","water-for-coffee"]
+fact: 온도는 반응 속도, 시간은 총 접촉량, 교반은 접촉 분포 균일성을 바꾸므로 변수를 분리해 고정값-이동값 순서를 정하면 원인 추적이 훨씬 안정적입니다.
+related: ["extraction-basics","pour-over-rhythm-control","particle-size-distribution","espresso-machine-hydraulics-thermal","brewing-gear-guide"]
 tags: ["온도","시간","교반","변수분리","추출재현성"]
-history: [{"date":"2026. 07. 27.","note":"온도·시간·교반 제어 가이드 작성"}]
+history: [{"date":"2026. 07. 28.","note":"온도·시간·교반 분리형 실험 프레임과 실습 루프 보강"},{"date":"2026. 07. 27.","note":"온도·시간·교반 제어 가이드 작성"}]
 ---
-<h2 id="variable-roles">세 변수를 역할로 나눠 본다</h2>
-<p>온도는 일반적으로 추출 속도와 화학 반응에, 시간은 투입된 물질의 유입량에, 교반은 추출 층의 균일성에 영향을 줍니다. 세 가지를 동시에 바꾸면 어떤 신호가 어디서 왔는지 역추적하기 어렵습니다.</p>
-<p>기록의 가장 효율적인 시작은 “고정-변경-고정” 순서입니다. 먼저 기준 레시피를 확보하고, 변화 변수는 한 번에 하나만 바꿉니다.</p>
-<h2 id="order">실험 순서 제안</h2>
-<ul><li>1단계: 시간/분량/도즈를 먼저 고정하고 교반만 조정</li><li>2단계: 온도 편차가 큰 구간에서 분포 관찰</li><li>3단계: 마지막으로 시간으로 미세 보정</li></ul>
-<h2 id="profile">필터 추출 기준 템플릿</h2>
-<table><thead><tr><th>단계</th><th>우선 제어값</th><th>판단 기준</th></tr><tr><td>시작 30~45초</td><td>뜨거운 물보다 안정한 시작</td><td>원두 적심과 미분 억제</td></tr><tr><td>추출 중반</td><td>교반 패턴 고정</td><td>붓기 리듬 안정화</td></tr><tr><td>마감 10~20초</td><td>목표 시간 범위 유지</td><td>입안 잔향의 편차 축소</td></tr></tbody></table>
-<h2 id="counter">흔히 보는 반응과 완화</h2>
-<p>온도를 올렸더니 산미가 사라지고 쓴맛이 올라오면 보통 시간 단축이 아닌 교반/분배 불균형이 같이 작동한 경우가 있습니다. 이때 바로 시간을 더 줄이는 대신 교반 반복성부터 점검하는 편이 원인 추적이 빠릅니다.</p>
-<p>반대로 교반이 과하면 미분이 표면으로 이동해 바디가 무겁게 느껴질 수 있습니다. 같은 원두에서 10~15초 교반 차이가 결과를 확 바꿀 수 있으므로 기록은 시간 단위로 남깁니다.</p>
-<h2 id="self-check">자기 점검</h2>
-<ol><li>동일 레시피로 각 변수별 2회 반복했는지 점검했는가?</li><li>시간을 바꾼 경우 온도 로그는 동일했는가?</li><li>교반 유무가 가장 큰 향 변화를 만들었다면 무엇을 분리해야 하나?</li></ol>
+<h2 id="definition-axes">먼저 각 변수를 한 문장으로 분리해 본다</h2>
+<p>온도·시간·교반은 함께 쓰이는 변수처럼 보이지만, 메커니즘은 분리됩니다. 온도는 용해 속도와 반응 진행을 빠르게 바꾸며, 시간은 총 접촉량을 조절하고, 교반은 접촉이 공평하게 분포되는지를 좌우합니다.</p>
+<p>같은 레시피에서 같은 문제가 반복되더라도, 어느 축이 신호를 만들었는지 구분하지 않으면 레시피를 바꿀 때마다 의사결정이 흔들릴 수 있습니다. 해석이 흔들리는 근본은 거의 항상 축 분리가 안 된 실험 설계에서 시작됩니다.</p>
+
+<aside class="callout callout-important" data-tone="important"><p>핵심 원칙: 같은 배치에서 두 개 이상의 축을 동시에 변경하지 마세요. 축별 이동이 분리되어야 다음 단계에서 재현성 로그를 유지할 수 있습니다.</p></aside>
+
+<h2 id="three-axes">온도축·시간축·교반축의 신호 차이</h2>
+<p>같은 바리스타 실무 문맥에서도 이 차이는 분명하게 보입니다. 온도는 대개 첫 인상(향의 선명도, 과일성, 산미의 경쾌함)에 빨리 반응하고, 시간은 중반 이후의 바디와 균형을 좌우하는 경향이 커집니다.</p>
+<p>교반은 표면과 내부로 물이 퍼지는 분포를 바꾸므로 같은 농도와 시간에서도 컵 간 편차를 크게 바꾸는 역할을 합니다. 이때 미분 이동이나 채널링이 개입되면 교반 신호가 더 커집니다.</p>
+
+<h2 id="isolation-protocol">실험 프로토콜: 고정-이동-교차검증</h2>
+<p>재현성을 찾는 기본 루틴은 단순합니다. 먼저 기준 레시피를 확정한 뒤 한 축만 이동하고, 이동한 축의 효과가 반복되는지 확인합니다.</p>
+<ol>
+  <li><strong>1단계 기준화:</strong> 도즈, 분쇄, 물량, 원두량, 추출기구를 동일하게 둡니다.</li>
+  <li><strong>2단계 1축 이동:</strong> 온도 또는 시간 또는 교반 중 한 가지만 이동합니다.</li>
+  <li><strong>3단계 반복 검증:</strong> 같은 날 1회, 다음 날 1회 이상 동일 이동을 반복해 방향성만 비교합니다.</li>
+</ol>
+
+<h2 id="stage-template">구간별 관측 템플릿</h2>
+<table>
+  <thead>
+    <tr><th>구간</th><th>우선 고정값</th><th>1회차 이동축</th><th>우선 관측치</th><th>판단 임계</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>도입</td><td>분쇄·도즈·수분</td><td>온도</td><td>초기 향의 선명도, 과도한 쓴향</td><td>10분의 1 단위로 이동 확인</td></tr>
+    <tr><td>중반</td><td>온도·분쇄·교반</td><td>시간</td><td>산미/단맛 균형 이동</td><td>10~20초 단위 반복</td></tr>
+    <tr><td>마감</td><td>온도·시간</td><td>교반 패턴</td><td>컵 간 편차, 잔향 지속성</td><td>2회 반복에서 동일 방향성</td></tr>
+  </tbody>
+</table>
+
+<h2 id="mapping-by-method">장비별 적용 지도</h2>
+<p>변수 축의 민감도는 장비별로 다르게 보입니다. 이 차이를 알면 같은 축 실험을 장비 간로 옮겨도 오해가 적습니다.</p>
+<ul>
+  <li><strong>푸어오버:</strong> 교반(분배) 축이 민감도가 높습니다. 작은 붓기 차이가 분포 편차로 이어질 수 있습니다.</li>
+  <li><strong>침지형 추출:</strong> 시간 축이 상대적으로 직관적으로 보이며, 교반은 분포를 보정하는 보조 축으로 쓰기 쉽습니다.</li>
+  <li><strong>에스프레소:</strong> 온도축의 변동이 끝맛과 밸런스를 빠르게 옮기므로 시간·교반 이동보다 선제적으로 고정이 필요합니다.</li>
+</ul>
+
+<h2 id="common-misconceptions">흔한 오해 정리</h2>
+<p>오해는 대부분 ‘변수 하나가 모든 문제를 해결한다’는 단정에서 나옵니다.</p>
+<ul>
+  <li><strong>오해:</strong> 온도만 올리면 산미가 줄고 단단한 바디가 생긴다.<br/><strong>정정:</strong> 온도 상승은 방향성을 바꿀 수 있지만, 교반 분포가 불안정하면 쓴맛이 더 빨리 증가할 수 있습니다.</li>
+  <li><strong>오해:</strong> 시간을 줄이면 과추출 문제가 자동으로 사라진다.<br/><strong>정정:</strong> 분배와 교반이 뒤엉킨 상태라면 시간만 줄여서는 컵 편차를 완화하지 못할 수 있습니다.</li>
+  <li><strong>오해:</strong> 교반은 미묘한 설정이므로 생략해도 된다.<br/><strong>정정:</strong> 교반은 미세하게 보여도 재현성에는 큰 축입니다. 반복 로그가 없으면 가장 먼저 의심해야 하는 축이 됩니다.</li>
+  <li><strong>오해:</strong> 1회 실험 로그만 있으면 최적점을 잡을 수 있다.<br/><strong>정정:</strong> 1회 이상 반복하지 않으면 축별 신호와 우연 신호를 구분하기 어렵습니다.</li>
+  <li><strong>오해:</strong> 외부 표준 수치만 맞추면 동일한 결과를 보장한다.<br/><strong>정정:</strong> 기준 수치도 원두, 기기, 습도 조건에서 변위가 생깁니다.</li>
+</ul>
+
+<h2 id="practice-loop">실습: 4회 분해 루프</h2>
+<p>한 번의 실험 설계로 끝내지 말고 아래 순환을 한 번 수행해 축을 고정하십시오.</p>
+<ol>
+  <li>회차 1: 기준조건에서 동일 레시피 2회 기록(기준편차 설정).</li>
+  <li>회차 2: 온도만 1단계 변경(예: 2~4°C), 교반·시간 동일.</li>
+  <li>회차 3: 시간을 변경해 중반 추출 강도를 비교.</li>
+  <li>회차 4: 교반 패턴만 바꾸고, 2일 연속 반복으로 컵 간 편차 확인.</li>
+</ol>
+
+<aside class="callout callout-tip" data-tone="tip"><p>실습의 목적은 ‘좋은 맛 레시피’ 단정이 아니라 ‘해석 가능한 레시피’ 확보입니다. 먼저 원인이 재현되는 축을 찾은 뒤에 선호 축으로 넘어가세요.</p></aside>
+
+<h2 id="glossary">핵심 용어</h2>
+<ul>
+  <li><strong>축 분리:</strong> 실험에서 한 번에 한 변수 집합만 의도적으로 바꾸는 방식.</li>
+  <li><strong>재현성:</strong> 동일 조건에서 같은 방향의 결과가 반복되는 정도.</li>
+  <li><strong>교차 검증:</strong> 1일차 신호가 다음 날 동일 장비에서 유지되는지 확인하는 단계.</li>
+  <li><strong>교반축:</strong> 수면·내부 분포의 균일성을 만드는 설정과 동작의 집합.</li>
+</ul>
+
 <h2 id="references">참고 자료</h2>
-<ul><li><a data-wikilink="water-for-coffee" href="/wiki/water-for-coffee">물 온도·수질 기초</a></li><li><a data-wikilink="brew-ratio-practice" href="/wiki/brew-ratio-practice">비율과 농도</a></li><li><a data-wikilink="pour-over-rhythm-control" href="/wiki/pour-over-rhythm-control">붓기 리듬 제어</a></li></ul>
+<ul>
+  <li><a data-wikilink="extraction-basics" href="/wiki/extraction-basics">추출의 기본 구조</a></li>
+  <li><a data-wikilink="brew-profile-observables" href="/wiki/brew-profile-observables">추출 관측 지표</a></li>
+  <li><a data-wikilink="brew-ratio-practice" href="/wiki/brew-ratio-practice">비율 실험 프레임</a></li>
+  <li><a data-wikilink="pour-over-rhythm-control" href="/wiki/pour-over-rhythm-control">푸어오버 붓기 리듬 정렬</a></li>
+  <li><a data-wikilink="particle-size-distribution" href="/wiki/particle-size-distribution">입자 분포와 균일성</a></li>
+  <li><a data-wikilink="permeability-channeling-control" href="/wiki/permeability-channeling-control">투과성·채널링 진단</a></li>
+  <li><a data-wikilink="espresso-preinfusion-guide" href="/wiki/espresso-preinfusion-guide">프리인퓨전 정렬</a></li>
+  <li><a data-wikilink="espresso-machine-hydraulics-thermal" href="/wiki/espresso-machine-hydraulics-thermal">에스프레소 열역학</a></li>
+  <li><a data-wikilink="brewing-gear-guide" href="/wiki/brewing-gear-guide">추출 도구 정리</a></li>
+  <li><a href="https://www.sca.coffee/education/education-courses">SCA 교육자료: 커피 추출 기반</a></li>
+  <li><a href="https://www.cuppafoundation.org/resources">CUP 추출 과학 리소스</a></li>
+</ul>
+
+<h2 id="self-check">자기 점검</h2>
+<ol>
+  <li>기준 레시피를 2회 이상 반복해 기본 분산 폭을 확보했는가?</li>
+  <li>온도 축 이동 시 교반·시간은 완전히 고정했는가?</li>
+  <li>시간 축 이동으로 생긴 신호가 다음 날에도 유지되는지 확인했는가?</li>
+  <li>교반 패턴 변경 이후 컵 간 편차가 줄어든 건지 증가한 건지 분리 기록했는가?</li>
+  <li>결과 판단에서 단일 수치가 아닌 축 분리 증거를 근거로 적었는가?</li>
+</ol>

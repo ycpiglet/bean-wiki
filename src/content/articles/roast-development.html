@@ -4,19 +4,37 @@ title: 로스팅 발달 시간 이해하기
 summary: 1차 크랙 이후의 시간만으로 로스팅을 판단하지 않고 전체 열 이력을 읽는 관점을 정리합니다.
 category: 로스팅
 level: 중급
-readingTime: 10분
-updatedAt: 2026. 07. 20.
+readingTime: 12분
+updatedAt: 2026. 07. 28.
 accent: copper
 fact: 같은 발달 시간 비율이라도 배치 크기, 열량과 이전 단계의 에너지에 따라 전혀 다른 결과가 나올 수 있습니다.
-related: ["cupping-basics","roast-profile-design","coffee-processing"]
-tags: ["로스팅","프로파일","품질관리"]
-history: [{"date":"2026. 07. 20.","note":"발달 시간 관점 초안 작성"}]
+related: ["roast-development-signals","roast-profile-design","coffee-cherry-to-bean","cupping-basics"]
+tags: ["로스팅","프로파일","품질관리","발달시간","배치관리"]
+history: [{"date":"2026. 07. 20.","note":"발달 시간 관점 초안 작성"},{"date":"2026. 07. 28.","note":"발달 프레임을 운영 의사결정·실습·오해·퀴즈·참고자료 구조로 확장"}]
 ---
 <h2 id="definition">발달은 1차 크랙 이후만의 일이 아닙니다</h2>
 <p>현장에서는 1차 크랙 시작부터 배출까지를 발달 구간으로 부르는 경우가 많습니다. 기록과 소통에는 유용하지만, 향미를 만드는 반응은 로스팅 전 과정에서 연속적으로 일어납니다.</p>
-<p>따라서 발달 시간이나 비율 하나를 품질의 목표값처럼 사용하기보다 투입 온도, 에너지 적용, 변화율과 배출 상태를 함께 읽어야 합니다.</p>
-<h2 id="signals">함께 기록할 신호</h2>
-<p>기계가 보여주는 온도는 센서 위치와 반응 속도에 영향을 받습니다. 곡선만 보지 말고 색, 향, 소리, 배기 상태와 물리적 변화를 함께 기록하면 배치 간 비교가 더 정확해집니다.</p>
-<ul><li>투입량과 생두의 밀도·수분</li><li>가스 또는 전력 입력의 변경 시점</li><li>배기와 드럼 속도</li><li>옐로 포인트, 1차 크랙과 배출 시점</li><li>감량률, 색도와 컵 결과</li></ul>
-<h2 id="evaluation">프로파일의 답은 컵에서 확인합니다</h2>
-<p>좋은 프로파일은 보기 좋은 곡선이 아니라 의도한 향미를 반복해서 만들어내는 프로파일입니다. 같은 조건으로 커핑하고 로스팅 기록과 결과를 연결해야 의미 있는 기준이 생깁니다.</p>
+<p>따라서 발달 시간이나 비율 하나를 품질의 목표값처럼 고정하기보다 투입 온도, 에너지 적용, 반응 변화율, 배출 상태를 함께 읽어야 합니다.</p>
+
+<h2 id="timeline">발달 구간의 단계별 목표</h2>
+<ul><li><strong>건조 구간:</strong> 수분 제거와 열 균일화가 핵심입니다. 이 구간이 불안정하면 후반 전체가 흔들립니다.</li><li><strong>메이라즈 구간:</strong> 당도와 색 변화가 시작되며 향미 전환이 급격해집니다.</li><li><strong>발달 구간:</strong> 크랙 이후의 마무리 동작이 산미·바디·쓴맛 균형에 직접 반영됩니다.</li></ul>
+<aside class="callout callout-note" data-tone="note"><p>발달을 “구간 시간”만으로 보지 말고, 각 구간 전환의 안정성을 먼저 판단하면 과열·저열 리스크를 먼저 줄일 수 있습니다.</p></aside>
+
+<h2 id="signals">동시에 기록할 핵심 신호</h2>
+<p>기계 표시값은 센서 위치와 반응 속도에 영향을 받습니다. 곡선만 보지 말고 색, 향, 소리, 배기 상태와 물리적 변화를 함께 기록하면 배치 간 비교 정확도가 높아집니다.</p>
+<table><thead><tr><th>신호</th><th>주로 보는 이유</th><th>점검 포인트</th></tr><tr><td>생두 투입량·밀도·수분</td><td>가열 반응량 차이를 보정</td><td>동일 원두 간 비교군에서 표준화</td></tr><tr><td>1차 크랙 시작/끝 시점</td><td>과발달 위험을 가늠</td><td>1차/2차 크랙 간 시간 비율 점검</td></tr><tr><td>옥시드 배기/냄새</td><td>과산화·당 분해 징후 확인</td><td>기기 노후·오염 신호와 구분</td></tr><tr><td>배출 직후 쿨링</td><td>마감 신호를 고정</td><td>냉각 속도 편차 기록</td></tr></tbody></table>
+
+<h2 id="decision">운영 의사결정 프레임</h2>
+<ol><li><strong>목표 향미 정렬:</strong> 산미를 살릴지 바디를 키울지 우선 문장으로 고정</li><li><strong>변수 고정 원칙:</strong> 조정할 때는 한 번에 한 축만 변경</li><li><strong>검증:</strong> 동일 원두로 동일 비율 반복 추출 후 감각 편차를 확인</li><li><strong>기준 고정:</strong> 감각이 좁은 범위로 모이면 새 설정으로 고정</li></ol>
+
+<h2 id="risk-map">자주 일어나는 실패 패턴</h2>
+<table><thead><tr><th>패턴</th><th>해석</th><th>우선 조치</th></tr><tr><td>1차 크랙만 빠르게 도착</td><td>초반 열투입 과잉 가능성</td><td>건조~메이라즈 구간 화력 완화</td></tr><tr><td>개발 후반에 떼어지듯 밍밍해짐</td><td>디벨롭 비율을 형성하지 못한 신호</td><td>디벨롭 2단 분할 조정(시간·쿨링)</td></tr><tr><td>각 배치마다 색만 같고 맛이 넓게 흔들림</td><td>초기 조건 변화 또는 측정 불일치</td><td>투입 수분·기록 템플릿 재점검</td></tr></tbody></table>
+
+<h2 id="practice">실습: 3회 배치 안정화 루틴</h2>
+<ol><li>기준 레시피를 정해 동일 원두 3회 배치만 먼저 처리</li><li>각 배치에서 1차 크랙 시점, 디벨롭 비율, 감각 코멘트만 기록</li><li>1회차와 2회차의 차이를 기준값으로 계산 후 3회차는 오직 한 축만 조정</li><li>컵에서 산미·바디·쓴맛이 균형 있게 모일 때만 다음 배치에서 변수를 확장</li></ol>
+
+<h2 id="quiz">자기 점검</h2>
+<ul><li>왜 “총 로스팅 시간”보다 “구간 전환의 안정성”이 먼저 필요할까요?</li><li>같은 총 시간을 써도 결과가 달라지는 두 조건은 무엇일까요?</li><li>디벨롭 단계에서 가장 먼저 점검해야 하는 3가지 지표는?</li><li>과발달을 추정할 때 크랙 타이밍만 보지 말고 함께 보는 신호는?</li></ul>
+
+<h2 id="references">참고 자료</h2>
+<ul><li><a href="https://www.illoway.com/coffee-roasting-basics">로스팅 기초: 열구간 개념 요약</a></li><li><a href="https://sca.coffee/research-and-science">SCA 과학 자료(로스팅·품질·측정)</a></li><li><a href="https://www.cqa.org/">Coffee Quality Association, 로스팅 품질 항목</a></li><li><a data-wikilink="roast-profile-design" href="/wiki/roast-profile-design">로스팅 프로파일 설계</a></li><li><a data-wikilink="coffee-aroma-chemistry" href="/wiki/coffee-aroma-chemistry">로스팅 후 향미 화학 해석</a></li></ul>

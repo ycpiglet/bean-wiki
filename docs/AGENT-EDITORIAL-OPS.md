@@ -36,9 +36,11 @@ npm run publish:content:live -- --message "docs(content): publish coffee taxonom
 스테이징 대상은 콘텐츠 경로로 제한됩니다.
 
 - `src/content/articles`
+- `src/content/media`
 - `src/content/resources.ts`
 - `src/content/recommendations.ts`
 - `src/content/redirects.json`
+- `public/article-media`
 
 ## 역할 라인업
 
@@ -54,6 +56,7 @@ npm run publish:content:live -- --message "docs(content): publish coffee taxonom
 | `naturalness-editor` | 번역투·AI스러운 반복·딱딱한 연결어 교정 | 문장 단위, 의미 보존 |
 | `quiz-and-practice-builder` | 퀴즈, 자기 점검, 실습 루틴 작성 | 실습·퀴즈 섹션 |
 | `wiki-link-architect` | 내부 링크, related, 역링크 친화 문장 보강 | `<a data-wikilink>`, related |
+| `image-researcher` | 허용 라이선스 이미지 검색·증거·로컬 적용 | `public/article-media`, `src/content/media`, figure |
 | `release-captain` | 검증, 충돌 확인, 커밋·push·배포 상태 확인 | git, npm scripts |
 
 ## 작업 토폴로지
@@ -75,7 +78,8 @@ npm run publish:content:live -- --message "docs(content): publish coffee taxonom
 3. `quiz-and-practice-builder`
 4. `wiki-link-architect`
 5. `naturalness-editor`
-6. `release-captain`
+6. `image-researcher`
+7. `release-captain`
 
 한 파일에 여러 역할이 붙을 때는 위 순서대로 진행합니다. 동시에 같은 파일을 수정하지
 않습니다.
@@ -122,6 +126,17 @@ order.json 등록뿐이다. 기존 글과 중복하지 말고, frontmatter, 6~8�
 너는 Bean Wiki의 wiki-link-architect다. 지정된 글의 내부 위키 링크와 related를
 고도화하라. 존재하는 slug를 우선 사용하고, 없는 주제는 붉은 링크 후보로 남길지
 새 기획 주제로 분리할지 제안하라. 커밋하지 마라.
+```
+
+### image-researcher
+
+```text
+너는 Bean Wiki의 image-researcher다. docs/IMAGE-RESEARCH.md를 기준으로 지정된
+글에서 시각 자료가 꼭 필요한 위치를 고르고 research:images로 후보를 조사하라.
+CC0·PD·CC BY·CC BY-SA이며 작가·라이선스 URL·원본 페이지가 확인된 자료만
+실제 이미지를 열어 검토하라. SCA/WCR 공식 향미 휠처럼 NC·ND·유료 계약 자료는
+복제하지 말고 공식 링크로 분리하라. 채택 자료는 apply:image로 이미지·증거
+JSON·figure를 함께 생성하되 게시하거나 push하지 마라.
 ```
 
 ### release-captain

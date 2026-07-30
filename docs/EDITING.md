@@ -71,7 +71,8 @@ Client ID와 새로 만든 Client secret을 환경변수로 넣습니다.
 | `AUTH_ORIGIN` | 선택 | 프록시 환경에서 OAuth redirect_uri 오리진 고정용 |
 | `GITHUB_CONTENT_TOKEN` | 권장 | PR 제안 대행용 fine-grained PAT(`contents:write` + `pull requests:write`). push 권한 없는 연동 사용자의 저장을 브랜치+PR로 스테이징. **익명 커밋에는 더 이상 사용되지 않음** |
 | `UNSPLASH_ACCESS_KEY` | 선택 | Unsplash 이미지 검색. 미설정 시 Wikimedia Commons만 동작 |
-| `AUTH_TRUST_PLATFORM_HEADERS` | OpenAI Apps 호스팅 전용 | `1`이면 `oai-authenticated-user-*` 헤더를 로그인된 신원으로 인정. **인바운드 헤더를 제거하는 인증 프록시 뒤에서만** 설정할 것 — Vercel 배포에는 절대 설정하지 말 것(누구나 헤더로 타인·관리자 사칭 가능). 미설정 시 세션 쿠키만 신뢰 |
+| `AUTH_TRUST_PLATFORM_HEADERS` | OpenAI Apps 호스팅 전용 | `1` 또는 `true`로 명시하고 아래 `PLATFORM_GATEWAY_SECRET`도 설정한 경우에만 `oai-authenticated-user-*` 헤더 신원을 검증. **인바운드 헤더를 제거하는 인증 프록시 뒤에서만** 설정할 것 — Vercel 배포에는 절대 설정하지 말 것(누구나 헤더로 타인·관리자 사칭 가능). 미설정 시 세션 쿠키만 신뢰 |
+| `PLATFORM_GATEWAY_SECRET` | OpenAI Apps 호스팅 전용 | 16자 이상의 공유 비밀. `AUTH_TRUST_PLATFORM_HEADERS` opt-in과 함께 설정하고, 게이트웨이가 동일 값을 `x-platform-gateway-secret` 헤더로 전달할 때만 플랫폼 신원 헤더를 신뢰. 둘 중 하나라도 없으면 헤더 신원은 완전히 무시 |
 
 게시 조건: **GitHub 연동 필수**. 연동 사용자의 토큰으로 커밋하고, push 권한이
 없으면 `GITHUB_CONTENT_TOKEN`으로 PR을 제안합니다(둘 다 불가하면 403 안내).

@@ -21,10 +21,13 @@ tools: Read, Grep, Glob, WebSearch, WebFetch
 
 ## 이미지 검색 규칙
 
-- 1순위 Wikimedia Commons(재사용 자유 라이선스 확인: CC BY / CC BY-SA /
-  PD), 2순위 Unsplash. 검색은 영문 키워드로.
-- 각 후보에 대해 파일 페이지를 확인해 **작가·라이선스·출처 URL**을 기록.
-  라이선스가 불명확하면 후보에서 제외합니다.
+- 이미지가 필요하다는 편집 판단과 검색 의도를 작성한 뒤 `image-researcher`에
+  넘깁니다. 실제 자동 검색·권리 증거·로컬 적용은 `docs/IMAGE-RESEARCH.md`와
+  전용 스크립트를 따릅니다.
+- 자유 라이선스 검색은 Wikimedia Commons와 Openverse를 사용합니다.
+  Unsplash는 자동 배치가 아니라 로그인된 편집자의 수동 검색에만 사용합니다.
+- 각 후보에 대해 파일 페이지를 확인해 **작가·라이선스·라이선스 URL·출처
+  URL**을 기록합니다. 라이선스가 불명확하면 후보에서 제외합니다.
 
 ## 출력 형식
 

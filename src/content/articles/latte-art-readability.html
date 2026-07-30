@@ -1,24 +1,129 @@
 ---
 slug: latte-art-readability
-title: 라떼아트 가독성을 높이는 기본 설계
-summary: 장식보다 먼저 읽기 좋은 패턴을 만들기 위한 음영·붓기·시간 설계를 정리합니다.
+title: CAF-07 실습: 라테아트의 유동 제어
+summary: 라테아트의 재현성은 형태의 완성도보다 유입 유동 정렬에서 만들어집니다. 패턴보다 유동 제어를 먼저 고정해야 서비스 품질이 유지됩니다.
 category: 음료와 레시피
 level: 중급
-readingTime: 6분
-updatedAt: 2026. 07. 27.
+readingTime: 11분
+updatedAt: 2026. 07. 28.
 accent: berry
-fact: 라떼아트의 핵심은 대칭만이 아니라, 패턴이 커피의 맛을 가리지 않는 범위에서 재현되는지입니다.
-related: ["milk-microfoam-checklist","milk-steaming","espresso-basics"]
-tags: ["라떼아트","우유음료","붓기","디자인"]
-history: [{"date":"2026. 07. 27.","note":"라떼아트 가독성 가이드 작성"}]
+fact: 라테아트의 재현성은 패턴 형태의 완성도만이 아니라 피처 높이·유량·대비를 분리해 고정하는 유동 제어 기록에서 만들어집니다.
+related: ["milk-steaming-protein-chemistry","milk-microfoam-checklist","milk-steaming","espresso-machine-hydraulics-thermal"]
+tags: ["라테아트","피처 높이","유량 제어","패턴 가독성","CAF-07"]
+history: [{"date":"2026. 07. 27.","note":"라테아트 가독성 기초 정리 작성"},{"date":"2026. 07. 28.","note":"CAF-07 과제 반영: 유동 제어 프레임·4회 루프·오해 정리·실습·퀴즈 강화"}]
 ---
-<h2 id="focus">패턴은 시선을 안내해야 합니다</h2>
-<p>라떼아트를 고치는 목적은 “예쁘다”보다 일관적인 음료 감각을 전달하는 것입니다. 패턴 경계가 너무 거칠면 잔 온도, 붓기 시점, 거품 입자감이 뒤섞여서 음용 전 경험이 불안정해집니다.</p>
-<p>따라서 붓기 전 우선순위는 단선이 아닌, 음영의 경계와 흐름입니다. 처음부터 정교한 로고보다, 가장 단순한 하트와 로즈에서 모양 유지가 되는지 확인하는 편이 훈련 효율이 높습니다.</p>
-<h2 id="pre-pattern">시작 전 4가지 정렬</h2>
-<ul><li>우유 표면에 광택이 있고, 큰 거품 기포가 덩어리지 않았는지</li><li>샷의 크레마가 일정한지</li><li>잔 온도와 음량이 같은 범위인지</li><li>붓기 속도 1회당 시간 간격이 고른지</li></ul>
-<h2 id="basic-motions">기본 동작별 가독성 포인트</h2>
-<table><thead><tr><th>동작</th><th>목표</th><th>실패 신호</th></tr></thead><tbody><tr><td>직선 붓기</td><td>대칭 라인</td><td>선이 끊기거나 양쪽 모양이 다름</td></tr><tr><td>팔로우 동작</td><td>테두리 정렬</td><td>끝부분이 울퉁불퉁함</td></tr><tr><td>회전</td><td>입자 균일</td><td>큰 기포 집적</td></tr></tbody></table>
-<h2 id="evaluation">평가 기준</h2>
-<p>평가는 “그림”이 아니라 “재현성”으로 끝내야 합니다. 같은 패턴을 같은 조건으로 다시 만들 수 있다면 그날은 성공률이 높고, 배치 전체 품질에도 도움이 됩니다. 관람객에게 보이는 요소도 결국 재현성에서 나옵니다.</p>
-<p>실수한 경우에는 패턴 자체를 줄이고 우유 질감 보정으로 되돌리는 것이 빠르므로, 연습에서는 난도를 빠르게 낮추는 훈련이 유리합니다.</p>
+<h2 id="topic-caf07">CAF-07 핵심 정의: 유동 제어가 먼저, 패턴은 그 다음입니다</h2>
+<p>라테아트에서 실패가 반복되는 구간은 대개 패턴의 화려함이 아니라 유입 유동이 흔들리는 곳입니다. 같은 컵, 같은 크레마, 같은 피처를 쓸 때도 피처 높이와 유량이 엇갈리면 첫 2~3초 붓기부터 결과가 달라집니다.</p>
+
+<p>따라서 실무에서는 “무엇을 잘 그렸는가”보다 “어떤 유동 조건을 고정했는가”를 먼저 점검합니다. 패턴은 그 다음 단계의 산물이고, 유동은 조리 직후의 추적 가능한 신호가 있어야 다음 교대에서도 같은 상태로 이어집니다.</p>
+
+<aside class="callout callout-note" data-tone="note"><p>목표는 처음부터 완성형 패턴이 아니라, 같은 조리 조건에서 같은 유동 경로가 반복되는 것입니다.</p></aside>
+
+<h2 id="flow-model">라테아트의 3축 모델</h2>
+<p>운영에서 가장 먼저 분리하는 축은 아래 3개입니다.</p>
+<ul>
+  <li><strong>피처 높이 축:</strong> 피처가 표면에 들어오는 높이와 경사 각도는 입자 유입의 시작 신호를 좌우합니다.</li>
+  <li><strong>유량 축:</strong> 같은 속도라도 가속 구간의 길이와 종료 지점이 다르면 같은 패턴도 다르게 굳습니다.</li>
+  <li><strong>대비 축:</strong> 크레마, 거품 밀도, 음료 온도 간 대비가 패턴 경계의 선명도를 만듭니다.</li>
+</ul>
+
+<h2 id="feature-height">피처 높이: “한 번의 실패”를 줄이는 첫 기준</h2>
+<p>피처 높이는 초반 입구 반응을 만들고, 결국 붓기 시작 직후 경계선 형성 속도를 결정합니다. 실무적으로는 5단계로 고정해 두면 오차가 줄어듭니다.</p>
+<ol>
+  <li><strong>기준값 설정:</strong> 현재 피처 높이를 기준으로 시작하고, 작업자별 체감값(가슴높이, 손끝 거리)을 동일 단위로 기록합니다.</li>
+  <li><strong>실패 패턴 식별:</strong> 높이가 높을수록 초기 기포가 크게 분산되고, 낮을수록 집중되며 경계가 단단해지는 경향이 있습니다.</li>
+  <li><strong>1회 조정 규칙:</strong> 한 번에 ±1단계 이상 높이를 바꾸지 않습니다.</li>
+  <li><strong>회귀 규칙:</strong> 경계 불안정이 2회 연속이면 이전 높이로 복귀하고 기록을 유지합니다.</li>
+</ol>
+
+<aside class="callout callout-warn" data-tone="warn"><p>피처 높이를 고정하지 않고 패턴만 연습하면, 다음 배치에서 같은 형태를 다시 만들 수 없습니다. 먼저 높이-유량 조합을 로그로 고정하세요.</p></aside>
+
+<h2 id="flowrate-control">유량 축을 분리해 훈련하는 이유</h2>
+<p>유량은 패턴의 선명도보다 붓기 실패를 더 빠르게 드러내는 축입니다. 특히 동일 피처로도 유량 편차가 크면 실수 복구가 어렵습니다.</p>
+<table>
+  <thead><tr><th>신호</th><th>일반적 원인</th><th>우선 조치</th></tr></thead>
+  <tbody>
+    <tr><td>첫 붓기가 들쭉날쭉</td><td>초기 유량 과다 또는 과소</td><td>피처 높이는 고정하고 1회차만 유량 1단계 조정</td></tr>
+    <tr><td>선이 중간에서 터짐</td><td>유량 감쇄·회복 반복</td><td>종료 시점 단축 후 동일 조건에서 2회 반복</td></tr>
+    <tr><td>붓기 후 경계가 흐려짐</td><td>속도 감소 구간의 급격한 변화</td><td>감속 구간을 0.5초로 분할 관리</td></tr>
+    <tr><td>패턴의 중심이 흔들림</td><td>작업자 손목 회전 패턴 혼재</td><td>한 세션당 손목·팔 동작 중 하나만 사용</td></tr>
+  </tbody>
+</table>
+
+<h2 id="contrast-control">대비 조절: 잔에서 패턴이 읽히는 조건</h2>
+<p>패턴 가시성은 경계 대비와 크레마 상태, 그리고 표면 온도의 결합으로 결정됩니다. 대비가 선명해 보여도 바디가 무너졌다면 가독성만 좋아진 것이지 음료 완성은 아닙니다.</p>
+<ul>
+  <li><strong>크레마 대비:</strong> 너무 진하면 선이 묻히고, 너무 약하면 패턴이 죽습니다. 주문 전 크레마 상태를 분류해 각 배치마다 시작점을 고정합니다.</li>
+  <li><strong>온도 대비:</strong> 과열이 빨라지면 거품이 무너져 경계가 확산됩니다. 종료 온도 전선은 1회차에서 2회차로만 점차 보정합니다.</li>
+  <li><strong>입자 대비:</strong> 거품 입자가 거칠면 경계는 보여도 첫 모금에서 텍스처가 달라집니다. 유량과 입자 강도를 함께 기록합니다.</li>
+</ul>
+
+<h2 id="signal-map">실무 신호 지도: 언제 개입해야 하나요</h2>
+<table>
+  <thead><tr><th>단계</th><th>정상 신호</th><th>실패 신호</th><th>즉시 대응</th></tr></thead>
+  <tbody>
+    <tr><td>착수(0~3초)</td><td>입구 경계 균일, 첫줄이 흔들림 없이 성장</td><td>점착성 과잉, 기포 분산 과속</td><td>피처 높이를 1단위 내리고 감속 구간 분리</td></tr>
+    <tr><td>형성(3~6초)</td><td>테두리 두께가 동일하고 방향성이 유지</td><td>선 중심이 흔들리거나 모양이 늘어남</td><td>유량 곡선을 완만화 후 동일 높이 재시도</td></tr>
+    <tr><td>완성(6초 이후)</td><td>대비가 유지되고 잔향이 안정</td><td>끝부분이 갑자기 터지거나 점도가 무너짐</td><td>종료 속도를 고정하고 1회 훈련 반복</td></tr>
+  </tbody>
+</table>
+
+<h2 id="practical-loop-caf07">CAF-07 실무 루프(4회 분리 실습)</h2>
+<p>반복 실습은 하나의 패턴을 여러 번 그리는 과정이 아니라, 하나의 제어축을 분리해 누가 바뀌었는지 추적하는 과정입니다.</p>
+<ol>
+  <li><strong>1회차:</strong> 피처 높이만 고정하고 4잔을 동일 조건으로 기록(시작/종료 시각, 상승/감속 구간, 실패 사유).</li>
+  <li><strong>2회차:</strong> 피처 높이는 고정한 채 유량만 1단계 조정하고 경계 선명도와 중심 흔들림만 비교.</li>
+  <li><strong>3회차:</strong> 유량은 고정하고 시작 대비·크레마 대비를 함께 기록해 가독성 실패 구간을 추적.</li>
+  <li><strong>4회차:</strong> 1회차~3회차 중 가장 안정성이 높았던 조합에서 시작·종료 시점만 5~10초 재현해 동일 패턴을 검증.</li>
+</ol>
+<p>목표는 패턴 점수 상승이 아니라 같은 조정 조합에서 같은 경로가 2회 연속 반복되는지입니다.</p>
+
+<aside class="callout callout-tip" data-tone="tip"><p>실무에서 즉각 반응보다 중요한 것은 “변수가 하나인지”입니다. 변수를 하나씩 바꿨을 때만 다음 손님에게도 설명 가능한 운영 지표가 남습니다.</p></aside>
+
+<h2 id="handover-template">인수인계 템플릿(라테아트 유동)</h2>
+<ul>
+  <li><strong>기록 항목:</strong> 피처 높이(기준), 유량 단계, 종료 시점, 패턴 1차 신호(경계/균일성), 거품 질감</li>
+  <li><strong>합격 기준:</strong> 같은 피처/유량 조합에서 경계 흔들림이 없고 종료 대비가 유지되는 컵 2잔 연속</li>
+<li><strong>불합격 대응:</strong> 동일 실패 반복 시 피처 높이→유량→대비 순으로 한 단계씩 복귀해 재시도</li>
+  <li><strong>교대 전달:</strong> “현재 고정값, 마지막 변경 축, 실패 재현성(발생 여부)”를 문장 1개로 남김</li>
+</ul>
+
+<h2 id="mistakes-caf07">흔한 오해</h2>
+<ul>
+  <li>오해: 패턴 선이 곧 맛의 일관성을 뜻한다.<br/><strong>정정:</strong> 패턴은 가독성 지표이고, 컵 맛은 텍스처·크레마·온도 추적이 함께 이뤄져야 설명됩니다.</li>
+  <li>오해: 패턴 난이도를 올리면 곧바로 재현성이 좋아진다.<br/><strong>정정:</strong> 난이도는 변수를 늘리는 방향이라 초기에 실패 신호를 키울 수 있습니다.</li>
+  <li>오해: 한 번의 실패 로그면 원인과 해결책이 끝났다.<br/><strong>정정:</strong> 같은 배치에서 동일 조건 2회 이상 반복해 재현성이 떨어지는지 확인해야 합니다.</li>
+  <li>오해: 피처 높이는 촬영 구도처럼 감각적으로 맞추면 된다.<br/><strong>정정:</strong> 높이는 오차 추적값이 있어야 교대 간 전달이 가능합니다.</li>
+  <li>오해: 라테아트 유동은 추출과 무관하다.<br/><strong>정정:</strong> 크레마 상태와 샷 안정성이 흔들리면 유량 제어는 구조적으로 바뀝니다.</li>
+</ul>
+
+<h2 id="glossary">핵심 용어</h2>
+<ul>
+  <li><strong>피처 높이:</strong> 우유를 붓기 시작할 때 피처와 음료면의 상대 높이.</li>
+  <li><strong>유량 곡선:</strong> 붓기 동작에서 시간에 따라 달라지는 유입 속도의 패턴.</li>
+  <li><strong>경계 선명도:</strong> 패턴의 외곽이 유지되는 정도로, 붓기의 유동성이 급변할 때 먼저 약해집니다.</li>
+  <li><strong>대비 설계:</strong> 크레마, 거품 밀도, 표면 조도 차이를 이용해 패턴을 읽히게 만드는 조작.</li>
+  <li><strong>재현 루프:</strong> 같은 조건에서 같은 결과가 반복되도록 기록 기반으로 변수를 고정하는 실습 구조.</li>
+</ul>
+
+<h2 id="references-caf07">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="milk-steaming-protein-chemistry" href="/wiki/milk-steaming-protein-chemistry">단백질·지방이 만드는 스티밍 기본 반응</a></li>
+  <li><a data-wikilink="milk-microfoam-checklist" href="/wiki/milk-microfoam-checklist">마이크로폼 점검 체크리스트</a></li>
+  <li><a data-wikilink="milk-steaming" href="/wiki/milk-steaming">우유 스티밍</a></li>
+  <li><a data-wikilink="plant-based-milk-steaming" href="/wiki/plant-based-milk-steaming">식물성 음료 스티밍</a></li>
+  <li><a data-wikilink="espresso-machine-hydraulics-thermal" href="/wiki/espresso-machine-hydraulics-thermal">에스프레소 머신 수력·열 시스템</a></li>
+  <li><a data-wikilink="espresso-dialing-protocol" href="/wiki/espresso-dialing-protocol">에스프레소 다이얼인 프레임</a></li>
+  <li><a href="https://sca.coffee/education/" target="_blank" rel="noopener noreferrer">SCA 교육 포털</a></li>
+  <li><a href="https://www.ncausa.org/coffee-programs/coffee-certification-and-education" target="_blank" rel="noopener noreferrer">NCA 교육 가이드</a></li>
+  <li><a href="https://baristagram.com/training" target="_blank" rel="noopener noreferrer">바리스타 실무 핸들링 가이드(협회 연계)</a></li>
+</ul>
+
+<h2 id="self-check-caf07">자기 점검</h2>
+<ul>
+  <li>동일 샷에서 피처 높이만 고정했을 때 유량만 조정한 결과가 왜 더 안정적으로 보이나요?</li>
+  <li>패턴 선명도가 높아도 왜 컵의 첫 모금 체감이 나빠질 수 있나요?</li>
+  <li>실패 신호가 1회차에서만 발생했다면 바로 원인 단정이 되지 않는 이유는 무엇인가요?</li>
+  <li>교대자에게 전달할 때 꼭 남겨야 할 3개 값은 무엇인가요?</li>
+  <li>재현 루프의 핵심 판단은 무엇이 반복될 때 성립하나요?</li>
+</ul>

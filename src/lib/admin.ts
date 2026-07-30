@@ -3,9 +3,10 @@
 // wiki to readers meant losing the only privilege check. Sign-in is now open
 // and privilege is a separate, much smaller list.
 //
-// ADMIN_EMAILS is a comma-separated list of account emails. It is the bootstrap
-// source of truth (no database round-trip needed to grant the first admin);
-// profiles.is_admin can additionally promote someone from the database.
+// ADMIN_EMAILS is a comma-separated list of credential-review admins. It is
+// deliberately separate from PLATFORM_OWNER_EMAILS, which controls D1-backed
+// platform/operator permissions. profiles.is_admin can additionally promote a
+// reviewer from the optional Supabase expertise store.
 import type { PlatformUser } from "@/lib/platform-auth";
 
 export function adminEmails(): string[] {

@@ -4,7 +4,10 @@
 // turns a submission into a public badge, so the evidence link is front and
 // centre and a rejection asks for a reason the submitter will see.
 import { useState } from "react";
-import { CREDENTIAL_LABEL, type Credential } from "@/lib/profile-store";
+import {
+  CREDENTIAL_LABEL,
+  type Credential,
+} from "@/lib/profile-store-contract";
 
 export function CredentialReview({ initial }: { initial: Credential[] }) {
   const [items, setItems] = useState(initial);

@@ -1,76 +1,240 @@
 ---
 slug: green-bean-grading-defects
-title: 생두 등급과 결점: 거래의 언어를 용도별 품질 판단으로 연결하기
-summary: 생두 등급은 절대적인 맛의 척도가 아니라 공통 분류 언어입니다. 결점 해석은 용도, 로스팅 강도, 추출 조건과 함께 설계해야 오차가 줄어듭니다.
+title: 생두 등급과 결점: 거래 언어에서 용도 설계로 가는 운영 프레임
+summary: 생두 등급은 ‘좋고 나쁨’의 고정 점수보다 의사결정 좌표입니다. 물성 결함과 감각 결함을 분리해 용도별 허용 기준으로 연결하면 재현성 있는 계약·선별·로스팅 판단이 가능해집니다.
 category: 산지와 생두
 level: 중급
-readingTime: 13분
-updatedAt: 2026. 07. 27.
+readingTime: 17분
+updatedAt: 2026. 07. 30.
 accent: sage
-fact: 생두 등급은 “좋고 나쁨”의 판정보다 거래와 운영에서 쓸 수 있는 용어 체계이므로, 결점 항목은 용도별 허용 기준과 함께 기록해야 합니다.
-related: ["post-harvest-processing-map","coffee-processing","coffee-storage","sensory-defect-diagnosis","cafe-quality-system"]
-tags: ["생두 등급","결점 분류","ISO","CQI","물리평가"]
-history: [{"date":"2026. 07. 27.","note":"생두 등급 해석을 용도 기반 의사결정으로 정리"}]
+fact: 생두 등급은 거래 표준의 ‘비교 언어’이며, 결점은 컵 영향과 동일하지 않습니다. 물리 결함·감각 결함·보관 변형의 위치를 분리해 기록해야 용도별 일관성을 만들 수 있습니다.
+related: ["post-harvest-processing-map","coffee-processing","harvest-maturity-selection","green-bean-moisture-management","coffee-storage","sensory-defect-diagnosis"]
+tags: ["생두 등급","결점","ISO","SCA","CQI","용도 기반 선정"]
+history: [{"date":"2026. 07. 27.","note":"생두 등급 해석을 용도 기반 의사결정으로 정리"},{"date":"2026. 07. 30.","note":"PRO-06 확장: 등급 프레임·원인 맵·실험 루프·오해 지도·실무 점검표 보강"}]
 ---
-<h2 id="grading-purpose">등급표는 완결점수보다 공통 언어다</h2>
-<p>등급표는 생두의 상태를 절대값으로 단정하려는 문서가 아닙니다. 대신 생산자, 수입업자, 로스터, 바리스타가 같은 용어로 협업할 수 있게 해 주는 규칙입니다.</p>
-<p>그래서 같은 결점이라도 용도에 따라 다르게 다뤄야 합니다. 에스프레소 혼합 원료, 싱글오리진 분출, 대량 블렌딩은 결점 민감도가 서로 다르기 때문입니다.</p>
+<h2 id="grading-purpose">등급표는 “완결 점수”가 아니라 협업 좌표다</h2>
+<p>생두 등급은 생두의 성패를 단번에 정하는 판정표가 아닙니다. 생산자·중간상인·로스터·바리스타가 같은 논리로 의사결정할 수 있게 만든 비교 좌표입니다.</p>
+<p>이 좌표가 제대로 쓰이지 않으면 두 가지 문제가 생깁니다. 하나는 “높은 등급이면 다 좋다”는 오해로 조기 구매 결정을 하게 되고, 다른 하나는 작은 결점 편차를 과대 해석해 불필요한 선별 비용이 증가한다는 점입니다.</p>
+<aside class="callout callout-note" data-tone="note"><p>등급은 목적 없는 점수값이 아니라, 계약·선별·로스팅·보관 간의 협업 언어입니다.</p></aside>
 
-<h2 id="defect-taxonomy">결점은 물성 결함과 감각 결함으로 나누어 본다</h2>
-<p>물성 결함은 선별과 공정 단계에서 더 빨리 관리가 가능하고, 감각 결함은 로스팅 곡선과 추출 방식의 선택에 따라 노출 강도가 달라집니다.</p>
+<h2 id="grade-framework">등급 프레임의 3단계</h2>
+<ol>
+  <li><strong>분류:</strong> 어떤 결점이 관찰되었는지 타입을 정합니다.</li>
+  <li><strong>평가:</strong> 허용 범위를 기준으로 빈도와 강도를 기록합니다.</li>
+  <li><strong>적용:</strong> 로스팅/용도/가격 전략에서 실제로 무엇을 할지 결정합니다.</li>
+</ol>
+<p>이 3단계는 ISO·SCA의 용어 체계와 운영 체계에서 공통적으로 반복됩니다. 다만 현장에서는 단계 1,2를 잘못하면 단계 3의 판단이 모두 흔들립니다.</p>
+
+<h2 id="standards-logic">등급 언어가 쓰이는 실제 위치</h2>
+<p>보통 다음 네 경로 중 하나에서 결함 언어가 사용됩니다.</p>
 <ul>
-  <li><strong>물성 결함:</strong> 파손, 오염, 곰팡이 반점, 과소건조 등 눈으로 구분되는 항목</li>
-  <li><strong>감각 결함:</strong> 로스팅·추출 후 컵에서 드러나는 쓴맛, 발효취, 지저분한 향 등</li>
+  <li><strong>수입 계약:</strong> 로트의 기본 조건을 비교할 때</li>
+  <li><strong>선별·재분류:</strong> 하우스 규격과 맞추기 위해</li>
+  <li><strong>가공 피드백:</strong> 수확·발효·건조 공정 개선 판단의 기준으로</li>
+  <li><strong>레시피 설계:</strong> 용도별 블렌드 비중과 로스팅 강도 보정에 반영</li>
 </ul>
+<p>따라서 “등급표의 점수”보다 “점수의 용도 연동 방식”이 더 중요합니다.</p>
 
-<h2 id="standards-logic">규격 문구를 실무 판단으로 바꾸는 핵심</h2>
-<p>규격 항목만 외우는 방식은 오해를 만듭니다. 판정값을 “무엇을 할 것인가”로 바꾸는 습관이 중요합니다.</p>
+<h2 id="defect-types">결점 분류: 물성·감각·저장성으로 분리한다</h2>
 <table>
-  <thead><tr><th>판정 축</th><th>점검 질문</th><th>즉시 행동</th></tr></thead>
+  <thead>
+    <tr><th>분류</th><th>관찰 시점</th><th>주요 지표</th><th>일차 대응</th></tr>
+  </thead>
   <tbody>
-    <tr><td>결점 빈도</td><td>허용치 대비 초과가 반복되는가?</td><td>로트 분할 및 추가 선별 판단</td></tr>
-    <tr><td>분포 편차</td><td>특정 구역에 결점이 집중되는가?</td><td>채취 시기·수확 구획의 선별 강화</td></tr>
-    <tr><td>감각 영향</td><td>컵에서 특정 결점 신호가 반복되는가?</td><td>로스팅 프로파일 조정 또는 용도 전환</td></tr>
+    <tr>
+      <td>물성 결함</td>
+      <td>선별·입고</td>
+      <td>파손, 흰 점, 곰팡이 반점, 이물질, 오염</td>
+      <td>선별 강도, 로트 분할, 수입 조건 조정</td>
+    </tr>
+    <tr>
+      <td>감각 결함</td>
+      <td>커핑</td>
+      <td>과일부패향, 발효취, 탄화향, 떫음</td>
+      <td>로스팅·추출 레시피, 배치별 샘플링</td>
+    </tr>
+    <tr>
+      <td>저장성 결함</td>
+      <td>저장/운송 후</td>
+      <td>습윤 편차, 산패, 휘발성 손실</td>
+      <td>수분/수분활성 재점검, 재포장·보관 조건 수정</td>
+    </tr>
+  </tbody>
+</table>
+<p>가장 중요한 것은 감각 결함을 물성 결함으로만 치환해 해석하지 않는 것입니다. 감각 결함은 동일한 물성 신호에서 다르게 드러나고, 반대로 물성 결함도 추출 조건에 따라 완화 또는 증폭될 수 있습니다.</p>
+
+<h2 id="measurement-granularity">분류의 오차를 줄이는 관측 단위</h2>
+<p>단일 수치만 보면 분산을 감추고 오판이 늘어납니다. 최소한 다음 네 가지 단위는 같이 기록해야 합니다.</p>
+<ol>
+  <li>결점 빈도(건물체 결점, 감각 결점, 보관 결점)</li>
+  <li>결점 분포(로트 내 구획 편차, 상·하한 구간)</li>
+  <li>시점(입고, 선별 전, 선별 후, 보관 중반)</li>
+  <li>관찰자(생두팀, 로스팅팀, 큐핑팀)의 책임자 표시</li>
+</ol>
+<aside class="callout callout-tip" data-tone="tip"><p>기록 열을 4개로 고정하면 같은 로트라도 해석자가 바뀌어도 결과 추적이 가능해집니다.</p></aside>
+
+<h2 id="defect-taxonomy">결점 코드 매핑: ISO·SCA의 용어와 용도 간격 맞추기</h2>
+<p>규격 문구는 지역과 협회마다 완전히 동일하지 않습니다. 그러나 운영 목적은 동일합니다.</p>
+<table>
+  <thead>
+    <tr><th>운영 질문</th><th>코드/표기</th><th>실무 해석</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>표면이 분산된 갈색 반점이 많은가?</td>
+      <td>물리 결점군</td>
+      <td>저장 전처리 혹은 건조 편차 가능성 우선 점검</td>
+    </tr>
+    <tr>
+      <td>커핑에서 과일발효향이 반복되나?</td>
+      <td>감각 결함군</td>
+      <td>발효 조건·헐링·입고 지연 구간 동시 검토</td>
+    </tr>
+    <tr>
+      <td>표면은 깨끗하지만 잔에 잔향이 탁한가?</td>
+      <td>저장성 신호</td>
+      <td>수분활성·산화·포장 조건 기록 재검증</td>
+    </tr>
   </tbody>
 </table>
 
-<h2 id="decision-loop">의사결정 루틴</h2>
+<h2 id="defect-origins">결점의 원인 지도: 어디서 들어왔는지 먼저 추적</h2>
+<p>결점의 원인을 ‘잘못된 원두’라고 단정하면 리스크를 놓칩니다. 아래 4분기 지도처럼 추적하면 대응이 빨라집니다.</p>
 <ol>
-  <li>입고 즉시 결점 항목을 표준 코드로 기록</li>
-  <li>로트를 용도별로 나눠 샘플 컵을 분리 테스트</li>
-  <li>추출 결과를 선별 강도와 대응시켜 분기 규칙 수립</li>
-  <li>다음 배치에서 분기 규칙이 유지되는지 재확인</li>
+  <li><strong>수확 기원의 편차:</strong> 미숙·과숙, 과일 손상, 혼입</li>
+  <li><strong>가공기에서의 과도 반응:</strong> 발효 시간 과다, 교반 불균형, 산소 노출</li>
+  <li><strong>건조·헐링 편차:</strong> 표면 건조 과속, 내부 수분 잔류</li>
+  <li><strong>보관기 리스크:</strong> 높은 수분활성, 습윤 재노출, 패키징 문제</li>
 </ol>
+<p>각 단계는 분리되어 보이더라도 상호작용합니다. 예를 들어 수확 편차는 보관 결점으로 확대될 수 있고, 건조 편차는 감각 결함으로 감지되기도 합니다.</p>
 
-<h2 id="common-misconceptions">흔한 오해</h2>
+<h2 id="usage-map">용도별 허용 기준을 먼저 정해 분할한다</h2>
+<p>동일 결점 임계치라 해도 용도별 민감도는 다릅니다. 아래는 일반적인 적용 가이드입니다. 반드시 로트 특성에 맞게 보정하세요.</p>
+<table>
+  <thead>
+    <tr><th>용도</th><th>민감하게 보는 항목</th><th>완화 전략</th><th>기본 분기</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>싱글오리진 드립</td>
+      <td>향미 편차(과발효·곰팡이)</td>
+      <td>로트별 샘플링 강화</td>
+      <td>감각 결함이 적은 하위 배치 우선 채택</td>
+    </tr>
+    <tr>
+      <td>에스프레소 블렌드</td>
+      <td>일부 물성 결점의 평균화 가능성</td>
+      <td>혼합 후 추출 밸런스 점검</td>
+      <td>물성 편차 우선 분할 + 컵 균일성 확인</td>
+    </tr>
+    <tr>
+      <td>대량 생산(원두 재고)</td>
+      <td>수분·결점 분포 균일성</td>
+      <td>공통 로트관리 규격 고정</td>
+      <td>문제 구간 격리 후 재분류</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="decision-routine">로트 의사결정 루틴: “등급 → 샘플 → 조정” 3중 결합</h2>
+<p>매 로트마다 아래 절차를 고정하면 과거 데이터가 누적되어 판단 속도가 빨라집니다.</p>
+<ol>
+  <li><strong>입고 체크:</strong> 결점 유형·분포·수분·이력값을 기록한다.</li>
+  <li><strong>분할 샘플:</strong> 동일 로트에서 최소 두 하위군을 나눠 미각 평가를 비교한다.</li>
+  <li><strong>연결 판단:</strong> 결점 패턴을 용도별 품질 목표와 결합한다.</li>
+  <li><strong>재결정:</strong> 다음 배치에서 선별 강도, 용도 비중, 라벨 문구를 조정한다.</li>
+</ol>
+<aside class="callout callout-important" data-tone="important"><p>판정의 결과는 반드시 ‘다음 배치 액션’으로 연결되어야 합니다. 기록만 남기면 개선이 일어나지 않습니다.</p></aside>
+
+<h2 id="integration-with-processing">가공 단계와 결점 연결: 프로세스 피드백 고리</h2>
 <ul>
-  <li>오해: 등급 수치가 높으면 결점은 거의 문제없다.<br/><strong>정정:</strong> 결점 유형과 용도 조합에 따라 컵 편차는 크게 달라집니다.</li>
-  <li>오해: 결점 표기가 곧 원인이다.<br/><strong>정정:</strong> 표기는 영향의 징후일 뿐, 원인 진단은 별도 공정 분석이 필요합니다.</li>
-  <li>오해: 규격값은 로트 크기와 상관없다.<br/><strong>정정:</strong> 소량 로트라도 분포가 편향되면 실제 리스크가 커질 수 있습니다.</li>
+  <li><strong>성숙도 이슈:</strong> 후미 산뜻함보다 결점 집중이 심하면 <a data-wikilink="harvest-maturity-selection" href="/wiki/harvest-maturity-selection">성숙도 선별 기준</a> 재점검이 선행되어야 합니다.</li>
+  <li><strong>수분 관리:</strong> 수분 수치가 안정적이어도 수분활성이 높으면 보관 후 결점이 늘어납니다. <a data-wikilink="green-bean-moisture-management" href="/wiki/green-bean-moisture-management">수분관리</a> 지표와 결합해야 합니다.</li>
+  <li><strong>가공 라인:</strong> 내수출 상태에서 결점군이 급변하면 <a data-wikilink="coffee-processing" href="/wiki/coffee-processing">처리 라인</a> 조정 기록을 검토해야 합니다.</li>
+  <li><strong>보관:</strong> 장기 보관 결점은 <a data-wikilink="coffee-storage" href="/wiki/coffee-storage">보관팀</a>의 온도·습도 기록을 먼저 점검해 확인합니다.</li>
+</ul>
+<p>결점을 단계별로 되돌려보면 “어느 로트가 나쁘다”라는 결론보다 “어느 단계가 약한지”가 보입니다.</p>
+
+<h2 id="practical-debug">실패 지도: 반복되는 문제를 구조적으로 분해</h2>
+<p>현장에서는 동일 결점이 반복돼도 원인을 한 곳으로 몰아붙이기 쉽습니다. 가장 흔한 오해와 재배열은 다음과 같습니다.</p>
+<table>
+  <thead><tr><th>현상</th><th>흔한 오해</th><th>현장 분해 포인트</th></tr></thead>
+  <tbody>
+    <tr>
+      <td>발효취가 반복</td>
+      <td>“로스팅이 문제다”</td>
+      <td>체류 시간·건조 전 표면 수분·입고 지연 순서 점검</td>
+    </tr>
+    <tr>
+      <td>바디만 거칠고 산미가 둔함</td>
+      <td>“품종이 원래 그럴 수 있다”</td>
+      <td>결점 분포와 파쇄물 비율, 보관 수분활성 추적</td>
+    </tr>
+    <tr>
+      <td>분쇄 편차가 커짐</td>
+      <td>“버 관리만 문제다”</td>
+      <td>표면 손상·결점 집중 여부 + 파티클 분포 확인</td>
+    </tr>
+    <tr>
+      <td>로트 간 컵 편차 확대</td>
+      <td>“추출기 고장”</td>
+      <td>입고 분할 구간의 결점 빈도 불균형, 샘플링 수량 검토</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="workflow-templates">실무 템플릿: 2주 품질 루프</h2>
+<p>변화를 검증하려면 최소 2주 동안 같은 문법으로 추적해야 합니다.</p>
+<ol>
+  <li><strong>1주차:</strong> 기존 규칙 그대로 진행하되 결점 항목별 빈도·분포만 표준화해 기록</li>
+  <li><strong>2주차:</strong> 한 변수만 변경해 비교한다(예: 선별 임계치 또는 수분 목표치)</li>
+  <li>매주 1회 커팅 샘플을 분리해 용도별 컵 테스트를 수행한다.</li>
+  <li>재현성이 높은 개선 항목만 다음 배치 규칙에 반영한다.</li>
+</ol>
+<p>변경 폭이 크면 한 번에 2개 이상 바꾸지 않습니다. 같은 원인이 아닌 요인이 함께 바뀌면 실패 지도 작성이 불가능합니다.</p>
+
+<h2 id="handoff">교대/팀 인수인계를 위한 최소 전달 데이터</h2>
+<ul>
+  <li>로트 ID와 가공 일자</li>
+  <li>결점 빈도 상위 3개 + 각 분포(상·중·하)</li>
+  <li>용도별 분기 결과(드립/에스프레소/블렌드)</li>
+  <li>보정 액션 1개와 보류 액션 1개</li>
+</ul>
+<p>이 항목이 없으면 팀 교대 시 같은 로트를 둘러싼 오해가 반복됩니다.</p>
+
+<h2 id="common-misconceptions">흔한 오해 정정</h2>
+<ul>
+  <li>오해: “등급 점수가 높으면 결점이 실질적으로 낮다.”<br/><strong>정정:</strong> 등급은 유형 분류의 시작점이지, 컵의 우열을 단정하지 않습니다.</li>
+  <li>오해: “감각 결함은 모두 건조 실패다.”<br/><strong>정정:</strong> 수확·건조·보관 신호가 겹쳐 결합되는 경우가 많습니다.</li>
+  <li>오해: “ISO, SCA 용어는 유통용 문구에 불과하다.”<br/><strong>정정:</strong> 문구가 다르더라도 기록 정합성 확보에는 분류 체계가 필요합니다.</li>
+  <li>오해: “한 번 판단하면 다음에도 반복 적용하면 된다.”<br/><strong>정정:</strong> 시즌·재배 구획·원두 운송 조건이 바뀌면 임계치 재검증이 필요합니다.</li>
 </ul>
 
-<h2 id="practice">실습: 로트별 결점 로그 템플릿</h2>
-<ol>
-  <li>결점 항목 5개를 항목 코드로 정리</li>
-  <li>선별 전후 샘플을 분리해 향미 변화만 기록</li>
-  <li>결점 집중이 높은 항목은 로트 내 하한·상한 영역으로 재분할</li>
-  <li>7일 뒤 같은 구조로 재테스트해 변동 패턴 비교</li>
-</ol>
+<h2 id="glossary">핵심 용어</h2>
+<ul>
+  <li><strong>물리결함:</strong> 선별 시점에 직접 식별 가능한 결함군.</li>
+  <li><strong>감각결함:</strong> 커핑에서 반복 관찰되는 불쾌 향미·식감군.</li>
+  <li><strong>분포 편차:</strong> 로트 내부에서 결함이 고르게 나타나지 않는 상태.</li>
+  <li><strong>용도 분기:</strong> 컵 타깃에 따라 결점 허용 범위를 다르게 정하는 결정.</li>
+</ul>
 
 <h2 id="references">참고 자료</h2>
 <ul>
-  <li><a href="https://www.iso.org">ISO 공식 문헌 포털</a></li>
-  <li><a href="https://cqi.com">CQI 표준 개요</a></li>
-  <li><a href="https://www.wcr.org">WCR 품질 가이드</a></li>
-  <li><a href="https://www.sca.coffee">SCA 교육·커핑 자료</a></li>
-  <li><a data-wikilink="sensory-defect-diagnosis" href="/wiki/sensory-defect-diagnosis">결점 향미 진단</a></li>
-  <li><a data-wikilink="coffee-storage" href="/wiki/coffee-storage">원두 보관</a></li>
+  <li><a href="https://www.iso.org/" target="_blank" rel="noopener noreferrer">ISO 공식 포털(품질·기준 문헌 안내)</a></li>
+  <li><a href="https://cqi.com" target="_blank" rel="noopener noreferrer">Coffee Quality Institute, Grading Framework</a></li>
+  <li><a href="https://www.sca.coffee" target="_blank" rel="noopener noreferrer">SCA Coffee Standards</a></li>
+  <li><a data-wikilink="coffee-processing" href="/wiki/coffee-processing">커피 가공 방식 개요</a></li>
+  <li><a data-wikilink="post-harvest-processing-map" href="/wiki/post-harvest-processing-map">수확 후 가공 지도</a></li>
+  <li><a data-wikilink="green-bean-moisture-management" href="/wiki/green-bean-moisture-management">생두 수분 관리</a></li>
+  <li><a data-wikilink="harvest-maturity-selection" href="/wiki/harvest-maturity-selection">성숙도와 수확 선택성</a></li>
 </ul>
 
 <h2 id="quiz">자기 점검</h2>
 <ul>
-  <li>동일한 결점 값이라도 용도에 따라 판단이 달라지는 이유는?</li>
-  <li>결점 분포 편차가 보일 때 먼저 점검할 항목은?</li>
-  <li>선별 전후 샘플을 나눠 기록해야 하는 이유는?</li>
-  <li>정합성 없는 등급 판정이 반복될 때의 수정 우선순위는?</li>
+  <li>생두 등급이 높은 로트에서 왜 결점 편차가 클 수 있는지 사례로 설명해 보세요.</li>
+  <li>물성 결함과 감각 결함을 하나씩 나눠 기록하지 않았을 때 생기는 오해는?</li>
+  <li>용도별로 같은 결점 임계치를 쓰면 어떤 위험이 생기나요?</li>
+  <li>재발하는 감각 이슈를 추적할 때 단계별 원인 지도는 어떻게 구성하나요?</li>
+  <li>2주 루프에서 한 번에 하나의 변수만 바꾸는 이유는 무엇인가요?</li>
+  <li>다음 배치 인수인계 문서에서 반드시 남겨야 하는 항목 4개는?</li>
 </ul>

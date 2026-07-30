@@ -1,0 +1,273 @@
+---
+slug: roastery-cafe-business-economics
+title: 로스터리·카페 사업 경제학: 가격·회전율·인력의 네 축으로 운영 안정성을 설계하는 법
+summary: 단가 인상만으로는 수익이 유지되지 않습니다. 수율·재고회전·고정비·인건비를 동등한 운영 축으로 동기화해야 지속 가능한 매장 운영이 됩니다.
+category: 지속가능성과 거래
+level: 전문
+readingTime: 24분
+updatedAt: 2026. 07. 30.
+accent: sage
+fact: 로스터리·카페 경제성은 원두 수율, 재고회전, 고정비/변동비 구조, 인력 운영이 상호작용해 결정되며 축별 분해 후 재조정해야 실질 이익이 보장됩니다.
+related: ["farm-to-cafe-value-chain","coffee-futures-and-differentials","green-bean-purchase-contracts-and-logistics","cafe-menu-pricing-quality","cafe-shift-operations"]
+tags: ["사업경제","로스터리 경제학","수익성","재고회전","인건비","가격설정"]
+history: [{"date":"2026. 07. 28.","note":"IND-10 로스터리·카페 사업 경제학 초안 작성"},{"date":"2026. 07. 30.","note":"IND-10 보강: 수익 구조를 4축 회계 프레임·운영 루프·실패 지도·가격 번역 규칙으로 확장"},{"date":"2026. 07. 30.","note":"IND-10 추가 보강: 의사결정 트리, 월간 거버넌스 규정, 성과 추적 템플릿, 교대 요약 템플릿 추가"}]
+---
+<h2 id="what-to-optimize">최적화 대상은 메뉴 하나가 아니라 운영 시스템입니다</h2>
+<p>가격이 오르는 것과 수익이 올라가는 것은 다릅니다. 사업 경제학은 시스템의 병목을 고정시킨 뒤에야 가격 전략이 제대로 작동합니다.</p>
+<p>로스터리·카페에서는 아래 4축 동기화가 선행되어야 합니다.</p>
+<table>
+  <thead>
+    <tr><th>축</th><th>의사결정 변수</th><th>왜 중요한가</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>수익축</td>
+      <td>메뉴 가격, 판매량, 객단가</td>
+      <td>매출만 높이면 되는 구조가 아닌지 점검.</td>
+    </tr>
+    <tr>
+      <td>효율축</td>
+      <td>수율, 폐기율, 제조시간, 회전속도</td>
+      <td>재료와 시간을 실제 수익으로 바꾸는 속도 지표.</td>
+    </tr>
+    <tr>
+      <td>비용축</td>
+      <td>고정비, 가변비, 유지보수비, 재료비</td>
+      <td>매출 하락기에도 견디는 비용 구조를 만듦.</td>
+    </tr>
+    <tr>
+      <td>거버넌스축</td>
+      <td>담당 역할, 가격 승인 룰, 보고주기</td>
+      <td>변경이 분기 단위로만 누적되지 않게 제어.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="profit-map">사업 손익을 4분면으로 분해한다</h2>
+<table>
+  <thead>
+    <tr><th>분면</th><th>측정 항목</th><th>실무 질문</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>판매 분면</td>
+      <td>메뉴별 판매량, 객단가, 재구매율</td>
+      <td>매출 증가가 어떤 메뉴군에서 기인하는가?</td>
+    </tr>
+    <tr>
+      <td>생산 분면</td>
+      <td>생두 수율, 로스팅 손실, 추출 편차</td>
+      <td>어느 단계에서 생산이 현금 손실로 바뀌는가?</td>
+    </tr>
+    <tr>
+      <td>비용 분면</td>
+      <td>재료비, 인건비, 감가상각, 임대</td>
+      <td>고정비 충당력이 충분한 메뉴군은?</td>
+    </tr>
+    <tr>
+      <td>재고 분면</td>
+      <td>회전율, 폐기율, 노후비용</td>
+      <td>과잉 재고가 현금흐름을 막는 구간은?</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="yield-and-quality">수익화가 흔들리는 4가지 수율 포인트</h2>
+<p>로스터리에서 수익 손실이 생기는 지점은 보통 양품 판정 밖에서 시작됩니다.</p>
+<ol>
+  <li><strong>원두 투입 손실:</strong> 저장·운송·입고 검수에서 발생하는 조기 손실.</li>
+  <li><strong>로스팅 손실:</strong> 배치별 과열, 수분 편차, 분진 손실.</li>
+  <li><strong>제조 손실:</strong> 추출 실패, 과다 추출, 대기시간 누적.</li>
+  <li><strong>폐기 손실:</strong> 표준 레시피와 달리 나간 음료 재작업·반품.</li>
+</ol>
+<p>수율 개선은 품질을 함께 본 뒤 해야 합니다. 수율만 올린 뒤 폐기가 커지면 단기 이익은 가짜 신호가 됩니다.</p>
+<aside class="callout callout-note" data-tone="note"><p>수율을 개선한다는 이름으로 품질을 잃으면 동일한 월 매출에서도 이익은 하락합니다. 운영팀은 폐기율과 결합 지표만 승인 조건으로 둬야 합니다.</p></aside>
+
+<h2 id="cost-stack">비용 스택: 고정/반고정/가변의 분리</h2>
+<table>
+  <thead>
+    <tr><th>유형</th><th>항목</th><th>조정 가능성</th><th>우선 관리</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>고정비</td>
+      <td>임대, 감가상각, 기본 인건비, 보험</td>
+      <td>저빈도</td>
+      <td>현금여유와 계약 안정성 확보</td>
+    </tr>
+    <tr>
+      <td>반고정비</td>
+      <td>시간외 수당, 파트타임 가변 인건비, 유지보수 준비비</td>
+      <td>중간</td>
+      <td>스케줄 조정과 공수 밸런싱</td>
+    </tr>
+    <tr>
+      <td>가변비</td>
+      <td>원두, 우유, 시럽, 포장, 전력 사용량</td>
+      <td>고빈도</td>
+      <td>변동량 추적과 낭비 감축</td>
+    </tr>
+    <tr>
+      <td>감면비</td>
+      <td>폐기·재작업·품질보정 비용</td>
+      <td>간접 조정</td>
+      <td>실행 규칙 선반영</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="pricing-rules">가격 정책 번역 규칙(6개)</h2>
+<p>가격 문구를 계약·운영 규칙으로 바꾸지 않으면 실행 주기가 흔들립니다.</p>
+<ol>
+  <li>메뉴군별 기여마진 임계값(최소 충족치)을 먼저 확정한다.</li>
+  <li>가격 변경은 원가 변동·폐기율·피크 시간대 반영을 함께 묶는다.</li>
+  <li>생산 지연이 있는 날은 동일 메뉴라도 동결/조건부 조정 규칙을 둔다.</li>
+  <li>프로모션은 기간보다 수율·폐기 영향 검토 후 승인한다.</li>
+  <li>재료 대체(우유/시럽/생두 변경)는 메뉴 단가 계산표를 함께 갱신한다.</li>
+  <li>가격 변경 결과는 2주 단위로 비교보고해 재역전 가능성을 관리한다.</li>
+</ol>
+
+<h2 id="control-loop">12주 운영 루프</h2>
+<p>한 번의 조정으로 정착되지 않습니다. 12주 단위로 축을 번갈아 고정해야 성능이 남습니다.</p>
+<ol>
+  <li>1~2주: 손익 항목을 메뉴별·시간대별로 동일 템플릿에 집계.</li>
+  <li>3주: 수율·폐기율 기준선 재설정(목표/경보치).</li>
+  <li>4주: 가격 가설 1개, 제조 동선 1개만 병행 변경.</li>
+  <li>5주: 인건비 스케줄과 물류 소요를 일치시키는 공수표 갱신.</li>
+  <li>6주: 반영 성과를 3지표(기여마진, 폐기율, 시간당 판매액)로 검증.</li>
+  <li>7~8주: 다음 메뉴군으로 변경 전 실패 패턴 3개 확인.</li>
+  <li>9주: 고정비 충당이 약한 메뉴군 1~2개를 재구성.</li>
+  <li>10주: 재고회전 임계치 상향 실험.</li>
+  <li>11주: 가격-폐기 상관이 높은 항목은 롤백 조건으로 보호.</li>
+  <li>12주: 성과 표준안을 승인하고 다음 사이클 KPI로 이관.</li>
+</ol>
+
+<h2 id="cash-conversion">현금 흐름을 지키는 7개 체크 포인트</h2>
+<ul>
+  <li>주간 매출과 실제 수금 간 지연 기간(최대 허용치 48시간)</li>
+  <li>고정비 대비 매출 충당율</li>
+  <li>원료 재구매율과 안전재고 일수</li>
+  <li>폐기율의 계절 패턴(피크 직전 급증 여부)</li>
+  <li>로스트 배치 재생산 시간</li>
+  <li>인력 교체 손실(교육 미반영 시간)</li>
+  <li>가격 변경 후 2주 내 재방문률 변화</li>
+</ul>
+
+<h2 id="handoff-rules">교대 인수인계 규칙(실행판)</h2>
+<ul>
+  <li>메뉴별 KPI 3개(기여마진률, 폐기율, 시간당 판매액)를 교대 시작 전에 갱신.</li>
+  <li>로트/로스팅 배치별 수율 로그를 제조 기록에 결합.</li>
+  <li>가격 변경 승인 기록은 가격·재료 기준·시행일을 한 칸으로 고정.</li>
+  <li>재고회전 이상 신호 2회 발생 시 다음 근무 교대에서 즉시 조치.</li>
+</ul>
+
+<h2 id="cafe10-decision-tree">사업 의사결정 트리</h2>
+<p>수익성 문제는 원인보다 흐름이 먼저 보입니다. 가격·수율·인력의 우선순위를 고정하면 의사결정이 줄어듭니다.</p>
+<ol>
+  <li><strong>1단계:</strong> 이번 주 손익 저하가 가격·수율·인력 중 어디에서 먼저 관측되는지 확인한다.</li>
+  <li><strong>2단계:</strong> 가격 변동 전에 수율 변동, 폐기율, 재고회전의 동시 연동 여부를 점검한다.</li>
+  <li><strong>3단계:</strong> 인력 부족이 원인인 경우에는 메뉴 가격이 아니라 처리량 기준을 먼저 보정한다.</li>
+  <li><strong>4단계:</strong> 수율 저하가 반복되면 계약·원두·로스팅 로그를 먼저 고정하고 메뉴 조정은 보류한다.</li>
+  <li><strong>5단계:</strong> 2주 뒤 지표(기여마진, 폐기율, 보류 건 수)로 다시 판단해 다음 조치로 넘어간다.</li>
+</ol>
+
+<h2 id="cafe10-monthly-governance">월간 거버넌스 규정</h2>
+<table>
+  <thead>
+    <tr><th>구간</th><th>점검 주제</th><th>보정 규칙</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1~2주</td>
+      <td>KPI 정합성</td>
+      <td>기여마진·폐기율·시간당 판매액의 계산 방식이 동일한지 확인</td>
+    </tr>
+    <tr>
+      <td>3~6주</td>
+      <td>가격 변경 추적</td>
+      <td>가격 변경과 수율/재고 영향이 분리되지 않으면 승인 보류</td>
+    </tr>
+    <tr>
+      <td>7~10주</td>
+      <td>인력·공정 안정성</td>
+      <td>교대 변경은 한 주차당 1개 축만 허용</td>
+    </tr>
+    <tr>
+      <td>11~12주</td>
+      <td>현금흐름 점검</td>
+      <td>회전율 하락 시 고정비 충당 비율을 재정의</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="cafe10-tracker">성과 추적 템플릿</h2>
+<ul>
+  <li>대상 기간: <code>[시작일~종료일]</code></li>
+  <li>관측 항목: 기여마진, 폐기율, 재고회전일수, 생산성</li>
+  <li>가격 실험: 조정 메뉴군, 기준값, 적용일, 롤백 조건</li>
+  <li>오차 지점: 동일 메뉴군에서 반복된 상위 2개 오차 유형</li>
+  <li>후속 조치: 다음 주 조치안(실행/보류/재검토) + 책임자</li>
+</ul>
+
+<h2 id="handoff-cafe10">교대 요약 템플릿</h2>
+<p>교대 전 5줄 요약으로 의사결정 단절을 줄입니다.</p>
+<ul>
+  <li>이번 주 핵심 지표: [지표명·값·변동 방향]</li>
+  <li>우선순위 이슈: [가격/원가/인력 중 1개]</li>
+  <li>보류 결정: [보류 사유 + 재검토일]</li>
+  <li>책임 분담: [운영/재무/구매 각 1명]</li>
+  <li>다음 교대 액션: [실행 항목 1개 + 기준값 1개]</li>
+</ul>
+
+<h2 id="failure-map">실패 지도(운영 오차)</h2>
+<ol>
+  <li>가격만 먼저 바꾸고 폐기율을 추적하지 않아 이익이 악화되는 경우</li>
+  <li>고정비 부담이 큰 메뉴의 판매 비중을 낮추지 못해 현금고갈이 반복됨</li>
+  <li>인력 스케줄이 생산 변동보다 앞서 변하지 않아 초과근무가 누적되는 경우</li>
+  <li>원두 수율 로그와 판매 로그를 같은 기준으로 결합하지 못해 오해가 생김</li>
+  <li>재고 회전 임계치가 넘었는데 폐기 조건이 늦게 반영됨</li>
+  <li>가격 정책이 프로모션 문구와 충돌해 혼선 발생</li>
+  <li>손익분기표가 메뉴별로 갱신되지 않아 의사결정이 지연됨</li>
+  <li>인수인계 문서에서 담당자 변경이 반영되지 않아 공수가 누락됨</li>
+</ol>
+
+<h2 id="common-misconceptions">흔한 오해</h2>
+<ul>
+  <li>오해: 평균 원가를 깎으면 수익이 바로 오른다.<br/>
+  <strong>정정:</strong> 원가 인하가 폐기율을 높이면 기여마진이 사실상 감소합니다.</li>
+  <li>오해: 가격 인상을 하면 수익이 즉시 개선된다.<br/>
+  <strong>정정:</strong> 수율·서비스 품질이 악화되면 반복 구매가 꺾입니다.</li>
+  <li>오해: 인건비는 최저화가 목적이다.<br/>
+  <strong>정정:</strong> 품질과 시간당 생산성 저하를 막는 최소 인력 설계가 더 중요합니다.</li>
+  <li>오해: 재고가 많으면 안정적인 수요 대응이다.<br/>
+  <strong>정정:</strong> 회전율이 낮아지면 현금압박과 노후폐기가 동시에 늘어납니다.</li>
+  <li>오해: 손익분기점만 관리하면 충분하다.<br/>
+  <strong>정정:</strong> 안전마진과 재작업 빈도도 함께 봐야 충격 흡수력이 생깁니다.</li>
+</ul>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="farm-to-cafe-value-chain" href="/wiki/farm-to-cafe-value-chain">농장-카페 가치사슬</a></li>
+  <li><a data-wikilink="coffee-futures-and-differentials" href="/wiki/coffee-futures-and-differentials">커피 선물·디퍼렌셜</a></li>
+  <li><a data-wikilink="green-bean-purchase-contracts-and-logistics" href="/wiki/green-bean-purchase-contracts-and-logistics">생두 구매·물류</a></li>
+  <li><a data-wikilink="cafe-menu-pricing-quality" href="/wiki/cafe-menu-pricing-quality">카페 메뉴 가격과 품질</a></li>
+  <li><a data-wikilink="cafe-shift-operations" href="/wiki/cafe-shift-operations">카페 교대 운영</a></li>
+  <li><a data-wikilink="climate-risks-and-just-adaptation" href="/wiki/climate-risks-and-just-adaptation">기후위험 운영 조정</a></li>
+  <li><a data-wikilink="producer-income-and-livelihood" href="/wiki/producer-income-and-livelihood">생산자 소득과 생활소득</a></li>
+  <li><a href="https://www.fao.org/">FAO 커피 가치사슬 연구</a></li>
+  <li><a href="https://www.ico.org/">ICO 시장 동향</a></li>
+  <li><a href="https://www.who.int/">WHO 위생·안전 운영 가이드</a></li>
+  <li><a href="https://www.iso.org/">ISO 9001(품질경영)</a></li>
+  <li><a href="https://www.iso.org/">ISO 14001(환경경영)</a></li>
+  <li><a href="https://www.imf.org/">IMF 물가·임금 동향</a></li>
+</ul>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>메뉴별 기여마진만 보는 판단의 한계는 무엇인가요?</li>
+  <li>현재 수익 저하의 핵심 후보 3개를 4축으로 진단해보세요.</li>
+  <li>가격 번역 규칙 6개 중 가장 먼저 고쳐야 할 항목은?</li>
+  <li>12주 루프에서 3주차와 10주차를 다르게 점검해야 하는 이유는?</li>
+  <li>재고회전율이 떨어졌을 때 우선 점검해야 하는 비용 축은?</li>
+  <li>실패 지도 항목 8개 중 반복되는 상위 2개를 잡아 대응안으로 연결해보세요.</li>
+</ul>

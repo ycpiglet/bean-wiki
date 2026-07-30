@@ -5,12 +5,12 @@ summary: 분쇄의 균일성이 추출 편차를 줄이는 핵심이므로, 기�
 category: 카페와 장비
 level: 입문
 readingTime: 11분
-updatedAt: 2026. 07. 27.
+updatedAt: 2026. 07. 28.
 accent: sand
 fact: 분쇄 입자 분포가 균일할수록 같은 조건에서 결과를 반복하기 쉬워지며, 미분 증가나 고른 분쇄 부재는 채널링과 편차를 키웁니다.
 related: ["extraction-basics","espresso-basics","particle-size-distribution"]
 tags: ["분쇄","입문","장비","추출"]
-history: [{"date":"2026. 07. 27.","note":"중급 표현을 입문 레벨로 교정하고 분배·실습·오해 항목 강화"}]
+history: [{"date":"2026. 07. 27.","note":"중급 표현을 입문 레벨로 교정하고 분배·실습·오해 항목 강화"},{"date":"2026. 07. 28.","note":"의사결정 프레임·점검표·오해 정리 강화 및 링크 정합성 개선"}]
 ---
 <h2 id="grain">분쇄가 추출의 시작점인 이유</h2>
 <p>그라인더는 “몇 단계로 갈리는가”보다 “분산이 얼마나 균일한가”가 더 많이 결과를 바꿉니다. 같은 분쇄 숫자라도 입자 분포가 넓으면 추출은 서로 다른 흐름으로 분기합니다.</p>
@@ -19,6 +19,8 @@ history: [{"date":"2026. 07. 27.","note":"중급 표현을 입문 레벨로 교�
 <h2 id="burr-types">버 타입은 성향을 바꿉니다</h2>
 <p>버(grind burr) 타입은 분쇄 곡선과 작업 특성에 영향을 줍니다. 코니컬과 플랫은 유지관리 방식과 분쇄 패턴이 다르며, 장비 용도에 따라 장점이 달라집니다.</p>
 <p>특정 타입이 항상 정답은 아니고, 동일한 로스팅·로트에서 유지관리와 청결이 일정할 때 분산 특성이 안정됩니다.</p>
+<p>초보 단계에서는 코니컬과 플랫 중 “무엇이 더 좋다”보다, 동일 로트에서 같은 분쇄 숫자를 넣었을 때의 시간 분산 폭이 줄어드는지 보는 쪽이 더 중요합니다. 같은 타입도 배관 압력, 사용량, 청결 주기에 따라 결과가 달라지므로, 운영 규칙을 고정한 뒤 비교해야 장비 성능을 정확히 판단할 수 있습니다.</p>
+<p>이 구분은 결국 실험 설계의 일부분으로 귀결됩니다.</p>
 
 <h2 id="cleaning">청결·마모·잔류물이 만드는 영향</h2>
 <p>오일, 미분, 오래된 커피 입자가 남으면 분쇄 입도는 눈에 덜 띄는 방식으로 흐트러집니다. 마모가 진행되면 미분 경향도 커져 분출 저항이 예측 불가능해질 수 있습니다.</p>
@@ -28,10 +30,19 @@ history: [{"date":"2026. 07. 27.","note":"중급 표현을 입문 레벨로 교�
 <ol><li>목표 컵(산미·바디·쓴맛 균형)을 먼저 정합니다.</li><li>도즈/비율은 유지하고 분쇄만 1단계 변경</li><li>샷 편차(시간/수율/관능)를 동일 조건에서 3회 이상 기록</li><li>목표에 가까운 분쇄 대역을 기준선으로 고정</li></ol>
 <aside class="callout callout-tip" data-tone="tip"><p>수치 자체보다 “변경 전후의 결과 패턴”을 기록하면 분쇄가 실제로 컵에서 어떻게 작동했는지 빠르게 보입니다.</p></aside>
 
-<h2 id="mistakes">흔한 실수</h2>
+<h2 id="decision">분쇄 조정 의사결정 프레임</h2>
+<p>의사결정은 “결과를 좋게 만들겠다”보다 “변동의 원인을 줄인다”로 잡는 게 더 빠릅니다.</p>
+<ol><li>실패 컷을 만든 문장 하나만 분리(예: 너무 뾰쪽하다/무겁다)</li><li>도즈·비율·온도는 고정</li><li>분쇄만 상·하 1단 조정 후 2회 반복</li><li>관능/시간의 변화 방향이 일치할 때만 다음 기준으로 이동</li></ol>
+
+<h2 id="misconceptions">흔한 오해</h2>
 <ul><li>숫자를 미세하게 바꿔도 감각만으로 과도 해석<br/>
   <p>한 번에 하나의 조건만 바꾼 뒤 결과 편차를 확인해야 원인 추적이 깔끔해집니다.</p></li><li>브러드/클린 상태를 체크하지 않음<br/>
-  <p>매일 개시 직전에 분쇄 잔류 확인은 작은 시간 투자로 큰 편차를 줄입니다.</p></li></ul>
+  <p>매일 개시 직전에 분쇄 잔류 확인은 작은 시간 투자로 큰 편차를 줄입니다.</p></li><li>깨끗한 분쇄만이 답이다<br/>
+  <p>정리 주기 자체보다 잔류물/수분 변화와 장비 사용량의 상관을 같이 봐야 결과 편차를 줄입니다.</p></li></ul>
+
+<h2 id="map">분쇄 점검 지도</h2>
+<table><thead><tr><th>목표</th><th>점검 항목</th><th>완료 판단</th></tr></thead><tbody><tr><td>재현성</td><td>샷 편차(시간, 수율)</td><td>중앙값±10% 이내</td></tr><tr><td>균일성</td><td>미분/큰 입자 분포</td><td>브루핑 패턴 정상범위</td></tr><tr><td>운영 안정성</td><td>버 온도, 청결 주기 준수</td><td>변경 전/후 오차 폭 수치화</td></tr></tbody></table>
+<table><thead><tr><th>목표</th><th>점검 항목</th><th>완료 판단</th></tr></thead><tbody><tr><td>재현성</td><td>샷 편차(시간, 수율)</td><td>중앙값±10% 이내</td></tr><tr><td>균일성</td><td>미분/큰 입자 분포</td><td>브루잉 패턴 정상범위</td></tr><tr><td>운영 안정성</td><td>버 온도, 청결 주기 준수</td><td>변경 전/후 오차 폭 수치화</td></tr></tbody></table>
 
 <h2 id="practice">실습: 동일 분쇄 분포 점검</h2>
 <p>한 원두에서 5회 반복 실험을 합니다.</p>
@@ -41,4 +52,4 @@ history: [{"date":"2026. 07. 27.","note":"중급 표현을 입문 레벨로 교�
 <ul><li>같은 분쇄 숫자라도 왜 결과가 달라질 수 있나요?</li><li>분쇄 조정에서 가장 먼저 확인할 점검 항목은?</li><li>분포가 넓으면 어떤 추출 증상이 자주 보이나요?</li><li>마모 점검을 안 하면 어떤 데이터가 먼저 깨지나요?</li></ul>
 
 <h2 id="references">참고 자료</h2>
-<ul><li><a data-wikilink="particle-size-distribution" href="/wiki/particle-size-distribution">분쇄 입자 분포와 추출의 균일성</a></li><li><a data-wikilink="brew-ratio-practice" href="/wiki/brew-ratio-practice">레시피 실습: 분쇄 고정 루프</a></li><li><a href="https://sca.coffee/education/grinder-knowledge">SCA, 그라인더 실무 참고</a></li><li><a href="https://worldcoffeeresearch.org/resources">World Coffee Research, 추출 기초 자료</a></li><li><a href="https://www.ico.org/standards/coffee-roasting">ICO 커핑·품질 자료</a></li></ul>
+<ul><li><a data-wikilink="particle-size-distribution" href="/wiki/particle-size-distribution">분쇄 입자 분포와 추출의 균일성</a></li><li><a data-wikilink="extraction-basics" href="/wiki/extraction-basics">추출 기본 설정 복기</a></li><li><a href="https://sca.coffee/education/grinder-knowledge">SCA, 그라인더 실무 참고</a></li><li><a href="https://worldcoffeeresearch.org/resources">World Coffee Research, 추출 기초 자료</a></li><li><a href="https://www.ico.org/standards/coffee-roasting">ICO 커핑·품질 자료</a></li></ul>

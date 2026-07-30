@@ -1,0 +1,155 @@
+---
+slug: recipe-comparison-experimental-design
+title: BRW-10 실습: 레시피를 비교하는 실험법
+summary: 같은 재료라도 비교 방법이 다르면 결과가 달라집니다. 레시피 비교는 랜덤화와 블라인드가 먼저 고정되어야 합니다.
+category: 추출
+level: 전문
+readingTime: 10분
+updatedAt: 2026. 07. 28.
+accent: blue
+fact: 레시피를 비교할 때는 결과보다 실험 설계의 반복성과 통제성을 먼저 확보해야 하며, 같은 시도라도 순서·라벨·기록 방식이 바뀌면 해석이 달라집니다.
+related: ["brew-experiment-design","brew-profile-observables","sensory-data-analysis","sensory-brewing-grammar","brew-ratio-practice","cupping-basics"]
+tags: ["실험설계","랜덤화","블라인드","반복","기록","BRW-10"]
+history: [{"date":"2026. 07. 28.","note":"BRW-10 초안 작성"},{"date":"2026. 07. 28.","note":"BRW-10 보강: 실패 지도, 2주 정렬 루프, 인수인계 체크리스트 추가"}]
+---
+<h2 id="topic-brw10">BRW-10 정렬: 레시피 비교는 ‘맛’보다 ‘실험 설계’부터 고정한다</h2>
+<p>BRW-10의 목적은 “어떤 레시피가 더 낫다”를 빨리 정답으로 말하는 데 있지 않습니다. 핵심은 비교가 사실상 동등한 조건에서 진행됐는지 먼저 판단할 수 있는 구조를 세우는 것입니다.</p>
+<table>
+  <thead>
+    <tr><th>축</th><th>고정값</th><th>변경값(1회차당 1개)</th><th>왜 중요한가</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>원료</td><td>원두 배치, 분쇄기</td><td>레시피만</td><td>원두·분쇄기가 바뀌면 비교 자체가 불가능</td></tr>
+    <tr><td>물</td><td>수질, 가열 방식</td><td>추출 프로필만</td><td>수질/온도 요인 제거로 추출 변수 집중</td></tr>
+    <tr><td>채점</td><td>채점 지표</td><td>점수자(가능하면 동일)</td><td>점수 척도가 달라지면 값이 왜곡됨</td></tr>
+    <tr><td>순서</td><td>랜덤 시퀀스</td><td>같은 점검표 유지</td><td>순서 편향을 통제하고 교차 오차를 줄임</td></tr>
+  </tbody>
+</table>
+
+<h2 id="randomization">랜덤화와 균형 설계</h2>
+<p>비교에서 가장 먼저 무너지는 가정은 “첫 번째가 기준 레시피라 더 좋아 보인다”는 오해입니다. 순서를 섞는 이유는 이 편향을 줄이기 위해서입니다.</p>
+<ol>
+  <li><strong>A/B 블록:</strong> 레시피를 최소 1세트로 묶고 A-B, B-A를 번갈아 배치</li>
+  <li><strong>균형 반복:</strong> 각 레시피를 적어도 2회씩 같은 분기 내에서 반복</li>
+  <li><strong>시각/온도 균질화:</strong> 잔·노출 조명·서빙 형태 고정</li>
+  <li><strong>대조군 규칙:</strong> 기존 레시피는 항상 한 번 포함해 기준 이동을 읽음</li>
+</ol>
+
+<h2 id="blinding">블라인드 설계: 레시피 라벨을 ‘비식별’로 바꾸기</h2>
+<p>브루 실험에서 블라인드는 완전한 실험실 수준이 아니어도 “누가 어떤 레시피였는지 모르게” 하면 충분히 효과가 큽니다.</p>
+<table>
+  <thead>
+    <tr><th>레벨</th><th>적용법</th><th>차단 효과</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>단일 블라인드</td><td>채점자만 레시피 비노출</td><td>기대치 편향 절반 억제</td></tr>
+    <tr><td>이중 블라인드</td><td>제공자/기록자도 레시피 비노출(가능한 범위)</td><td>자기충족 해석 위험 크게 감소</td></tr>
+    <tr><td>크로스오버 블라인드</td><td>동일 표본 교차 시점 전환 간격 고정</td><td>시간 경과 요인 오염을 낮춤</td></tr>
+  </tbody>
+</table>
+
+<h2 id="replication">반복과 유효성: 언제 판단이 안정적인가</h2>
+<p>한 번의 비교는 ‘감각 반응’에 가깝고, 반복은 ‘실험 반응’입니다. BRW-10에서는 판정 임계치를 2회 반복으로 둡니다.</p>
+<ul>
+  <li><strong>1차 반복:</strong> 2개 레시피를 반대 순서로 각각 2회 이상 수행</li>
+  <li><strong>2차 반복:</strong> 동일 간격으로 다음 세션에서 1~2일 간격 두고 재실행</li>
+  <li><strong>교차 확인:</strong> 동일 채점표로 회차별 점수 분산이 축소되는지 확인</li>
+</ul>
+
+<h2 id="failure-map-brw10">실패 지도: 비교 오차를 먼저 고립</h2>
+<table>
+  <thead>
+    <tr><th>신호</th><th>첫 분해 가설</th><th>다음 조치</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>첫 레시피가 계속 좋게 보임</td>
+      <td>순서 편향/기대 편향</td>
+      <td>A-B 교차 순서를 유지하고 블라인드 코드를 즉시 교차한다.</td>
+    </tr>
+    <tr>
+      <td>수치만 튀고 감각은 무너지지 않음</td>
+      <td>유량/추출 변수에서 노이즈</td>
+      <td>수치 항목은 변경 후 1회가 아니라 2회 누적 분포로 판단한다.</td>
+    </tr>
+    <tr>
+      <td>레시피별 분산이 과도함</td>
+      <td>로트/보관/개봉 조건 충돌</td>
+      <td>조건 로그를 분리하고, 변수가 바뀐 축부터 우선 회귀한다.</td>
+    </tr>
+    <tr>
+      <td>반복해도 판정이 흔들림</td>
+      <td>점수 표준화 미비</td>
+      <td>채점 문구·측정 시각·점수 스케일을 고정한 뒤 다시 시작한다.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="data-frame">점수·통제 프레임</h2>
+<p>점수표가 없는 BRW-10은 비교가 아니고 기록만 남는 실험입니다. 최소 5개 항목이 있어야 판정이 가능합니다.</p>
+<ul>
+  <li>향의 개방성(초기 3회 분출)</li>
+  <li>단맛-산미 균형 점수</li>
+  <li>바디/점도(촉감 기반)</li>
+  <li>마무리 잔향 지속성</li>
+  <li>재현성 점수(동일 레시피 재실행 오차)</li>
+</ul>
+
+<h2 id="common-misconceptions-brw10">BRW-10 흔한 오해</h2>
+<ul>
+  <li>오해: 한 잔의 강한 인상은 레시피의 우열을 증명한다.<br/><strong>정정:</strong> 강한 인상은 우연일 수 있으므로 반복으로 검증해야 합니다.</li>
+  <li>오해: 블라인드는 샵 운영에서 비현실적이다.<br/><strong>정정:</strong> 코드 라벨만 다르게 붙여도 충분히 적용 가능합니다.</li>
+  <li>오해: 대조군 없이도 차이를 읽을 수 있다.<br/><strong>정정:</strong> 대조군은 편향 추적의 기준점입니다.</li>
+  <li>오해: 점수표는 단순 메모면 된다.<br/><strong>정정:</strong> 같은 항목을 동일 눈금으로 기록해야 통계적 비교가 가능합니다.</li>
+  <li>오해: 한 번의 회차 패턴이 반복된다면 통과.<br/><strong>정정:</strong> 같은 조건에서 재현성(2회 이상) 검증이 기본입니다.</li>
+</ul>
+
+<h2 id="practice-brw10">실습: BRW-10 4회 비교 루프</h2>
+<ol>
+  <li>회차 1: 기준 레시피 A/B를 랜덤한 순서 4회로 배치, 순서만 고정 후 기록</li>
+  <li>회차 2: 각 레시피의 추출 파라미터만 1개씩 바꾸고 블라인드 코드로 라벨링</li>
+  <li>회차 3: 동일 기록 템플릿으로 2회 반복, 점수 분산과 중앙값 비교</li>
+  <li>회차 4: 24시간 후 동일 조건 복기 평가(메모 일관성 체크)</li>
+</ol>
+<p>최종 판정 기준: 단일 회차의 점수 최고값이 아니라, 같은 레시피 내 반복에서 오차가 축소되는지입니다.</p>
+
+<h2 id="template">BRW-10 기록 템플릿</h2>
+<ul>
+  <li>기록 항목: 배치ID, 코드(익명), 순서, 추출 시작/종료, 산도·단맛 점수, 바디 점수, 잔향 점수, 재현성 점수</li>
+  <li>판정 항목: 회차간 편차, A-B 우세 빈도, 블라인드 누출(실험자 인지 여부), 휴식 간격</li>
+  <li>합격 기준: 4개 항목 중 3개 이상에서 회차 간 변동이 수렴</li>
+</ul>
+
+<h2 id="two-week-loop-brw10">2주 정렬 루프</h2>
+<ol>
+  <li><strong>1주차:</strong> 랜덤 시드, 대조군, 점수표 형식을 고정하고 4회 비교를 종료한다.</li>
+  <li><strong>2주차:</strong> 조건이 동일한 상태에서 유지안 후보 1개를 선별해 2회 반복한다.</li>
+  <li><strong>2~3회차 결합:</strong> 보류안은 분산만 남겨 다음 배치에서 재분해할 항목으로 분리한다.</li>
+  <li><strong>최종:</strong> 유지안/조정안/보류안 3개 표지를 분기 문서로 정리한다.</li>
+</ol>
+
+<h2 id="handover-checklist-brw10">교대 인수인계 체크리스트</h2>
+<ul>
+  <li>현재 고정값(순서, 블라인드, 점수표)과 마지막 변경 축을 1줄로 남겼는가?</li>
+  <li>블라인드 누출 여부와 처리 로그를 분리해 기록했는가?</li>
+  <li>재현성 분산이 줄어든 항목과 아닌 항목을 명확히 분리했는가?</li>
+  <li>다음 교대자가 먼저 점검할 항목(대조군, 순서, 점수표) 1개를 지정했는가?</li>
+</ul>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="brew-experiment-design" href="/wiki/brew-experiment-design">실험 설계 지도</a></li>
+  <li><a data-wikilink="sensory-data-analysis" href="/wiki/sensory-data-analysis">센서리 데이터 분석</a></li>
+  <li><a data-wikilink="brew-profile-observables" href="/wiki/brew-profile-observables">추출 관측 지표</a></li>
+  <li><a data-wikilink="sensory-brewing-grammar" href="/wiki/sensory-brewing-grammar">관능 용어 정렬</a></li>
+  <li><a data-wikilink="cupping-basics" href="/wiki/cupping-basics">관능 평가 기초</a></li>
+  <li><a data-wikilink="brew-ratio-practice" href="/wiki/brew-ratio-practice">비율 조절 실습</a></li>
+</ul>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>실험에서 랜덤화가 필요한 이유를 한 문장으로 설명할 수 있나요?</li>
+  <li>블라인드가 깨졌을 때 생기는 판단 편향은 어떤 형식으로 드러나나요?</li>
+  <li>레시피 A/B 비교에서 반복 수가 부족하면 어떤 결함이 생기나요?</li>
+  <li>BRW-10 판정에서 가장 먼저 봐야 할 항목은 무엇인가요?</li>
+</ul>

@@ -1,5 +1,115 @@
 {
   "version": 3,
+  "runtimeTokenVersion": 1,
+  "runtimeTokenOrder": [
+    "--paper",
+    "--paper-deep",
+    "--ink",
+    "--muted",
+    "--prose",
+    "--prose-soft",
+    "--line",
+    "--olive",
+    "--forest",
+    "--cream",
+    "--copper",
+    "--sage",
+    "--blue",
+    "--berry",
+    "--sand",
+    "--coffee-leaf",
+    "--matcha",
+    "--lemongrass",
+    "--hibiscus",
+    "--strawberry-jam",
+    "--spent-puck",
+    "--pitcher-silver",
+    "--bread-flour",
+    "--bakers-yeast",
+    "--butter-block",
+    "--focaccia-oil",
+    "--cacao",
+    "--canele-crust",
+    "--counter-greige",
+    "--cherry",
+    "--cherry-deep",
+    "--green-bean",
+    "--parchment",
+    "--honey",
+    "--yellow-bourbon",
+    "--wet-hulled",
+    "--geisha-silver",
+    "--monsooned-gold",
+    "--coffee-chaff",
+    "--roast-light",
+    "--roast-medium",
+    "--roast-dark",
+    "--espresso",
+    "--brew-amber",
+    "--crema",
+    "--foam",
+    "--iced-latte",
+    "--cold-brew",
+    "--affogato",
+    "--brand",
+    "--brand-strong"
+  ],
+  "semanticTokens": [
+    {
+      "token": "--prose",
+      "light": "#3F463F",
+      "dark": "#CFCABC",
+      "role": "본문 문단 텍스트"
+    },
+    {
+      "token": "--prose-soft",
+      "light": "#454B45",
+      "dark": "#C4C0B3",
+      "role": "목록과 보조 본문 텍스트"
+    },
+    {
+      "token": "--line",
+      "light": "rgba(24, 32, 25, 0.16)",
+      "dark": "rgba(236, 231, 218, 0.16)",
+      "role": "구분선과 테두리"
+    },
+    {
+      "token": "--forest",
+      "light": "#26190F",
+      "dark": "#150E08",
+      "role": "호환성을 유지하는 상시 다크 패널 표면"
+    },
+    {
+      "token": "--cherry-deep",
+      "light": "#712A28",
+      "dark": "#A75950",
+      "role": "체리 계열의 깊은 보조 톤"
+    },
+    {
+      "token": "--parchment",
+      "light": "#E3D4B4",
+      "dark": "#D9C8A6",
+      "role": "옅은 커피 라이프사이클 배경"
+    },
+    {
+      "token": "--honey",
+      "light": "#C8A24C",
+      "dark": "#DDBF73",
+      "role": "허니 프로세스와 성취 강조"
+    },
+    {
+      "token": "--brand",
+      "light": "var(--roast-medium)",
+      "dark": "var(--roast-medium)",
+      "role": "사이트 프라이머리 액센트"
+    },
+    {
+      "token": "--brand-strong",
+      "light": "var(--roast-dark)",
+      "dark": "#DDB98B",
+      "role": "사이트 프라이머리 호버와 강한 강조"
+    }
+  ],
   "disclaimer": "표시된 HEX는 산지나 재료의 공식 표준색이 아니라, 출처에서 확인한 원두·공정·메뉴·도구의 장면을 바탕으로 정한 Bean Wiki의 브랜드 기준색입니다. 실제 색은 품종, 로트, 수분, 조명과 제조 조건에 따라 달라질 수 있습니다.",
   "namingPolicy": {
     "desktopColumns": 4,

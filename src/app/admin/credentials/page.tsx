@@ -22,6 +22,10 @@ export default async function AdminCredentialsPage() {
   const storeReady = profileStoreConfigured();
   const profile = user && storeReady ? await findProfile(user.accountKey).catch(() => null) : null;
   const admin = isAdminUser(user, profile);
+  const pending =
+    storeReady && user && admin
+      ? await listPendingCredentials().catch(() => null)
+      : [];
 
   return (
     <main className="article-page">
@@ -49,8 +53,11 @@ export default async function AdminCredentialsPage() {
 
         {!storeReady ? (
           <section className="acct-card acct-empty">
-            <h2>저장소가 설정되지 않았습니다</h2>
-            <p className="acct-note">SUPABASE_URL과 SUPABASE_SERVICE_ROLE_KEY를 설정해주세요.</p>
+            <h2>자격 심사가 일시 중지되었습니다</h2>
+            <p className="acct-note">
+              공개 위키는 정상적으로 이용할 수 있습니다. 로컬 개발에서는
+              <code> npm run dev:full</code>로 심사 기능을 시험할 수 있습니다.
+            </p>
           </section>
         ) : !user ? (
           <section className="acct-card acct-empty">
@@ -68,12 +75,17 @@ export default async function AdminCredentialsPage() {
                 : "관리자가 지정되지 않았습니다. ADMIN_EMAILS 환경변수를 설정해주세요."}
             </p>
           </section>
+        ) : pending === null ? (
+          <section className="acct-card acct-empty">
+            <h2>저장소에 연결하지 못했습니다</h2>
+            <p className="acct-note">잠시 후 다시 시도해주세요.</p>
+          </section>
         ) : (
           <section className="acct-card">
             <div className="acct-card-head">
               <h2>심사 대기</h2>
             </div>
-            <CredentialReview initial={await listPendingCredentials()} />
+            <CredentialReview initial={pending} />
           </section>
         )}
       </div>

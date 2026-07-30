@@ -1,24 +1,74 @@
-# CI workflow template. To activate: copy this file to
-# `.github/workflows/ci.yml`. (Pushing anything under .github/workflows/
-# requires a git token with the `workflow` scope, which the automation token
-# used here lacked — hence it lives in docs/ for now.)
 name: CI
 
 on:
   pull_request:
   push:
     branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
 
 jobs:
   verify:
-    runs-on: ubuntu-latest
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, linux, x64, bean-wiki-linux]
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - uses: actions/setup-node@v4
         with:
           node-version: "24"
           cache: npm
       - run: npm ci
-      - run: npm run lint
-      - run: npm run check-content
-      - run: npm run build
+      - run: npm run test:profile-store
+      - run: npm run test:platform-auth
+      - run: npm run verify
+
+  design-contract:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, linux, x64, bean-wiki-linux]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run design:check
+
+  design-visual:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    needs: design-contract
+    runs-on: [self-hosted, linux, x64, bean-wiki-linux]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium
+      - run: npm run design:visual
+      - name: Upload visual regression evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-visual-${{ github.run_id }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14

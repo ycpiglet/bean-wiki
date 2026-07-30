@@ -1,0 +1,417 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bean-wiki.example/schemas/beanote-scan-observation-v1.schema.json",
+  "title": "Beanote scan observation API response v1",
+  "description": "API envelope and scan_observation.v1 resources for Beanote Data API v1.",
+  "type": "object",
+  "required": [
+    "contract_version",
+    "schema_version",
+    "request_id",
+    "snapshot_at",
+    "privacy",
+    "lineage",
+    "page",
+    "data"
+  ],
+  "properties": {
+    "contract_version": {
+      "const": 1
+    },
+    "schema_version": {
+      "const": "scan_observation.v1"
+    },
+    "request_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 160
+    },
+    "snapshot_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "privacy": {
+      "$ref": "#/$defs/privacy"
+    },
+    "lineage": {
+      "$ref": "#/$defs/lineage"
+    },
+    "page": {
+      "$ref": "#/$defs/page"
+    },
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/scan_observation"
+      },
+      "maxItems": 500
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "privacy": {
+            "properties": {
+              "tier": {
+                "const": "T1"
+              }
+            },
+            "required": [
+              "tier"
+            ]
+          }
+        }
+      },
+      "then": {
+        "properties": {
+          "data": {
+            "items": {
+              "properties": {
+                "raw_value": {
+                  "type": "null"
+                },
+                "confidence": {
+                  "type": "null"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "$defs": {
+    "privacy": {
+      "type": "object",
+      "required": [
+        "tier",
+        "subject_namespace"
+      ],
+      "properties": {
+        "tier": {
+          "type": "string",
+          "enum": [
+            "T1",
+            "T2"
+          ]
+        },
+        "subject_namespace": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        }
+      }
+    },
+    "lineage": {
+      "type": "object",
+      "required": [
+        "pipeline_name",
+        "pipeline_version",
+        "normalization_version"
+      ],
+      "properties": {
+        "pipeline_name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "pipeline_version": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 100
+        },
+        "normalization_version": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 100
+        }
+      }
+    },
+    "page": {
+      "type": "object",
+      "required": [
+        "limit",
+        "has_more",
+        "next_cursor"
+      ],
+      "properties": {
+        "limit": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 500
+        },
+        "has_more": {
+          "type": "boolean"
+        },
+        "next_cursor": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "maxLength": 2048
+        }
+      }
+    },
+    "scan_observation": {
+      "type": "object",
+      "required": [
+        "scan_field_id",
+        "scan_id",
+        "revision",
+        "record_status",
+        "updated_at"
+      ],
+      "properties": {
+        "scan_field_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "scan_id": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "revision": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "record_status": {
+          "type": "string",
+          "enum": [
+            "active",
+            "deleted"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 160
+        },
+        "raw_value": {
+          "$ref": "#/$defs/nullable_value"
+        },
+        "normalized_value": {
+          "$ref": "#/$defs/nullable_value"
+        },
+        "confidence": {
+          "type": [
+            "number",
+            "null"
+          ],
+          "minimum": 0,
+          "maximum": 1
+        },
+        "quality": {
+          "$ref": "#/$defs/quality"
+        },
+        "observed_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "updated_at": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "deleted_at": {
+          "type": [
+            "string",
+            "null"
+          ],
+          "format": "date-time"
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "record_status": {
+                "const": "active"
+              }
+            },
+            "required": [
+              "record_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "name",
+              "raw_value",
+              "normalized_value",
+              "confidence",
+              "quality",
+              "observed_at",
+              "deleted_at"
+            ],
+            "properties": {
+              "deleted_at": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "record_status": {
+                "const": "deleted"
+              }
+            },
+            "required": [
+              "record_status"
+            ]
+          },
+          "then": {
+            "required": [
+              "deleted_at"
+            ],
+            "properties": {
+              "deleted_at": {
+                "type": "string",
+                "format": "date-time"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quality": {
+                "properties": {
+                  "value_state": {
+                    "enum": [
+                      "missing",
+                      "not_collected",
+                      "redacted",
+                      "expired"
+                    ]
+                  }
+                },
+                "required": [
+                  "value_state"
+                ]
+              }
+            },
+            "required": [
+              "quality"
+            ]
+          },
+          "then": {
+            "properties": {
+              "raw_value": {
+                "type": "null"
+              },
+              "normalized_value": {
+                "type": "null"
+              },
+              "confidence": {
+                "type": "null"
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "quality": {
+                "properties": {
+                  "value_state": {
+                    "enum": [
+                      "invalid",
+                      "parse_failed"
+                    ]
+                  }
+                },
+                "required": [
+                  "value_state"
+                ]
+              }
+            },
+            "required": [
+              "quality"
+            ]
+          },
+          "then": {
+            "properties": {
+              "normalized_value": {
+                "type": "null"
+              }
+            }
+          }
+        }
+      ]
+    },
+    "quality": {
+      "type": "object",
+      "required": [
+        "value_state",
+        "verification_state",
+        "is_outlier"
+      ],
+      "properties": {
+        "value_state": {
+          "type": "string",
+          "enum": [
+            "present",
+            "missing",
+            "not_collected",
+            "redacted",
+            "expired",
+            "invalid",
+            "parse_failed"
+          ]
+        },
+        "verification_state": {
+          "type": "string",
+          "enum": [
+            "unverified",
+            "verified",
+            "corrected",
+            "not_applicable"
+          ]
+        },
+        "is_outlier": {
+          "type": [
+            "boolean",
+            "null"
+          ]
+        }
+      }
+    },
+    "nullable_value": {
+      "oneOf": [
+        {
+          "type": "string",
+          "maxLength": 20000
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "array",
+          "items": {
+            "type": [
+              "string",
+              "number",
+              "boolean",
+              "null"
+            ]
+          },
+          "maxItems": 100
+        },
+        {
+          "type": "object"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  }
+}

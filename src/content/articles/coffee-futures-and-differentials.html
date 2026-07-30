@@ -1,0 +1,152 @@
+---
+slug: coffee-futures-and-differentials
+title: 커피 선물가격과 디퍼렌셜: 계약으로 읽는 실무 가격 신호
+summary: 선물 가격과 현물 가격을 같은 프레임에서 해석하고 디퍼렌셜의 구성 요소를 분해하면 가격 협상에서의 판단 오류를 줄일 수 있습니다.
+category: 지속가능성과 거래
+level: 전문
+readingTime: 24분
+updatedAt: 2026. 07. 30.
+accent: sage
+fact: 커피 가격은 선물 지수만으로 결정되지 않고, 디퍼렌셜·환율·물류·조건 편차를 결합한 계약 구조에서 해석되어야 합니다.
+related: ["coffee-trade-history","farmer-income-basics","supply-chain-transparency","coffee-climate-resilience","climate-risk-and-quality","global-coffee-history"]
+tags: ["선물","디퍼렌셜","basis","헤지","계약","가격위험"]
+history: [{"date":"2026. 07. 28.","note":"IND-02 커피 선물시장·디퍼렌셜 초안 작성"},{"date":"2026. 07. 30.","note":"IND-02 보강: 5축 가격 신호 지도·번역 규칙·오차 지도·인수인계 규칙·6주 루프를 추가해 계약 판단력을 고정"}]
+---
+<h2 id="why-futures-only-fails">왜 선물 가격만으로는 판단이 깨질 수 있는가</h2>
+<p>선물 가격은 분명한 신호입니다. 다만 선물은 시장의 약속된 경로를 보여줄 뿐, 실제 결제는 로트별 조건으로 다시 분해되어 재합성됩니다.</p>
+<p>같은 시점의 선물 수치라도 산지 조건, 건조 경로, 선적 일정, 결제 통화가 바뀌면 실제 현물 가격은 달라집니다. 판단 오류는 대개 “선물값”을 “최종값”처럼 다룰 때 발생합니다.</p>
+<aside class="callout callout-important" data-tone="important"><p>실무에서 선물은 출발점이지 종착점이 아닙니다. 종착점은 계약 조항이 정한 디퍼렌셜 합계입니다.</p></aside>
+
+<h2 id="five-axes">가격 판단 5축 지도</h2>
+<p>가격 신호를 축별로 분해하면 어느 축이 오차의 근원인지 빠르게 잡을 수 있습니다.</p>
+<table>
+  <thead>
+    <tr><th>축</th><th>핵심 변수</th><th>측정 단위</th><th>점검 포인트</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>계약가격축</td>
+      <td>계약명칭, 산지 규격, 선적 조항</td>
+      <td>명세 항목 수, 조정 항목 수</td>
+      <td>명칭 동일성에 갇히지 않고 조항이 실제 수량·품질·품질감점 기준과 일치하는지 확인</td>
+    </tr>
+    <tr>
+      <td>품질축</td>
+      <td>수분·결점·발효 이력·로트 이력</td>
+      <td>샘플 점수, 허용 오차 범위</td>
+      <td>회차별 샘플과 계약 표준의 편차 누적</td>
+    </tr>
+    <tr>
+      <td>물류축</td>
+      <td>항구·도착지·보관 기간·보험</td>
+      <td>일 단위 지연, 온습도 이탈 횟수</td>
+      <td>선적 지연이 품질 디퍼렌셜로 넘어간 구간 존재 여부</td>
+    </tr>
+    <tr>
+      <td>자본축</td>
+      <td>환율·금리·결제 타이밍</td>
+      <td>기준일 기준 환율 변동폭, 유입 지연시간</td>
+      <td>결제 기준일과 환산일이 분리되어 있지 않은지 여부</td>
+    </tr>
+    <tr>
+      <td>시차축</td>
+      <td>선물 기준일·도착 기준일·실출고일</td>
+      <td>일별 타임갭</td>
+      <td>한 기준일에 3개 축을 섞어 계산했는지</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="contract-translation">가격·계약 번역 규칙(6개)</h2>
+<ol>
+  <li>기준일은 항상 3개를 분리한다: 선물 기준일, 인도일, 결제일.</li>
+  <li>디퍼렌셜을 항목화하기 전에 “규격 일치 여부”를 먼저 확인한다.</li>
+  <li>로트별 품질 감점은 선적 후가 아닌 샘플 승인 전 단계에서 먼저 반영한다.</li>
+  <li>보험·지연 조항은 비용이 아니라 가격 재계산 트리거로 처리한다.</li>
+  <li>환율 조정은 실물 수량 변화 없이도 가격을 바꾸므로, 회차별 고정 기준일을 둔다.</li>
+  <li>협상 전에는 최소 1회, 협상 후에는 최소 2회 이상 디퍼렌셜 재검산을 기록한다.</li>
+</ol>
+
+<h2 id="translation-vs-reality">C Contract 해석: 명칭보다 조항을 먼저 본다</h2>
+<p>교육에서 쓰는 “C Contract” 같은 용어는 출발점일 뿐입니다. 실무 판단은 문구보다 조항 가중치로 합니다.</p>
+<p>예를 들어 동일 문구라도 선적 항목이 바뀌면 보험 반영범위, 지연 패널티, 재검수 기한이 달라져 디퍼렌셜이 달라집니다.</p>
+<ul>
+  <li><strong>품질 보정항:</strong> 수분과 결점 이력의 측정 체계를 먼저 고정</li>
+  <li><strong>운송 보정항:</strong> 지연·보관 기간을 비용 항목이 아닌 위험 항목으로 취급</li>
+  <li><strong>정산 보정항:</strong> 환율 적용일과 지급일 간 간격을 독립 변수로 분리</li>
+  <li><strong>분쟁 보정항:</strong> 분쟁 시 보정 순서를 미리 기록</li>
+</ul>
+
+<h2 id="failure-map">오차 지도(가격 판단 8개)</h2>
+<ol>
+  <li>디퍼렌셜 항목이 5개 이상인데도 조정 기준을 1개 표로만 관리</li>
+  <li>로트별 샘플과 규격표를 별도 로그로 두지 않음</li>
+  <li>basis를 선물-현물 차이만으로만 계산</li>
+  <li>환율 변화를 결제일 기준이 아니라 선물 기준일에만 반영</li>
+  <li>입고 지연을 단일 비용으로 처리해 물류 리스크와 품질 리스크를 합산하지 않음</li>
+  <li>클레임 증빙이 누락되어 같은 오차를 반복</li>
+  <li>협상 이전 협의사항이 협상서에 남지 않음</li>
+  <li>다른 축의 기준일을 하나로 합산해 비교</li>
+</ol>
+
+<h2 id="handoff">교대 인수인계 규칙(실행판)</h2>
+<ul>
+  <li>교대 시작 전: 계약 기준일 3개(선물/입고/결제)와 디퍼렌셜 상위 3개를 한 줄 기록.</li>
+  <li>로트당 샘플 일치표를 입고 담당자에게 전달하고, 미흡 항목은 “보류”로 표시.</li>
+  <li>물류 지연이 발생하면 즉시 보험 조항과 품질 감점 항목을 함께 업데이트.</li>
+  <li>가격 변경 승인서는 변경 사유, 적용 시점, 확인 기준을 함께 저장.</li>
+</ul>
+
+<h2 id="loop">6주 정렬 루프</h2>
+<ol>
+  <li><strong>1주:</strong> 최근 6개월 로트 중 디퍼렌셜 상위 3건 선정, 5축표에 매핑.</li>
+  <li><strong>2주:</strong> 기준일 3개 분리 방식 적용 시 오차 감소량 계산.</li>
+  <li><strong>3주:</strong> 한 축만 변경(예: 환율 적용일만)하고 결과가 커지는지 확인.</li>
+  <li><strong>4주:</strong> 물류 지연이 있었던 로트 2개를 추려 조정 순서를 시뮬레이션.</li>
+  <li><strong>5주:</strong> 협상 프레임을 변경하지 않고 가격 승인 로그만 재정렬.</li>
+  <li><strong>6주:</strong> 3개 오차 원인을 다음 회차 승인 문항으로 고정.</li>
+</ol>
+
+<h2 id="misconceptions">흔한 오해</h2>
+<ul>
+  <li>오해: 선물 상승이면 결국 단가가 늘어난다.<br/><strong>정정:</strong> 선물 상승은 시작점입니다. 디퍼렌셜 구조가 바뀌면 현물은 별개로 움직일 수 있습니다.</li>
+  <li>오해: 디퍼렌셜은 계약 한 번 정하면 더는 변하지 않는다.<br/><strong>정정:</strong> 로트별 변수가 바뀌면 재산정 구간이 다시 열립니다.</li>
+  <li>오해: 헤지가 있으면 가격 리스크가 정리된다.<br/><strong>정정:</strong> 헤지는 변동폭 자체가 아니라 노출의 일부를 전환할 뿐입니다.</li>
+  <li>오해: C Contract 이름이 같으면 비교가 쉽다.<br/><strong>정정:</strong> 조항이 다르면 동일 명칭도 다른 가격 체계가 됩니다.</li>
+  <li>오해: 기준일은 하나면 충분하다.<br/><strong>정정:</strong> 선물 기준일·인도 기준일·결제 기준일을 분리해야 오차가 남지 않습니다.</li>
+  <li>오해: 품질 변수는 계약 후에 확인해도 된다.<br/><strong>정정:</strong> 계약 전에 품질 규격과 샘플 승인 기준을 고정해야 분쟁 비용을 줄입니다.</li>
+</ul>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="coffee-trade-history" href="/wiki/coffee-trade-history">커피 무역의 역사</a></li>
+  <li><a data-wikilink="farmer-income-basics" href="/wiki/farmer-income-basics">농가 소득 기초</a></li>
+  <li><a data-wikilink="supply-chain-transparency" href="/wiki/supply-chain-transparency">공급망 투명성</a></li>
+  <li><a data-wikilink="coffee-climate-resilience" href="/wiki/coffee-climate-resilience">기후 회복성</a></li>
+  <li><a data-wikilink="climate-risk-and-quality" href="/wiki/climate-risk-and-quality">기후 위험과 품질</a></li>
+  <li><a href="https://www.ico.org/" target="_blank" rel="noopener noreferrer">ICO 커피 시장 자료</a></li>
+  <li><a href="https://www.intercontinentalexchange.com/" target="_blank" rel="noopener noreferrer">ICE 선물 상품 개요</a></li>
+  <li><a href="https://www.cmegroup.com/learn/ice-commodities/coffee.html" target="_blank" rel="noopener noreferrer">CME Group 커피 선물 상품 가이드</a></li>
+  <li><a href="https://www.imf.org/" target="_blank" rel="noopener noreferrer">IMF 통화·거시 동향</a></li>
+  <li><a href="https://www.oecd.org/" target="_blank" rel="noopener noreferrer">OECD 농산물시장 동향</a></li>
+  <li><a href="https://www.wto.org/" target="_blank" rel="noopener noreferrer">WTO 농산물시장·무역 협정 개요</a></li>
+</ul>
+
+<h2 id="glossary">용어 정리</h2>
+<ul>
+  <li><strong>Basis</strong>: 선물 기준 대비 현물의 차이값. 로트별 조정 전후로 다시 계산합니다.</li>
+  <li><strong>디퍼렌셜</strong>: 품질·물류·자금 조건을 반영한 조정 항목 집합입니다.</li>
+  <li><strong>기준일</strong>: 선물 기준일, 입고 기준일, 결제 기준일의 3점으로 나눠 기록해야 합니다.</li>
+  <li><strong>hedging</strong>: 가격 노출을 줄이는 방식. 디퍼렌셜 오차를 제거하는 방법은 아닙니다.</li>
+  <li><strong>시차 리스크</strong>: 시간 축 분리 실패로 생기는 재산정 오류입니다.</li>
+</ul>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>선물 기준가격과 실제 지불가격이 다르게 되는 3요소를 설명할 수 있나요?</li>
+  <li>디퍼렌셜 오차 지도가 최근 가장 자주 발생한 항목 2개는 무엇인가요?</li>
+  <li>규격 불일치가 생겼을 때 어떤 조항부터 재확인해야 하나요?</li>
+  <li>기준일 3개를 분리했을 때 생기는 실무적 이점은?</li>
+  <li>인수인계 문서에서 가장 먼저 남겨야 하는 항목 3개는?</li>
+  <li>6주 루프에서 3주차 변경 항목을 왜 단일화해야 하나요?</li>
+</ul>

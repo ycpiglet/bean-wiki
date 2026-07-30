@@ -1,0 +1,131 @@
+---
+slug: grinder-burr-retention-control
+title: CAF-03 실습: 그라인더 버·입자·잔류를 통제해 다이얼인 신뢰도를 올린다
+summary: 원인 규명은 다이얼인보다 먼저 그라인더 변수를 정렬해야 합니다. burr 형태, 미분 분포, 잔류물의 편차가 추출 신호를 바꿉니다.
+category: 카페와 장비
+level: 중급
+readingTime: 10분
+updatedAt: 2026. 07. 28.
+accent: sand
+fact: 다이얼인 안정성은 레시피보다 먼저 분쇄 설계의 일관성, 버·미분 분포·잔류 통제가 확보될 때 올라갑니다.
+related: ["grinder-burr-profile","particle-size-distribution","grinder-basics","espresso-dialing-protocol","espresso-puck-preparation","espresso-machine-hydraulics-thermal"]
+tags: ["그라인더","버","입자 분포","잔류","에스프레소","CAF-03"]
+history: [{"date":"2026. 07. 28.","note":"CAF-03 초안 작성"},{"date":"2026. 07. 28.","note":"CAF-03 보강: 실패 지도, 2주 정렬 루프, 교대 인수인계 체크리스트 항목 추가"}]
+---
+<h2 id="topic-caf03">CAF-03 정렬: 다이얼인의 숨은 변동은 그라인더에서 먼저 만든다</h2>
+<p>그라인더가 흔들리면 추출표 본체가 아니라 추출 입력 자체가 흔들립니다. 같은 레시피라 해도 버의 상태나 잔류물, 미분 분포가 바뀌면 다이얼인 결과의 수렴이 늦어집니다.</p>
+
+<table>
+  <thead>
+    <tr><th>축</th><th>기준점</th><th>측정값</th><th>우선 수정 신호</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>버 형상</td><td>버 간격, 마모 패턴</td><td>도징량 고정 시 분쇄량 분산</td><td>마모가 균일하게 진행되는지 우선 확인</td></tr>
+    <tr><td>입자 분포</td><td>거친미분 비율</td><td>초반 유량·채널링 빈도</td><td>미분 보완은 분쇄량보다 먼저 점검</td></tr>
+    <tr><td>잔류물</td><td>도징 전/후 그라인더 내부 정리량</td><td>회차 간 산지차 유무</td><td>잔류가 높으면 원두량 계산 자체가 바뀜</td></tr>
+    <tr><td>교차오염</td><td>클렌징 주기</td><td>블렌드 구분 실패 패턴</td><td>교차 오염은 용어보다 신뢰도에 직접적 영향</td></tr>
+  </tbody>
+</table>
+
+<h2 id="burr-check">그라인더 정렬 워크플로</h2>
+<ol>
+  <li><strong>1단계:</strong> 같은 원두 배치에서 burr 간격 고정 후 3회 추출</li>
+  <li><strong>2단계:</strong> 분쇄 분포는 미분량 중심으로 한 번만 수정</li>
+  <li><strong>3단계:</strong> 추출 완료 후 잔류물 측정(비교 가능한 단위)</li>
+  <li><strong>4단계:</strong> 블렌드 바꿀 때만 분쇄량 보정</li>
+</ol>
+
+<h2 id="retention-map">잔류 통제 맵</h2>
+<p>잔류 관리가 흔히 누락되면, 회차별 오차가 도징·추출 변수로만 해석돼 원인 진단이 늦어집니다.</p>
+<table>
+  <thead>
+    <tr><th>시점</th><th>점검 항목</th><th>수정 기준</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>운영 직전</td><td>버 청결·투입 경로</td><td>동일 패턴이면 정상</td></tr>
+    <tr><td>운영 중</td><td>초반 추출량 및 유량</td><td>2회 연속 오차가 있으면 분쇄 미세도 1단계 보류</td></tr>
+    <tr><td>운영 후</td><td>잔존 분쇄량</td><td>잔류 임계 초과 시 정리 후 실험 재시작</td></tr>
+  </tbody>
+</table>
+
+<h2 id="common-misconceptions-caf03">CAF-03 흔한 오해</h2>
+<ul>
+  <li>오해: 분쇄도가 바뀌는 건 결과의 핵심 변수다.<br/><strong>정정:</strong> 다이얼인 실패의 상당수는 분쇄값 자체보다 분포와 잔류로 시작됩니다.</li>
+  <li>오해: 마모는 시간이 지날수록 점점 좋아진다.<br/><strong>정정:</strong> 마모는 미분 생성률을 바꿔 추출 편차를 유도할 수 있습니다.</li>
+  <li>오해: 청소는 가게 운영이 안정적일 때만 한다.<br/><strong>정정:</strong> 잔류 측정은 실험 전, 샘플 전환마다 최소 단위로 관리해야 합니다.</li>
+  <li>오해: 잔류량은 다이얼인과 무관하다.<br/><strong>정정:</strong> 잔류는 첫 추출량 산정과 지속된 유량 패턴을 바꿉니다.</li>
+  <li>오해: 교차오염은 단일 레시피에서 크게 영향이 없다.<br/><strong>정정:</strong> 동일 장비의 반복 실험에서는 블라인드 판단도 붕괴됩니다.</li>
+</ul>
+
+<h2 id="practice-caf03">실습: CAF-03 4회 그라인더 루프</h2>
+<ol>
+  <li>회차 1: 버 간격 고정, 3회 추출로 분포 표준편차만 기록</li>
+  <li>회차 2: 미분량 신호만 1단계 변화, 다른 값 고정</li>
+  <li>회차 3: 추출 전/후 잔류량을 동일 규격으로 비교</li>
+  <li>회차 4: 블렌드 변경 후 잔류 교차 신호가 있으면 분쇄량 이전에 청결로 역추적</li>
+</ol>
+<p>최종 판정은 다이얼인 수렴 속도가 빨라지는지, 아니면 분산 원인이 이동했는지로 확인합니다.</p>
+
+<h2 id="failure-map-caf03">실패 지도: 잔류 기준이 깨졌을 때 분리 신호</h2>
+<p>CAF-03에서 자주 생기는 실패는 분포가 아니라 잔류의 변화를 놓친 데서 출발합니다. 먼저 아래 신호별로 원인 분리를 고정하세요.</p>
+<table>
+  <thead>
+    <tr><th>신호</th><th>첫 진단</th><th>다음 조치</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>분쇄량은 동일한데 추출량 변동이 커짐</td>
+      <td>버 잔류 또는 청결 편차를 먼저 의심</td>
+      <td>청결 후 1회차부터 동일 테스트를 재실행해 비교</td>
+    </tr>
+    <tr>
+      <td>미분 신호가 줄었는데 잔향이 오히려 불안정</td>
+      <td>분포 조정보다 잔류 교차가 앞섰을 가능성</td>
+      <td>교차 샘플을 분리하고 분포 변경은 다음 회차로 연기</td>
+    </tr>
+    <tr>
+      <td>블렌드 교체 후 오류 패턴만 과다 상승</td>
+      <td>잔류물 제거와 라인정렬이 안 된 상태에서 블렌드 비교</td>
+      <td>블렌드 비교 전 잔류 초기화 규칙을 동일하게 고정</td>
+    </tr>
+    <tr>
+      <td>회차 1~2는 정상이나 3회차 이후 급변</td>
+      <td>시간 누적으로 쌓인 잔류 누적</td>
+      <td>2주차 시작은 장비 점검값 기준으로 리셋 후 재검증</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="handover-checklist-caf03">교대 인수인계 체크리스트(CAF-03)</h2>
+<ul>
+  <li>오늘 기준 Burr 타입(모델/연마형태), 간격, 클린 직후 상태를 1줄로 기록했는가?</li>
+  <li>잔류량 기준(운영 전/중/후)이 이전 회차와 같은 단위로 남았는가?</li>
+  <li>미분 조정은 2주 루프에서 1축만 바꿔 수행했는가?</li>
+  <li>블렌드 변경 후 잔류 교차 신호와 분포 변화를 함께 기록했는가?</li>
+  <li>다음 교대가 바로 따라올 수 있도록 유지안·보류안·재실행 조건을 구분했는가?</li>
+</ul>
+
+<h2 id="template-caf03">그라인더 실무 템플릿</h2>
+<ul>
+  <li>기록 항목: 버 간격, 분쇄량 설정, 잔류량(전/후), 회차별 추출량, 첫 향 반응, 잔향 지속</li>
+  <li>판정 항목: 산미 안정성, 바디 유사성, 결점 재현성, 추출 오차 수렴</li>
+  <li>합격 기준: 동일 회차 3회 중 2회 이상 잔류량·분포 분산이 허용 범위 내 수렴</li>
+</ul>
+
+<h2 id="references-caf03">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="grinder-burr-profile" href="/wiki/grinder-burr-profile">버 프로필 실무 지도</a></li>
+  <li><a data-wikilink="grinder-basics" href="/wiki/grinder-basics">그라인더 기초</a></li>
+  <li><a data-wikilink="particle-size-distribution" href="/wiki/particle-size-distribution">입자 분포</a></li>
+  <li><a data-wikilink="espresso-dialing-protocol" href="/wiki/espresso-dialing-protocol">에스프레소 다이얼인</a></li>
+  <li><a data-wikilink="espresso-puck-preparation" href="/wiki/espresso-puck-preparation">퍽 준비</a></li>
+  <li><a data-wikilink="espresso-machine-hydraulics-thermal" href="/wiki/espresso-machine-hydraulics-thermal">열·유량·압력 기준</a></li>
+</ul>
+
+<h2 id="quiz-caf03">자기 점검</h2>
+<ul>
+  <li>잔류량이 늘어났는데 산미만 달라졌을 때 첫 번째 점검 순서는?</li>
+  <li>그라인더 분포가 흔들릴 때 분쇄값을 먼저 바꿔야 하나요?</li>
+  <li>회차 1~3에서 가장 먼저 안정화되어야 하는 항목은?</li>
+  <li>교차오염이 의심될 때 추출 표준은 어떤 순서로 복귀하나요?</li>
+</ul>

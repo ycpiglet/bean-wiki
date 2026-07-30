@@ -1,74 +1,219 @@
 ---
 slug: green-bean-moisture-management
-title: 생두 수분 관리: 건조와 수분활성으로 편차를 줄이는 루틴
-summary: 수분은 수분함량 하나의 숫자가 아니라 건조율과 저장 안정성의 결합 신호입니다. 생두 관리가 반복될수록 수분 편차가 결점 리스크를 낮춥니다.
+title: 생두 수분 관리: 건조·수분활성·보관 안정성의 실행 프레임
+summary: 건조 종료 수치 하나가 아니라, 건조율·수분활성·저장 환경을 묶어 기록해야 수분 편차가 컵 편차로 전이되는 경로를 줄일 수 있습니다.
 category: 산지와 생두
-level: 중급
-readingTime: 12분
-updatedAt: 2026. 07. 27.
+level: 전문
+readingTime: 20분
+updatedAt: 2026. 07. 30.
 accent: sage
-fact: 생두 수분 관리는 건조 종료 수치만 보는 것이 아니라, 수분활성, 저장 조건, 회전 주기를 함께 관리해야 실제로 향미 편차를 줄입니다.
-related: ["coffee-storage","coffee-processing","post-harvest-processing-map","coffee-oxidation-pathway","coffee-fermentation-microbiology"]
-tags: ["수분관리","건조","수분활성","저장","분할"]
-history: [{"date":"2026. 07. 27.","note":"수분관리 운영 루틴과 로스팅·저장 연동 문서 작성"}]
+fact: 생두 수분 관리는 건조 종료 수치만 고정하는 것이 아니라 건조 구간, 수분활성, 저장 조건을 함께 통합해 기록해야 반복 가능한 향미 편차 제어가 가능합니다.
+related: ["coffee-storage","coffee-processing","post-harvest-processing-map","coffee-oxidation-pathway","green-bean-grading-defects","wet-hulling","harvest-maturity-selection","coffee-fermentation-microbiology"]
+tags: ["수분관리","건조","수분활성","저장 안정성","품질관리","분할"]
+history: [{"date":"2026. 07. 27.","note":"수분관리 운영 루틴과 로스팅·저장 연동 문서 작성"},{"date":"2026. 07. 30.","note":"PRO-10 보강: 건조·수분활성·보관 안정성 프레임으로 전문 난이도 확장"}]
 ---
-<h2 id="why-moisture-first">왜 수분이 먼저인지</h2>
-<p>생두 수분은 저장 안정성, 향미 보존, 로스팅 감도와 직접 연결됩니다. 수분 수치가 같아도 수분활성이나 저장 조건이 다르면 결과는 달라집니다.</p>
+<h2 id="why-this-first">왜 수분이 먼저여야 하는가</h2>
+<p>생두는 저장 안정성과 로스팅 반응성을 함께 결정합니다. 수분값이 같아 보여도 수분분포와 수분활성이 다르면 같은 배치라도 건조 후 반응·보관 성능이 다르게 움직일 수 있습니다.</p>
+<p>실무 판단은 “하나의 수치”보다 “동일 조건에서의 이동 경로”가 기준입니다. 건조 전후, 저장 전후를 같이 본 지도에서만 변수가 분리되어 보입니다.</p>
+<aside class="callout callout-note" data-tone="note">
+<p>수분 이슈의 실패는 대개 “목표 수분치 자체”가 아니라 “측정 간격, 보관 경로, 분할 기준”이 끊겨 생깁니다.</p>
+</aside>
 
-<h2 id="moisture-bases">기본 지표를 함께 본다</h2>
-<ul>
-  <li><strong>현재 수분함량:</strong> 건조 공정 직후와 입고 직전의 차이를 비교</li>
-  <li><strong>수분활성:</strong> 미생물 성장 가능성의 간접 지표</li>
-  <li><strong>온도-습도 히스토리:</strong> 저장 과정의 리스크 패턴을 보여줌</li>
-</ul>
-
-<h2 id="drying-rhythm">건조는 단일 속도로 끝내지 않는다</h2>
-<p>건조는 속도를 빠르게 끝내는 행위가 아니라 균일하게 수렴하는 행위입니다. 표면이 빨리 마르면 내부 수분이 남아 이후 품질 변동이 커질 수 있으므로, 단계별 종료 조건을 분리해 둡니다.</p>
+<h2 id="signal-grid">수분 신호 4개 축으로 운영한다</h2>
+<p>수분 품질은 네 개 축이 동시에 움직일 때 오차가 커집니다. 한 축만 최적화하면 한계가 있습니다.</p>
 <table>
-  <thead><tr><th>구간</th><th>점검 항목</th><th>우선 조치</th></tr></thead>
+  <thead>
+    <tr><th>축</th><th>무엇을 본다</th><th>왜 필요한가</th><th>경고 신호</th></tr>
+  </thead>
   <tbody>
-    <tr><td>초기</td><td>균일한 열입력 확보</td><td>차등 건조 예방</td></tr>
-    <tr><td>중기</td><td>내부 수분 분포 확인</td><td>천천히 마무리 구간 진입</td></tr>
-    <tr><td>종료 직전</td><td>수분활성·곡물 분포</td><td>출고 기준 미만이면 배치 재조정</td></tr>
+    <tr>
+      <td>절대 수분</td>
+      <td>건조 종료 수치, 입고 수분</td>
+      <td>초기 기준점 형성</td>
+      <td>수치 일치인데도 로트별 편차 확대</td>
+    </tr>
+    <tr>
+      <td>수분활성</td>
+      <td>공기 중 가용수분 지표</td>
+      <td>미생물 성장 리스크 추정</td>
+      <td>저장 직전 결점 징후 선행</td>
+    </tr>
+    <tr>
+      <td>분포 균일도</td>
+      <td>로트 내 수분 편차</td>
+      <td>로스팅 반응 편차 예측</td>
+      <td>초기 컵 편차가 반복됨</td>
+    </tr>
+    <tr>
+      <td>히스토리 완결도</td>
+      <td>건조·포장·보관 기록 연속성</td>
+      <td>재현 가능한 원인 추적</td>
+      <td>문제 재발 시 원인 분리 실패</td>
+    </tr>
   </tbody>
 </table>
 
-<h2 id="storage-risk">저장은 건조 다음 단계가 아니다</h2>
-<p>건조 후 저장은 품질을 지키는 핵심 단계입니다. 컨테이너 밀도, 통풍, 외부 습도 변화를 관리하지 않으면 건조로 얻은 이득이 단기적으로 사라집니다.</p>
+<h2 id="drying-frame">건조 프레임: 기간은 나누고 기준은 고정한다</h2>
+<p>건조의 설계 핵심은 “단계 분리”입니다. 초기·중기·종료 구간에 다른 목표를 두고 로그와 이동 규칙을 분리해야 합니다.</p>
 <ol>
-  <li>입고·출고 온습도 기록을 같은 양식으로 유지</li>
-  <li>장기 보관 시 월 1회 이상 표면 수분 편차 점검</li>
-  <li>결점 신호가 증가하는 구간은 즉시 분리 저장</li>
+  <li><strong>초기 구간:</strong> 표면 균일화 우선, 과열·고온 정체 회피</li>
+  <li><strong>중기 구간:</strong> 내부 건조 속도 추정이 가능할 정도의 샘플링 밀도 확보</li>
+  <li><strong>종료 구간:</strong> 최종 수분 분포와 분리군 조건을 맞춰 출고 사전 분할</li>
+</ol>
+<aside class="callout callout-tip" data-tone="tip">
+<p>같은 “종료 수분” 목표라도 로트 분할 규칙이 다르면 후속 팀이 동일한 판단을 내릴 수 없습니다. 분할 기준은 사전 고정하세요.</p>
+</aside>
+
+<h2 id="drying-equipment">건조기별 편차를 분해한다</h2>
+<p>건조 설비의 특성이 다르면 수분 제어가 달라집니다. 운영표는 장비별 고정 규칙으로 다르게 유지하는 것이 안전합니다.</p>
+<table>
+  <thead>
+    <tr><th>설비/환경</th><th>강점</th><th>주요 리스크</th><th>점검 포인트</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>파티오/자연건조</td>
+      <td>저에너지 구간 반응이 부드러운 편</td>
+      <td>장기 기상 변동에 민감</td>
+      <td>우천·바람 회복 로그, 표면 편차 비율</td>
+    </tr>
+    <tr>
+      <td>레인지드 베드</td>
+      <td>층 제어가 비교적 정밀</td>
+      <td>운전 밸런스 흔들림</td>
+      <td>공기 순환 균일성, 하단 수분잔존</td>
+    </tr>
+    <tr>
+      <td>기계 건조(건조기)</td>
+      <td>짧은 회전 시간 확보</td>
+      <td>과건조·표면 스트레스 증가</td>
+      <td>구간별 온도 경사 및 경보 로그</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="aw-storage-loop">수분활성으로 보는 저장 안정성</h2>
+<p>수분활성은 저장에서 결점 신호와 연결됩니다. 특히 같은 수분이라도 밀폐 상태와 온습도 이력의 결합이 다르면 반응속도 차이가 생깁니다.</p>
+<ul>
+  <li><strong>입고 3일:</strong> 표면 수분분포 1차 보정</li>
+  <li><strong>1주:</strong> 수분활성·온습도 이동 반응 확인</li>
+  <li><strong>2주:</strong> 로트별 분기 규칙 적용 결과 점검</li>
+</ul>
+<p>고위험군은 조기 분리해 선별·로스팅팀에 전달해야 반복 실패를 줄일 수 있습니다.</p>
+
+<h2 id="failure-map">실패 지도(7개)로 원인 분해한다</h2>
+<ol>
+  <li>건조 종료 수분은 맞지만 표면 분포 편차가 큰 경우</li>
+  <li>수분활성 저하 없이 수분 재편차가 자주 생기는 경우</li>
+  <li>동일 설비에서 로트 간 온습도 기록 간극이 커지는 경우</li>
+  <li>보관 전 수분 분할을 하지 않아 컵 편차가 누적되는 경우</li>
+  <li>입고/출고 기록 형식이 팀 간 다르게 쓰이는 경우</li>
+  <li>저장군 분리 규칙 변경 후 추적 로그가 누락되는 경우</li>
+  <li>분석 루트(수분-보관-로스팅)가 분리되어 의사결정이 늦어지는 경우</li>
 </ol>
 
-<h2 id="common-misconceptions">흔한 오해</h2>
+<h2 id="check-matrix">리스크 매트릭스</h2>
+<table>
+  <thead>
+    <tr><th>리스크</th><th>1차 영향</th><th>2차 영향</th><th>우선 조치</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>초기 수분 과소측정</td>
+      <td>로트 내 편차 감지 지연</td>
+      <td>로스팅 변별력 저하</td>
+      <td>분리군 재채취 후 기준 재설정</td>
+    </tr>
+    <tr>
+      <td>높은 수분활성</td>
+      <td>보관 중 결점 조짐</td>
+      <td>컵 노화 패턴 가속</td>
+      <td>보관군 즉시 분리, 라벨 경고 조치</td>
+    </tr>
+    <tr>
+      <td>기록 이력 공백</td>
+      <td>원인 추적 실패</td>
+      <td>교대 전달 오류</td>
+      <td>전환 직후 1회 추가 기록 루틴</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="downstream-link">선별·로스팅·보관으로 이어지는 연결 지도</h2>
+<p>수분관리 성과는 하류 단계에서만 검증되지, 가공팀 내부에서 끝나는 지표가 아닙니다.</p>
 <ul>
-  <li>오해: 12% 근처면 충분히 안전하다.<br/><strong>정정:</strong> 수분활성·보관 히스토리가 함께 안정해야 의미가 있습니다.</li>
-  <li>오해: 건조를 빨리 끝내면 비용이 낮다.<br/><strong>정정:</strong> 과건조와 내부 불균형이 발생하면 오히려 재작업 비용이 커집니다.</li>
-  <li>오해: 수분 이슈는 로스팅에서 보정된다.<br/><strong>정정:</strong> 수분은 선행 단계 이슈이므로 로스팅만으로는 보완이 제한적입니다.</li>
+  <li><strong>선별:</strong> 분류군별 수분편차 임계 조건을 고정</li>
+  <li><strong>로스팅:</strong> 고위험군은 시작점 조건을 별도 로그로 관리</li>
+  <li><strong>보관:</strong> 출고 후 7일, 14일 이력을 의무화</li>
+  <li><strong>품질평가:</strong> 컵 평가에 수분군 라벨을 함께 결합</li>
+</ul>
+<aside class="callout callout-warn" data-tone="warn">
+<p>선별팀과 로스팅팀이 같은 수분 언어를 쓰지 않으면, 같은 결점도 다른 팀에서 서로 다른 원인으로 오인됩니다.</p>
+</aside>
+
+<h2 id="handoff">교대 인수인계 7줄 규칙</h2>
+<ul>
+  <li>건조 구간별 최종 수분값 + 분포 편차</li>
+  <li>수분활성 측정값과 측정 시점</li>
+  <li>포장 밀도·밀봉 상태</li>
+  <li>입고/출고 온습도 1주 단위 요약</li>
+  <li>보관군 분류 기준(고위험군/일반군)</li>
+  <li>결점 조짐 사전 라벨(냄새/표면/활성 신호)</li>
+  <li>다음 배치 고정 변수 1개와 변경 금지 항목</li>
 </ul>
 
-<h2 id="practice">실습: 수분 로그 한 페이지</h2>
+<h2 id="practice">실습 루프: 2주 정렬 계획</h2>
+<p>한 번에 한 가지 변수만 바꾸고, 다음 배치는 즉시 고정합니다.</p>
 <ol>
-  <li>하루 기준 건조 전·중·후 수분값을 한 장으로 기록</li>
-  <li>배치별 수분활성, 온도, 포장 밀도를 함께 기록</li>
-  <li>출고 1주 뒤와 2주 뒤 품질 편차를 분리 분석</li>
-  <li>가장 흔한 편차가 생기는 단계만 한 번에 점검</li>
+  <li>1주차: 같은 원두로 건조 구간 기준을 유지하고 수분측정 간격을 1단계 늘려 비교</li>
+  <li>2주차: 측정 간격을 원래대로 돌린 뒤 분할 규칙만 1개 변경</li>
+  <li>매일: 수분, 수분활성, 온습도, 표면 편차를 동일 표에 기록</li>
+  <li>마감: 편차가 줄어든 변수만 다음 표준으로 채택</li>
 </ol>
+
+<h2 id="misconceptions">흔한 오해 정리</h2>
+<ul>
+  <li>오해: 12~13%대면 안전하다.<br/><strong>정정:</strong> 수분활성과 분포가 함께 안정돼야 저장 위험이 줄어듭니다.</li>
+  <li>오해: 수분은 수량만 맞추면 된다.<br/><strong>정정:</strong> 저장군 분할과 기록 이력 없이는 재현성이 낮아질 수 있습니다.</li>
+  <li>오해: 건조는 빠를수록 좋다.<br/><strong>정정:</strong> 과건조·내부 불균형은 회수 비용을 키울 수 있어 완만한 제어가 필요합니다.</li>
+  <li>오해: 로스팅에서 보정 가능하다.<br/><strong>정정:</strong> 선행 단계의 편차를 완전히 상쇄하기 어렵고 컵 안정성이 나빠질 수 있습니다.</li>
+  <li>오해: 기록은 로트만 같으면 충분하다.<br/><strong>정정:</strong> 단계별, 설비별, 시간별 로그가 있어야 비교가 됩니다.</li>
+</ul>
+
+<h2 id="glossary">용어 정리</h2>
+<dl>
+  <dt>수분활성(water activity, a_w)</dt>
+  <dd>수분이 생화학 반응에 이용될 가능성을 나타내는 지표입니다. 수분함량과 별개로 관리가 필요합니다.</dd>
+  <dt>분포 편차</dt>
+  <dd>로트 내부에서 수분이 고르게 분포하지 못하는 상태입니다.</dd>
+  <dt>분할</dt>
+  <dd>관리 단위를 나누어 고위험군과 일반군으로 분리 처리하는 운영 규칙입니다.</dd>
+  <dt>히스토리 완결도</dt>
+  <dd>건조-보관-출고 간 데이터가 끊김 없이 연결되는 기록 완성도입니다.</dd>
+</dl>
 
 <h2 id="references">참고 자료</h2>
 <ul>
   <li><a href="https://www.ift.utah.edu">건조·보관 기본 가이드</a></li>
-  <li><a href="https://www.fao.org/food-safety">FAO 저장·수분자료</a></li>
+  <li><a href="https://www.fao.org/3/i1820e/i1820e.pdf">FAO 커피 건조·보관 지침</a></li>
   <li><a href="https://www.iso.org">ISO 저장 및 수분 관리 참고</a></li>
+  <li><a href="https://www.cqi.org/quality-standards">CQI 품질 표준 개요</a></li>
+  <li><a href="https://www.wcr.com/">WCR 수분·보관 권장사항</a></li>
+  <li><a href="https://www.sca.coffee/research/coffee-quality">SCA 커피 품질 과학 자료</a></li>
   <li><a data-wikilink="coffee-storage" href="/wiki/coffee-storage">원두 보관</a></li>
   <li><a data-wikilink="post-harvest-processing-map" href="/wiki/post-harvest-processing-map">수확 후 가공 지도</a></li>
+  <li><a data-wikilink="coffee-processing" href="/wiki/coffee-processing">커피 가공 방식 지도</a></li>
+  <li><a data-wikilink="green-bean-grading-defects" href="/wiki/green-bean-grading-defects">생두 결점과 분류</a></li>
+  <li><a data-wikilink="wet-hulling" href="/wiki/wet-hulling">웻 헐링 운영 프레임</a></li>
+  <li><a data-wikilink="coffee-oxidation-pathway" href="/wiki/coffee-oxidation-pathway">산화 경로와 저장 안정성</a></li>
 </ul>
 
 <h2 id="quiz">자기 점검</h2>
 <ul>
-  <li>왜 건조 종료 수치만으로는 위험을 완전히 판단하기 어려운가요?</li>
-  <li>수분활성은 로스트·저장 판단에서 어디에 먼저 반영되나요?</li>
-  <li>편차가 큰 구간을 재점검할 때 가장 먼저 보는 값은?</li>
-  <li>저장 조건 변경 시 기록해야 할 3개 항목은?</li>
+  <li>수분활성과 수분함량을 같은 기준으로 보기 어려운 이유는?</li>
+  <li>건조 구간별 로그에서 꼭 유지해야 하는 3개 지표는 무엇인가요?</li>
+  <li>보관군 분리 기준은 왜 고정 로그와 함께 운영해야 하나요?</li>
+  <li>원인 추적 실패가 반복될 때 가장 먼저 점검할 2개 항목은?</li>
+  <li>실험 루프에서 변수 고정이 필요한 이유를 1문장으로 설명해 보세요.</li>
+  <li>하루 운영에서 누락되면 가장 즉시 영향이 큰 기록 항목은?</li>
 </ul>

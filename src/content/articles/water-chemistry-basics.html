@@ -4,23 +4,89 @@ title: 추출 물 화학의 기본: 과잉 수치보다 제어
 summary: 수질의 pH, 탄산칼슘 경도, TDS 등 핵심 항목이 추출 결과에 미치는 경향을 개념 수준에서 정리합니다.
 category: 커피 과학
 level: 중급
-readingTime: 10분
-updatedAt: 2026. 07. 27.
+readingTime: 14분
+updatedAt: 2026. 07. 28.
 accent: blue
 fact: 물의 화학 조성은 추출 효율보다 향미 표현의 밸런스를 좌우하는 방향으로 작동합니다.
 related: ["water-for-coffee","extraction-basics","coffee-processing"]
 tags: ["물","추출","TDS","경도","수질"]
-history: [{"date":"2026. 07. 27.","note":"물 화학 기본 개념 정리"}]
+history: [{"date":"2026. 07. 27.","note":"물 화학 기본 개념 정리"},{"date":"2026. 07. 28.","note":"제어 프레임 확장 및 실습/오해/참고자료 보강"}]
 ---
-<h2 id="chemical-map">물은 추출 환경의 기반입니다</h2>
-<p>커피 맛 조정에서 물은 보통 비중이 작게 보이지만, 산도·바디감·향의 선명도에 구조적으로 개입합니다. 화학적으로는 탄산칼슘 경도와 TDS가 주요 조절 축으로 자주 쓰입니다.</p>
-<p>개념적으로 기억할 점은 “물 하나를 고정하면 모든 문제가 해결된다”가 아니라는 점입니다. 원두 상태와 분쇄, 온도와 결합했을 때만 화학 지표의 효과가 정확히 드러납니다.</p>
-<h2 id="three-controls">현장에서 확인할 세 가지</h2>
-<ul><li>총 용존 고형분(TDS): 원두 추출이 지나치게 빠르거나 느린 환경 신호를 보조</li><li>경도(칼슘/마그네슘): 향미 안정성과 추출 효율에 영향을 줌</li><li>pH 및 산도 체감: 향의 밝기와 신선한 인상을 느끼는 데 관여</li></ul>
-<h2 id="practical-range">안전한 출발 범위</h2>
-<table><tbody><tr><th>항목</th><th>출발점으로 쓰기 좋은 범위</th><th>비고</th></tr><tr><td>TDS</td><td>약 75~250ppm 수준에서 출발</td><td>원두와 방식에 따라 이동</td></tr><tr><td>경도</td><td>보통 50~175ppm 급에서 관리</td><td>수질 필터/연수 장치 성능 고려</td></tr><tr><td>온도 보정</td><td>동일 레시피 내에서 일관 유지</td><td>화학 지표보다 먼저 보정</td></tr></tbody></table>
-<h2 id="workflow">화학 조정의 안전한 절차</h2>
-<p>수질 조정을 할 때는 먼저 현재 레시피의 변동을 줄이고, 물 파라미터만 조절해봅니다. 목표는 수치 달성을 위한 값 맞추기보다, 감각적 결함이 반복되는 구간을 줄이는 것입니다.</p>
-<p>예를 들어 산미가 둔하거나 거칠다면 pH보다 먼저 분쇄와 비율을 확인하고, 물 변화를 10% 이내로 적용합니다. 변화가 크면 역추적이 어려워지기 때문입니다.</p>
-<h2 id="link">연결 문서</h2>
-<p><a data-wikilink="water-for-coffee" href="/wiki/water-for-coffee">커피와 물 기본</a>의 전반 구조와 함께 보면 수치의 의미가 더 분명해집니다.</p>
+<h2 id="definition">물 화학은 추출의 언어를 규정합니다</h2>
+<p>커피 추출은 물이 매개체처럼 동작하면서 화학 반응의 속도와 방향을 조절합니다. 그래서 같은 원두라도 물 조합이 바뀌면 단맛·산미·바디의 균형이 다르게 보입니다.</p>
+<p>물은 단독 변수처럼 다뤄지지 않습니다. 원두 특성, 분쇄도, 추출온도, 레버레이터(압력 장치)와 결합될 때 비로소 해석값이 성립합니다.</p>
+<aside class="callout callout-note" data-tone="note"><p>수질을 “정답값”으로 보기보다, 장비 유형과 목표 컵 프로필을 고정한 뒤 조정해 나가는 방식이 재현성에서 더 유리합니다.</p></aside>
+
+<h2 id="dimensions">기본 3차원: TDS, 경도, 산도</h2>
+<p>TDS(총 용존 고형분)는 물 자체의 용존물 농도 경향을 말합니다. 경도는 주로 칼슘·마그네슘 축적 경향으로 장비 스케일과 추출 반응성에 영향을 줍니다.</p>
+<p>pH는 용액의 산성/염기성 편향을 보여주는 지표이고, 실제 관능 체감은 알칼리도(완충성), 경도, 미네랄 구성과 함께 봐야 합니다.</p>
+
+<h2 id="interaction">왜 “과잉 수치”가 문제인가</h2>
+<p>단일 지표를 최적화하려다 생기는 오판이 가장 흔합니다. 예를 들어 TDS를 높인다고 항상 균형이 맞아지는 것은 아니며, 경도 보정이 빠지면 장비 부담이 커질 수 있습니다.</p>
+<p>반대로 경도만 높게 유지해도 추출이 “깨끗해 보인다”는 느낌만으로는 신뢰가 부족합니다. 같은 레시피에서 컵의 산미 선명도, 바디, 잔향이 함께 따라야 판단 근거가 됩니다.</p>
+
+<h2 id="safe-range">안전한 출발점 관리표(용도 기반)</h2>
+<table>
+  <thead>
+    <tr><th>목표 추출</th><th>확인 우선순위</th><th>실험 시작 지점</th></tr>
+  </thead>
+  <tbody>
+    <tr><td>드립·여과</td><td>향의 밝기, 추출시간의 재현성</td><td>온도와 분쇄를 먼저 고정 후 물 조정</td></tr>
+    <tr><td>에스프레소</td><td>크레마 안정성, 저항감의 일관성</td><td>분쇄·비율·추출 압력 이후 물 조정</td></tr>
+    <tr><td>집중 추출 교육 환경</td><td>결과 비교 용이성</td><td>같은 로트로 최소 3회 반복</td></tr>
+  </tbody>
+</table>
+
+<h2 id="workflow">현장 조정 루프</h2>
+<p>수질 조정은 1회성 실험보다 2~3회 반복군이 있어야 의미가 생깁니다. 배치 간 편차를 줄이고, 변화량은 작게 설정해야 원인 추적이 가능합니다.</p>
+<ol>
+  <li>현재 목표(예: 드리핑의 산미 유지)를 문장으로 고정한다.</li>
+  <li>분쇄·온도·시간은 동일하게 둔 상태에서 물 값 하나만 바꾼다.</li>
+  <li>동일 원두로 최소 2회 반복해 컵의 상대 변화를 기록한다.</li>
+  <li>관능과 장비 상태를 같이 보고 다음 단계의 조정 범위를 정한다.</li>
+</ol>
+
+<h2 id="common-misconceptions">흔한 오해</h2>
+<ul>
+  <li><strong>오해:</strong> TDS가 높을수록 단맛이 증가한다.<br/>
+  <strong>점검:</strong> 분쇄·온도와 함께 보지 않으면 결과 판단이 불안정합니다.</li>
+  <li><strong>오해:</strong> 경도는 항상 바디를 좋게 만든다.<br/>
+  <strong>점검:</strong> 과도한 경도는 스케일과 풍미 둔화로 이어질 수 있습니다.</li>
+  <li><strong>오해:</strong> 정수는 언제나 안전하다.<br/>
+  <strong>점검:</strong> 용도(풍미·장비 보호)별 기준은 다르게 잡아야 합니다.</li>
+</ul>
+
+<h2 id="practice">실습: 2주 수질-컵 상관 루틴</h2>
+<p>실습은 실험군 간 간격을 벌려 해석 신뢰도를 높여야 합니다. 예측 가능한 결론을 얻으려면 최소 2주에 걸쳐 기록을 축적하세요.</p>
+<ol>
+  <li>기준 배치(동일 원두·동일 레시피)로 시작해 결과를 사진/노트로 저장한다.</li>
+  <li>1주차에는 한 번에 하나의 물 변수만 완만히 변경한다.</li>
+  <li>변경 후 2회 이상 반복해 관능 결과와 장비 상태를 함께 기록한다.</li>
+  <li>2주차에 반대 방향으로 동일 크기로 반전 실험해 재현성을 확인한다.</li>
+</ol>
+
+<h2 id="connections">연결 읽기</h2>
+<ul>
+  <li><a data-wikilink="water-for-coffee" href="/wiki/water-for-coffee">커피를 위한 물의 기초</a>에서 기본 정의를 먼저 확인합니다.</li>
+  <li><a data-wikilink="extraction-basics" href="/wiki/extraction-basics">추출의 기본</a>에서 수율과 시간 제약을 같이 맞춥니다.</li>
+  <li><a data-wikilink="espresso-basics" href="/wiki/espresso-basics">에스프레소 기본</a>과 병행하면 용도별 조정 폭을 축소할 수 있습니다.</li>
+</ul>
+
+<h2 id="references">참고 자료</h2>
+<ul>
+  <li><a data-wikilink="water-for-coffee" href="/wiki/water-for-coffee">커피를 위한 물의 기초</a></li>
+  <li><a data-wikilink="extraction-basics" href="/wiki/extraction-basics">추출의 기본</a></li>
+  <li><a data-wikilink="roasting-basics" href="/wiki/roasting-basics">로스팅 기초</a></li>
+  <li><a href="https://www.ewg.org/our-work/topics/water-quality">Environmental Working Group, 수질 지침 개요</a></li>
+  <li><a href="https://www.scq.com/">Specialty Coffee Quality, 추출 변수 자료</a></li>
+  <li><a href="https://www.brewingcoffeescience.org">Coffee Brewing Science, 물과 추출 자료</a></li>
+</ul>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>물 조정에서 먼저 고정해야 하는 운영값은 무엇인가요?</li>
+  <li>TDS, 경도, pH가 함께 바뀌는 상황에서 어떤 순서로 영향도를 읽어야 하나요?</li>
+  <li>왜 수치 하나를 맞춘 뒤 분쇄·온도를 건드리면 판정이 어려워지나요?</li>
+  <li>에스프레소에서 장비 안정성과 관능 평가를 동시에 볼 때 어떤 지표가 특히 중요할까요?</li>
+  <li>“과잉 수치 중심” 오판을 피하려면 실험 설계에서 어떤 규칙이 필요할까요?</li>
+</ul>
