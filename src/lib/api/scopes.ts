@@ -10,6 +10,8 @@ export const SCOPES = {
   contributionsWrite: "contributions:write",
   contributionsRead: "contributions:read",
   metricsRead: "metrics:read",
+  engagementRead: "engagement:read",
+  engagementWrite: "engagement:write",
   botCommand: "bot:command",
   recommendationsWrite: "recommendations:write",
 } as const;

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { HtmlLangSync } from "@/components/html-lang-sync";
 import { ServiceWorkerRegister } from "@/components/sw-register";
 import { SearchOverlay } from "@/components/search-overlay";
+import { SiteViewBeacon } from "@/components/view-beacon";
 import { SITE_DESCRIPTION, SITE_URL } from "@/lib/site";
 import "./globals.css";
 
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <HtmlLangSync />
         <ServiceWorkerRegister />
+        <SiteViewBeacon />
         <SearchOverlay />
         {children}
       </body>

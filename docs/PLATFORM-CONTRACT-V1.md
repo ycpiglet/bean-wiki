@@ -17,6 +17,7 @@
 | [CONTENT-REQUEST-API-V1](./CONTENT-REQUEST-API-V1.md) | Bean Wiki가 받는 콘텐츠 요청·기여 |
 | [BEANOTE-DATA-API-V1](./BEANOTE-DATA-API-V1.md) | Beanote가 제공하는 음용·스캔 기록 |
 | [TELEMETRY-AND-PRIVACY](./TELEMETRY-AND-PRIVACY.md) | 사용 통계 지표와 보존 |
+| [ENGAGEMENT-AGENTS](./ENGAGEMENT-AGENTS.md) | 댓글·좋아요 에이전트와 합성 QA 분리 |
 | [VOCABULARY-IDS](./VOCABULARY-IDS.md) | 공용 어휘 ID 규칙 |
 
 이 규약은 Beanote Data API v1에서 이미 합의된 규칙을 앱 중립으로 승격한
@@ -34,6 +35,11 @@
 | `/api/auth/*`, `/api/me`, `/api/progress` 등 | 브라우저 세션용 내부 라우트 |
 
 새 기계 대상 엔드포인트는 예외 없이 `/api/<domain>/v1` 아래에 둡니다.
+
+아티클 상호작용은 `/api/engagement/v1/articles/{slug}`에서
+`engagement:read`·`engagement:write` scope로 접근합니다. 기본 `qa` 모드는
+공개 목록과 통계에서 제외되고, 명시적인 `public` 모드는 AI 작성자 표시를
+강제합니다.
 
 ## 2. 메시지 형식
 

@@ -24,6 +24,7 @@ const koreanItems: NavItem[] = [
     matches: ["/learning-path"],
   },
   { href: "/quiz", label: "퀴즈", matches: ["/quiz"] },
+  { href: "/analytics", label: "통계", matches: ["/analytics"] },
   {
     href: "/community",
     label: "커뮤니티",
@@ -48,6 +49,7 @@ const englishItems: NavItem[] = [
     label: "Glossary",
     matches: ["/en/glossary"],
   },
+  { href: "/analytics", label: "Analytics", matches: ["/analytics"] },
   {
     href: "/design/colors",
     label: "Brand colors",

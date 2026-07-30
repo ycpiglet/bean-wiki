@@ -51,6 +51,9 @@ append-only 트래픽 로그를 새로 둡니다.
 | `day` | UTC 날짜 | 모든 집계 단위. 로컬 시간 미사용 |
 | `session_hash` | 32자 hex | 3절 |
 | `referrer_class` | `internal` `search` `social` `direct` `app:<clientId>` | 분류값만 |
+| `country_code` | `KR`, `US`, `ZZ` | 배포 플랫폼이 제공한 2자리 국가 코드만. 없거나 잘못되면 `ZZ` |
+| `hour_bucket` | `0`–`23` | UTC 시각의 정수 구간. 분·초는 분석 차원으로 사용하지 않음 |
+| `device_class` | `desktop` `mobile` `tablet` `bot` `unknown` | 요청 시 서버에서 분류한 뒤 원본 User-Agent 폐기 |
 | `created_at` | UTC timestamp | |
 
 ### 저장하지 않는 것
@@ -58,7 +61,7 @@ append-only 트래픽 로그를 새로 둡니다.
 | 항목 | 이유 |
 | --- | --- |
 | IP 원문 | `session_hash` 입력으로만 쓰고 즉시 버립니다 |
-| User-Agent 원문 | 같음. 브라우저·OS 통계는 이 표의 목적이 아닙니다 |
+| User-Agent 원문 | 요청 시 기기 대분류를 만든 뒤 즉시 버립니다. 브라우저·OS·모델은 저장하지 않습니다 |
 | 이메일·계정 키·표시명 | 트래픽 로그는 사람을 식별하지 않습니다 |
 | Referer URL 원문 | 검색어가 실려 옵니다. 분류값만 남깁니다 |
 | 쿼리스트링 | 사이트 내 검색어가 실려 옵니다 |
@@ -117,7 +120,7 @@ session_hash = SHA-256( TELEMETRY_SALT ‖ NUL ‖ UTC일자 ‖ NUL ‖ IP ‖ 
 | 방어 | 값 |
 | --- | --- |
 | 본문 상한 | 1024 byte (`content-length`와 실제 본문 모두 검사) |
-| 허용 필드 | `path`, `entityType`, `entityKey`, `locale`. 그 외 필드는 무시하고 저장하지 않습니다 |
+| 허용 필드 | `path`, `entityType`, `entityKey`, `locale`. 국가·시간·기기는 신뢰 가능한 요청 헤더와 서버 시각에서 파생 |
 | referrer | 본문 값을 신뢰하지 않고 서버에서 계산 |
 | rate limit | `session_hash`당 분당 30회. **in-process best-effort** |
 
@@ -142,10 +145,12 @@ raw 행을 삭제합니다. `metrics:read`를 정당하게 가진 파트너 앱�
 
 | 항목 | 값 |
 | --- | --- |
-| 구현 | `pruneRawViews()` — `src/lib/telemetry/ingest.ts` |
-| 실행 지점 | `rollupDays()` 마지막 단계 — `src/lib/metrics/rollup.ts`. 즉 `POST /api/telemetry/v1/rollup` 1회당 1회 |
-| 쿼리 | `DELETE FROM page_views WHERE day < (오늘 - 90일)` |
-| 보고 | 롤업 응답의 `pruned_views` |
+| 구현 | `pruneRawViews()` / `pruneStoredPageViews()` |
+| D1 실행 지점 | `rollupDays()` 마지막 단계 — `POST /api/telemetry/v1/rollup` 1회당 1회 |
+| Supabase 실행 지점 | Vercel Cron이 매일 `GET /api/telemetry/retention` 호출 |
+| 쿼리 | D1 `DELETE`; Supabase `bean_wiki_prune_page_views()` RPC. 둘 다 `day < (오늘 - 90일)` |
+| 인증 | 롤업은 internal API credential, Vercel Cron은 `CRON_SECRET` |
+| 보고 | 롤업 응답의 `pruned_views` 또는 retention 응답의 `deletedRows` |
 
 쓰기 경로(비콘)에서 정리하지 않습니다. 독자의 요청 하나가 무작위로 대량 삭제를
 떠안는 구조를 만들지 않기 위해서입니다. 롤업 cron이 멈추면 정리도 멈추므로,
@@ -167,6 +172,7 @@ cron 실패는 보존 위반으로 취급합니다.
 | --- | --- |
 | `GET /api/metrics/v1` | `applySuppression()` 통과 필수 |
 | 운영 봇 (Phase 6) | 같은 카탈로그·같은 함수를 사용 |
+| 공개 `/analytics` 대시보드 | 날짜·문서·유입·국가·시간대 행은 서로 다른 익명 세션이 5개 이상일 때만 표시. 전체 트래픽도 5개 미만이면 0으로 보고 |
 | 롤업 저장 (`daily_metrics`) | 억제하지 않고 `subject_count`를 함께 저장합니다. 읽기 시점에 판정하기 위해서입니다 |
 | 관리자 콘솔 | 원본 열람이 필요한 경우에만 예외이며, 그 경로도 이메일·계정 키는 다루지 않습니다 |
 
@@ -313,9 +319,10 @@ Authorization: Bearer bwk_…
 
 | 항목 | 값 |
 | --- | --- |
-| 필수 바인딩 | `TELEMETRY_SALT` (미설정 시 3절의 축소 동작) |
+| 필수 바인딩 | `TELEMETRY_SALT` (미설정 시 3절의 축소 동작), Vercel은 `CRON_SECRET` |
 | salt 교체 | 언제든 가능. 교체 시점 이후의 세션 그룹핑만 끊기고 과거 롤업은 영향 없습니다 |
-| cron | `POST /api/telemetry/v1/rollup`을 하루 1회 이상. `client_type = internal` 자격증명 사용 |
+| D1 cron | `POST /api/telemetry/v1/rollup`을 하루 1회 이상. `client_type = internal` 자격증명 사용 |
+| Supabase cron | `vercel.json`이 매일 03:17 UTC에 `GET /api/telemetry/retention` 호출. Vercel이 `Authorization: Bearer $CRON_SECRET`을 추가 |
 | 백필 | `{"days": ["2026-07-01", "2026-07-02"]}` (최대 31일) |
 | 자격증명 발급 | `scripts/mint-api-client.mjs` |
 
@@ -335,6 +342,7 @@ curl -X POST https://bean-wiki.vercel.app/api/telemetry/v1/rollup \
 | `src/lib/metrics/rollup.ts` | 일별 롤업 upsert, `daily_metrics` 읽기 |
 | `src/app/api/telemetry/v1/views/route.ts` | 공개 비콘 |
 | `src/app/api/telemetry/v1/rollup/route.ts` | 내부 cron |
+| `src/app/api/telemetry/retention/route.ts` | Vercel Supabase 원본 보존 cron |
 | `src/app/api/metrics/v1/route.ts` | 지표 조회 |
 | `src/components/view-beacon.tsx` | 클라이언트 비콘 컴포넌트 (마운트 위치는 파일 주석) |
 
