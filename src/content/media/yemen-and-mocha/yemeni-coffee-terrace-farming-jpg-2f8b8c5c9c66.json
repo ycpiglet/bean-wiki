@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:192432611",
+  "articleSlug": "yemen-and-mocha",
+  "section": "dry-process",
+  "localPath": "/article-media/yemen-and-mocha/yemeni-coffee-terrace-farming-jpg-2f8b8c5c9c66.jpg",
+  "sha256": "2f8b8c5c9c669af778801903922831ee580c8fe446eada6c0ffe2fa06cf79f9e",
+  "bytes": 281728,
+  "mime": "image/jpeg",
+  "alt": "예멘 고원 지대의 계단식 커피 경작지",
+  "caption": "가파른 산악 지형의 계단식 농지 조건 자체가 건조·수확 방식에 제약을 만들고, 라벨 하나로는 이 편차를 설명하지 못합니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "192432611",
+    "title": "Yemeni Coffee Terrace Farming.jpg",
+    "author": "Luai Al-Mamari",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Yemeni_Coffee_Terrace_Farming.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/51/Yemeni_Coffee_Terrace_Farming.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/5/51/Yemeni_Coffee_Terrace_Farming.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:15:09.810Z",
+    "researchManifest": "img10-18.json",
+    "query": "Yemen coffee terrace mountain",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

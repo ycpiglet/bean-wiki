@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:16391218",
+  "articleSlug": "central-america-regional-comparison",
+  "section": "frame",
+  "localPath": "/article-media/central-america-regional-comparison/coffee-farm-san-marcos-tarrazu-costa-rica-jpg-d9ee9fda98e9.jpg",
+  "sha256": "d9ee9fda98e99c6930823fc9f230531d1f67363990d768a52598297728becf5f",
+  "bytes": 449231,
+  "mime": "image/jpeg",
+  "alt": "코스타리카 타라수 산마르코스 지역의 커피 농장들",
+  "caption": "국가 라벨은 출발점일 뿐이며, 실제로는 이런 개별 농장 단위의 수확 시기와 건조 조건까지 함께 읽어야 컵 판단이 정확해집니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "16391218",
+    "title": "Coffee-farm-san-marcos-tarrazu-costa-rica.jpg",
+    "author": "Tarrazu at en.wikipedia",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee-farm-san-marcos-tarrazu-costa-rica.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Coffee-farm-san-marcos-tarrazu-costa-rica.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Coffee-farm-san-marcos-tarrazu-costa-rica.jpg/1920px-Coffee-farm-san-marcos-tarrazu-costa-rica.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "pdm",
+    "label": "Public Domain 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "Public domain"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:14:18.269Z",
+    "researchManifest": "img10-17.json",
+    "query": "Costa Rica coffee farm",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

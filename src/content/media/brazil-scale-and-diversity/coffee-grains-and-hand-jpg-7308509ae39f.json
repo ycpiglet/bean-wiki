@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:40344592",
+  "articleSlug": "brazil-scale-and-diversity",
+  "section": "how-to-use",
+  "localPath": "/article-media/brazil-scale-and-diversity/coffee-grains-and-hand-jpg-7308509ae39f.jpg",
+  "sha256": "7308509ae39f1c2dece1131d19b5b1d2c9427826b980796e3582678d397b3313",
+  "bytes": 322466,
+  "mime": "image/jpeg",
+  "alt": "손바닥 위에 놓인 커피 생두 알갱이들",
+  "caption": "등급은 크기·고도·가공 방식·수확 방식 같은 여러 기준이 합쳐진 결과이므로, 지역 라벨 하나만 보고 등급을 넘겨짚어서는 안 됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "40344592",
+    "title": "Coffee grains and hand.jpg",
+    "author": "Jonathan Wilkins",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_grains_and_hand.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/48/Coffee_grains_and_hand.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Coffee_grains_and_hand.jpg/1920px-Coffee_grains_and_hand.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:12:24.424Z",
+    "researchManifest": "img10-9.json",
+    "query": "Brazil coffee farm",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
