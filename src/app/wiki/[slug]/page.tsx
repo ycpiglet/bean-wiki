@@ -8,6 +8,7 @@ import {
   ArticleViewReward,
 } from "@/components/article-learning";
 import { ArticleDiscussion } from "@/components/article-discussion";
+import { ArticleEngagement } from "@/components/article-engagement";
 import { ArticleResources } from "@/components/article-resources";
 import { ArticleContributors } from "@/components/article-contributors";
 import { JsonLd } from "@/components/json-ld";
@@ -197,6 +198,7 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
                 역사
               </Link>
             </div>
+            <ArticleEngagement slug={slug} />
             {article.tags && article.tags.length > 0 && (
               <div className="article-tags">
                 {article.tags.map((tag) => (

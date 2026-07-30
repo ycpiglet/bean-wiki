@@ -17,7 +17,6 @@
 import {
   ok,
   problem,
-  problemFromStorageError,
   newRequestId,
 } from "@/lib/api/envelope";
 import { recordView } from "@/lib/telemetry/ingest";
@@ -126,6 +125,8 @@ export async function POST(request: Request) {
     request.headers.get("referer"),
     request.headers.get("host"),
   );
+  const countryCode = coarseCountry(request);
+  const deviceClass = classifyDevice(request.headers.get("user-agent"));
 
   try {
     const result = await recordView({
@@ -136,6 +137,9 @@ export async function POST(request: Request) {
       sessionHash: session,
       referrerClass,
       day,
+      countryCode,
+      hourBucket: now.getUTCHours(),
+      deviceClass,
     });
     if (!result.ok) {
       return problem("invalid_request", {
@@ -145,14 +149,21 @@ export async function POST(request: Request) {
       });
     }
   } catch (error) {
-    try {
-      return problemFromStorageError(error, requestId);
-    } catch {
-      return problem("internal", {
-        requestId,
-        detail: "The view could not be recorded.",
-      });
+    const name = (error as { name?: string } | null)?.name;
+    if (
+      name === "D1UnavailableError" ||
+      name === "EngagementStoreUnavailableError"
+    ) {
+      // A public fire-and-forget beacon must not create a console error on a
+      // storage-less preview. `recorded: false` keeps the loss observable
+      // without encouraging the browser to retry.
+      return ok(
+        "page_view.v1",
+        { recorded: false, reason: "storage_unavailable" },
+        { requestId, status: 202, cacheControl: "no-store" },
+      );
     }
+    throw error;
   }
 
   // 202: accepted for counting. The caller has no reason to wait for a rollup,
@@ -162,4 +173,25 @@ export async function POST(request: Request) {
     { recorded: true },
     { requestId, status: 202, cacheControl: "no-store" },
   );
+}
+
+function coarseCountry(request: Request): string {
+  const value = [
+    "x-vercel-ip-country",
+    "cf-ipcountry",
+    "x-country-code",
+  ]
+    .map((name) => request.headers.get(name)?.trim().toUpperCase())
+    .find((item) => item && /^[A-Z]{2}$/.test(item));
+  return value ?? "ZZ";
+}
+
+function classifyDevice(
+  userAgent: string | null,
+): "desktop" | "mobile" | "tablet" | "bot" | "unknown" {
+  if (!userAgent) return "unknown";
+  if (/bot|crawler|spider|slurp|bingpreview/i.test(userAgent)) return "bot";
+  if (/ipad|tablet|kindle|silk/i.test(userAgent)) return "tablet";
+  if (/mobile|iphone|ipod|android/i.test(userAgent)) return "mobile";
+  return "desktop";
 }

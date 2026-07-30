@@ -25,6 +25,8 @@ const KNOWN_SCOPES = [
   "contributions:write",
   "contributions:read",
   "metrics:read",
+  "engagement:read",
+  "engagement:write",
   "bot:command",
   "recommendations:write",
 ];

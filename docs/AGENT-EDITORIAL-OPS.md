@@ -57,6 +57,8 @@ npm run publish:content:live -- --message "docs(content): publish coffee taxonom
 | `quiz-and-practice-builder` | 퀴즈, 자기 점검, 실습 루틴 작성 | 실습·퀴즈 섹션 |
 | `wiki-link-architect` | 내부 링크, related, 역링크 친화 문장 보강 | `<a data-wikilink>`, related |
 | `image-researcher` | 허용 라이선스 이미지 검색·증거·로컬 적용 | `public/article-media`, `src/content/media`, figure |
+| `resource-enrichment-editor` | 표·수치·그래프·인터뷰·서적 자료와 재현 가능한 근거 보강 | 아티클, `src/content/resource-evidence` |
+| `engagement-qa` | 댓글·대댓글·수정·삭제·좋아요·취소와 공개 지표 분리 검증 | 기계 API, QA 데이터 |
 | `release-captain` | 검증, 충돌 확인, 커밋·push·배포 상태 확인 | git, npm scripts |
 
 ## 작업 토폴로지
@@ -79,7 +81,8 @@ npm run publish:content:live -- --message "docs(content): publish coffee taxonom
 4. `wiki-link-architect`
 5. `naturalness-editor`
 6. `image-researcher`
-7. `release-captain`
+7. `resource-enrichment-editor`
+8. `release-captain`
 
 한 파일에 여러 역할이 붙을 때는 위 순서대로 진행합니다. 동시에 같은 파일을 수정하지
 않습니다.

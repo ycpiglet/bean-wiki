@@ -32,6 +32,29 @@ if (knownScopes.size === 0) {
   err("scopes.ts: could not extract any scope constants — the gate cannot verify routes.");
 }
 
+const mintPath = join(root, "scripts", "mint-api-client.mjs");
+if (existsSync(mintPath)) {
+  const mintSource = readFileSync(mintPath, "utf8");
+  const mintBlock = /const KNOWN_SCOPES = \[([\s\S]*?)\];/.exec(mintSource);
+  const mintScopes = new Set(
+    mintBlock
+      ? [...mintBlock[1].matchAll(/"([a-z-]+:[a-z-]+)"/g)].map(
+          (match) => match[1],
+        )
+      : [],
+  );
+  for (const scope of knownScopes) {
+    if (!mintScopes.has(scope)) {
+      err(`mint-api-client.mjs: cannot grant known scope \`${scope}\`.`);
+    }
+  }
+  for (const scope of mintScopes) {
+    if (!knownScopes.has(scope)) {
+      err(`mint-api-client.mjs: lists unknown scope \`${scope}\`.`);
+    }
+  }
+}
+
 // Problem codes are the source of truth for error responses.
 const envelopeSource = readFileSync(join(libApi, "envelope.ts"), "utf8");
 const problemsBlock = /export const PROBLEMS = \{([\s\S]*?)\n\} as const;/.exec(

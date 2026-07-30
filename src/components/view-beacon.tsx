@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef } from "react";
+import { usePathname } from "next/navigation";
 
 // Fires one page-view beacon per mount at /api/telemetry/v1/views.
 //
@@ -71,6 +72,61 @@ export function ViewBeacon({
   }, [entityType, entityKey, locale, path]);
 
   return null;
+}
+
+/** One global beacon that follows client-side navigation and classifies routes. */
+export function SiteViewBeacon() {
+  const pathname = usePathname() || "/";
+  const lastPath = useRef("");
+
+  useEffect(() => {
+    if (lastPath.current === pathname) return;
+    lastPath.current = pathname;
+    const entity = classifyPath(pathname);
+
+    try {
+      const body = JSON.stringify({
+        path: pathname,
+        entityType: entity.type,
+        entityKey: entity.key,
+        locale: pathname === "/en" || pathname.startsWith("/en/") ? "en" : "ko",
+      });
+      if (typeof navigator.sendBeacon === "function") {
+        const blob = new Blob([body], { type: "application/json" });
+        if (navigator.sendBeacon(ENDPOINT, blob)) return;
+      }
+      void fetch(ENDPOINT, {
+        method: "POST",
+        body,
+        keepalive: true,
+        headers: { "content-type": "application/json" },
+      }).catch(() => undefined);
+    } catch {
+      // Traffic measurement must never interrupt reading.
+    }
+  }, [pathname]);
+
+  return null;
+}
+
+function classifyPath(pathname: string): {
+  type: NonNullable<ViewBeaconProps["entityType"]>;
+  key: string;
+} {
+  const parts = pathname.split("/").filter(Boolean);
+  const localized = parts[0] === "en" ? parts.slice(1) : parts;
+  if (localized[0] === "wiki" && localized[1]) {
+    return { type: "article", key: decodeURIComponent(localized[1]) };
+  }
+  if (localized[0] === "topics" && localized[1]) {
+    return { type: "topic", key: decodeURIComponent(localized[1]) };
+  }
+  if (localized[0] === "tags" && localized[1]) {
+    return { type: "tag", key: decodeURIComponent(localized[1]) };
+  }
+  if (localized[0] === "glossary") return { type: "glossary", key: "index" };
+  if (localized[0] === "quiz") return { type: "quiz", key: "daily" };
+  return { type: "page", key: pathname };
 }
 
 export default ViewBeacon;

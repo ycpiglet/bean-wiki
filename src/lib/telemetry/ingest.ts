@@ -12,6 +12,7 @@
 // See docs/TELEMETRY-AND-PRIVACY.md.
 
 import { getD1 } from "../../../db";
+import { storePageView } from "@/lib/engagement-store";
 import {
   isDay,
   isReferrerClass,
@@ -52,6 +53,9 @@ export type RecordViewInput = {
   locale?: string | null;
   sessionHash: string;
   referrerClass?: string | null;
+  countryCode?: string | null;
+  hourBucket?: number | null;
+  deviceClass?: string | null;
   /** UTC day; defaults to today. Only the rollup backfill passes this. */
   day?: string | null;
 };
@@ -64,6 +68,9 @@ export type NormalizedView = {
   day: string;
   sessionHash: string;
   referrerClass: ReferrerClass;
+  countryCode: string;
+  hourBucket: number;
+  deviceClass: "desktop" | "mobile" | "tablet" | "bot" | "unknown";
 };
 
 export type ViewRejection =
@@ -73,6 +80,9 @@ export type ViewRejection =
   | "invalid_locale"
   | "invalid_session"
   | "invalid_referrer"
+  | "invalid_country"
+  | "invalid_hour"
+  | "invalid_device"
   | "invalid_day";
 
 export type ValidationResult =
@@ -151,6 +161,38 @@ export function validateView(input: RecordViewInput): ValidationResult {
     return { ok: false, reason: "invalid_day", detail: "day must be YYYY-MM-DD." };
   }
 
+  const countryCode = (input.countryCode ?? "ZZ").trim().toUpperCase();
+  if (!/^[A-Z]{2}$/.test(countryCode)) {
+    return {
+      ok: false,
+      reason: "invalid_country",
+      detail: "countryCode must be a two-letter country code or ZZ.",
+    };
+  }
+
+  const hourBucket = input.hourBucket ?? new Date().getUTCHours();
+  if (
+    !Number.isInteger(hourBucket) ||
+    Number(hourBucket) < 0 ||
+    Number(hourBucket) > 23
+  ) {
+    return {
+      ok: false,
+      reason: "invalid_hour",
+      detail: "hourBucket must be an integer from 0 through 23.",
+    };
+  }
+
+  const deviceClass = (input.deviceClass ?? "unknown").trim();
+  const deviceClasses = ["desktop", "mobile", "tablet", "bot", "unknown"];
+  if (!deviceClasses.includes(deviceClass)) {
+    return {
+      ok: false,
+      reason: "invalid_device",
+      detail: `deviceClass must be one of: ${deviceClasses.join(", ")}.`,
+    };
+  }
+
   return {
     ok: true,
     view: {
@@ -163,6 +205,9 @@ export function validateView(input: RecordViewInput): ValidationResult {
       day,
       sessionHash: input.sessionHash,
       referrerClass: referrerClass as ReferrerClass,
+      countryCode,
+      hourBucket: Number(hourBucket),
+      deviceClass: deviceClass as NormalizedView["deviceClass"],
     },
   };
 }
@@ -179,23 +224,7 @@ export async function recordView(
   if (!validated.ok) return validated;
   const view = validated.view;
 
-  await getD1()
-    .prepare(
-      `INSERT INTO page_views
-         (id, path, entity_type, entity_key, locale, day, session_hash, referrer_class)
-       VALUES (?, ?, ?, ?, ?, ?, ?, ?)`,
-    )
-    .bind(
-      crypto.randomUUID(),
-      view.path,
-      view.entityType,
-      view.entityKey,
-      view.locale,
-      view.day,
-      view.sessionHash,
-      view.referrerClass,
-    )
-    .run();
+  await storePageView(view);
 
   return { ok: true, day: view.day };
 }

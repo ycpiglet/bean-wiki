@@ -53,6 +53,8 @@
     "test:image-research": "node --test tests/image-license.test.mjs",
     "research:images": "node scripts/research-article-images.mjs",
     "apply:image": "node scripts/apply-article-image.mjs",
+    "audit:resources": "node scripts/audit-article-resources.mjs",
+    "qa:engagement": "node scripts/engagement-qa.mjs",
     "verify": "npm run lint && npm run design:check && npm run check-content && npm run check:editorial && npm run check:platform && npm run build",
     "mint:api-client": "node scripts/mint-api-client.mjs",
     "new-article": "node scripts/new-article.mjs",

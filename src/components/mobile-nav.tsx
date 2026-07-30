@@ -62,6 +62,7 @@ export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
             {locale === "ko" && (
               <>
                 <Link href="/quiz" onClick={close}>{t.quiz}</Link>
+                <Link href="/analytics" onClick={close}>통계</Link>
                 <Link href="/discover" onClick={close}>커피 추천</Link>
                 <Link href="/learning-path" onClick={close}>초보자 학습 경로</Link>
                 <Link href="/design/colors" onClick={close}>
@@ -76,9 +77,12 @@ export function MobileNav({ locale = "ko" }: { locale?: Locale }) {
               </>
             )}
             {locale === "en" && (
-              <Link href="/design/colors" onClick={close}>
-                Brand colors
-              </Link>
+              <>
+                <Link href="/analytics" onClick={close}>Analytics</Link>
+                <Link href="/design/colors" onClick={close}>
+                  Brand colors
+                </Link>
+              </>
             )}
             <span className="mobile-drawer-label">{t.topics}</span>
             {categories.map((category) => (

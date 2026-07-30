@@ -80,10 +80,53 @@ export const articleComments = sqliteTable(
     displayName: text("display_name").notNull(),
     body: text("body").notNull(),
     parentId: text("parent_id"),
+    actorType: text("actor_type").notNull().default("human"),
+    isSynthetic: integer("is_synthetic").notNull().default(0),
     createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+    updatedAt: text("updated_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+    deletedAt: text("deleted_at"),
   },
   (table) => [
     index("article_comment_slug_idx").on(table.articleSlug, table.createdAt),
+    index("article_comment_parent_idx").on(table.parentId, table.createdAt),
+  ],
+);
+
+export const articleLikes = sqliteTable(
+  "article_likes",
+  {
+    id: text("id").primaryKey(),
+    articleSlug: text("article_slug").notNull(),
+    actorKey: text("actor_key").notNull(),
+    displayName: text("display_name").notNull(),
+    actorType: text("actor_type").notNull().default("human"),
+    isSynthetic: integer("is_synthetic").notNull().default(0),
+    createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [
+    uniqueIndex("article_like_actor_idx").on(table.articleSlug, table.actorKey),
+    index("article_like_slug_idx").on(table.articleSlug, table.createdAt),
+  ],
+);
+
+export const engagementEvents = sqliteTable(
+  "engagement_events",
+  {
+    id: text("id").primaryKey(),
+    articleSlug: text("article_slug").notNull(),
+    action: text("action").notNull(),
+    actorKey: text("actor_key").notNull(),
+    actorType: text("actor_type").notNull().default("human"),
+    subjectId: text("subject_id").notNull().default(""),
+    isSynthetic: integer("is_synthetic").notNull().default(0),
+    createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
+  },
+  (table) => [
+    index("engagement_event_article_idx").on(
+      table.articleSlug,
+      table.createdAt,
+    ),
+    index("engagement_event_action_idx").on(table.action, table.createdAt),
   ],
 );
 
@@ -345,6 +388,10 @@ export const pageViews = sqliteTable(
     sessionHash: text("session_hash").notNull(),
     // internal | search | social | direct | app:<client-id>
     referrerClass: text("referrer_class").notNull().default("direct"),
+    // Coarse request metadata only. Never store an IP or raw user agent.
+    countryCode: text("country_code").notNull().default("ZZ"),
+    hourBucket: integer("hour_bucket").notNull().default(0),
+    deviceClass: text("device_class").notNull().default("unknown"),
     createdAt: text("created_at").notNull().default(sql`CURRENT_TIMESTAMP`),
   },
   (table) => [
