@@ -48,7 +48,9 @@ export async function POST(
     parentId?: string | null;
     liked?: boolean;
   } | null;
-  const body = typeof data?.body === "string" ? data.body.trim() : "";
+  const submittedBody =
+    typeof data?.body === "string" ? data.body.trim() : undefined;
+  const body = submittedBody ?? "";
   const actor = humanActor(user);
 
   if (data?.action === "review") {
@@ -61,7 +63,12 @@ export async function POST(
       return Response.json({ error: "invalid_review" }, { status: 400 });
     }
     try {
-      await upsertArticleReview(actor, slug, data.rating as number, body);
+      await upsertArticleReview(
+        actor,
+        slug,
+        data.rating as number,
+        submittedBody,
+      );
       const awarded = await bestEffortActivity(user, "review", slug);
       return Response.json({ ok: true, awarded });
     } catch (error) {

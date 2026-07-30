@@ -29,11 +29,15 @@ export function ArticleEngagement({
   const [status, setStatus] = useState("");
 
   const load = useCallback(async () => {
-    const response = await fetch(`/api/articles/${slug}/feedback`, {
-      cache: "no-store",
-    });
-    if (response.ok) {
-      setData(normalizeSnapshot((await response.json()) as Partial<Snapshot>));
+    try {
+      const response = await fetch(`/api/articles/${slug}/feedback`, {
+        cache: "no-store",
+      });
+      if (response.ok) {
+        setData(normalizeSnapshot((await response.json()) as Partial<Snapshot>));
+      }
+    } catch {
+      // Keep the last known snapshot when a background refresh fails.
     }
   }, [slug]);
 
@@ -67,21 +71,28 @@ export function ArticleEngagement({
       return;
     }
     setPending(true);
-    const response = await fetch(`/api/articles/${slug}/feedback`, {
-      method: data.likes.viewerLiked ? "DELETE" : "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        action: "like",
-        liked: !data.likes.viewerLiked,
-      }),
-    });
-    setPending(false);
-    if (!response.ok) {
+    try {
+      const response = await fetch(`/api/articles/${slug}/feedback`, {
+        method: data.likes.viewerLiked ? "DELETE" : "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          action: "like",
+          liked: !data.likes.viewerLiked,
+        }),
+      });
+      if (!response.ok) {
+        setStatus("좋아요를 저장하지 못했습니다. 잠시 뒤 다시 시도해 주세요.");
+        return;
+      }
+      setStatus(
+        data.likes.viewerLiked ? "좋아요를 취소했습니다." : "좋아요를 남겼습니다.",
+      );
+      window.dispatchEvent(new Event("beanwiki:feedback"));
+    } catch {
       setStatus("좋아요를 저장하지 못했습니다. 잠시 뒤 다시 시도해 주세요.");
-      return;
+    } finally {
+      setPending(false);
     }
-    setStatus(data.likes.viewerLiked ? "좋아요를 취소했습니다." : "좋아요를 남겼습니다.");
-    window.dispatchEvent(new Event("beanwiki:feedback"));
   }
 
   function toggleScrap() {
@@ -142,49 +153,79 @@ export function ArticleEngagement({
   return (
     <div className="article-action-area">
       <div className="article-engagement" aria-label="문서 활동과 도구">
-        <span className="article-action-metric" title="누적 문서 조회">
-          <EyeIcon />
-          <strong>{(data?.views ?? 0).toLocaleString("ko-KR")}</strong>
-          <small>조회</small>
-        </span>
-        <button
-          type="button"
-          className={data?.likes.viewerLiked ? "is-liked" : undefined}
-          onClick={() => void toggleLike()}
-          disabled={pending || !data}
-          aria-pressed={data?.likes.viewerLiked ?? false}
-        >
-          <HeartIcon filled={data?.likes.viewerLiked ?? false} />
-          <strong>{(data?.likes.total ?? 0).toLocaleString("ko-KR")}</strong>
-          <small>좋아요</small>
-        </button>
-        <a href="#reader-conversation">
-          <ChatIcon />
-          <strong>{commentCount}</strong>
-          <small>댓글</small>
-        </a>
-        <button
-          type="button"
-          className={scrapped ? "is-active" : undefined}
-          onClick={toggleScrap}
-          aria-pressed={scrapped}
-          title="현재 브라우저에 저장"
-        >
-          <BookmarkIcon filled={scrapped} />
-          <small>{scrapped ? "스크랩됨" : "스크랩"}</small>
-        </button>
-        <button type="button" onClick={() => void shareArticle()}>
-          <ShareIcon />
-          <small>공유</small>
-        </button>
-        <button type="button" onClick={exportArticle}>
-          <DownloadIcon />
-          <small>내보내기</small>
-        </button>
-        <button type="button" onClick={() => window.print()}>
-          <PrintIcon />
-          <small>인쇄</small>
-        </button>
+        <div className="article-engagement-primary">
+          <button
+            type="button"
+            className={data?.likes.viewerLiked ? "is-liked" : undefined}
+            onClick={() => void toggleLike()}
+            disabled={pending || !data}
+            aria-pressed={data?.likes.viewerLiked ?? false}
+          >
+            <HeartIcon filled={data?.likes.viewerLiked ?? false} />
+            <span>좋아요</span>
+            <strong>{(data?.likes.total ?? 0).toLocaleString("ko-KR")}</strong>
+          </button>
+          <a href="#reader-conversation">
+            <ChatIcon />
+            <span>댓글</span>
+            <strong>{commentCount}</strong>
+          </a>
+        </div>
+        <div className="article-engagement-tools">
+          <span className="article-action-metric" title="누적 문서 조회">
+            <EyeIcon />
+            <strong>{(data?.views ?? 0).toLocaleString("ko-KR")}</strong>
+            <small>조회</small>
+          </span>
+          <button
+            type="button"
+            className={scrapped ? "is-active" : undefined}
+            onClick={toggleScrap}
+            aria-pressed={scrapped}
+            title="현재 브라우저에 저장"
+          >
+            <BookmarkIcon filled={scrapped} />
+            <span>{scrapped ? "스크랩됨" : "스크랩"}</span>
+          </button>
+          <button type="button" onClick={() => void shareArticle()}>
+            <ShareIcon />
+            <span>공유</span>
+          </button>
+          <details className="article-action-more">
+            <summary>
+              <MoreIcon />
+              <span>더 보기</span>
+            </summary>
+            <div className="article-action-menu">
+              <button
+                type="button"
+                onClick={(event) => {
+                  exportArticle();
+                  event.currentTarget.closest("details")?.removeAttribute("open");
+                }}
+              >
+                <DownloadIcon />
+                <span>
+                  <strong>내보내기</strong>
+                  <small>HTML 파일로 저장</small>
+                </span>
+              </button>
+              <button
+                type="button"
+                onClick={(event) => {
+                  event.currentTarget.closest("details")?.removeAttribute("open");
+                  window.print();
+                }}
+              >
+                <PrintIcon />
+                <span>
+                  <strong>인쇄</strong>
+                  <small>인쇄용 화면 열기</small>
+                </span>
+              </button>
+            </div>
+          </details>
+        </div>
       </div>
       <div className="article-action-help">
         <p role="status" aria-live="polite">{status}</p>
@@ -242,6 +283,16 @@ function ShareIcon() {
       <circle cx="6" cy="12" r="2.4" />
       <circle cx="18" cy="19" r="2.4" />
       <path d="m8.2 10.9 7.6-4.6M8.2 13.1l7.6 4.6" />
+    </Icon>
+  );
+}
+
+function MoreIcon() {
+  return (
+    <Icon>
+      <circle cx="5" cy="12" r="1.3" />
+      <circle cx="12" cy="12" r="1.3" />
+      <circle cx="19" cy="12" r="1.3" />
     </Icon>
   );
 }

@@ -92,7 +92,7 @@ export default async function EnWikiArticle(props: PageProps<"/en/wiki/[slug]">)
   return (
     <main className="article-page" lang="en">
       <JsonLd data={articleSchema} />
-      <header className="article-header shell">
+      <header className="article-header article-detail-header shell">
         <Link href="/en" className="brand" aria-label="Bean Wiki home">
           <BeanMark compact />
           <span>BEAN</span>

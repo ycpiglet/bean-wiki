@@ -3495,6 +3495,9 @@ a.figure-credit:focus-visible {
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
+select:focus-visible,
+summary:focus-visible,
+textarea:focus-visible,
 .filter-chip:focus-visible,
 .browse-card:focus-visible,
 .topic-card:focus-visible,
@@ -3656,48 +3659,67 @@ input:focus-visible,
 
 /* Article engagement and privacy-preserving analytics */
 .article-engagement {
-  display: grid;
-  grid-template-columns: repeat(7, minmax(76px, 1fr));
-  align-items: stretch;
-  overflow: hidden;
-  margin-top: 22px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--cream);
-  color: var(--muted);
-  font-size: 13px;
-}
-
-.article-engagement :is(span, button, a) {
   display: flex;
   align-items: center;
+  gap: 12px;
+  margin-top: 22px;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.article-engagement-primary,
+.article-engagement-tools {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.article-engagement-tools {
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.article-engagement-primary > :is(button, a),
+.article-engagement-tools > :is(button, .article-action-metric),
+.article-action-more > summary {
+  display: inline-flex;
+  align-items: center;
   justify-content: center;
-  gap: 6px;
-  min-height: 56px;
-  padding: 8px 10px;
-  border: 0;
-  border-right: 1px solid var(--line);
-  background: transparent;
+  gap: 7px;
+  min-height: 44px;
+  padding: 0 13px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: color-mix(in oklab, var(--cream) 72%, var(--paper));
   color: inherit;
   font: inherit;
   text-align: center;
+  white-space: nowrap;
   transition:
+    border-color 150ms ease,
     background 150ms ease,
-    color 150ms ease,
-    transform 150ms ease;
+    color 150ms ease;
 }
 
-.article-engagement :is(span, button, a):last-child {
-  border-right: 0;
+.article-engagement-primary > :is(button, a) {
+  padding-inline: 15px;
+  color: var(--ink);
+  font-weight: 680;
 }
 
-.article-engagement :is(button, a):hover,
-.article-engagement :is(button, a):focus-visible {
-  background: var(--paper-deep);
-  color: var(--brand);
+.article-engagement-primary > :is(button, a):hover,
+.article-engagement-primary > :is(button, a):focus-visible,
+.article-engagement-tools > button:hover,
+.article-engagement-tools > button:focus-visible,
+.article-action-more > summary:hover,
+.article-action-more > summary:focus-visible {
+  border-color: color-mix(in oklab, var(--brand) 58%, var(--line));
+  background: color-mix(in oklab, var(--brand) 8%, var(--cream));
+  color: var(--brand-strong);
 }
 
-.article-engagement button {
+.article-engagement button,
+.article-action-more > summary {
   cursor: pointer;
 }
 
@@ -3707,29 +3729,114 @@ input:focus-visible,
 }
 
 .article-engagement svg {
-  width: 18px;
-  height: 18px;
+  width: 19px;
+  height: 19px;
+  flex: none;
   fill: none;
   stroke: currentColor;
+  stroke-linecap: round;
   stroke-linejoin: round;
-  stroke-width: 1.6;
+  stroke-width: 1.7;
 }
 
 .article-engagement .filled,
 .article-engagement .is-liked,
 .article-engagement .is-active {
+  border-color: color-mix(in oklab, var(--cherry) 48%, var(--line));
+  background: color-mix(in oklab, var(--cherry) 8%, var(--cream));
   color: var(--cherry);
+}
+
+.article-engagement .filled {
   fill: currentColor;
 }
 
-.article-engagement strong {
-  color: var(--ink);
+.article-engagement-primary strong {
+  min-width: 1ch;
+  color: inherit;
+  font-family: var(--font-mono);
+  font-size: 12px;
 }
 
-.article-engagement small {
+.article-engagement-tools > .article-action-metric {
+  padding-inline: 7px;
+  border-color: transparent;
+  background: transparent;
+  cursor: default;
+}
+
+.article-action-metric strong {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.article-action-metric small {
   color: inherit;
-  font-size: inherit;
-  white-space: nowrap;
+  font-size: 12px;
+}
+
+.article-action-more {
+  position: relative;
+}
+
+.article-action-more > summary {
+  list-style: none;
+}
+
+.article-action-more > summary::-webkit-details-marker {
+  display: none;
+}
+
+.article-action-more[open] > summary {
+  border-color: color-mix(in oklab, var(--brand) 58%, var(--line));
+  color: var(--brand-strong);
+}
+
+.article-action-menu {
+  position: absolute;
+  z-index: 20;
+  top: calc(100% + 8px);
+  right: 0;
+  display: grid;
+  width: 230px;
+  padding: 7px;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: var(--cream);
+  box-shadow: 0 16px 44px color-mix(in oklab, var(--ink) 14%, transparent);
+}
+
+.article-action-menu button {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  min-height: 54px;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--ink);
+  text-align: left;
+}
+
+.article-action-menu button:hover,
+.article-action-menu button:focus-visible {
+  background: var(--paper-deep);
+}
+
+.article-action-menu button > span {
+  display: grid;
+  gap: 2px;
+}
+
+.article-action-menu button strong {
+  font-size: 14px;
+}
+
+.article-action-menu button small {
+  color: var(--muted);
+  font-size: 12px;
 }
 
 .article-action-help {
@@ -3763,36 +3870,46 @@ input:focus-visible,
   line-height: 1.6;
 }
 
-.discussion-metrics {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 24px;
-  padding: 17px 0;
-  border-bottom: 1px solid var(--line);
-  color: var(--muted);
-  font-size: 14px;
-}
-
-.discussion-metrics strong {
-  margin-right: 4px;
-  color: var(--ink);
-  font-size: 18px;
-}
-
-.discussion-metrics small {
-  padding: 5px 9px;
-  border-radius: 999px;
-  background: var(--paper-deep);
-}
-
 .reader-comment header,
 .comment-actions,
 .inline-comment-form > div {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 10px;
+}
+
+.reader-comment header {
+  align-items: flex-start;
+}
+
+.comment-avatar,
+.composer-avatar {
+  display: inline-grid;
+  flex: none;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid color-mix(in oklab, var(--brand) 28%, var(--line));
+  border-radius: 50%;
+  background: color-mix(in oklab, var(--brand) 9%, var(--paper));
+  color: var(--brand-strong);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: .04em;
+}
+
+.comment-author {
+  display: grid;
+  gap: 2px;
+  min-width: 0;
+}
+
+.comment-author > div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
 }
 
 .reader-comment header time {
@@ -3812,26 +3929,36 @@ input:focus-visible,
 }
 
 .reader-comment.is-reply {
-  margin-left: clamp(18px, 5vw, 52px);
-  padding-left: 18px;
+  margin-left: clamp(22px, 6vw, 58px);
+  padding-left: 20px;
   border-left: 2px solid var(--line);
 }
 
 .comment-actions {
   justify-content: flex-start;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 
 .comment-actions button,
 .inline-comment-form button:not(.secondary-button) {
-  border: 0;
+  min-height: 34px;
+  padding: 0 9px;
+  border: 1px solid transparent;
+  border-radius: 7px;
   background: transparent;
   color: var(--muted);
   cursor: pointer;
   font: inherit;
   font-size: 13px;
-  text-decoration: underline;
-  text-underline-offset: 3px;
+}
+
+.comment-actions button:hover,
+.comment-actions button:focus-visible,
+.inline-comment-form button:not(.secondary-button):hover,
+.inline-comment-form button:not(.secondary-button):focus-visible {
+  border-color: var(--line);
+  background: var(--paper-deep);
+  color: var(--ink);
 }
 
 .deleted-comment {
@@ -3849,6 +3976,7 @@ input:focus-visible,
   min-height: 88px;
   padding: 12px;
   border: 1px solid var(--line);
+  border-radius: 8px;
   background: var(--paper);
   color: var(--ink);
   font: inherit;
@@ -3862,6 +3990,7 @@ input:focus-visible,
 
 .reply-composer {
   padding: 15px;
+  border-radius: 9px;
   background: var(--paper-deep);
 }
 
@@ -4414,19 +4543,13 @@ input:focus-visible,
 
 @media (max-width: 900px) {
   .article-engagement {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    flex-wrap: wrap;
   }
 
-  .article-engagement :is(span, button, a) {
-    border-bottom: 1px solid var(--line);
-  }
-
-  .article-engagement :nth-child(4n) {
-    border-right: 0;
-  }
-
-  .article-engagement :nth-child(n + 5) {
-    border-bottom: 0;
+  .article-engagement-tools {
+    flex: 1 1 100%;
+    justify-content: flex-start;
+    margin-left: 0;
   }
 }
 
@@ -4482,36 +4605,40 @@ input:focus-visible,
 
 @media (max-width: 520px) {
   .article-engagement {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+    display: block;
   }
 
-  .article-engagement :nth-child(-n + 3) {
-    grid-column: span 4;
-    border-bottom: 1px solid var(--line);
+  .article-engagement-primary {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .article-engagement :nth-child(n + 4) {
-    grid-column: span 3;
-    border-bottom: 0;
+  .article-engagement-primary > :is(button, a) {
+    width: 100%;
   }
 
-  .article-engagement :nth-child(3),
-  .article-engagement :nth-child(7) {
-    border-right: 0;
+  .article-engagement-tools {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 8px;
   }
 
-  .article-engagement :nth-child(4),
-  .article-engagement :nth-child(5),
-  .article-engagement :nth-child(6) {
-    border-right: 1px solid var(--line);
+  .article-engagement-tools > :is(button, .article-action-metric),
+  .article-action-more {
+    flex: 1 1 calc(50% - 4px);
+    min-width: 0;
   }
 
-  .article-engagement small {
-    font-size: 11px;
+  .article-engagement-tools > :is(button, .article-action-metric),
+  .article-action-more > summary {
+    width: 100%;
+    padding-inline: 8px;
+    font-size: 12px;
   }
 
-  .discussion-forms .discussion-form-card {
-    padding: 18px 15px;
+  .article-action-menu {
+    right: 0;
+    width: min(230px, calc(100vw - 48px));
   }
 
   .home-live-kpis article {
@@ -6682,8 +6809,7 @@ body {
   align-items: start;
 }
 
-.suggestion-form,
-.article-discussion {
+.suggestion-form {
   border: 1px solid var(--line);
   background: var(--cream);
 }
@@ -6714,8 +6840,7 @@ body {
 
 .suggestion-form input,
 .suggestion-form select,
-.suggestion-form textarea,
-.discussion-forms textarea {
+.suggestion-form textarea {
   width: 100%;
   border: 1px solid var(--line);
   background: var(--paper);
@@ -6730,8 +6855,7 @@ body {
   padding: 0 13px;
 }
 
-.suggestion-form textarea,
-.discussion-forms textarea {
+.suggestion-form textarea {
   min-height: 132px;
   padding: 13px;
   line-height: 1.65;
@@ -6792,20 +6916,20 @@ body {
 }
 
 .article-discussion {
-  margin-top: 72px;
-  padding: clamp(24px, 5vw, 48px);
+  margin-top: 84px;
+  padding-top: clamp(32px, 5vw, 48px);
+  border-top: 1px solid var(--line);
 }
 
 .discussion-heading {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-bottom: 28px;
-  border-bottom: 1px solid var(--line);
+  padding-bottom: 24px;
 }
 
-.discussion-heading span {
+.discussion-heading > div > span {
   color: var(--copper);
   font-family: var(--font-mono);
   font-size: 13px;
@@ -6813,113 +6937,217 @@ body {
 }
 
 .discussion-heading h2 {
-  margin: 10px 0 0;
-  font-size: clamp(26px, 3vw, 38px);
+  margin: 8px 0 0;
+  font-size: clamp(27px, 3vw, 36px);
 }
 
-.discussion-heading > strong {
+.discussion-summary {
+  display: flex;
   flex: none;
-  font-size: 32px;
-  text-align: right;
+  align-items: stretch;
+  min-height: 58px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: color-mix(in oklab, var(--cream) 76%, var(--paper));
 }
 
-.discussion-heading > strong small {
-  display: block;
-  margin-top: 4px;
+.discussion-summary > span {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-content: center;
+  align-items: baseline;
+  gap: 1px 6px;
+  min-width: 104px;
+  padding: 9px 15px;
+}
+
+.discussion-summary > span + span {
+  border-left: 1px solid var(--line);
+}
+
+.discussion-summary b {
+  color: var(--honey);
+  font-size: 16px;
+}
+
+.discussion-summary strong {
+  color: var(--ink);
+  font-family: var(--font-mono);
+  font-size: 20px;
+  line-height: 1;
+}
+
+.discussion-summary small {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.2;
+}
+
+.discussion-comment-summary {
+  text-align: center;
+}
+
+.discussion-composer {
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: var(--cream);
+  box-shadow: 0 12px 36px color-mix(in oklab, var(--ink) 5%, transparent);
+}
+
+.discussion-composer-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 20px 12px;
+}
+
+.discussion-composer-heading > div {
+  display: grid;
+  gap: 3px;
+  min-width: 0;
+}
+
+.discussion-composer-heading label {
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 720;
+}
+
+.discussion-composer-heading p {
+  margin: 0;
   color: var(--muted);
   font-size: 13px;
-  font-weight: 500;
+  line-height: 1.45;
 }
 
-.discussion-forms {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-  align-items: stretch;
-  padding-block: 28px;
-}
-
-.discussion-forms .discussion-form-card {
-  display: grid;
-  grid-template-rows: auto 58px minmax(150px, 1fr) auto;
-  gap: 14px;
-  min-width: 0;
-  padding: 22px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: var(--paper);
-}
-
-.discussion-forms label {
-  display: block;
-  margin-top: 4px;
-  font-size: 16px;
-  font-weight: 700;
-}
-
-.discussion-form-head {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 12px;
-  min-height: 44px;
-}
-
-.discussion-form-head span {
-  color: var(--copper);
-  font-family: var(--font-mono);
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: .08em;
-}
-
-.discussion-form-head small {
+.discussion-composer-heading > small {
+  margin-left: auto;
   color: var(--muted);
+  font-family: var(--font-mono);
   font-size: 11px;
   white-space: nowrap;
 }
 
-.discussion-form-control {
+.discussion-composer > textarea {
+  display: block;
+  width: calc(100% - 40px);
+  min-height: 148px;
+  margin: 0 20px;
+  padding: 14px 15px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 16px;
+  line-height: 1.7;
+  resize: vertical;
+}
+
+.discussion-composer > textarea:focus,
+.inline-comment-form textarea:focus {
+  border-color: var(--brand);
+  outline: 3px solid color-mix(in oklab, var(--brand) 24%, transparent);
+  outline-offset: 1px;
+}
+
+.discussion-composer-footer {
   display: flex;
-  align-items: center;
-  min-height: 58px;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-top: 16px;
+  padding: 16px 20px 20px;
+  border-top: 1px solid var(--line);
 }
 
-.discussion-form-control p {
+.composer-rating {
+  min-width: 0;
   margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.composer-rating legend {
+  padding: 0;
+  color: var(--ink);
+  font-size: 14px;
+  font-weight: 680;
+}
+
+.composer-rating legend small {
+  margin-left: 7px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.55;
-}
-
-.discussion-forms .discussion-form-card textarea {
-  height: 100%;
-  min-height: 150px;
-}
-
-.discussion-forms .discussion-form-card > button {
-  width: 100%;
-  min-height: 50px;
+  font-size: 12px;
+  font-weight: 500;
 }
 
 .rating-picker {
   display: flex;
-  gap: 3px;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 2px;
+  margin-top: 6px;
 }
 
-.rating-picker button {
+.rating-picker button:not(.rating-clear) {
+  width: 44px;
   min-width: 44px;
-  min-height: 44px;
+  height: 44px;
   padding: 0;
   border: 0;
+  border-radius: 7px;
   background: transparent;
-  color: color-mix(in srgb, var(--muted) 34%, transparent);
+  color: color-mix(in srgb, var(--muted) 38%, transparent);
   cursor: pointer;
-  font-size: 29px;
+  font-size: 27px;
+  line-height: 1;
+  transition:
+    background 140ms ease,
+    color 140ms ease,
+    transform 140ms ease;
+}
+
+.rating-picker button:not(.rating-clear):hover,
+.rating-picker button:not(.rating-clear):focus-visible {
+  background: color-mix(in oklab, var(--honey) 12%, var(--paper));
+  color: var(--honey);
+  transform: translateY(-1px);
 }
 
 .rating-picker button.is-active {
   color: var(--honey);
+}
+
+.rating-picker .rating-clear {
+  min-height: 34px;
+  margin-left: 8px;
+  padding: 0 8px;
+  border: 0;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--muted);
+  cursor: pointer;
+  font: inherit;
+  font-size: 12px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.rating-picker .rating-clear:hover,
+.rating-picker .rating-clear:focus-visible {
+  color: var(--ink);
+}
+
+.discussion-submit {
+  flex: none;
+  min-height: 50px;
+  min-width: 178px;
+  padding-inline: 22px;
+  border-radius: 9px;
 }
 
 .secondary-button {
@@ -6934,51 +7162,108 @@ body {
 }
 
 .discussion-message {
-  margin: 0 0 24px;
+  margin: 14px 0 0;
   padding: 12px 14px;
+  border-radius: 8px;
   background: var(--paper-deep);
   color: var(--prose);
   font-size: 14px;
 }
 
-.reader-reviews,
+.reader-review-archive,
 .reader-comments {
   padding-top: 28px;
   border-top: 1px solid var(--line);
 }
 
 .reader-comments {
-  margin-top: 24px;
+  margin-top: 28px;
 }
 
-.reader-reviews h3,
-.reader-comments h3 {
-  margin: 0 0 14px;
+.reader-review-archive {
+  margin-top: 28px;
+}
+
+.reader-review-archive > summary {
+  width: fit-content;
+  min-height: 38px;
+  padding: 8px 2px;
+  color: var(--muted);
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.reader-review-archive > div {
+  display: grid;
+  gap: 0;
+  margin-top: 8px;
+  padding: 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: color-mix(in oklab, var(--cream) 64%, var(--paper));
+}
+
+.reader-comments-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 4px;
+}
+
+.reader-comments-heading h3 {
+  margin: 0;
   font-size: 19px;
 }
 
-.reader-reviews article,
-.reader-comments article {
-  padding: 16px 0;
+.reader-comments-heading span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.reader-review-archive article {
+  padding: 14px 0;
   border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
 }
 
-.reader-reviews article > div {
+.reader-review-archive article:first-child {
+  border-top: 0;
+}
+
+.reader-comments article {
+  padding: 20px 0;
+}
+
+.comment-thread {
+  border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent);
+}
+
+.reader-review-archive article > div {
   display: flex;
   justify-content: space-between;
 }
 
-.reader-reviews article span {
+.reader-review-archive article span {
   color: var(--honey);
 }
 
-.reader-reviews p,
+.reader-review-archive p,
 .reader-comments p {
-  margin: 7px 0 0;
+  margin: 9px 0 0;
   color: var(--prose);
   font-size: 16px;
   line-height: 1.75;
   white-space: pre-wrap;
+}
+
+.reader-comment > p {
+  margin-left: 50px;
+}
+
+.reader-comment > .comment-actions,
+.reader-comment > .inline-comment-form {
+  margin-left: 50px;
 }
 
 .curriculum-list {
@@ -7081,8 +7366,7 @@ body {
     padding-block: 54px;
   }
 
-  .recommendation-toolbar,
-  .discussion-heading {
+  .recommendation-toolbar {
     align-items: stretch;
     flex-direction: column;
   }
@@ -7091,17 +7375,71 @@ body {
     width: 100%;
   }
 
-  .recommendation-grid,
-  .discussion-forms {
+  .recommendation-grid {
     grid-template-columns: 1fr;
+  }
+
+  .article-discussion {
+    margin-top: 64px;
+  }
+
+  .discussion-heading {
+    display: block;
+  }
+
+  .discussion-summary {
+    width: 100%;
+    margin-top: 18px;
+  }
+
+  .discussion-summary > span {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .discussion-composer-heading {
+    flex-wrap: wrap;
+    padding: 16px 14px 11px;
+  }
+
+  .discussion-composer-heading > small {
+    margin-left: 50px;
+  }
+
+  .discussion-composer > textarea {
+    width: calc(100% - 28px);
+    min-height: 138px;
+    margin-inline: 14px;
+  }
+
+  .discussion-composer-footer {
+    display: block;
+    padding: 15px 14px 16px;
+  }
+
+  .composer-rating legend small {
+    display: block;
+    margin: 3px 0 0;
+  }
+
+  .discussion-submit {
+    width: 100%;
+    margin-top: 16px;
+  }
+
+  .reader-comment.is-reply {
+    margin-left: 12px;
+    padding-left: 12px;
+  }
+
+  .reader-comment > p,
+  .reader-comment > .comment-actions,
+  .reader-comment > .inline-comment-form {
+    margin-left: 0;
   }
 
   .integration-note {
     grid-template-columns: 1fr;
-  }
-
-  .discussion-heading > strong {
-    text-align: left;
   }
 
   .curriculum-list > li {
@@ -8128,6 +8466,12 @@ body {
 
   .article-header .back-link {
     display: inline-flex;
+  }
+}
+
+@media (max-width: 720px) {
+  .article-detail-header .back-link {
+    display: none;
   }
 }
 

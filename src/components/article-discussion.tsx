@@ -47,7 +47,6 @@ const EMPTY: Feedback = {
 export function ArticleDiscussion({ slug }: { slug: string }) {
   const [data, setData] = useState<Feedback>(EMPTY);
   const [rating, setRating] = useState(0);
-  const [review, setReview] = useState("");
   const [comment, setComment] = useState("");
   const [replyTo, setReplyTo] = useState<string | null>(null);
   const [reply, setReply] = useState("");
@@ -101,6 +100,14 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
     }
     return byParent;
   }, [data.comments]);
+  const activeCommentCount = useMemo(
+    () => data.comments.filter((item) => !item.deletedAt).length,
+    [data.comments],
+  );
+  const writtenReviews = useMemo(
+    () => data.reviews.filter((item) => item.body.trim().length > 0),
+    [data.reviews],
+  );
 
   async function mutate(
     method: "POST" | "PATCH" | "DELETE",
@@ -109,43 +116,41 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
   ) {
     setPending(String(payload.commentId ?? payload.action ?? method));
     setMessage("");
-    const response = await fetch(`/api/articles/${slug}/feedback`, {
-      method,
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload),
-    });
-    setPending(null);
-    if (response.status === 401) {
-      setNeedsLogin(true);
-      setMessage("평가와 대화는 로그인 후 참여할 수 있습니다.");
+    setNeedsLogin(false);
+    try {
+      const response = await fetch(`/api/articles/${slug}/feedback`, {
+        method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+      if (response.status === 401) {
+        setNeedsLogin(true);
+        setMessage("평가와 대화는 로그인 후 참여할 수 있습니다.");
+        return false;
+      }
+      if (!response.ok) {
+        const error = (await response.json().catch(() => null)) as {
+          error?: string;
+        } | null;
+        setMessage(
+          error?.error === "storage_unavailable"
+            ? "현재 저장소 연결을 확인하고 있습니다. 잠시 뒤 다시 시도해 주세요."
+            : "내용을 확인해 주세요. 댓글은 2자 이상이어야 합니다.",
+        );
+        return false;
+      }
+      const result = (await response.json().catch(() => ({}))) as {
+        awarded?: number;
+      };
+      setMessage(`${success}${result.awarded ? ` +${result.awarded} XP` : ""}`);
+      window.dispatchEvent(new Event("beanwiki:feedback"));
+      return true;
+    } catch {
+      setMessage("연결이 원활하지 않습니다. 잠시 뒤 다시 시도해 주세요.");
       return false;
+    } finally {
+      setPending(null);
     }
-    if (!response.ok) {
-      const error = (await response.json().catch(() => null)) as {
-        error?: string;
-      } | null;
-      setMessage(
-        error?.error === "storage_unavailable"
-          ? "현재 저장소 연결을 확인하고 있습니다. 잠시 뒤 다시 시도해 주세요."
-          : "내용을 확인해 주세요. 댓글은 2자 이상이어야 합니다.",
-      );
-      return false;
-    }
-    const result = (await response.json().catch(() => ({}))) as {
-      awarded?: number;
-    };
-    setMessage(`${success}${result.awarded ? ` +${result.awarded} XP` : ""}`);
-    window.dispatchEvent(new Event("beanwiki:feedback"));
-    return true;
-  }
-
-  async function submitReview() {
-    if (!rating) return;
-    await mutate(
-      "POST",
-      { action: "review", rating, body: review },
-      "평가가 반영되었습니다.",
-    );
   }
 
   async function submitComment(parentId: string | null) {
@@ -161,6 +166,122 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
       setReplyTo(null);
     } else {
       setComment("");
+    }
+  }
+
+  async function submitContribution() {
+    const body = comment.trim();
+    const hasComment = body.length >= 2;
+    const hasRating = rating > 0;
+    if (!hasComment && !hasRating) return;
+
+    setPending("contribution");
+    setMessage("");
+    setNeedsLogin(false);
+
+    try {
+      const requests: {
+        kind: "review" | "comment";
+        response: Promise<Response>;
+      }[] = [];
+
+      if (hasRating) {
+        requests.push({
+          kind: "review",
+          response: fetch(`/api/articles/${slug}/feedback`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ action: "review", rating }),
+          }),
+        });
+      }
+      if (hasComment) {
+        requests.push({
+          kind: "comment",
+          response: fetch(`/api/articles/${slug}/feedback`, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ action: "comment", body, parentId: null }),
+          }),
+        });
+      }
+
+      const settled = await Promise.allSettled(
+        requests.map(async ({ kind, response }) => {
+          const resolved = await response;
+          const payload = (await resolved.json().catch(() => ({}))) as {
+            awarded?: number;
+            error?: string;
+          };
+          return { kind, response: resolved, payload };
+        }),
+      );
+      const results = settled.flatMap((result) =>
+        result.status === "fulfilled" ? [result.value] : [],
+      );
+      const rejectedKinds = settled.flatMap((result, index) =>
+        result.status === "rejected" ? [requests[index].kind] : [],
+      );
+
+      const succeeded = results.filter(({ response }) => response.ok);
+      const failed = results.filter(({ response }) => !response.ok);
+      const reviewSucceeded = succeeded.some(({ kind }) => kind === "review");
+      const commentSucceeded = succeeded.some(({ kind }) => kind === "comment");
+      const failedKinds = [
+        ...failed.map(({ kind }) => kind),
+        ...rejectedKinds,
+      ];
+      const unauthorized = failed.some(
+        ({ response }) => response.status === 401,
+      );
+      if (reviewSucceeded) setRating(0);
+      if (commentSucceeded) setComment("");
+
+      if (succeeded.length > 0) {
+        const awarded = succeeded.reduce(
+          (total, { payload }) => total + (payload.awarded ?? 0),
+          0,
+        );
+        const successLabel =
+          reviewSucceeded && commentSucceeded
+            ? "평가가 반영되었고 댓글이 등록되었습니다."
+            : reviewSucceeded
+              ? "평가가 반영되었습니다."
+              : "댓글이 등록되었습니다.";
+        const retryLabel =
+          failedKinds.includes("review") && failedKinds.includes("comment")
+            ? "평가와 댓글은 다시 시도해 주세요."
+            : failedKinds.includes("review")
+              ? "평가는 다시 시도해 주세요."
+              : "댓글은 다시 시도해 주세요.";
+        setNeedsLogin(unauthorized);
+        setMessage(
+          failedKinds.length > 0
+            ? `${successLabel} ${retryLabel}`
+            : `${successLabel}${awarded ? ` +${awarded} XP` : ""}`,
+        );
+        window.dispatchEvent(new Event("beanwiki:feedback"));
+        return;
+      }
+
+      if (unauthorized) {
+        setNeedsLogin(true);
+        setMessage("평가와 대화는 로그인 후 참여할 수 있습니다.");
+        return;
+      }
+      if (rejectedKinds.length > 0) {
+        setMessage("연결이 원활하지 않습니다. 잠시 뒤 다시 시도해 주세요.");
+        return;
+      }
+      setMessage(
+        failed.some(({ payload }) => payload.error === "storage_unavailable")
+          ? "현재 저장소 연결을 확인하고 있습니다. 잠시 뒤 다시 시도해 주세요."
+          : "내용을 확인해 주세요. 댓글은 2자 이상이어야 합니다.",
+      );
+    } catch {
+      setMessage("연결이 원활하지 않습니다. 잠시 뒤 다시 시도해 주세요.");
+    } finally {
+      setPending(null);
     }
   }
 
@@ -193,13 +314,18 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
         className={`reader-comment${nested ? " is-reply" : ""}`}
       >
         <header>
-          <div>
-            <strong>{item.displayName}</strong>
-            {item.actorType === "agent" && (
-              <span className="agent-disclosure">AI 에이전트</span>
-            )}
+          <span className="comment-avatar" aria-hidden="true">
+            {commentInitials(item.displayName)}
+          </span>
+          <div className="comment-author">
+            <div>
+              <strong>{item.displayName}</strong>
+              {item.actorType === "agent" && (
+                <span className="agent-disclosure">AI 에이전트</span>
+              )}
+            </div>
+            <time dateTime={item.createdAt}>{formatDate(item.createdAt)}</time>
           </div>
-          <time dateTime={item.createdAt}>{formatDate(item.createdAt)}</time>
         </header>
         {item.deletedAt ? (
           <p className="deleted-comment">삭제된 댓글입니다.</p>
@@ -236,6 +362,7 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
             {!nested && (
               <button
                 type="button"
+                aria-expanded={replyTo === item.id}
                 onClick={() => {
                   setReplyTo(replyTo === item.id ? null : item.id);
                   setReply("");
@@ -307,42 +434,53 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
       <div className="discussion-heading">
         <div>
           <span>READERS’ TABLE</span>
-          <h2 id={`discussion-${slug}`}>읽은 뒤의 생각을 이어주세요</h2>
-          <p>질문과 경험, 수정 제안이 문서를 더 정확하게 만듭니다.</p>
+          <h2 id={`discussion-${slug}`}>독자 대화</h2>
+          <p>질문과 경험, 수정 제안을 남겨 문서를 함께 다듬어주세요.</p>
         </div>
-        <strong>
-          {data.summary.average === null
-            ? "첫 평가"
-            : `${data.summary.average} / 5`}
-          <small>{data.summary.count}개 평가</small>
-        </strong>
+        <div className="discussion-summary" aria-label="독자 반응 요약">
+          <span className="discussion-rating-summary">
+            <b aria-hidden="true">★</b>
+            <strong>
+              {data.summary.average === null ? "—" : data.summary.average}
+            </strong>
+            <small>{data.summary.count}명 평가</small>
+          </span>
+          <span className="discussion-comment-summary">
+            <strong>{activeCommentCount}</strong>
+            <small>댓글</small>
+          </span>
+        </div>
       </div>
 
-      <div className="discussion-metrics" aria-label="문서 활동 요약">
-        <span><strong>{data.views.toLocaleString("ko-KR")}</strong> 조회</span>
-        <span><strong>{data.likes.total.toLocaleString("ko-KR")}</strong> 좋아요</span>
-        <span><strong>{data.comments.filter((item) => !item.deletedAt).length}</strong> 댓글</span>
-        {data.likes.agent > 0 && (
-          <small>AI 에이전트 좋아요 {data.likes.agent}개 포함</small>
-        )}
-      </div>
-
-      <div className="discussion-forms">
-        <form
-          className="discussion-form-card"
-          onSubmit={(event) => {
-            event.preventDefault();
-            void submitReview();
-          }}
-        >
-          <div className="discussion-form-head">
-            <div>
-              <span>RATE THIS ARTICLE</span>
-              <label>아티클 평점</label>
-            </div>
-            <small>{rating ? `${rating} / 5` : "별을 선택하세요"}</small>
+      <form
+        className="discussion-composer"
+        onSubmit={(event) => {
+          event.preventDefault();
+          void submitContribution();
+        }}
+      >
+        <div className="discussion-composer-heading">
+          <span className="composer-avatar" aria-hidden="true">BW</span>
+          <div>
+            <label htmlFor={`comment-${slug}`}>의견을 남겨주세요</label>
+            <p>댓글만, 별점만, 또는 둘 다 남길 수 있습니다.</p>
           </div>
-          <div className="discussion-form-control">
+          <small>{comment.length.toLocaleString("ko-KR")} / 1,200</small>
+        </div>
+        <textarea
+          id={`comment-${slug}`}
+          value={comment}
+          onChange={(event) => setComment(event.target.value)}
+          placeholder="궁금한 점, 현장 경험, 다른 관점이나 수정 제안을 나눠주세요."
+          minLength={2}
+          maxLength={1200}
+        />
+        <div className="discussion-composer-footer">
+          <fieldset className="composer-rating">
+            <legend>
+              이 글이 도움이 되었나요?
+              <small>별점은 선택 사항</small>
+            </legend>
             <div className="rating-picker" aria-label="1점부터 5점까지 선택">
               {[1, 2, 3, 4, 5].map((score) => (
                 <button
@@ -356,58 +494,36 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
                   ★
                 </button>
               ))}
+              {rating > 0 && (
+                <button
+                  type="button"
+                  className="rating-clear"
+                  onClick={() => setRating(0)}
+                >
+                  선택 취소
+                </button>
+              )}
             </div>
-          </div>
-          <textarea
-            value={review}
-            onChange={(event) => setReview(event.target.value)}
-            placeholder="좋았던 점이나 보완할 점을 적어주세요. (선택)"
-            maxLength={1200}
-          />
+          </fieldset>
           <button
             type="submit"
-            className="primary-button"
-            disabled={!rating || pending !== null}
+            className="primary-button discussion-submit"
+            disabled={
+              pending !== null ||
+              (rating === 0 && comment.trim().length < 2) ||
+              (comment.trim().length === 1)
+            }
           >
-            {pending === "review" ? "반영 중…" : "평가 남기기 +10 XP"}
+            {pending === "contribution"
+              ? "등록 중…"
+              : rating > 0 && comment.trim().length >= 2
+                ? "평가와 댓글 등록"
+                : rating > 0
+                  ? "평가 남기기"
+                  : "댓글 등록"}
           </button>
-        </form>
-
-        <form
-          className="discussion-form-card"
-          onSubmit={(event) => {
-            event.preventDefault();
-            void submitComment(null);
-          }}
-        >
-          <div className="discussion-form-head">
-            <div>
-              <span>JOIN THE CONVERSATION</span>
-              <label htmlFor={`comment-${slug}`}>새 댓글</label>
-            </div>
-            <small>최대 1,200자</small>
-          </div>
-          <div className="discussion-form-control">
-            <p>질문 · 현장 경험 · 수정 제안을 자유롭게 나눠주세요.</p>
-          </div>
-          <textarea
-            id={`comment-${slug}`}
-            value={comment}
-            onChange={(event) => setComment(event.target.value)}
-            placeholder="궁금한 점, 현장 경험, 다른 관점을 나눠주세요."
-            minLength={2}
-            maxLength={1200}
-            required
-          />
-          <button
-            type="submit"
-            className="secondary-button"
-            disabled={pending !== null}
-          >
-            {pending === "comment" ? "등록 중…" : "댓글 등록 +5 XP"}
-          </button>
-        </form>
-      </div>
+        </div>
+      </form>
 
       {message && (
         <p className="discussion-message" role="status">
@@ -420,26 +536,31 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
         </p>
       )}
 
-      {data.reviews.length > 0 && (
-        <div className="reader-reviews">
-          <h3>최근 리뷰</h3>
-          {data.reviews.map((item) => (
-            <article key={item.id}>
-              <div>
-                <strong>{item.displayName}</strong>
-                <span>
-                  {"★".repeat(item.rating)}
-                  {"☆".repeat(5 - item.rating)}
-                </span>
-              </div>
-              {item.body && <p>{item.body}</p>}
-            </article>
-          ))}
-        </div>
+      {writtenReviews.length > 0 && (
+        <details className="reader-review-archive">
+          <summary>이전 평가 의견 {writtenReviews.length}개 보기</summary>
+          <div>
+            {writtenReviews.map((item) => (
+              <article key={item.id}>
+                <div>
+                  <strong>{item.displayName}</strong>
+                  <span aria-label={`${item.rating}점`}>
+                    {"★".repeat(item.rating)}
+                    {"☆".repeat(5 - item.rating)}
+                  </span>
+                </div>
+                {item.body && <p>{item.body}</p>}
+              </article>
+            ))}
+          </div>
+        </details>
       )}
 
       <div className="reader-comments">
-        <h3>댓글 {data.comments.filter((item) => !item.deletedAt).length}</h3>
+        <div className="reader-comments-heading">
+          <h3>댓글 {activeCommentCount}</h3>
+          <span>오래된 대화부터</span>
+        </div>
         {roots.length === 0 ? (
           <p>아직 댓글이 없습니다. 첫 질문이나 경험을 남겨보세요.</p>
         ) : (
@@ -455,6 +576,11 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
       </div>
     </section>
   );
+}
+
+function commentInitials(displayName: string) {
+  const compact = displayName.trim().replace(/\s+/g, "");
+  return compact.slice(0, 2).toUpperCase() || "BW";
 }
 
 function formatDate(value: string) {
