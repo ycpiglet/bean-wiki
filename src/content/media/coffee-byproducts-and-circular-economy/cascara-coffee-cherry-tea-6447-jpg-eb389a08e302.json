@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:128440333",
+  "articleSlug": "coffee-byproducts-and-circular-economy",
+  "section": "origin-split",
+  "localPath": "/article-media/coffee-byproducts-and-circular-economy/cascara-coffee-cherry-tea-6447-jpg-eb389a08e302.jpg",
+  "sha256": "eb389a08e302144f529525cd4ee96ce75aa7fd336060893d3f004003b26817e3",
+  "bytes": 471169,
+  "mime": "image/jpeg",
+  "alt": "카스카라(말린 커피 체리 껍질)로 우린 차",
+  "caption": "체리 껍질을 카스카라로 만드는 순간부터 이미 별도의 제품 경계가 생기며, 이 경계를 어떻게 정의하느냐가 계약과 가격 계산의 출발점이 됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "128440333",
+    "title": "Cascara, Coffee cherry tea-6447.jpg",
+    "author": "Raimond Spekking",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cascara,_Coffee_cherry_tea-6447.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/37/Cascara%2C_Coffee_cherry_tea-6447.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Cascara%2C_Coffee_cherry_tea-6447.jpg/1920px-Cascara%2C_Coffee_cherry_tea-6447.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:44:46.074Z",
+    "researchManifest": "img12-8.json",
+    "query": "cascara coffee cherry tea dried",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

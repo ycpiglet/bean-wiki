@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:142509439",
+  "articleSlug": "aeropress-variable-map",
+  "section": "topic-brw-05",
+  "localPath": "/article-media/aeropress-variable-map/aeropress-coffee-maker-inverted-jpg-d0508eaef0fd.jpg",
+  "sha256": "d0508eaef0fd3870081c5db94f8ef83fb9664effa13c9ba451d3adcadf1bfc72",
+  "bytes": 223060,
+  "mime": "image/jpeg",
+  "alt": "역방향(인버티드) 방식으로 에어로프레스를 사용하는 모습",
+  "caption": "정방향과 역방향은 같은 도구라도 접촉 구조 자체가 달라지므로, 방향을 바꾸면서 다른 변수도 그대로라고 가정해서는 안 됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "142509439",
+    "title": "Aeropress coffee maker inverted.jpg",
+    "author": "Bean Poet",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aeropress_coffee_maker_inverted.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/ac/Aeropress_coffee_maker_inverted.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Aeropress_coffee_maker_inverted.jpg/1920px-Aeropress_coffee_maker_inverted.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:43:49.728Z",
+    "researchManifest": "img12-2.json",
+    "query": "AeroPress inverted brewing",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

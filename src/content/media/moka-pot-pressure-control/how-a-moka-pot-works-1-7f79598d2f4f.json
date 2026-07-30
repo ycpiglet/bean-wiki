@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:65a32623-ca2f-41dd-bb43-471319ba8dad",
+  "articleSlug": "moka-pot-pressure-control",
+  "section": "steam-cycle",
+  "localPath": "/article-media/moka-pot-pressure-control/how-a-moka-pot-works-1-7f79598d2f4f.jpg",
+  "sha256": "7f79598d2f4f28c3b6c7d268eacca28ce36fcd6ab36bec2db9d6baf43427875c",
+  "bytes": 47411,
+  "mime": "image/jpeg",
+  "alt": "모카포트가 작동하는 원리를 단계별로 보여주는 도해",
+  "caption": "열을 너무 빠르게 밀어넣으면 초기 유량은 좋아 보여도, 수증기압이 형성되는 경계 지점에서 곧바로 과추출로 넘어가기 쉽습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "65a32623-ca2f-41dd-bb43-471319ba8dad",
+    "title": "how-a-moka-pot-works-1",
+    "author": "honestcoffeeguide",
+    "sourceUrl": "https://www.flickr.com/photos/199185372@N02/53205908668",
+    "originalUrl": "https://live.staticflickr.com/65535/53205908668_9e0fa66943_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/53205908668_9e0fa66943_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:43:19.547Z",
+    "researchManifest": "img12-3.json",
+    "query": "moka pot stovetop brewing",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
