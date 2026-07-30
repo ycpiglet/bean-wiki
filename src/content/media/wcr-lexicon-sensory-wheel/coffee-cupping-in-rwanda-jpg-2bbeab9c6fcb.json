@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:63213061",
+  "articleSlug": "wcr-lexicon-sensory-wheel",
+  "section": "wheel-to-practice",
+  "localPath": "/article-media/wcr-lexicon-sensory-wheel/coffee-cupping-in-rwanda-jpg-2bbeab9c6fcb.jpg",
+  "sha256": "2bbeab9c6fcbdb5c198366006af96634611208cd555f0b65c17e6875a45521bc",
+  "bytes": 240517,
+  "mime": "image/jpeg",
+  "alt": "르완다에서 한 사람이 커핑 스푼으로 커피를 맛보는 모습",
+  "caption": "향 → 미각 → 후미 순서로 레이어를 지키지 않으면 같은 샘플도 과대해석되기 쉽습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "63213061",
+    "title": "Coffee Cupping in Rwanda.jpg",
+    "author": "Andy Carlton",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Cupping_in_Rwanda.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Coffee_Cupping_in_Rwanda.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Coffee_Cupping_in_Rwanda.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:29:28.952Z",
+    "researchManifest": "img11-10.json",
+    "query": "coffee cupping",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

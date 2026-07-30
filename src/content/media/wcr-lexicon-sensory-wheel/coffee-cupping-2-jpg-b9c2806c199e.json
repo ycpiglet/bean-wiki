@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:25265146",
+  "articleSlug": "wcr-lexicon-sensory-wheel",
+  "section": "topic-sen02",
+  "localPath": "/article-media/wcr-lexicon-sensory-wheel/coffee-cupping-2-jpg-b9c2806c199e.jpg",
+  "sha256": "b9c2806c199ebf068b44206847992ffd6da5c96926319ca12dff005ac57e49b1",
+  "bytes": 377110,
+  "mime": "image/jpeg",
+  "alt": "커핑 세션에서 여러 볼의 향을 확인하는 모습",
+  "caption": "렉시콘의 목적은 정답 단어 찾기가 아니라, 같은 시료를 두고 반복 가능한 판단 흐름을 만드는 것입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "25265146",
+    "title": "Coffee Cupping-2.jpg",
+    "author": "Visitor7",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Cupping-2.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Coffee_Cupping-2.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Coffee_Cupping-2.jpg/1920px-Coffee_Cupping-2.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:29:06.946Z",
+    "researchManifest": "img11-10.json",
+    "query": "coffee cupping",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

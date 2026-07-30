@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:27929314",
+  "articleSlug": "decaffeination-processes",
+  "section": "purpose",
+  "localPath": "/article-media/decaffeination-processes/green-decaffeinated-brazilian-coffee-sack-jpg-db3d30e934b3.jpg",
+  "sha256": "db3d30e934b3c20d84e12d8ba09f0930d4d757caed150c8ca547ad0911393e50",
+  "bytes": 395247,
+  "mime": "image/jpeg",
+  "alt": "스위스 워터 프로세스로 디카페인 처리된 생두가 담긴 자루",
+  "caption": "공정 이름 하나만 보고 결론을 내리기보다, 표기법·잔류 추정치까지 함께 확인해야 안전성 판단이 일관됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "27929314",
+    "title": "Green Decaffeinated Brazilian Coffee Sack.JPG",
+    "author": "Jkafader",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Green_Decaffeinated_Brazilian_Coffee_Sack.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d2/Green_Decaffeinated_Brazilian_Coffee_Sack.JPG",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/Green_Decaffeinated_Brazilian_Coffee_Sack.JPG/1920px-Green_Decaffeinated_Brazilian_Coffee_Sack.JPG"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:27:27.763Z",
+    "researchManifest": "img11-2.json",
+    "query": "decaffeinated coffee beans process",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:43893469",
+  "articleSlug": "caffeine-and-health",
+  "section": "absorption",
+  "localPath": "/article-media/caffeine-and-health/a-donde-vamos-quito-two-espressos-a-day-enhance-your-l-e4b872ab7a5c.jpg",
+  "sha256": "e4b872ab7a5c22bdded6beec662699f973caac99f057c23c0fe428f4c175c364",
+  "bytes": 214946,
+  "mime": "image/jpeg",
+  "alt": "바에서 초콜릿과 함께 제공된 에스프레소 한 잔",
+  "caption": "같은 한 잔이라도 공복·식사 여부와 동반 음식에 따라 카페인이 체감되는 속도가 크게 달라질 수 있습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "43893469",
+    "title": "(A Donde Vamos, Quito) Two Espressos A Day Enhance Your Long-Term Memory.JPG",
+    "author": "David Adam Kess",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:(A_Donde_Vamos,_Quito)_Two_Espressos_A_Day_Enhance_Your_Long-Term_Memory.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/95/%28A_Donde_Vamos%2C_Quito%29_Two_Espressos_A_Day_Enhance_Your_Long-Term_Memory.JPG",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/%28A_Donde_Vamos%2C_Quito%29_Two_Espressos_A_Day_Enhance_Your_Long-Term_Memory.JPG/1920px-%28A_Donde_Vamos%2C_Quito%29_Two_Espressos_A_Day_Enhance_Your_Long-Term_Memory.JPG"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:28:03.490Z",
+    "researchManifest": "img11-1.json",
+    "query": "coffee cup caffeine espresso",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
