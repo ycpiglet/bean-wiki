@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:16700712",
+  "articleSlug": "roaster-heat-transfer",
+  "section": "heat-modes",
+  "localPath": "/article-media/roaster-heat-transfer/last-stand-coffee-roaster-eugene-oregon-jpg-29a6518d4fd9.jpg",
+  "sha256": "29a6518d4fd95589f71ebc4f073276be530bc083878d5e49f5014935b97dbddd",
+  "bytes": 414021,
+  "mime": "image/jpeg",
+  "alt": "카페 안에 설치된 드럼 로스터 기계의 모습",
+  "caption": "온도 표시값 하나만으로는 전도·대류·복사 세 경로가 실제로 어떻게 조합됐는지 알 수 없습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "16700712",
+    "title": "Last Stand Coffee Roaster (Eugene, Oregon).jpg",
+    "author": "Visitor7",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Last_Stand_Coffee_Roaster_(Eugene,_Oregon).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Last_Stand_Coffee_Roaster_%28Eugene%2C_Oregon%29.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Last_Stand_Coffee_Roaster_%28Eugene%2C_Oregon%29.jpg/1920px-Last_Stand_Coffee_Roaster_%28Eugene%2C_Oregon%29.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:17:01.618Z",
+    "researchManifest": "img14-12.json",
+    "query": "coffee roaster drum machine",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

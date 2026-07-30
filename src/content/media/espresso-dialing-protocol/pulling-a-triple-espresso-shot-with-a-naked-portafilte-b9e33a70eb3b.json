@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:99902642",
+  "articleSlug": "espresso-dialing-protocol",
+  "section": "topic-caf01",
+  "localPath": "/article-media/espresso-dialing-protocol/pulling-a-triple-espresso-shot-with-a-naked-portafilte-b9e33a70eb3b.jpg",
+  "sha256": "b9e33a70eb3b0e21483f3127e41ab9439403afc1c67435b7150fd308211d664b",
+  "bytes": 339935,
+  "mime": "image/jpeg",
+  "alt": "네이키드 포터필터로 트리플 에스프레소를 추출하는 모습",
+  "caption": "다이얼인은 멋진 설정을 찾는 일이 아니라, 같은 장비·같은 원두에서 재현 가능한 실행 규칙을 세우는 일입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "99902642",
+    "title": "Pulling a triple espresso shot with a naked portafilter.jpg",
+    "author": "massage-techniques",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pulling_a_triple_espresso_shot_with_a_naked_portafilter.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0d/Pulling_a_triple_espresso_shot_with_a_naked_portafilter.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Pulling_a_triple_espresso_shot_with_a_naked_portafilter.jpg/1920px-Pulling_a_triple_espresso_shot_with_a_naked_portafilter.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:14:49.994Z",
+    "researchManifest": "img14-7.json",
+    "query": "espresso naked portafilter shot pulling",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
