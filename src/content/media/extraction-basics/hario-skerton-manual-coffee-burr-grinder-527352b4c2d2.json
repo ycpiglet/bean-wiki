@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:2f42a9f6-917f-42ff-b088-cfe5e95fb46d",
+  "articleSlug": "extraction-basics",
+  "section": "variables",
+  "localPath": "/article-media/extraction-basics/hario-skerton-manual-coffee-burr-grinder-527352b4c2d2.jpg",
+  "sha256": "527352b4c2d2a187c44e7129ea8b67150ba6fba6b09844bd5b02a71019184c29",
+  "bytes": 128487,
+  "mime": "image/jpeg",
+  "alt": "수동 그라인더로 원두를 분쇄하는 모습",
+  "caption": "분쇄도는 표면적과 유동 저항을 동시에 바꾸는 변수라서, 다른 변수를 고정한 채 하나씩 옮겨야 원인을 구분할 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "2f42a9f6-917f-42ff-b088-cfe5e95fb46d",
+    "title": "Hario Skerton manual coffee burr grinder",
+    "author": "Bean Poet",
+    "sourceUrl": "https://www.flickr.com/photos/186215761@N08/49261234322",
+    "originalUrl": "https://live.staticflickr.com/65535/49261234322_23e9cefe69_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/49261234322_23e9cefe69_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:07:41.730Z",
+    "researchManifest": "img-ext-4.json",
+    "query": "coffee grinder burr grounds",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:af6fb0c5-ee68-410e-97de-cb15070ac08f",
+  "articleSlug": "extraction-basics",
+  "section": "practice",
+  "localPath": "/article-media/extraction-basics/tasty-coffee-pourover-v60-bloom-2025-2cc07ef6ab59.jpg",
+  "sha256": "2cc07ef6ab594b66469ccf8d8edd9e18e47355ec72e27532bc9bb30c209f8084",
+  "bytes": 8792853,
+  "mime": "image/jpeg",
+  "alt": "V60 드리퍼에서 물을 부어 커피가 부풀어 오르는 블룸 단계",
+  "caption": "같은 레시피를 반복 추출하며 블룸 단계까지 사진으로 남기면 편차가 생긴 회차를 나중에 되짚어보기 쉽습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "af6fb0c5-ee68-410e-97de-cb15070ac08f",
+    "title": "Tasty Coffee pourover V60 bloom 2025",
+    "author": "Indigo.udm",
+    "sourceUrl": "https://commons.wikimedia.org/w/index.php?curid=174791765",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Tasty_Coffee_pourover_V60_bloom_2025.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/9/9f/Tasty_Coffee_pourover_V60_bloom_2025.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:07:43.520Z",
+    "researchManifest": "img-ext-1.json",
+    "query": "pour over coffee dripper brewing",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

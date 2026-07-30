@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:66db6cc0-769c-4212-9245-90637c667695",
+  "articleSlug": "roasting-basics",
+  "section": "phases",
+  "localPath": "/article-media/roasting-basics/first-crack-26886159c77d.jpg",
+  "sha256": "26886159c77d94320d664cb99bd57a6afcef09ca01fdf0a6eb286b1f29ec97cc",
+  "bytes": 179881,
+  "mime": "image/jpeg",
+  "alt": "로스팅 중인 원두를 샘플러로 꺼내 색을 확인하는 모습",
+  "caption": "발달 구간으로 넘어가는 시점을 색과 소리로 함께 확인하는 습관이 단계 판단의 오차를 줄여줍니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "66db6cc0-769c-4212-9245-90637c667695",
+    "title": "First Crack",
+    "author": "alex.lovelltroy",
+    "sourceUrl": "https://www.flickr.com/photos/94361969@N00/1352605193",
+    "originalUrl": "https://live.staticflickr.com/1375/1352605193_cf0627a5ef_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/1375/1352605193_cf0627a5ef_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:06:44.346Z",
+    "researchManifest": "img-roast-3.json",
+    "query": "coffee beans roasting first crack",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

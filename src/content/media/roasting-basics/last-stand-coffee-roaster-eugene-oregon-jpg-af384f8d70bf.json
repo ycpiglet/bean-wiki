@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:16700712",
+  "articleSlug": "roasting-basics",
+  "section": "roast-journey",
+  "localPath": "/article-media/roasting-basics/last-stand-coffee-roaster-eugene-oregon-jpg-af384f8d70bf.jpg",
+  "sha256": "af384f8d70bf22c98306f483c18f874ac484652d464ff4392960b0cf06e36f99",
+  "bytes": 700319,
+  "mime": "image/jpeg",
+  "alt": "카페 안에 설치된 드럼 로스터 기계의 모습",
+  "caption": "로스팅은 드럼 안에서 진행되는 연속 공정이며, 색이나 소리는 이 과정을 간접적으로 요약해 보여주는 신호일 뿐입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "16700712",
+    "title": "Last Stand Coffee Roaster (Eugene, Oregon).jpg",
+    "author": "Visitor7",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Last_Stand_Coffee_Roaster_(Eugene,_Oregon).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Last_Stand_Coffee_Roaster_%28Eugene%2C_Oregon%29.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Last_Stand_Coffee_Roaster_%28Eugene%2C_Oregon%29.jpg/1920px-Last_Stand_Coffee_Roaster_%28Eugene%2C_Oregon%29.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:06:43.636Z",
+    "researchManifest": "img-roast-2.json",
+    "query": "coffee roasting drum roaster machine",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

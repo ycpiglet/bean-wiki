@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:e8f789d7-621b-49ed-a9fb-25c5943d6453",
+  "articleSlug": "cupping-basics",
+  "section": "purpose",
+  "localPath": "/article-media/cupping-basics/double-bowls-4774baab11c0.jpg",
+  "sha256": "4774baab11c01efc52553945b504208b5ed320aa64cff51b7ac684cfa4125e50",
+  "bytes": 102685,
+  "mime": "image/jpeg",
+  "alt": "커핑 볼 여러 개가 두 줄로 나란히 놓여 비교 준비가 된 모습",
+  "caption": "같은 조건으로 맞춘 여러 개의 커핑 볼을 나란히 두는 것이 비교 실험의 출발점입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "e8f789d7-621b-49ed-a9fb-25c5943d6453",
+    "title": "Double bowls",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/6302778845",
+    "originalUrl": "https://live.staticflickr.com/6045/6302778845_87d0089d8a_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/6045/6302778845_87d0089d8a_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T16:43:05.792Z",
+    "researchManifest": "img-cupping-basics.json",
+    "query": "coffee cupping tasting bowls",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

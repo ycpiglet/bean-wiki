@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:63213061",
+  "articleSlug": "cupping-basics",
+  "section": "practice",
+  "localPath": "/article-media/cupping-basics/coffee-cupping-in-rwanda-jpg-2bbeab9c6fcb.jpg",
+  "sha256": "2bbeab9c6fcbdb5c198366006af96634611208cd555f0b65c17e6875a45521bc",
+  "bytes": 240517,
+  "mime": "image/jpeg",
+  "alt": "르완다에서 여러 명이 나란히 서서 커핑 볼의 향을 확인하는 모습",
+  "caption": "4컷 기록도 결국 한 사람이 여러 컵을 순서대로 도는 반복 작업이며, 순서를 고정하는 습관이 재현성을 만듭니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "63213061",
+    "title": "Coffee Cupping in Rwanda.jpg",
+    "author": "Andy Carlton",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Cupping_in_Rwanda.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Coffee_Cupping_in_Rwanda.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Coffee_Cupping_in_Rwanda.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T16:43:41.357Z",
+    "researchManifest": "img-cupping-basics-3.json",
+    "query": "coffee cupping",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

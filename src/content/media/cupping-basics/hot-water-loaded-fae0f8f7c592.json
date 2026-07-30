@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:a7839e85-7858-4f9c-b07e-842fa5aebcb6",
+  "articleSlug": "cupping-basics",
+  "section": "step-structure",
+  "localPath": "/article-media/cupping-basics/hot-water-loaded-fae0f8f7c592.jpg",
+  "sha256": "fae0f8f7c592ae3101761dd132969d42b2592a669be9337dc3115dcc77ffd51a",
+  "bytes": 112063,
+  "mime": "image/jpeg",
+  "alt": "여러 커핑 볼에 뜨거운 물을 붓는 모습",
+  "caption": "물 온도와 주입 방식을 컵마다 동일하게 통제하는 단계가 세션 전체의 재현성을 좌우합니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "a7839e85-7858-4f9c-b07e-842fa5aebcb6",
+    "title": "Hot water loaded",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/6303308012",
+    "originalUrl": "https://live.staticflickr.com/6040/6303308012_da77e857c2_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/6040/6303308012_da77e857c2_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T16:43:12.118Z",
+    "researchManifest": "img-cupping-basics.json",
+    "query": "coffee cupping tasting bowls",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

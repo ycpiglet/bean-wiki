@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:076aa0e3-0500-4c85-8d06-75d757b8db1a",
+  "articleSlug": "global-coffee-history",
+  "section": "coffeehouse",
+  "localPath": "/article-media/global-coffee-history/st-germain-des-pr-s-cef-le-procope-e502578e8905.jpg",
+  "sha256": "e502578e8905673737453083e57343e47ee06458e3c6b8f75d182449d7479e8e",
+  "bytes": 351126,
+  "mime": "image/jpeg",
+  "alt": "파리의 오래된 카페 르 프로코프 건물 외관",
+  "caption": "1686년 문을 연 파리의 르 프로코프는 오늘날에도 남아 있는 유럽 커피하우스 역사의 흔적 중 하나입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "076aa0e3-0500-4c85-8d06-75d757b8db1a",
+    "title": "St. Germain des Prés - Cefé Le Procope",
+    "author": "Francesco Dazzi",
+    "sourceUrl": "https://www.flickr.com/photos/37409770@N00/2862479787",
+    "originalUrl": "https://live.staticflickr.com/3196/2862479787_cdf4442d84_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/3196/2862479787_cdf4442d84_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T17:09:31.198Z",
+    "researchManifest": "img-hist-11.json",
+    "query": "Cafe Procope Paris historic",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
