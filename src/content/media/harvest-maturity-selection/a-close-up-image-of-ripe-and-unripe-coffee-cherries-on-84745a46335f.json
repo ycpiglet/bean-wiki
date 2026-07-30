@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:a87e64b4-02bc-45e5-a8d6-8cfb23863f20",
+  "articleSlug": "harvest-maturity-selection",
+  "section": "scope",
+  "localPath": "/article-media/harvest-maturity-selection/a-close-up-image-of-ripe-and-unripe-coffee-cherries-on-84745a46335f.jpg",
+  "sha256": "84745a46335f7a1ca8993eb9244c95d18933b527a03e09ee9b3e019cc344cbe2",
+  "bytes": 94655,
+  "mime": "image/jpeg",
+  "alt": "한 가지에 익은 체리와 덜 익은 체리가 함께 달린 모습",
+  "caption": "같은 가지에서도 성숙도가 섞여 있으므로, 완숙만 기준으로 삼기보다 혼입 비율까지 기록해야 오차를 줄일 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "a87e64b4-02bc-45e5-a8d6-8cfb23863f20",
+    "title": "A close-up image of ripe and unripe coffee cherries on a branch",
+    "author": "Francisco Herrera",
+    "sourceUrl": "https://wordpress.org/photos/photo/301666ac5b/",
+    "originalUrl": "https://pd.w.org/2024/06/301666ac5b2988414.02924749-2048x1177.jpg",
+    "acquiredFrom": "https://pd.w.org/2024/06/301666ac5b2988414.02924749-2048x1177.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc0",
+    "label": "CC0 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "cc0 1.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:57:42.034Z",
+    "researchManifest": "img13-3.json",
+    "query": "coffee cherry ripe unripe branch",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

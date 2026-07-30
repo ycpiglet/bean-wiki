@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:100856566",
+  "articleSlug": "clever-switch-hybrid-brewing",
+  "section": "topic-brw-04",
+  "localPath": "/article-media/clever-switch-hybrid-brewing/clever-dripper-jpg-a4da6eaf6df7.jpg",
+  "sha256": "a4da6eaf6df7c0b0ab988313442b0845212b3fce7d9b6110f5e22db71b20d8d0",
+  "bytes": 157524,
+  "mime": "image/jpeg",
+  "alt": "클레버 드리퍼의 침지-배출(steep and release) 방식으로 커피를 내리는 모습",
+  "caption": "침지 단계와 배수 단계가 물리적으로 분리되어 있어, 오차가 한 구간에서만 발생하지 않고 두 구간에 걸쳐 누적됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "100856566",
+    "title": "Clever Dripper.jpg",
+    "author": "Clever-NikkyH",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Clever_Dripper.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/14/Clever_Dripper.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Clever_Dripper.jpg/1920px-Clever_Dripper.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:57:43.804Z",
+    "researchManifest": "img13-5.json",
+    "query": "Clever Dripper coffee brewer",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
