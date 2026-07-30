@@ -1,151 +1,259 @@
 ---
 slug: coffee-carbon-water-footprint
-title: 커피의 탄소·물 발자국: LCA 경계와 운영 데이터의 정확도
-summary: 탄소와 물 발자국을 같은 척도처럼 다루기보다, 경계 설정·데이터 품질·운영 실무의 연결 지점에서 비교해야 실질 의사결정이 가능합니다.
+title: 커피의 탄소·물 발자국: 경계와 데이터 신뢰도를 선행하는 운영 프레임
+summary: 탄소·물 발자국 수치의 비교 신뢰성은 경계 정의와 데이터 로그 정합성에서 결정됩니다. 숫자를 쓰기 전에 경계와 증빙 규칙부터 고정해야 의사결정이 이어집니다.
 category: 지속가능성과 거래
 level: 전문
-readingTime: 21분
-updatedAt: 2026. 07. 28.
+readingTime: 24분
+updatedAt: 2026. 07. 30.
 accent: sage
-fact: 탄소·물 발자국은 산지·가공·수송·보관·로스팅까지의 경계 선택과 데이터 신뢰도에 따라 크게 달라지므로, 의사결정은 계산값 자체보다 방법론을 먼저 고정해야 합니다.
-related: ["coffee-climate-resilience","climate-risk-and-quality","supply-chain-transparency","farm-to-cafe-value-chain","coffee-trade-history"]
-tags: ["탄소발자국","물발자국","LCA","로스팅에너지","지표해석"]
-history: [{"date":"2026. 07. 28.","note":"IND-07 커피의 탄소·물 발자국 초안 작성"}]
+fact: 탄소·물 발자국은 ‘좋다/나쁘다’의 단일 점수가 아니라, 산지·가공·수송·보관·로스팅 간 경계 선택과 데이터 품질을 동시 통제해야 신뢰 가능한 판단이 됩니다.
+related: ["coffee-climate-resilience","climate-risk-and-quality","supply-chain-transparency","farm-to-cafe-value-chain","producer-income-and-livelihood"]
+tags: ["탄소발자국","물발자국","LCA","온실가스","수자원","운영지표"]
+history: [{"date":"2026. 07. 28.","note":"IND-07 커피의 탄소·물 발자국 초안 작성"},{"date":"2026. 07. 30.","note":"IND-07 보강: 경계·오차·협상 번역 프레임으로 확대"},{"date":"2026. 07. 30.","note":"IND-07 추가 보강: 의사결정 트리, 월간 정렬 규정, 성과 추적·교대 템플릿 추가"}]
 ---
-<h2 id="what-is-footprint">탄소·물 발자국은 숫자 하나가 아닙니다</h2>
-<p>커피의 발자국은 “숫자”로 자주 표현되지만, 실제로는 경계 설정과 데이터 신뢰도에 따라 값이 달라집니다.</p>
-<p>같은 로트라도 산지 경계를 어디까지 잡느냐, 공장의 에너지 원천을 어떻게 가정하느냐, 패키징을 어떤 시점부터 계산하느냐에 따라 결과가 달라집니다. 그래서 먼저 ‘무엇을 얼마나 포함할지’를 합의해야 비교가 가능합니다.</p>
+<h2 id="what-is-footprint">탄소와 물은 같은 결론으로 환원되지 않는다</h2>
+<p>같은 원두더라도 경계 설정이 다르면 값이 바뀝니다. 탄소와 물을 동시에 보고해도 해석은 다르게 흘러갑니다. 왜냐하면 탄소는 에너지·운송·공정 열량 구조가 중심이고, 물은 취수·세척·폐수 처리 구조가 중심이기 때문입니다.</p>
+<p>이 글의 핵심은 계산법 암기보다 운영 문장을 만들기입니다. 즉, “어떤 범위를 포함했고, 어느 시점에서 빠졌고, 어떤 증빙이 같이 움직이는가”를 문서화해야 합니다.</p>
 
-<h2 id="define-boundary">LCA 경계부터 정해야 비교가 통합니다</h2>
-<p>전문에서는 보통 다음 경계를 따로 둡니다.</p>
+<h2 id="boundary-framework">첫 단계: LCA 경계를 고정한다</h2>
+<p>의사결정에서 충돌이 가장 자주 나는 지점은 경계 언어가 다를 때입니다. 아래 3개 경계를 분리해 둡니다.</p>
 <table>
   <thead>
-    <tr><th>경계</th><th>포함 범위</th><th>의사결정에서의 함의</th></tr>
+    <tr><th>경계명</th><th>무엇을 포함하는가</th><th>사용 목적</th></tr>
   </thead>
   <tbody>
-    <tr><td>Cradle-to-farm-gate</td><td>재배·가공 직전까지</td><td>산지 리스크와 가격 협상 판단에 적합</td></tr>
-    <tr><td>Cradle-to-port</td><td>항만 출하 전까지</td><td>인코텀즈·운송 조건 분해에 유용</td></tr>
-    <tr><td>Cradle-to-cup</td><td>생산~로스팅~판매까지</td><td>카페 운영과 결합한 총량 분석에 적합</td></tr>
+    <tr>
+      <td>Cradle-to-farm-gate</td>
+      <td>재배·초기 가공 직전</td>
+      <td>생산단계 협상, 공급자별 비교</td>
+    </tr>
+    <tr>
+      <td>Cradle-to-port</td>
+      <td>항만 출하 시점까지</td>
+      <td>인도 조건, 운송 설계, 보험 조항 연동</td>
+    </tr>
+    <tr>
+      <td>Cradle-to-cup</td>
+      <td>생산→가공→수송→보관→로스팅→판매</td>
+      <td>총체 비용과 품질 체계의 실무 반영</td>
+    </tr>
   </tbody>
 </table>
-<p>같은 자료라도 경계가 다르면 값이 같을 수 없습니다. 경계를 문서로 남겨야 후속 계약에서 오해가 줄어듭니다.</p>
+<aside class="callout callout-note" data-tone="note"><p>경계를 함께 고정하지 않고 비교를 시작하면, 서로 다른 팀이 서로 다른 계산값을 정당화하는 구조가 됩니다.</p></aside>
 
-<h2 id="carbon-water-diff">탄소와 물은 분리해서 보아야 합니다</h2>
-<p>탄소 발자국은 에너지·연료·공정에서, 물 발자국은 수량·가공·세척·청소·냉각에서 흔들립니다. 두 값은 함께 쓰면 좋지만 같은 축으로 합쳐서 판단하면 오판이 생깁니다.</p>
-<ul>
-  <li>탄소는 감축 여지가 큰 구간(전력원, 로스팅 에너지, 수송 방식)이 분명히 있습니다.</li>
-  <li>물은 지역 조건에 따라 단순 절대값 비교가 어렵고, 취수·폐수 처리 방식이 같이 봐야 합니다.</li>
-  <li>두 지표는 동시에 최적화가 아니라 우선순위 기반 조정이 실무적으로 더 안정적입니다.</li>
-</ul>
-
-<h2 id="common-data-errors">데이터 품질 오차 6가지</h2>
-<p>검증되지 않은 데이터는 가장 큰 함정입니다.</p>
-<ol>
-  <li>동일 로트의 연료량을 출하지점과 도착지점 기준으로 다르게 집계</li>
-  <li>기계 가동시간 대신 계산된 평균 사용량을 그대로 확장</li>
-  <li>폐기율 변동을 무시한 상태의 로트 단가 배분</li>
-  <li>임의의 글로벌 평균 전력을 지역 전력조성에 대체</li>
-  <li>물 소비에 재사용수·회수수를 제외한 계산</li>
-  <li>연도별 계절 편차를 반영하지 않은 단일 배수</li>
-</ol>
-<p>이 오차는 경향을 크게 바꾸므로, 계산을 공개할 때 오차 요인을 3줄 이상 함께 적어야 합니다.</p>
-
-<h2 id="workflow-for-roasting">로스팅·카페 운영에서 가장 큰 편차 구간</h2>
-<p>로스팅과 보관은 발자국에 직접 영향을 주므로 경영 판단에서 자주 무시되면 안 됩니다.</p>
+<h2 id="split-axis">탄소·물을 분리해 본 뒤 교차점을 확인한다</h2>
+<p>공동 보고해도 분해는 분리해야 합니다.</p>
 <table>
   <thead>
-    <tr><th>구간</th><th>자주 생기는 오해</th><th>현장 점검 포인트</th></tr>
+    <tr><th>축</th><th>핵심 오차 요인</th><th>점검 우선순위</th></tr>
   </thead>
   <tbody>
-    <tr><td>로스팅</td><td>기기 효율만 보면 충분하다는 생각</td><td>가열 프로파일별 실제 회분·가동시간 로그</td></tr>
-    <tr><td>보관</td><td>습도 제어는 자동화되었다는 가정</td><td>개봉·재밀폐 빈도와 누적 시간 관리</td></tr>
-    <tr><td>배출</td><td>커피 한 잔당 단순 계산</td><td>메뉴 구성과 샷 낭비율 반영</td></tr>
+    <tr>
+      <td>탄소</td>
+      <td>전력 mix, 로스팅 연료, 냉각·건조의 실제 가동시간</td>
+      <td>에너지 로그 정합성(가동/정지/비가동) 후 재계산</td>
+    </tr>
+    <tr>
+      <td>물</td>
+      <td>전처리·세척·세척수 재사용율, 누수 손실</td>
+      <td>용도별 계량치(회수수 포함) 분리 수집</td>
+    </tr>
+    <tr>
+      <td>보간 오차</td>
+      <td>총량 기반 평균치 사용, 계절성 반영 미흡</td>
+      <td>분기 단위 분해 + 민감도 분석</td>
+    </tr>
   </tbody>
 </table>
 
-<h2 id="comparison-framework">비교 프레임: LCA 결과를 실무로 바꾸는 4단계</h2>
+<h2 id="data-quality">데이터 품질 오차 8가지</h2>
+<p>오차를 숨긴 계산은 의사결정 비용을 크게 만듭니다. 아래는 실무에서 자주 발생합니다.</p>
 <ol>
-  <li><strong>경계 일치:</strong> 경영진·구매자·공급자가 같은 범위를 쓰는지 확인</li>
-  <li><strong>지표 정합:</strong> 탄소와 물을 별도 열로 두고 분기 보고</li>
-  <li><strong>가정 분해:</strong> 전력원, 운송거리, 건조시간을 가정 목록으로 분리</li>
-  <li><strong>개선 우선순위:</strong> 데이터 신뢰도 높은 항목부터 개선</li>
+  <li>연료·전력 소모를 로트별이 아닌 월 평균으로 고정</li>
+  <li>로스팅 가동시간을 실제 로그 대신 추정치로 대체</li>
+  <li>폐기율·샘플 손실을 비용 산정에서 제외</li>
+  <li>물 소비에서 회수수, 재생수, 세정 단계의 하위분해 누락</li>
+  <li>재배 구간 전력 구성(태양광/디젤/그리드) 혼용 미표기</li>
+  <li>운송 거리·항차 변경을 경계 내부/외부로 구분 못함</li>
+  <li>보관 기간별 개봉 빈도와 재밀폐 로그 부재</li>
+  <li>단가 조정(품질, 환율, 지연) 결과를 발자국 계산에 반영하지 않음</li>
 </ol>
 
-<h2 id="packaging-effect">포장재, 물류, 폐기물: 무시하기 쉬운 3개 축</h2>
-<p>많은 팀이 포장과 폐기물을 단일 비용으로 처리합니다. 실무에서는 이 부분이 장기 개선의 핵심이 됩니다.</p>
+<h2 id="stage-map">단계별 핵심 편차 지도</h2>
+<p>발자국을 낮추려면 ‘어느 단계에서 오차가 크게 누적되는지’를 먼저 잡습니다.</p>
+<table>
+  <thead>
+    <tr><th>단계</th><th>주요 리스크</th><th>우선 점검 포인트</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>재배·건조</td>
+      <td>건조 시간·습도 편차, 에너지 누수</td>
+      <td>건조로그, 수분 추적, 연료 사용량 시간축 비교</td>
+    </tr>
+    <tr>
+      <td>수출·운송</td>
+      <td>항차 지연, 다회 환적</td>
+      <td>항차 변경 이력과 보관 구간 이산도</td>
+    </tr>
+    <tr>
+      <td>보관·로스팅</td>
+      <td>개봉-밀폐 반복, 과열로 인한 손실</td>
+      <td>출입 로그, 온도곡선, 샷/출력 이력</td>
+    </tr>
+    <tr>
+      <td>폐기·폐수</td>
+      <td>유실량 추적 부족</td>
+      <td>폐기량 분류(품질불량/오염/폐기)와 재투입량</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="translation-to-contract">계약·구매에 쓰는 6개 번역 규칙</h2>
+<p>발자국 계산값이 문서로 안 넘으면 실제 협상에서 무의미합니다.</p>
+<ol>
+  <li>경계 정의를 계약 부속서에 명시하고 경과를 버전관리</li>
+  <li>로트별 탄소/물 로그의 산정 시작일·종료일을 통일</li>
+  <li>품질 보정·지연 시나리오를 데이터 재산정 조건으로 둠</li>
+  <li>물 재사용율은 감축 지표와 비용 지표에 동시에 반영</li>
+  <li>협력사별 기준값(표준치)과 임계치(경보치) 고정</li>
+  <li>분기 1회 이상 교차 검증: 구매자·로스터·공급자 공동 확인</li>
+</ol>
+
+<h2 id="fairness-trade">공정성(공유 비용)과 트레이드오프</h2>
+<p>단기 감소가 항상 정답은 아닙니다. 감축 조치의 분담이 분명해야 지속됩니다.</p>
+<table>
+  <thead>
+    <tr><th>상황</th><th>왜 생기는가</th><th>우선 조치</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>탄소는 줄었는데 물 비용이 증가</td>
+      <td>에너지 전환(예: 고온 건조→저온 건조)로 물/운영 부담 전이</td>
+      <td>두 지표를 동일 기간 기준으로 비교</td>
+    </tr>
+    <tr>
+      <td>물 지표는 개선되었는데 폐기율 상승</td>
+      <td>세정 최적화가 유통/보관 품질을 약화</td>
+      <td>폐기율·회복률 병행 지표로 판단</td>
+    </tr>
+    <tr>
+      <td>산지에서 개선 효과가 나오지 않음</td>
+      <td>운영 로그 누락 또는 경계 스코프 오류</td>
+      <td>경계 재정의 후 파일럿 2주 반복</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="6-week-loop">6주 운영 루프</h2>
+<p>문서화된 데이터 체계를 먼저 고정하고 비교를 누적합니다.</p>
+<ol>
+  <li>1~2주: 두 경계(cradle-to-farm-gate, cradle-to-cup) 병행 산정</li>
+  <li>3주: 로스팅·보관 로그를 탄소/물 시트에 붙여 오차 출처 추적</li>
+  <li>4주: 물 재사용/회수수 분리 항목 보정</li>
+  <li>5주: 운송 이슈(항차 변경, 지연) 반영 후 재계산</li>
+  <li>6주: 개선안 후보 3개를 비용·품질·협상 관점으로 우선순위 결정</li>
+</ol>
+
+<h2 id="handoff-rules">교대 인수인계 규칙(실무용)</h2>
 <ul>
-  <li>포장재 재질과 무게는 탄소값 계산에서 누락되기 쉽지만 누적량은 큽니다.</li>
-  <li>재포장 물류는 물 사용량보다 폐기와 추가 운송으로 물·에너지 둘 다에 영향을 줍니다.</li>
-  <li>폐기율이 높을수록 물과 에너지 모두에서 계산 오차가 커집니다.</li>
+  <li>경계 버전(예: V1.4): 포함 단계, 출발일, 종료일</li>
+  <li>발자국 로그: 탄소/물 원자료 저장 위치와 보정 규칙</li>
+  <li>감량성 지표: 기준치 대비 변화치와 오차 구간</li>
+  <li>의사결정 기록: 어떤 조치가 분기별 비용·품질에 반영되었는지</li>
 </ul>
 
-<h2 id="fairness-and-trade-offs">공정성과 트레이드오프의 균형</h2>
-<p>정량화된 값이 좋아도 구매자가 실제 부담하지 못하면 지속가능성은 유지되지 않습니다.</p>
+<h2 id="footprint-decision-tree">탄소·물 대응 의사결정 트리</h2>
+<p>한 번에 여러 항목을 건드이면 책임 추적이 사라집니다. 아래 순서로만 의사결정하면 운영이 유지됩니다.</p>
 <ol>
-  <li>감축 효과가 큰데 비용이 일시적으로 커질 수 있는 구간을 구분</li>
-  <li>수익성 악화 구간에서 대체 조합(에너지 구매, 스케줄 조정)을 설계</li>
-  <li>발자국 개선이 생계 안정에 반영되는지 점검</li>
+  <li><strong>1단계:</strong> 경계 버전(V)과 분석 기준일(시작/종료)을 먼저 고정한다.</li>
+  <li><strong>2단계:</strong> 탄소와 물 모두 임계치 초과인지, 한쪽만 초과인지 구분한다.</li>
+  <li><strong>3단계:</strong> 한쪽 초과 시 해당 지표 데이터 정합성(측정기·수기)부터 보정한다.</li>
+  <li><strong>4단계:</strong> 비용·품질 영향이 큰 조치부터 순차 적용하고, 다음 기록에서 비교한다.</li>
+  <li><strong>5단계:</strong> 분기 시작 전 협상 반영 항목(가격, 분담, 재측정 조건)을 갱신한다.</li>
 </ol>
+
+<h2 id="monthly-governance-footprint">월간 정렬 규정</h2>
+<table>
+  <thead>
+    <tr><th>구간</th><th>필수 점검</th><th>지연 시 조치</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1~2주</td>
+      <td>경계 버전 고정, 샘플데이터 누락 확인</td>
+      <td>측정치 미확정이면 재측정 의뢰</td>
+    </tr>
+    <tr>
+      <td>3~4주</td>
+      <td>에너지·물 로그 병합 정확도와 중복 계측 점검</td>
+      <td>중복 제거 후 재산정한 수치만 사용</td>
+    </tr>
+    <tr>
+      <td>5~6주</td>
+      <td>협상 반영 항목(가격·분담·품질 보정) 정렬</td>
+      <td>분담 합의 안 된 항목은 다음 단계에서 보류</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="footprint-tracker">성과 추적 템플릿</h2>
+<ul>
+  <li>로트 ID: <code>[LOT-YYYYMM-##]</code></li>
+  <li>경계 버전/분석 기간: [V# / YYYY-MM-DD~YYYY-MM-DD]</li>
+  <li>입력 데이터: 에너지, 물, 회수수, 폐기량, 항차상태</li>
+  <li>핵심 결과: 탄소(kgCO2e), 물(L), 편차(%), 오차등급(A/B/C)</li>
+  <li>조치 결정: 유지/축소/중단 + 다음 점검일</li>
+  <li>인수인계: 미해결 이슈 3개 + 담당자 지정</li>
+</ul>
+
+<h2 id="handoff-carbon-water">교대 요약 템플릿</h2>
+<p>교대 10분 요약 템플릿으로 지연·재측정을 줄입니다.</p>
+<ul>
+  <li>이번 주 임계치 상태: [안정/주의/경고]</li>
+  <li>주요 원인: [데이터·운영·운송 중 1~2개]</li>
+  <li>현재 분담 구조: [농가/구매자/로스터]</li>
+  <li>다음 액션: [실행자, 기준일, 목표값]</li>
+  <li>보류 항목: [미완료 보정·추가 증빙]</li>
+</ul>
 
 <h2 id="common-misconceptions">흔한 오해</h2>
 <ul>
-  <li>오해: 탄소값이 낮으면 물도 동시에 낮을 것이다.<br/>
-  <strong>정정:</strong> 경로와 지역이 다르면 한쪽만 높아질 수 있으므로 분리 점검이 필요합니다.</li>
-  <li>오해: 포장재는 커피 품질 지표에 영향이 없다.<br/>
-  <strong>정정:</strong> 습윤·산화 경로를 통해 최종 유효 품질에 간접 영향을 줄 수 있습니다.</li>
-  <li>오해: LCA는 측정 장비가 있으면 모두 동일하다.<br/>
-  <strong>정정:</strong> 경계·가정·단위 환산이 다르면 같은 장비라도 값이 다릅니다.</li>
-  <li>오해: 계산값은 한 번 정하면 끝이다.<br/>
-  <strong>정정:</strong> 수확량·에너지 구성·운송 경로가 바뀌면 매 분기 재산정이 필요합니다.</li>
-  <li>오해: 탄소·물 발자국은 구매 협상에서 실질 변수로 쓰기 어렵다.<br/>
-  <strong>정정:</strong> 경계가 명확하면 가격 가감과 장기 계약 조건으로 이어질 수 있습니다.</li>
-</ul>
-
-<h2 id="practice">실습: 8주 발자국 개선 실험</h2>
-<p>한 달을 넘기지 말고 8주 루프를 추천합니다.</p>
-<ol>
-  <li>동일 산지·동일 추적군에서 두 개 경계를 분리해 산정(예: farm-gate, cup)</li>
-  <li>로스팅 에너지 기록표를 일별 가동시간·정지시간 단위로 작성</li>
-  <li>보관 개봉 이력과 폐기 건수를 함께 기록</li>
-  <li>물 사용량은 전처리·청소·세정 용도별로 분리</li>
-  <li>1주 단위로 오차 추정치가 큰 항목을 재산정해 수정</li>
-  <li>2주차/4주차/8주차 성과를 비교해 우선순위를 갱신</li>
-  <li>개선안에 비용·품질 영향·협상 반영 항목을 3열로 정리</li>
-  <li>다음 로트 투입 전 내부 승인 조건으로 반영</li>
-</ol>
-
-<h2 id="term-dictionary">용어 정리</h2>
-<ul>
-  <li><strong>LCA</strong>: 전 과정을 단계별로 연결해 환경 부담을 계산하는 분석 틀.</li>
-  <li><strong>탄소발자국</strong>: 온실가스 배출량을 통합해 비교하는 지표.</li>
-  <li><strong>물발자국</strong>: 생산·가공·세정·청소 과정의 물 사용량과 관련된 지표.</li>
-  <li><strong>영역 경계</strong>: 계산에 포함되는 단계의 시작과 끝 정의.</li>
-  <li><strong>기준선</strong>: 비교를 위해 정하는 기준 시나리오.</li>
-  <li><strong>불확실성</strong>: 측정 오차와 가정 변동에서 생기는 신뢰구간.</li>
+  <li>오해: 탄소와 물 모두 낮으면 항상 공정성이 보장된다.<br/>
+  <strong>정정:</strong> 비용 분담·가격 반영·생산성 반등까지 함께 봐야 실질 지속성이 유지됩니다.</li>
+  <li>오해: 한 번 산정하면 갱신할 필요가 없다.<br/>
+  <strong>정정:</strong> 항차·기후·가격 조건이 바뀌면 즉시 재산정이 필요합니다.</li>
+  <li>오해: 탄소 계산이 정확하면 물 문제는 자동 해결된다.<br/>
+  <strong>정정:</strong> 물은 회수율·재사용률 설계로 다르게 움직입니다.</li>
+  <li>오해: 계산표에 수치만 맞으면 협상에서 충분하다.<br/>
+  <strong>정정:</strong> 사용한 경계와 오차 구조를 공개해야 상대가 실행 가능한 조건으로 반영합니다.</li>
+  <li>오해: 농가 데이터는 대개 정확하므로 별도 검증이 불필요하다.<br/>
+  <strong>정정:</strong> 동일 로트 내 최소 단위(일/로트/로스팅 배치)를 맞춰 재확인이 필요합니다.</li>
 </ul>
 
 <h2 id="references">참고 자료</h2>
 <ul>
-  <li><a href="https://www.iso.org/">ISO 14040/14044</a></li>
-  <li><a href="https://www.ipcc.ch/">IPCC 2023 Assessment Reports</a></li>
-  <li><a href="https://www.ico.org/">ICO 생산·유통 통계</a></li>
-  <li><a href="https://www.fao.org/climate-change/">FAO 기후·농업 대응 자료</a></li>
-  <li><a href="https://www.wcr.org/">WCR 연구자료</a></li>
-  <li><a data-wikilink="coffee-climate-resilience" href="/wiki/coffee-climate-resilience">기후위기와 커피 회복탄력성</a></li>
-  <li><a data-wikilink="climate-risk-and-quality" href="/wiki/climate-risk-and-quality">기후 리스크와 품질</a></li>
-  <li><a data-wikilink="climate-risk-and-quality" href="/wiki/climate-risk-and-quality">품질 편차 완화 루틴</a></li>
+  <li><a href="https://www.iso.org/">ISO 14040 / ISO 14044</a></li>
+  <li><a href="https://www.ipcc.ch/">IPCC Assessment Report</a></li>
+  <li><a href="https://www.iso.org/standard/37456.html">ISO 14067(탄소발자국)</a></li>
+  <li><a href="https://www.waterfootprint.org/">Water Footprint Alliance</a></li>
+  <li><a href="https://www.faostat.org/">FAOSTAT</a></li>
+  <li><a href="https://www.unfccc.int/">UNFCCC 온실가스 가이드</a></li>
+  <li><a data-wikilink="coffee-climate-resilience" href="/wiki/coffee-climate-resilience">기후 회복성</a></li>
+  <li><a data-wikilink="climate-risk-and-quality" href="/wiki/climate-risk-and-quality">기후 위험과 품질</a></li>
   <li><a data-wikilink="supply-chain-transparency" href="/wiki/supply-chain-transparency">공급망 투명성</a></li>
-  <li><a data-wikilink="farm-to-cafe-value-chain" href="/wiki/farm-to-cafe-value-chain">농장-카페 가치사슬</a></li>
+  <li><a data-wikilink="farm-to-cafe-value-chain" href="/wiki/farm-to-cafe-value-chain">농장~카페 가치사슬</a></li>
+  <li><a data-wikilink="producer-income-and-livelihood" href="/wiki/producer-income-and-livelihood">생산자 소득과 생활소득</a></li>
   <li><a data-wikilink="coffee-trade-history" href="/wiki/coffee-trade-history">커피 무역의 역사</a></li>
-  <li><a href="https://www.unece.org/">UNECE 지속가능성 지표 자료</a></li>
 </ul>
 
 <h2 id="quiz">자기 점검</h2>
 <ul>
-  <li>같은 로트를 비교할 때 경계 설정이 바뀌면 결과가 달라지는 이유를 설명할 수 있나요?</li>
-  <li>탄소와 물 지표를 분리해서 점검해야 하는 이유는 무엇인가요?</li>
-  <li>데이터 품질 오차 중 자주 놓치는 항목 2가지를 적어보세요.</li>
-  <li>로스팅·보관 로그를 발자국 산정에 연결하는 절차를 요약해보세요.</li>
-  <li>개선 실험에서 오차가 큰 항목이 두 개일 때 어떤 순서로 고쳐야 합니까?</li>
-  <li>발자국 개선이 구매 협상으로 이어지기 위한 최소 조건은?</li>
+  <li>cradle-to-farm-gate와 cradle-to-cup의 경계 차이가 협상에 미치는 영향은?</li>
+  <li>탄소·물 오차 중 운영 로그에서 먼저 검증해야 할 3개 항목은?</li>
+  <li>경계 변경이 있을 때 계약에 같이 반영해야 할 항목은?</li>
+  <li>보관/로스팅 로그를 발자국 산정에 연결하는 방법은?</li>
+  <li>6주 루프에서 3주차와 6주차의 판별 차이는?</li>
+  <li>발자국 개선이 실제 가격 협상으로 이어지려면 무엇이 선행되어야 하나요?</li>
 </ul>

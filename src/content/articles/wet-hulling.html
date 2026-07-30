@@ -1,71 +1,172 @@
 ---
 slug: wet-hulling
-title: 웻 헐링: 탈각 시점과 생두 수분이 만드는 균일성
-summary: 웻 헐링 과정의 핵심 제어점과 인도네시아권 공정 특성을 이해하고 편차를 줄이는 운영 체크를 정리합니다.
+title: 웻 헐링: 탈각 타이밍과 수분 조절로 편차를 줄이는 운영 프레임
+summary: 웻 헐링은 파치먼트 제거 시점과 수분 조절이 맞아야 생두의 균일성이 유지됩니다. 편차를 줄이려면 진입 수분, 헐링 강도, 보관 이전 점검을 한 장의 로그로 연결해야 합니다.
 category: 산지와 생두
 level: 중급
-readingTime: 12분
-updatedAt: 2026. 07. 27.
+readingTime: 16분
+updatedAt: 2026. 07. 30.
 accent: sage
-fact: 웻 헐링은 파치먼트 제거 시점과 탈수 상태가 생두 물성·감각의 편차 폭을 크게 바꾸는 공정 구간입니다.
-related: ["coffee-processing","post-harvest-processing-map","coffee-terroir-science","coffee-storage"]
-tags: ["웻 헐링","파치먼트","수분","탈각","균일성"]
-history: [{"date":"2026. 07. 27.","note":"웻 헐링 핵심 제어점과 리스크 완화 루틴을 중급 가이드로 정리"}]
+fact: 웻 헐링은 파치먼트와 수분을 어떤 순서로 분리하느냐가 로트의 외형 편차와 로스팅 반응성을 크게 바꿉니다.
+related: ["coffee-processing","post-harvest-processing-map","green-bean-moisture-management","coffee-storage","green-bean-grading-defects","harvest-maturity-selection"]
+tags: ["웻 헐링","파치먼트","수분관리","탈각","인도네시아 가공","균일성"]
+history: [{"date":"2026. 07. 27.","note":"웻 헐링 핵심 제어점과 리스크 완화 루틴을 중급 가이드로 정리"},{"date":"2026. 07. 30.","note":"PRO-08 보강: 탈각 타이밍 프레임, 수분 지도, 실패 패턴, 용도 분기, 2주 실험 루프, 오해 지도 확장"}]
 ---
-<h2 id="overview">웻 헐링을 먼저 정의해야 하는 이유</h2>
-<p>웻 헐링은 단순히 파치먼트 제거만으로 보는 경우가 많지만, 실제로는 탈수 타이밍과 동결 강도(수분 상태)의 조정이 결합된 공정입니다.</p>
-<p>동일 가공 루트라도 파치먼트 제거 시점의 편차가 크면 저장·로스팅 단계에서 결과 편차가 반복되는 일이 많습니다.</p>
+<h2 id="purpose">왜 먼저 웻 헐링이냐</h2>
+<p>웻 헐링은 생두 표면의 파치먼트 잔존 구조와 수분 상태를 분리해 안정성을 확보하는 공정입니다. 이 구간이 일정하지 않으면 동일 로트라도 선별율, 저장 안정성, 추출 감각이 다르게 나타날 수 있습니다.</p>
+<aside class="callout callout-note" data-tone="note"><p>웻 헐링은 “인도네시아 특화 공정”이라는 구분보다, 수분·파손·균일성 리스크를 통합으로 다루는 관리 구간으로 이해해야 합니다.</p></aside>
 
-<h2 id="where-it-matters">편차가 크게 드러나는 구간</h2>
-<table><thead><tr><th>구간</th><th>관찰 신호</th><th>실행 대응</th></tr><tr><td>탈수 초입</td><td>수분차 확대</td><td>건조 구획·회전 빈도 재설정</td></tr><tr><td>헐링 전환</td><td>표면 균열/분말량 증가</td><td>회수량 분할 후 단계 기록</td></tr><tr><td>헐링 후</td><td>생두 크기군 불균형</td><td>선별 강도 조절 및 보관 수분 점검</td></tr></tbody></table>
-
-<h2 id="process-risks">운영 리스크 3종</h2>
+<h2 id="three-axis">3축 제어 프레임으로 운영을 고정한다</h2>
+<p>편차가 가장 많이 발생하는 원인은 대개 축이 동시에 흔들릴 때입니다. 최소한 아래 3축을 고정해 관리하세요.</p>
 <ol>
-  <li><strong>과도한 헐링:</strong> 표면 손상이 늘어 결점율이 높아질 수 있음</li>
-  <li><strong>과습 유지:</strong> 저장 곰팡이·풍미 열화 위험</li>
-  <li><strong>과도 건조:</strong> 감각 텍스처가 단단해져 추출 반응이 급격해질 수 있음</li>
+  <li><strong>진입 수분축:</strong> 입고 수분, 저장 이력, 수분 분포</li>
+  <li><strong>헐링 강도축:</strong> 파치먼트 제거 강도, 전환 시점, 분쇄/교반 영향</li>
+  <li><strong>회수 분기축:</strong> 헐링 후 선별 강도, 보관 전 안정화 조치</li>
 </ol>
+<p>3축은 분리해서 점검하면 안 되고, 항상 한 번에 하나의 표로 묶어야 합니다.</p>
 
-<h2 id="monitoring-routine">현장 점검 루틴</h2>
-<p>권장 점검은 3단계입니다.</p>
-<ol>
-  <li>파치먼트 상태와 수분이 혼재된 샘플을 분리 기록</li>
-  <li>헐링 전·후 2회 추출 시료와 외형 점검</li>
-  <li>보관 전 수분값과 표면 균열률 확인</li>
-</ol>
+<h2 id="phase-map">공정 단계별 체크 지도</h2>
+<table>
+  <thead>
+    <tr><th>단계</th><th>관찰 신호</th><th>기준 질문</th><th>행동</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>진입</td>
+      <td>수분 편차, 표면 결합수분</td>
+      <td>진입군 분리가 필요한가?</td>
+      <td>로트 분할·라벨 기록 후 공정 시작</td>
+    </tr>
+    <tr>
+      <td>탈각 전환</td>
+      <td>표면 균열, 과도한 조각 발생</td>
+      <td>헐링 강도와 시간은 맞는가?</td>
+      <td>강도 하향 또는 구간 분할</td>
+    </tr>
+    <tr>
+      <td>탈각 후</td>
+      <td>생두 크기군 편차, 표면 손상 비율</td>
+      <td>용도별 분기가 필요한가?</td>
+      <td>보관 전 수분·파손 지도 갱신</td>
+    </tr>
+  </tbody>
+</table>
+<aside class="callout callout-tip" data-tone="tip"><p>동일 공정 시간이더라도 진입 수분이 다르면 동일한 “좋은” 결과를 만들기 어렵습니다. 분할 기준부터 다시 점검하세요.</p></aside>
 
-<h2 id="common-misconceptions">흔한 오해</h2>
+<h2 id="risk-matrix">편차 유발 리스크 매트릭스</h2>
+<p>중대한 리스크는 보통 2개 축이 동시에 흔들릴 때 발생합니다.</p>
+<table>
+  <thead>
+    <tr><th>리스크</th><th>원인</th><th>첫 점검</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>표면 손상 확대</td>
+      <td>헐링 강도 과다 또는 투입 수분 과잉</td>
+      <td>입구 수분군 분할과 강도 하향 검토</td>
+    </tr>
+    <tr>
+      <td>수분 편차 잔존</td>
+      <td>헐링 시점 과도 조기 전환</td>
+      <td>단기 재측정 후 구간별 회수 조치</td>
+    </tr>
+    <tr>
+      <td>보관성 저하</td>
+      <td>탈각 후 즉시 안정화 미흡</td>
+      <td>보관 직전 수분 및 밀봉 조건 이행</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="operation-loop">운영 루프: 선별·로스팅·보관으로 연결</h2>
+<p>웻 헐링에서의 기록은 선별팀, 로스터, 보관팀에 동일 포맷으로 전달되어야 합니다.</p>
 <ul>
-  <li>오해: 웻 헐링은 인도네시아권 전용이다.<br/>
-  <strong>정정:</strong> 지역 특성에 따라 많이 쓰이지만, 개념적으로는 수분관리의 일반 기법으로 번역됩니다.</li>
-  <li>오해: 헐링이 잘되면 보관이 항상 안정된다.<br/>
-  <strong>정정:</strong> 보관 환경이 바뀌면 동일 헐링 결과라도 편차가 다시 커질 수 있습니다.</li>
-  <li>오해: 물성만 맞으면 최종 향미는 고정된다.<br/>
-  <strong>정정:</strong> 로스팅·추출과 결합된 통합 판단이 필요합니다.</li>
+  <li><strong>선별:</strong> 파손율, 표면 균열률, 크기군 편차</li>
+  <li><strong>로스팅:</strong> 동일 물성군 간 시작 조건 차이를 줄임</li>
+  <li><strong>보관:</strong> 수분활성과 밀폐 상태를 재점검</li>
+</ul>
+<p>어느 한 단계라도 “기록 미흡”이면 다음 단계에서 보정이 어려워집니다.</p>
+
+<h2 id="forensic-log">오류 추적을 위한 7개 항목</h2>
+<p>문제가 반복되면 아래 7개 항목을 동시에 기록합니다.</p>
+<ol>
+  <li>수분군 구분(진입 A/B)</li>
+  <li>파치먼트 제거 시작 시간</li>
+  <li>헐링 강도(강, 중, 약) 또는 구간 시간</li>
+  <li>전환 시점 근처의 표면 균열율</li>
+  <li>탈각 후 분포별 수분값</li>
+  <li>커팅 샘플 컵의 향미 경향</li>
+  <li>보관 전 밀봉/습도 조건</li>
+</ol>
+
+<h2 id="application-scenarios">용도별로 다르게 분기한다</h2>
+<table>
+  <thead>
+    <tr><th>용도</th><th>민감 지표</th><th>권장 판단</th><th>재투입 규칙</th></tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>싱글오리진 드립</td>
+      <td>편차 민감한 향미 신호</td>
+      <td>균일성 높은 구간을 우선 채택</td>
+      <td>편차군은 별도 블렌드 규정 적용</td>
+    </tr>
+    <tr>
+      <td>에스프레소 블렌드</td>
+      <td>바디감 재현성</td>
+      <td>표면 손상 비율 제한</td>
+      <td>초기 불합격군은 대체 원료 비중으로 완충</td>
+    </tr>
+    <tr>
+      <td>재고 저장</td>
+      <td>시간 경과 안정성</td>
+      <td>보관 전 수분활성 우선 확인</td>
+      <td>고위험군은 회수 속도 조절</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="common-misconceptions">흔한 오해 정리</h2>
+<ul>
+  <li>오해: 웻 헐링이 잘 되면 보관이 자동으로 안정이다.<br/><strong>정정:</strong> 보관환경이 바뀌면 동일 웻 헐링 결과도 회복성은 달라집니다.</li>
+  <li>오해: 로스트만 맞추면 수분 편차는 묻힌다.<br/><strong>정정:</strong> 로스팅은 보완 도구가 아니라 최종 단계의 설계입니다.</li>
+  <li>오해: 1회 점검으로 원인을 충분히 잡는다.<br/><strong>정정:</strong> 진입군 분할 전후 2회 이상 비교해야 원인 추론이 신뢰됩니다.</li>
 </ul>
 
-<h2 id="practice">실습: 웻 헐링 편차 분해</h2>
-<p>두 개 배치에서만 실험합니다.</p>
+<h2 id="practice-loop">실습 루프: 2주 정렬 계획</h2>
+<p>다음 2주간은 변수를 하나만 바꿔 추적합니다.</p>
 <ol>
-  <li>헐링 진입 수분군을 A/B로 나눕니다.</li>
-  <li>분리군별로 표면 균열률과 건조 수치를 동시 기록</li>
-  <li>후속 커핑에서 바디감 및 산미 선명도 차이를 비교</li>
-  <li>편차가 큰 항목 1개를 다음 배치 조정 우선순위로 지정</li>
+  <li>1주차: 기존 조건으로 수분군 분할 기록 + 컵 지표 수집</li>
+  <li>2주차: 헐링 전환 시점 한 가지 변수만 조정</li>
+  <li>매 배치: 진입 수분과 헐링 후 수분, 균열률을 같은 표에 기록</li>
+  <li>종결: 편차가 줄어든 변수 1개만 다음 주 표준으로 유지</li>
 </ol>
 
-<h2 id="quiz">자기 점검</h2>
+<h2 id="handoff">교대 인수인계를 위한 6줄 규칙</h2>
 <ul>
-  <li>웻 헐링 편차를 만드는 1차 원인은 무엇인가?</li>
-  <li>표면 손상과 수분 안정성 중 무엇을 먼저 점검해야 할까요?</li>
-  <li>실험에서 헐링 전후 동일 비교를 위해 고정할 변수는?</li>
-  <li>로트 실패를 기록할 때 가장 많이 놓치는 항목은?</li>
+  <li>진입 수분군(로트별)과 헐링 강도</li>
+  <li>탈각 전환 기준 시각/이유</li>
+  <li>파손·균열율 상·하한</li>
+  <li>보관 전 수분값과 밀봉 상태</li>
+  <li>로스팅/컵 결과의 편차 항목 2개</li>
+  <li>재작업 판단과 보류 판정</li>
 </ul>
 
 <h2 id="references">참고 자료</h2>
 <ul>
-  <li><a data-wikilink="coffee-processing" href="/wiki/coffee-processing">가공 방식 지도</a></li>
-  <li><a data-wikilink="coffee-terroir-science" href="/wiki/coffee-terroir-science">생산 환경과 물성</a></li>
-  <li><a data-wikilink="coffee-storage" href="/wiki/coffee-storage">저장 관리 연결</a></li>
-  <li><a href="https://www.ico.org/coffee-processing">ICO 가공 자료</a></li>
-  <li><a href="https://www.cra.org/">Coffee Research Association</a></li>
+  <li><a data-wikilink="coffee-processing" href="/wiki/coffee-processing">커피 가공 방식 지도</a></li>
+  <li><a data-wikilink="post-harvest-processing-map" href="/wiki/post-harvest-processing-map">수확 후 가공 지도</a></li>
+  <li><a data-wikilink="coffee-storage" href="/wiki/coffee-storage">생두 보관 관리</a></li>
+  <li><a data-wikilink="green-bean-moisture-management" href="/wiki/green-bean-moisture-management">생두 수분 관리</a></li>
+  <li><a data-wikilink="green-bean-grading-defects" href="/wiki/green-bean-grading-defects">생두 결점과 선별</a></li>
+  <li><a href="https://ico.org/">ICO 커피 표준 및 보고 가이드</a></li>
+</ul>
+
+<h2 id="quiz">자기 점검</h2>
+<ul>
+  <li>웻 헐링 편차가 커지는 1차 원인은 무엇으로부터 확인했나요?</li>
+  <li>진입군을 분할하지 않으면 어떤 리스크가 가장 큽니까?</li>
+  <li>헐링 후 생두 편차를 컵 데이터와 연결할 때 먼저 보는 항목은?</li>
+  <li>2주 루프에서 변수 고정이 중요한 이유는?</li>
+  <li>인수인계 시 누락되면 즉시 문제가 생기는 기록은?</li>
 </ul>

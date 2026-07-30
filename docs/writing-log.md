@@ -1,6 +1,210 @@
 # 글 작성 기록 (운영 로그)
 
+## 2026-07-30
+
+- IND-03 보강(`green-bean-purchase-contracts-and-logistics`)
+  - 주제 대응: 생두 구매 계약(샘플 승인·인도·클레임·물류·환율)을 운영 가능한 번역 프레임으로 확장
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 계약 핵심 프레임 정렬, 가격·계약 번역 규칙(6개), 물류 흐름 지도(8단계), 보험·클레임 3분리, 실패 지도(10개), 교대 인수인계 규칙, 8주 정렬 루프 추가
+  - 추가 반영: 협상·클레임 변경 결정 트리, 실무 최소 기록 템플릿(6항목), 월간 정렬 포인트(4개) 추가
+  - 추가 반영: 계약·물류 위험 번역 표, 의사결정 매트릭스, 교대 공지 템플릿, 미니 퀴즈(2문항) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+
+- PRO-03 보강(`coffee-fermentation-microbiology`)
+  - 주제 대응: `PRO-03` 커피 발효의 미생물학적 프레임(군집 전이, 조건 조정, 결점 분해, 상·하류 연결) 중심으로 전문 난이도 재작성
+  - frontmatter 정합성 반영: `level: 전문`, `fact` 업데이트, `readingTime` 갱신, `updatedAt` 2026. 07. 30. 반영
+  - 본문 확장: 미생물군 층위, 대사 경로, 제어 프레임, 결점 지도, 다운스트림 연결, 용어 정리, 실습/자기점검(6문항), 참고자료(8건) 추가
+  - 내부 링크 정렬: `anaerobic-coffee-processing`, `coffee-storage` 포함 및 기존 관련 항목 정합성 유지
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- PRO-06 보강(`green-bean-grading-defects`)
+  - 주제 대응: `PRO-06` 생두 등급과 결점을 용도 기반 의사결정과 선별·용도 분기 체계로 강화
+  - frontmatter 정합성: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 3단계 판단 프레임(분류-평가-적용), 결점 원인 지도, 용도별 허용 기준 맵, 교차 팀 인수인계 템플릿, 실패 지도, 용어 정리, 실습 루프(2주), 참고자료(7건), 자기점검(6문항) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- PRO-07 보강(`honey-pulped-natural-processing`)
+  - 주제 대응: `PRO-07` 허니·펄프드 내추럴을 점액 레이어별 제어 프레임으로 확장
+  - frontmatter 정합성: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 4유형 운영 지도, 건조 단계 지도, 실패 지도, 용도 분기, 2주 정렬 루프, 인수인계 템플릿, 핵심 용어, 자기점검(6문항), 참고자료(7건) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- PRO-08 보강(`wet-hulling`)
+  - 주제 대응: `PRO-08` 웻 헐링에서 수분/탈각 타이밍/전환 강도를 3축으로 고정해 편차 제어 프레임으로 확장
+  - frontmatter 정합성: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 3축 제어 프레임, 단계별 체크 지도, 리스크 매트릭스, 오류 추적 7항목, 용도 분기, 2주 정렬 루프, 오해 지도, 교대 인수인계 규칙, 자기점검(5문항), 참고자료(6건) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+  - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+  - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+  - `git diff --check` (통과)
+- PRO-09 보강(`anaerobic-coffee-processing`)
+  - 주제 대응: `PRO-09` 무산소·탄산침용·스타터·코퍼먼트의 공정 프레임과 편차 제어를 전문 난이도로 고도화
+  - frontmatter 정합성: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 4차원 제어 프레임, 단계별 판단 지도, 무산소/탄산침용/스타터/코퍼먼트 비교 프레임, 리스크 매트릭스, 첨가물 공개·추적성 규칙, 실패 지도(7건), 인수인계 규칙, 실습 루프(2주), 오해 지도, 용어 정리, 자기점검(6문항), 참고자료(12건) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- PRO-10 보강(`green-bean-moisture-management`)
+  - 주제 대응: `PRO-10` 건조·수분·수분활성·보관 운영을 전문 난이도로 통합해 편차 제어 프레임으로 보강
+  - frontmatter 정합성: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 수분 신호 4축 프레임, 건조 구간 지도, 설비별 편차 분해, 수분활성 중심 저장 안정성 루프, 실패 지도(7개), 리스크 매트릭스, 선별·로스팅·보관 연결 지도, 인수인계 7줄 규칙, 2주 실험 루프, 오해 지도, 용어 정리, 자기점검(6문항), 참고자료(12건) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- `coffee-oxidation-pathway` 보강(산화 경로 연속 관리)
+  - 주제 대응: 생두 저장 후 산화 경로를 수분·포장·개봉 주기 중심 실무 지도와 2주 검증 루프로 확장
+  - frontmatter 정합성: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 산화 경로 3단계, 가속 요인 4개, 포장/개봉 운영 지도, 실패 지도(6개), 리스크 매트릭스, 용도 정렬, 인수인계 규칙, 2주 실험 루프, 오해 지도, 용어 정리, 자기점검(6문항), 참고자료(12건) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- IND-04 중급 보강(`coffee-certification-comparison`)
+  - 주제 대응: `IND-04` 인증 제도(Organic/Fairtrade/Rainforest Alliance)를 계약·가격·클레임 운영 프레임으로 고도화
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 3축 비교 지도(범위·책임·비용), 구매-물류-로스팅 단계별 검토표, 계약 언어 번역 항목, 감사·클레임 처리 프레임, 흔한 오해, 실습 루프(6주), 용어 정리, 참고자료(11개), 자기점검(6문항) 추가
+  - 추가 반영: 인증 이슈 대응 의사결정 트리, 인증별 가격 조정 템플릿, 운영 교대 템플릿(로트·조치·점검일 형식) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- IND-05 보강(`producer-income-and-livelihood`)
+  - 주제 대응: `IND-05` 생산자 소득·생활소득 계산을 4축/재투자/리스크 분담 프레임으로 고도화
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 4축 소득 지도, 6주 운영 루프, 협상 조정 프레임(품질/지급/리스크), 인수인계 규칙, 실패 지도(7개), 흔한 오해 정리, 참고자료(12개), 자기점검(6문항) 추가
+  - 추가 반영: 협상 결정 매트릭스, 협상 템플릿, 월간 점검 포인트, 교대 요약 템플릿 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- IND-06 보강(`climate-risks-and-just-adaptation`)
+  - 주제 대응: `IND-06` 기후위험 적응을 비용·책임·성과 검증 프레임으로 확장
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 4축 분해프레임, 비용 분담 조항 6개, 비용 항목 책임표, 월별 조기경보 지도, 12주 프로토콜, 실패 지도(7개), 공정성 체크리스트, 참고자료(10개), 자기점검(6문항) 추가
+  - 추가 반영: 의사결정 트리, 월간 거버넌스 규정, 성과 추적·교대 템플릿 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- IND-07 보강(`coffee-carbon-water-footprint`)
+  - 주제 대응: `IND-07` 탄소·물 발자국 비교를 경계·데이터 오차·계약 번역 프레임으로 확장
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 3경계 프레임, 탄소/물 분해+오차 8개, 단계별 편차 지도, 6개 계약 번역 규칙, 공정성 트레이드오프 표, 6주 루프, 인수인계 규칙, 오해 지도, 참고자료(12개), 자기점검(6문항) 추가
+  - 추가 반영: 의사결정 트리, 월간 정렬 규정, 성과 추적 템플릿, 교대 요약 템플릿 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+- IND-08 보강(`coffee-traceability-and-due-diligence`)
+  - 주제 대응: `IND-08` 추적성·투명성·실사 규제를 lot 경계·책임 분해·감사 번역 규칙으로 고도화
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 3층 운영 프레임, lot 경계 4단계 분해, 규범 대응 4분면, 오차 지도(8개), 실사 번역 규칙(6개), 10단계 대응 루프, 실패 지도(8개), 6주 개선 루프, 참고자료(12개), 자기점검(6문항) 추가
+  - 추가 반영: 의사결정 트리, 월간 거버넌스 규정, 성과 추적 템플릿, 교대 요약 템플릿 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+
+- IND-09 보강(`coffee-byproducts-and-circular-economy`)
+  - 주제 대응: `IND-09` 커피 부산물 가치화를 수익·규제·책임 분해 프레임으로 확장
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 6개군 분류 지도, 가치화 4단계, 계약 번역 규칙(6개), 오차 지도(10개), 8주 운영 루프, 인수인계 규칙, 실패 지도(9개), 오해 정리, 참고자료(12개), 자기점검(6문항) 추가
+  - 추가 반영: 의사결정 트리, 월간 거버넌스 규정, 성과 추적 템플릿, 교대 요약 템플릿 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+
+- IND-10 보강(`roastery-cafe-business-economics`)
+  - 주제 대응: `IND-10` 로스터리·카페 사업 경제학을 수익 구조·가격 번역·현금흐름 중심으로 보강
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 4축 운영 프레임, 4분면 손익 지도, 비용 스택 분해, 가격 번역 규칙(6개), 12주 운영 루프, 현금흐름 체크포인트 7개, 인수인계 규칙, 실패 지도(8개), 참고자료(12개), 자기점검(6문항) 추가
+  - 추가 반영: 의사결정 트리, 월간 거버넌스 규정, 성과 추적 템플릿, 교대 요약 템플릿 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+
+- CAF-10 보강(`cafe-menu-pricing-quality`)
+  - 주제 대응: `CAF-10` 메뉴 원가·폐기·품질 통합 실무 프레임에 운영 실행 블록 보강
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 의사결정 트리, 월간 거버넌스 규정, 성과 추적 템플릿, 교대 요약 템플릿 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+
+- IND-01 보강(`farm-to-cafe-value-chain`)
+  - 주제 대응: `IND-01` 농장에서 카페까지 가치사슬을 5축으로 운영 번역해 오차를 구조화
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 5축 지도(농장/가공/물류/로스팅/카페), 가격·품질 번역 규칙(6개), 실패 지도(10개), 인수인계 규칙, 6주 정렬 루프, 오해 지도, 용어 정리, 참고자료(11개), 자기점검(6문항) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+
+- IND-02 보강(`coffee-futures-and-differentials`)
+  - 주제 대응: `IND-02` 선물·현물·디퍼렌셜을 5축으로 분해해 협상 규칙을 고정하는 방향으로 고도화
+  - frontmatter 정합성 반영: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 가격 판단 5축 지도, 번역 규칙(6개), C Contract 조항 해석, 오차 지도(8개), 인수인계 규칙, 6주 정렬 루프, 오해 지도, 용어 정리, 참고자료(11개), 자기점검(6문항) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+
+- PRO-04 보강(`washed-processing-deep-dive`)
+  - 주제 대응: `PRO-04` 워시드 심화 가공(펄핑·발효·세척 분기) 실무 적용형 확장
+  - frontmatter 정합성: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 레이어 프레임, 펄핑/발효/세척 분기표, 폐수 리스크 지도, 다운스트림 연결, 용어 정리, 실습 템플릿, 자기점검(5문항), 참고자료(8건) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+
+
+- PRO-05 보강(`natural-processing-deep-dive`)
+  - 주제 대응: `PRO-05` 내추럴 심화 가공(건조 동선·우천 대응·실험 루프) 실무형 확장
+  - frontmatter 정합성: `updatedAt` 2026. 07. 30. 반영, `history`에 `2026. 07. 30.` 보강 항목 추가
+  - 본문 확장: 건조 동선 4요소, 수분 지도, 우천 대응 규칙, 결점 지도, 실험 템플릿, 용어 정리, 자기점검(5문항), 참고자료(8건) 추가
+  - 게이트 재실행:
+    - `npm run build:content` (성공, `ko: 151, en: 151`)
+    - `npm run check-content` (성공, 151 articles (+12 en), 12 categories)
+    - `npm run check:editorial` (성공, `151 articles checked; beginner batch gate passed`)
+    - `git diff --check` (통과)
+
+
 ## 2026-07-28
+
 
 - 7/28 운영 점검:
   - 게이트 실행: `npm run build:content`, `npm run check-content`, `npm run check:editorial`.
