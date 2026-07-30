@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:3910901",
+  "articleSlug": "arabica-canephora-liberica-comparison",
+  "section": "liberica-position",
+  "localPath": "/article-media/arabica-canephora-liberica-comparison/coffee-tree-chary-jpg-cb4acf14c29e.jpg",
+  "sha256": "cb4acf14c29eef68581a08cbf2133313c132672f30faeccc880d45b80c5681f5",
+  "bytes": 317454,
+  "mime": "image/jpeg",
+  "alt": "베트남 람동 지역에서 자라는 코페아 리베리카 나무",
+  "caption": "유통 비중이 낮다고 해서 존재감이 없는 종은 아니며, 리베리카는 분류학적으로 뚜렷한 재배 계통입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "3910901",
+    "title": "Coffee tree chary.jpg",
+    "author": "DXLINH",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_tree_chary.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/40/Coffee_tree_chary.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/4/40/Coffee_tree_chary.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:30:58.673Z",
+    "researchManifest": "img7-2.json",
+    "query": "Coffea liberica plant tree",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

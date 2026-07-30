@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:3833601",
+  "articleSlug": "arabica-canephora-liberica-comparison",
+  "section": "canephora-context",
+  "localPath": "/article-media/arabica-canephora-liberica-comparison/flower-coffee-robusta-in-the-highlands-jpg-bee8f1fc3938.jpg",
+  "sha256": "bee8f1fc3938870ff8d58b411407b1d7491ae46b84c1c90af36a573cd0217652",
+  "bytes": 189570,
+  "mime": "image/jpeg",
+  "alt": "고지대에서 자라는 카네포라(로부스타) 커피나무의 꽃",
+  "caption": "강건성이라는 문구가 재배·관리 조건과 결합되지 않으면 실제 결과 예측력을 갖지 못합니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "3833601",
+    "title": "Flower coffee robusta in the highlands.jpg",
+    "author": "DXLINH",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Flower_coffee_robusta_in_the_highlands.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Flower_coffee_robusta_in_the_highlands.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Flower_coffee_robusta_in_the_highlands.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:31:18.721Z",
+    "researchManifest": "img7-8.json",
+    "query": "Coffea canephora robusta flower Vietnam",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}
