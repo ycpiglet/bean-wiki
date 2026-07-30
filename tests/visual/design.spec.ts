@@ -92,9 +92,37 @@ for (const route of routes) {
         window.scrollTo(0, 0);
       });
 
-      await expect(page).toHaveScreenshot(`${route.name}-${theme}.png`, {
+      let snapshotName = `${route.name}-${theme}.png`;
+      let actionAreaSnapshotName: string | null = null;
+      if (route.name === "coffee-cherry-to-bean") {
+        const actionArea = page.locator(".article-action-area");
+        await expect(actionArea).toHaveCount(1);
+        const actionsAtContentEnd =
+          (await page.locator(".wiki-title .article-action-area").count()) === 0;
+        if (actionsAtContentEnd) {
+          snapshotName = `${route.name}-content-end-${theme}.png`;
+          const actionsBeforeDiscussion = await actionArea.evaluate((element) => {
+            const discussion = document.querySelector(".article-discussion");
+            return Boolean(
+              discussion &&
+                (element.compareDocumentPosition(discussion) &
+                  Node.DOCUMENT_POSITION_FOLLOWING),
+            );
+          });
+          expect(actionsBeforeDiscussion).toBe(true);
+          actionAreaSnapshotName =
+            `${route.name}-content-end-actions-${theme}.png`;
+        }
+      }
+
+      await expect(page).toHaveScreenshot(snapshotName, {
         fullPage: false,
       });
+      if (actionAreaSnapshotName) {
+        await expect(page.locator(".article-action-area")).toHaveScreenshot(
+          actionAreaSnapshotName,
+        );
+      }
     });
   }
 }
