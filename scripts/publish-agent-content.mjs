@@ -23,9 +23,11 @@ const message =
 
 const allowedSpecs = [
   "src/content/articles",
+  "src/content/media",
   "src/content/resources.ts",
   "src/content/recommendations.ts",
   "src/content/redirects.json",
+  "public/article-media",
 ];
 
 function run(command, commandArgs, options = {}) {

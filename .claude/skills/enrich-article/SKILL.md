@@ -14,16 +14,15 @@ description: 기존 Bean Wiki 문서에 표·이미지·콜아웃·레퍼런스�
    (표/콜아웃/토글/figure 개수)을 파악한다.
 
 2. **제안 수집(병렬)**:
-   - `media-curator`: 표·콜아웃 설계 + 이미지 후보(작가·라이선스·출처 포함)
+   - `media-curator`: 표·콜아웃 설계 + 이미지가 필요한 위치와 검색 의도
+   - `image-researcher`: 허용 라이선스 이미지 후보와 권리 증거
    - `research-librarian`: 본문 수치 중 출처 보강이 필요한 진술의 근거 대조
 
 3. **반영**: 제안 중 EDITORIAL §2 기준에 맞는 것만 소스에 직접 반영한다.
    - 표·콜아웃: 제안 HTML을 새니타이즈 가능한 형태(허용 태그만)로 삽입.
-   - 이미지: **라이선스가 확정된 후보만**. figure 형식은
-     `<figure class="article-figure" data-author=".." data-license=".."
-     data-source=".."><img src=".." alt=".." /><figcaption>캡션</figcaption></figure>`
-     원격 URL은 Commons 직링크를 사용하고, 저장소 업로드가 필요하면 사용자에게
-     에디터 업로드 경로(/edit/<slug> → 이미지 → 업로드)를 안내한다.
+   - 이미지: **라이선스가 확정된 후보만**. `research:images`로 후보 보고서를
+     만들고 실제 이미지를 확인한 뒤 `apply:image`로 로컬 파일·증거 JSON·figure를
+     한 번에 생성합니다. 원격 URL을 HTML에 직접 붙이지 않습니다.
    - 근거: 리브레리언 판정이 "부분확인/반박"인 수치는 본문을 수정하거나 헤지를
      추가한다.
 
@@ -36,3 +35,4 @@ description: 기존 Bean Wiki 문서에 표·이미지·콜아웃·레퍼런스�
 - 장식용 이미지 금지 — 개념 전달에 기여하는 것만.
 - 블록 과밀 금지: 문서당 콜아웃 1~3, 연속 두 블록 사이에 본문 문단 최소 1개.
 - 라이선스 불명 이미지는 절대 넣지 않는다.
+- SCA/WCR 공식 향미 휠처럼 NC·ND·유료 사용계약이 있는 도표는 링크만 제안한다.

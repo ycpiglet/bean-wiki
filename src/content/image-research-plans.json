@@ -1,0 +1,17 @@
+{
+  "coffee-flavor-wheel": {
+    "intent": "향미 휠 원본을 복제하지 않고, 독자가 향을 맡고 비교하는 커핑 실습 장면을 보여줍니다.",
+    "preferredSection": "practice",
+    "queries": [
+      "coffee cupping aroma",
+      "coffee sensory evaluation",
+      "coffee cupping Ethiopia"
+    ],
+    "blockedSubjects": [
+      "Coffee Taster's Flavor Wheel",
+      "SCA Flavor Wheel",
+      "World Coffee Research Sensory Lexicon page"
+    ],
+    "rightsNote": "SCA/WCR의 공식 향미 휠은 CC BY-NC-ND 4.0 및 별도 사용계약 대상이므로 자동 수집·변형·삽입하지 않습니다."
+  }
+}

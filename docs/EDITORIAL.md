@@ -73,7 +73,7 @@
   → 패널 리뷰(병렬): 도메인 페르소나 2~3인 + 인터뷰어
   → 리서치 검증(research-librarian): 수치·기관 기준 웹 대조
   → 수정(작가) → 루브릭 게이트(§4)
-  → 보강(media-curator): 표·이미지·캡션·라이선스
+  → 보강(media-curator → image-researcher): 위치 설계 → 이미지·캡션·라이선스 증거
   → draft: true 로 게시 → 사람 검토 → draft 해제(공개)
 ```
 
@@ -94,6 +94,7 @@
 | `persona-interviewer` | 인터뷰어 | 근거 캐묻기, 쟁점 정리, 반례 |
 | `research-librarian` | 리서치 사서 | 웹 검색·출처 신뢰도·수치 대조 |
 | `media-curator` | 미디어 큐레이터 | 표 설계, 이미지 검색·라이선스, 리치 블록 |
+| `image-researcher` | 이미지 리서처 | 허용 라이선스 사진·도해 검색, 권리 증거, 로컬 적용 |
 
 ## 7. 초보자 배치 운영
 
