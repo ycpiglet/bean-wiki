@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:129733029",
+  "articleSlug": "coffee-varieties",
+  "section": "why-variety-matters",
+  "localPath": "/article-media/coffee-varieties/panama-gesha-pourover-coffee-at-paradox-design-coffee--3a9b61c4274d.jpg",
+  "sha256": "3a9b61c4274d426ef57f1a199cfcdeb4a35f53552c67c7a1e394380500018fe0",
+  "bytes": 267440,
+  "mime": "image/jpeg",
+  "alt": "'파나마 게샤'라고 표기된 원두로 내린 푸어오버 커피",
+  "caption": "라벨에 적힌 품종명은 이 컵이 어떤 유전 계열에서 왔는지 알려줄 뿐, 산지·가공·로스팅 정보 없이는 맛을 확정하지 못합니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "129733029",
+    "title": "Panama Gesha pourover coffee at Paradox Design & Coffee (50661522232).jpg",
+    "author": "Bex Walton from London, England",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Panama_Gesha_pourover_coffee_at_Paradox_Design_%26_Coffee_(50661522232).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6a/Panama_Gesha_pourover_coffee_at_Paradox_Design_%26_Coffee_%2850661522232%29.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Panama_Gesha_pourover_coffee_at_Paradox_Design_%26_Coffee_%2850661522232%29.jpg/1920px-Panama_Gesha_pourover_coffee_at_Paradox_Design_%26_Coffee_%2850661522232%29.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:26:02.485Z",
+    "researchManifest": "img3-34.json",
+    "query": "gesha coffee Panama",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

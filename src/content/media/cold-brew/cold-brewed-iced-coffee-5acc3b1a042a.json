@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:298bf3fc-5ad2-4bda-8082-dfa19ba88be7",
+  "articleSlug": "cold-brew",
+  "section": "what",
+  "localPath": "/article-media/cold-brew/cold-brewed-iced-coffee-5acc3b1a042a.jpg",
+  "sha256": "5acc3b1a042a131d2ca06ee02429a46be0f3f00fedb9258926123ab54bec8451",
+  "bytes": 97611,
+  "mime": "image/jpeg",
+  "alt": "얼음이 담긴 잔에 따른 콜드브루 아이스 커피",
+  "caption": "콜드브루는 뜨거운 물로 빠르게 내린 뒤 식히는 아이스 커피와 달리, 처음부터 찬물로 오래 우려내는 별개의 추출 방식입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "298bf3fc-5ad2-4bda-8082-dfa19ba88be7",
+    "title": "cold-brewed iced coffee",
+    "author": "thebittenword.com",
+    "sourceUrl": "https://www.flickr.com/photos/22198928@N00/688642298",
+    "originalUrl": "https://live.staticflickr.com/1279/688642298_17c6c8b1a8_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/1279/688642298_17c6c8b1a8_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:27:37.188Z",
+    "researchManifest": "img3-43.json",
+    "query": "iced coffee glass with ice cubes",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

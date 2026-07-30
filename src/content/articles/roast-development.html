@@ -5,15 +5,17 @@ summary: 1차 크랙 이후의 시간만으로 로스팅을 판단하지 않고 
 category: 로스팅
 level: 중급
 readingTime: 12분
-updatedAt: 2026. 07. 28.
+updatedAt: 2026. 07. 31.
+mediaMinimum: 3
 accent: copper
 fact: 같은 발달 시간 비율이라도 배치 크기, 열량과 이전 단계의 에너지에 따라 전혀 다른 결과가 나올 수 있습니다.
 related: ["roast-development-signals","roast-profile-design","coffee-cherry-to-bean","cupping-basics"]
 tags: ["로스팅","프로파일","품질관리","발달시간","배치관리"]
-history: [{"date":"2026. 07. 20.","note":"발달 시간 관점 초안 작성"},{"date":"2026. 07. 28.","note":"발달 프레임을 운영 의사결정·실습·오해·퀴즈·참고자료 구조로 확장"}]
+history: [{"date":"2026. 07. 20.","note":"발달 시간 관점 초안 작성"},{"date":"2026. 07. 28.","note":"발달 프레임을 운영 의사결정·실습·오해·퀴즈·참고자료 구조로 확장"},{"date":"2026. 07. 31.","note":"실습 섹션 도입문 추가, 자유 라이선스 로스팅 사진 3장과 출처·라이선스 증거 추가"}]
 ---
 <h2 id="definition">발달은 1차 크랙 이후만의 일이 아닙니다</h2>
 <p>현장에서는 1차 크랙 시작부터 배출까지를 발달 구간으로 부르는 경우가 많습니다. 기록과 소통에는 유용하지만, 향미를 만드는 반응은 로스팅 전 과정에서 연속적으로 일어납니다.</p>
+<figure class="article-figure" data-author="Jkafader" data-license="CC BY-SA 3.0" data-source="https://commons.wikimedia.org/wiki/File:Beans_Dropping_from_a_Coffee_Roaster.JPG"><img src="/article-media/roast-development/beans-dropping-from-a-coffee-roaster-jpg-d3a2d4848ae8.jpg" alt="로스터 배출구에서 원두가 쏟아져 나오는 순간" /><figcaption>배출 시점은 발달 구간의 끝이 아니라, 건조·메이라드 구간부터 이어진 열 이력 전체가 마무리되는 지점입니다. <a href="https://commons.wikimedia.org/wiki/File:Beans_Dropping_from_a_Coffee_Roaster.JPG" target="_blank" rel="noreferrer" class="figure-credit">Jkafader · CC BY-SA 3.0</a></figcaption></figure>
 <p>따라서 발달 시간이나 비율 하나를 품질의 목표값처럼 고정하기보다 투입 온도, 에너지 적용, 반응 변화율, 배출 상태를 함께 읽어야 합니다.</p>
 
 <h2 id="timeline">발달 구간의 단계별 목표</h2>
@@ -22,6 +24,7 @@ history: [{"date":"2026. 07. 20.","note":"발달 시간 관점 초안 작성"},{
 
 <h2 id="signals">동시에 기록할 핵심 신호</h2>
 <p>기계 표시값은 센서 위치와 반응 속도에 영향을 받습니다. 곡선만 보지 말고 색, 향, 소리, 배기 상태와 물리적 변화를 함께 기록하면 배치 간 비교 정확도가 높아집니다.</p>
+<figure class="article-figure" data-author="Jkafader" data-license="CC BY-SA 3.0" data-source="https://commons.wikimedia.org/wiki/File:Coffee_Beans_in_a_Cooling_Tray.JPG"><img src="/article-media/roast-development/coffee-beans-in-a-cooling-tray-jpg-18ff3cb8847d.jpg" alt="쿨링 트레이에서 식고 있는 로스팅된 원두" /><figcaption>냉각 속도가 배치마다 다르면 같은 배출 시점이라도 최종 발달 정도가 달라질 수 있어 함께 기록해야 합니다. <a href="https://commons.wikimedia.org/wiki/File:Coffee_Beans_in_a_Cooling_Tray.JPG" target="_blank" rel="noreferrer" class="figure-credit">Jkafader · CC BY-SA 3.0</a></figcaption></figure>
 <table><thead><tr><th>신호</th><th>주로 보는 이유</th><th>점검 포인트</th></tr><tr><td>생두 투입량·밀도·수분</td><td>가열 반응량 차이를 보정</td><td>동일 원두 간 비교군에서 표준화</td></tr><tr><td>1차 크랙 시작/끝 시점</td><td>과발달 위험을 가늠</td><td>1차/2차 크랙 간 시간 비율 점검</td></tr><tr><td>옥시드 배기/냄새</td><td>과산화·당 분해 징후 확인</td><td>기기 노후·오염 신호와 구분</td></tr><tr><td>배출 직후 쿨링</td><td>마감 신호를 고정</td><td>냉각 속도 편차 기록</td></tr></tbody></table>
 
 <h2 id="decision">운영 의사결정 프레임</h2>
@@ -31,6 +34,8 @@ history: [{"date":"2026. 07. 20.","note":"발달 시간 관점 초안 작성"},{
 <table><thead><tr><th>패턴</th><th>해석</th><th>우선 조치</th></tr><tr><td>1차 크랙만 빠르게 도착</td><td>초반 열투입 과잉 가능성</td><td>건조~메이라즈 구간 화력 완화</td></tr><tr><td>개발 후반에 떼어지듯 밍밍해짐</td><td>디벨롭 비율을 형성하지 못한 신호</td><td>디벨롭 2단 분할 조정(시간·쿨링)</td></tr><tr><td>각 배치마다 색만 같고 맛이 넓게 흔들림</td><td>초기 조건 변화 또는 측정 불일치</td><td>투입 수분·기록 템플릿 재점검</td></tr></tbody></table>
 
 <h2 id="practice">실습: 3회 배치 안정화 루틴</h2>
+<p>배치를 늘리기 전에 먼저 소량의 샘플 로스팅으로 구간 전환 시점을 확인하는 편이 안전합니다.</p>
+<figure class="article-figure" data-author="roland" data-license="CC0 1.0" data-source="https://www.flickr.com/photos/35034347371@N01/148541441"><img src="/article-media/roast-development/4-barrel-jabez-burns-sample-roaster-jj-bean-cool-machi-22aa41cced4f.jpg" alt="샘플 로스터로 소량 배치를 볶고 있는 모습" /><figcaption>본 배치를 늘리기 전에 샘플 로스터로 구간 전환을 먼저 확인하면 실패 배치의 비용을 줄일 수 있습니다. <a href="https://www.flickr.com/photos/35034347371@N01/148541441" target="_blank" rel="noreferrer" class="figure-credit">roland · CC0 1.0</a></figcaption></figure>
 <ol><li>기준 레시피를 정해 동일 원두 3회 배치만 먼저 처리</li><li>각 배치에서 1차 크랙 시점, 디벨롭 비율, 감각 코멘트만 기록</li><li>1회차와 2회차의 차이를 기준값으로 계산 후 3회차는 오직 한 축만 조정</li><li>컵에서 산미·바디·쓴맛이 균형 있게 모일 때만 다음 배치에서 변수를 확장</li></ol>
 
 <h2 id="quiz">자기 점검</h2>

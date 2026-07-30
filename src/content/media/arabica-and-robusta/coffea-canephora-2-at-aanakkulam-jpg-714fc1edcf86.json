@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:30167608",
+  "articleSlug": "arabica-and-robusta",
+  "section": "botanical-basis",
+  "localPath": "/article-media/arabica-and-robusta/coffea-canephora-2-at-aanakkulam-jpg-714fc1edcf86.jpg",
+  "sha256": "714fc1edcf868a56c64c25f35b99467b1ea6e817c7b6e5de1fb5a6f8c0a68110",
+  "bytes": 168383,
+  "mime": "image/jpeg",
+  "alt": "카네포라(로부스타) 커피나무가 자라는 모습",
+  "caption": "카네포라는 아라비카보다 다양한 기후에서 안정적으로 재배되는 경향이 있어, 종의 차이가 재배 리스크 자체를 바꿉니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "30167608",
+    "title": "Coffea canephora 2 at Aanakkulam.jpg",
+    "author": "Jeevan Jose, Kerala, India",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffea_canephora_2_at_Aanakkulam.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Coffea_canephora_2_at_Aanakkulam.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Coffea_canephora_2_at_Aanakkulam.jpg/1920px-Coffea_canephora_2_at_Aanakkulam.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:24:31.241Z",
+    "researchManifest": "img3-21.json",
+    "query": "arabica coffee plant cherries",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

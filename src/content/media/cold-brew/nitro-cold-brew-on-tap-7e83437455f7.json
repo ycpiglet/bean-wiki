@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:8749958a-cafc-4fcd-adab-ffa96e84a314",
+  "articleSlug": "cold-brew",
+  "section": "decision",
+  "localPath": "/article-media/cold-brew/nitro-cold-brew-on-tap-7e83437455f7.jpg",
+  "sha256": "7e83437455f7edc8f2a3ca6e19f8be9ae8ebb5e383ad2da51c7bd90a6e4d8512",
+  "bytes": 93265,
+  "mime": "image/jpeg",
+  "alt": "질소를 주입해 탭에서 따르는 나이트로 콜드브루",
+  "caption": "매장 운영 규모가 커지면 병입·희석뿐 아니라 나이트로 탭처럼 서빙 방식 자체를 바꾸는 선택지도 검토 대상이 됩니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "8749958a-cafc-4fcd-adab-ffa96e84a314",
+    "title": "Nitro cold brew on tap",
+    "author": "Bex.Walton",
+    "sourceUrl": "https://www.flickr.com/photos/7831824@N04/26394262085",
+    "originalUrl": "https://live.staticflickr.com/1525/26394262085_31d53151cb_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/1525/26394262085_31d53151cb_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:27:37.884Z",
+    "researchManifest": "img3-49.json",
+    "query": "nitro cold brew coffee tap",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
