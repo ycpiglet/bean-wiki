@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { siteNotices } from "@/content/site-notices";
-import { getArticle, getPublishedArticles } from "@/lib/content";
+import { getPublishedArticles } from "@/lib/content";
 import { getLiveSignals } from "@/lib/engagement-store";
 import type { LiveSignals } from "@/lib/live-signals-types";
 
@@ -20,16 +20,25 @@ const EMPTY: LiveSignals = {
 };
 
 export async function GET(request: Request) {
-  const articleCount = getPublishedArticles("ko").length;
+  const publishedArticles = getPublishedArticles("ko");
+  const publishedBySlug = new Map(
+    publishedArticles.map((article) => [article.slug, article]),
+  );
+  const articleCount = publishedArticles.length;
   const signals = await getLiveSignals()
     .then((value) => ({ ...value, articleCount }))
     .catch(() => readFallbackSignals(request, articleCount));
 
-  const titleRows = <T extends { slug: string; title: string }>(rows: T[]) =>
-    rows.map((row) => ({
-      ...row,
-      title: getArticle(row.slug)?.title ?? row.slug,
-    }));
+  const titleRows = <T extends { slug: string; title: string }>(
+    rows: T[],
+  ): T[] => {
+    const visibleRows: T[] = [];
+    for (const row of rows) {
+      const article = publishedBySlug.get(row.slug);
+      if (article) visibleRows.push({ ...row, title: article.title });
+    }
+    return visibleRows;
+  };
 
   const response = {
     ...signals,

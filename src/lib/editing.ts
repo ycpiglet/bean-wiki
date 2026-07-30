@@ -167,6 +167,7 @@ export function buildNewSource(input: SaveInput): string {
     tags: input.tags ?? [],
     contributors: mergeContributors(undefined, input.contributor),
     history: [{ date: today, note: input.editSummary.trim() || "문서 최초 작성" }],
+    mediaMinimum: 3,
     draft: input.draft || undefined,
   };
   return serializeArticleSource(meta, editorHtmlToSourceBody(input.bodyHtml));

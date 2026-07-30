@@ -134,14 +134,16 @@ for (const [path, source] of articleSources) {
       }
     }
   }
-  const minimumRaw = source.match(/\nmediaMinimum: (\d+)\n/)?.[1];
-  if (minimumRaw) {
-    const minimum = Number(minimumRaw);
-    if (!Number.isInteger(minimum) || minimum < 1 || minimum > 12) {
+  const minimumDeclaration = source.match(
+    /(?:^|\n)mediaMinimum:\s*([^\r\n]*)/,
+  );
+  if (minimumDeclaration) {
+    const minimumRaw = minimumDeclaration[1].trim();
+    if (!/^(?:[1-9]|1[0-2])$/.test(minimumRaw)) {
       fail(`${path}: mediaMinimum must be an integer from 1 to 12`);
-    } else if (articleFigureCount < minimum) {
+    } else if (articleFigureCount < Number(minimumRaw)) {
       fail(
-        `${path}: requires ${minimum} explanatory figure(s), found ${articleFigureCount}`,
+        `${path}: requires ${minimumRaw} explanatory figure(s), found ${articleFigureCount}`,
       );
     }
   }
