@@ -161,6 +161,18 @@ test("host merge gates require immutable contract and visual command coverage", 
       error.includes('required merge gate is missing: "design-visual"'),
     ),
   );
+
+  const mutableJudge = clone(policy);
+  mutableJudge.protected_paths = mutableJudge.protected_paths.filter(
+    (path) => path !== "tests/visual/**",
+  );
+  assert.ok(
+    validateMergeGatePolicy(mutableJudge).errors.some((error) =>
+      error.includes(
+        'protected_paths is missing required path "tests/visual/**"',
+      ),
+    ),
+  );
 });
 
 test("CODEOWNERS covers every shared design contract path", () => {

@@ -3,6 +3,7 @@
 # remains disabled while the repository has only one human collaborator.
 
 /.github/CODEOWNERS @ycpiglet
+/.github/workflows/ci.yml @ycpiglet
 /agents/host/MERGE-GATES.json @ycpiglet
 /docs/DESIGN.md @ycpiglet
 /package-lock.json @ycpiglet

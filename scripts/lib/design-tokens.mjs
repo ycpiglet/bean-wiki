@@ -22,6 +22,7 @@ export const PRINT_TOKEN_OVERRIDES = new Map([
 ]);
 export const REQUIRED_CODEOWNER_PATTERNS = [
   "/.github/CODEOWNERS",
+  "/.github/workflows/ci.yml",
   "/agents/host/MERGE-GATES.json",
   "/docs/DESIGN.md",
   "/package-lock.json",
@@ -38,9 +39,25 @@ export const REQUIRED_CODEOWNER_PATTERNS = [
   "/tests/design-contract.test.mjs",
   "/tests/visual/",
 ];
+export const REQUIRED_PROTECTED_PATHS = [
+  ".github/CODEOWNERS",
+  ".github/workflows/ci.yml",
+  "agents/host/MERGE-GATES.json",
+  "package-lock.json",
+  "package.json",
+  "playwright.config.ts",
+  "scripts/check-brand-colors.mjs",
+  "scripts/check-design-contract.mjs",
+  "scripts/generate-design-tokens.mjs",
+  "scripts/lib/design-tokens.mjs",
+  "tests/brand-colors.test.mjs",
+  "tests/design-contract.test.mjs",
+  "tests/visual/**",
+];
 export const REQUIRED_MERGE_GATE_PATHS = {
   "design-contract": [
     ".github/CODEOWNERS",
+    ".github/workflows/ci.yml",
     "agents/host/MERGE-GATES.json",
     "docs/DESIGN.md",
     "package-lock.json",
@@ -379,6 +396,23 @@ export function validateMergeGatePolicy(policy) {
     errors.push(
       'merge gate policy schema must be "agent-runtime-merge-gates/v1"',
     );
+  }
+  if (
+    !Array.isArray(policy.protected_paths) ||
+    !policy.protected_paths.length
+  ) {
+    errors.push("merge gate policy must contain protected_paths");
+  } else {
+    const paths = new Set();
+    for (const path of policy.protected_paths) {
+      validatePathPattern(errors, "policy", "protected_paths", path);
+      addUnique(errors, paths, "policy protected path", path);
+    }
+    for (const path of REQUIRED_PROTECTED_PATHS) {
+      if (!paths.has(path)) {
+        errors.push(`protected_paths is missing required path "${path}"`);
+      }
+    }
   }
   if (!Array.isArray(policy.gates) || !policy.gates.length) {
     errors.push("merge gate policy must contain at least one gate");

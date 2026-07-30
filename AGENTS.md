@@ -18,3 +18,6 @@ This version has breaking changes — APIs, conventions, and file structure may 
   resulting image diff requires review.
 - Shared design paths and their required merge checks are owned by
   `.github/CODEOWNERS` and `agents/host/MERGE-GATES.json`.
+- Gate launchers, tests, configuration, package manifests, and approved
+  screenshots listed in `protected_paths` may change only in a separate
+  owner-controlled policy track, never in the worker change they judge.

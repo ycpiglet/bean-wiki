@@ -1,11 +1,27 @@
 {
   "schema": "agent-runtime-merge-gates/v1",
+  "protected_paths": [
+    ".github/CODEOWNERS",
+    ".github/workflows/ci.yml",
+    "agents/host/MERGE-GATES.json",
+    "package-lock.json",
+    "package.json",
+    "playwright.config.ts",
+    "scripts/check-brand-colors.mjs",
+    "scripts/check-design-contract.mjs",
+    "scripts/generate-design-tokens.mjs",
+    "scripts/lib/design-tokens.mjs",
+    "tests/brand-colors.test.mjs",
+    "tests/design-contract.test.mjs",
+    "tests/visual/**"
+  ],
   "gates": [
     {
       "id": "design-contract",
       "command": "npm run design:check",
       "include_paths": [
         ".github/CODEOWNERS",
+        ".github/workflows/ci.yml",
         "agents/host/MERGE-GATES.json",
         "docs/DESIGN.md",
         "package-lock.json",
