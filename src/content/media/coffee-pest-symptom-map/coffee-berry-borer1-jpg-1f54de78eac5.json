@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:26093739",
+  "articleSlug": "coffee-pest-symptom-map",
+  "section": "define",
+  "localPath": "/article-media/coffee-pest-symptom-map/coffee-berry-borer1-jpg-1f54de78eac5.jpg",
+  "sha256": "1f54de78eac543ac7b87107d4b1e7f85a41f63d6d4397dd0329f48016110777b",
+  "bytes": 199367,
+  "mime": "image/jpeg",
+  "alt": "커피베리보러(Hypothenemus hampei)가 뚫고 들어간 구멍과 나온 구멍이 있는 커피 체리",
+  "caption": "같은 구멍 흔적이라도 시기·구획·환경이 다르면 대응 우선순위가 달라지므로, 증상 하나만 보고 조치를 확정해서는 안 됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "26093739",
+    "title": "Coffee berry borer1.jpg",
+    "author": "L. Shyamal",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_berry_borer1.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Coffee_berry_borer1.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/4/4e/Coffee_berry_borer1.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:32:52.294Z",
+    "researchManifest": "img15-23.json",
+    "query": "coffee berry borer insect",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:25addbf5-2de7-4831-a311-6f5727c0fc1f",
+  "articleSlug": "harvest-maturity-selection",
+  "section": "why",
+  "localPath": "/article-media/harvest-maturity-selection/picking-by-selection-5a80c10c3d20.jpg",
+  "sha256": "5a80c10c3d207dcf10eca19350be020f00099c17787ef1d883d28b7fffa7ca81",
+  "bytes": 171130,
+  "mime": "image/jpeg",
+  "alt": "이미 수확된 커피 체리들이 자루 위에 담겨 있는 모습",
+  "caption": "이미 손으로 수확된 체리가 자루 단위로 모여 있는 모습입니다. 나무에서 어떤 방식으로 골랐는지는 이 장면만으로 확인할 수 없지만, 선별 수확 로트는 이렇게 소규모 자루 단위로 관리되는 경우가 많습니다. 엘살바도르의 커피 농장에서 촬영된 사진입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "25addbf5-2de7-4831-a311-6f5727c0fc1f",
+    "title": "Picking by selection",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/8615472436",
+    "originalUrl": "https://live.staticflickr.com/8538/8615472436_0e31fb19be_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/8538/8615472436_0e31fb19be_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:47:36.003Z",
+    "researchManifest": "img15-31.json",
+    "query": "coffee cherry ripe selective picking harvest",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

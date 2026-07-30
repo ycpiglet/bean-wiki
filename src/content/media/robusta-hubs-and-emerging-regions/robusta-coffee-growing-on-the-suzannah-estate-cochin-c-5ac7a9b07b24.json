@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:22852310",
+  "articleSlug": "robusta-hubs-and-emerging-regions",
+  "section": "scope",
+  "localPath": "/article-media/robusta-hubs-and-emerging-regions/robusta-coffee-growing-on-the-suzannah-estate-cochin-c-5ac7a9b07b24.jpg",
+  "sha256": "5ac7a9b07b2436fd8afbf75b8b71c22c608a5ce42f258146eb7c1ab33729eeec",
+  "bytes": 66901,
+  "mime": "image/jpeg",
+  "alt": "코친차이나(현재 베트남 남부)의 한 농장에서 자라는 로부스타 커피나무들을 담은 역사적 사진",
+  "caption": "베트남 남부(당시 코친차이나) 농장에서 자라던 로부스타 나무를 찍은 20세기 초 사진입니다. 오늘날 베트남이 카네포라 대량 생산지로 자리잡은 역사적 배경을 보여줍니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "22852310",
+    "title": "Robusta Coffee Growing on the Suzannah Estate, Cochin-China.jpg",
+    "author": "By WILLIAM H. UKERS, M.A. Editor THE TEA AND COFFEE TRADE JOURNAL",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Robusta_Coffee_Growing_on_the_Suzannah_Estate,_Cochin-China.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/89/Robusta_Coffee_Growing_on_the_Suzannah_Estate%2C_Cochin-China.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/8/89/Robusta_Coffee_Growing_on_the_Suzannah_Estate%2C_Cochin-China.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "pdm",
+    "label": "Public Domain 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "Public domain"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T22:00:15.847Z",
+    "researchManifest": "img15-61.json",
+    "query": "robusta coffee Vietnam plantation",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}
