@@ -5,15 +5,17 @@ summary: 라테아트의 재현성은 형태의 완성도보다 유입 유동 �
 category: 음료와 레시피
 level: 중급
 readingTime: 11분
-updatedAt: 2026. 07. 28.
+updatedAt: 2026. 07. 31.
+mediaMinimum: 2
 accent: berry
 fact: 라테아트의 재현성은 패턴 형태의 완성도만이 아니라 피처 높이·유량·대비를 분리해 고정하는 유동 제어 기록에서 만들어집니다.
 related: ["milk-steaming-protein-chemistry","milk-microfoam-checklist","milk-steaming","espresso-machine-hydraulics-thermal"]
 tags: ["라테아트","피처 높이","유량 제어","패턴 가독성","CAF-07"]
-history: [{"date":"2026. 07. 27.","note":"라테아트 가독성 기초 정리 작성"},{"date":"2026. 07. 28.","note":"CAF-07 과제 반영: 유동 제어 프레임·4회 루프·오해 정리·실습·퀴즈 강화"}]
+history: [{"date":"2026. 07. 27.","note":"라테아트 가독성 기초 정리 작성"},{"date":"2026. 07. 28.","note":"CAF-07 과제 반영: 유동 제어 프레임·4회 루프·오해 정리·실습·퀴즈 강화"},{"date":"2026. 07. 31.","note":"자유 라이선스 라테아트 사진 2장과 출처·라이선스 증거 추가"}]
 ---
 <h2 id="topic-caf07">CAF-07 핵심 정의: 유동 제어가 먼저, 패턴은 그 다음입니다</h2>
 <p>라테아트에서 실패가 반복되는 구간은 대개 패턴의 화려함이 아니라 유입 유동이 흔들리는 곳입니다. 같은 컵, 같은 크레마, 같은 피처를 쓸 때도 피처 높이와 유량이 엇갈리면 첫 2~3초 붓기부터 결과가 달라집니다.</p>
+<figure class="article-figure" data-author="Londonjackbooks" data-license="CC0 1.0" data-source="https://commons.wikimedia.org/wiki/File:Latte_art_heart_Garden_Caff%C3%A9_Portugal_20190118.jpg"><img src="/article-media/latte-art-readability/latte-art-heart-garden-caff-portugal-20190118-jpg-69c808a2914a.jpg" alt="카페에서 하트 모양 라테아트가 그려진 커피 한 잔" /><figcaption>패턴의 화려함보다, 이 하트가 만들어지기까지 유입 유동이 얼마나 일관되게 반복됐는지가 먼저입니다. <a href="https://commons.wikimedia.org/wiki/File:Latte_art_heart_Garden_Caff%C3%A9_Portugal_20190118.jpg" target="_blank" rel="noreferrer" class="figure-credit">Londonjackbooks · CC0 1.0</a></figcaption></figure>
 
 <p>따라서 실무에서는 “무엇을 잘 그렸는가”보다 “어떤 유동 조건을 고정했는가”를 먼저 점검합니다. 패턴은 그 다음 단계의 산물이고, 유동은 조리 직후의 추적 가능한 신호가 있어야 다음 교대에서도 같은 상태로 이어집니다.</p>
 
@@ -21,6 +23,7 @@ history: [{"date":"2026. 07. 27.","note":"라테아트 가독성 기초 정리 �
 
 <h2 id="flow-model">라테아트의 3축 모델</h2>
 <p>운영에서 가장 먼저 분리하는 축은 아래 3개입니다.</p>
+<figure class="article-figure" data-author="Kgbo" data-license="CC BY-SA 4.0" data-source="https://commons.wikimedia.org/wiki/File:Hearts_in_latte_art,_Krak%C3%B3w,_Poland,_2023.jpg"><img src="/article-media/latte-art-readability/hearts-in-latte-art-krak-w-poland-2023-jpg-e03d70bcf3f6.jpg" alt="크라쿠프의 한 카페에서 만든 하트 라테아트" /><figcaption>피처 높이·유량·대비라는 3축이 모두 일관될 때만 같은 패턴이 반복해서 재현됩니다. <a href="https://commons.wikimedia.org/wiki/File:Hearts_in_latte_art,_Krak%C3%B3w,_Poland,_2023.jpg" target="_blank" rel="noreferrer" class="figure-credit">Kgbo · CC BY-SA 4.0</a></figcaption></figure>
 <ul>
   <li><strong>피처 높이 축:</strong> 피처가 표면에 들어오는 높이와 경사 각도는 입자 유입의 시작 신호를 좌우합니다.</li>
   <li><strong>유량 축:</strong> 같은 속도라도 가속 구간의 길이와 종료 지점이 다르면 같은 패턴도 다르게 굳습니다.</li>

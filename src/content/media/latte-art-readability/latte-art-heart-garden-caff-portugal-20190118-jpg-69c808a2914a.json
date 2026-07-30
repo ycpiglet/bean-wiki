@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:77540233",
+  "articleSlug": "latte-art-readability",
+  "section": "topic-caf07",
+  "localPath": "/article-media/latte-art-readability/latte-art-heart-garden-caff-portugal-20190118-jpg-69c808a2914a.jpg",
+  "sha256": "69c808a2914a3c21f485428433234b8f413a4655de32766cea833992c6b64a29",
+  "bytes": 366840,
+  "mime": "image/jpeg",
+  "alt": "카페에서 하트 모양 라테아트가 그려진 커피 한 잔",
+  "caption": "패턴의 화려함보다, 이 하트가 만들어지기까지 유입 유동이 얼마나 일관되게 반복됐는지가 먼저입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "77540233",
+    "title": "Latte art heart Garden Caffé Portugal 20190118.jpg",
+    "author": "Londonjackbooks",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Latte_art_heart_Garden_Caff%C3%A9_Portugal_20190118.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/35/Latte_art_heart_Garden_Caff%C3%A9_Portugal_20190118.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/35/Latte_art_heart_Garden_Caff%C3%A9_Portugal_20190118.jpg/1920px-Latte_art_heart_Garden_Caff%C3%A9_Portugal_20190118.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc0",
+    "label": "CC0 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:15:52.164Z",
+    "researchManifest": "img6-7.json",
+    "query": "latte art heart cup",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

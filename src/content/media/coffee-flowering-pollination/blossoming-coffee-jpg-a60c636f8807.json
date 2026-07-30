@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:149646393",
+  "articleSlug": "coffee-flowering-pollination",
+  "section": "definition",
+  "localPath": "/article-media/coffee-flowering-pollination/blossoming-coffee-jpg-a60c636f8807.jpg",
+  "sha256": "a60c636f8807045e5fe90f527ae0a6c66199a9203bd80a30451f04ab0576728a",
+  "bytes": 313624,
+  "mime": "image/jpeg",
+  "alt": "우간다에서 자라는 커피나무에 하얀 꽃이 핀 모습",
+  "caption": "개화는 눈에 띄는 사건이지만, 실무에서 중요한 것은 꽃이 얼마나 동시에 피었는지, 그 동기화의 구조입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "149646393",
+    "title": "Blossoming coffee.jpg",
+    "author": "Norah Namugalu",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Blossoming_coffee.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Blossoming_coffee.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ca/Blossoming_coffee.jpg/1920px-Blossoming_coffee.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:14:42.393Z",
+    "researchManifest": "img6-1.json",
+    "query": "coffee flower blossom",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

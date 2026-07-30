@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:6a2c31b9-e305-444c-8759-b38d0e1438e3",
+  "articleSlug": "coffee-flowering-pollination",
+  "section": "pollination",
+  "localPath": "/article-media/coffee-flowering-pollination/coffee-flower-and-bee-ab45e2f7ff42.jpg",
+  "sha256": "ab45e2f7ff42709d256e38d471b665ce873c68d817ab3a1a0ae2bcba94a89f0a",
+  "bytes": 141915,
+  "mime": "image/jpeg",
+  "alt": "커피 꽃에 벌이 앉아 있는 모습",
+  "caption": "곤충 매개 타가수분이 일어나는 구획인지 여부는 착과 패턴 해석에서 반드시 구분해야 하는 변수입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "6a2c31b9-e305-444c-8759-b38d0e1438e3",
+    "title": "Coffee flower and bee",
+    "author": "USFWS/Southeast",
+    "sourceUrl": "https://www.flickr.com/photos/41464593@N02/5662188352",
+    "originalUrl": "https://live.staticflickr.com/5188/5662188352_19cba3769e_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/5188/5662188352_19cba3769e_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:15:18.439Z",
+    "researchManifest": "img6-11.json",
+    "query": "coffee flower bee pollinator insect",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
