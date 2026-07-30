@@ -4,8 +4,8 @@
   "articleSlug": "global-coffee-history",
   "section": "plantations",
   "localPath": "/article-media/global-coffee-history/four-scenes-of-work-on-a-coffee-plantation-in-guatemal-2c6b1d3754dc.jpg",
-  "sha256": "2c6b1d3754dce7c80dc1286e0ee293205a67ce74c8a05c567c296ce5e3c01223",
-  "bytes": 1923886,
+  "sha256": "e18de6319bf4a374a7e5e279d1edc1a306a2d50db2a3a682031ab7e2b32097aa",
+  "bytes": 888995,
   "mime": "image/jpeg",
   "alt": "1877년 삽화에 담긴 과테말라 커피 플랜테이션의 노동 장면 네 컷",
   "caption": "당시 언론에 실린 이 목판화는 커피 생산 확대 이면에 있던 대규모 노동력 동원을 시각적으로 보여주는 1차 사료입니다.",
@@ -35,6 +35,8 @@
     "researchManifest": "img-hist-7.json",
     "query": "coffee plantation engraving",
     "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
-    "beanWikiTransformations": []
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
   }
 }

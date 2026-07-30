@@ -4,8 +4,8 @@
   "articleSlug": "coffee-plant-taxonomy",
   "section": "key-cultivars",
   "localPath": "/article-media/coffee-plant-taxonomy/size-comparison-racemosa-bean-liberica-bean-arabica-be-c5de3431645c.jpg",
-  "sha256": "c5de3431645c01e4df6b66c88fff76ef9988ab439232be5118def83d996c5ba6",
-  "bytes": 238191,
+  "sha256": "699aa1be9af0e4aa7646c9543d521838947edb51567d2da830b53fbf0239ae51",
+  "bytes": 112858,
   "mime": "image/jpeg",
   "alt": "라세모사, 리베리카, 아라비카 생두를 나란히 놓고 크기를 비교한 모습",
   "caption": "같은 '생두'라는 말도 종에 따라 크기·형태가 크게 다르며, 이 차이가 선별·로스팅 설정의 출발점이 됩니다.",
@@ -35,6 +35,8 @@
     "researchManifest": "img-taxonomy-5.json",
     "query": "Coffea liberica",
     "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
-    "beanWikiTransformations": []
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
   }
 }

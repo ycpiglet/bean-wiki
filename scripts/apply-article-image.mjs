@@ -10,6 +10,7 @@ import {
 import { createHash } from "node:crypto";
 import { basename, dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
+import { spawnSync } from "node:child_process";
 import {
   assessImageLicense,
   buildArticleFigure,
@@ -18,6 +19,8 @@ import {
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const MAX_BYTES = 12 * 1024 * 1024;
+const MAX_DIMENSION = 1600;
+const RECOMPRESS_THRESHOLD_BYTES = 700 * 1024;
 const MIME_EXTENSIONS = new Map([
   ["image/jpeg", ".jpg"],
   ["image/png", ".png"],
@@ -90,7 +93,48 @@ async function downloadCandidate(candidate) {
   if (!extension) throw new Error(`unsupported downloaded media type: ${mime || "unknown"}`);
   const bytes = Buffer.from(await response.arrayBuffer());
   if (bytes.length > MAX_BYTES) throw new Error("image exceeds 12 MB");
-  return { bytes, mime, extension };
+  const resized = downsizeIfNeeded(bytes, mime);
+  return { bytes: resized.bytes, mime, extension, resized: resized.applied };
+}
+
+// Wikimedia/Openverse originals are frequently far larger than any layout
+// needs (multi-megabyte, 4000px+ on a side), which the CI performance
+// reviewer flags. Downscale to a web-appropriate size before it ever reaches
+// disk or the evidence hash, instead of shipping the raw original.
+function downsizeIfNeeded(bytes, mime) {
+  const pythonFormat = { "image/jpeg": "JPEG", "image/png": "PNG", "image/webp": "WEBP" }[mime];
+  if (!pythonFormat) return { bytes, applied: false };
+  const script = `
+import sys
+from io import BytesIO
+try:
+    from PIL import Image
+except ImportError:
+    sys.exit(3)
+data = sys.stdin.buffer.read()
+img = Image.open(BytesIO(data))
+w, h = img.size
+needs_resize = max(w, h) > ${MAX_DIMENSION}
+needs_recompress = len(data) > ${RECOMPRESS_THRESHOLD_BYTES}
+if not (needs_resize or needs_recompress):
+    sys.exit(2)
+if needs_resize:
+    scale = ${MAX_DIMENSION} / max(w, h)
+    img = img.convert("RGB").resize((round(w * scale), round(h * scale)), Image.LANCZOS)
+elif "${pythonFormat}" == "JPEG":
+    img = img.convert("RGB")
+out = BytesIO()
+save_kwargs = {"quality": 82, "optimize": True} if "${pythonFormat}" == "JPEG" else {"optimize": True}
+img.save(out, "${pythonFormat}", **save_kwargs)
+sys.stdout.buffer.write(out.getvalue())
+`;
+  const result = spawnSync("python3", ["-c", script], { input: bytes, maxBuffer: MAX_BYTES * 2 });
+  if (result.status === 2) return { bytes, applied: false }; // already small enough
+  if (result.status !== 0 || !result.stdout?.length) {
+    console.warn("⚠ image apply: skipped automatic downsize (python3/Pillow unavailable or failed)");
+    return { bytes, applied: false };
+  }
+  return { bytes: result.stdout, applied: true };
 }
 
 async function main() {
@@ -167,7 +211,9 @@ async function main() {
       researchManifest: basename(manifestPath),
       query: candidate.query,
       note: candidate.acquisitionNote,
-      beanWikiTransformations: [],
+      beanWikiTransformations: downloaded.resized
+        ? [`resized to max ${MAX_DIMENSION}px on the long edge, re-encoded as JPEG quality 82 to reduce page weight`]
+        : [],
     },
   };
   mkdirSync(assetDirectory, { recursive: true });

@@ -4,8 +4,8 @@
   "articleSlug": "coffee-plant-taxonomy",
   "section": "taxonomy-frame",
   "localPath": "/article-media/coffee-plant-taxonomy/coffee-arabica-cherry-jpg-b0ebaf9b021d.jpg",
-  "sha256": "b0ebaf9b021d1e456211ee928be3b06e96a89150bbb1170cb8a5d5ae00b186fc",
-  "bytes": 441131,
+  "sha256": "5b97a843ecd07d90ca236b24a4532305cd35752f8fc678439cfacd7691fd98b3",
+  "bytes": 256412,
   "mime": "image/jpeg",
   "alt": "잘 익은 커피 아라비카 체리 한 알이 나뭇가지에 달린 모습",
   "caption": "종(種) 단위 표기는 라벨의 마케팅 문구가 아니라 이런 실제 열매·나무의 생물학적 차이를 가리킵니다.",
@@ -35,6 +35,8 @@
     "researchManifest": "img-taxonomy-4.json",
     "query": "Coffea arabica cherries ripe",
     "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
-    "beanWikiTransformations": []
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
   }
 }

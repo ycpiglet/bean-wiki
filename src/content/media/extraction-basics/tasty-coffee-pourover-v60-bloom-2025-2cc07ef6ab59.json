@@ -4,8 +4,8 @@
   "articleSlug": "extraction-basics",
   "section": "practice",
   "localPath": "/article-media/extraction-basics/tasty-coffee-pourover-v60-bloom-2025-2cc07ef6ab59.jpg",
-  "sha256": "2cc07ef6ab594b66469ccf8d8edd9e18e47355ec72e27532bc9bb30c209f8084",
-  "bytes": 8792853,
+  "sha256": "6650b5467ef3ec3f48b44b0c98e2cb1129a86be9d44eec744c456886a19ee116",
+  "bytes": 147954,
   "mime": "image/jpeg",
   "alt": "V60 드리퍼에서 물을 부어 커피가 부풀어 오르는 블룸 단계",
   "caption": "같은 레시피를 반복 추출하며 블룸 단계까지 사진으로 남기면 편차가 생긴 회차를 나중에 되짚어보기 쉽습니다.",
@@ -35,6 +35,8 @@
     "researchManifest": "img-ext-1.json",
     "query": "pour over coffee dripper brewing",
     "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
-    "beanWikiTransformations": []
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
   }
 }

@@ -4,8 +4,8 @@
   "articleSlug": "roasting-basics",
   "section": "roast-journey",
   "localPath": "/article-media/roasting-basics/last-stand-coffee-roaster-eugene-oregon-jpg-af384f8d70bf.jpg",
-  "sha256": "af384f8d70bf22c98306f483c18f874ac484652d464ff4392960b0cf06e36f99",
-  "bytes": 700319,
+  "sha256": "29a6518d4fd95589f71ebc4f073276be530bc083878d5e49f5014935b97dbddd",
+  "bytes": 414021,
   "mime": "image/jpeg",
   "alt": "카페 안에 설치된 드럼 로스터 기계의 모습",
   "caption": "로스팅은 드럼 안에서 진행되는 연속 공정이며, 색이나 소리는 이 과정을 간접적으로 요약해 보여주는 신호일 뿐입니다.",
@@ -35,6 +35,8 @@
     "researchManifest": "img-roast-2.json",
     "query": "coffee roasting drum roaster machine",
     "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
-    "beanWikiTransformations": []
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
   }
 }

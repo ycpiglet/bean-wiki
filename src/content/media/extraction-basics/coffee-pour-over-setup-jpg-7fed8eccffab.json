@@ -4,8 +4,8 @@
   "articleSlug": "extraction-basics",
   "section": "define-core",
   "localPath": "/article-media/extraction-basics/coffee-pour-over-setup-jpg-7fed8eccffab.jpg",
-  "sha256": "7fed8eccffab3804452725a62231af087d448f7f95edef64542700f70c6bc4c4",
-  "bytes": 548033,
+  "sha256": "f20bb71740d721f2c4cee3a1bcd8d211a4e6c5ad1079c4346cd5054f95d3d547",
+  "bytes": 335396,
   "mime": "image/jpeg",
   "alt": "저울 위에 V60 드리퍼와 종이 필터, 온도 조절 주전자를 놓은 추출 준비 모습",
   "caption": "농도와 수율은 눈으로 안 보이지만, 저울과 주전자로 물 접촉 조건을 통제하는 것이 두 값을 분리해서 읽는 첫걸음입니다.",
@@ -35,6 +35,8 @@
     "researchManifest": "img-ext-1.json",
     "query": "pour over coffee dripper brewing",
     "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
-    "beanWikiTransformations": []
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
   }
 }
