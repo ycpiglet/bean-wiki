@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:284d1da2-52f3-4503-99f0-65cdae06d2e5",
+  "articleSlug": "green-bean-grading-defects",
+  "section": "grading-purpose",
+  "localPath": "/article-media/green-bean-grading-defects/green-coffee-beans-ea12f5249f15.jpg",
+  "sha256": "ea12f5249f156e8344142c45f5e7896812dd57efaa033722f0cb77ef0bb985ea",
+  "bytes": 266525,
+  "mime": "image/jpeg",
+  "alt": "초록빛 생두 더미",
+  "caption": "등급표는 생두 하나하나의 상태를 생산자·중간상인·로스터가 같은 기준으로 논의할 수 있게 만든 협업 좌표입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "284d1da2-52f3-4503-99f0-65cdae06d2e5",
+    "title": "Green coffee beans",
+    "author": "WordRidden",
+    "sourceUrl": "https://www.flickr.com/photos/97844767@N00/8278570234",
+    "originalUrl": "https://live.staticflickr.com/8481/8278570234_4a4c864e4d_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/8481/8278570234_4a4c864e4d_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:58:14.649Z",
+    "researchManifest": "img9-16.json",
+    "query": "green coffee beans pile",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
