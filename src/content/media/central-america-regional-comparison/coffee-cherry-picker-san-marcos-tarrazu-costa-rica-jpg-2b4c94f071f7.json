@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:16391202",
+  "articleSlug": "central-america-regional-comparison",
+  "section": "supply-chain",
+  "localPath": "/article-media/central-america-regional-comparison/coffee-cherry-picker-san-marcos-tarrazu-costa-rica-jpg-2b4c94f071f7.jpg",
+  "sha256": "2b4c94f071f70e35c70c0b89bdf663690c5d4b067defaad99881401441b63b2d",
+  "bytes": 555478,
+  "mime": "image/jpeg",
+  "alt": "코스타리카 타라수 산마르코스 농장에서 커피를 수확하는 현지 일꾼",
+  "caption": "수확 방식과 선별 기준은 국가 라벨보다 이런 현장 단위의 실천에서 먼저 갈립니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "16391202",
+    "title": "Coffee-cherry-picker-san-marcos-tarrazu-costa-rica.jpg",
+    "author": "Tarrazu at en.wikipedia",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee-cherry-picker-san-marcos-tarrazu-costa-rica.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/87/Coffee-cherry-picker-san-marcos-tarrazu-costa-rica.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Coffee-cherry-picker-san-marcos-tarrazu-costa-rica.jpg/1920px-Coffee-cherry-picker-san-marcos-tarrazu-costa-rica.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "pdm",
+    "label": "Public Domain 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "Public domain"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:14:32.707Z",
+    "researchManifest": "img10-17.json",
+    "query": "Costa Rica coffee farm",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

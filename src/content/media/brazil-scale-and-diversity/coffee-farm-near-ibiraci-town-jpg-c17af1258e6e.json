@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:33083275",
+  "articleSlug": "brazil-scale-and-diversity",
+  "section": "why-brazil",
+  "localPath": "/article-media/brazil-scale-and-diversity/coffee-farm-near-ibiraci-town-jpg-c17af1258e6e.jpg",
+  "sha256": "c17af1258e6e79effd815dcc7c147ee1906de377b33c18fa2b70874c9e526fd4",
+  "bytes": 694922,
+  "mime": "image/jpeg",
+  "alt": "브라질 이비라시 마을 인근의 커피 농장 풍경",
+  "caption": "같은 '브라질산'이라는 라벨 안에서도 해발과 강우 분포가 다른 여러 지역이 섞여 있어, 하나의 향미로 요약하면 오류가 생깁니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "33083275",
+    "title": "Coffee Farm near Ibiraci town.jpg",
+    "author": "Jonathan Wilkins",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Farm_near_Ibiraci_town.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2b/Coffee_Farm_near_Ibiraci_town.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Coffee_Farm_near_Ibiraci_town.jpg/1920px-Coffee_Farm_near_Ibiraci_town.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:11:59.110Z",
+    "researchManifest": "img10-9.json",
+    "query": "Brazil coffee farm",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

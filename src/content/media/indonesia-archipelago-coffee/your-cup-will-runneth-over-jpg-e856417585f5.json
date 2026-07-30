@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:59600228",
+  "articleSlug": "indonesia-archipelago-coffee",
+  "section": "overview",
+  "localPath": "/article-media/indonesia-archipelago-coffee/your-cup-will-runneth-over-jpg-e856417585f5.jpg",
+  "sha256": "e856417585f57182c98161b8f15fec11f4371a69f08df24bb8c68c2c5f381e37",
+  "bytes": 75252,
+  "mime": "image/jpeg",
+  "alt": "인도네시아 남수마트라 라핫 인근의 커피 농장",
+  "caption": "수마트라·자바·술라웨시는 이름이 비슷해 보여도 수확 환경과 물류, 탈각 타이밍이 각기 다른 운영 조합으로 구성됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "59600228",
+    "title": "Your cup will runneth over . ..jpg",
+    "author": "Jpenha",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Your_cup_will_runneth_over_._..jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Your_cup_will_runneth_over_._..jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Your_cup_will_runneth_over_._..jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T20:13:08.261Z",
+    "researchManifest": "img10-5.json",
+    "query": "Sumatra coffee farm Indonesia",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}
