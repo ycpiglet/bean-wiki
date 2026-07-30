@@ -19,11 +19,11 @@ const EMPTY: LiveSignals = {
   trending: [],
 };
 
-export async function GET() {
+export async function GET(request: Request) {
   const articleCount = getPublishedArticles("ko").length;
   const signals = await getLiveSignals()
     .then((value) => ({ ...value, articleCount }))
-    .catch(() => ({ ...EMPTY, articleCount }));
+    .catch(() => readFallbackSignals(request, articleCount));
 
   const titleRows = <T extends { slug: string; title: string }>(rows: T[]) =>
     rows.map((row) => ({
@@ -47,4 +47,22 @@ export async function GET() {
       "Cache-Control": "public, s-maxage=60, stale-while-revalidate=120",
     },
   });
+}
+
+async function readFallbackSignals(request: Request, articleCount: number) {
+  const configured = process.env.ANALYTICS_FALLBACK_ORIGIN?.trim();
+  if (!configured) return { ...EMPTY, articleCount };
+  try {
+    const origin = new URL(configured).origin;
+    if (origin === new URL(request.url).origin) return { ...EMPTY, articleCount };
+    const response = await fetch(`${origin}/api/analytics/live`, {
+      headers: { Accept: "application/json" },
+      next: { revalidate: 60 },
+    });
+    if (!response.ok) return { ...EMPTY, articleCount };
+    const fallback = (await response.json()) as LiveSignals;
+    return { ...fallback, articleCount };
+  } catch {
+    return { ...EMPTY, articleCount };
+  }
 }

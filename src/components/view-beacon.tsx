@@ -17,7 +17,13 @@ import { usePathname } from "next/navigation";
 // lost beacon costs one row in a traffic table, so nothing here is allowed to
 // throw into a reader's render.
 
-const ENDPOINT = "/api/telemetry/v1/views";
+const TELEMETRY_ORIGIN = (
+  process.env.NEXT_PUBLIC_TELEMETRY_ORIGIN ?? ""
+).replace(/\/$/, "");
+const ENDPOINT = `${TELEMETRY_ORIGIN}/api/telemetry/v1/views`;
+const BEACON_CONTENT_TYPE = TELEMETRY_ORIGIN
+  ? "text/plain;charset=UTF-8"
+  : "application/json";
 
 export type ViewBeaconProps = {
   /** One of the catalogued entity types; omit for an unattributed page view. */
@@ -53,7 +59,9 @@ export function ViewBeacon({
       // blocks the main thread. It returns false when the browser refuses to
       // queue the payload, in which case we fall back.
       if (typeof navigator.sendBeacon === "function") {
-        const blob = new Blob([body], { type: "application/json" });
+        // text/plain keeps a configured cross-origin collector request simple,
+        // so the browser can queue it without a CORS preflight during unload.
+        const blob = new Blob([body], { type: BEACON_CONTENT_TYPE });
         if (navigator.sendBeacon(ENDPOINT, blob)) return;
       }
 
@@ -61,7 +69,7 @@ export function ViewBeacon({
         method: "POST",
         body,
         keepalive: true,
-        headers: { "content-type": "application/json" },
+        headers: { "content-type": BEACON_CONTENT_TYPE },
       }).catch(() => {
         // Telemetry is never worth surfacing to a reader.
       });
@@ -92,14 +100,14 @@ export function SiteViewBeacon() {
         locale: pathname === "/en" || pathname.startsWith("/en/") ? "en" : "ko",
       });
       if (typeof navigator.sendBeacon === "function") {
-        const blob = new Blob([body], { type: "application/json" });
+        const blob = new Blob([body], { type: BEACON_CONTENT_TYPE });
         if (navigator.sendBeacon(ENDPOINT, blob)) return;
       }
       void fetch(ENDPOINT, {
         method: "POST",
         body,
         keepalive: true,
-        headers: { "content-type": "application/json" },
+        headers: { "content-type": BEACON_CONTENT_TYPE },
       }).catch(() => undefined);
     } catch {
       // Traffic measurement must never interrupt reading.
