@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:84501742",
+  "articleSlug": "arabica-canephora-liberica-comparison",
+  "section": "arabica-profile",
+  "localPath": "/article-media/arabica-canephora-liberica-comparison/coffee-arabica-cherry-jpg-5b97a843ecd0.jpg",
+  "sha256": "5b97a843ecd07d90ca236b24a4532305cd35752f8fc678439cfacd7691fd98b3",
+  "bytes": 256412,
+  "mime": "image/jpeg",
+  "alt": "잘 익은 커피 아라비카 체리 한 알이 나뭇가지에 달린 모습",
+  "caption": "같은 아라비카라도 재배 조건과 수확 성숙도에 따라 편차가 커서, 종 이름 하나로 결과를 고정할 수 없습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "84501742",
+    "title": "Coffee arabica cherry.jpg",
+    "author": "Roger Burger",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_arabica_cherry.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/7/74/Coffee_arabica_cherry.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Coffee_arabica_cherry.jpg/1920px-Coffee_arabica_cherry.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc0",
+    "label": "CC0 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:31:19.835Z",
+    "researchManifest": "img7-9.json",
+    "query": "Coffea arabica cherry ripe",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

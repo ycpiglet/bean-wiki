@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:95001839",
+  "articleSlug": "plant-based-milk-steaming",
+  "section": "topic-caf06",
+  "localPath": "/article-media/plant-based-milk-steaming/oat-milk-latte-jpg-63aef19ae553.jpg",
+  "sha256": "63aef19ae553df98af64fb1f839b089661a5c6c2f343672475a54fd61d26ccb0",
+  "bytes": 467820,
+  "mime": "image/jpeg",
+  "alt": "귀리우유로 만든 라테 한 잔",
+  "caption": "같은 레시피를 그대로 옮겨도 재료의 점도와 단백질·지질 구조가 다르면 스티밍 결과는 다르게 나타납니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "95001839",
+    "title": "Oat Milk Latte.jpg",
+    "author": "Tombo nath",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Oat_Milk_Latte.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/15/Oat_Milk_Latte.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/1/15/Oat_Milk_Latte.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:33:02.778Z",
+    "researchManifest": "img7-10.json",
+    "query": "oat milk latte",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:33922d5f-4ebe-44ac-8e33-9469ed3d77dc",
+  "articleSlug": "refractometer-measurement-uncertainty",
+  "section": "definition",
+  "localPath": "/article-media/refractometer-measurement-uncertainty/pouring-a-sample-into-atago-refractometer-e86d60d66cea.jpg",
+  "sha256": "e86d60d66cea972701a243abfc941a162cc3242737ce729be03d8128ddd39ccf",
+  "bytes": 109075,
+  "mime": "image/jpeg",
+  "alt": "굴절계에 커피 샘플을 부어 농도를 측정하는 모습",
+  "caption": "같은 장비라도 샘플 온도·채취 시점·교정 상태가 다르면 표시되는 값 자체가 달라집니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "33922d5f-4ebe-44ac-8e33-9469ed3d77dc",
+    "title": "Pouring a Sample into Atago Refractometer",
+    "author": "markolaz",
+    "sourceUrl": "https://www.flickr.com/photos/195403219@N08/52223324665",
+    "originalUrl": "https://live.staticflickr.com/65535/52223324665_8cea59d3c7_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/52223324665_8cea59d3c7_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:31:51.681Z",
+    "researchManifest": "img7-3.json",
+    "query": "refractometer coffee measurement sample",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

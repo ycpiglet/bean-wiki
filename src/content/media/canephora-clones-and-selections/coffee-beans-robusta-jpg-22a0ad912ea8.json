@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:3662776",
+  "articleSlug": "canephora-clones-and-selections",
+  "section": "selection-unit",
+  "localPath": "/article-media/canephora-clones-and-selections/coffee-beans-robusta-jpg-22a0ad912ea8.jpg",
+  "sha256": "22a0ad912ea8909f9cbc64cd26b30665f4e1b7163b7a30e5ca778c413814808a",
+  "bytes": 161301,
+  "mime": "image/jpeg",
+  "alt": "수확 직후 상태(오른쪽)와 건조를 마친 상태(왼쪽)의 로부스타 생두",
+  "caption": "같은 클론이라도 수확·건조 조건이 다르면 결과가 달라지므로, 클론 표기 하나로 결과를 단정할 수 없습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "3662776",
+    "title": "Coffee beans robusta.jpg",
+    "author": "DXLINH",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_beans_robusta.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Coffee_beans_robusta.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/c/ca/Coffee_beans_robusta.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:30:27.229Z",
+    "researchManifest": "img7-6.json",
+    "query": "robusta coffee plant Vietnam",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}
