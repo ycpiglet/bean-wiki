@@ -135,6 +135,7 @@ export function buildArticleFigure({
   author,
   license,
   sourceUrl,
+  resized = false,
 }) {
   for (const [name, value] of Object.entries({
     src,
@@ -150,10 +151,11 @@ export function buildArticleFigure({
   if (!isSafeHttpsUrl(sourceUrl)) throw new Error("figure source must be HTTPS");
 
   const credit = `${author} · ${license}`;
+  const modificationNotice = resized ? " · 리사이즈·재인코딩됨" : "";
   return [
     `<figure class="article-figure" data-author="${escapeHtml(author)}" data-license="${escapeHtml(license)}" data-source="${escapeHtml(sourceUrl)}">`,
     `<img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" />`,
-    `<figcaption>${escapeHtml(caption)} <a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer" class="figure-credit">${escapeHtml(credit)}</a></figcaption>`,
+    `<figcaption>${escapeHtml(caption)} <a href="${escapeHtml(sourceUrl)}" target="_blank" rel="noreferrer" class="figure-credit">${escapeHtml(credit)}</a>${escapeHtml(modificationNotice)}</figcaption>`,
     "</figure>",
   ].join("");
 }

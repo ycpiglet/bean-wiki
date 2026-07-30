@@ -182,6 +182,7 @@ async function main() {
     author: candidate.author,
     license: license.label,
     sourceUrl: candidate.sourceUrl,
+    resized: downloaded.resized,
   });
   const nextArticle = insertAfterSectionIntro(articleSource, args.section, figure);
 
