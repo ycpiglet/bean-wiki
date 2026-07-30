@@ -1,0 +1,47 @@
+{
+  "schema": "agent-runtime-merge-gates/v1",
+  "gates": [
+    {
+      "id": "design-contract",
+      "command": "npm run design:check",
+      "include_paths": [
+        ".github/CODEOWNERS",
+        "agents/host/MERGE-GATES.json",
+        "docs/DESIGN.md",
+        "package-lock.json",
+        "package.json",
+        "playwright.config.ts",
+        "scripts/check-design-contract.mjs",
+        "scripts/generate-design-tokens.mjs",
+        "scripts/lib/design-tokens.mjs",
+        "src/app/design/**",
+        "src/app/globals.css",
+        "src/app/layout.tsx",
+        "src/components/**",
+        "src/design/**",
+        "tests/design-contract.test.mjs",
+        "tests/visual/**"
+      ]
+    },
+    {
+      "id": "design-visual",
+      "command": "npm run design:visual",
+      "include_paths": [
+        "next.config.ts",
+        "package-lock.json",
+        "package.json",
+        "playwright.config.ts",
+        "postcss.config.mjs",
+        "public/**",
+        "src/app/**",
+        "src/components/**",
+        "src/content/categories.ts",
+        "src/design/**",
+        "tests/visual/**"
+      ],
+      "exclude_paths": [
+        "src/app/api/**"
+      ]
+    }
+  ]
+}

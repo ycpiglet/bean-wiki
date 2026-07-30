@@ -30,3 +30,45 @@ jobs:
       - run: npm run test:profile-store
       - run: npm run test:platform-auth
       - run: npm run verify
+
+  design-contract:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    runs-on: [self-hosted, linux, x64, bean-wiki-linux]
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npm run design:check
+
+  design-visual:
+    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
+    needs: design-contract
+    runs-on: [self-hosted, linux, x64, bean-wiki-linux]
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install chromium
+      - run: npm run design:visual
+      - name: Upload visual regression evidence
+        if: failure()
+        uses: actions/upload-artifact@v4
+        with:
+          name: design-visual-${{ github.run_id }}
+          path: |
+            playwright-report/
+            test-results/
+          if-no-files-found: ignore
+          retention-days: 14
