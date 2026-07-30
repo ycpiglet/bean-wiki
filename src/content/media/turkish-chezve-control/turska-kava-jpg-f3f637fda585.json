@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:38887583",
+  "articleSlug": "turkish-chezve-control",
+  "section": "topic-brw08",
+  "localPath": "/article-media/turkish-chezve-control/turska-kava-jpg-f3f637fda585.jpg",
+  "sha256": "f3f637fda585cdf391964adcfd003cf22da308bbb84d7ec65a98dc0f43bf11c5",
+  "bytes": 238003,
+  "mime": "image/jpeg",
+  "alt": "체즈베 주전자와 커피잔, 설탕 그릇으로 구성된 터키식 커피 세트",
+  "caption": "체즈베·잔·설탕 그릇이 함께 놓인 세트는 준비 단계부터 이미 거품·침전을 다루는 도구 구성이 정해져 있음을 보여줍니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "38887583",
+    "title": "Turska kava.jpg",
+    "author": "Silverije",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Turska_kava.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6e/Turska_kava.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Turska_kava.jpg/1920px-Turska_kava.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:48:25.661Z",
+    "researchManifest": "img8-17.json",
+    "query": "Turkish coffee cup pot",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
