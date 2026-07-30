@@ -6,7 +6,6 @@ const routes = [
     name: "coffee-cherry-to-bean",
     path: "/wiki/coffee-cherry-to-bean",
   },
-  { name: "analytics", path: "/analytics" },
   { name: "brand-colors", path: "/design/colors" },
 ] as const;
 
@@ -20,11 +19,8 @@ const anonymousAccount = {
 
 const emptyFeedback = {
   summary: { average: null, count: 0 },
-  likes: { total: 0, human: 0, agent: 0, viewerLiked: false },
-  views: 0,
   reviews: [],
   comments: [],
-  viewer: { signedIn: false, canModerate: false },
 };
 
 for (const route of routes) {

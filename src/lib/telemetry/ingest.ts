@@ -11,8 +11,10 @@
 //
 // See docs/TELEMETRY-AND-PRIVACY.md.
 
-import { getD1 } from "../../../db";
-import { storePageView } from "@/lib/engagement-store";
+import {
+  pruneStoredPageViews,
+  storePageView,
+} from "@/lib/engagement-store";
 import {
   isDay,
   isReferrerClass,
@@ -239,11 +241,7 @@ export async function recordView(
  */
 export async function pruneRawViews(now: Date = new Date()): Promise<number> {
   const cutoff = shiftDay(utcDay(now), -RAW_RETENTION_DAYS);
-  const result = await getD1()
-    .prepare(`DELETE FROM page_views WHERE day < ?`)
-    .bind(cutoff)
-    .run();
-  return Number(result.meta.changes ?? 0);
+  return pruneStoredPageViews(cutoff);
 }
 
 /**

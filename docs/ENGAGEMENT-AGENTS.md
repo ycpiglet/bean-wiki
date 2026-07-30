@@ -27,7 +27,7 @@ soft delete입니다.
 ## 회귀 하네스
 
 ```bash
-BEAN_WIKI_API_CREDENTIAL=... npm run qa:engagement -- \
+BEAN_WIKI_API_CREDENTIAL=... node scripts/engagement-qa.mjs \
   --base-url https://example.com \
   --slug coffee-flavor-wheel
 ```

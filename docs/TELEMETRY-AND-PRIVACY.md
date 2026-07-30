@@ -145,10 +145,12 @@ raw 행을 삭제합니다. `metrics:read`를 정당하게 가진 파트너 앱�
 
 | 항목 | 값 |
 | --- | --- |
-| 구현 | `pruneRawViews()` — `src/lib/telemetry/ingest.ts` |
-| 실행 지점 | `rollupDays()` 마지막 단계 — `src/lib/metrics/rollup.ts`. 즉 `POST /api/telemetry/v1/rollup` 1회당 1회 |
-| 쿼리 | `DELETE FROM page_views WHERE day < (오늘 - 90일)` |
-| 보고 | 롤업 응답의 `pruned_views` |
+| 구현 | `pruneRawViews()` / `pruneStoredPageViews()` |
+| D1 실행 지점 | `rollupDays()` 마지막 단계 — `POST /api/telemetry/v1/rollup` 1회당 1회 |
+| Supabase 실행 지점 | Vercel Cron이 매일 `GET /api/telemetry/retention` 호출 |
+| 쿼리 | D1 `DELETE`; Supabase `bean_wiki_prune_page_views()` RPC. 둘 다 `day < (오늘 - 90일)` |
+| 인증 | 롤업은 internal API credential, Vercel Cron은 `CRON_SECRET` |
+| 보고 | 롤업 응답의 `pruned_views` 또는 retention 응답의 `deletedRows` |
 
 쓰기 경로(비콘)에서 정리하지 않습니다. 독자의 요청 하나가 무작위로 대량 삭제를
 떠안는 구조를 만들지 않기 위해서입니다. 롤업 cron이 멈추면 정리도 멈추므로,
@@ -317,9 +319,10 @@ Authorization: Bearer bwk_…
 
 | 항목 | 값 |
 | --- | --- |
-| 필수 바인딩 | `TELEMETRY_SALT` (미설정 시 3절의 축소 동작) |
+| 필수 바인딩 | `TELEMETRY_SALT` (미설정 시 3절의 축소 동작), Vercel은 `CRON_SECRET` |
 | salt 교체 | 언제든 가능. 교체 시점 이후의 세션 그룹핑만 끊기고 과거 롤업은 영향 없습니다 |
-| cron | `POST /api/telemetry/v1/rollup`을 하루 1회 이상. `client_type = internal` 자격증명 사용 |
+| D1 cron | `POST /api/telemetry/v1/rollup`을 하루 1회 이상. `client_type = internal` 자격증명 사용 |
+| Supabase cron | `vercel.json`이 매일 03:17 UTC에 `GET /api/telemetry/retention` 호출. Vercel이 `Authorization: Bearer $CRON_SECRET`을 추가 |
 | 백필 | `{"days": ["2026-07-01", "2026-07-02"]}` (최대 31일) |
 | 자격증명 발급 | `scripts/mint-api-client.mjs` |
 
@@ -339,6 +342,7 @@ curl -X POST https://bean-wiki.vercel.app/api/telemetry/v1/rollup \
 | `src/lib/metrics/rollup.ts` | 일별 롤업 upsert, `daily_metrics` 읽기 |
 | `src/app/api/telemetry/v1/views/route.ts` | 공개 비콘 |
 | `src/app/api/telemetry/v1/rollup/route.ts` | 내부 cron |
+| `src/app/api/telemetry/retention/route.ts` | Vercel Supabase 원본 보존 cron |
 | `src/app/api/metrics/v1/route.ts` | 지표 조회 |
 | `src/components/view-beacon.tsx` | 클라이언트 비콘 컴포넌트 (마운트 위치는 파일 주석) |
 

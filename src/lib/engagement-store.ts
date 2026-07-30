@@ -149,6 +149,27 @@ export async function storePageView(view: StoredPageView): Promise<void> {
   });
 }
 
+export async function pruneStoredPageViews(beforeDay: string): Promise<number> {
+  if (backend() === "d1") {
+    const db = d1();
+    if (!db) throw new EngagementStoreUnavailableError();
+    const result = await db
+      .prepare(`DELETE FROM page_views WHERE day < ?`)
+      .bind(beforeDay)
+      .run();
+    return Number(result.meta.changes ?? 0);
+  }
+
+  const result = await rest<number | number[]>(
+    "rpc/bean_wiki_prune_page_views",
+    {
+      method: "POST",
+      body: JSON.stringify({ before_day: beforeDay }),
+    },
+  );
+  return Number(Array.isArray(result) ? result[0] ?? 0 : result ?? 0);
+}
+
 function d1() {
   return getRuntimeBindings().DB;
 }
@@ -209,6 +230,11 @@ async function rest<T>(
   }
   if (!response.ok) {
     const detail = await response.text().catch(() => "");
+    if (response.status >= 500 || response.status === 408) {
+      throw new EngagementStoreUnavailableError(
+        `engagement store request failed (${response.status})`,
+      );
+    }
     const error = new Error(
       `engagement store request failed (${response.status}): ${detail.slice(0, 240)}`,
     );
@@ -404,7 +430,14 @@ async function getSupabaseFeedback(
   viewerRole: Role,
 ): Promise<ArticleFeedback> {
   const slug = encodeURIComponent(articleSlug);
-  const [reviews, comments, likes, views] = await Promise.all([
+  type FeedbackSummary = {
+    review_average: number | null;
+    review_count: number;
+    human_likes: number;
+    agent_likes: number;
+    view_count: number;
+  };
+  const [reviews, comments, summaryResult, viewerLikes] = await Promise.all([
     rest<
       {
         id: string;
@@ -431,34 +464,40 @@ async function getSupabaseFeedback(
     >(
       `article_comments?article_slug=eq.${slug}&is_synthetic=eq.false&select=id,actor_key,display_name,body,parent_id,actor_type,created_at,updated_at,deleted_at&order=created_at.asc&limit=200`,
     ),
-    rest<{ actor_key: string; actor_type: "human" | "agent" }[]>(
-      `article_likes?article_slug=eq.${slug}&is_synthetic=eq.false&select=actor_key,actor_type`,
+    rest<FeedbackSummary | FeedbackSummary[]>(
+      "rpc/bean_wiki_article_feedback_summary",
+      {
+        method: "POST",
+        body: JSON.stringify({ requested_slug: articleSlug }),
+      },
     ),
-    rest<{ id: string }[]>(
-      `page_views?entity_type=eq.article&entity_key=eq.${slug}&select=id&limit=10000`,
-    ),
+    viewerKey
+      ? rest<{ id: string }[]>(
+          `article_likes?article_slug=eq.${slug}&actor_key=eq.${encodeURIComponent(viewerKey)}&is_synthetic=eq.false&select=id&limit=1`,
+        )
+      : Promise.resolve([]),
   ]);
-  const human = likes.filter((item) => item.actor_type === "human").length;
-  const agent = likes.filter((item) => item.actor_type === "agent").length;
-  const average =
-    reviews.length > 0
-      ? Math.round(
-          (reviews.reduce((sum, item) => sum + item.rating, 0) /
-            reviews.length) *
-            10,
-        ) / 10
-      : null;
+  const summary = Array.isArray(summaryResult)
+    ? summaryResult[0]
+    : summaryResult;
+  if (!summary) throw new EngagementStoreUnavailableError();
+  const human = Number(summary.human_likes ?? 0);
+  const agent = Number(summary.agent_likes ?? 0);
   return {
-    summary: { average, count: reviews.length },
+    summary: {
+      average:
+        summary.review_average === null
+          ? null
+          : Number(summary.review_average),
+      count: Number(summary.review_count ?? 0),
+    },
     likes: {
-      total: likes.length,
+      total: human + agent,
       human,
       agent,
-      viewerLiked: Boolean(
-        viewerKey && likes.some((item) => item.actor_key === viewerKey),
-      ),
+      viewerLiked: viewerLikes.length > 0,
     },
-    views: views.length,
+    views: Number(summary.view_count ?? 0),
     reviews: reviews.map((row) => ({
       id: row.id,
       displayName: row.display_name,

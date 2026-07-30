@@ -242,3 +242,72 @@ revoke execute on function public.bean_wiki_analytics_dashboard(integer)
   from public, anon, authenticated;
 grant execute on function public.bean_wiki_analytics_dashboard(integer)
   to service_role;
+
+create or replace function public.bean_wiki_article_feedback_summary(
+  requested_slug text
+) returns jsonb
+language sql
+stable
+security invoker
+set search_path = ''
+as $$
+  select jsonb_build_object(
+    'review_average', (
+      select round(avg(r.rating)::numeric, 1)
+        from public.article_reviews r
+       where r.article_slug = requested_slug
+    ),
+    'review_count', (
+      select count(*)::integer
+        from public.article_reviews r
+       where r.article_slug = requested_slug
+    ),
+    'human_likes', (
+      select count(*)::integer
+        from public.article_likes l
+       where l.article_slug = requested_slug
+         and l.actor_type = 'human'
+         and l.is_synthetic = false
+    ),
+    'agent_likes', (
+      select count(*)::integer
+        from public.article_likes l
+       where l.article_slug = requested_slug
+         and l.actor_type = 'agent'
+         and l.is_synthetic = false
+    ),
+    'view_count', (
+      select count(*)::integer
+        from public.page_views pv
+       where pv.entity_type = 'article'
+         and pv.entity_key = requested_slug
+    )
+  );
+$$;
+
+revoke execute on function public.bean_wiki_article_feedback_summary(text)
+  from public, anon, authenticated;
+grant execute on function public.bean_wiki_article_feedback_summary(text)
+  to service_role;
+
+create or replace function public.bean_wiki_prune_page_views(
+  before_day date
+) returns integer
+language plpgsql
+volatile
+security invoker
+set search_path = ''
+as $$
+declare
+  deleted_rows integer;
+begin
+  delete from public.page_views where day < before_day;
+  get diagnostics deleted_rows = row_count;
+  return deleted_rows;
+end;
+$$;
+
+revoke execute on function public.bean_wiki_prune_page_views(date)
+  from public, anon, authenticated;
+grant execute on function public.bean_wiki_prune_page_views(date)
+  to service_role;

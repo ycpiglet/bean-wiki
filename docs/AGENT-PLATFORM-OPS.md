@@ -111,6 +111,9 @@ node scripts/mint-api-client.mjs --name "Beanote" --org "Beanote" \
   `npx wrangler d1 execute bean-wiki --remote --command "<sql>"`
 - `--type`: `human_app` | `agent` | `internal`. `internal`만
   `POST /api/telemetry/v1/rollup`을 트리거할 수 있습니다.
+- Supabase 원본 조회 데이터 정리는 별도 Vercel Cron
+  (`GET /api/telemetry/retention`)이 담당합니다. 운영 환경의
+  `CRON_SECRET`이 없으면 요청은 닫힌 상태로 401을 반환합니다.
 - 스코프는 `src/lib/api/scopes.ts`의 `SCOPES` / 스크립트의 `KNOWN_SCOPES` /
   계약 §8.1 표 **세 곳이 일치**해야 합니다. 어긋나면 발급이 거부되거나 라우트가
   `internal`(500)로 실패합니다. 가드레일은 `scopes.ts`만 정본으로 보므로 이
