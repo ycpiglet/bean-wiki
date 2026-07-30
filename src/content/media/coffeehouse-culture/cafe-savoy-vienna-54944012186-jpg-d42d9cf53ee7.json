@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:179988037",
+  "articleSlug": "coffeehouse-culture",
+  "section": "coffeehouse-memory",
+  "localPath": "/article-media/coffeehouse-culture/cafe-savoy-vienna-54944012186-jpg-d42d9cf53ee7.jpg",
+  "sha256": "d42d9cf53ee792d87c3c5e3127662b975c2f17cdfe0b25ce3a22db1efaa5de2b",
+  "bytes": 531987,
+  "mime": "image/jpeg",
+  "alt": "빈에 있는 유서 깊은 카페 사보이의 모습",
+  "caption": "이런 오래된 커피하우스는 음료 자체보다 입장·주문·대화의 반복된 규범을 학습시키는 공간으로 기능해 왔습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "179988037",
+    "title": "Cafe Savoy Vienna (54944012186).jpg",
+    "author": "Sandor Somkuti from Wien, Österreich",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Cafe_Savoy_Vienna_(54944012186).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a8/Cafe_Savoy_Vienna_%2854944012186%29.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Cafe_Savoy_Vienna_%2854944012186%29.jpg/1920px-Cafe_Savoy_Vienna_%2854944012186%29.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:00:45.257Z",
+    "researchManifest": "img5-17.json",
+    "query": "traditional Vienna Kaffeehaus cafe",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

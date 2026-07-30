@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:1682598",
+  "articleSlug": "home-brew-recipes",
+  "section": "aeropress-recipe",
+  "localPath": "/article-media/home-brew-recipes/ap-brew-hires-jpg-96f5c993d6e0.jpg",
+  "sha256": "96f5c993d6e06b4d44af803a2b9a1d49c9975ebea86e322f3a0610834d6817cf",
+  "bytes": 137188,
+  "mime": "image/jpeg",
+  "alt": "에어로프레스로 커피를 추출하는 모습",
+  "caption": "정방향·역방향, 침지 시간과 프레스 속도까지 조합이 많아 에어로프레스는 레시피 실험의 자유도가 가장 큰 도구입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "1682598",
+    "title": "Ap brew hires.jpg",
+    "author": "Tim Hollosy",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Ap_brew_hires.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/2/2e/Ap_brew_hires.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Ap_brew_hires.jpg/1920px-Ap_brew_hires.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.5",
+    "version": "2.5",
+    "url": "https://creativecommons.org/licenses/by-sa/2.5",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 2.5"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:01:56.399Z",
+    "researchManifest": "img5-8.json",
+    "query": "AeroPress coffee brewing",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

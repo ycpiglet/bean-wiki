@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:963756b5-c435-4ecf-a623-1e4599048101",
+  "articleSlug": "brew-methods",
+  "section": "immersion",
+  "localPath": "/article-media/brew-methods/french-press-4223b9dca03c.jpg",
+  "sha256": "4223b9dca03c12ba663f26ac3a356177804e580ef8dc1b229b114adbdc344363",
+  "bytes": 154002,
+  "mime": "image/jpeg",
+  "alt": "프렌치 프레스 안에 커피와 물이 담겨 있는 모습",
+  "caption": "물길을 따로 설계할 필요가 없어 초심자도 비교적 쉽게 재현할 수 있는 것이 침지식의 특징입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "963756b5-c435-4ecf-a623-1e4599048101",
+    "title": "French Press",
+    "author": "coffeeloversmag",
+    "sourceUrl": "https://www.flickr.com/photos/122258503@N04/26704196182",
+    "originalUrl": "https://live.staticflickr.com/7570/26704196182_f10bf495d1_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/7570/26704196182_f10bf495d1_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:05:51.787Z",
+    "researchManifest": "img5-4.json",
+    "query": "french press immersion brewing",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

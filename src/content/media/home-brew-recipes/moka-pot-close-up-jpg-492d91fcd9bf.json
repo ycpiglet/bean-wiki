@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:61153750",
+  "articleSlug": "home-brew-recipes",
+  "section": "moka-recipe",
+  "localPath": "/article-media/home-brew-recipes/moka-pot-close-up-jpg-492d91fcd9bf.jpg",
+  "sha256": "492d91fcd9bf7a6b68c26e2cae9534c7b299f8bb5bd8c00d0f99465daf7257d3",
+  "bytes": 137377,
+  "mime": "image/jpeg",
+  "alt": "모카포트를 가까이서 촬영한 모습",
+  "caption": "모카포트는 압력 용기이므로 안전밸브를 막지 않고 불 세기를 조절하는 것이 레시피의 핵심입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "61153750",
+    "title": "Moka pot (close-up).jpg",
+    "author": "Padaguan",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Moka_pot_(close-up).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d6/Moka_pot_%28close-up%29.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Moka_pot_%28close-up%29.jpg/1920px-Moka_pot_%28close-up%29.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:01:59.652Z",
+    "researchManifest": "img5-1.json",
+    "query": "moka pot stovetop coffee maker",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

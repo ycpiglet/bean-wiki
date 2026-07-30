@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:28989985",
+  "articleSlug": "espresso-machines-grinders",
+  "section": "machine-architecture",
+  "localPath": "/article-media/espresso-machines-grinders/double-ristretto-naked-portafilter-jpg-e9f8cc53ff83.jpg",
+  "sha256": "e9f8cc53ff83ecc1655e393363b679cb08e87ed42bf5003494f8381e5c4813a6",
+  "bytes": 215068,
+  "mime": "image/jpeg",
+  "alt": "라마르조꼬 에스프레소 머신에서 네이키드 포터필터로 더블 리스트레토를 추출하는 모습",
+  "caption": "온도 안정성과 압력 동작성이 무너지면 겉으로 드러나는 추출 흐름부터 즉시 불안정해집니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "28989985",
+    "title": "Double ristretto naked portafilter.jpg",
+    "author": "Takeaway",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Double_ristretto_naked_portafilter.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Double_ristretto_naked_portafilter.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Double_ristretto_naked_portafilter.jpg/1920px-Double_ristretto_naked_portafilter.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:02:37.159Z",
+    "researchManifest": "img5-6.json",
+    "query": "espresso machine portafilter group",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
