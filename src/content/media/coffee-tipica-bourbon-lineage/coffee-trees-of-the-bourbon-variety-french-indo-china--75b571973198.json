@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:22852354",
+  "articleSlug": "coffee-tipica-bourbon-lineage",
+  "section": "history",
+  "localPath": "/article-media/coffee-tipica-bourbon-lineage/coffee-trees-of-the-bourbon-variety-french-indo-china--75b571973198.jpg",
+  "sha256": "75b571973198595bf00996657354d4cca05ecd5eb2bbec78729ab6478cd74040",
+  "bytes": 61270,
+  "mime": "image/jpeg",
+  "alt": "프랑스령 인도차이나의 버번 품종 커피나무들을 담은 역사적 사진",
+  "caption": "버번 계통은 지역으로 퍼져나가며 이름이 표준화되지 않은 구간이 있어, 오래된 기록 사진 한 장도 계통 전파의 흔적을 보여주는 자료가 됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "22852354",
+    "title": "Coffee Trees of the Bourbon Variety, French Indo-China.jpg",
+    "author": "By WILLIAM H. UKERS, M.A. Editor THE TEA AND COFFEE TRADE JOURNAL",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Trees_of_the_Bourbon_Variety,_French_Indo-China.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Coffee_Trees_of_the_Bourbon_Variety%2C_French_Indo-China.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/f/f9/Coffee_Trees_of_the_Bourbon_Variety%2C_French_Indo-China.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "pdm",
+    "label": "Public Domain 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/mark/1.0/",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "Public domain"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:31:25.081Z",
+    "researchManifest": "img15-15.json",
+    "query": "Bourbon coffee variety plant tree",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

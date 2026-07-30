@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:26093766",
+  "articleSlug": "coffee-pest-symptom-map",
+  "section": "three-axes",
+  "localPath": "/article-media/coffee-pest-symptom-map/coffee-berry-borer2-jpg-464759aa5e9c.jpg",
+  "sha256": "464759aa5e9c0b49777d7b89172069c2bac4597d917c45e55799f01a2da9b530",
+  "bytes": 234646,
+  "mime": "image/jpeg",
+  "alt": "커피베리보러가 갉아먹은 흔적이 있는 커피 체리 손상 부위",
+  "caption": "증상 축에서는 잎·줄기·과실·체리군을 먼저 구분해야 하며, 체리 손상은 이 중 과실·체리 축의 대표적 신호입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "26093766",
+    "title": "Coffee berry borer2.jpg",
+    "author": "L. Shyamal",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_berry_borer2.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Coffee_berry_borer2.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/4/4b/Coffee_berry_borer2.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:33:07.960Z",
+    "researchManifest": "img15-23.json",
+    "query": "coffee berry borer insect",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

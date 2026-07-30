@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:653815f9-21cd-499e-82bd-408a02371c7b",
+  "articleSlug": "farmer-income-basics",
+  "section": "why-income-matters",
+  "localPath": "/article-media/farmer-income-basics/mexican-coffee-farmer-at-work-in-the-fields-31749ffcc332.jpg",
+  "sha256": "31749ffcc3320591d29c232a46a9bac66a3776f7e920f269fbf57ffc1fa8271f",
+  "bytes": 278703,
+  "mime": "image/jpeg",
+  "alt": "멕시코의 한 커피 생산자가 밭에서 일하는 모습",
+  "caption": "생산자는 이번 시즌 가격을 곧바로 다음 시즌의 재배·수확 방식에 반영하므로, 소득 구조는 품질 안정성과 직결되는 운영 변수입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "653815f9-21cd-499e-82bd-408a02371c7b",
+    "title": "Mexican coffee farmer at work in the fields",
+    "author": "Shared Interest",
+    "sourceUrl": "https://www.flickr.com/photos/31022434@N08/2909253327",
+    "originalUrl": "https://live.staticflickr.com/3137/2909253327_78b8f9c31e_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/3137/2909253327_78b8f9c31e_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:30:17.950Z",
+    "researchManifest": "img15-11.json",
+    "query": "coffee farmer working farm",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

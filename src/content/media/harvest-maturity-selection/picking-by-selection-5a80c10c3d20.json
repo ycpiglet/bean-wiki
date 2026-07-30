@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:25addbf5-2de7-4831-a311-6f5727c0fc1f",
+  "articleSlug": "harvest-maturity-selection",
+  "section": "why",
+  "localPath": "/article-media/harvest-maturity-selection/picking-by-selection-5a80c10c3d20.jpg",
+  "sha256": "5a80c10c3d207dcf10eca19350be020f00099c17787ef1d883d28b7fffa7ca81",
+  "bytes": 171130,
+  "mime": "image/jpeg",
+  "alt": "커피나무에서 사람이 손으로 잘 익은 체리만 골라 따는 모습",
+  "caption": "스트리핑과 달리, 셀렉티브 피킹은 손으로 익은 체리만 골라 따는 방식입니다. 엘살바도르의 커피 농장에서 촬영된 사진입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "25addbf5-2de7-4831-a311-6f5727c0fc1f",
+    "title": "Picking by selection",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/8615472436",
+    "originalUrl": "https://live.staticflickr.com/8538/8615472436_0e31fb19be_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/8538/8615472436_0e31fb19be_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:47:36.003Z",
+    "researchManifest": "img15-31.json",
+    "query": "coffee cherry ripe selective picking harvest",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:b1f9db94-f5a7-4fbc-9edb-eade66838001",
+  "articleSlug": "milk-steaming-protein-chemistry",
+  "section": "quality-goals",
+  "localPath": "/article-media/milk-steaming-protein-chemistry/how-to-froth-milk-for-latte-art-credit-to-https-coffee-18360db821ba.jpg",
+  "sha256": "18360db821ba4a491cf2b723a2cda84ae2d85a9abe0de34f9c9f28495903704b",
+  "bytes": 218482,
+  "mime": "image/jpeg",
+  "alt": "라떼아트가 표현된 커피 한 잔",
+  "caption": "붓기 표면의 광택과 무늬 경계가 선명하다면, 그 아래 미세거품이 고르게 분포했다는 간접 신호로 읽을 수 있습니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "b1f9db94-f5a7-4fbc-9edb-eade66838001",
+    "title": "how to froth milk for latte art - Credit to https://coffee-rank.com",
+    "author": "coffee-rank",
+    "sourceUrl": "https://www.flickr.com/photos/189612330@N06/50520483957",
+    "originalUrl": "https://live.staticflickr.com/65535/50520483957_05d8ee42fd_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/50520483957_05d8ee42fd_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T21:59:38.662Z",
+    "researchManifest": "img15-52.json",
+    "query": "milk steaming pitcher latte art foam",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
