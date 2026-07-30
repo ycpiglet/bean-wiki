@@ -108,8 +108,10 @@ for (const path of walk(evidenceDirectory, (entry) => entry.endsWith(".json"))) 
 
 let figureCount = 0;
 for (const [path, source] of articleSources) {
+  let articleFigureCount = 0;
   for (const match of source.matchAll(/<figure\b[\s\S]*?<\/figure>/g)) {
     figureCount += 1;
+    articleFigureCount += 1;
     const attrs = parseFigureAttributes(match[0]);
     const label = `${path}:${figureCount}`;
     if (!attrs.author) fail(`${label}: figure author is missing`);
@@ -130,6 +132,19 @@ for (const [path, source] of articleSources) {
           fail(`${label}: figure source differs from evidence`);
         }
       }
+    }
+  }
+  const minimumDeclaration = source.match(
+    /(?:^|\n)mediaMinimum:\s*([^\r\n]*)/,
+  );
+  if (minimumDeclaration) {
+    const minimumRaw = minimumDeclaration[1].trim();
+    if (!/^(?:[1-9]|1[0-2])$/.test(minimumRaw)) {
+      fail(`${path}: mediaMinimum must be an integer from 1 to 12`);
+    } else if (articleFigureCount < Number(minimumRaw)) {
+      fail(
+        `${path}: requires ${minimumRaw} explanatory figure(s), found ${articleFigureCount}`,
+      );
     }
   }
 }

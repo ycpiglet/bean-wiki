@@ -329,25 +329,34 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
 
       <div className="discussion-forms">
         <form
+          className="discussion-form-card"
           onSubmit={(event) => {
             event.preventDefault();
             void submitReview();
           }}
         >
-          <label>아티클 평점</label>
-          <div className="rating-picker" aria-label="1점부터 5점까지 선택">
-            {[1, 2, 3, 4, 5].map((score) => (
-              <button
-                type="button"
-                key={score}
-                className={score <= rating ? "is-active" : ""}
-                aria-label={`${score}점`}
-                aria-pressed={score === rating}
-                onClick={() => setRating(score)}
-              >
-                ★
-              </button>
-            ))}
+          <div className="discussion-form-head">
+            <div>
+              <span>RATE THIS ARTICLE</span>
+              <label>아티클 평점</label>
+            </div>
+            <small>{rating ? `${rating} / 5` : "별을 선택하세요"}</small>
+          </div>
+          <div className="discussion-form-control">
+            <div className="rating-picker" aria-label="1점부터 5점까지 선택">
+              {[1, 2, 3, 4, 5].map((score) => (
+                <button
+                  type="button"
+                  key={score}
+                  className={score <= rating ? "is-active" : ""}
+                  aria-label={`${score}점`}
+                  aria-pressed={score === rating}
+                  onClick={() => setRating(score)}
+                >
+                  ★
+                </button>
+              ))}
+            </div>
           </div>
           <textarea
             value={review}
@@ -365,12 +374,22 @@ export function ArticleDiscussion({ slug }: { slug: string }) {
         </form>
 
         <form
+          className="discussion-form-card"
           onSubmit={(event) => {
             event.preventDefault();
             void submitComment(null);
           }}
         >
-          <label htmlFor={`comment-${slug}`}>새 댓글</label>
+          <div className="discussion-form-head">
+            <div>
+              <span>JOIN THE CONVERSATION</span>
+              <label htmlFor={`comment-${slug}`}>새 댓글</label>
+            </div>
+            <small>최대 1,200자</small>
+          </div>
+          <div className="discussion-form-control">
+            <p>질문 · 현장 경험 · 수정 제안을 자유롭게 나눠주세요.</p>
+          </div>
           <textarea
             id={`comment-${slug}`}
             value={comment}

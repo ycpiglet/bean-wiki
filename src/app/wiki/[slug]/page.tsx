@@ -15,7 +15,6 @@ import { JsonLd } from "@/components/json-ld";
 import { LanguageSwitcher } from "@/components/language-switcher";
 import { HeaderSearchButton } from "@/components/header-search-button";
 import { MobileNav } from "@/components/mobile-nav";
-import { ShareButtons } from "@/components/share-buttons";
 import { AccountMenu } from "@/components/account-menu";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { articles, getArticle, getCategoryByName } from "@/lib/content";
@@ -198,7 +197,11 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
                 역사
               </Link>
             </div>
-            <ArticleEngagement slug={slug} />
+            <ArticleEngagement
+              slug={slug}
+              title={article.title}
+              path={`/wiki/${slug}`}
+            />
             {article.tags && article.tags.length > 0 && (
               <div className="article-tags">
                 {article.tags.map((tag) => (
@@ -285,7 +288,6 @@ export default async function WikiArticle(props: PageProps<"/wiki/[slug]">) {
             </section>
           )}
 
-          <ShareButtons title={article.title} path={`/wiki/${slug}`} />
         </article>
       </div>
 

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:78147003",
+  "articleSlug": "coffee-flavor-wheel",
+  "section": "what",
+  "localPath": "/article-media/coffee-flavor-wheel/peet-s-cupping-003-29899024852-jpg-ecb3b246d707.jpg",
+  "sha256": "ecb3b246d70701bd82b3b3c44a8ae80a2aa6ad432bb63c06f2eda898c6bd53ba",
+  "bytes": 861556,
+  "mime": "image/jpeg",
+  "alt": "브라질로 표기된 생두와 로스팅된 원두를 파란 트레이에 나누어 담은 모습",
+  "caption": "커핑 기록은 같은 산지 표기가 붙은 샘플도 생두와 로스팅 원두처럼 현재 상태를 구분하는 데서 시작합니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "78147003",
+    "title": "Peet's Cupping 003 (29899024852).jpg",
+    "author": "UC Davis College of Engineering",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Peet%27s_Cupping_003_(29899024852).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Peet%27s_Cupping_003_%2829899024852%29.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/a/a2/Peet%27s_Cupping_003_%2829899024852%29.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T09:10:06.006Z",
+    "researchManifest": "coffee-flavor-wheel-2026-07-30.json",
+    "query": "coffee cupping aroma",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

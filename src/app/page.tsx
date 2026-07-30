@@ -23,6 +23,7 @@ import { quiz } from "@/content/quiz";
 import { homeHighlights } from "@/content/home-highlights";
 import type { CategoryIcon } from "@/content/types";
 import { LearningDashboard } from "@/components/learning-dashboard";
+import { HomeLiveSignals } from "@/components/home-live-signals";
 
 export const metadata: Metadata = {
   alternates: { canonical: "/", languages: { ko: "/", en: "/en" } },
@@ -172,6 +173,8 @@ export default function Home() {
         items={trivia}
         questions={homeQuizQuestions}
       />
+
+      <HomeLiveSignals articleCount={articles.length} />
 
       <section className="progress-section shell">
         <div className="section-heading">

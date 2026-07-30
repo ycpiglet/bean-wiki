@@ -40,6 +40,7 @@ readingTime: 5분
 updatedAt: YYYY. MM. DD.
 accent: ${accent}
 fact: 핵심 한 줄을 입력하세요.
+mediaMinimum: 3
 related: []
 tags: []
 history: [{"date":"YYYY. MM. DD.","note":"문서 최초 작성"}]

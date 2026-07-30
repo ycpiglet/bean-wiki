@@ -28,6 +28,7 @@ const SCALARS = [
   "accent",
   "fact",
 ];
+const OPTIONAL_SCALARS = ["mediaMinimum"];
 
 // Escape text for safe interpolation into HTML. Mirrors the former markdown
 // pipeline so migrated bodies are byte-identical to the previous output.
@@ -68,6 +69,11 @@ export function parseFrontmatter(source) {
 function serializeFrontmatter(a) {
   const fm = [];
   for (const key of SCALARS) fm.push(`${key}: ${a[key]}`);
+  for (const key of OPTIONAL_SCALARS) {
+    if (a[key] !== undefined && a[key] !== null && a[key] !== "") {
+      fm.push(`${key}: ${a[key]}`);
+    }
+  }
   fm.push(`related: ${JSON.stringify(a.related)}`);
   if (a.tags) fm.push(`tags: ${JSON.stringify(a.tags)}`);
   if (a.contributors?.length)
@@ -198,6 +204,9 @@ export function articleFromSource(source) {
   if (fm.contributors) article.contributors = fm.contributors;
   if (fm.history) article.history = fm.history;
   if (fm.draft === "true" || fm.draft === true) article.draft = true;
+  if (fm.mediaMinimum !== undefined) {
+    article.mediaMinimum = Number(fm.mediaMinimum);
+  }
   article.bodyHtml = renderSectionedHtml(body);
   return article;
 }

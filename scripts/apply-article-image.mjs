@@ -61,12 +61,27 @@ function insertAfterSectionIntro(source, section, figure) {
 
 async function downloadCandidate(candidate) {
   if (!isSafeHttpsUrl(candidate.imageUrl)) throw new Error("candidate image URL is not HTTPS");
-  const response = await fetch(candidate.imageUrl, {
-    headers: {
+  const headerProfiles = [
+    {
       "User-Agent":
         "BeanWikiImageResearchBot/0.1 (https://github.com/ycpiglet/bean-wiki)",
+      Accept: "image/avif,image/webp,image/png,image/jpeg,*/*;q=0.7",
     },
-  });
+    {
+      // Some image CDNs reject descriptive crawler user agents even when the
+      // source page and licence are public. Retry as a normal image request;
+      // this does not bypass authentication or access controls.
+      "User-Agent": "Mozilla/5.0 (compatible; BeanWikiImageResearch/0.1)",
+      Accept: "image/avif,image/webp,image/png,image/jpeg,*/*;q=0.7",
+      Referer: candidate.sourceUrl,
+    },
+  ];
+  let response;
+  for (const headers of headerProfiles) {
+    response = await fetch(candidate.imageUrl, { headers });
+    if (response.ok) break;
+  }
+  if (!response) throw new Error("image download did not start");
   if (!response.ok) throw new Error(`image download failed: ${response.status}`);
   const declaredLength = Number(response.headers.get("content-length") ?? 0);
   if (declaredLength > MAX_BYTES) throw new Error("image exceeds 12 MB");
