@@ -4,6 +4,26 @@
 > `src/design/brand-colors.json`이며, `src/app/globals.css`의 런타임 토큰과
 > `/design/colors` 카탈로그는 `npm run check:palette`로 함께 검증합니다.
 
+## 운영 계약
+
+- 공개 42색과 내부 의미 토큰 9개의 값·순서 정본은
+  `src/design/brand-colors.json` 하나입니다.
+- `src/app/globals.css`의 `BEGIN GENERATED DESIGN TOKENS` 블록은 생성물입니다.
+  직접 편집하지 말고 `node scripts/generate-design-tokens.mjs`로 갱신합니다.
+- `npm run design:check`는 정본과 CSS 생성물의 drift, 정의되지 않은 CSS 변수,
+  디자인 경로 소유권과 병합 정책을 읽기 전용으로 검사합니다.
+- `npm run design:visual`은 고정된 브라우저·뷰포트·테마의 승인된 화면 기준선과
+  실제 렌더를 비교합니다. 기준선 갱신은 별도 명시적 명령으로만 수행하며 일반
+  검사나 CI가 기준선을 자동으로 덮어쓰지 않습니다.
+- 경로별 필수 병합 검사는 `agents/host/MERGE-GATES.json`, 사람·에이전트가
+  확인할 계약 소유자는 `.github/CODEOWNERS`가 정본입니다. 디자인 정본,
+  공용 셸, 기준 화면을 건드린 작업은 파일이 서로 달라도 같은 필수 검사를
+  통과한 뒤 직렬 병합합니다.
+- 필수 검사의 스크립트·설정·테스트·승인 스크린샷은 정책의
+  `protected_paths`에 고정합니다. 일반 작업 브랜치는 검사 대상과 검사기를
+  동시에 바꿀 수 없으며, 검사기나 기준선 변경은 별도 오너 통제 트랙에서
+  검토합니다.
+
 ## 0. 브랜드 컬러 — 커피 라이프사이클 팔레트
 
 브랜드 정체성은 **커피의 여정**에서 옵니다: 체리(빨강) → 생두(초록) → 로스팅

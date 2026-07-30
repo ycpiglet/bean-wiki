@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* BEGIN GENERATED DESIGN TOKENS */
+/* Source: src/design/brand-colors.json
+ * Update only with: node scripts/generate-design-tokens.mjs
+ * Manual edits inside this block are rejected by design:check.
+ */
 :root {
   --paper: #f4f0e7;
   --paper-deep: #e8e1d4;
@@ -30,9 +35,6 @@
   --cacao: #7a342c;
   --canele-crust: #4a251b;
   --counter-greige: #aaa394;
-
-  /* Coffee lifecycle palette — the brand identity. From cherry to cup:
-     see /design/colors and docs/DESIGN.md before adding new colors. */
   --cherry: #a03d36;
   --cherry-deep: #712a28;
   --green-bean: #7d8f69;
@@ -53,7 +55,6 @@
   --iced-latte: #d8c7af;
   --cold-brew: #3b2b2a;
   --affogato: #d6b88b;
-  /* Primary UI accent = roasted bean (medium roast). */
   --brand: var(--roast-medium);
   --brand-strong: var(--roast-dark);
 }
@@ -88,8 +89,6 @@
   --cacao: #ad5b50;
   --canele-crust: #805044;
   --counter-greige: #c9c2b5;
-
-  /* Lifecycle palette, lightened for dark surfaces. */
   --cherry: #cd7a6e;
   --cherry-deep: #a75950;
   --green-bean: #9db184;
@@ -113,6 +112,7 @@
   --brand: var(--roast-medium);
   --brand-strong: #ddb98b;
 }
+/* END GENERATED DESIGN TOKENS */
 
 @theme inline {
   --color-background: var(--paper);
