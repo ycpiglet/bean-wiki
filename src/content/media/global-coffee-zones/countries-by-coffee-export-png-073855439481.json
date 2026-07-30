@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:97055267",
+  "articleSlug": "global-coffee-zones",
+  "section": "production-countries",
+  "localPath": "/article-media/global-coffee-zones/countries-by-coffee-export-png-073855439481.png",
+  "sha256": "0738554394815b827b9b0e40eb39d5de7fa6e32aa0ca87bab96f426e75f2dc3c",
+  "bytes": 35930,
+  "mime": "image/png",
+  "alt": "세계 주요 커피 수출국을 나타낸 지도",
+  "caption": "국가별 순위표를 보기 전에 지도로 위치와 규모를 먼저 확인하면, 대표 향미보다 거래 리듬을 앞서 살피는 습관이 붙습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "97055267",
+    "title": "Countries by Coffee Export.png",
+    "author": "Cbahrs",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Countries_by_Coffee_Export.png",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Countries_by_Coffee_Export.png",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/d/d8/Countries_by_Coffee_Export.png"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:56:15.363Z",
+    "researchManifest": "img9-10.json",
+    "query": "coffee producing countries map",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

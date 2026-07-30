@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:174487744",
+  "articleSlug": "kenya-coffee-system",
+  "section": "climate-production",
+  "localPath": "/article-media/kenya-coffee-system/coffee-cherries-on-bush-at-fairview-estate-kiambu-ke-j-1999ceafa543.jpg",
+  "sha256": "1999ceafa543fed834e902d619c8da378b702db4cbd4d4570013349cf89efbf6",
+  "bytes": 194240,
+  "mime": "image/jpeg",
+  "alt": "케냐 키암부 페어뷰 에스테이트의 나무에 달린 커피 체리들",
+  "caption": "고도와 강우 패턴이 만드는 성숙 속도 차이는 같은 해에도 로트 간 체리 밀도·당도 편차로 그대로 나타납니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "174487744",
+    "title": "Coffee cherries on bush at Fairview Estate, Kiambu, KE.jpg",
+    "author": "Daniel Case",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_cherries_on_bush_at_Fairview_Estate,_Kiambu,_KE.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/5/5c/Coffee_cherries_on_bush_at_Fairview_Estate%2C_Kiambu%2C_KE.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Coffee_cherries_on_bush_at_Fairview_Estate%2C_Kiambu%2C_KE.jpg/1920px-Coffee_cherries_on_bush_at_Fairview_Estate%2C_Kiambu%2C_KE.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:59:57.941Z",
+    "researchManifest": "img9-22.json",
+    "query": "Kenya coffee cherries harvest",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:18264598",
+  "articleSlug": "roaster-machine-types-comparison",
+  "section": "drum-roaster",
+  "localPath": "/article-media/roaster-machine-types-comparison/coffee-roaster-jpg-97f425bf7764.jpg",
+  "sha256": "97f425bf7764b2876fe37c6604bd5309c63659790221f22942a54c59ecc64250",
+  "bytes": 243660,
+  "mime": "image/jpeg",
+  "alt": "커피 로스팅 기계의 모습",
+  "caption": "드럼 구조는 배치 전체의 열축적과 회전 운동으로 곡선을 제어하며, 관성이 크기 때문에 급격한 반응 구간은 신중히 다뤄야 합니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "18264598",
+    "title": "Coffee Roaster.JPG",
+    "author": "Stevenbrooklyn",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_Roaster.JPG",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/8/8d/Coffee_Roaster.JPG",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Coffee_Roaster.JPG/1920px-Coffee_Roaster.JPG"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:57:06.003Z",
+    "researchManifest": "img9-7.json",
+    "query": "coffee roaster machine",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

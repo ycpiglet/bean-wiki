@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:2f52e050-35a4-49e7-9652-e35cfa9655ca",
+  "articleSlug": "coffee-cherry-anatomy",
+  "section": "why-anatomy",
+  "localPath": "/article-media/coffee-cherry-anatomy/coffee-cherries-driying-in-the-sun-on-coffee-beds-1e3658fb7e06.jpg",
+  "sha256": "1e3658fb7e06332d77c56722467fe09cb234d62dfc5bd9b61bc8d56d1563a226",
+  "bytes": 615275,
+  "mime": "image/jpeg",
+  "alt": "건조대 위에서 햇볕에 말리고 있는 커피 체리들",
+  "caption": "체리의 바깥층 상태가 빠르게 변하기 시작하는 순간부터 이미 다음 가공 단계의 조건이 결정됩니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "2f52e050-35a4-49e7-9652-e35cfa9655ca",
+    "title": "Coffee cherries driying in the sun on coffee beds",
+    "author": "Roberto Vazquez",
+    "sourceUrl": "https://wordpress.org/photos/photo/34679696ab/",
+    "originalUrl": "https://pd.w.org/2025/01/34679696ab7cd968.65102231-1536x2048.jpeg",
+    "acquiredFrom": "https://pd.w.org/2025/01/34679696ab7cd968.65102231-1536x2048.jpeg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc0",
+    "label": "CC0 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "cc0 1.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T19:58:44.079Z",
+    "researchManifest": "img9-17.json",
+    "query": "coffee cherry seeds",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
