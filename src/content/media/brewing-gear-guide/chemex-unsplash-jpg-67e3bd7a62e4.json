@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:61715499",
+  "articleSlug": "brewing-gear-guide",
+  "section": "pourover",
+  "localPath": "/article-media/brewing-gear-guide/chemex-unsplash-jpg-67e3bd7a62e4.jpg",
+  "sha256": "67e3bd7a62e4cca893ed65fea62d63d56976202ebce8a4f72f1f9bf7299629ef",
+  "bytes": 102757,
+  "mime": "image/jpeg",
+  "alt": "케멕스 드리퍼로 커피를 내리는 모습",
+  "caption": "케멕스는 일체형 유리 서버에 두꺼운 전용 필터를 쓰는 겸용형 드리퍼로, 필터 두께 자체가 질감을 결정하는 변수가 됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "61715499",
+    "title": "Chemex (Unsplash).jpg",
+    "author": "Zachary Newton zacharyrnewton",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Chemex_(Unsplash).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Chemex_%28Unsplash%29.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a3/Chemex_%28Unsplash%29.jpg/1920px-Chemex_%28Unsplash%29.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc0",
+    "label": "CC0 1.0",
+    "version": "1.0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/deed.en",
+    "requiresAttribution": false,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:47:11.032Z",
+    "researchManifest": "img4-14.json",
+    "query": "Chemex pour over coffee maker",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

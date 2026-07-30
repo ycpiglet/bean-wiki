@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:150094893",
+  "articleSlug": "bean-structure-compounds",
+  "section": "transform",
+  "localPath": "/article-media/bean-structure-compounds/raw-coffee-beans-2-jpg-a7773d15dfe2.jpg",
+  "sha256": "a7773d15dfe2b67b9e9ea7fdddf8b47c542fb461b96c0a187c9f53234a9cbb70",
+  "bytes": 143686,
+  "mime": "image/jpeg",
+  "alt": "초록빛 생두를 가까이서 촬영한 모습",
+  "caption": "같은 성분이라도 로스팅과 추출 단계를 거치며 다른 형태의 향미로 전환되므로, 원물 상태의 성분표만으로는 최종 컵을 예측할 수 없습니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "150094893",
+    "title": "Raw coffee beans 2.jpg",
+    "author": "Kızıldeniz",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raw_coffee_beans_2.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/18/Raw_coffee_beans_2.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/1/18/Raw_coffee_beans_2.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:43:16.025Z",
+    "researchManifest": "img4-6.json",
+    "query": "green coffee beans raw unroasted",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

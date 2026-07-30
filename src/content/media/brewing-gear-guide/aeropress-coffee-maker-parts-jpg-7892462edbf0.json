@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:142509370",
+  "articleSlug": "brewing-gear-guide",
+  "section": "filters",
+  "localPath": "/article-media/brewing-gear-guide/aeropress-coffee-maker-parts-jpg-7892462edbf0.jpg",
+  "sha256": "7892462edbf0a9cd9e7d071de22ff587eea1e8e0cf0f0949066dd4c03e64633f",
+  "bytes": 258140,
+  "mime": "image/jpeg",
+  "alt": "박스에서 막 꺼낸 에어로프레스의 부품들",
+  "caption": "필터뿐 아니라 도구 자체의 구성도 흐름과 질감에 영향을 주며, 부품이 단순할수록 변수를 통제하기 쉬워집니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "142509370",
+    "title": "Aeropress coffee maker parts.jpg",
+    "author": "Bean Poet",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Aeropress_coffee_maker_parts.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/4/4c/Aeropress_coffee_maker_parts.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Aeropress_coffee_maker_parts.jpg/1920px-Aeropress_coffee_maker_parts.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:47:20.102Z",
+    "researchManifest": "img4-16.json",
+    "query": "AeroPress coffee maker",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:150094845",
+  "articleSlug": "bean-structure-compounds",
+  "section": "structure",
+  "localPath": "/article-media/bean-structure-compounds/raw-coffee-beans-jpg-6dc931396944.jpg",
+  "sha256": "6dc93139694434fa59e524d70d60a2c1b8b7f78b78f07c8eb5fbe030cc3c2fe1",
+  "bytes": 167479,
+  "mime": "image/jpeg",
+  "alt": "볶기 전 초록빛의 생두 더미",
+  "caption": "생두 안의 당·유기산·지질·단백질·카페인은 아직 밀집된 세포 조직 안에 갇혀 있으며, 분쇄와 열이 이 성분들을 꺼내는 계기가 됩니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "150094845",
+    "title": "Raw coffee beans.jpg",
+    "author": "Kızıldeniz",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Raw_coffee_beans.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/90/Raw_coffee_beans.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/9/90/Raw_coffee_beans.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:43:14.973Z",
+    "researchManifest": "img4-6.json",
+    "query": "green coffee beans raw unroasted",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

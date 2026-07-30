@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:4828391",
+  "articleSlug": "coffee-storage",
+  "section": "how",
+  "localPath": "/article-media/coffee-storage/roasted-coffee-beans-in-hermetic-jar-jpg-823a54e35c0c.jpg",
+  "sha256": "823a54e35c0c7e2de95292ab491cf334b620deb741dc2fe675f67237f8d423d0",
+  "bytes": 172362,
+  "mime": "image/jpeg",
+  "alt": "숟가락과 함께 밀폐 유리병에 담긴 로스팅 원두",
+  "caption": "불투명하고 밀폐된 용기에 원두 상태로 보관하는 것이 분쇄해 두는 것보다 향미 손실을 늦춥니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "4828391",
+    "title": "Roasted Coffee Beans in Hermetic Jar.jpg",
+    "author": "Pierre Camateros",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Roasted_Coffee_Beans_in_Hermetic_Jar.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a6/Roasted_Coffee_Beans_in_Hermetic_Jar.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Roasted_Coffee_Beans_in_Hermetic_Jar.jpg/1920px-Roasted_Coffee_Beans_in_Hermetic_Jar.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:44:52.881Z",
+    "researchManifest": "img4-23.json",
+    "query": "coffee beans jar sealed",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

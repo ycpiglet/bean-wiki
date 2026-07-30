@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:e66535e3-aa99-47ee-b9d9-f1e3433e0e3c",
+  "articleSlug": "milk-steaming",
+  "section": "process-layers",
+  "localPath": "/article-media/milk-steaming/steaming-milk-with-steam-wand-f5b6b1f63c43.jpg",
+  "sha256": "f5b6b1f63c43d145636e7545dded31946a311c6419b79d60054d8d331a96fae7",
+  "bytes": 153771,
+  "mime": "image/jpeg",
+  "alt": "스팀 완드로 피처 안의 우유를 스티밍하는 모습",
+  "caption": "주입-회전-마무리 3단계는 실제로는 연속된 하나의 동작이며, 단계 사이의 전환 타이밍이 입자감을 결정합니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "e66535e3-aa99-47ee-b9d9-f1e3433e0e3c",
+    "title": "Steaming Milk with Steam Wand",
+    "author": "markolaz",
+    "sourceUrl": "https://www.flickr.com/photos/195403219@N08/52212704797",
+    "originalUrl": "https://live.staticflickr.com/65535/52212704797_53481da79b_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/52212704797_53481da79b_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:45:33.326Z",
+    "researchManifest": "img4-8.json",
+    "query": "steaming milk espresso machine steam wand",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:50354422",
+  "articleSlug": "coffee-storage",
+  "section": "enemies",
+  "localPath": "/article-media/coffee-storage/a-bag-of-coffee-j1-jpg-0a2fc24741bf.jpg",
+  "sha256": "0a2fc24741bf366e5bb665dba247e98c01ab710848301360738a8b28163d7c54",
+  "bytes": 605043,
+  "mime": "image/jpeg",
+  "alt": "밀봉된 로스팅 원두 봉투",
+  "caption": "봉투가 닫혀 있어도 산소·습기·빛·열 네 가지 요인은 조금씩 스며들며 향을 무디게 합니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "50354422",
+    "title": "A bag of coffee J1.jpg",
+    "author": "Jamain",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:A_bag_of_coffee_J1.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/0/0b/A_bag_of_coffee_J1.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/A_bag_of_coffee_J1.jpg/1920px-A_bag_of_coffee_J1.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T18:44:51.473Z",
+    "researchManifest": "img4-27.json",
+    "query": "roasted coffee beans in bag",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
