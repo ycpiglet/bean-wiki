@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:26d0f864-26c7-4f01-913f-a5c228a4fd6e",
+  "articleSlug": "wet-hulling",
+  "section": "purpose",
+  "localPath": "/article-media/wet-hulling/coffee-parchment-in-drying-beds-179d297a8380.jpg",
+  "sha256": "179d297a83803b79d4cab9baa76789cd3414b5de6338dc58f7387e71c04b0220",
+  "bytes": 69749,
+  "mime": "image/jpeg",
+  "alt": "파치먼트 상태의 커피가 건조대에 널려 있는 모습(하와이 코나)",
+  "caption": "웻 헐링 이전 단계에서는 파치먼트가 씌워진 상태로 수분을 관리합니다. 사진은 하와이 코나의 한 농장에서 파치먼트 커피를 건조대에 펼쳐 놓은 모습입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "26d0f864-26c7-4f01-913f-a5c228a4fd6e",
+    "title": "Coffee parchment in drying beds.",
+    "author": "konaboys",
+    "sourceUrl": "https://www.flickr.com/photos/30806198@N00/305326904",
+    "originalUrl": "https://live.staticflickr.com/109/305326904_df472338fa.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/109/305326904_df472338fa.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-31T03:09:26.978Z",
+    "researchManifest": "wethull2.json",
+    "query": "coffee parchment drying",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

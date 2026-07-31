@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:72926261",
+  "articleSlug": "wet-hulling",
+  "section": "operation-loop",
+  "localPath": "/article-media/wet-hulling/starr-180616-4064-coffea-arabica-homegrown-and-process-52b52c540189.jpg",
+  "sha256": "52b52c5401892d8bbc2b91f348fb33710c0e9cd72f9f5c2badf24712382c23c7",
+  "bytes": 225199,
+  "mime": "image/jpeg",
+  "alt": "파치먼트를 제거해 건조를 마친 생두의 모습(하와이 마우이)",
+  "caption": "파치먼트 제거 이후에는 선별·로스팅·보관 단계로 기록이 이어져야 합니다. 사진은 하와이 마우이의 자가 재배 커피를 건조하고 파치먼트를 제거한 이후의 생두입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "72926261",
+    "title": "Starr-180616-4064-Coffea arabica-homegrown and processed dried and parchment removed-Hawea Pl Olinda-Maui (43430095692).jpg",
+    "author": "Forest and Kim Starr",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Starr-180616-4064-Coffea_arabica-homegrown_and_processed_dried_and_parchment_removed-Hawea_Pl_Olinda-Maui_(43430095692).jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d0/Starr-180616-4064-Coffea_arabica-homegrown_and_processed_dried_and_parchment_removed-Hawea_Pl_Olinda-Maui_%2843430095692%29.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Starr-180616-4064-Coffea_arabica-homegrown_and_processed_dried_and_parchment_removed-Hawea_Pl_Olinda-Maui_%2843430095692%29.jpg/1920px-Starr-180616-4064-Coffea_arabica-homegrown_and_processed_dried_and_parchment_removed-Hawea_Pl_Olinda-Maui_%2843430095692%29.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by/3.0/us/deed.en",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 3.0 us"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-31T03:09:34.579Z",
+    "researchManifest": "wethull2.json",
+    "query": "coffee parchment drying",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

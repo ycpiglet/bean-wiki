@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:7c944dff-f7f9-45fd-b5f4-ceb373678aae",
+  "articleSlug": "post-harvest-processing-map",
+  "section": "hulled-and-sorted",
+  "localPath": "/article-media/post-harvest-processing-map/hand-sorting-ac680ecc0d28.jpg",
+  "sha256": "ac680ecc0d2825c0410d23cf0e179ebc413263564bb14b9c58bd9eeebf056b00",
+  "bytes": 186433,
+  "mime": "image/jpeg",
+  "alt": "커피 생두 선별대에서 손으로 결점두와 이물질을 골라내는 모습",
+  "caption": "탈곡 후 선별 단계에서는 손으로 결점두와 크기를 나눠 등급을 가릅니다. 사진은 여러 산지에서 흔히 볼 수 있는, 생두를 손으로 선별하는 작업 장면입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "7c944dff-f7f9-45fd-b5f4-ceb373678aae",
+    "title": "Hand sorting",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/6265437185",
+    "originalUrl": "https://live.staticflickr.com/6153/6265437185_911124db60_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/6153/6265437185_911124db60_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-31T03:22:06.255Z",
+    "researchManifest": "pm3.json",
+    "query": "coffee bean sorting hand",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}
