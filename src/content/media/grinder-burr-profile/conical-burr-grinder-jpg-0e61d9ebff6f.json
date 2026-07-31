@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:74324422",
+  "articleSlug": "grinder-burr-profile",
+  "section": "profile-basics",
+  "localPath": "/article-media/grinder-burr-profile/conical-burr-grinder-jpg-0e61d9ebff6f.jpg",
+  "sha256": "0e61d9ebff6f50ccf430a86955cf73c27ec7794df6150717002f98f60389e0b1",
+  "bytes": 609098,
+  "mime": "image/jpeg",
+  "alt": "커피 추출용 원추형(코니컬) 버 그라인더",
+  "caption": "버 프로파일 논의에서 기준이 되는 원추형 버 그라인더의 예시입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "74324422",
+    "title": "Conical Burr Grinder.jpg",
+    "author": "Fletcher",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Conical_Burr_Grinder.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/3/30/Conical_Burr_Grinder.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/3/30/Conical_Burr_Grinder.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by",
+    "label": "CC BY 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0",
+    "requiresAttribution": true,
+    "shareAlike": false,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T23:21:27.836Z",
+    "researchManifest": "grinder.json",
+    "query": "conical burr grinder",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": []
+  }
+}

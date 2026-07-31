@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:ac33cc76-05f1-42f3-bcb5-7d8164446225",
+  "articleSlug": "honey-pulped-natural-processing",
+  "section": "processing-overview",
+  "localPath": "/article-media/honey-pulped-natural-processing/coffees-drying-on-raised-beds-135773a55661.jpg",
+  "sha256": "135773a5566188e592ee1b4d54e42aaced14d3d4e1dd8af6b0534f602814b0c5",
+  "bytes": 357163,
+  "mime": "image/jpeg",
+  "alt": "커피가 높인 건조대(raised bed) 위에 펼쳐져 건조되는 모습",
+  "caption": "허니·펄프드 내추럴 모두 점액을 남긴 상태에서 건조대 위 건조 속도를 조절하는 단계를 거칩니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "ac33cc76-05f1-42f3-bcb5-7d8164446225",
+    "title": "Coffees drying on raised beds",
+    "author": "skinnydiver",
+    "sourceUrl": "https://www.flickr.com/photos/53197929@N00/29251396163",
+    "originalUrl": "https://live.staticflickr.com/8175/29251396163_6f0ae08c9a_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/8175/29251396163_6f0ae08c9a_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T23:29:35.011Z",
+    "researchManifest": "honey.json",
+    "query": "coffee raised bed drying",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:031f2133-ea9f-4fdd-a443-9abddf766ffb",
+  "articleSlug": "espresso-machine-hydraulics-thermal",
+  "section": "hydraulic-subsystem",
+  "localPath": "/article-media/espresso-machine-hydraulics-thermal/inside-e2k-junior-e-61-espresso-machine-50d4e6f40b1a.jpg",
+  "sha256": "50d4e6f40b1a3d6e95d0a68dcdd08aeed56034542a0c61af2df2eceda323d531",
+  "bytes": 194373,
+  "mime": "image/jpeg",
+  "alt": "E-61 그룹헤드를 채용한 에스프레소 머신(E2K Junior) 내부의 배관과 밸브 구조",
+  "caption": "커버를 연 E-61 그룹 머신의 내부로, 펌프 이후 물이 지나는 배관과 밸브가 실제로 어떻게 배치되는지 보여줍니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "031f2133-ea9f-4fdd-a443-9abddf766ffb",
+    "title": "Inside E2K Junior E-61 espresso machine",
+    "author": "eirikso",
+    "sourceUrl": "https://www.flickr.com/photos/47402349@N00/119201946",
+    "originalUrl": "https://live.staticflickr.com/41/119201946_83c9791d37_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/41/119201946_83c9791d37_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T23:00:13.111Z",
+    "researchManifest": "espresso2.json",
+    "query": "espresso machine",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

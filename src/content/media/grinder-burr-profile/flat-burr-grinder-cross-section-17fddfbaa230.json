@@ -1,0 +1,40 @@
+{
+  "schemaVersion": 1,
+  "id": "openverse:133e9a82-5cef-4ff6-9cf3-50b3c82a00fd",
+  "articleSlug": "grinder-burr-profile",
+  "section": "profile-axis",
+  "localPath": "/article-media/grinder-burr-profile/flat-burr-grinder-cross-section-17fddfbaa230.jpg",
+  "sha256": "17fddfbaa230e027fb8a01e14f4a7b8e8d8b23cffa4c40c80dc79d42cd749b45",
+  "bytes": 43793,
+  "mime": "image/jpeg",
+  "alt": "플랫(평면) 버 그라인더 내부 구조를 보여주는 3D 단면 일러스트",
+  "caption": "실제 사진이 아니라, 플랫 버 그라인더 내부 구조를 이해하기 쉽게 표현한 3D 단면 일러스트입니다.",
+  "source": {
+    "provider": "openverse",
+    "providerId": "133e9a82-5cef-4ff6-9cf3-50b3c82a00fd",
+    "title": "Flat Burr Grinder Cross Section",
+    "author": "honestcoffeeguide",
+    "sourceUrl": "https://www.flickr.com/photos/199185372@N02/53206080444",
+    "originalUrl": "https://live.staticflickr.com/65535/53206080444_767a00d8b5_b.jpg",
+    "acquiredFrom": "https://live.staticflickr.com/65535/53206080444_767a00d8b5_b.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 2.0",
+    "version": "2.0",
+    "url": "https://creativecommons.org/licenses/by-sa/2.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "by-sa 2.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T23:21:32.790Z",
+    "researchManifest": "grinder.json",
+    "query": "flat burr coffee grinder",
+    "note": "Openverse indexed original; verify the provider landing page again immediately before selection.",
+    "beanWikiTransformations": []
+  }
+}

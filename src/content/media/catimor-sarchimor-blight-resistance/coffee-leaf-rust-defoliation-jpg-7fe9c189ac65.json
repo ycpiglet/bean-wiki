@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:103420441",
+  "articleSlug": "catimor-sarchimor-blight-resistance",
+  "section": "practice",
+  "localPath": "/article-media/catimor-sarchimor-blight-resistance/coffee-leaf-rust-defoliation-jpg-7fe9c189ac65.jpg",
+  "sha256": "7fe9c189ac65a465b2d37b898af56d0553fee2c27a58015e36b903cbf0ef1659",
+  "bytes": 153272,
+  "mime": "image/jpeg",
+  "alt": "녹병 감염이 심해져 잎이 대부분 떨어진 커피나무 가지",
+  "caption": "병징 빈도를 방치했을 때 나타날 수 있는 녹병성 낙엽(defoliation) 진행 사례입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "103420441",
+    "title": "Coffee-leaf-rust-defoliation.jpg",
+    "author": "Michael.C.Wright",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee-leaf-rust-defoliation.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/9/94/Coffee-leaf-rust-defoliation.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/9/94/Coffee-leaf-rust-defoliation.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-30T23:22:34.527Z",
+    "researchManifest": "rust.json",
+    "query": "coffee leaf rust Hemileia vastatrix",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
