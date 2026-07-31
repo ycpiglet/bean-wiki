@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:63468867",
+  "articleSlug": "natural-processing-deep-dive",
+  "section": "scope",
+  "localPath": "/article-media/natural-processing-deep-dive/women-drying-coffee-jpg-ee2a333cdc25.jpg",
+  "sha256": "ee2a333cdc256375f87e919a2adc3af6d262155f3246026977727cac9241f53b",
+  "bytes": 623312,
+  "mime": "image/jpeg",
+  "alt": "우간다 카세세 지역의 여성 협동조합원들이 건조대에 커피 체리를 널기 전 준비하는 모습",
+  "caption": "내추럴 가공은 체리를 통째로 건조대에 올리는 작업에서 시작됩니다. 사진은 우간다 카세세의 부콘조 오가닉 협동조합 여성 조합원들이 커피 체리를 건조대에 널기 위해 준비하는 모습입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "63468867",
+    "title": "Women drying coffee.jpg",
+    "author": "PHILIP ASEDRI DRADRIO",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Women_drying_coffee.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Women_drying_coffee.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Women_drying_coffee.jpg/1920px-Women_drying_coffee.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-31T03:09:57.863Z",
+    "researchManifest": "nat2.json",
+    "query": "coffee cherries drying bed",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:5131281",
+  "articleSlug": "grinder-burr-retention-control",
+  "section": "retention-map",
+  "localPath": "/article-media/grinder-burr-retention-control/coffee-burr-grinder-jpg-0d3fde6ff409.jpg",
+  "sha256": "0d3fde6ff40986faaa727eb2d541aa70d06b433648d4b8834d1fcebb65dadd19",
+  "bytes": 481769,
+  "mime": "image/jpeg",
+  "alt": "호퍼를 분리한 상태에서 드러난 커피 그라인더의 분쇄부(버) 내부",
+  "caption": "잔류물은 대개 분쇄부 내부의 좁은 틈에서 쌓입니다. 사진은 호퍼를 제거한 상태에서 드러난 그라인더 분쇄부(버) 내부를 클로즈업한 모습입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "5131281",
+    "title": "Coffee burr grinder.jpg",
+    "author": "Hustvedt",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Coffee_burr_grinder.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/1/19/Coffee_burr_grinder.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Coffee_burr_grinder.jpg/1920px-Coffee_burr_grinder.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-31T03:09:50.379Z",
+    "researchManifest": "grinder1.json",
+    "query": "coffee grinder burr",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

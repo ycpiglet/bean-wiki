@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:183712614",
+  "articleSlug": "coffee-canopy-pruning-rejuvenation",
+  "section": "topic",
+  "localPath": "/article-media/coffee-canopy-pruning-rejuvenation/pruning-a-coffee-plant-05-jpg-15260cb9abf7.jpg",
+  "sha256": "15260cb9abf7a185f22373ab235dcd68a0af0840511921763016792f9cff23b3",
+  "bytes": 446742,
+  "mime": "image/jpeg",
+  "alt": "커피나무의 웃자란 가지를 솎아내는 전정 작업 장면(우간다)",
+  "caption": "전정은 가지를 솎아 통풍과 광량 조건을 다시 맞추는 현장 작업입니다. 사진은 우간다의 한 커피 농장에서 커피나무의 웃자란 가지를 정리하는 모습입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "183712614",
+    "title": "Pruning a coffee plant 05.jpg",
+    "author": "Denis kasozi",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Pruning_a_coffee_plant_05.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a7/Pruning_a_coffee_plant_05.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Pruning_a_coffee_plant_05.jpg/1920px-Pruning_a_coffee_plant_05.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 4.0",
+    "version": "4.0",
+    "url": "https://creativecommons.org/licenses/by-sa/4.0",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 4.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-31T03:09:20.324Z",
+    "researchManifest": "pruning2.json",
+    "query": "coffee plant pruning",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}

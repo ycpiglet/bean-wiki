@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 1,
+  "id": "commons:1826816",
+  "articleSlug": "grinder-burr-retention-control",
+  "section": "topic-caf03",
+  "localPath": "/article-media/grinder-burr-retention-control/zassenhaus-coffee-grinder-hopper-and-burrs-jpg-26b89afc4815.jpg",
+  "sha256": "26b89afc4815f5044834d916fbbae5e11cd1bb1167a2f4305d506daf350e7311",
+  "bytes": 175752,
+  "mime": "image/jpeg",
+  "alt": "수동 커피 그라인더의 호퍼와 버(burr) 부분 클로즈업",
+  "caption": "그라인더의 버 상태와 잔류물은 다이얼인 결과에 직접 영향을 줍니다. 사진은 자센하우스 수동 그라인더의 호퍼와 버 부분을 가까이서 찍은 모습입니다.",
+  "source": {
+    "provider": "wikimedia-commons",
+    "providerId": "1826816",
+    "title": "Zassenhaus coffee grinder hopper and burrs.jpg",
+    "author": "Einar Faanes",
+    "sourceUrl": "https://commons.wikimedia.org/wiki/File:Zassenhaus_coffee_grinder_hopper_and_burrs.jpg",
+    "originalUrl": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Zassenhaus_coffee_grinder_hopper_and_burrs.jpg",
+    "acquiredFrom": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Zassenhaus_coffee_grinder_hopper_and_burrs.jpg/1920px-Zassenhaus_coffee_grinder_hopper_and_burrs.jpg"
+  },
+  "license": {
+    "allowed": true,
+    "id": "cc-by-sa",
+    "label": "CC BY-SA 3.0",
+    "version": "3.0",
+    "url": "https://creativecommons.org/licenses/by-sa/3.0/",
+    "requiresAttribution": true,
+    "shareAlike": true,
+    "allowsCommercialUse": true,
+    "allowsModification": true,
+    "raw": "CC BY-SA 3.0"
+  },
+  "acquisition": {
+    "selectedAt": "2026-07-31T03:09:42.348Z",
+    "researchManifest": "grinder1.json",
+    "query": "coffee grinder burr",
+    "note": "Wikimedia Commons generated preview; Bean Wiki stores the selected file without further visual edits.",
+    "beanWikiTransformations": [
+      "resized to max 1600px on the long edge, re-encoded as JPEG quality 82 to reduce page weight"
+    ]
+  }
+}
