@@ -10,6 +10,7 @@ accent: copper
 fact: 로스팅 스케일업은 시간과 온도 곡선을 복사하는 일이 아니라 열용량, 공기 흐름, 센서 응답과 환경 변화를 새 장비에서 다시 맞추는 검증 과정입니다.
 related: ["roaster-heat-transfer","roaster-machine-types-comparison","roast-profile-design","roast-development-signals"]
 tags: ["로스팅","배치 크기","스케일업","환경 조건","열전달","재현성"]
+mediaMinimum: 3
 history: [{"date":"2026. 07. 31.","note":"ROA-09 독립 초안 작성"},{"date":"2026. 08. 02.","note":"상사성의 한계, 열·공기 수지, 센서 번역, 계절 보정과 단계형 스케일업 검증을 전문 기준으로 확장"}]
 ---
 <h2 id="definition">스케일업의 정의와 경계</h2>
@@ -18,14 +19,17 @@ history: [{"date":"2026. 07. 31.","note":"ROA-09 독립 초안 작성"},{"date":
 <aside class="callout callout-important" data-tone="important"><p>스케일업의 목표는 곡선 겹치기가 아니라 사전에 정의한 색도, 감량률, 관능 범위와 생산 편차를 함께 만족시키는 것입니다.</p></aside>
 
 <h2 id="batch-size">배치 크기가 바꾸는 열 균형</h2>
+<figure class="article-figure" data-author="Stevenbrooklyn" data-license="CC BY-SA 3.0" data-source="https://commons.wikimedia.org/wiki/File:Coffee_Roaster.JPG"><img src="/article-media/roaster-machine-types-comparison/coffee-roaster-jpg-97f425bf7764.jpg" alt="커피 로스팅 기계의 모습" /><figcaption>같은 외형의 로스터라도 드럼 용량·버너·단열·센서 위치가 다르므로, 정격 배치 비율 하나로 열 반응을 번역하지 않습니다. <a href="https://commons.wikimedia.org/wiki/File:Coffee_Roaster.JPG" target="_blank" rel="noreferrer" class="figure-credit">Stevenbrooklyn · CC BY-SA 3.0</a></figcaption></figure>
 <p>배치량이 늘면 원두 전체의 열용량이 커지고, 같은 화력 설정이 원두 1킬로그램당 제공하는 에너지는 달라질 수 있습니다. 반대로 장비 권장 범위보다 작은 배치는 뜨거운 금속과 공기의 영향을 빠르게 받아 표면 과열 위험이 커질 수 있습니다.</p>
 <p>실제 변화는 드럼 용적, 버너 용량, 회전 속도와 공기 흐름에 좌우됩니다. 따라서 정격 용량의 일정 비율이 보편적 최적값이라는 식의 규칙보다 제조사 운전 범위와 내부 반복 시험을 우선합니다.</p>
 
 <h2 id="airflow">공기 흐름과 배기 계통</h2>
+<figure class="article-figure" data-author="Visitor7" data-license="CC BY-SA 3.0" data-source="https://commons.wikimedia.org/wiki/File:Last_Stand_Coffee_Roaster_(Eugene,_Oregon).jpg"><img src="/article-media/roasting-basics/last-stand-coffee-roaster-eugene-oregon-jpg-af384f8d70bf.jpg" alt="카페 안에 설치된 드럼 로스터 기계의 모습" /><figcaption>실내 설치 장면은 로스터가 배기 덕트와 주변 공기를 공유하는 설비임을 보여 주며, 외기·압력 조건을 배치 기록과 함께 남겨야 합니다. <a href="https://commons.wikimedia.org/wiki/File:Last_Stand_Coffee_Roaster_(Eugene,_Oregon).jpg" target="_blank" rel="noreferrer" class="figure-credit">Visitor7 · CC BY-SA 3.0</a></figcaption></figure>
 <p>팬 설정이 같아도 원두층의 저항, 덕트 오염, 실내외 압력 차이에 따라 실제 유량은 달라질 수 있습니다. 배치가 커지면 수증기와 연기 발생량도 늘어 배기의 역할이 더 커집니다.</p>
 <p>장비를 옮길 때는 팬 퍼센트 대신 차압, 댐퍼 위치, 배기 온도와 연기 배출 상태처럼 비교 가능한 관측치를 확보합니다. 측정 장비가 없다면 정해진 점검 조건에서 필터와 덕트 상태, 냄새, 연기와 크랙 소리의 변화를 같은 양식으로 기록합니다.</p>
 
 <h2 id="environment">실내 온도·습도·외기의 영향</h2>
+<figure class="article-figure" data-author="Jkafader" data-license="CC BY-SA 3.0" data-source="https://commons.wikimedia.org/wiki/File:Coffee_Beans_in_a_Cooling_Tray.JPG"><img src="/article-media/roast-development/coffee-beans-in-a-cooling-tray-jpg-18ff3cb8847d.jpg" alt="쿨링 트레이에서 식고 있는 로스팅된 원두" /><figcaption>냉각 공기는 실내 온도와 습도의 영향을 직접 받으므로, 스케일업 비교에는 투입부터 쿨링 종료까지 같은 환경 경계를 적용합니다. <a href="https://commons.wikimedia.org/wiki/File:Coffee_Beans_in_a_Cooling_Tray.JPG" target="_blank" rel="noreferrer" class="figure-credit">Jkafader · CC BY-SA 3.0</a></figcaption></figure>
 <p>실내 온도와 흡입 공기 상태는 예열 회복과 대류 열전달에 영향을 줄 수 있습니다. 외기 변화가 큰 설치에서는 배기 압력과 가스 공급 조건도 함께 흔들릴 가능성이 있습니다.</p>
 <p>생두 수분과 온도 역시 계절에 따라 달라질 수 있으므로 환경과 원료 효과를 혼동하지 않아야 합니다. 매 배치에서 실내 조건을 기록하되 한두 번의 상관만으로 원인을 확정하지 않고, 여러 반복에서 같은 방향이 나타나는지 확인합니다.</p>
 
